@@ -10,14 +10,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
         body {
-            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
             scroll-behavior: smooth;
         }
         
@@ -434,6 +434,17 @@
                         預設情況下紀錄存在瀏覽器本地。但身為 PRO 用戶，您可以使用 "Export Data" 功能將紀錄匯出為 JSON 檔，並在新電腦上使用 "Import Data" 恢復，完美銜接您的工作環境。
                     </div>
                 </div>
+
+                <!-- FAQ Item 4 (New) -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-slate-200" data-i18n="faq_4_q">終身授權的範圍是什麼？</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4" data-i18n="faq_4_a">
+                        授權碼允許在一個 Chrome 帳號安裝使用，並允許最多 3 次重新安裝（例如更換電腦或重灌系統）。
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -449,9 +460,9 @@
             </div>
             
             <div class="flex gap-6 text-slate-500">
-                <a href="#" class="hover:text-white transition-colors" data-i18n="footer_privacy">隱私權政策</a>
-                <a href="#" class="hover:text-white transition-colors" data-i18n="footer_terms">服務條款</a>
-                <a href="#" class="hover:text-white transition-colors" data-i18n="footer_contact">聯絡支援</a>
+                <button onclick="openPrivacyModal()" class="hover:text-white transition-colors focus:outline-none" data-i18n="footer_privacy">隱私權政策</button>
+                <button onclick="openTermsModal()" class="hover:text-white transition-colors focus:outline-none" data-i18n="footer_terms">服務條款</button>
+                <button onclick="openContactModal()" class="hover:text-white transition-colors focus:outline-none" data-i18n="footer_contact">聯絡支援</button>
             </div>
             
             <div class="text-slate-600">
@@ -459,6 +470,89 @@
             </div>
         </div>
     </footer>
+
+    <!-- Contact Modal (Hidden by default) -->
+    <div id="contact-modal" class="fixed inset-0 z-[100] hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeContactModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-4">
+            <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative">
+                <!-- Close Button -->
+                <button onclick="closeContactModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2 text-white" data-i18n="contact_title">聯絡支援</h3>
+                    <p class="text-slate-400 text-sm mb-6" data-i18n="contact_desc">有任何問題或建議？請填寫下表，我們會盡快回覆。</p>
+                    
+                    <!-- Form linked to Formspree -->
+                    <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 mb-1 uppercase" data-i18n="contact_name">姓名</label>
+                            <!-- Added name="name" -->
+                            <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 mb-1 uppercase" data-i18n="contact_email">Email</label>
+                            <!-- Added name="email" -->
+                            <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 mb-1 uppercase" data-i18n="contact_message">訊息內容</label>
+                            <!-- Added name="message" -->
+                            <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold py-3 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                            <span data-i18n="contact_btn">送出訊息</span>
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closePrivacyModal()"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4">
+            <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative max-h-[80vh] flex flex-col">
+                <button onclick="closePrivacyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white z-10">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+                <div class="p-6 overflow-y-auto custom-scrollbar">
+                    <h3 class="text-2xl font-bold mb-4 text-white" data-i18n="legal_privacy_title">隱私權政策</h3>
+                    <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line" data-i18n="legal_privacy_content">
+                        <!-- Content injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="terms-modal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeTermsModal()"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4">
+            <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative max-h-[80vh] flex flex-col">
+                <button onclick="closeTermsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white z-10">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+                <div class="p-6 overflow-y-auto custom-scrollbar">
+                    <h3 class="text-2xl font-bold mb-4 text-white" data-i18n="legal_terms_title">服務條款</h3>
+                    <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line" data-i18n="legal_terms_content">
+                        <!-- Content injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Toast Notification Container -->
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>
@@ -515,11 +609,54 @@
                 faq_2_a: "這是 PRO 版的獨家功能。當您的頁面上累積了數千張圖片時，您可能只想下載「今天」或「本週」生成的新圖。設定日期後，舊的媒體將被自動略過。",
                 faq_3_q: "我換了電腦，下載紀錄 (History) 還在嗎？",
                 faq_3_a: "預設情況下紀錄存在瀏覽器本地。但身為 PRO 用戶，您可以使用 \"Export Data\" 功能將紀錄匯出為 JSON 檔，並在新電腦上使用 \"Import Data\" 恢復，完美銜接您的工作環境。",
+                faq_4_q: "終身授權的範圍是什麼？",
+                faq_4_a: "授權碼允許在一個 Chrome 帳號安裝使用，並允許最多 3 次重新安裝（例如更換電腦或重灌系統）。",
                 footer_privacy: "隱私權政策",
                 footer_terms: "服務條款",
                 footer_contact: "聯絡支援",
                 toast_checkout: "正在開啟 Lemon Squeezy 安全支付頁面...",
-                toast_chrome: "正在前往 Chrome 線上應用程式商店..."
+                toast_chrome: "正在前往 Chrome 線上應用程式商店...",
+                contact_title: "聯絡支援團隊",
+                contact_desc: "遇到問題或有功能建議？我們隨時傾聽。",
+                contact_name: "您的稱呼",
+                contact_email: "電子信箱",
+                contact_message: "訊息內容",
+                contact_btn: "發送訊息",
+                toast_sent: "訊息已發送！我們會盡快回覆您。",
+                toast_error: "發送失敗，請稍後再試。",
+
+                // --- LEGAL TEXT (ZH-TW) ---
+                legal_privacy_title: "隱私權政策",
+                legal_privacy_content: `1. 資料收集與使用
+本擴充功能（GrokMediaDownloader）是一個完全在客戶端運行的工具。我們不收集、不儲存、不分享您的任何個人資料、瀏覽紀錄或下載內容。所有的圖片處理與下載動作皆在您的瀏覽器本地完成。
+
+2. 權限說明
+我們請求的權限（如 "Storage", "Downloads", "Host Permissions"）僅用於執行擴充功能的核心功能：
+- 讀取您當前瀏覽的 Grok 頁面以偵測媒體。
+- 將媒體檔案儲存至您的電腦。
+- 儲存您的設定偏好（如授權狀態、歷史紀錄）。
+
+3. 第三方服務
+付款處理透過 Lemon Squeezy 進行。您的信用卡資訊與交易數據由 Lemon Squeezy 直接處理與保護，本擴充功能不會接觸到您的敏感財務資訊。
+
+4. 政策更新
+我們保留隨時修改本隱私權政策的權利。任何變更將在此頁面更新。`,
+
+                legal_terms_title: "服務條款",
+                legal_terms_content: `1. 接受條款
+安裝並使用 GrokMediaDownloader（以下簡稱「本服務」），即表示您同意受本條款之約束。
+
+2. 授權與使用
+我們授予您非獨家、不可轉讓的有限授權，僅供個人非商業用途使用本服務。您同意不會對本擴充功能進行反向工程、反編譯或試圖提取原始碼。
+
+3. 使用者責任
+本工具僅提供下載功能便利性。您需對您下載的內容負完全責任。您同意僅下載您擁有版權或有權使用的媒體內容。本服務不對您下載的任何內容之版權爭議負責。
+
+4. 免責聲明
+本服務按「現狀」提供，不附帶任何形式的保證。我們不保證本服務將永遠無誤或不中斷。在法律允許的最大範圍內，我們不對因使用本服務而導致的任何資料遺失或損害負責。
+
+5. 退款政策
+透過 Lemon Squeezy 購買的授權，退款政策依循該平台規範。若遇技術問題無法解決，請聯繫支援團隊。`
             },
             "en": {
                 nav_features: "Features",
@@ -570,14 +707,156 @@
                 faq_2_a: "This is a PRO exclusive. When you have thousands of images, you might only want to download new ones from \"today\" or \"this week\". Set a date, and old media will be automatically skipped.",
                 faq_3_q: "If I switch computers, is my History saved?",
                 faq_3_a: "By default, history is local. However, as a PRO user, you can use \"Export Data\" to save your history as a JSON file and \"Import Data\" on your new computer to restore your workflow seamlessly.",
+                faq_4_q: "What is the scope of the Lifetime License?",
+                faq_4_a: "The license allows installation on one Chrome account and grants up to 3 re-installations (e.g., for switching computers or reinstalling OS).",
                 footer_privacy: "Privacy Policy",
                 footer_terms: "Terms of Service",
                 footer_contact: "Contact Support",
                 toast_checkout: "Opening Lemon Squeezy secure checkout...",
-                toast_chrome: "Redirecting to Chrome Web Store..."
+                toast_chrome: "Redirecting to Chrome Web Store...",
+                contact_title: "Contact Support",
+                contact_desc: "Having issues or feature requests? We're here to help.",
+                contact_name: "Name",
+                contact_email: "Email Address",
+                contact_message: "Message",
+                contact_btn: "Send Message",
+                toast_sent: "Message sent! We'll get back to you shortly.",
+                toast_error: "Submission failed. Please try again later.",
+
+                // --- LEGAL TEXT (EN) ---
+                legal_privacy_title: "Privacy Policy",
+                legal_privacy_content: `1. Data Collection & Usage
+GrokMediaDownloader is a client-side extension. We do NOT collect, store, or share any of your personal data, browsing history, or downloaded content. All image processing and downloading happen locally on your device.
+
+2. Permissions
+The permissions we request (e.g., "Storage", "Downloads", "Host Permissions") are strictly for the extension's core functionality:
+- Reading the current Grok page to detect media.
+- Saving media files to your computer.
+- Storing your preferences (e.g., license status, history) locally.
+
+3. Third-Party Services
+Payments are processed via Lemon Squeezy. Your financial data is handled and secured directly by Lemon Squeezy; this extension does not have access to your sensitive financial information.
+
+4. Updates
+We reserve the right to update this policy. Any changes will be posted on this page.`,
+
+                legal_terms_title: "Terms of Service",
+                legal_terms_content: `1. Acceptance
+By installing and using GrokMediaDownloader ("the Service"), you agree to these Terms.
+
+2. License
+We grant you a non-exclusive, non-transferable, limited license to use the Service for personal, non-commercial purposes. You agree not to reverse engineer or decompile the extension.
+
+3. User Responsibility
+This tool is provided for convenience. You are solely responsible for the content you download. You agree to only download media for which you have the rights. We are not responsible for copyright disputes arising from your use.
+
+4. Disclaimer
+The Service is provided "AS IS" without warranties of any kind. We do not guarantee that the Service will be error-free or uninterrupted. To the maximum extent permitted by law, we are not liable for any data loss or damages.
+
+5. Refunds
+Refunds for licenses purchased via Lemon Squeezy are subject to their platform policies. Please contact support for technical issues.`
+            },
+            "ja": {
+                nav_features: "機能",
+                nav_howto: "使い方",
+                nav_pricing: "価格",
+                nav_faq: "FAQ",
+                nav_cta: "PROを入手",
+                nav_buy_now: "今すぐPROを購入",
+                hero_badge: "v1.1.0 大型アップデート | 動画と画像に対応",
+                hero_title_1: "Grokを完全自動化",
+                hero_title_2: "メディア資産管理",
+                hero_desc: "単なるダウンローダーではなく、クリエイターのためのデータベースです。GrokMediaDownloaderは日付フィルタ、一括リスト生成、履歴追跡を提供します。手動保存はやめて、プロ用ツールにワークフローを任せましょう。",
+                hero_cta_primary: "PRO永久版を入手",
+                hero_cta_secondary: "使い方を見る",
+                hero_cta_chrome: "Chromeに追加",
+                hero_trust_1: "安全・ウイルスフリー",
+                hero_trust_2: "高速エンジン",
+                feat_title_1: "パワーユーザーのために",
+                feat_title_2: "PRO級の機能",
+                feat_desc: "実際のユーザーフィードバックに基づき、最強のGrokメディア管理システムを構築しました。",
+                feat_1_title: "スマートリスト生成 (Generate List)",
+                feat_1_desc: "手動で探す必要はありません。拡張機能がページとチャット履歴を自動スキャンし、ダウンロード可能なメディアリストをスマートに生成。プレビューしてから決定できます。",
+                feat_2_title: "日付＆履歴フィルター (PRO)",
+                feat_2_desc: "今週の作品だけ欲しい？Date Filterで範囲を指定。システムはDownload Historyも自動照合し、同じファイルの重複ダウンロードを防ぎます。",
+                feat_3_title: "データ管理とバックアップ (PRO)",
+                feat_3_desc: "パソコンを買い替えても履歴は消えません。Export/Import Data機能で、ダウンロード履歴データベースを簡単にバックアップ・移行できます。",
+                step_title: "自動化への3ステップ",
+                step_1_title: "条件を設定",
+                step_1_desc: "パネルを開き、メディアタイプ（Images/Videos）を選択。PROユーザーは「Only after」日付フィルターを設定できます。",
+                step_2_desc: "青いボタンをクリック。現在のページをスキャンし、履歴と照合して、未ダウンロードの新しいファイルをリストアップします。",
+                step_3_desc: "緑のボタンをクリック。あとは進行状況バーを見るだけ。ファイルは自動的に分類され grok_downloads/ フォルダに保存されます。",
+                price_title: "生産性を最大化",
+                price_desc: "ヘビーユーザー向けに設計されたPRO機能。",
+                price_card_title: "PRO 永久ライセンス",
+                price_note: "✨ 将来の全機能アップデート込み",
+                price_feat_1: "Date Filter (日付フィルター)",
+                price_feat_2: "Bulk Remove (一括削除)",
+                price_feat_3: "Import / Export Data",
+                price_feat_4: "画像・動画の無制限ダウンロード",
+                price_feat_5: "ダウンロード履歴追跡 (重複防止)",
+                price_cta: "今すぐPROを有効化",
+                price_secure: "Lemon Squeezyによる安全な決済、即時発行",
+                faq_title: "よくある質問",
+                faq_1_q: "Generate List ボタンは何ですか？",
+                faq_1_a_1: "スマートスキャン機能です。Grok/Imagine/Favorites (",
+                faq_1_a_2: ") でクリックすると、現在のページを読み込み、全ての画像/動画を検出し、(履歴に基づいて) 既にダウンロード済みのファイルを除外し、「ダウンロード待ちリスト」を生成します。",
+                faq_2_q: "Only after 日付フィルターとは？",
+                faq_2_a: "PRO限定機能です。数千枚の画像がある場合、「今日」や「今週」生成した新しい画像だけ欲しいことがあります。日付を設定すれば、古いメディアは自動的にスキップされます。",
+                faq_3_q: "パソコンを変えても履歴は残りますか？",
+                faq_3_a: "デフォルトでは履歴はブラウザ内に保存されます。しかしPROユーザーなら、Export DataでJSONファイルとして書き出し、新しいパソコンでImport Dataすることで、作業環境を完全に引き継げます。",
+                faq_4_q: "永久ライセンスの範囲は何ですか？",
+                faq_4_a: "ライセンスは1つのChromeアカウントでの利用を許可し、最大3回までの再インストール（PCの買い替えなど）が可能です。",
+                footer_privacy: "プライバシーポリシー",
+                footer_terms: "利用規約",
+                footer_contact: "サポートへ連絡",
+                toast_checkout: "Lemon Squeezy 安全決済ページを開いています...",
+                toast_chrome: "Chrome ウェブストアへ移動中...",
+                contact_title: "サポートに連絡",
+                contact_desc: "問題や機能のリクエストがありますか？お気軽にお問い合わせください。",
+                contact_name: "お名前",
+                contact_email: "メールアドレス",
+                contact_message: "メッセージ内容",
+                contact_btn: "送信する",
+                toast_sent: "送信しました！確認次第ご返信いたします。",
+                toast_error: "送信に失敗しました。後でもう一度お試しください。",
+
+                // --- LEGAL TEXT (JA) ---
+                legal_privacy_title: "プライバシーポリシー",
+                legal_privacy_content: `1. データ収集と使用
+GrokMediaDownloaderは、完全にクライアントサイドで動作する拡張機能です。お客様の個人データ、閲覧履歴、またはダウンロードされたコンテンツを収集、保存、または共有することはありません。すべての画像処理とダウンロード操作は、お客様のブラウザ上でローカルに行われます。
+
+2. 権限について
+要求する権限（「Storage」、「Downloads」、「Host Permissions」など）は、拡張機能の主要機能を実行するためにのみ使用されます：
+- 現在のGrokページを読み取り、メディアを検出するため。
+- メディアファイルをコンピュータに保存するため。
+- 設定（ライセンスステータス、履歴など）をローカルに保存するため。
+
+3. 第三者サービス
+支払いはLemon Squeezyを通じて処理されます。お客様のクレジットカード情報と取引データはLemon Squeezyによって直接処理・保護され、本拡張機能がお客様の機密性の高い財務情報に触れることはありません。
+
+4. ポリシーの更新
+当社は本プライバシーポリシーを随時変更する権利を留保します。変更がある場合は本ページにて更新されます。`,
+
+                legal_terms_title: "利用規約",
+                legal_terms_content: `1. 規約への同意
+GrokMediaDownloader（以下「本サービス」）をインストールして使用することにより、本規約に拘束されることに同意したものとみなされます。
+
+2. ライセンスと使用
+当社は、個人的かつ非商用目的で本サービスを使用するための、非独占的かつ譲渡不能な限定ライセンスをお客様に付与します。お客様は、拡張機能のリバースエンジニアリング、逆コンパイルを行わないことに同意するものとします。
+
+3. ユーザーの責任
+本ツールはダウンロードの利便性を提供するためのものです。ダウンロードしたコンテンツについては、お客様が全責任を負うものとします。お客様は、著作権を所有している、または使用権を持つメディアのみをダウンロードすることに同意するものとします。本サービスは、お客様によるダウンロードに起因するいかなる著作権紛争についても責任を負いません。
+
+4. 免責事項
+本サービスは「現状有姿」で提供され、いかなる保証も伴いません。当社は、本サービスにエラーがなく、中断されないことを保証しません。法律で認められる最大限の範囲において、当社は本サービスの使用に起因するデータの損失や損害について責任を負いません。
+
+5. 返金ポリシー
+Lemon Squeezyを通じて購入されたライセンスの返金ポリシーは、同プラットフォームの規定に従います。解決できない技術的な問題がある場合は、サポートまでご連絡ください。`
             }
         };
 
+        // --- Core Logic ---
         let currentLang = localStorage.getItem('site_lang') || 'zh-TW';
 
         function updateContent() {
@@ -592,32 +871,49 @@
             // Update HTML Lang Attribute
             document.documentElement.lang = currentLang;
 
-            // Update Toggle Button Text
-            const langText = currentLang === 'zh-TW' ? 'EN' : '中';
-            document.getElementById('lang-text').innerText = langText;
-            document.getElementById('lang-text-mobile').innerText = langText;
+            // Update Toggle Button Text based on CURRENT language
+            const displayMap = {
+                'zh-TW': '中',
+                'en': 'EN',
+                'ja': 'JP'
+            };
+            
+            const currentDisplay = displayMap[currentLang] || '中';
+            const langEl = document.getElementById('lang-text');
+            const langMobileEl = document.getElementById('lang-text-mobile');
+            if(langEl) langEl.innerText = currentDisplay;
+            if(langMobileEl) langMobileEl.innerText = currentDisplay;
         }
 
         function toggleLanguage() {
-            currentLang = currentLang === 'zh-TW' ? 'en' : 'zh-TW';
+            // Cycle: zh-TW -> en -> ja -> zh-TW
+            if (currentLang === 'zh-TW') {
+                currentLang = 'en';
+            } else if (currentLang === 'en') {
+                currentLang = 'ja';
+            } else {
+                currentLang = 'zh-TW';
+            }
+            
             localStorage.setItem('site_lang', currentLang);
             updateContent();
         }
 
-        // Initialize on load
-        window.addEventListener('DOMContentLoaded', updateContent);
-
-
-        // --- Existing Scripts ---
-        lucide.createIcons();
+        // --- Initialization ---
+        window.addEventListener('DOMContentLoaded', () => {
+            updateContent();
+            lucide.createIcons();
+        });
 
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        }
 
         // FAQ Toggle Logic
         const faqBtns = document.querySelectorAll('.faq-btn');
@@ -664,13 +960,81 @@
             }, 3000);
         }
 
+        // --- Contact Modal Logic ---
+        function openContactModal() {
+            const modal = document.getElementById('contact-modal');
+            modal.classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeContactModal() {
+            document.getElementById('contact-modal').classList.add('hidden');
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            // Show Loading
+            btn.innerHTML = '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>';
+            btn.disabled = true;
+
+            const formData = new FormData(e.target);
+
+            // Fetch to Formspree
+            fetch("https://formspree.io/f/xeodnlql", {
+                method: "POST",
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    showToast('toast_sent');
+                    closeContactModal();
+                    e.target.reset();
+                } else {
+                    showToast('toast_error');
+                }
+            }).catch(error => {
+                showToast('toast_error');
+                console.error('Error:', error);
+            }).finally(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            });
+        }
+
+        // --- Privacy & Terms Modal Logic ---
+        function openPrivacyModal() {
+            const modal = document.getElementById('privacy-modal');
+            modal.classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closePrivacyModal() {
+            document.getElementById('privacy-modal').classList.add('hidden');
+        }
+
+        function openTermsModal() {
+            const modal = document.getElementById('terms-modal');
+            modal.classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeTermsModal() {
+            document.getElementById('terms-modal').classList.add('hidden');
+        }
+
         // Simulate Chrome Store Install
         function openChromeStore() {
             showToast('toast_chrome');
             
             setTimeout(() => {
-                // Placeholder link - redirects to Chrome Web Store Extension Category
-                window.open('https://chrome.google.com/webstore/category/extensions', '_blank');
+                // Redirect to actual Chrome Web Store link
+                window.open('https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi', '_blank');
             }, 800);
         }
 

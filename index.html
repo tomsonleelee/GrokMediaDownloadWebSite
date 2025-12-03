@@ -117,6 +117,9 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-6">
+                    <a href="#new-feature"
+                        class="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors"
+                        data-i18n="nav_latest">最新功能</a>
                     <a href="#features" class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
                         data-i18n="nav_features">專業功能</a>
                     <a href="#how-to" class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
@@ -155,6 +158,9 @@
         <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 absolute w-full">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#new-feature"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-pink-400 hover:text-pink-300 hover:bg-slate-800"
+                    data-i18n="nav_latest">最新功能</a>
                 <a href="#features"
                     class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800"
                     data-i18n="nav_features">專業功能</a>
@@ -589,6 +595,19 @@
                     </div>
                 </div>
 
+                <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-slate-200" data-i18n="faq_5_q">免費版可以使用什麼功能？</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4"
+                        data-i18n="faq_5_a">
+                        免費版可以進行加入最愛的圖檔分析及下載，其他功能則需要 Pro 版才會提供。
+                    </div>
+                </div>
+
                 <!-- FAQ Item 4 (New) -->
                 <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
                     <button
@@ -734,6 +753,7 @@
         // --- Internationalization (i18n) Logic ---
         const translations = {
             "zh-TW": {
+                nav_latest: "最新功能",
                 nav_features: "專業功能",
                 nav_howto: "使用流程",
                 nav_pricing: "終身授權",
@@ -790,6 +810,8 @@
                 faq_3_a: "預設情況下紀錄存在瀏覽器本地。但身為 PRO 用戶，您可以使用 \"Export Data\" 功能將紀錄匯出為 JSON 檔，並在新電腦上使用 \"Import Data\" 恢復，完美銜接您的工作環境。",
                 faq_4_q: "終身授權的範圍是什麼？",
                 faq_4_a: "授權碼允許在一個 Chrome 帳號安裝使用，並允許最多 3 次重新安裝（例如更換電腦或重灌系統）。",
+                faq_5_q: "免費版可以使用什麼功能？",
+                faq_5_a: "免費版可以進行加入最愛的圖檔分析及下載，其他功能則需要 Pro 版才會提供。",
                 footer_privacy: "隱私權政策",
                 footer_terms: "服務條款",
                 footer_contact: "聯絡支援",
@@ -838,6 +860,7 @@
 透過 Lemon Squeezy 購買的授權，退款政策依循該平台規範。若遇技術問題無法解決，請聯繫支援團隊。`
             },
             "en": {
+                nav_latest: "Latest",
                 nav_features: "Features",
                 nav_howto: "How it works",
                 nav_pricing: "Lifetime",
@@ -894,6 +917,8 @@
                 faq_3_a: "By default, history is local. However, as a PRO user, you can use \"Export Data\" to save your history as a JSON file and \"Import Data\" on your new computer to restore your workflow seamlessly.",
                 faq_4_q: "What is the scope of the Lifetime License?",
                 faq_4_a: "The license allows installation on one Chrome account and grants up to 3 re-installations (e.g., for switching computers or reinstalling OS).",
+                faq_5_q: "What features are included in the Free version?",
+                faq_5_a: "The Free version allows you to analyze and download images from your favorites. Other advanced features require the Pro version.",
                 footer_privacy: "Privacy Policy",
                 footer_terms: "Terms of Service",
                 footer_contact: "Contact Support",
@@ -942,6 +967,7 @@ The Service is provided "AS IS" without warranties of any kind. We do not guaran
 Refunds for licenses purchased via Lemon Squeezy are subject to their platform policies. Please contact support for technical issues.`
             },
             "ja": {
+                nav_latest: "最新機能",
                 nav_features: "機能",
                 nav_howto: "使い方",
                 nav_pricing: "価格",
@@ -998,6 +1024,8 @@ Refunds for licenses purchased via Lemon Squeezy are subject to their platform p
                 faq_3_a: "デフォルトでは履歴はブラウザ内に保存されます。しかしPROユーザーなら、Export DataでJSONファイルとして書き出し、新しいパソコンでImport Dataすることで、作業環境を完全に引き継げます。",
                 faq_4_q: "永久ライセンスの範囲は何ですか？",
                 faq_4_a: "ライセンスは1つのChromeアカウントでの利用を許可し、最大3回までの再インストール（PCの買い替えなど）が可能です。",
+                faq_5_q: "無料版では何ができますか？",
+                faq_5_a: "無料版では、お気に入りの画像の分析とダウンロードが可能です。その他の機能はPro版でのみ提供されます。",
                 footer_privacy: "プライバシーポリシー",
                 footer_terms: "利用規約",
                 footer_contact: "サポートへ連絡",

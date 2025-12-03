@@ -1,17 +1,65 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6YPN8563C6');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrokMediaDownloader - Grok Media Batch Downloader | PRO</title>
-    <meta name="description" content="Automated media management tool for Grok creators. Supports date filtering, batch list generation, and history tracking.">
-    
+    <meta name="description"
+        content="Automated media management tool for Grok creators. Supports date filtering, batch list generation, and history tracking.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/">
+    <meta property="og:title" content="GrokMediaDownloader - Grok Media Batch Downloader | PRO">
+    <meta property="og:description"
+        content="Automated media management tool for Grok creators. Supports date filtering, batch list generation, and history tracking.">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://grokmedia.kario-studio.com/">
+    <meta property="twitter:title" content="GrokMediaDownloader - Grok Media Batch Downloader | PRO">
+    <meta property="twitter:description"
+        content="Automated media management tool for Grok creators. Supports date filtering, batch list generation, and history tracking.">
+    <meta property="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "GrokMediaDownloader",
+      "operatingSystem": "Chrome Extension",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "2.99",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -20,7 +68,7 @@
             font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
             scroll-behavior: smooth;
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
             -webkit-background-clip: text;
@@ -35,18 +83,22 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
-            background: #0f172a; 
+            background: #0f172a;
         }
+
         ::-webkit-scrollbar-thumb {
-            background: #334155; 
+            background: #334155;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
-            background: #475569; 
+            background: #475569;
         }
     </style>
 </head>
+
 <body class="bg-slate-950 text-slate-50 antialiased selection:bg-pink-500 selection:text-white">
 
     <!-- Navigation -->
@@ -55,26 +107,34 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <div class="w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-pink-500/20">
+                    <div
+                        class="w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-pink-500/20">
                         <i data-lucide="download" class="text-white w-5 h-5"></i>
                     </div>
-                    <span class="font-bold text-xl tracking-tight">GrokMedia<span class="text-pink-400">Downloader</span></span>
+                    <span class="font-bold text-xl tracking-tight">GrokMedia<span
+                            class="text-pink-400">Downloader</span></span>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-6">
-                    <a href="#features" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_features">專業功能</a>
-                    <a href="#how-to" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_howto">使用流程</a>
-                    <a href="#pricing" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_pricing">終身授權</a>
-                    <a href="#faq" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_faq">常見問題</a>
-                    
+                    <a href="#features" class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                        data-i18n="nav_features">專業功能</a>
+                    <a href="#how-to" class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                        data-i18n="nav_howto">使用流程</a>
+                    <a href="#pricing" class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                        data-i18n="nav_pricing">終身授權</a>
+                    <a href="#faq" class="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                        data-i18n="nav_faq">常見問題</a>
+
                     <!-- Language Toggle -->
-                    <button onclick="toggleLanguage()" class="flex items-center gap-1 text-sm font-medium text-slate-400 hover:text-white transition-colors px-2">
+                    <button onclick="toggleLanguage()"
+                        class="flex items-center gap-1 text-sm font-medium text-slate-400 hover:text-white transition-colors px-2">
                         <i data-lucide="globe" class="w-4 h-4"></i>
                         <span id="lang-text">EN</span>
                     </button>
 
-                    <button onclick="openLemonSqueezy()" class="bg-white text-slate-900 hover:bg-slate-200 px-5 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 shadow-lg shadow-white/10 flex items-center gap-2">
+                    <button onclick="openLemonSqueezy()"
+                        class="bg-white text-slate-900 hover:bg-slate-200 px-5 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 shadow-lg shadow-white/10 flex items-center gap-2">
                         <span data-i18n="nav_cta">獲取 PRO 授權</span>
                         <i data-lucide="zap" class="w-4 h-4 fill-current text-yellow-500"></i>
                     </button>
@@ -95,13 +155,21 @@
         <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 absolute w-full">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800" data-i18n="nav_features">專業功能</a>
-                <a href="#how-to" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800" data-i18n="nav_howto">使用流程</a>
-                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800" data-i18n="nav_pricing">終身授權</a>
-                <button onclick="openLemonSqueezy()" class="w-full mt-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white px-5 py-3 rounded-lg text-base font-bold flex items-center justify-center gap-2">
+                <a href="#features"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800"
+                    data-i18n="nav_features">專業功能</a>
+                <a href="#how-to"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800"
+                    data-i18n="nav_howto">使用流程</a>
+                <a href="#pricing"
+                    class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800"
+                    data-i18n="nav_pricing">終身授權</a>
+                <button onclick="openLemonSqueezy()"
+                    class="w-full mt-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white px-5 py-3 rounded-lg text-base font-bold flex items-center justify-center gap-2">
                     <span data-i18n="nav_buy_now">立即購買 PRO</span>
                 </button>
-                <button onclick="openChromeStore()" class="w-full mt-2 bg-blue-600 text-white px-5 py-3 rounded-lg text-base font-bold flex items-center justify-center gap-2">
+                <button onclick="openChromeStore()"
+                    class="w-full mt-2 bg-blue-600 text-white px-5 py-3 rounded-lg text-base font-bold flex items-center justify-center gap-2">
                     <span data-i18n="hero_cta_chrome">加到 Chrome</span>
                 </button>
             </div>
@@ -111,35 +179,39 @@
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div class="absolute inset-0 hero-glow"></div>
-        
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Text Content -->
                 <div class="text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v1.1.0 重大更新 | 支援影片與圖片</span>
+                        <span data-i18n="hero_badge">v1.3.1 重大更新 | 支援HD影片同時下載</span>
                     </div>
-                    
+
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
                         <span data-i18n="hero_title_1">全自動化 Grok</span> <br>
                         <span class="text-pink-500" data-i18n="hero_title_2">媒體資產管理</span>
                     </h1>
-                    
+
                     <p class="text-lg text-slate-400 mb-8 leading-relaxed">
-                        <span data-i18n="hero_desc">不只是下載器，更是您的創作資料庫。GrokMediaDownloader 提供日期過濾、批量清單生成與歷史紀錄追蹤。別再手動另存，讓專業工具接手您的工作流。</span>
+                        <span data-i18n="hero_desc">不只是下載器，更是您的創作資料庫。GrokMediaDownloader
+                            提供日期過濾、批量清單生成與歷史紀錄追蹤。別再手動另存，讓專業工具接手您的工作流。</span>
                     </p>
-                    
+
                     <!-- Modified CTA Buttons Group -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
                         <!-- Add to Chrome Button (New) -->
-                        <button onclick="openChromeStore()" class="group relative px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-lg shadow-xl shadow-blue-600/20 transition-all transform hover:-translate-y-1 overflow-hidden flex items-center justify-center gap-2">
+                        <button onclick="openChromeStore()"
+                            class="group relative px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-lg shadow-xl shadow-blue-600/20 transition-all transform hover:-translate-y-1 overflow-hidden flex items-center justify-center gap-2">
                             <i data-lucide="chrome" class="w-5 h-5"></i>
                             <span data-i18n="hero_cta_chrome">加到 Chrome</span>
                         </button>
-                        
+
                         <!-- Get PRO Button -->
-                        <button onclick="openLemonSqueezy()" class="group relative px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg shadow-xl shadow-purple-600/20 transition-all transform hover:-translate-y-1 overflow-hidden flex items-center justify-center gap-2">
+                        <button onclick="openLemonSqueezy()"
+                            class="group relative px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg shadow-xl shadow-purple-600/20 transition-all transform hover:-translate-y-1 overflow-hidden flex items-center justify-center gap-2">
                             <i data-lucide="zap" class="w-5 h-5"></i>
                             <span data-i18n="hero_cta_primary">獲取 PRO 終身版</span>
                         </button>
@@ -147,12 +219,13 @@
 
                     <!-- How it works Link (Moved) -->
                     <div class="text-center lg:text-left mb-8">
-                        <a href="#how-to" class="text-slate-400 hover:text-white hover:underline decoration-slate-600 underline-offset-4 text-sm font-medium transition-colors flex items-center justify-center lg:justify-start gap-1">
+                        <a href="#how-to"
+                            class="text-slate-400 hover:text-white hover:underline decoration-slate-600 underline-offset-4 text-sm font-medium transition-colors flex items-center justify-center lg:justify-start gap-1">
                             <i data-lucide="help-circle" class="w-4 h-4"></i>
                             <span data-i18n="hero_cta_secondary">如何運作?</span>
                         </a>
                     </div>
-                    
+
                     <div class="mt-8 flex items-center justify-center lg:justify-start gap-6 text-sm text-slate-500">
                         <div class="flex items-center gap-2">
                             <i data-lucide="shield-check" class="w-4 h-4 text-green-500"></i>
@@ -169,9 +242,10 @@
                 <div class="relative mx-auto w-full max-w-md perspective-1000">
                     <!-- Glow Effect -->
                     <div class="absolute -inset-4 bg-pink-500/20 blur-3xl rounded-full"></div>
-                    
+
                     <!-- The Extension Window Mockup -->
-                    <div class="relative bg-white rounded-xl shadow-2xl overflow-hidden border border-slate-200 text-slate-800 transform rotate-y-6 rotate-x-6 hover:rotate-0 transition-all duration-700">
+                    <div
+                        class="relative bg-white rounded-xl shadow-2xl overflow-hidden border border-slate-200 text-slate-800 transform rotate-y-6 rotate-x-6 hover:rotate-0 transition-all duration-700">
                         <!-- Extension Header -->
                         <div class="bg-white border-b border-gray-100 p-4 flex items-center gap-2">
                             <i data-lucide="clapperboard" class="w-6 h-6 text-slate-800"></i>
@@ -222,25 +296,71 @@
                                     </label>
                                 </div>
                                 <div class="relative mb-3">
-                                    <input type="text" value="2024 / 01 / 01" class="w-full bg-white border border-gray-300 rounded px-2 py-1.5 text-xs text-gray-500" disabled>
+                                    <input type="text" value="2024 / 01 / 01"
+                                        class="w-full bg-white border border-gray-300 rounded px-2 py-1.5 text-xs text-gray-500"
+                                        disabled>
                                     <span class="absolute right-2 top-1.5 text-[10px] text-gray-400">Only after</span>
                                 </div>
 
                                 <!-- Main Buttons -->
-                                <button class="w-full bg-[#2563EB] hover:bg-blue-600 text-white font-bold py-2 rounded mb-2 text-sm shadow-sm transition-colors">
+                                <button
+                                    class="w-full bg-[#2563EB] hover:bg-blue-600 text-white font-bold py-2 rounded mb-2 text-sm shadow-sm transition-colors">
                                     1. Generate List
                                 </button>
-                                <button class="w-full bg-[#86EFAC] hover:bg-green-400 text-green-900 font-bold py-2 rounded text-sm shadow-sm transition-colors border border-green-300">
+                                <button
+                                    class="w-full bg-[#86EFAC] hover:bg-green-400 text-green-900 font-bold py-2 rounded text-sm shadow-sm transition-colors border border-green-300">
                                     2. Start Download
                                 </button>
                             </div>
-                            
+
                             <!-- Path Info (Snapshot 3) -->
                             <div class="text-[10px] text-center text-gray-400">
                                 <div>📁 Images: grok_downloads/images/</div>
                                 <div>v1.1.0 | Supports Images & Videos</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Feature Section: Steam Capture -->
+    <section id="new-feature" class="py-24 bg-slate-950 relative border-t border-slate-800 overflow-hidden">
+        <div class="absolute inset-0 bg-pink-500/5 radial-gradient-center"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                        <span data-i18n="new_feat_badge">v1.3.0 最新功能</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        <span data-i18n="new_feat_title">Steam Capture 串流擷取</span>
+                    </h2>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="new_feat_desc">
+                        啟動此功能後，系統將主動偵測 Grok 的圖片生成。當您滾動畫面時，新產生的圖片會被自動暫存。按下下載按鈕後，系統將自動建立目錄並一次下載所有暫存圖片，讓您的創作流程不中斷。
+                    </p>
+                    <button onclick="openChromeStore()"
+                        class="group relative px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-all flex items-center gap-2 border border-slate-700">
+                        <span data-i18n="new_feat_cta">立即體驗</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- Video Content -->
+                <div class="order-1 lg:order-2 relative">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-pink-500/20 to-purple-600/20 blur-2xl rounded-3xl">
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-900">
+                        <video autoplay loop muted playsinline class="w-full h-auto">
+                            <source src="assets/steamcapture.mov" type="video/quicktime">
+                            <source src="assets/steamcapture.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                 </div>
             </div>
@@ -258,10 +378,12 @@
                 <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="feat_desc">基於真實使用者反饋，我們構建了最強大的 Grok 媒體管理系統。</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Feature 1 -->
-                <div class="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/10 group">
-                    <div class="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition-colors">
+                <div
+                    class="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/10 group">
+                    <div
+                        class="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition-colors">
                         <i data-lucide="list-checks" class="text-pink-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_1_title">智慧清單生成 (Generate List)</h3>
@@ -271,8 +393,10 @@
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/10 group">
-                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
+                <div
+                    class="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/10 group">
+                    <div
+                        class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition-colors">
                         <i data-lucide="calendar-clock" class="text-purple-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_2_title">日期與歷程過濾 (PRO)</h3>
@@ -282,13 +406,28 @@
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 group">
-                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
+                <div
+                    class="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 group">
+                    <div
+                        class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-500/20 transition-colors">
                         <i data-lucide="database" class="text-blue-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_3_title">數據管理與備份 (PRO)</h3>
                     <p class="text-slate-400 leading-relaxed" data-i18n="feat_3_desc">
                         更換電腦也不怕遺失紀錄。透過 Export/Import Data 功能，您可以輕鬆備份或轉移您的下載歷程資料庫。
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-red-500/50 transition-all hover:shadow-lg hover:shadow-red-500/10 group">
+                    <div
+                        class="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-red-500/20 transition-colors">
+                        <i data-lucide="trash-2" class="text-red-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_4_title">批量清理 (Bulk Remove)</h3>
+                    <p class="text-slate-400 leading-relaxed" data-i18n="feat_4_desc">
+                        下載完成後想清理空間？Bulk Remove 讓您能依照日期範圍，批量移除 Grok 上已收藏的舊圖片與影片，保持媒體庫整潔。
                     </p>
                 </div>
             </div>
@@ -345,11 +484,13 @@
             </div>
 
             <div class="max-w-lg mx-auto">
-                <div class="relative p-8 bg-slate-900 border border-pink-500/30 rounded-3xl shadow-2xl overflow-hidden group hover:border-pink-500/60 transition-colors">
-                    <div class="absolute top-0 right-0 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg shadow-lg">
+                <div
+                    class="relative p-8 bg-slate-900 border border-pink-500/30 rounded-3xl shadow-2xl overflow-hidden group hover:border-pink-500/60 transition-colors">
+                    <div
+                        class="absolute top-0 right-0 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg shadow-lg">
                         LIFETIME DEAL
                     </div>
-                    
+
                     <div class="text-center mb-8">
                         <h3 class="text-xl font-medium text-slate-300 mb-2" data-i18n="price_card_title">PRO 終身授權</h3>
                         <div class="flex justify-center items-baseline gap-1">
@@ -376,17 +517,18 @@
                             <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
                             <span data-i18n="price_feat_4">無限量下載圖片與影片</span>
                         </div>
-                         <div class="flex items-center gap-3 text-slate-300">
+                        <div class="flex items-center gap-3 text-slate-300">
                             <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
                             <span data-i18n="price_feat_5">下載歷程追蹤 (防止重複)</span>
                         </div>
                     </div>
 
-                    <button onclick="openLemonSqueezy()" class="w-full py-4 bg-white text-slate-900 hover:bg-slate-200 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-white/10">
+                    <button onclick="openLemonSqueezy()"
+                        class="w-full py-4 bg-white text-slate-900 hover:bg-slate-200 rounded-xl font-bold text-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-white/10">
                         <span data-i18n="price_cta">立即啟用 PRO</span>
                         <i data-lucide="key" class="w-5 h-5"></i>
                     </button>
-                    
+
                     <p class="text-center text-xs text-slate-500 mt-4 flex items-center justify-center gap-1">
                         <i data-lucide="lock" class="w-3 h-3"></i>
                         <span data-i18n="price_secure">透過 Lemon Squeezy 安全支付，即時發送序號</span>
@@ -400,48 +542,64 @@
     <section id="faq" class="py-24 bg-slate-900/30 border-t border-slate-800">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center" data-i18n="faq_title">常見問題</h2>
-            
+
             <div class="space-y-4">
                 <!-- FAQ Item 1 -->
                 <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
                         <span class="font-medium text-slate-200" data-i18n="faq_1_q">Generate List 按鈕是做什麼的？</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4">
-                        <span data-i18n="faq_1_a_1">這是一個智慧掃描功能。在 Grok/Imagine/我的最愛 (</span><a href="https://grok.com/imagine/favorites" target="_blank" class="text-pink-400 hover:underline">https://grok.com/imagine/favorites</a><span data-i18n="faq_1_a_2">) 點擊後，Extension 會讀取目前的 Grok 頁面，找出所有圖片與影片，並自動過濾掉您之前已經下載過的檔案（基於 History），生成一份「待下載清單」，確保您不會重複下載浪費時間。</span>
+                        <span data-i18n="faq_1_a_1">這是一個智慧掃描功能。在 Grok/Imagine/我的最愛 (</span><a
+                            href="https://grok.com/imagine/favorites" target="_blank"
+                            class="text-pink-400 hover:underline">https://grok.com/imagine/favorites</a><span
+                            data-i18n="faq_1_a_2">) 點擊後，Extension 會讀取目前的 Grok 頁面，找出所有圖片與影片，並自動過濾掉您之前已經下載過的檔案（基於
+                            History），生成一份「待下載清單」，確保您不會重複下載浪費時間。</span>
                     </div>
                 </div>
 
                 <!-- FAQ Item 2 -->
                 <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
                         <span class="font-medium text-slate-200" data-i18n="faq_2_q">什麼是 "Only after" 日期過濾？</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4" data-i18n="faq_2_a">
+                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4"
+                        data-i18n="faq_2_a">
                         這是 PRO 版的獨家功能。當您的頁面上累積了數千張圖片時，您可能只想下載「今天」或「本週」生成的新圖。設定日期後，舊的媒體將被自動略過。
                     </div>
                 </div>
 
                 <!-- FAQ Item 3 -->
                 <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
                         <span class="font-medium text-slate-200" data-i18n="faq_3_q">我換了電腦，下載紀錄 (History) 還在嗎？</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4" data-i18n="faq_3_a">
-                        預設情況下紀錄存在瀏覽器本地。但身為 PRO 用戶，您可以使用 "Export Data" 功能將紀錄匯出為 JSON 檔，並在新電腦上使用 "Import Data" 恢復，完美銜接您的工作環境。
+                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4"
+                        data-i18n="faq_3_a">
+                        預設情況下紀錄存在瀏覽器本地。但身為 PRO 用戶，您可以使用 "Export Data" 功能將紀錄匯出為 JSON 檔，並在新電腦上使用 "Import Data"
+                        恢復，完美銜接您的工作環境。
                     </div>
                 </div>
 
                 <!-- FAQ Item 4 (New) -->
                 <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
-                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
                         <span class="font-medium text-slate-200" data-i18n="faq_4_q">終身授權的範圍是什麼？</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
                     </button>
-                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4" data-i18n="faq_4_a">
+                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4"
+                        data-i18n="faq_4_a">
                         授權碼允許在一個 Chrome 帳號安裝使用，並允許最多 3 次重新安裝（例如更換電腦或重灌系統）。
                     </div>
                 </div>
@@ -451,20 +609,24 @@
 
     <!-- Footer -->
     <footer class="bg-slate-950 border-t border-slate-900 py-12 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
                 <div class="w-6 h-6 bg-pink-600 rounded flex items-center justify-center">
                     <i data-lucide="download" class="text-white w-3 h-3"></i>
                 </div>
                 <span class="font-bold text-slate-300">GrokMedia<span class="text-pink-400">Downloader</span></span>
             </div>
-            
+
             <div class="flex gap-6 text-slate-500">
-                <button onclick="openPrivacyModal()" class="hover:text-white transition-colors focus:outline-none" data-i18n="footer_privacy">隱私權政策</button>
-                <button onclick="openTermsModal()" class="hover:text-white transition-colors focus:outline-none" data-i18n="footer_terms">服務條款</button>
-                <button onclick="openContactModal()" class="hover:text-white transition-colors focus:outline-none" data-i18n="footer_contact">聯絡支援</button>
+                <button onclick="openPrivacyModal()" class="hover:text-white transition-colors focus:outline-none"
+                    data-i18n="footer_privacy">隱私權政策</button>
+                <button onclick="openTermsModal()" class="hover:text-white transition-colors focus:outline-none"
+                    data-i18n="footer_terms">服務條款</button>
+                <button onclick="openContactModal()" class="hover:text-white transition-colors focus:outline-none"
+                    data-i18n="footer_contact">聯絡支援</button>
             </div>
-            
+
             <div class="text-slate-600">
                 &copy; 2025 Kario LLC. All rights reserved.
             </div>
@@ -475,7 +637,7 @@
     <div id="contact-modal" class="fixed inset-0 z-[100] hidden">
         <!-- Backdrop -->
         <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeContactModal()"></div>
-        
+
         <!-- Modal Content -->
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-4">
             <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative">
@@ -487,28 +649,35 @@
                 <div class="p-6">
                     <h3 class="text-2xl font-bold mb-2 text-white" data-i18n="contact_title">聯絡支援</h3>
                     <p class="text-slate-400 text-sm mb-6" data-i18n="contact_desc">有任何問題或建議？請填寫下表，我們會盡快回覆。</p>
-                    
+
                     <!-- Form linked to Formspree -->
                     <form onsubmit="handleContactSubmit(event)" class="space-y-4">
                         <div>
-                            <label class="block text-xs font-bold text-slate-400 mb-1 uppercase" data-i18n="contact_name">姓名</label>
+                            <label class="block text-xs font-bold text-slate-400 mb-1 uppercase"
+                                data-i18n="contact_name">姓名</label>
                             <!-- Added name="name" -->
-                            <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-xs font-bold text-slate-400 mb-1 uppercase" data-i18n="contact_email">Email</label>
-                            <!-- Added name="email" -->
-                            <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
-                        </div>
-                        
-                        <div>
-                            <label class="block text-xs font-bold text-slate-400 mb-1 uppercase" data-i18n="contact_message">訊息內容</label>
-                            <!-- Added name="message" -->
-                            <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"></textarea>
+                            <input type="text" name="name" required
+                                class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
                         </div>
 
-                        <button type="submit" class="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold py-3 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 mb-1 uppercase"
+                                data-i18n="contact_email">Email</label>
+                            <!-- Added name="email" -->
+                            <input type="email" name="email" required
+                                class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-400 mb-1 uppercase"
+                                data-i18n="contact_message">訊息內容</label>
+                            <!-- Added name="message" -->
+                            <textarea name="message" rows="4" required
+                                class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold py-3 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
                             <span data-i18n="contact_btn">送出訊息</span>
                             <i data-lucide="send" class="w-4 h-4"></i>
                         </button>
@@ -522,13 +691,16 @@
     <div id="privacy-modal" class="fixed inset-0 z-[100] hidden">
         <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closePrivacyModal()"></div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4">
-            <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative max-h-[80vh] flex flex-col">
-                <button onclick="closePrivacyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white z-10">
+            <div
+                class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative max-h-[80vh] flex flex-col">
+                <button onclick="closePrivacyModal()"
+                    class="absolute top-4 right-4 text-slate-400 hover:text-white z-10">
                     <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
                 <div class="p-6 overflow-y-auto custom-scrollbar">
                     <h3 class="text-2xl font-bold mb-4 text-white" data-i18n="legal_privacy_title">隱私權政策</h3>
-                    <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line" data-i18n="legal_privacy_content">
+                    <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line"
+                        data-i18n="legal_privacy_content">
                         <!-- Content injected via JS -->
                     </div>
                 </div>
@@ -540,13 +712,15 @@
     <div id="terms-modal" class="fixed inset-0 z-[100] hidden">
         <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeTermsModal()"></div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4">
-            <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative max-h-[80vh] flex flex-col">
+            <div
+                class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative max-h-[80vh] flex flex-col">
                 <button onclick="closeTermsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white z-10">
                     <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
                 <div class="p-6 overflow-y-auto custom-scrollbar">
                     <h3 class="text-2xl font-bold mb-4 text-white" data-i18n="legal_terms_title">服務條款</h3>
-                    <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line" data-i18n="legal_terms_content">
+                    <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line"
+                        data-i18n="legal_terms_content">
                         <!-- Content injected via JS -->
                     </div>
                 </div>
@@ -567,7 +741,11 @@
                 nav_faq: "常見問題",
                 nav_cta: "獲取 PRO 授權",
                 nav_buy_now: "立即購買 PRO",
-                hero_badge: "v1.1.0 重大更新 | 支援影片與圖片",
+                new_feat_badge: "v1.3.0 最新功能",
+                new_feat_title: "Steam Capture 串流擷取",
+                new_feat_desc: "啟動此功能後，系統將主動偵測 Grok 的圖片生成。當您滾動畫面時，新產生的圖片會被自動暫存。按下下載按鈕後，系統將自動建立目錄並一次下載所有暫存圖片，讓您的創作流程不中斷。",
+                new_feat_cta: "立即體驗",
+                hero_badge: "v1.3.1 重大更新 | 支援HD影片同時下載",
                 hero_title_1: "全自動化 Grok",
                 hero_title_2: "媒體資產管理",
                 hero_desc: "不只是下載器，更是您的創作資料庫。GrokMediaDownloader 提供日期過濾、批量清單生成與歷史紀錄追蹤。別再手動另存，讓專業工具接手您的工作流。",
@@ -585,6 +763,8 @@
                 feat_2_desc: "只想下載今天的作品？使用 Date Filter 指定日期範圍。系統還會自動比對 Download History，避免重複下載相同的檔案。",
                 feat_3_title: "數據管理與備份 (PRO)",
                 feat_3_desc: "更換電腦也不怕遺失紀錄。透過 Export/Import Data 功能，您可以輕鬆備份或轉移您的下載歷程資料庫。",
+                feat_4_title: "批量清理 (Bulk Remove)",
+                feat_4_desc: "下載完成後想清理空間？Bulk Remove 讓您能依照日期範圍，批量移除 Grok 上已收藏的舊圖片與影片，保持媒體庫整潔。",
                 step_title: "簡單三步驟，自動化您的下載",
                 step_1_title: "設定過濾條件",
                 step_1_desc: "開啟 Extension 面板，選擇您要下載的媒體類型（Images/Videos）。若是 PRO 用戶，可設定 \"Only after\" 日期過濾器。",
@@ -665,7 +845,11 @@
                 nav_faq: "FAQ",
                 nav_cta: "Get PRO",
                 nav_buy_now: "Buy PRO Now",
-                hero_badge: "v1.1.0 Major Update | Supports Videos & Images",
+                new_feat_badge: "v1.3.0 LATEST FEATURE",
+                new_feat_title: "Steam Capture",
+                new_feat_desc: "Activate this feature to actively detect Grok image generation. As you scroll and new images are created, they are automatically cached. Click the download button to create a folder and download all cached images at once, ensuring an uninterrupted creative flow.",
+                new_feat_cta: "Try it now",
+                hero_badge: "v1.3.1 Major Update | Supports HD Video Batch Download",
                 hero_title_1: "Automated Grok",
                 hero_title_2: "Media Asset Mgmt",
                 hero_desc: "Not just a downloader, but your creative database. GrokMediaDownloader offers date filtering, batch list generation, and history tracking. Stop saving manually, let professional tools handle your workflow.",
@@ -683,6 +867,8 @@
                 feat_2_desc: "Only want today's creations? Use Date Filter to specify a range. The system also checks Download History to prevent duplicate downloads of the same files.",
                 feat_3_title: "Data Mgmt & Backup (PRO)",
                 feat_3_desc: "Don't lose history when switching computers. Use Export/Import Data features to easily backup or transfer your download history database.",
+                feat_4_title: "Bulk Remove (PRO)",
+                feat_4_desc: "Clean up your Grok favorites after downloading. Bulk Remove allows you to delete old images and videos by date range, keeping your library organized and clutter-free.",
                 step_title: "3 Simple Steps to Automate",
                 step_1_title: "Set Filter Conditions",
                 step_1_desc: "Open the Extension panel, select media types (Images/Videos). PRO users can set the \"Only after\" date filter.",
@@ -763,7 +949,11 @@ Refunds for licenses purchased via Lemon Squeezy are subject to their platform p
                 nav_faq: "FAQ",
                 nav_cta: "PROを入手",
                 nav_buy_now: "今すぐPROを購入",
-                hero_badge: "v1.1.0 大型アップデート | 動画と画像に対応",
+                new_feat_badge: "v1.3.0 最新機能",
+                new_feat_title: "Steam Capture (ストリームキャプチャ)",
+                new_feat_desc: "この機能を有効にすると、Grokの画像生成を能動的に検出します。スクロールして新しい画像が生成されると、自動的にキャッシュされます。ダウンロードボタンを押すと、フォルダが作成され、キャッシュされたすべての画像が一括ダウンロードされます。",
+                new_feat_cta: "今すぐ試す",
+                hero_badge: "v1.3.1 大型アップデート | HD動画の一括ダウンロードに対応",
                 hero_title_1: "Grokを完全自動化",
                 hero_title_2: "メディア資産管理",
                 hero_desc: "単なるダウンローダーではなく、クリエイターのためのデータベースです。GrokMediaDownloaderは日付フィルタ、一括リスト生成、履歴追跡を提供します。手動保存はやめて、プロ用ツールにワークフローを任せましょう。",
@@ -781,6 +971,8 @@ Refunds for licenses purchased via Lemon Squeezy are subject to their platform p
                 feat_2_desc: "今週の作品だけ欲しい？Date Filterで範囲を指定。システムはDownload Historyも自動照合し、同じファイルの重複ダウンロードを防ぎます。",
                 feat_3_title: "データ管理とバックアップ (PRO)",
                 feat_3_desc: "パソコンを買い替えても履歴は消えません。Export/Import Data機能で、ダウンロード履歴データベースを簡単にバックアップ・移行できます。",
+                feat_4_title: "一括削除 (Bulk Remove)",
+                feat_4_desc: "ダウンロード後の整理に。Bulk Removeを使用すると、日付範囲を指定してGrokのお気に入りから古い画像や動画を一括削除でき、ライブラリを常に整理された状態に保てます。",
                 step_title: "自動化への3ステップ",
                 step_1_title: "条件を設定",
                 step_1_desc: "パネルを開き、メディアタイプ（Images/Videos）を選択。PROユーザーは「Only after」日付フィルターを設定できます。",
@@ -877,12 +1069,12 @@ Lemon Squeezyを通じて購入されたライセンスの返金ポリシーは�
                 'en': 'EN',
                 'ja': 'JP'
             };
-            
+
             const currentDisplay = displayMap[currentLang] || '中';
             const langEl = document.getElementById('lang-text');
             const langMobileEl = document.getElementById('lang-text-mobile');
-            if(langEl) langEl.innerText = currentDisplay;
-            if(langMobileEl) langMobileEl.innerText = currentDisplay;
+            if (langEl) langEl.innerText = currentDisplay;
+            if (langMobileEl) langMobileEl.innerText = currentDisplay;
         }
 
         function toggleLanguage() {
@@ -894,7 +1086,7 @@ Lemon Squeezyを通じて購入されたライセンスの返金ポリシーは�
             } else {
                 currentLang = 'zh-TW';
             }
-            
+
             localStorage.setItem('site_lang', currentLang);
             updateContent();
         }
@@ -917,14 +1109,14 @@ Lemon Squeezyを通じて購入されたライセンスの返金ポリシーは�
 
         // FAQ Toggle Logic
         const faqBtns = document.querySelectorAll('.faq-btn');
-        
+
         faqBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const content = btn.nextElementSibling;
                 const icon = btn.querySelector('svg') || btn.querySelector('i');
-                
+
                 content.classList.toggle('hidden');
-                
+
                 if (icon) {
                     if (content.classList.contains('hidden')) {
                         icon.style.transform = 'rotate(0deg)';
@@ -938,7 +1130,7 @@ Lemon Squeezyを通じて購入されたライセンスの返金ポリシーは�
         // Toast Notification Logic
         function showToast(messageKey) {
             const message = translations[currentLang][messageKey] || messageKey; // Support key or direct text
-            
+
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
             toast.className = 'bg-slate-800 border border-slate-700 text-white px-6 py-4 rounded-lg shadow-2xl flex items-center gap-3 transform transition-all duration-300 translate-y-10 opacity-0';
@@ -946,7 +1138,7 @@ Lemon Squeezyを通じて購入されたライセンスの返金ポリシーは�
                 <i data-lucide="shopping-cart" class="text-pink-400 w-5 h-5"></i>
                 <span>${message}</span>
             `;
-            
+
             container.appendChild(toast);
             lucide.createIcons();
 
@@ -973,10 +1165,10 @@ Lemon Squeezyを通じて購入されたライセンスの返金ポリシーは�
 
         function handleContactSubmit(e) {
             e.preventDefault();
-            
+
             const btn = e.target.querySelector('button');
             const originalText = btn.innerHTML;
-            
+
             // Show Loading
             btn.innerHTML = '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>';
             btn.disabled = true;
@@ -1031,7 +1223,7 @@ Lemon Squeezyを通じて購入されたライセンスの返金ポリシーは�
         // Simulate Chrome Store Install
         function openChromeStore() {
             showToast('toast_chrome');
-            
+
             setTimeout(() => {
                 // Redirect to actual Chrome Web Store link
                 window.open('https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi', '_blank');
@@ -1041,11 +1233,12 @@ Lemon Squeezyを通じて購入されたライセンスの返金ポリシーは�
         // Simulate Lemon Squeezy Checkout
         function openLemonSqueezy() {
             showToast('toast_checkout');
-            
+
             setTimeout(() => {
                 window.open('https://kariostudio.lemonsqueezy.com/buy/4c60a74b-e0ea-4522-a989-d1d1aac08927', '_blank');
             }, 800);
         }
     </script>
 </body>
+
 </html>

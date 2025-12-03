@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://grokmedia.kario-studio.com/sitemap.xml

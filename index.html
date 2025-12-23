@@ -15,8 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grok 圖片下載器 | GrokMediaDownloader - Best Grok AI Image & Video Batch Downloader</title>
     <meta name="description"
-        content="GrokMediaDownloader - 最強 Grok AI 圖片下載器 | Best Grok Image Downloader | Grok画像ダウンローダー。支援批量下載、Stream Capture 串流擷取。一括ダウンロード、ストリームキャプチャ対応。">
-    <meta name="keywords" content="Grok downloader, Grok image downloader, Grok AI downloader, Grok 下載器, Grok 圖片下載, Grok 影片下載, X AI image saver, Grok media download, Chrome extension, batch download, Stream Capture, 串流擷取, Grok stream capture, auto capture Grok images, Grok画像ダウンロード, Grok動画ダウンロード, Grokダウンローダー, ストリームキャプチャ, 一括ダウンロード">
+        content="GrokMediaDownloader - 最強 Grok AI 圖片下載器 | Best Grok Image Downloader | Grok画像ダウンローダー。支援批量下載、Stream Capture 串流擷取、HD 畫質升級。一括ダウンロード、ストリームキャプチャ、HD画質アップグレード対応。">
+    <meta name="keywords"
+        content="Grok downloader, Grok image downloader, Grok AI downloader, Grok 下載器, Grok 圖片下載, Grok 影片下載, X AI image saver, Grok media download, Chrome extension, batch download, Stream Capture, 串流擷取, HD Upgrade, HD畫質, Grok stream capture, auto capture Grok images, Grok画像ダウンロード, Grok動画ダウンロード, Grokダウンローダー, ストリームキャプチャ, 一括ダウンロード, HD画質アップグレード">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Kario Studio">
     <meta name="googlebot" content="index, follow">
@@ -61,10 +62,10 @@
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "1.3.1",
+      "softwareVersion": "1.3.3",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "screenshot": "https://grokmedia.kario-studio.com/assets/og-image.jpg",
-      "featureList": ["Batch Download", "Date Filter", "History Tracking", "Video Support", "Stream Capture"],
+      "featureList": ["Batch Download", "Date Filter", "History Tracking", "Video Support", "Stream Capture", "HD Upgrade"],
       "offers": {
         "@type": "Offer",
         "price": "2.99",
@@ -294,7 +295,7 @@
                     <div
                         class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v1.3.1 重大更新 | 支援HD影片同時下載</span>
+                        <span data-i18n="hero_badge">v1.3.3 最新更新 | 新增 HD 畫質升級</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -423,7 +424,7 @@
                             <!-- Path Info (Snapshot 3) -->
                             <div class="text-[10px] text-center text-gray-400">
                                 <div>📁 Images: grok_downloads/images/</div>
-                                <div>v1.1.0 | Supports Images & Videos</div>
+                                <div>v1.3.3 | Supports Images & Videos & HD</div>
                             </div>
                         </div>
                     </div>
@@ -484,7 +485,7 @@
                 <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="feat_desc">基於真實使用者反饋，我們構建了最強大的 Grok 媒體管理系統。</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
                 <div
                     class="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/10 group">
@@ -534,6 +535,32 @@
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_4_title">批量清理 (Bulk Remove)</h3>
                     <p class="text-slate-400 leading-relaxed" data-i18n="feat_4_desc">
                         下載完成後想清理空間？Bulk Remove 讓您能依照日期範圍，批量移除 Grok 上已收藏的舊圖片與影片，保持媒體庫整潔。
+                    </p>
+                </div>
+
+                <!-- Feature 5 (New) -->
+                <div
+                    class="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10 group">
+                    <div
+                        class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
+                        <i data-lucide="monitor-up" class="text-cyan-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_5_title">HD 影片畫質升級 (HD Upgrade)</h3>
+                    <p class="text-slate-400 leading-relaxed" data-i18n="feat_5_desc">
+                        一鍵將收藏的影片全部升級至 HD 畫質。自動偵測並替換模糊的預覽檔案，確保您下載的每一部影片都是最高解析度 (1080p) 的清晰版本。
+                    </p>
+                </div>
+
+                <!-- Feature 6 (New) -->
+                <div
+                    class="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/10 group">
+                    <div
+                        class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors">
+                        <i data-lucide="camera" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_6_title">Stream Capture (串流擷取)</h3>
+                    <p class="text-slate-400 leading-relaxed" data-i18n="feat_6_desc">
+                        啟動後，系統將主動偵測 Grok 的圖片生成。滾動畫面時新產生的圖片會被自動暫存，最後可一鍵下載所有暫存圖片。
                     </p>
                 </div>
             </div>
@@ -618,6 +645,14 @@
                         <div class="flex items-center gap-3 text-slate-300">
                             <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
                             <span class="font-bold text-white" data-i18n="price_feat_3">Import / Export Data</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-300">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
+                            <span class="font-bold text-white" data-i18n="price_feat_6">HD Upgrade (畫質升級)</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-300">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
+                            <span class="font-bold text-white" data-i18n="price_feat_7">Stream Capture (串流擷取)</span>
                         </div>
                         <div class="flex items-center gap-3 text-slate-300">
                             <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
@@ -865,7 +900,7 @@
                 new_feat_title: "Stream Capture 串流擷取",
                 new_feat_desc: "啟動此功能後，系統將主動偵測 Grok 的圖片生成。當您滾動畫面時，新產生的圖片會被自動暫存。按下下載按鈕後，系統將自動建立目錄並一次下載所有暫存圖片，讓您的創作流程不中斷。",
                 new_feat_cta: "立即體驗",
-                hero_badge: "v1.3.1 重大更新 | 支援HD影片同時下載",
+                hero_badge: "v1.3.3 最新更新 | 新增 HD 畫質升級功能",
                 hero_title_1: "全自動化 Grok",
                 hero_title_2: "媒體資產管理",
                 hero_desc: "不只是下載器，更是您的創作資料庫。GrokMediaDownloader 提供日期過濾、批量清單生成與歷史紀錄追蹤。別再手動另存，讓專業工具接手您的工作流。",
@@ -884,7 +919,11 @@
                 feat_3_title: "數據管理與備份 (PRO)",
                 feat_3_desc: "更換電腦也不怕遺失紀錄。透過 Export/Import Data 功能，您可以輕鬆備份或轉移您的下載歷程資料庫。",
                 feat_4_title: "批量清理 (Bulk Remove)",
-                feat_4_desc: "下載完成後想清理空間？Bulk Remove 讓您能依照日期範圍，批量移除 Grok 上已收藏的舊圖片與影片，保持媒體庫整潔。",
+                feat_4_desc: "下載完成後想清理空間？Bulk Remove 讓您能依照日期範圍，批量移除 Grok 上已收藏的舊圖片與影片（新增選項：可同步刪除 Grok 貼文），保持媒體庫整潔。",
+                feat_5_title: "HD 影片畫質升級 (HD Upgrade) (PRO)",
+                feat_5_desc: "一鍵將收藏的影片全部升級至 HD 畫質。自動偵測並替換模糊的預覽檔案，確保您下載的每一部影片都是最高解析度 (1080p) 的清晰版本。",
+                feat_6_title: "Stream Capture (串流擷取) (PRO)",
+                feat_6_desc: "啟動後，系統將主動偵測 Grok 的圖片生成。滾動畫面時新產生的圖片會被自動暫存，最後可一鍵下載所有暫存圖片。",
                 step_title: "簡單三步驟，自動化您的下載",
                 step_1_title: "設定過濾條件",
                 step_1_desc: "開啟 Extension 面板，選擇您要下載的媒體類型（Images/Videos）。若是 PRO 用戶，可設定 \"Only after\" 日期過濾器。",
@@ -897,6 +936,8 @@
                 price_feat_1: "Date Filter (日期過濾)",
                 price_feat_2: "Bulk Remove (批量清理)",
                 price_feat_3: "Import / Export Data",
+                price_feat_6: "HD Upgrade (畫質升級)",
+                price_feat_7: "Stream Capture (串流擷取)",
                 price_feat_4: "無限量下載圖片與影片",
                 price_feat_5: "下載歷程追蹤 (防止重複)",
                 price_cta: "立即啟用 PRO",
@@ -972,7 +1013,7 @@
                 new_feat_title: "Stream Capture",
                 new_feat_desc: "Activate this feature to actively detect Grok image generation. As you scroll and new images are created, they are automatically cached. Click the download button to create a folder and download all cached images at once, ensuring an uninterrupted creative flow.",
                 new_feat_cta: "Try it now",
-                hero_badge: "v1.3.1 Major Update | Supports HD Video Batch Download",
+                hero_badge: "v1.3.3 Latest Update | Added HD Quality Upgrade",
                 hero_title_1: "Automated Grok",
                 hero_title_2: "Media Asset Mgmt",
                 hero_desc: "Not just a downloader, but your creative database. GrokMediaDownloader offers date filtering, batch list generation, and history tracking. Stop saving manually, let professional tools handle your workflow.",
@@ -991,7 +1032,11 @@
                 feat_3_title: "Data Mgmt & Backup (PRO)",
                 feat_3_desc: "Don't lose history when switching computers. Use Export/Import Data features to easily backup or transfer your download history database.",
                 feat_4_title: "Bulk Remove (PRO)",
-                feat_4_desc: "Clean up your Grok favorites after downloading. Bulk Remove allows you to delete old images and videos by date range, keeping your library organized and clutter-free.",
+                feat_4_desc: "Clean up your Grok favorites after downloading. Bulk Remove allows you to delete old images and videos by date range (Now includes option to delete posts from Grok), keeping your library organized and clutter-free.",
+                feat_5_title: "HD Video Upgrade (PRO)",
+                feat_5_desc: "One-click upgrade for all favorite videos to HD quality. Intelligently detects and replaces low-res previews with 1080p HD versions, ensuring your collection is crystal clear.",
+                feat_6_title: "Stream Capture (PRO)",
+                feat_6_desc: "Active detection of Grok image generation. New images are cached as you scroll, and you can download all cached images in one click.",
                 step_title: "3 Simple Steps to Automate",
                 step_1_title: "Set Filter Conditions",
                 step_1_desc: "Open the Extension panel, select media types (Images/Videos). PRO users can set the \"Only after\" date filter.",
@@ -1004,6 +1049,8 @@
                 price_feat_1: "Date Filter",
                 price_feat_2: "Bulk Remove",
                 price_feat_3: "Import / Export Data",
+                price_feat_6: "HD Video Upgrade",
+                price_feat_7: "Stream Capture",
                 price_feat_4: "Unlimited Image & Video Downloads",
                 price_feat_5: "Download History Tracking (No Duplicates)",
                 price_cta: "Activate PRO Now",
@@ -1079,7 +1126,7 @@ Refunds for licenses purchased via Lemon Squeezy are subject to their platform p
                 new_feat_title: "Stream Capture (ストリームキャプチャ)",
                 new_feat_desc: "この機能を有効にすると、Grokの画像生成を能動的に検出します。スクロールして新しい画像が生成されると、自動的にキャッシュされます。ダウンロードボタンを押すと、フォルダが作成され、キャッシュされたすべての画像が一括ダウンロードされます。",
                 new_feat_cta: "今すぐ試す",
-                hero_badge: "v1.3.1 大型アップデート | HD動画の一括ダウンロードに対応",
+                hero_badge: "v1.3.3 最新アップデート | HD画質アップグレード機能追加",
                 hero_title_1: "Grokを完全自動化",
                 hero_title_2: "メディア資産管理",
                 hero_desc: "単なるダウンローダーではなく、クリエイターのためのデータベースです。GrokMediaDownloaderは日付フィルタ、一括リスト生成、履歴追跡を提供します。手動保存はやめて、プロ用ツールにワークフローを任せましょう。",
@@ -1098,7 +1145,11 @@ Refunds for licenses purchased via Lemon Squeezy are subject to their platform p
                 feat_3_title: "データ管理とバックアップ (PRO)",
                 feat_3_desc: "パソコンを買い替えても履歴は消えません。Export/Import Data機能で、ダウンロード履歴データベースを簡単にバックアップ・移行できます。",
                 feat_4_title: "一括削除 (Bulk Remove)",
-                feat_4_desc: "ダウンロード後の整理に。Bulk Removeを使用すると、日付範囲を指定してGrokのお気に入りから古い画像や動画を一括削除でき、ライブラリを常に整理された状態に保てます。",
+                feat_4_desc: "ダウンロード後の整理に。Bulk Removeを使用すると、日付範囲を指定してGrokのお気に入りから古い画像や動画を一括削除でき（Grokの投稿も同時に削除するオプションを追加）、ライブラリを常に整理された状態に保てます。",
+                feat_5_title: "HD動画アップグレード (PRO)",
+                feat_5_desc: "お気に入りの動画をワンクリックでHD画質にアップグレード。720p以下の低画質プレビューを自動的に1080pの高画質バージョンに置き換え、コレクションを完璧にします。",
+                feat_6_title: "Stream Capture (ストリームキャプチャ) (PRO)",
+                feat_6_desc: "Grokの画像生成を能動的に検出します。スクロールすると新しい画像が自動的にキャッシュされ、ワンクリックですべてダウンロードできます。",
                 step_title: "自動化への3ステップ",
                 step_1_title: "条件を設定",
                 step_1_desc: "パネルを開き、メディアタイプ（Images/Videos）を選択。PROユーザーは「Only after」日付フィルターを設定できます。",
@@ -1111,6 +1162,8 @@ Refunds for licenses purchased via Lemon Squeezy are subject to their platform p
                 price_feat_1: "Date Filter (日付フィルター)",
                 price_feat_2: "Bulk Remove (一括削除)",
                 price_feat_3: "Import / Export Data",
+                price_feat_6: "HD動画アップグレード",
+                price_feat_7: "Stream Capture",
                 price_feat_4: "画像・動画の無制限ダウンロード",
                 price_feat_5: "ダウンロード履歴追跡 (重複防止)",
                 price_cta: "今すぐPROを有効化",

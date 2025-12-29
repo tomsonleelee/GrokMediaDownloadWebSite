@@ -62,7 +62,7 @@
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "1.3.3",
+      "softwareVersion": "1.3.4",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "screenshot": "https://grokmedia.kario-studio.com/assets/og-image.jpg",
       "featureList": ["Batch Download", "Date Filter", "History Tracking", "Video Support", "Stream Capture", "HD Upgrade"],
@@ -132,6 +132,38 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "The Free version allows you to analyze and download images from your favorites. Other advanced features like date filtering, bulk remove, and data import/export require the Pro version."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between Stream Capture and Generate List?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generate List is a one-time scan of images currently loaded on the page. Stream Capture is a continuous listening mode that automatically captures new images as you generate them in the background. Perfect for long creative sessions, ensuring no image is left behind."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Bulk Remove really delete posts from Grok?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. When performing Bulk Remove, you can check the 'Also delete Grok posts' option. This calls Grok's API to delete the original posts, not just remove them from your favorites list. Note: This action is irreversible. We recommend using Export Data to backup first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does HD Upgrade work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Videos stored by Grok may be low-resolution previews. The HD Upgrade feature automatically detects these videos and sends requests to Grok to obtain 1080p high-quality version URLs. The entire process is automatic - you just click one button."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can GrokMediaDownloader handle large libraries with 1000+ images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Version 1.3.4 includes performance optimizations for large libraries. Tested to handle 600+ items smoothly with instant bulk operations and no page refresh required. If you experience performance issues, try using the date filter to process in batches."
           }
         }
       ]
@@ -295,7 +327,7 @@
                     <div
                         class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v1.3.3 最新更新 | 新增 HD 畫質升級</span>
+                        <span data-i18n="hero_badge">v1.3.4 最新更新 | 效能優化・大型媒體庫支援</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -532,9 +564,9 @@
                         class="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-red-500/20 transition-colors">
                         <i data-lucide="trash-2" class="text-red-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_4_title">批量清理 (Bulk Remove)</h3>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_4_title">批量清理 (Bulk Remove) (PRO)</h3>
                     <p class="text-slate-400 leading-relaxed" data-i18n="feat_4_desc">
-                        下載完成後想清理空間？Bulk Remove 讓您能依照日期範圍，批量移除 Grok 上已收藏的舊圖片與影片，保持媒體庫整潔。
+                        依日期範圍批量取消收藏。勾選「同時刪除貼文」選項後，系統會呼叫 Grok 的刪除 API，將原始貼文從平台上徹底移除，確保您的隱私不留痕跡。
                     </p>
                 </div>
 
@@ -545,9 +577,9 @@
                         class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
                         <i data-lucide="monitor-up" class="text-cyan-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_5_title">HD 影片畫質升級 (HD Upgrade)</h3>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_5_title">HD 影片畫質升級 (HD Upgrade) (PRO)</h3>
                     <p class="text-slate-400 leading-relaxed" data-i18n="feat_5_desc">
-                        一鍵將收藏的影片全部升級至 HD 畫質。自動偵測並替換模糊的預覽檔案，確保您下載的每一部影片都是最高解析度 (1080p) 的清晰版本。
+                        自動掃描所有收藏影片，篩選出缺少 HD 版本的項目，並透過 Grok 官方 API 發送升級請求。整個過程完全自動化，支援數百部影片的批量處理。
                     </p>
                 </div>
 
@@ -558,9 +590,119 @@
                         class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors">
                         <i data-lucide="camera" class="text-emerald-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_6_title">Stream Capture (串流擷取)</h3>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_6_title">Stream Capture (串流擷取) (PRO)</h3>
                     <p class="text-slate-400 leading-relaxed" data-i18n="feat_6_desc">
-                        啟動後，系統將主動偵測 Grok 的圖片生成。滾動畫面時新產生的圖片會被自動暫存，最後可一鍵下載所有暫存圖片。
+                        使用 DOM 監聽技術即時捕獲 Grok 生成的圖片。系統自動過濾小於 120KB 的縮圖，只暫存高品質圖片（最多 100 張）。滾動畫面時新圖片自動入列，一鍵批量下載。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section - Unique Content for SEO -->
+    <section id="pain-points" class="py-24 bg-slate-950 relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span data-i18n="pain_title_1">管理大量 Grok 收藏</span><br>
+                    <span class="text-pink-500" data-i18n="pain_title_2">是否讓您感到困擾？</span>
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="pain_desc">當您的 Grok 收藏從數百張增長到數千張時，這些問題會變得越來越嚴重。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Pain Point 1 -->
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-red-500/20 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-red-500/5 rounded-full -mr-10 -mt-10"></div>
+                    <div class="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="clock" class="text-red-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="pain_1_title">手動存檔極度耗時</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="pain_1_desc">
+                        當您有數百甚至數千張圖片時，逐一右鍵另存圖片幾乎是不可能的任務。一張張下載浪費大量時間，而且容易遺漏。
+                    </p>
+                </div>
+
+                <!-- Pain Point 2 -->
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-orange-500/20 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-orange-500/5 rounded-full -mr-10 -mt-10"></div>
+                    <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="shield-alert" class="text-orange-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="pain_2_title">隱私清理不徹底</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="pain_2_desc">
+                        取消收藏並不會真正從 Grok 刪除該貼文。您的實驗性創作可能仍留在平台上，無法確保隱私安全。
+                    </p>
+                </div>
+
+                <!-- Pain Point 3 -->
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-yellow-500/20 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-yellow-500/5 rounded-full -mr-10 -mt-10"></div>
+                    <div class="w-12 h-12 bg-yellow-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="image-off" class="text-yellow-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="pain_3_title">畫質管理混亂</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="pain_3_desc">
+                        很難追蹤哪些影片是 HD 高畫質、哪些還是標準畫質。手動逐一升級既繁瑣又容易遺漏。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Solution Arrow -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-300 text-sm font-semibold">
+                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    <span data-i18n="pain_solution_intro">GrokMediaDownloader 為這些問題提供了完整解決方案</span>
+                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                </div>
+            </div>
+
+            <!-- Solutions -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Solution 1 -->
+                <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/5 p-6 rounded-2xl border border-green-500/30 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-green-500/10 rounded-full -mr-10 -mt-10"></div>
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="folder-down" class="text-green-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="solution_1_title">大量本地存檔</h3>
+                    <p class="text-slate-300 text-sm" data-i18n="solution_1_desc">
+                        Stream Capture 功能確保您生成的每一張圖片都會被暫存，只需一鍵即可批量下載到您的電腦。不會遺漏任何一張圖片。
+                    </p>
+                </div>
+
+                <!-- Solution 2 -->
+                <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/5 p-6 rounded-2xl border border-green-500/30 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-green-500/10 rounded-full -mr-10 -mt-10"></div>
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="trash-2" class="text-green-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="solution_2_title">真正的批量刪除</h3>
+                    <p class="text-slate-300 text-sm" data-i18n="solution_2_desc">
+                        當您從清單中移除項目時，擴充功能會提供選項來刪除 Grok 上的原始貼文。確保您的內容從平台上徹底清除，而非僅從收藏清單移除。
+                    </p>
+                </div>
+
+                <!-- Solution 3 -->
+                <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/5 p-6 rounded-2xl border border-green-500/30 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-green-500/10 rounded-full -mr-10 -mt-10"></div>
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="sparkles" class="text-green-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="solution_3_title">自動 HD 升級</h3>
+                    <p class="text-slate-300 text-sm" data-i18n="solution_3_desc">
+                        系統自動偵測您收藏的影片並請求 HD 升級，確保您的媒體庫始終以最高畫質 (1080p) 儲存。
+                    </p>
+                </div>
+            </div>
+
+            <!-- Performance Note -->
+            <div class="mt-12 text-center">
+                <div class="inline-flex items-center gap-3 bg-slate-900 border border-slate-700 rounded-xl px-6 py-4">
+                    <i data-lucide="zap" class="text-yellow-400 w-5 h-5"></i>
+                    <p class="text-slate-300 text-sm">
+                        <span class="font-bold text-white" data-i18n="perf_note_title">v1.3.4 效能優化：</span>
+                        <span data-i18n="perf_note_desc">支援 600+ 項目的大型媒體庫，批量操作即時完成，無需重新整理頁面。</span>
                     </p>
                 </div>
             </div>
@@ -757,6 +899,62 @@
                         授權碼允許在一個 Chrome 帳號安裝使用，並允許最多 3 次重新安裝（例如更換電腦或重灌系統）。
                     </div>
                 </div>
+
+                <!-- FAQ Item 6: Stream Capture -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-slate-200" data-i18n="faq_6_q">Stream Capture 與 Generate List 有什麼不同？</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4"
+                        data-i18n="faq_6_a">
+                        Generate List 是一次性掃描當前頁面上已載入的圖片。Stream Capture 則是持續監聽模式，會在背景自動捕獲您生成的新圖片。適合長時間創作時使用，確保不會遺漏任何一張圖片。
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7: Bulk Remove -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-slate-200" data-i18n="faq_7_q">Bulk Remove 真的會從 Grok 刪除貼文嗎？</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4"
+                        data-i18n="faq_7_a">
+                        是的。在執行 Bulk Remove 時，您可以勾選「同時刪除 Grok 貼文」選項。這會呼叫 Grok 的 API 來刪除原始貼文，而非僅從收藏清單移除。請注意：此操作不可逆，建議先使用 Export Data 備份。
+                    </div>
+                </div>
+
+                <!-- FAQ Item 8: Large Library -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-slate-200" data-i18n="faq_8_q">我的收藏有 1000+ 張圖片，會不會很慢？</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4"
+                        data-i18n="faq_8_a">
+                        v1.3.4 針對大型媒體庫進行了效能優化。經測試可順暢處理 600+ 項目，批量操作即時完成無需重新整理頁面。如遇效能問題，建議使用日期過濾器分批處理。
+                    </div>
+                </div>
+
+                <!-- FAQ Item 9: HD Upgrade -->
+                <div class="bg-slate-950 border border-slate-800 rounded-xl overflow-hidden">
+                    <button
+                        class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                        <span class="font-medium text-slate-200" data-i18n="faq_9_q">HD Upgrade 是如何運作的？</span>
+                        <i data-lucide="chevron-down"
+                            class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-900 pt-4"
+                        data-i18n="faq_9_a">
+                        Grok 預設存儲的影片可能是低解析度預覽版。HD Upgrade 功能會自動偵測這些影片，並向 Grok 發送請求來取得 1080p 高畫質版本的 URL。整個過程自動完成，您只需點擊一個按鈕。
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -900,7 +1098,7 @@
                 new_feat_title: "Stream Capture 串流擷取",
                 new_feat_desc: "啟動此功能後，系統將主動偵測 Grok 的圖片生成。當您滾動畫面時，新產生的圖片會被自動暫存。按下下載按鈕後，系統將自動建立目錄並一次下載所有暫存圖片，讓您的創作流程不中斷。",
                 new_feat_cta: "立即體驗",
-                hero_badge: "v1.3.3 最新更新 | 新增 HD 畫質升級功能",
+                hero_badge: "v1.3.4 最新更新 | 效能優化・大型媒體庫支援",
                 hero_title_1: "全自動化 Grok",
                 hero_title_2: "媒體資產管理",
                 hero_desc: "不只是下載器，更是您的創作資料庫。GrokMediaDownloader 提供日期過濾、批量清單生成與歷史紀錄追蹤。別再手動另存，讓專業工具接手您的工作流。",
@@ -918,12 +1116,12 @@
                 feat_2_desc: "只想下載今天的作品？使用 Date Filter 指定日期範圍。系統還會自動比對 Download History，避免重複下載相同的檔案。",
                 feat_3_title: "數據管理與備份 (PRO)",
                 feat_3_desc: "更換電腦也不怕遺失紀錄。透過 Export/Import Data 功能，您可以輕鬆備份或轉移您的下載歷程資料庫。",
-                feat_4_title: "批量清理 (Bulk Remove)",
-                feat_4_desc: "下載完成後想清理空間？Bulk Remove 讓您能依照日期範圍，批量移除 Grok 上已收藏的舊圖片與影片（新增選項：可同步刪除 Grok 貼文），保持媒體庫整潔。",
+                feat_4_title: "批量清理 (Bulk Remove) (PRO)",
+                feat_4_desc: "依日期範圍批量取消收藏。勾選「同時刪除貼文」選項後，系統會呼叫 Grok 的刪除 API，將原始貼文從平台上徹底移除，確保您的隱私不留痕跡。",
                 feat_5_title: "HD 影片畫質升級 (HD Upgrade) (PRO)",
-                feat_5_desc: "一鍵將收藏的影片全部升級至 HD 畫質。自動偵測並替換模糊的預覽檔案，確保您下載的每一部影片都是最高解析度 (1080p) 的清晰版本。",
+                feat_5_desc: "自動掃描所有收藏影片，篩選出缺少 HD 版本的項目，並透過 Grok 官方 API 發送升級請求。整個過程完全自動化，支援數百部影片的批量處理。",
                 feat_6_title: "Stream Capture (串流擷取) (PRO)",
-                feat_6_desc: "啟動後，系統將主動偵測 Grok 的圖片生成。滾動畫面時新產生的圖片會被自動暫存，最後可一鍵下載所有暫存圖片。",
+                feat_6_desc: "使用 DOM 監聽技術即時捕獲 Grok 生成的圖片。系統自動過濾小於 120KB 的縮圖，只暫存高品質圖片（最多 100 張）。滾動畫面時新圖片自動入列，一鍵批量下載。",
                 step_title: "簡單三步驟，自動化您的下載",
                 step_1_title: "設定過濾條件",
                 step_1_desc: "開啟 Extension 面板，選擇您要下載的媒體類型（Images/Videos）。若是 PRO 用戶，可設定 \"Only after\" 日期過濾器。",
@@ -954,6 +1152,14 @@
                 faq_4_a: "授權碼允許在一個 Chrome 帳號安裝使用，並允許最多 3 次重新安裝（例如更換電腦或重灌系統）。",
                 faq_5_q: "免費版可以使用什麼功能？",
                 faq_5_a: "免費版可以進行加入最愛的圖檔分析及下載，其他功能則需要 Pro 版才會提供。",
+                faq_6_q: "Stream Capture 與 Generate List 有什麼不同？",
+                faq_6_a: "Generate List 是一次性掃描當前頁面上已載入的圖片。Stream Capture 則是持續監聽模式，會在背景自動捕獲您生成的新圖片。適合長時間創作時使用，確保不會遺漏任何一張圖片。",
+                faq_7_q: "Bulk Remove 真的會從 Grok 刪除貼文嗎？",
+                faq_7_a: "是的。在執行 Bulk Remove 時，您可以勾選「同時刪除 Grok 貼文」選項。這會呼叫 Grok 的 API 來刪除原始貼文，而非僅從收藏清單移除。請注意：此操作不可逆，建議先使用 Export Data 備份。",
+                faq_8_q: "我的收藏有 1000+ 張圖片，會不會很慢？",
+                faq_8_a: "v1.3.4 針對大型媒體庫進行了效能優化。經測試可順暢處理 600+ 項目，批量操作即時完成無需重新整理頁面。如遇效能問題，建議使用日期過濾器分批處理。",
+                faq_9_q: "HD Upgrade 是如何運作的？",
+                faq_9_a: "Grok 預設存儲的影片可能是低解析度預覽版。HD Upgrade 功能會自動偵測這些影片，並向 Grok 發送請求來取得 1080p 高畫質版本的 URL。整個過程自動完成，您只需點擊一個按鈕。",
                 footer_privacy: "隱私權政策",
                 footer_terms: "服務條款",
                 footer_contact: "聯絡支援",
@@ -999,7 +1205,27 @@
 本服務按「現狀」提供，不附帶任何形式的保證。我們不保證本服務將永遠無誤或不中斷。在法律允許的最大範圍內，我們不對因使用本服務而導致的任何資料遺失或損害負責。
 
 5. 退款政策
-透過 Lemon Squeezy 購買的授權，退款政策依循該平台規範。若遇技術問題無法解決，請聯繫支援團隊。`
+透過 Lemon Squeezy 購買的授權，退款政策依循該平台規範。若遇技術問題無法解決，請聯繫支援團隊。`,
+
+                // --- PAIN POINTS SECTION (ZH-TW) ---
+                pain_title_1: "管理大量 Grok 收藏",
+                pain_title_2: "是否讓您感到困擾？",
+                pain_desc: "當您的 Grok 收藏從數百張增長到數千張時，這些問題會變得越來越嚴重。",
+                pain_1_title: "手動存檔極度耗時",
+                pain_1_desc: "當您有數百甚至數千張圖片時，逐一右鍵另存圖片幾乎是不可能的任務。一張張下載浪費大量時間，而且容易遺漏。",
+                pain_2_title: "隱私清理不徹底",
+                pain_2_desc: "取消收藏並不會真正從 Grok 刪除該貼文。您的實驗性創作可能仍留在平台上，無法確保隱私安全。",
+                pain_3_title: "畫質管理混亂",
+                pain_3_desc: "很難追蹤哪些影片是 HD 高畫質、哪些還是標準畫質。手動逐一升級既繁瑣又容易遺漏。",
+                pain_solution_intro: "GrokMediaDownloader 為這些問題提供了完整解決方案",
+                solution_1_title: "大量本地存檔",
+                solution_1_desc: "Stream Capture 功能確保您生成的每一張圖片都會被暫存，只需一鍵即可批量下載到您的電腦。不會遺漏任何一張圖片。",
+                solution_2_title: "真正的批量刪除",
+                solution_2_desc: "當您從清單中移除項目時，擴充功能會提供選項來刪除 Grok 上的原始貼文。確保您的內容從平台上徹底清除，而非僅從收藏清單移除。",
+                solution_3_title: "自動 HD 升級",
+                solution_3_desc: "系統自動偵測您收藏的影片並請求 HD 升級，確保您的媒體庫始終以最高畫質 (1080p) 儲存。",
+                perf_note_title: "v1.3.4 效能優化：",
+                perf_note_desc: "支援 600+ 項目的大型媒體庫，批量操作即時完成，無需重新整理頁面。"
             },
             "en": {
                 nav_latest: "Latest",
@@ -1013,7 +1239,7 @@
                 new_feat_title: "Stream Capture",
                 new_feat_desc: "Activate this feature to actively detect Grok image generation. As you scroll and new images are created, they are automatically cached. Click the download button to create a folder and download all cached images at once, ensuring an uninterrupted creative flow.",
                 new_feat_cta: "Try it now",
-                hero_badge: "v1.3.3 Latest Update | Added HD Quality Upgrade",
+                hero_badge: "v1.3.4 Latest Update | Performance Optimized for Large Libraries",
                 hero_title_1: "Automated Grok",
                 hero_title_2: "Media Asset Mgmt",
                 hero_desc: "Not just a downloader, but your creative database. GrokMediaDownloader offers date filtering, batch list generation, and history tracking. Stop saving manually, let professional tools handle your workflow.",
@@ -1032,11 +1258,11 @@
                 feat_3_title: "Data Mgmt & Backup (PRO)",
                 feat_3_desc: "Don't lose history when switching computers. Use Export/Import Data features to easily backup or transfer your download history database.",
                 feat_4_title: "Bulk Remove (PRO)",
-                feat_4_desc: "Clean up your Grok favorites after downloading. Bulk Remove allows you to delete old images and videos by date range (Now includes option to delete posts from Grok), keeping your library organized and clutter-free.",
+                feat_4_desc: "Batch unfavorite items by date range. Check 'Also delete posts' to call Grok's delete API and permanently remove original posts from the platform, ensuring your privacy leaves no trace.",
                 feat_5_title: "HD Video Upgrade (PRO)",
-                feat_5_desc: "One-click upgrade for all favorite videos to HD quality. Intelligently detects and replaces low-res previews with 1080p HD versions, ensuring your collection is crystal clear.",
+                feat_5_desc: "Automatically scans all favorited videos, identifies those missing HD versions, and sends upgrade requests via Grok's official API. Fully automated, supports batch processing of hundreds of videos.",
                 feat_6_title: "Stream Capture (PRO)",
-                feat_6_desc: "Active detection of Grok image generation. New images are cached as you scroll, and you can download all cached images in one click.",
+                feat_6_desc: "Uses DOM observer technology to capture Grok-generated images in real-time. Auto-filters thumbnails under 120KB, caching only high-quality images (max 100). New images queue automatically as you scroll, one-click batch download.",
                 step_title: "3 Simple Steps to Automate",
                 step_1_title: "Set Filter Conditions",
                 step_1_desc: "Open the Extension panel, select media types (Images/Videos). PRO users can set the \"Only after\" date filter.",
@@ -1067,6 +1293,14 @@
                 faq_4_a: "The license allows installation on one Chrome account and grants up to 3 re-installations (e.g., for switching computers or reinstalling OS).",
                 faq_5_q: "What features are included in the Free version?",
                 faq_5_a: "The Free version allows you to analyze and download images from your favorites. Other advanced features require the Pro version.",
+                faq_6_q: "What's the difference between Stream Capture and Generate List?",
+                faq_6_a: "Generate List is a one-time scan of images currently loaded on the page. Stream Capture is a continuous listening mode that automatically captures new images as you generate them in the background. Perfect for long creative sessions, ensuring no image is left behind.",
+                faq_7_q: "Does Bulk Remove really delete posts from Grok?",
+                faq_7_a: "Yes. When performing Bulk Remove, you can check the 'Also delete Grok posts' option. This calls Grok's API to delete the original posts, not just remove them from your favorites list. Note: This action is irreversible. We recommend using Export Data to backup first.",
+                faq_8_q: "I have 1000+ images in my collection. Will it be slow?",
+                faq_8_a: "v1.3.4 includes performance optimizations for large libraries. Tested to handle 600+ items smoothly with instant bulk operations and no page refresh required. If you experience performance issues, try using the date filter to process in batches.",
+                faq_9_q: "How does HD Upgrade work?",
+                faq_9_a: "Videos stored by Grok may be low-resolution previews. The HD Upgrade feature automatically detects these videos and sends requests to Grok to obtain 1080p high-quality version URLs. The entire process is automatic - you just click one button.",
                 footer_privacy: "Privacy Policy",
                 footer_terms: "Terms of Service",
                 footer_contact: "Contact Support",
@@ -1112,7 +1346,27 @@ This tool is provided for convenience. You are solely responsible for the conten
 The Service is provided "AS IS" without warranties of any kind. We do not guarantee that the Service will be error-free or uninterrupted. To the maximum extent permitted by law, we are not liable for any data loss or damages.
 
 5. Refunds
-Refunds for licenses purchased via Lemon Squeezy are subject to their platform policies. Please contact support for technical issues.`
+Refunds for licenses purchased via Lemon Squeezy are subject to their platform policies. Please contact support for technical issues.`,
+
+                // --- PAIN POINTS SECTION (EN) ---
+                pain_title_1: "Managing a Massive Grok Library",
+                pain_title_2: "Is a Pain?",
+                pain_desc: "As your Grok collection grows from hundreds to thousands, these problems become increasingly severe.",
+                pain_1_title: "Manual Archiving is Painfully Slow",
+                pain_1_desc: "When you have hundreds or thousands of images, saving them one by one via right-click is virtually impossible. It wastes massive amounts of time and you'll inevitably miss some.",
+                pain_2_title: "Incomplete Privacy Cleanup",
+                pain_2_desc: "Unliking a favorite doesn't actually delete the post from Grok. Your experimental creations may still remain on the platform, compromising your privacy.",
+                pain_3_title: "Quality Management Chaos",
+                pain_3_desc: "It's hard to track which videos are HD quality and which are standard. Manually upgrading them one by one is tedious and error-prone.",
+                pain_solution_intro: "GrokMediaDownloader provides a complete solution for these problems",
+                solution_1_title: "Mass Local Archiving",
+                solution_1_desc: "The Stream Capture feature ensures every image you generate is cached and ready for one-click bulk download to your PC. No image is left behind.",
+                solution_2_title: "True Bulk Delete",
+                solution_2_desc: "When you remove items from your list, the extension offers to delete the actual post from Grok. This ensures your content is wiped from the platform, not just your favorites list.",
+                solution_3_title: "Auto HD Upgrade",
+                solution_3_desc: "It automatically detects your favorite videos and requests the HD upgrade, so your library is always stored in the highest possible quality (1080p).",
+                perf_note_title: "v1.3.4 Performance Update:",
+                perf_note_desc: "Handles large libraries (600+ items). Bulk actions are now instant and don't require page refreshes."
             },
             "ja": {
                 nav_latest: "最新機能",
@@ -1126,7 +1380,7 @@ Refunds for licenses purchased via Lemon Squeezy are subject to their platform p
                 new_feat_title: "Stream Capture (ストリームキャプチャ)",
                 new_feat_desc: "この機能を有効にすると、Grokの画像生成を能動的に検出します。スクロールして新しい画像が生成されると、自動的にキャッシュされます。ダウンロードボタンを押すと、フォルダが作成され、キャッシュされたすべての画像が一括ダウンロードされます。",
                 new_feat_cta: "今すぐ試す",
-                hero_badge: "v1.3.3 最新アップデート | HD画質アップグレード機能追加",
+                hero_badge: "v1.3.4 最新アップデート | 大規模ライブラリ向けパフォーマンス最適化",
                 hero_title_1: "Grokを完全自動化",
                 hero_title_2: "メディア資産管理",
                 hero_desc: "単なるダウンローダーではなく、クリエイターのためのデータベースです。GrokMediaDownloaderは日付フィルタ、一括リスト生成、履歴追跡を提供します。手動保存はやめて、プロ用ツールにワークフローを任せましょう。",
@@ -1144,12 +1398,12 @@ Refunds for licenses purchased via Lemon Squeezy are subject to their platform p
                 feat_2_desc: "今週の作品だけ欲しい？Date Filterで範囲を指定。システムはDownload Historyも自動照合し、同じファイルの重複ダウンロードを防ぎます。",
                 feat_3_title: "データ管理とバックアップ (PRO)",
                 feat_3_desc: "パソコンを買い替えても履歴は消えません。Export/Import Data機能で、ダウンロード履歴データベースを簡単にバックアップ・移行できます。",
-                feat_4_title: "一括削除 (Bulk Remove)",
-                feat_4_desc: "ダウンロード後の整理に。Bulk Removeを使用すると、日付範囲を指定してGrokのお気に入りから古い画像や動画を一括削除でき（Grokの投稿も同時に削除するオプションを追加）、ライブラリを常に整理された状態に保てます。",
+                feat_4_title: "一括削除 (Bulk Remove) (PRO)",
+                feat_4_desc: "日付範囲でお気に入りを一括解除。「投稿も削除」をチェックすると、Grokの削除APIを呼び出し、元の投稿をプラットフォームから完全に削除します。プライバシーを痕跡なく保護。",
                 feat_5_title: "HD動画アップグレード (PRO)",
-                feat_5_desc: "お気に入りの動画をワンクリックでHD画質にアップグレード。720p以下の低画質プレビューを自動的に1080pの高画質バージョンに置き換え、コレクションを完璧にします。",
+                feat_5_desc: "お気に入りの動画を自動スキャンし、HD版がないものを特定。Grok公式APIでアップグレードリクエストを送信。完全自動化で、数百本の動画の一括処理に対応。",
                 feat_6_title: "Stream Capture (ストリームキャプチャ) (PRO)",
-                feat_6_desc: "Grokの画像生成を能動的に検出します。スクロールすると新しい画像が自動的にキャッシュされ、ワンクリックですべてダウンロードできます。",
+                feat_6_desc: "DOM監視技術でGrok生成画像をリアルタイムキャプチャ。120KB未満のサムネイルを自動フィルタリングし、高品質画像のみキャッシュ（最大100枚）。スクロールで新画像が自動追加、ワンクリック一括ダウンロード。",
                 step_title: "自動化への3ステップ",
                 step_1_title: "条件を設定",
                 step_1_desc: "パネルを開き、メディアタイプ（Images/Videos）を選択。PROユーザーは「Only after」日付フィルターを設定できます。",
@@ -1180,6 +1434,14 @@ Refunds for licenses purchased via Lemon Squeezy are subject to their platform p
                 faq_4_a: "ライセンスは1つのChromeアカウントでの利用を許可し、最大3回までの再インストール（PCの買い替えなど）が可能です。",
                 faq_5_q: "無料版では何ができますか？",
                 faq_5_a: "無料版では、お気に入りの画像の分析とダウンロードが可能です。その他の機能はPro版でのみ提供されます。",
+                faq_6_q: "Stream CaptureとGenerate Listの違いは何ですか？",
+                faq_6_a: "Generate Listはページに現在読み込まれている画像を一回限りスキャンします。Stream Captureは継続的な監視モードで、バックグラウンドで新しい画像を生成するたびに自動的にキャプチャします。長時間の創作セッションに最適で、画像の取りこぼしがありません。",
+                faq_7_q: "Bulk Removeは本当にGrokから投稿を削除しますか？",
+                faq_7_a: "はい。Bulk Removeを実行する際、「Grokの投稿も削除する」オプションをチェックできます。これはGrokのAPIを呼び出して元の投稿を削除します。お気に入りリストから削除するだけではありません。注意：この操作は取り消せません。事前にExport Dataでバックアップすることをお勧めします。",
+                faq_8_q: "コレクションに1000枚以上の画像があります。遅くなりますか？",
+                faq_8_a: "v1.3.4は大規模ライブラリ向けにパフォーマンス最適化を含んでいます。600以上のアイテムをスムーズに処理でき、一括操作は即座に完了し、ページの更新は不要です。パフォーマンスの問題が発生した場合は、日付フィルターを使用してバッチ処理することをお勧めします。",
+                faq_9_q: "HD Upgradeはどのように機能しますか？",
+                faq_9_a: "Grokに保存されている動画は低解像度のプレビュー版である可能性があります。HD Upgrade機能はこれらの動画を自動検出し、Grokにリクエストを送信して1080p高画質版のURLを取得します。プロセス全体が自動で、ボタンを1つクリックするだけです。",
                 footer_privacy: "プライバシーポリシー",
                 footer_terms: "利用規約",
                 footer_contact: "サポートへ連絡",
@@ -1225,7 +1487,27 @@ GrokMediaDownloader（以下「本サービス」）をインストールして�
 本サービスは「現状有姿」で提供され、いかなる保証も伴いません。当社は、本サービスにエラーがなく、中断されないことを保証しません。法律で認められる最大限の範囲において、当社は本サービスの使用に起因するデータの損失や損害について責任を負いません。
 
 5. 返金ポリシー
-Lemon Squeezyを通じて購入されたライセンスの返金ポリシーは、同プラットフォームの規定に従います。解決できない技術的な問題がある場合は、サポートまでご連絡ください。`
+Lemon Squeezyを通じて購入されたライセンスの返金ポリシーは、同プラットフォームの規定に従います。解決できない技術的な問題がある場合は、サポートまでご連絡ください。`,
+
+                // --- PAIN POINTS SECTION (JA) ---
+                pain_title_1: "大量のGrokコレクション管理",
+                pain_title_2: "に困っていませんか？",
+                pain_desc: "Grokのコレクションが数百から数千に増えると、これらの問題はますます深刻になります。",
+                pain_1_title: "手動アーカイブは時間がかかりすぎる",
+                pain_1_desc: "数百、数千枚の画像がある場合、一つずつ右クリックで保存するのはほぼ不可能です。膨大な時間を浪費し、見落としも発生します。",
+                pain_2_title: "プライバシー削除が不完全",
+                pain_2_desc: "お気に入りを解除しても、実際にはGrokから投稿が削除されません。実験的な作品がプラットフォーム上に残り、プライバシーが危険にさらされる可能性があります。",
+                pain_3_title: "画質管理が混乱",
+                pain_3_desc: "どの動画がHD画質でどれが標準画質か把握するのは困難です。手動で一つずつアップグレードするのは面倒で見落としが発生しやすいです。",
+                pain_solution_intro: "GrokMediaDownloaderはこれらの問題に完全なソリューションを提供します",
+                solution_1_title: "大量ローカルアーカイブ",
+                solution_1_desc: "Stream Capture機能により、生成したすべての画像がキャッシュされ、ワンクリックでPCに一括ダウンロードできます。画像の取りこぼしはありません。",
+                solution_2_title: "真の一括削除",
+                solution_2_desc: "リストからアイテムを削除する際、拡張機能がGrokの元の投稿を削除するオプションを提供します。お気に入りリストだけでなく、プラットフォームからコンテンツを完全に削除できます。",
+                solution_3_title: "自動HDアップグレード",
+                solution_3_desc: "お気に入りの動画を自動検出し、HDアップグレードをリクエストします。ライブラリは常に最高画質（1080p）で保存されます。",
+                perf_note_title: "v1.3.4 パフォーマンス更新：",
+                perf_note_desc: "600以上のアイテムを持つ大規模ライブラリに対応。一括操作は即座に完了し、ページの更新は不要です。"
             }
         };
 

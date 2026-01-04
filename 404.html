@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - 頁面不存在 | GrokMediaDownloader</title>
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen flex items-center justify-center">
+    <div class="text-center px-4">
+        <!-- 404 Animation -->
+        <div class="mb-8">
+            <div class="text-9xl font-black bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
+                404
+            </div>
+        </div>
+
+        <!-- Icon -->
+        <div class="mb-6">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-800 border border-slate-700">
+                <i data-lucide="file-x-2" class="w-10 h-10 text-pink-400"></i>
+            </div>
+        </div>
+
+        <!-- Message -->
+        <h1 class="text-2xl font-bold mb-2" data-i18n="404_title">找不到這個頁面</h1>
+        <p class="text-slate-400 mb-8 max-w-md mx-auto" data-i18n="404_desc">
+            您要找的頁面可能已被移動、刪除，或從未存在。
+        </p>
+
+        <!-- Actions -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition-opacity">
+                <i data-lucide="home" class="w-5 h-5"></i>
+                <span data-i18n="404_home">回到首頁</span>
+            </a>
+            <a href="/faq.html" class="inline-flex items-center justify-center gap-2 bg-slate-800 border border-slate-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-slate-700 transition-colors">
+                <i data-lucide="help-circle" class="w-5 h-5"></i>
+                <span data-i18n="404_faq">常見問題</span>
+            </a>
+        </div>
+
+        <!-- Helpful Links -->
+        <div class="mt-12 pt-8 border-t border-slate-800">
+            <p class="text-sm text-slate-500 mb-4">或許您在找這些頁面：</p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <a href="/story-mode.html" class="text-pink-400 hover:text-pink-300 transition-colors">Story Mode Helper</a>
+                <span class="text-slate-700">•</span>
+                <a href="/pricing.html" class="text-pink-400 hover:text-pink-300 transition-colors">PRO 授權</a>
+                <span class="text-slate-700">•</span>
+                <a href="/faq.html" class="text-pink-400 hover:text-pink-300 transition-colors">FAQ</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

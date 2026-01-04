@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>よくある質問 FAQ | GrokMediaDownloader</title>
+    <meta name="description" content="GrokMediaDownloader よくある質問 - Generate List、Date Filter、Stream Capture、Story Mode Helper などの機能の使い方を説明します。">
+    <meta name="keywords" content="GrokMediaDownloader FAQ, よくある質問, 使い方, Story Mode Helper, Stream Capture">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/ja/faq.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/faq.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/en/faq.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/faq.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/faq.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/ja/faq.html">
+    <meta property="og:title" content="よくある質問 FAQ | GrokMediaDownloader">
+    <meta property="og:description" content="GrokMediaDownloader よくある質問 - Story Mode Helper、Stream Capture、Generate List などの機能の使い方。">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="よくある質問 FAQ | GrokMediaDownloader">
+    <meta name="twitter:description" content="GrokMediaDownloader 使い方 - Story Mode Helper、Stream Capture、Generate List などの機能 FAQ。">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://grokmedia.kario-studio.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "よくある質問",
+          "item": "https://grokmedia.kario-studio.com/ja/faq.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Story Mode Helper?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Story Mode Helper is a v2.0 major feature. It's a side panel video studio for managing Storyboards, extracting frames, sending to Grok for video continuations, and merging videos locally with FFmpeg."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Send Frame to Grok work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Story Mode Helper, select a video segment to view its last frame. Enter a prompt describing the next action, then click send. The frame will be uploaded to Grok Imagine to generate a continuation video."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is video merging done locally or in the cloud?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Completely local. We use WebAssembly FFmpeg, so all video processing happens in your browser without uploading to any server."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+        メインコンテンツへスキップ
+    </a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+    <section class="pt-32 pb-12 lg:pt-44 lg:pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4" data-i18n="faq_title">常見問題</h1>
+            <p class="text-xl text-slate-400">關於 GrokMediaDownloader 的常見問題解答</p>
+        </div>
+    </section>
+
+    <!-- FAQ Sections -->
+    <section class="pb-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Category: Basic Features -->
+            <div class="mb-12">
+                <h2 class="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2" data-i18n="faq_cat_basic">
+                    <i data-lucide="settings" class="w-5 h-5"></i>
+                    基本功能
+                </h2>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_1_q">Generate List 按鈕是做什麼的？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_1_a">
+                            這是一個智慧掃描功能。在 Grok/Imagine/Favorites 點擊後，Extension 會讀取頁面，找出所有圖片與影片，並自動過濾掉已下載過的檔案，生成「待下載清單」。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_2_q">什麼是 "Only after" 日期過濾？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_2_a">
+                            這是 PRO 版的獨家功能。當您累積了數千張圖片時，可設定日期只下載「今天」或「本週」生成的新圖。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_6_q">Stream Capture 與 Generate List 有什麼不同？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_6_a">
+                            Generate List 是掃描 Favorite List。Stream Capture 是持續監聽模式，會自動捕獲您生成的新圖片。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_10_q">HD Upgrade 是如何運作的？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_10_a">
+                            Grok 預設存儲的影片可能是低解析度預覽版。HD Upgrade 會自動偵測並向 Grok 發送請求取得 1080p 高畫質版本。如果已經產生 HD 影片，將不會重複發送，若全部影片都已經是 HD 畫質則會自動結束。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_3_q">我換了電腦，下載紀錄還在嗎？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_3_a">
+                            預設情況下紀錄存在瀏覽器本地。PRO 用戶可使用 Export/Import Data 功能備份和恢復紀錄。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Story Mode Helper -->
+            <div class="mb-12">
+                <h2 class="text-xl font-bold text-purple-400 mb-6 flex items-center gap-2" data-i18n="faq_cat_story">
+                    <i data-lucide="clapperboard" class="w-5 h-5"></i>
+                    Story Mode Helper
+                </h2>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_7_q">什麼是 Story Mode Helper？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_7_a">
+                            這是 v2.0 的重磅功能。它是一個側邊面板影片工作室，讓您可以管理 Storyboard、擷取畫格、發送到 Grok 生成續集影片，並在本地合併輸出。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_8_q">如何使用 Send Frame to Grok 功能？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_8_a">
+                            在 Story Mode Helper 中選擇一個影片片段，系統會顯示其最後一幀。輸入提示詞描述下一個動作，點擊發送按鈕，系統會自動將畫格上傳到 Grok Imagine。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_9_q">影片合併是在本地還是雲端處理？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_9_a">
+                            完全在本地處理。我們使用 WebAssembly 版 FFmpeg，所有影片處理都在您的瀏覽器中完成，不會上傳到任何伺服器。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200">Storyboard 中的 Master 是什麼意思？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
+                            Storyboard 中的第一個影片會被標記為 Master。合併輸出時，其他影片會自動調整解析度和幀率以匹配 Master 的規格，確保輸出品質一致。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200">影片儲存空間有限制嗎？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
+                            我們使用 IndexedDB 儲存影片資料，容量取決於您的瀏覽器設定。一般來說可以儲存數百 MB 到數 GB 的資料。Side Panel 中會顯示目前的儲存使用量。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: License -->
+            <div class="mb-12">
+                <h2 class="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2" data-i18n="faq_cat_license">
+                    <i data-lucide="key" class="w-5 h-5"></i>
+                    授權相關
+                </h2>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_5_q">免費版可以使用什麼功能？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_5_a">
+                            免費版可以進行加入最愛的圖檔分析及下載，其他進階功能需要 Pro 版。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_4_q">終身授權的範圍是什麼？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_4_a">
+                            授權碼允許在一個 Chrome 帳號安裝使用，並允許最多 3 次重新安裝（例如更換電腦或重灌系統）。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200">如何輸入授權碼？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
+                            購買後您會收到一組授權碼。開啟擴充功能的 Popup 面板，在底部找到「Activate PRO」或「License」輸入欄，貼上授權碼即可啟用。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200">可以退款嗎？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
+                            若遇技術問題無法解決，請透過頁面底部的「聯絡支援」與我們聯繫。退款政策依循 Lemon Squeezy 平台規範。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200">未來更新需要額外付費嗎？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
+                            不需要！PRO 終身版包含所有未來功能更新。v2.0 的 Story Mode Helper 就是免費更新的例子，未來的新功能也會自動包含在您的授權中。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20 rounded-2xl p-8 text-center">
+                <h3 class="text-xl font-bold text-white mb-2">還有其他問題？</h3>
+                <p class="text-slate-400 mb-6">我們的支援團隊隨時樂意為您解答</p>
+                <button onclick="openContactModal()" class="px-6 py-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold transition-all inline-flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    <span data-i18n="footer_contact">聯絡支援</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="/js/i18n.js"></script>
+    <script src="/js/i18n.js"></script>
+    <script>localStorage.setItem('site_lang', 'ja');</script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>

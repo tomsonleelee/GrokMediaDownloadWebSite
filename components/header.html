@@ -1,0 +1,61 @@
+<!-- Navigation -->
+<nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <a href="/" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                <div class="w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-pink-500/20">
+                    <i data-lucide="download" class="text-white w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-xl tracking-tight">GrokMedia<span class="text-pink-400">Downloader</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_home">首頁</a>
+                <a href="/story-mode.html" class="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors" data-i18n="nav_story_mode">Story Mode</a>
+                <a href="/#features" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_features">專業功能</a>
+                <a href="/pricing.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_pricing">終身授權</a>
+                <a href="/faq.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors" data-i18n="nav_faq">常見問題</a>
+
+                <!-- Language Toggle -->
+                <button onclick="toggleLanguage()" class="flex items-center gap-1 text-sm font-medium text-slate-400 hover:text-white transition-colors px-2">
+                    <i data-lucide="globe" class="w-4 h-4"></i>
+                    <span id="lang-text">EN</span>
+                </button>
+
+                <button onclick="openLemonSqueezy()" class="bg-white text-slate-900 hover:bg-slate-200 px-5 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 shadow-lg shadow-white/10 flex items-center gap-2">
+                    <span data-i18n="nav_cta">獲取 PRO 授權</span>
+                    <i data-lucide="zap" class="w-4 h-4 fill-current text-yellow-500"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center gap-4">
+                <button onclick="toggleLanguage()" class="text-slate-300 hover:text-white">
+                    <span id="lang-text-mobile" class="font-bold text-sm">EN</span>
+                </button>
+                <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 absolute w-full">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800" data-i18n="nav_home">首頁</a>
+            <a href="/story-mode.html" class="block px-3 py-2 rounded-md text-base font-medium text-pink-400 hover:text-pink-300 hover:bg-slate-800" data-i18n="nav_story_mode">Story Mode</a>
+            <a href="/#features" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800" data-i18n="nav_features">專業功能</a>
+            <a href="/pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800" data-i18n="nav_pricing">終身授權</a>
+            <a href="/faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800" data-i18n="nav_faq">常見問題</a>
+            <button onclick="openLemonSqueezy()" class="w-full mt-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white px-5 py-3 rounded-lg text-base font-bold flex items-center justify-center gap-2">
+                <span data-i18n="nav_buy_now">立即購買 PRO</span>
+            </button>
+            <button onclick="openChromeStore()" class="w-full mt-2 bg-blue-600 text-white px-5 py-3 rounded-lg text-base font-bold flex items-center justify-center gap-2">
+                <span data-i18n="hero_cta_chrome">加到 Chrome</span>
+            </button>
+        </div>
+    </div>
+</nav>

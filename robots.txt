@@ -1,4 +1,35 @@
+# GrokMediaDownloader Website
+# https://grokmedia.kario-studio.com
+
 User-agent: *
 Allow: /
 
+# Crawl delay (optional, be nice to our server)
+Crawl-delay: 1
+
+# Disallow paths that don't need indexing
+Disallow: /components/
+Disallow: /*.json$
+
+# Sitemap location
 Sitemap: https://grokmedia.kario-studio.com/sitemap.xml
+
+# Canonical host
+Host: https://grokmedia.kario-studio.com
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Allow all image crawlers
+User-agent: Googlebot-Image
+Allow: /assets/
+
+User-agent: Bingbot-Media
+Allow: /assets/

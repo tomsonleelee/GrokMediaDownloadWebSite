@@ -1,0 +1,90 @@
+<!-- Footer -->
+<footer class="bg-slate-950 border-t border-slate-900 py-12 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-2">
+            <div class="w-6 h-6 bg-pink-600 rounded flex items-center justify-center">
+                <i data-lucide="download" class="text-white w-3 h-3"></i>
+            </div>
+            <span class="font-bold text-slate-300">GrokMedia<span class="text-pink-400">Downloader</span></span>
+        </div>
+
+        <div class="flex gap-6 text-slate-500">
+            <a href="/privacy.html" class="hover:text-white transition-colors" data-i18n="footer_privacy">隱私權政策</a>
+            <a href="/terms.html" class="hover:text-white transition-colors" data-i18n="footer_terms">服務條款</a>
+            <button onclick="openContactModal()" class="hover:text-white transition-colors focus:outline-none" data-i18n="footer_contact">聯絡支援</button>
+        </div>
+
+        <div class="text-slate-600">
+            &copy; 2025 Kario LLC. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- Contact Modal -->
+<div id="contact-modal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeContactModal()"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative">
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="p-6">
+                <h3 class="text-2xl font-bold mb-2 text-white" data-i18n="contact_title">聯絡支援</h3>
+                <p class="text-slate-400 text-sm mb-6" data-i18n="contact_desc">有任何問題或建議？請填寫下表，我們會盡快回覆。</p>
+                <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase" data-i18n="contact_name">姓名</label>
+                        <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase" data-i18n="contact_email">Email</label>
+                        <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase" data-i18n="contact_message">訊息內容</label>
+                        <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold py-3 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                        <span data-i18n="contact_btn">送出訊息</span>
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Privacy Policy Modal -->
+<div id="privacy-modal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closePrivacyModal()"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative max-h-[80vh] flex flex-col">
+            <button onclick="closePrivacyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white z-10">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="p-6 overflow-y-auto">
+                <h3 class="text-2xl font-bold mb-4 text-white" data-i18n="legal_privacy_title">隱私權政策</h3>
+                <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line" data-i18n="legal_privacy_content"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Terms of Service Modal -->
+<div id="terms-modal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeTermsModal()"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative max-h-[80vh] flex flex-col">
+            <button onclick="closeTermsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white z-10">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="p-6 overflow-y-auto">
+                <h3 class="text-2xl font-bold mb-4 text-white" data-i18n="legal_terms_title">服務條款</h3>
+                <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line" data-i18n="legal_terms_content"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification Container -->
+<div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>

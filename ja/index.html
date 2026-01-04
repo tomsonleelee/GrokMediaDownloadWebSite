@@ -528,54 +528,46 @@
 
     <!-- Stream Capture Video Demo Section -->
     <section id="stream-capture-demo" class="py-20 bg-slate-950 border-t border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Text Content -->
-                <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-4">
-                        <i data-lucide="camera" class="w-3 h-3"></i>
-                        <span data-i18n="stream_demo_badge">PRO機能</span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_demo_title">Stream Capture</h2>
-                    <p class="text-slate-400 mb-6 leading-relaxed" data-i18n="stream_demo_desc">
-                        Grok生成画像をリアルタイム監視。スクロールで自動キャプチャ。インスピレーションを逃さず、一括でローカルにダウンロード。
-                    </p>
-                    <ul class="space-y-3 text-slate-300">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
-                            <span data-i18n="stream_demo_feat_1">DOM監視技術、即座にキャプチャ</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
-                            <span data-i18n="stream_demo_feat_2">自動キュー、スクロールで収集</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
-                            <span data-i18n="stream_demo_feat_3">一括ダウンロード、効率倍増</span>
-                        </li>
-                    </ul>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Text Content -->
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-4">
+                    <i data-lucide="camera" class="w-3 h-3"></i>
+                    <span data-i18n="stream_demo_badge">PRO機能</span>
                 </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_demo_title">Stream Capture</h2>
+                <p class="text-slate-400 mb-6 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_demo_desc">
+                    Grok生成画像をリアルタイム監視。スクロールで自動キャプチャ。インスピレーションを逃さず、一括でローカルにダウンロード。
+                </p>
+                <div class="flex flex-wrap justify-center gap-6 text-slate-300">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
+                        <span data-i18n="stream_demo_feat_1">DOM監視技術、即座にキャプチャ</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
+                        <span data-i18n="stream_demo_feat_2">自動キュー、スクロールで収集</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
+                        <span data-i18n="stream_demo_feat_3">一括ダウンロード、効率倍増</span>
+                    </div>
+                </div>
+            </div>
 
-                <!-- Video Demo Area -->
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full"></div>
-                    <div class="relative rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl shadow-emerald-500/10">
-                        <video
-                            class="w-full aspect-video bg-slate-900"
-                            autoplay muted loop playsinline
-                            poster="/assets/stream-capture-poster.jpg"
-                        >
-                            <source src="/assets/stream-capture-demo.mp4" type="video/mp4">
-                        </video>
-                        <!-- Placeholder overlay - remove when video is ready -->
-                        <div class="absolute inset-0 bg-slate-900/80 flex flex-col items-center justify-center text-slate-500" id="stream-capture-placeholder">
-                            <i data-lucide="video" class="w-16 h-16 mb-4 text-emerald-500/50"></i>
-                            <p class="text-sm" data-i18n="media_placeholder_video">動画デモエリア</p>
-                            <p class="text-xs text-slate-600 mt-1">stream-capture-demo.mp4</p>
-                        </div>
-                    </div>
-                    <p class="text-center text-slate-500 text-sm mt-4" data-i18n="stream_demo_caption">* Stream Captureのリアルタイムキャプチャと一括ダウンロードワークフローをデモ</p>
+            <!-- Video Demo Area -->
+            <div class="relative">
+                <div class="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full"></div>
+                <div class="relative rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl shadow-emerald-500/10">
+                    <video
+                        class="w-full aspect-video bg-slate-900"
+                        autoplay muted loop playsinline
+                        poster="/assets/stream-capture-poster.jpg"
+                    >
+                        <source src="/assets/stream-capture-demo.mp4" type="video/mp4">
+                    </video>
                 </div>
+                <p class="text-center text-slate-500 text-sm mt-4" data-i18n="stream_demo_caption">* Stream Captureのリアルタイムキャプチャと一括ダウンロードワークフローをデモ</p>
             </div>
         </div>
     </section>

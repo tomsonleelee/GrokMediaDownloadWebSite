@@ -172,6 +172,9 @@ function initializeComponents() {
         window.i18n.updateContent();
     }
 
+    // Update navigation links based on current language
+    updateNavigationLinks();
+
     // Initialize Lucide icons
     if (window.lucide) {
         lucide.createIcons();
@@ -194,6 +197,53 @@ function initializeComponents() {
 
     // Initialize section view tracking
     initSectionTracking();
+}
+
+// Update navigation links to match current language
+function updateNavigationLinks() {
+    const currentLang = window.i18n ? window.i18n.currentLang : (localStorage.getItem('site_lang') || 'zh-TW');
+
+    // Define language prefix
+    let langPrefix = '';
+    if (currentLang === 'en') {
+        langPrefix = '/en';
+    } else if (currentLang === 'ja') {
+        langPrefix = '/ja';
+    }
+
+    // Find all navigation links
+    const navLinks = document.querySelectorAll('nav a[href], #mobile-menu a[href]');
+
+    navLinks.forEach(link => {
+        let href = link.getAttribute('href');
+
+        // Skip external links, anchor links, and hash links
+        if (!href || href.startsWith('http') || href.startsWith('#') || href === '/') {
+            // For home link, update to language-specific home
+            if (href === '/') {
+                link.setAttribute('href', langPrefix + '/');
+            }
+            return;
+        }
+
+        // Remove existing language prefix if any
+        if (href.startsWith('/en/')) {
+            href = href.substring(3);
+        } else if (href.startsWith('/ja/')) {
+            href = href.substring(3);
+        }
+
+        // Handle hash links with paths (e.g., /#features)
+        if (href.startsWith('/#')) {
+            link.setAttribute('href', langPrefix + href);
+            return;
+        }
+
+        // Add language prefix for internal links
+        if (href.startsWith('/')) {
+            link.setAttribute('href', langPrefix + href);
+        }
+    });
 }
 
 // Mobile Menu Toggle

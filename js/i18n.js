@@ -647,16 +647,45 @@ function updateContent() {
 }
 
 function toggleLanguage() {
+    // Determine next language
+    let newLang;
     if (currentLang === 'zh-TW') {
-        currentLang = 'en';
+        newLang = 'en';
     } else if (currentLang === 'en') {
-        currentLang = 'ja';
+        newLang = 'ja';
     } else {
-        currentLang = 'zh-TW';
+        newLang = 'zh-TW';
     }
 
-    localStorage.setItem('site_lang', currentLang);
-    updateContent();
+    // Get current path and redirect to the correct language version
+    const currentPath = window.location.pathname;
+    let newPath;
+
+    // Remove existing language prefix if any
+    let basePath = currentPath;
+    if (currentPath.startsWith('/en/')) {
+        basePath = currentPath.substring(3); // Remove '/en'
+    } else if (currentPath.startsWith('/ja/')) {
+        basePath = currentPath.substring(3); // Remove '/ja'
+    }
+
+    // Handle root path
+    if (basePath === '' || basePath === '/') {
+        basePath = '/index.html';
+    }
+
+    // Add new language prefix
+    if (newLang === 'zh-TW') {
+        newPath = basePath; // Chinese uses root path
+    } else if (newLang === 'en') {
+        newPath = '/en' + basePath;
+    } else {
+        newPath = '/ja' + basePath;
+    }
+
+    // Update localStorage and redirect
+    localStorage.setItem('site_lang', newLang);
+    window.location.href = newPath;
 }
 
 function getTranslation(key) {

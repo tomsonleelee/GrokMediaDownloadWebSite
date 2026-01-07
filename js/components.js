@@ -211,8 +211,8 @@ function updateNavigationLinks() {
         langPrefix = '/ja';
     }
 
-    // Find all navigation links
-    const navLinks = document.querySelectorAll('nav a[href], #mobile-menu a[href]');
+    // Find all navigation links (header nav, mobile menu, and footer)
+    const navLinks = document.querySelectorAll('nav a[href], #mobile-menu a[href], footer a[href]');
 
     navLinks.forEach(link => {
         let href = link.getAttribute('href');

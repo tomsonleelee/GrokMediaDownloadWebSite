@@ -204,7 +204,21 @@ const translations = {
 
         // Performance note
         perf_note_title: "v2.0 全新升級：",
-        perf_note_desc: "Story Mode Helper 影片工作室、本地 FFmpeg 合併、畫格擷取續集生成。"
+        perf_note_desc: "Story Mode Helper 影片工作室、本地 FFmpeg 合併、畫格擷取續集生成。",
+
+        // Success Page
+        success_title: "感謝您的購買！",
+        success_subtitle: "您的 PRO 授權碼已發送至您的信箱",
+        success_next_steps: "接下來的步驟",
+        success_step1_title: "查看您的信箱",
+        success_step1_desc: "Lemon Squeezy 會發送一封包含授權碼的郵件到您的信箱（請同時檢查垃圾郵件資料夾）。",
+        success_step2_title: "開啟 Extension",
+        success_step2_desc: "在 Chrome 中點擊 GrokMediaDownloader 圖示，開啟擴充功能面板。",
+        success_step3_title: "輸入授權碼",
+        success_step3_desc: "點擊「Activate PRO」按鈕，貼上您收到的授權碼，即可解鎖所有 PRO 功能。",
+        success_support: "遇到問題？請透過 support@kario-studio.com 聯繫我們",
+        success_back_home: "返回首頁",
+        success_view_faq: "查看常見問題"
     },
     "en": {
         // Navigation
@@ -410,7 +424,21 @@ Refunds for licenses purchased via Lemon Squeezy follow their platform policies.
 
         // Performance note
         perf_note_title: "v2.0 Major Update:",
-        perf_note_desc: "Story Mode Helper video studio, local FFmpeg merge, frame extraction for continuations."
+        perf_note_desc: "Story Mode Helper video studio, local FFmpeg merge, frame extraction for continuations.",
+
+        // Success Page
+        success_title: "Thank You for Your Purchase!",
+        success_subtitle: "Your PRO license key has been sent to your email",
+        success_next_steps: "Next Steps",
+        success_step1_title: "Check Your Email",
+        success_step1_desc: "Lemon Squeezy will send an email with your license key (please also check your spam folder).",
+        success_step2_title: "Open the Extension",
+        success_step2_desc: "Click the GrokMediaDownloader icon in Chrome to open the extension panel.",
+        success_step3_title: "Enter Your License Key",
+        success_step3_desc: "Click the \"Activate PRO\" button and paste your license key to unlock all PRO features.",
+        success_support: "Need help? Contact us at support@kario-studio.com",
+        success_back_home: "Back to Home",
+        success_view_faq: "View FAQ"
     },
     "ja": {
         // Navigation
@@ -616,7 +644,21 @@ Lemon Squeezy購入のライセンスは同プラットフォームの規定に�
 
         // Performance note
         perf_note_title: "v2.0 メジャーアップデート：",
-        perf_note_desc: "Story Mode Helper動画スタジオ、ローカルFFmpegマージ、続編生成用フレーム抽出。"
+        perf_note_desc: "Story Mode Helper動画スタジオ、ローカルFFmpegマージ、続編生成用フレーム抽出。",
+
+        // Success Page
+        success_title: "ご購入ありがとうございます！",
+        success_subtitle: "PROライセンスキーはメールで送信されました",
+        success_next_steps: "次のステップ",
+        success_step1_title: "メールを確認",
+        success_step1_desc: "Lemon Squeezyからライセンスキーが記載されたメールが届きます（迷惑メールフォルダもご確認ください）。",
+        success_step2_title: "拡張機能を開く",
+        success_step2_desc: "ChromeでGrokMediaDownloaderアイコンをクリックして、拡張機能パネルを開きます。",
+        success_step3_title: "ライセンスキーを入力",
+        success_step3_desc: "「Activate PRO」ボタンをクリックし、ライセンスキーを貼り付けて、すべてのPRO機能をアンロックします。",
+        success_support: "お困りですか？support@kario-studio.com までご連絡ください",
+        success_back_home: "ホームに戻る",
+        success_view_faq: "FAQを見る"
     }
 };
 

@@ -149,6 +149,9 @@ const translations = {
         faq_9_a: "完全在本地處理。我們使用 WebAssembly 版 FFmpeg，所有影片處理都在您的瀏覽器中完成，不會上傳到任何伺服器。",
         faq_10_q: "HD Upgrade 是如何運作的？",
         faq_10_a: "Grok 預設存儲的影片可能是低解析度預覽版。HD Upgrade 會自動偵測並向 Grok 發送請求取得 1080p 高畫質版本。如果已經產生 HD 影片，將不會重複發送，若全部影片都已經是 HD 畫質則會自動結束。",
+        faq_11_q: "Lemon Squeezy 是什麼？付款安全嗎？",
+        faq_11_a: "Lemon Squeezy 是一家專為數位產品設計的國際知名支付平台，被數萬家企業採用。所有交易皆透過 SSL 加密保護，符合 PCI DSS 安全標準。我們不會接觸您的信用卡資訊，一切由 Lemon Squeezy 直接處理。",
+        price_secure_link: "了解更多",
 
         // Footer
         footer_privacy: "隱私權政策",
@@ -369,6 +372,9 @@ const translations = {
         faq_9_a: "Completely local. We use WebAssembly FFmpeg, so all video processing happens in your browser without uploading to any server.",
         faq_10_q: "How does HD Upgrade work?",
         faq_10_a: "Grok may store low-res previews. HD Upgrade auto-detects and requests 1080p high-quality versions from Grok. If HD video already exists, no duplicate request is sent. The process ends automatically when all videos are already in HD quality.",
+        faq_11_q: "What is Lemon Squeezy? Is the payment secure?",
+        faq_11_a: "Lemon Squeezy is a globally trusted payment platform designed for digital products, used by tens of thousands of businesses. All transactions are SSL encrypted and PCI DSS compliant. We never see your credit card info—everything is handled directly by Lemon Squeezy.",
+        price_secure_link: "Learn more",
 
         // Footer
         footer_privacy: "Privacy Policy",
@@ -589,6 +595,9 @@ Refunds for licenses purchased via Lemon Squeezy follow their platform policies.
         faq_9_a: "完全にローカル。WebAssembly FFmpegを使用し、すべての動画処理はブラウザ内で完結。サーバーへのアップロードなし。",
         faq_10_q: "HD Upgradeはどう機能しますか？",
         faq_10_a: "Grokは低解像度プレビューを保存することがあります。HD Upgradeは自動検出してGrokに1080p高画質版をリクエスト。既にHD動画がある場合は重複リクエストしません。全ての動画がHD画質の場合は自動終了します。",
+        faq_11_q: "Lemon Squeezyとは？決済は安全ですか？",
+        faq_11_a: "Lemon Squeezyはデジタル製品向けに設計された国際的に信頼される決済プラットフォームで、数万の企業に利用されています。すべての取引はSSL暗号化され、PCI DSS準拠。クレジットカード情報は当方では一切取り扱わず、Lemon Squeezyが直接処理します。",
+        price_secure_link: "詳しく見る",
 
         // Footer
         footer_privacy: "プライバシーポリシー",

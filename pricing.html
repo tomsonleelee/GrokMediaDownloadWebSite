@@ -81,32 +81,27 @@
               "@type": "QuantitativeValue",
               "minValue": 0,
               "maxValue": 0,
-              "unitCode": "MIN"
+              "unitCode": "HUR"
             },
             "transitTime": {
               "@type": "QuantitativeValue",
               "minValue": 0,
               "maxValue": 0,
-              "unitCode": "MIN"
+              "unitCode": "HUR"
             }
           },
           "shippingDestination": {
             "@type": "DefinedRegion",
-            "addressCountry": "EARTH"
+            "addressCountry": ["US", "TW", "JP", "GB", "DE", "FR", "CA", "AU"]
           }
         },
         "hasMerchantReturnPolicy": {
           "@type": "MerchantReturnPolicy",
-          "applicableCountry": "EARTH",
+          "applicableCountry": ["US", "TW", "JP", "GB", "DE", "FR", "CA", "AU"],
           "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
           "merchantReturnDays": 14,
           "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn",
-          "returnPolicySeasonalOverride": {
-            "@type": "MerchantReturnPolicySeasonalOverride",
-            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-            "merchantReturnDays": 14
-          }
+          "returnFees": "https://schema.org/FreeReturn"
         }
       },
       "aggregateRating": {

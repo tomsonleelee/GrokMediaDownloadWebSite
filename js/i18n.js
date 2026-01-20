@@ -10,19 +10,19 @@ const translations = {
         nav_cta: "獲取 PRO 授權",
         nav_buy_now: "立即購買 PRO",
 
-        // Hero Section (v2.0)
-        hero_badge: "v2.0 最新更新 | Story Mode Helper・影片剪輯工作室",
+        // Hero Section (v2.1)
+        hero_badge: "v2.1 最新更新 | 批量選取刪除・自訂下載路徑",
         hero_title_1: "全自動化 Grok",
         hero_title_2: "媒體資產管理",
-        hero_desc: "不只是下載器，更是您的創作工作室。v2.0 全新 Story Mode Helper 讓您輕鬆編排影片故事、擷取畫格、合併輸出。讓專業工具接手您的創作流程。",
+        hero_desc: "不只是下載器，更是您的創作工作室。v2.1 全新批量選取刪除、自訂下載路徑、提示詞檔名。Story Mode Helper 讓您輕鬆編排影片故事、擷取畫格、合併輸出。",
         hero_cta_primary: "獲取 PRO 終身版",
         hero_cta_secondary: "了解 Story Mode",
         hero_cta_chrome: "加到 Chrome",
         hero_trust_1: "安全無毒",
         hero_trust_2: "極速引擎",
 
-        // Story Mode Helper Section (NEW v2.0)
-        story_badge: "v2.0 重磅功能",
+        // Story Mode Helper Section (v2.1)
+        story_badge: "v2.1 重磅功能",
         story_title: "Story Mode Helper",
         story_subtitle: "影片故事創作工作室",
         story_desc: "全新 Side Panel 介面，讓您在瀏覽器中打造專業級影片故事。從收藏影片到合併輸出，一站式完成您的創作流程。",
@@ -101,7 +101,7 @@ const translations = {
         solution_2_title: "真正的批量刪除",
         solution_2_desc: "擴充功能會提供選項來刪除 Grok 上的原始貼文，確保內容從平台上徹底清除。",
         solution_3_title: "Story Mode 影片工作室",
-        solution_3_desc: "全新 v2.0 Story Mode Helper 讓您輕鬆編排影片、擷取畫格、生成續集、合併輸出。",
+        solution_3_desc: "全新 v2.1 批量選取刪除、自訂下載路徑。Story Mode Helper 讓您輕鬆編排影片、擷取畫格、合併輸出。",
 
         // Pricing Section
         price_title: "解鎖完整的生產力",
@@ -206,8 +206,8 @@ const translations = {
 透過 Lemon Squeezy 購買的授權，退款政策依循該平台規範。若遇技術問題無法解決，請聯繫支援團隊。`,
 
         // Performance note
-        perf_note_title: "v2.0 全新升級：",
-        perf_note_desc: "Story Mode Helper 影片工作室、本地 FFmpeg 合併、畫格擷取續集生成。",
+        perf_note_title: "v2.1 全新升級：",
+        perf_note_desc: "批量選取刪除、自訂下載路徑、提示詞檔名、元數據匯出。Story Mode Helper 影片工作室。",
 
         // Success Page
         success_title: "感謝您的購買！",
@@ -233,19 +233,19 @@ const translations = {
         nav_cta: "Get PRO",
         nav_buy_now: "Buy PRO Now",
 
-        // Hero Section (v2.0)
-        hero_badge: "v2.0 Latest Update | Story Mode Helper・Video Studio",
+        // Hero Section (v2.1)
+        hero_badge: "v2.1 Latest | Batch Select & Delete・Custom Paths",
         hero_title_1: "Automated Grok",
         hero_title_2: "Media Asset Mgmt",
-        hero_desc: "Not just a downloader, but your creative studio. v2.0's new Story Mode Helper lets you arrange video stories, extract frames, and merge outputs with ease.",
+        hero_desc: "Not just a downloader, but your creative studio. v2.1's new batch select & delete, custom download paths, and prompt as filename. Story Mode Helper lets you arrange video stories, extract frames, and merge outputs.",
         hero_cta_primary: "Get PRO Lifetime",
         hero_cta_secondary: "Learn Story Mode",
         hero_cta_chrome: "Add to Chrome",
         hero_trust_1: "Secure & Virus-free",
         hero_trust_2: "Fast Engine",
 
-        // Story Mode Helper Section (NEW v2.0)
-        story_badge: "v2.0 MAJOR FEATURE",
+        // Story Mode Helper Section (v2.1)
+        story_badge: "v2.1 Major Feature",
         story_title: "Story Mode Helper",
         story_subtitle: "Video Story Creation Studio",
         story_desc: "A new Side Panel interface that brings professional video story creation to your browser. From favorites to merged output, complete your workflow in one place.",
@@ -324,7 +324,7 @@ const translations = {
         solution_2_title: "True Bulk Delete",
         solution_2_desc: "The extension offers to delete actual posts from Grok, not just unfavorite them.",
         solution_3_title: "Story Mode Video Studio",
-        solution_3_desc: "New v2.0 Story Mode Helper lets you arrange videos, extract frames, generate continuations, and merge output.",
+        solution_3_desc: "New v2.1 batch select & delete, custom download paths. Story Mode Helper makes it easy to arrange videos, extract frames, and merge output.",
 
         // Pricing Section
         price_title: "Unlock Full Productivity",
@@ -429,8 +429,8 @@ The Service is provided "AS IS" without warranties. We are not liable for data l
 Refunds for licenses purchased via Lemon Squeezy follow their platform policies. Contact support for technical issues.`,
 
         // Performance note
-        perf_note_title: "v2.0 Major Update:",
-        perf_note_desc: "Story Mode Helper video studio, local FFmpeg merge, frame extraction for continuations.",
+        perf_note_title: "v2.1 New Features:",
+        perf_note_desc: "Batch select & delete, custom download paths, prompt as filename, metadata export. Story Mode Helper video studio.",
 
         // Success Page
         success_title: "Thank You for Your Purchase!",
@@ -456,19 +456,19 @@ Refunds for licenses purchased via Lemon Squeezy follow their platform policies.
         nav_cta: "PROを入手",
         nav_buy_now: "今すぐPROを購入",
 
-        // Hero Section (v2.0)
-        hero_badge: "v2.0 最新アップデート | Story Mode Helper・動画スタジオ",
+        // Hero Section (v2.1)
+        hero_badge: "v2.1 最新アップデート | バッチ選択＆削除・カスタムパス",
         hero_title_1: "Grokを完全自動化",
         hero_title_2: "メディア資産管理",
-        hero_desc: "単なるダウンローダーではなく、クリエイティブスタジオです。v2.0の新しいStory Mode Helperで、動画ストーリーの編集、フレーム抽出、マージ出力が簡単に。",
+        hero_desc: "単なるダウンローダーではなく、クリエイティブスタジオです。v2.1の新機能バッチ選択＆削除、カスタムダウンロードパス、プロンプトをファイル名に。Story Mode Helperで動画編集も簡単に。",
         hero_cta_primary: "PRO永久版を入手",
         hero_cta_secondary: "Story Modeを見る",
         hero_cta_chrome: "Chromeに追加",
         hero_trust_1: "安全・ウイルスフリー",
         hero_trust_2: "高速エンジン",
 
-        // Story Mode Helper Section (NEW v2.0)
-        story_badge: "v2.0 メジャー機能",
+        // Story Mode Helper Section (v2.1)
+        story_badge: "v2.1 注目機能",
         story_title: "Story Mode Helper",
         story_subtitle: "動画ストーリー制作スタジオ",
         story_desc: "新しいサイドパネルインターフェースで、ブラウザ内でプロ級の動画ストーリー制作が可能に。お気に入りからマージ出力まで、ワンストップで完結。",
@@ -547,7 +547,7 @@ Refunds for licenses purchased via Lemon Squeezy follow their platform policies.
         solution_2_title: "真の一括削除",
         solution_2_desc: "拡張機能がGrokの元投稿を削除するオプションを提供。お気に入り解除だけでなく完全削除。",
         solution_3_title: "Story Mode動画スタジオ",
-        solution_3_desc: "新v2.0 Story Mode Helperで動画編集、フレーム抽出、続編生成、マージ出力が簡単に。",
+        solution_3_desc: "新機能 v2.1 バッチ選択＆削除、カスタムダウンロードパス。Story Mode Helper で動画の編集、フレーム抽出、結合出力が簡単に。",
 
         // Pricing Section
         price_title: "生産性を最大化",
@@ -652,8 +652,8 @@ GrokMediaDownloaderのインストール・使用により、本規約に拘束�
 Lemon Squeezy購入のライセンスは同プラットフォームの規定に従う。技術的問題はサポートまで。`,
 
         // Performance note
-        perf_note_title: "v2.0 メジャーアップデート：",
-        perf_note_desc: "Story Mode Helper動画スタジオ、ローカルFFmpegマージ、続編生成用フレーム抽出。",
+        perf_note_title: "v2.1 新機能：",
+        perf_note_desc: "バッチ選択＆削除、カスタムダウンロードパス、プロンプトをファイル名に、メタデータ出力。Story Mode Helper 動画スタジオ。",
 
         // Success Page
         success_title: "ご購入ありがとうございます！",

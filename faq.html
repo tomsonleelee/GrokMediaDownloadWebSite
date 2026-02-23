@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>常見問題 FAQ | GrokMediaDownloader</title>
-    <meta name="description" content="GrokMediaDownloader 常見問題解答 - 了解 Generate List、Date Filter、Stream Capture、Story Mode Helper 等功能的使用方法。">
+    <meta name="description" content="GrokMediaDownloader 常見問題解答 - 了解 Video Gen Queue、Project Download、Generate List、Date Filter、Stream Capture、Story Mode Helper 等功能的使用方法。">
     <meta name="keywords" content="GrokMediaDownloader FAQ, 常見問題, 使用說明, Story Mode Helper, Stream Capture">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -112,6 +112,22 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Completely local. We use WebAssembly FFmpeg, so all video processing happens in your browser without uploading to any server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Video Gen Queue?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Video Gen Queue is a v2.2 major feature. It's an automated video generation scheduling system in the side panel. You can batch add prompts to the queue, choose from 4 generation modes (Custom/Normal/Fun/Spicy), with auto-retry on failure and smart rate limit detection. Free version has 50 uses, PRO is unlimited."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Project-Based Download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project-Based Download is a v2.2 feature that organizes your downloads into project folders. Before downloading, it scans and shows statistics (image/video counts, HD/SD breakdown). Files are automatically organized into folders named by date and prompt, making it easy to manage your creations."
           }
         }
       ]
@@ -277,6 +293,36 @@
                         </button>
                         <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
                             我們使用 IndexedDB 儲存影片資料，容量取決於您的瀏覽器設定。一般來說可以儲存數百 MB 到數 GB 的資料。Side Panel 中會顯示目前的儲存使用量。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: v2.2 New Features -->
+            <div class="mb-12">
+                <h2 class="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    v2.2 新功能
+                </h2>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-900 border border-pink-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_12_q">什麼是 Video Gen Queue？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_12_a">
+                            Video Gen Queue 是 v2.2 的重磅功能。它是側邊面板中的自動化影片生成排程系統，可批次加入提示詞到佇列，選擇 Custom/Normal/Fun/Spicy 四種生成模式，失敗時自動重試，並智慧偵測速率限制。免費版可使用 50 次，PRO 版無限制。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-teal-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_13_q">什麼是 Project-Based Download？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_13_a">
+                            Project-Based Download 是 v2.2 的專案式下載管理功能。下載前會先掃描並顯示統計資訊（圖片/影片數量、HD/SD 比例），檔案自動依日期和提示詞建立專案資料夾（格式：{date}_{prompt}/），讓創作管理一目了然。
                         </div>
                     </div>
                 </div>

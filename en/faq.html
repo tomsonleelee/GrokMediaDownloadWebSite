@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - Frequently Asked Questions | GrokMediaDownloader</title>
-    <meta name="description" content="GrokMediaDownloader FAQ - Learn how to use Generate List, Date Filter, Stream Capture, Story Mode Helper, and other features.">
+    <meta name="description" content="GrokMediaDownloader FAQ - Learn how to use Video Gen Queue, Project Download, Generate List, Date Filter, Stream Capture, Story Mode Helper, and other features.">
     <meta name="keywords" content="GrokMediaDownloader FAQ, frequently asked questions, user guide, Story Mode Helper, Stream Capture">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -112,6 +112,22 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Completely local. We use WebAssembly FFmpeg, so all video processing happens in your browser without uploading to any server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Video Gen Queue?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Video Gen Queue is a v2.2 major feature. It's an automated video generation scheduling system in the side panel. You can batch add prompts to the queue, choose from 4 generation modes (Custom/Normal/Fun/Spicy), with auto-retry on failure and smart rate limit detection. Free version has 50 uses, PRO is unlimited."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Project-Based Download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project-Based Download is a v2.2 feature that organizes your downloads into project folders. Before downloading, it scans and shows statistics (image/video counts, HD/SD breakdown). Files are automatically organized into folders named by date and prompt, making it easy to manage your creations."
           }
         }
       ]
@@ -277,6 +293,36 @@
                         </button>
                         <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
                             We use IndexedDB to store video data. Capacity depends on your browser settings, typically ranging from hundreds of MB to several GB. The Side Panel displays current storage usage.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: v2.2 New Features -->
+            <div class="mb-12">
+                <h2 class="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    v2.2 New Features
+                </h2>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-900 border border-pink-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_12_q">What is Video Gen Queue?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_12_a">
+                            Video Gen Queue is a v2.2 major feature. It's an automated video generation scheduling system in the side panel. You can batch add prompts to the queue, choose from 4 generation modes (Custom/Normal/Fun/Spicy), with auto-retry on failure and smart rate limit detection. Free version has 50 uses, PRO is unlimited.
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-teal-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_13_q">What is Project-Based Download?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_13_a">
+                            Project-Based Download is a v2.2 feature that organizes your downloads into project folders. Before downloading, it scans and shows statistics (image/video counts, HD/SD breakdown). Files are automatically organized into folders named by date and prompt, making it easy to manage your creations.
                         </div>
                     </div>
                 </div>

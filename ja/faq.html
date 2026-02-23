@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>よくある質問 FAQ | GrokMediaDownloader</title>
-    <meta name="description" content="GrokMediaDownloader よくある質問 - Generate List、Date Filter、Stream Capture、Story Mode Helper などの機能の使い方を説明します。">
+    <meta name="description" content="GrokMediaDownloader よくある質問 - Video Gen Queue、Project Download、Generate List、Date Filter、Stream Capture、Story Mode Helper などの機能の使い方を説明します。">
     <meta name="keywords" content="GrokMediaDownloader FAQ, よくある質問, 使い方, Story Mode Helper, Stream Capture">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -112,6 +112,22 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Completely local. We use WebAssembly FFmpeg, so all video processing happens in your browser without uploading to any server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Video Gen Queue?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Video Gen Queue is a v2.2 major feature. It's an automated video generation scheduling system in the side panel. You can batch add prompts to the queue, choose from 4 generation modes (Custom/Normal/Fun/Spicy), with auto-retry on failure and smart rate limit detection. Free version has 50 uses, PRO is unlimited."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Project-Based Download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project-Based Download is a v2.2 feature that organizes your downloads into project folders. Before downloading, it scans and shows statistics (image/video counts, HD/SD breakdown). Files are automatically organized into folders named by date and prompt, making it easy to manage your creations."
           }
         }
       ]
@@ -277,6 +293,36 @@
                         </button>
                         <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
                             IndexedDBを使用して動画データを保存しています。容量はブラウザの設定により、通常数百MBから数GBまで保存可能です。サイドパネルで現在のストレージ使用量を確認できます。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: v2.2 New Features -->
+            <div class="mb-12">
+                <h2 class="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    v2.2 新機能
+                </h2>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-900 border border-pink-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_12_q">Video Gen Queue とは？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_12_a">
+                            Video Gen Queue は v2.2 のメジャー機能です。サイドパネルの自動動画生成スケジューリングシステムで、プロンプトを一括でキューに追加し、4つの生成モード（Custom/Normal/Fun/Spicy）から選択できます。失敗時の自動リトライやスマートなレート制限検出機能を搭載。無料版は50回、PROは無制限です。
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-teal-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_13_q">Project-Based Download とは？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_13_a">
+                            Project-Based Download は v2.2 のプロジェクト式ダウンロード管理機能です。ダウンロード前に画像/動画の数やHD/SD比率をスキャンして統計表示し、日付とプロンプトに基づいてプロジェクトフォルダ（形式：{date}_{prompt}/）を自動作成します。
                         </div>
                     </div>
                 </div>

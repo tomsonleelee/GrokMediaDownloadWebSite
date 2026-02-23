@@ -12,8 +12,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grok Media Downloader v2.1 | Story Mode Helper - AI動画ストーリー作成スタジオ</title>
-    <meta name="description" content="GrokMediaDownloader v2.1 - 新機能バッチ選択＆削除、カスタムダウンロードパス、プロンプトをファイル名に！Story Mode Helper ビデオスタジオ、Storyboard ビジュアル管理、フレーム抽出、FFmpeg 結合。一括ダウンロード、Stream Capture、HD アップグレード対応。">
+    <title>Grok Media Downloader v2.2 | Video Gen Queue・Project Download - AI動画自動化スタジオ</title>
+    <meta name="description" content="GrokMediaDownloader v2.2 - 新機能 Video Gen Queue 自動動画生成スケジューリング、Project-Based Download プロジェクトフォルダ管理、4つの生成モード。Story Mode Helper、一括ダウンロード、Stream Capture、HD アップグレード対応。">
     <meta name="keywords" content="Grok downloader, Story Mode Helper, Video Studio, Grok ダウンローダー, Grok 動画編集, Storyboard, フレーム抽出, FFmpeg, Chrome 拡張機能, 一括ダウンロード, Stream Capture, HD Upgrade, Grok AI video, 動画結合">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Kario Studio">
@@ -32,8 +32,8 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://grokmedia.kario-studio.com/ja/">
-    <meta property="og:title" content="Grok Media Downloader v2.1 | Story Mode Helper - 動画ストーリー作成スタジオ">
-    <meta property="og:description" content="新機能 v2.1 バッチ選択＆削除、カスタムダウンロードパス！Story Mode Helper、Storyboard ビジュアル管理、フレーム抽出、FFmpeg 結合出力。最強の Grok AI メディア管理拡張機能。">
+    <meta property="og:title" content="Grok Media Downloader v2.2 | Video Gen Queue・Project Download">
+    <meta property="og:description" content="新 v2.2 Video Gen Queue 自動動画生成、Project-Based Download プロジェクト管理、4つの生成モード。最強の Grok AI メディア管理拡張機能。">
     <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
     <meta property="og:locale" content="ja_JP">
     <meta property="og:locale:alternate" content="zh_TW">
@@ -42,8 +42,8 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://grokmedia.kario-studio.com/ja/">
-    <meta name="twitter:title" content="Grok Media Downloader v2.1 | Story Mode Helper">
-    <meta name="twitter:description" content="新機能 v2.1 バッチ選択＆削除、カスタムダウンロードパス！Story Mode Helper、Storyboard、フレーム抽出、FFmpeg ローカル結合。">
+    <meta name="twitter:title" content="Grok Media Downloader v2.2 | Video Gen Queue・Project Download">
+    <meta name="twitter:description" content="新機能 Video Gen Queue 自動動画生成、Project Download 管理、4つの生成モード、Story Mode Helper。">
     <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
 
     <!-- Schema.org - SoftwareApplication -->
@@ -57,15 +57,15 @@
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "2.1",
+      "softwareVersion": "2.2",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "screenshot": "https://grokmedia.kario-studio.com/assets/og-image.jpg",
-      "featureList": ["Batch Select & Delete", "Custom Download Paths", "Prompt as Filename", "Metadata Export", "Batch Video Generation", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
+      "featureList": ["Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
       "offers": {
         "@type": "Offer",
         "price": "2.99",
         "priceCurrency": "USD",
-        "priceValidUntil": "2026-01-31",
+        "priceValidUntil": "2027-01-31",
         "availability": "https://schema.org/InStock"
       },
       "publisher": {
@@ -251,7 +251,7 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.1 最新アップデート | バッチ選択＆削除・カスタムパス</span>
+                        <span data-i18n="hero_badge">v2.0 最新更新 | Story Mode Helper・影片剪輯工作室</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -300,47 +300,60 @@
                     <div class="absolute -inset-4 bg-pink-500/20 blur-3xl rounded-full"></div>
                     <div class="relative bg-white rounded-xl shadow-2xl overflow-hidden border border-slate-200 text-slate-800 transform rotate-y-6 rotate-x-6 hover:rotate-0 transition-all duration-700">
                         <div class="bg-white border-b border-gray-100 p-4 flex items-center gap-2">
-                            <i data-lucide="clapperboard" class="w-6 h-6 text-slate-800"></i>
-                            <h3 class="font-bold text-lg text-slate-900">Story Mode Helper</h3>
-                            <span class="ml-auto bg-purple-100 text-purple-700 text-xs font-bold px-2 py-0.5 rounded">v2.1</span>
+                            <i data-lucide="play-circle" class="w-6 h-6 text-slate-800"></i>
+                            <h3 class="font-bold text-lg text-slate-900">GrokMediaDownloader</h3>
+                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.2</span>
                         </div>
 
                         <div class="p-4 space-y-3 bg-[#F9FAFB]">
-                            <!-- Storyboard Preview -->
+                            <!-- Video Gen Queue Status -->
                             <div class="bg-white p-3 rounded-lg border border-gray-100 shadow-sm">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <i data-lucide="layout-grid" class="w-4 h-4 text-purple-500"></i>
-                                    <span class="text-sm font-bold text-gray-700">Storyboard</span>
+                                    <i data-lucide="list-video" class="w-4 h-4 text-pink-500"></i>
+                                    <span class="text-sm font-bold text-gray-700">Video Gen Queue</span>
+                                    <span class="ml-auto text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">3 Running</span>
                                 </div>
-                                <div class="flex gap-2">
-                                    <div class="w-16 h-10 bg-gradient-to-br from-pink-200 to-purple-200 rounded flex items-center justify-center text-xs font-bold text-purple-700">1</div>
-                                    <div class="w-16 h-10 bg-gradient-to-br from-blue-200 to-cyan-200 rounded flex items-center justify-center text-xs font-bold text-cyan-700">2</div>
-                                    <div class="w-16 h-10 bg-gradient-to-br from-green-200 to-emerald-200 rounded flex items-center justify-center text-xs font-bold text-emerald-700">3</div>
-                                    <div class="w-16 h-10 bg-gray-100 rounded flex items-center justify-center">
-                                        <i data-lucide="plus" class="w-4 h-4 text-gray-400"></i>
+                                <div class="space-y-1.5">
+                                    <div class="flex items-center gap-2 text-xs">
+                                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                        <span class="text-gray-600 truncate flex-1">sunset ocean wave...</span>
+                                        <span class="text-green-600 font-bold">Generating</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-xs">
+                                        <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                                        <span class="text-gray-600 truncate flex-1">dancing cat party...</span>
+                                        <span class="text-blue-600 font-bold">Queued</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-xs">
+                                        <div class="w-2 h-2 rounded-full bg-emerald-500"></div>
+                                        <span class="text-gray-600 truncate flex-1">space explorer...</span>
+                                        <span class="text-emerald-600 font-bold">Done</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Frame Preview -->
+                            <!-- Mode Selection -->
                             <div class="bg-white p-3 rounded-lg border border-gray-100 shadow-sm">
                                 <div class="flex items-center gap-2 mb-2">
-                                    <i data-lucide="image" class="w-4 h-4 text-pink-500"></i>
-                                    <span class="text-sm font-bold text-gray-700">Last Frame</span>
+                                    <i data-lucide="sliders-horizontal" class="w-4 h-4 text-purple-500"></i>
+                                    <span class="text-sm font-bold text-gray-700">Generation Mode</span>
                                 </div>
-                                <div class="w-full h-20 bg-gradient-to-br from-slate-100 to-slate-200 rounded flex items-center justify-center">
-                                    <i data-lucide="frame" class="w-8 h-8 text-slate-400"></i>
+                                <div class="flex gap-1.5">
+                                    <div class="px-2.5 py-1 bg-pink-500 text-white rounded text-xs font-bold">Custom</div>
+                                    <div class="px-2.5 py-1 bg-gray-100 text-gray-500 rounded text-xs font-bold">Normal</div>
+                                    <div class="px-2.5 py-1 bg-gray-100 text-gray-500 rounded text-xs font-bold">Fun</div>
+                                    <div class="px-2.5 py-1 bg-gray-100 text-gray-500 rounded text-xs font-bold">Spicy</div>
                                 </div>
                             </div>
 
                             <!-- Action Buttons -->
-                            <button class="w-full bg-[#8B5CF6] hover:bg-purple-600 text-white font-bold py-2.5 rounded text-sm shadow-sm transition-colors flex items-center justify-center gap-2">
-                                <i data-lucide="send" class="w-4 h-4"></i>
-                                Send Frame to Grok
+                            <button class="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-bold py-2.5 rounded text-sm shadow-sm transition-colors flex items-center justify-center gap-2">
+                                <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                                Add to Queue
                             </button>
                             <button class="w-full bg-[#10B981] hover:bg-emerald-600 text-white font-bold py-2.5 rounded text-sm shadow-sm transition-colors flex items-center justify-center gap-2">
-                                <i data-lucide="merge" class="w-4 h-4"></i>
-                                Merge & Export
+                                <i data-lucide="folder-down" class="w-4 h-4"></i>
+                                Project Download
                             </button>
                         </div>
                     </div>
@@ -349,59 +362,59 @@
         </div>
     </section>
 
-    <!-- Story Mode Helper Highlight -->
-    <section id="story-mode-highlight" class="py-24 bg-slate-950 relative border-t border-slate-800 overflow-hidden">
-        <div class="absolute inset-0 bg-purple-500/5"></div>
+    <!-- Video Gen Queue Highlight -->
+    <section id="video-gen-queue" class="py-24 bg-slate-950 relative border-t border-slate-800 overflow-hidden">
+        <div class="absolute inset-0 bg-pink-500/5"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Text Content -->
                 <div class="order-2 lg:order-1">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wide mb-6">
-                        <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
-                        <span data-i18n="story_badge">v2.1 注目機能</span>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                        <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+                        <span data-i18n="queue_badge">v2.2 全新功能</span>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                        <span data-i18n="story_title">Story Mode Helper</span>
+                        <span data-i18n="queue_title">Video Gen Queue</span>
                     </h2>
-                    <p class="text-xl text-purple-300 mb-4" data-i18n="story_subtitle">影片故事創作工作室</p>
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="story_desc">
-                        全新 Side Panel 介面，讓您在瀏覽器中打造專業級影片故事。從收藏影片到合併輸出，一站式完成您的創作流程。
+                    <p class="text-xl text-pink-300 mb-4" data-i18n="queue_subtitle">自動化影片生成排程</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="queue_desc">
+                        全新 Side Panel 介面，一鍵批次加入影片生成佇列。支援 Custom/Normal/Fun/Spicy 四種模式，自動重試失敗任務，智慧偵測速率限制。
                     </p>
-                    <a href="/ja/story-mode.html" class="group relative px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-bold transition-all flex items-center gap-2 w-fit">
-                        <span data-i18n="story_cta">了解更多</span>
+                    <a href="/ja/story-mode.html" class="group relative px-6 py-3 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold transition-all flex items-center gap-2 w-fit">
+                        <span data-i18n="queue_cta">了解更多</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
 
                 <!-- Feature Cards -->
                 <div class="order-1 lg:order-2 grid grid-cols-2 gap-4">
-                    <div class="bg-slate-900/80 p-4 rounded-xl border border-purple-500/20">
-                        <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="layout-grid" class="text-purple-400 w-5 h-5"></i>
-                        </div>
-                        <h4 class="font-bold text-white mb-1" data-i18n="story_feat_1_title">Storyboard 故事板</h4>
-                        <p class="text-slate-400 text-sm" data-i18n="story_feat_1_desc">視覺化拖放排序影片片段，直覺管理您的影片時間軸。</p>
-                    </div>
                     <div class="bg-slate-900/80 p-4 rounded-xl border border-pink-500/20">
                         <div class="w-10 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="frame" class="text-pink-400 w-5 h-5"></i>
+                            <i data-lucide="refresh-cw" class="text-pink-400 w-5 h-5"></i>
                         </div>
-                        <h4 class="font-bold text-white mb-1" data-i18n="story_feat_2_title">畫格擷取</h4>
-                        <p class="text-slate-400 text-sm" data-i18n="story_feat_2_desc">自動擷取每個影片的首尾畫格作為縮圖預覽。</p>
+                        <h4 class="font-bold text-white mb-1" data-i18n="queue_feat_1_title">自動重試機制</h4>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_feat_1_desc">生成失敗時自動重新加入佇列，確保每個任務都能完成。</p>
                     </div>
-                    <div class="bg-slate-900/80 p-4 rounded-xl border border-blue-500/20">
-                        <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="send" class="text-blue-400 w-5 h-5"></i>
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-purple-500/20">
+                        <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mb-3">
+                            <i data-lucide="list-plus" class="text-purple-400 w-5 h-5"></i>
                         </div>
-                        <h4 class="font-bold text-white mb-1" data-i18n="story_feat_3_title">發送畫格到 Grok</h4>
-                        <p class="text-slate-400 text-sm" data-i18n="story_feat_3_desc">選取影片最後一幀，一鍵發送到 Grok 生成續集影片。</p>
+                        <h4 class="font-bold text-white mb-1" data-i18n="queue_feat_2_title">批次加入佇列</h4>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_feat_2_desc">從收藏清單一鍵選取多個項目，批量加入生成佇列。</p>
+                    </div>
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-orange-500/20">
+                        <div class="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center mb-3">
+                            <i data-lucide="sliders-horizontal" class="text-orange-400 w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-bold text-white mb-1" data-i18n="queue_feat_3_title">四種生成模式</h4>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_feat_3_desc">支援 Custom/Normal/Fun/Spicy 模式，滿足不同創作風格需求。</p>
                     </div>
                     <div class="bg-slate-900/80 p-4 rounded-xl border border-emerald-500/20">
                         <div class="w-10 h-10 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="merge" class="text-emerald-400 w-5 h-5"></i>
+                            <i data-lucide="shield-check" class="text-emerald-400 w-5 h-5"></i>
                         </div>
-                        <h4 class="font-bold text-white mb-1" data-i18n="story_feat_4_title">本地 FFmpeg 合併</h4>
-                        <p class="text-slate-400 text-sm" data-i18n="story_feat_4_desc">WebAssembly FFmpeg 在瀏覽器本地合併，保護隱私。</p>
+                        <h4 class="font-bold text-white mb-1" data-i18n="queue_feat_4_title">速率限制偵測</h4>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_feat_4_desc">智慧偵測 Grok API 速率限制，自動暫停並在冷卻後恢復。</p>
                     </div>
                 </div>
             </div>
@@ -505,20 +518,53 @@
                     </div>
                 </div>
 
-                <!-- Feature 6 - Story Mode (NEW) -->
-                <div class="bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-8 rounded-2xl border border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-purple-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/30 transition-colors">
+                <!-- Feature 6: Story Mode -->
+                <div class="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/10 group flex flex-col">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors">
                         <i data-lucide="clapperboard" class="text-purple-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_7_title">Story Mode Helper (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_7_desc">全新影片工作室！Storyboard 管理、畫格擷取、發送到 Grok 生成續集、本地 FFmpeg 合併輸出。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_7_desc">全新影片工作室！Storyboard 管理、畫格擷取、發送到 Grok 生成續集、本地 FFmpeg 合併輸出。</p>
                     <!-- Image Placeholder -->
-                    <div class="mt-4 relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center">
-                        <img src="/assets/feat-story-mode.jpg" alt="Story Mode" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+                    <div class="relative rounded-lg overflow-hidden border border-purple-500/20 bg-slate-900 aspect-video flex items-center justify-center mt-4">
+                        <img src="/assets/feat-story-mode.jpg" alt="Story Mode Feature" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
                         <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
                             <i data-lucide="image" class="w-8 h-8 mb-2 text-purple-500/30"></i>
                             <p class="text-xs">feat-story-mode.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 7: Video Gen Queue (NEW v2.2) -->
+                <div class="bg-gradient-to-br from-pink-900/50 to-orange-900/50 p-8 rounded-2xl border border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-pink-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-pink-500/30 transition-colors">
+                        <i data-lucide="list-video" class="text-pink-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_8_title">Video Gen Queue (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_8_desc">自動化影片生成排程！批次加入佇列、四種生成模式、自動重試、速率限制偵測。免費版 50 次，PRO 無限制。</p>
+                    <div class="relative rounded-lg overflow-hidden border border-pink-500/20 bg-slate-900 aspect-video flex items-center justify-center mt-4">
+                        <img src="/assets/feat-video-gen-queue.jpg" alt="Video Gen Queue Feature" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
+                            <i data-lucide="image" class="w-8 h-8 mb-2 text-pink-500/30"></i>
+                            <p class="text-xs">feat-video-gen-queue.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 8: Project-Based Download (NEW v2.2) -->
+                <div class="bg-gradient-to-br from-teal-900/50 to-blue-900/50 p-8 rounded-2xl border border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
+                        <i data-lucide="folder-open" class="text-teal-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_9_title">Project-Based Download (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_9_desc">專案式資料夾管理！下載前自動掃描統計、依日期與提示詞建立專案資料夾，檔案分類一目了然。</p>
+                    <div class="relative rounded-lg overflow-hidden border border-teal-500/20 bg-slate-900 aspect-video flex items-center justify-center mt-4">
+                        <img src="/assets/feat-project-download.jpg" alt="Project Download Feature" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
+                            <i data-lucide="image" class="w-8 h-8 mb-2 text-teal-500/30"></i>
+                            <p class="text-xs">feat-project-download.jpg</p>
                         </div>
                     </div>
                 </div>
@@ -641,7 +687,7 @@
                         <i data-lucide="clapperboard" class="text-purple-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-lg font-bold mb-2 text-white" data-i18n="solution_3_title">Story Mode 影片工作室</h3>
-                    <p class="text-slate-300 text-sm" data-i18n="solution_3_desc">新機能 v2.1 バッチ選択＆削除、カスタムダウンロードパス。Story Mode Helper で動画の編集、フレーム抽出、結合出力が簡単に。</p>
+                    <p class="text-slate-300 text-sm" data-i18n="solution_3_desc">全新 v2.0 Story Mode Helper 讓您輕鬆編排影片、擷取畫格、生成續集、合併輸出。</p>
                 </div>
             </div>
 
@@ -650,8 +696,8 @@
                 <div class="inline-flex items-center gap-3 bg-slate-900 border border-slate-700 rounded-xl px-6 py-4">
                     <i data-lucide="zap" class="text-yellow-400 w-5 h-5"></i>
                     <p class="text-slate-300 text-sm">
-                        <span class="font-bold text-white" data-i18n="perf_note_title">v2.1 新機能：</span>
-                        <span data-i18n="perf_note_desc">バッチ選択＆削除、カスタムダウンロードパス、プロンプトをファイル名に、メタデータ出力。Story Mode Helper ビデオスタジオ。</span>
+                        <span class="font-bold text-white" data-i18n="perf_note_title">v2.0 全新升級：</span>
+                        <span data-i18n="perf_note_desc">Story Mode Helper 影片工作室、本地 FFmpeg 合併、畫格擷取續集生成。</span>
                     </p>
                 </div>
             </div>

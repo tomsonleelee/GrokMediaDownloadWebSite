@@ -71,6 +71,31 @@ const translations = {
         story_core_title: "核心功能",
         story_core_desc: "Story Mode Helper 提供完整的影片故事創作工具鏈",
 
+        // Video Studio Section (Story Mode Highlight)
+        studio_badge: "Video Studio",
+        studio_title: "Story Mode Helper",
+        studio_subtitle: "影片故事創作工作室",
+        studio_desc: "從下載影片到合併輸出，5 步驟完成您的 AI 影片故事。視覺化 Storyboard 管理、自動畫格擷取、一鍵發送到 Grok 生成續集。",
+        studio_step_1_label: "下載影片",
+        studio_step_1_desc: "從 Grok 收藏下載影片",
+        studio_step_2_label: "加入工作室",
+        studio_step_2_desc: "拖放到 Storyboard",
+        studio_step_3_label: "擷取畫格",
+        studio_step_3_desc: "自動擷取最後一幀",
+        studio_step_4_label: "發送到 Grok",
+        studio_step_4_desc: "上傳畫格並生成續集",
+        studio_step_5_label: "匯出合併",
+        studio_step_5_desc: "合併所有片段為一支影片",
+        studio_cta: "了解 Story Mode",
+
+        // Hero Feature Tags
+        hero_tag_1: "批量下載",
+        hero_tag_2: "Video Gen Queue",
+        hero_tag_3: "Video Studio",
+        hero_tag_4: "HD 升級",
+        hero_tag_5: "專案資料夾",
+        hero_tag_6: "Stream Capture",
+
         // Stream Capture Demo Section
         stream_demo_badge: "PRO 功能",
         stream_demo_title: "Stream Capture 串流擷取",
@@ -319,6 +344,31 @@ const translations = {
         story_core_title: "Core Features",
         story_core_desc: "Story Mode Helper provides a complete video storytelling toolchain",
 
+        // Video Studio Section (Story Mode Highlight)
+        studio_badge: "Video Studio",
+        studio_title: "Story Mode Helper",
+        studio_subtitle: "Video Story Creation Studio",
+        studio_desc: "From downloading videos to merged output, complete your AI video story in 5 steps. Visual Storyboard management, auto frame extraction, one-click send to Grok for continuations.",
+        studio_step_1_label: "Download",
+        studio_step_1_desc: "Get video from Grok Favorites",
+        studio_step_2_label: "Add to Studio",
+        studio_step_2_desc: "Drag & drop into Storyboard",
+        studio_step_3_label: "Extract Frame",
+        studio_step_3_desc: "Auto-extract last frame",
+        studio_step_4_label: "Send to Grok",
+        studio_step_4_desc: "Upload frame & generate",
+        studio_step_5_label: "Export",
+        studio_step_5_desc: "Merge all clips into one video",
+        studio_cta: "Learn Story Mode",
+
+        // Hero Feature Tags
+        hero_tag_1: "Batch Download",
+        hero_tag_2: "Video Gen Queue",
+        hero_tag_3: "Video Studio",
+        hero_tag_4: "HD Upgrade",
+        hero_tag_5: "Project Folders",
+        hero_tag_6: "Stream Capture",
+
         // Stream Capture Demo Section
         stream_demo_badge: "PRO Feature",
         stream_demo_title: "Stream Capture",
@@ -566,6 +616,31 @@ Refunds for licenses purchased via Lemon Squeezy follow their platform policies.
         // Story Mode Page - Core Features
         story_core_title: "コア機能",
         story_core_desc: "Story Mode Helperは、完全な動画ストーリー作成ツールチェーンを提供します",
+
+        // Video Studio Section (Story Mode Highlight)
+        studio_badge: "Video Studio",
+        studio_title: "Story Mode Helper",
+        studio_subtitle: "動画ストーリー制作スタジオ",
+        studio_desc: "動画のダウンロードからマージ出力まで、5ステップでAI動画ストーリーを完成。ビジュアルStoryboard管理、自動フレーム抽出、ワンクリックでGrokに送信して続編を生成。",
+        studio_step_1_label: "ダウンロード",
+        studio_step_1_desc: "Grokのお気に入りから動画を取得",
+        studio_step_2_label: "スタジオに追加",
+        studio_step_2_desc: "Storyboardにドラッグ＆ドロップ",
+        studio_step_3_label: "フレーム抽出",
+        studio_step_3_desc: "最後のフレームを自動抽出",
+        studio_step_4_label: "Grokに送信",
+        studio_step_4_desc: "フレームをアップロードして生成",
+        studio_step_5_label: "エクスポート",
+        studio_step_5_desc: "全クリップを1つの動画にマージ",
+        studio_cta: "Story Modeを見る",
+
+        // Hero Feature Tags
+        hero_tag_1: "一括ダウンロード",
+        hero_tag_2: "Video Gen Queue",
+        hero_tag_3: "Video Studio",
+        hero_tag_4: "HDアップグレード",
+        hero_tag_5: "プロジェクトフォルダ",
+        hero_tag_6: "Stream Capture",
 
         // Stream Capture Demo Section
         stream_demo_badge: "PRO機能",

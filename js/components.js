@@ -96,6 +96,62 @@ const Analytics = {
             ...details,
             event_category: 'conversion'
         });
+    },
+
+    // Track video interactions (play, pause, ended, progress milestones)
+    trackVideo: function(action, videoSrc, details) {
+        this.track('video_interaction', {
+            video_action: action,
+            video_src: videoSrc,
+            ...details,
+            event_category: 'engagement'
+        });
+    },
+
+    // Track section engagement time (seconds spent in a section)
+    trackSectionEngagement: function(sectionId, seconds) {
+        this.track('section_engagement', {
+            section_id: sectionId,
+            engagement_seconds: seconds,
+            event_category: 'engagement'
+        });
+    },
+
+    // Track Web Vitals performance metrics
+    trackWebVital: function(metric, value, rating) {
+        this.track('web_vital', {
+            metric_name: metric,
+            metric_value: Math.round(value),
+            metric_rating: rating,
+            event_category: 'performance'
+        });
+    },
+
+    // Track pricing card interactions
+    trackPricingCard: function(action, cardType, details) {
+        this.track('pricing_card_interaction', {
+            card_action: action,
+            card_type: cardType,
+            ...details,
+            event_category: 'conversion'
+        });
+    },
+
+    // Track JS errors
+    trackError: function(message, source, line) {
+        this.track('js_error', {
+            error_message: (message || '').substring(0, 150),
+            error_source: (source || '').substring(0, 100),
+            error_line: line,
+            event_category: 'error'
+        });
+    },
+
+    // Set GA4 user properties for journey tracking
+    setUserProperty: function(name, value) {
+        if (typeof gtag === 'function') {
+            gtag('set', 'user_properties', { [name]: value });
+        }
     }
 };
 
@@ -136,6 +192,212 @@ function initSectionTracking() {
     }, { threshold: 0.3 });
 
     sections.forEach(section => observer.observe(section));
+}
+
+// --- Video Interaction Tracking ---
+function initVideoTracking() {
+    const videos = document.querySelectorAll('video');
+    if (videos.length === 0) return;
+
+    videos.forEach(video => {
+        const src = video.querySelector('source')?.src || video.src || 'unknown';
+        const fileName = src.split('/').pop();
+        const progressMilestones = new Set();
+
+        video.addEventListener('play', () => {
+            Analytics.trackVideo('play', fileName, {
+                video_current_time: Math.round(video.currentTime)
+            });
+        });
+
+        video.addEventListener('pause', () => {
+            if (!video.ended) {
+                Analytics.trackVideo('pause', fileName, {
+                    video_current_time: Math.round(video.currentTime),
+                    video_percent: Math.round((video.currentTime / video.duration) * 100)
+                });
+            }
+        });
+
+        video.addEventListener('ended', () => {
+            Analytics.trackVideo('complete', fileName, {
+                video_duration: Math.round(video.duration)
+            });
+        });
+
+        video.addEventListener('timeupdate', () => {
+            if (!video.duration) return;
+            const percent = Math.round((video.currentTime / video.duration) * 100);
+            [25, 50, 75].forEach(milestone => {
+                if (percent >= milestone && !progressMilestones.has(milestone)) {
+                    progressMilestones.add(milestone);
+                    Analytics.trackVideo('progress', fileName, {
+                        video_percent: milestone
+                    });
+                }
+            });
+        });
+    });
+}
+
+// --- Section Engagement Time Tracking ---
+function initSectionEngagementTracking() {
+    const sections = document.querySelectorAll('section[id]');
+    if (sections.length === 0 || !('IntersectionObserver' in window)) return;
+
+    const sectionTimers = {};
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.id;
+            if (entry.isIntersecting) {
+                sectionTimers[id] = Date.now();
+            } else if (sectionTimers[id]) {
+                const seconds = Math.round((Date.now() - sectionTimers[id]) / 1000);
+                if (seconds >= 3) {
+                    Analytics.trackSectionEngagement(id, seconds);
+                }
+                delete sectionTimers[id];
+            }
+        });
+    }, { threshold: 0.3 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Send remaining timers on page unload
+    window.addEventListener('beforeunload', () => {
+        Object.keys(sectionTimers).forEach(id => {
+            const seconds = Math.round((Date.now() - sectionTimers[id]) / 1000);
+            if (seconds >= 3) {
+                Analytics.trackSectionEngagement(id, seconds);
+            }
+        });
+    });
+}
+
+// --- Web Vitals Tracking ---
+function initWebVitalsTracking() {
+    // Largest Contentful Paint (LCP)
+    if ('PerformanceObserver' in window) {
+        try {
+            const lcpObserver = new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                const lastEntry = entries[entries.length - 1];
+                const lcp = lastEntry.startTime;
+                const rating = lcp <= 2500 ? 'good' : lcp <= 4000 ? 'needs_improvement' : 'poor';
+                Analytics.trackWebVital('LCP', lcp, rating);
+            });
+            lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+        } catch (e) { /* unsupported */ }
+
+        // First Input Delay (FID) / Interaction to Next Paint (INP)
+        try {
+            const fidObserver = new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                entries.forEach(entry => {
+                    const fid = entry.processingStart - entry.startTime;
+                    const rating = fid <= 100 ? 'good' : fid <= 300 ? 'needs_improvement' : 'poor';
+                    Analytics.trackWebVital('FID', fid, rating);
+                });
+                fidObserver.disconnect();
+            });
+            fidObserver.observe({ type: 'first-input', buffered: true });
+        } catch (e) { /* unsupported */ }
+
+        // Cumulative Layout Shift (CLS)
+        try {
+            let clsValue = 0;
+            const clsObserver = new PerformanceObserver((list) => {
+                list.getEntries().forEach(entry => {
+                    if (!entry.hadRecentInput) {
+                        clsValue += entry.value;
+                    }
+                });
+            });
+            clsObserver.observe({ type: 'layout-shift', buffered: true });
+
+            // Report CLS on page hide
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'hidden') {
+                    const rating = clsValue <= 0.1 ? 'good' : clsValue <= 0.25 ? 'needs_improvement' : 'poor';
+                    Analytics.trackWebVital('CLS', clsValue * 1000, rating);
+                    clsObserver.disconnect();
+                }
+            });
+        } catch (e) { /* unsupported */ }
+    }
+}
+
+// --- Pricing Card Interaction Tracking ---
+function initPricingCardTracking() {
+    const path = window.location.pathname;
+    if (!path.includes('pricing')) return;
+
+    const freeCard = document.querySelector('[data-i18n="price_free_title"]')?.closest('.rounded-2xl, .rounded-xl, [class*="border"]');
+    const proCard = document.querySelector('[data-i18n="price_pro_title"]')?.closest('.rounded-2xl, .rounded-xl, [class*="border"]');
+
+    const cardTimers = {};
+
+    [['free', freeCard], ['pro', proCard]].forEach(([type, card]) => {
+        if (!card) return;
+
+        card.addEventListener('mouseenter', () => {
+            cardTimers[type] = Date.now();
+        });
+
+        card.addEventListener('mouseleave', () => {
+            if (cardTimers[type]) {
+                const seconds = Math.round((Date.now() - cardTimers[type]) / 1000);
+                if (seconds >= 2) {
+                    Analytics.trackPricingCard('hover', type, { hover_seconds: seconds });
+                }
+                delete cardTimers[type];
+            }
+        });
+
+        card.addEventListener('click', (e) => {
+            const clickTarget = e.target.closest('a, button')?.textContent?.trim().substring(0, 50) || 'card_body';
+            Analytics.trackPricingCard('click', type, { click_target: clickTarget });
+        });
+    });
+}
+
+// --- Cross-Page Journey Tracking (User Properties) ---
+function initJourneyTracking() {
+    // Set entry page (only on first visit in session)
+    if (!sessionStorage.getItem('entry_page')) {
+        sessionStorage.setItem('entry_page', window.location.pathname);
+        Analytics.setUserProperty('entry_page', window.location.pathname);
+    }
+
+    // Track visited pages count
+    const visited = JSON.parse(sessionStorage.getItem('visited_pages') || '[]');
+    if (!visited.includes(window.location.pathname)) {
+        visited.push(window.location.pathname);
+        sessionStorage.setItem('visited_pages', JSON.stringify(visited));
+    }
+    Analytics.setUserProperty('visited_pages_count', String(visited.length));
+    Analytics.setUserProperty('page_language', document.documentElement.lang || 'zh-TW');
+
+    // Track referrer source
+    if (document.referrer && !document.referrer.includes(window.location.hostname)) {
+        Analytics.setUserProperty('referrer_source', new URL(document.referrer).hostname);
+    }
+}
+
+// --- JS Error Tracking ---
+function initErrorTracking() {
+    window.addEventListener('error', (e) => {
+        Analytics.trackError(e.message, e.filename, e.lineno);
+    });
+
+    window.addEventListener('unhandledrejection', (e) => {
+        Analytics.trackError(
+            'Unhandled Promise: ' + (e.reason?.message || String(e.reason)).substring(0, 100),
+            window.location.pathname,
+            0
+        );
+    });
 }
 
 // Export Analytics for global use
@@ -205,6 +467,15 @@ function initializeComponents() {
 
     // Initialize section view tracking
     initSectionTracking();
+
+    // Initialize video interaction tracking
+    initVideoTracking();
+
+    // Initialize section engagement time tracking
+    initSectionEngagementTracking();
+
+    // Initialize pricing card interaction tracking
+    initPricingCardTracking();
 }
 
 // Update navigation links to match current language
@@ -489,6 +760,9 @@ function initConversionTracking() {
 window.addEventListener('DOMContentLoaded', () => {
     loadComponents();
     initConversionTracking();
+    initWebVitalsTracking();
+    initJourneyTracking();
+    initErrorTracking();
 });
 
 // Export functions for global use

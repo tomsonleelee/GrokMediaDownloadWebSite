@@ -88,6 +88,14 @@ const Analytics = {
             section_id: sectionId,
             event_category: 'engagement'
         });
+    },
+
+    // Track conversion funnel events
+    trackFunnelStep: function(stepName, details) {
+        this.track(stepName, {
+            ...details,
+            event_category: 'conversion'
+        });
     }
 };
 
@@ -424,6 +432,9 @@ function openChromeStore() {
     const url = 'https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi';
     Analytics.trackCTA('chrome_store', url);
     Analytics.trackExternalLink(url, 'Chrome Web Store');
+    Analytics.trackFunnelStep('click_install_chrome', {
+        page: window.location.pathname
+    });
     showToast('toast_chrome');
     setTimeout(() => {
         window.open(url, '_blank');
@@ -434,15 +445,50 @@ function openLemonSqueezy() {
     const url = 'https://kariostudio.lemonsqueezy.com/buy/4c60a74b-e0ea-4522-a989-d1d1aac08927';
     Analytics.trackCTA('purchase_pro', url);
     Analytics.trackExternalLink(url, 'Lemon Squeezy Checkout');
+    Analytics.trackFunnelStep('begin_checkout', {
+        page: window.location.pathname
+    });
     showToast('toast_checkout');
     setTimeout(() => {
         window.open(url, '_blank');
     }, 800);
 }
 
+// --- Conversion Funnel Tracking ---
+function initConversionTracking() {
+    const path = window.location.pathname;
+
+    // Track pricing page view
+    if (path.includes('pricing.html')) {
+        Analytics.trackFunnelStep('view_pricing', {
+            page_language: document.documentElement.lang
+        });
+    }
+
+    // Track purchase completion
+    if (path.includes('success.html')) {
+        Analytics.trackFunnelStep('purchase_complete', {
+            page_language: document.documentElement.lang
+        });
+    }
+
+    // Track "View Plans & Pricing" link clicks in hero
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href*="pricing.html"]');
+        if (link) {
+            const location = link.closest('section') ? 'section' : (link.closest('nav') ? 'nav' : 'footer');
+            Analytics.trackFunnelStep('click_view_pricing', {
+                link_location: location,
+                link_text: link.textContent.trim().substring(0, 50)
+            });
+        }
+    });
+}
+
 // --- Initialization ---
 window.addEventListener('DOMContentLoaded', () => {
     loadComponents();
+    initConversionTracking();
 });
 
 // Export functions for global use

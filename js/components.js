@@ -429,7 +429,7 @@ function closeTermsModal() {
 
 // --- External Links ---
 function openChromeStore() {
-    const url = 'https://chromewebstore.google.com/detail/grok-media-downloader/nmhhaoeopjbhigoinnhmhkadpfgmljef';
+    const url = 'https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi';
     Analytics.trackCTA('chrome_store', url);
     Analytics.trackExternalLink(url, 'Chrome Web Store');
     Analytics.trackFunnelStep('click_install_chrome', {

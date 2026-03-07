@@ -6,7 +6,7 @@ Static marketing website for the **GrokMediaDownloader** Chrome extension (Grok 
 
 - **Type**: Pure static HTML/CSS/JS — no build system, no bundler, no framework
 - **Domain**: `https://grokmedia.kario-studio.com`
-- **Chrome Web Store**: `https://chromewebstore.google.com/detail/grok-media-downloader/nmhhaoeopjbhigoinnhmhkadpfgmljef`
+- **Chrome Web Store**: `https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi`
 - **Payment**: LemonSqueezy integration for Pro license
 
 ## Tech Stack

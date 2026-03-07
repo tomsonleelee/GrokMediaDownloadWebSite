@@ -65,6 +65,26 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Generate List 按鈕是做什麼的？", "acceptedAnswer": {"@type": "Answer", "text": "這是一個智慧掃描功能。在 Grok/Imagine/Favorites 點擊後，Extension 會讀取頁面，找出所有圖片與影片，並自動過濾掉已下載過的檔案，生成「待下載清單」。"}},
+        {"@type": "Question", "name": "什麼是 \"Only after\" 日期過濾？", "acceptedAnswer": {"@type": "Answer", "text": "這是 PRO 版的獨家功能。當您累積了數千張圖片時，可設定日期只下載「今天」或「本週」生成的新圖。"}},
+        {"@type": "Question", "name": "Stream Capture 與 Generate List 有什麼不同？", "acceptedAnswer": {"@type": "Answer", "text": "Generate List 是掃描 Favorite List。Stream Capture 是持續監聽模式，會自動捕獲您生成的新圖片。"}},
+        {"@type": "Question", "name": "什麼是 Story Mode Helper？", "acceptedAnswer": {"@type": "Answer", "text": "這是 v2.0 的重磅功能。它是一個側邊面板影片工作室，讓您可以管理 Storyboard、擷取畫格、發送到 Grok 生成續集影片，並在本地合併輸出。"}},
+        {"@type": "Question", "name": "影片合併是在本地還是雲端處理？", "acceptedAnswer": {"@type": "Answer", "text": "完全在本地處理。我們使用 WebAssembly 版 FFmpeg，所有影片處理都在您的瀏覽器中完成，不會上傳到任何伺服器。"}},
+        {"@type": "Question", "name": "HD Upgrade 是如何運作的？", "acceptedAnswer": {"@type": "Answer", "text": "Grok 預設存儲的影片可能是低解析度預覽版。HD Upgrade 會自動偵測並向 Grok 發送請求取得 1080p 高畫質版本。"}},
+        {"@type": "Question", "name": "什麼是 Video Gen Queue？", "acceptedAnswer": {"@type": "Answer", "text": "Video Gen Queue 是 v2.2 的全新功能。它是一個自動化影片生成排程系統，可在 Side Panel 中批次加入多個影片生成任務，支援 Custom/Normal/Fun/Spicy 四種模式。免費版提供 50 次使用，PRO 版無限制。"}},
+        {"@type": "Question", "name": "什麼是 Project-Based Download？", "acceptedAnswer": {"@type": "Answer", "text": "Project-Based Download 會在下載前自動掃描統計，並依日期與提示詞自動建立專案資料夾，讓您的下載檔案分類井然有序。此功能為 PRO 專屬。"}},
+        {"@type": "Question", "name": "終身授權的範圍是什麼？", "acceptedAnswer": {"@type": "Answer", "text": "授權碼允許在一個 Chrome 帳號安裝使用，並允許最多 3 次重新安裝（例如更換電腦或重灌系統）。"}},
+        {"@type": "Question", "name": "Lemon Squeezy 是什麼？付款安全嗎？", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezy 是一家專為數位產品設計的國際知名支付平台。所有交易皆透過 SSL 加密保護，符合 PCI DSS 安全標準。我們不會接觸您的信用卡資訊。"}}
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">

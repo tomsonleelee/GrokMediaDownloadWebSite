@@ -106,6 +106,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/story-mode.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/en/story-mode.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/story-mode.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/story-mode.html"/>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -137,6 +138,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/faq.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/en/faq.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/faq.html"/>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -181,6 +183,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/story-mode.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/en/story-mode.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/story-mode.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/story-mode.html"/>
     <lastmod>2026-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -212,6 +215,7 @@
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/faq.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/en/faq.html"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/faq.html"/>
     <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

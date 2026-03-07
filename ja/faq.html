@@ -65,6 +65,26 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Generate Listとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "スマートスキャン機能です。Grok/Imagine/Favoritesでクリックすると、ページを読み込み、すべてのメディアを検出し、ダウンロード済みファイルを除外してリストを生成します。"}},
+        {"@type": "Question", "name": "Only after日付フィルターとは？", "acceptedAnswer": {"@type": "Answer", "text": "PRO限定機能。数千枚ある場合、日付を設定して「今日」「今週」の新しい画像だけダウンロードできます。"}},
+        {"@type": "Question", "name": "Stream CaptureとGenerate Listの違いは？", "acceptedAnswer": {"@type": "Answer", "text": "Generate ListはFavorite Listをスキャン。Stream Captureは継続監視で新画像を自動キャプチャ。"}},
+        {"@type": "Question", "name": "Story Mode Helperとは？", "acceptedAnswer": {"@type": "Answer", "text": "v2.0のメジャー機能。サイドパネル動画スタジオで、Storyboard管理、フレーム抽出、Grokへの送信、ローカルマージ出力が可能。"}},
+        {"@type": "Question", "name": "動画マージはローカルですか、クラウドですか？", "acceptedAnswer": {"@type": "Answer", "text": "完全にローカル。WebAssembly FFmpegを使用し、すべての動画処理はブラウザ内で完結。サーバーへのアップロードなし。"}},
+        {"@type": "Question", "name": "HD Upgradeはどう機能しますか？", "acceptedAnswer": {"@type": "Answer", "text": "Grokは低解像度プレビューを保存することがあります。HD Upgradeは自動検出してGrokに1080p高画質版をリクエスト。"}},
+        {"@type": "Question", "name": "Video Gen Queueとは？", "acceptedAnswer": {"@type": "Answer", "text": "Video Gen Queueはv2.2の新機能です。サイドパネルの自動動画生成スケジューリングシステムで、複数の動画生成タスクをバッチ追加可能。Custom/Normal/Fun/Spicyモードに対応。無料版は50回、PRO版は無制限です。"}},
+        {"@type": "Question", "name": "Project-Based Downloadとは？", "acceptedAnswer": {"@type": "Answer", "text": "Project-Based Downloadはダウンロード前に自動スキャンして統計情報を表示し、日付とプロンプトでプロジェクトフォルダを自動作成します。PRO限定機能です。"}},
+        {"@type": "Question", "name": "永久ライセンスの範囲は？", "acceptedAnswer": {"@type": "Answer", "text": "1つのChromeアカウントで利用可能、最大3回の再インストール（PC買い替えなど）に対応。"}},
+        {"@type": "Question", "name": "Lemon Squeezyとは？決済は安全ですか？", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezyはデジタル製品向けに設計された国際的に信頼される決済プラットフォームです。すべての取引はSSL暗号化され、PCI DSS準拠。クレジットカード情報は当方では一切取り扱いません。"}}
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">

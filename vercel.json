@@ -3,5 +3,6 @@
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/en/index.html", "destination": "/en/", "permanent": true },
     { "source": "/ja/index.html", "destination": "/ja/", "permanent": true }
-  ]
+  ],
+  "trailingSlash": false
 }

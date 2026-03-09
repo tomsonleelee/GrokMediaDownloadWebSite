@@ -947,13 +947,9 @@ if (!currentLang) {
             currentLang = 'en';
         }
 
-        // Redirect non-zh users to their language version
-        if (currentLang !== 'zh-TW') {
-            localStorage.setItem('site_lang', currentLang);
-            const basePath = (path === '/' || path === '') ? '/index.html' : path;
-            const prefix = currentLang === 'en' ? '/en' : '/ja';
-            window.location.href = prefix + basePath;
-        }
+        // Do NOT redirect — let hreflang tags handle language routing for SEO.
+        // JS redirects cause Googlebot (English browser) to see root pages as
+        // duplicates of /en/, preventing indexing of all root (zh-TW) pages.
     }
     localStorage.setItem('site_lang', currentLang);
 }

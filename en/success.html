@@ -10,16 +10,29 @@
         gtag('js', new Date());
         gtag('config', 'G-6YPN8563C6');
 
-        // Google Ads Conversion Tracking
-        // TODO: Replace 'AW-XXXXXXXXX' with your actual Google Ads Conversion ID
-        // TODO: Replace 'XXXXXXXX' with your actual Conversion Label
-        gtag('config', 'AW-XXXXXXXXX');
-        gtag('event', 'conversion', {
-            'send_to': 'AW-XXXXXXXXX/XXXXXXXX',
-            'value': 2.99,
-            'currency': 'USD',
-            'transaction_id': ''
-        });
+        // GA4 Purchase Event — fires once per unique order
+        (function() {
+            var params = new URLSearchParams(window.location.search);
+            var orderId = params.get('order_id') || params.get('checkout_id') || '';
+            var storageKey = 'purchase_tracked_' + orderId;
+
+            // Deduplicate: only fire once per order_id
+            if (orderId && sessionStorage.getItem(storageKey)) return;
+
+            gtag('event', 'purchase', {
+                transaction_id: orderId || ('fallback_' + Date.now()),
+                value: 2.99,
+                currency: 'USD',
+                items: [{
+                    item_id: 'pro_lifetime',
+                    item_name: 'GrokMediaDownloader PRO Lifetime',
+                    price: 2.99,
+                    quantity: 1
+                }]
+            });
+
+            if (orderId) sessionStorage.setItem(storageKey, '1');
+        })();
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

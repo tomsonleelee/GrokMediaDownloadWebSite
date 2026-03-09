@@ -8,8 +8,8 @@ Allow: /
 Crawl-delay: 1
 
 # Disallow paths that don't need indexing
-Disallow: /components/
 Disallow: /*.json$
+Allow: /manifest.json
 
 # Sitemap location
 Sitemap: https://grokmedia.kario-studio.com/sitemap.xml

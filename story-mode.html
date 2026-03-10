@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 
 <head>
     <!-- Google tag (gtag.js) -->
@@ -12,9 +12,9 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Story Mode Helper | 影片故事創作工作室 - GrokMediaDownloader v2.0</title>
-    <meta name="description" content="Story Mode Helper - GrokMediaDownloader v2.0 重磅功能！Storyboard 視覺化管理、畫格擷取、發送到 Grok 生成續集影片、本地 FFmpeg 合併輸出。">
-    <meta name="keywords" content="Story Mode Helper, Video Studio, Storyboard, 畫格擷取, Frame Extraction, Send Frame to Grok, FFmpeg, 影片合併, Grok AI video, Chrome extension">
+    <title>Story Mode Helper | Video Story Creation Studio - GrokMediaDownloader v2.0</title>
+    <meta name="description" content="Story Mode Helper - GrokMediaDownloader v2.0 major feature! Visual Storyboard management, frame extraction, send to Grok for video continuation, local FFmpeg merge output.">
+    <meta name="keywords" content="Story Mode Helper, Video Studio, Storyboard, Frame Extraction, Send Frame to Grok, FFmpeg, video merge, Grok AI video, Chrome extension">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
 
@@ -22,25 +22,25 @@
     <link rel="canonical" href="https://grokmedia.kario-studio.com/story-mode.html">
 
     <!-- Hreflang -->
-    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/story-mode.html">
-    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/en/story-mode.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/story-mode.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/story-mode.html">
     <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/story-mode.html">
     <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/story-mode.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://grokmedia.kario-studio.com/story-mode.html">
-    <meta property="og:title" content="Story Mode Helper | 影片故事創作工作室">
-    <meta property="og:description" content="v2.0 重磅功能！Storyboard 視覺化管理、畫格擷取、發送到 Grok 生成續集、本地 FFmpeg 合併。">
+    <meta property="og:title" content="Story Mode Helper | Video Story Creation Studio">
+    <meta property="og:description" content="v2.0 major feature! Visual Storyboard management, frame extraction, send to Grok for continuation, local FFmpeg merge.">
     <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
-    <meta property="og:locale" content="zh_TW">
-    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
     <meta property="og:locale:alternate" content="ja_JP">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Story Mode Helper | GrokMediaDownloader v2.0">
-    <meta name="twitter:description" content="影片故事創作工作室 - Storyboard、畫格擷取、Grok 續集生成、FFmpeg 本地合併。">
+    <meta name="twitter:description" content="Video Story Creation Studio - Storyboard, frame extraction, Grok continuation generation, local FFmpeg merge.">
     <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
 
     <!-- Schema.org - BreadcrumbList -->
@@ -52,14 +52,14 @@
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "首頁",
+          "name": "Home",
           "item": "https://grokmedia.kario-studio.com/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Story Mode Helper",
-          "item": "https://grokmedia.kario-studio.com/story-mode.html"
+          "item": "https://grokmedia.kario-studio.com/en/story-mode.html"
         }
       ]
     }
@@ -117,7 +117,7 @@
 
     <!-- Skip Link for Accessibility -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
-        跳至主要內容
+        Skip to main content
     </a>
 
     <!-- Header Placeholder -->
@@ -132,28 +132,26 @@
             <div class="text-center max-w-4xl mx-auto">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wide mb-6">
                     <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
-                    <span data-i18n="story_badge">v2.0 重磅功能</span>
+                    <span data-i18n="story_badge">PRO Feature</span>
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
                     <span class="gradient-text" data-i18n="story_title">Story Mode Helper</span>
                 </h1>
 
-                <p class="text-xl md:text-2xl text-purple-300 mb-4" data-i18n="story_subtitle">影片故事創作工作室</p>
+                <p class="text-xl md:text-2xl text-purple-300 mb-4" data-i18n="story_subtitle">Video Story Creation Studio</p>
 
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="story_desc">
-                    全新 Side Panel 介面，讓您在瀏覽器中打造專業級影片故事。從收藏影片到合併輸出，一站式完成您的創作流程。
-                </p>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="story_desc">A new Side Panel interface that brings professional video story creation to your browser. From favorites to merged output, complete your workflow in one place.</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <button onclick="openChromeStore()" class="px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
                         <i data-lucide="chrome" class="w-5 h-5"></i>
-                        <span data-i18n="hero_cta_chrome">加到 Chrome</span>
+                        <span data-i18n="hero_cta_chrome">Add to Chrome</span>
                     </button>
 
                     <button onclick="openLemonSqueezy()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
                         <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
-                        <span data-i18n="price_pro_button">$4.99 → $2.99 PRO 終身版</span>
+                        <span data-i18n="price_pro_button">$4.99 → $2.99 PRO Lifetime</span>
                     </button>
                 </div>
             </div>
@@ -164,16 +162,14 @@
     <section class="py-16 bg-slate-950 border-t border-slate-800">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
-                <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="story_video_title">完整工作流程展示</h2>
-                <p class="text-slate-400" data-i18n="story_video_desc">從收藏添加 → Storyboard 編排 → 擷取畫格 → 合併輸出</p>
+                <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="story_video_title">Complete Workflow Demo</h2>
+                <p class="text-slate-400" data-i18n="story_video_desc">Add from Favorites → Storyboard Arrange → Frame Extraction → Merge & Export</p>
             </div>
 
             <!-- Video Container -->
             <div class="relative rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl shadow-purple-500/10">
-                <!-- Gradient Overlay (for aesthetics) -->
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none z-10"></div>
 
-                <!-- Video Player -->
                 <video
                     class="w-full aspect-video bg-slate-900"
                     autoplay
@@ -183,16 +179,14 @@
                     poster="/assets/story-mode-poster.jpg"
                 >
                     <source src="/assets/story-mode-demo.mp4" type="video/mp4">
-                    <!-- Fallback for browsers that don't support video -->
                     <div class="w-full aspect-video bg-slate-900 flex items-center justify-center">
                         <p class="text-slate-400">Your browser does not support video playback.</p>
                     </div>
                 </video>
 
-                <!-- Play/Pause Overlay Button (optional - for user control) -->
                 <button
                     onclick="toggleVideo(this)"
-                    class="absolute bottom-4 right-4 z-20 w-10 h-10 bg-slate-900/80 hover:bg-slate-800 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 hover:opacity-100 focus:opacity-100 group-hover:opacity-100"
+                    class="absolute bottom-4 right-4 z-20 w-10 h-10 bg-slate-900/80 hover:bg-slate-800 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 hover:opacity-100 focus:opacity-100"
                     aria-label="Toggle video playback"
                 >
                     <i data-lucide="pause" class="w-5 h-5 text-white video-pause-icon"></i>
@@ -200,10 +194,7 @@
                 </button>
             </div>
 
-            <!-- Video Caption -->
-            <p class="text-center text-slate-500 text-sm mt-4" data-i18n="story_video_caption">
-                * 影片展示 Story Mode Helper 的完整使用流程
-            </p>
+            <p class="text-center text-slate-500 text-sm mt-4" data-i18n="story_video_caption">* Video demonstrates the complete Story Mode Helper workflow</p>
         </div>
     </section>
 
@@ -229,8 +220,8 @@
     <section class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="story_core_title">核心功能</h2>
-                <p class="text-slate-400" data-i18n="story_core_desc">Story Mode Helper 提供完整的影片故事創作工具鏈</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="story_core_title">Core Features</h2>
+                <p class="text-slate-400" data-i18n="story_core_desc">Story Mode Helper provides a complete video storytelling toolchain</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -239,8 +230,8 @@
                     <div class="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="layout-grid" class="text-purple-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_1_title">Storyboard 故事板</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="story_feat_1_desc">視覺化拖放排序影片片段，直覺管理您的影片時間軸。支援從 Grok 收藏一鍵添加影片。</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_1_title">Visual Storyboard</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="story_feat_1_desc">Drag and drop video segments for intuitive timeline management. Add videos from Grok favorites with one click.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -248,8 +239,8 @@
                     <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="frame" class="text-pink-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_2_title">畫格擷取</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="story_feat_2_desc">自動擷取每個影片的首尾畫格作為縮圖預覽，讓您快速識別內容。</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_2_title">Frame Extraction</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="story_feat_2_desc">Automatically extract first and last frames from each video for quick content preview and identification.</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -257,8 +248,8 @@
                     <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="send" class="text-blue-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_3_title">發送畫格到 Grok</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="story_feat_3_desc">選取影片最後一幀，搭配提示詞一鍵發送到 Grok Imagine，生成續集影片延續故事。</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_3_title">Send Frame to Grok</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="story_feat_3_desc">Select the last frame of a video, add a prompt, and send to Grok Imagine to generate a continuation video.</p>
                 </div>
 
                 <!-- Feature 4 -->
@@ -266,8 +257,8 @@
                     <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="merge" class="text-emerald-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_4_title">本地 FFmpeg 合併</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="story_feat_4_desc">使用 WebAssembly 版 FFmpeg 在瀏覽器本地合併影片，無需上傳雲端，保護隱私。</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_4_title">Local FFmpeg Merge</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="story_feat_4_desc">Merge videos locally in your browser using WebAssembly FFmpeg. No cloud upload, complete privacy protection.</p>
                 </div>
             </div>
         </div>
@@ -277,7 +268,7 @@
     <section class="py-24 bg-slate-950 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="story_step_title">Story Mode 使用流程</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="story_step_title">How Story Mode Works</h2>
                 <p class="text-slate-400">四個簡單步驟，打造專業影片故事</p>
             </div>
 
@@ -289,8 +280,8 @@
                         <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="plus-circle" class="text-purple-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_1_title">添加影片到工作室</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_1_desc">從 Grok 收藏頁面點擊「Add to Studio」按鈕，或直接拖放本地影片到 Side Panel。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_1_title">Add Videos to Studio</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_1_desc">Click 'Add to Studio' on Grok favorites page, or drag and drop local videos into the Side Panel.</p>
                     </div>
                 </div>
 
@@ -301,8 +292,8 @@
                         <div class="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="move" class="text-pink-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_2_title">編排故事順序</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_2_desc">在 Storyboard 中拖放影片片段，調整順序。第一個影片會成為 Master，決定輸出規格。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_2_title">Arrange Your Story</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_2_desc">Drag and drop segments in the Storyboard to reorder. The first video becomes the Master that defines output specs.</p>
                     </div>
                 </div>
 
@@ -313,8 +304,8 @@
                         <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="wand-2" class="text-blue-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_3_title">擷取畫格生成續集</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_3_desc">選擇片段查看最後一幀，輸入提示詞，發送到 Grok 生成續集影片。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_3_title">Generate Continuations</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_3_desc">Select a segment to view its last frame, enter a prompt, and send to Grok to generate a continuation video.</p>
                     </div>
                 </div>
 
@@ -325,8 +316,8 @@
                         <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="download" class="text-emerald-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_4_title">合併輸出</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_4_desc">所有片段準備好後，點擊匯出按鈕，FFmpeg 會在本地合併所有影片並下載。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_4_title">Merge & Export</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_4_desc">When all segments are ready, click export. FFmpeg will merge all videos locally and download the result.</p>
                     </div>
                 </div>
             </div>
@@ -471,17 +462,17 @@
             <div class="inline-flex flex-col sm:flex-row gap-4">
                 <button onclick="openChromeStore()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
                     <i data-lucide="chrome" class="w-5 h-5"></i>
-                    <span data-i18n="hero_cta_chrome">加到 Chrome</span>
+                    <span data-i18n="hero_cta_chrome">Add to Chrome</span>
                 </button>
 
                 <a href="/pricing.html" class="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
                     <i data-lucide="zap" class="w-5 h-5"></i>
-                    <span data-i18n="price_pro_button">$4.99 → $2.99 PRO 終身版</span>
+                    <span data-i18n="price_pro_button">$4.99 → $2.99 PRO Lifetime</span>
                 </a>
             </div>
 
-            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">✨ 包含所有未來功能更新</p>
-            <a href="/video-gen-queue.html" class="inline-block mt-4 text-pink-400 hover:text-pink-300 transition-colors font-medium" data-i18n="cross_link_queue">探索另一個強大功能：Video Gen Queue →</a>
+            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">✨ Includes all future updates</p>
+            <a href="/video-gen-queue.html" class="inline-block mt-4 text-pink-400 hover:text-pink-300 transition-colors font-medium" data-i18n="cross_link_queue">Explore another powerful feature: Video Gen Queue →</a>
         </div>
     </section>
     </main>
@@ -490,8 +481,7 @@
     <div id="footer-placeholder"></div>
 
     <!-- Scripts -->
-    <script>localStorage.setItem('site_lang', 'zh-TW');</script>
-    <script src="/js/i18n.js"></script>
+<script src="/js/i18n.js"></script>
     <script src="/js/components.js"></script>
 </body>
 

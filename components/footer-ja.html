@@ -9,9 +9,9 @@
         </div>
 
         <div class="flex gap-6 text-slate-500">
-            <a href="/privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="/terms.html" class="hover:text-white transition-colors">Terms of Service</a>
-            <button onclick="openContactModal()" class="hover:text-white transition-colors focus:outline-none">Contact Support</button>
+            <a href="/ja/privacy.html" class="hover:text-white transition-colors">プライバシーポリシー</a>
+            <a href="/ja/terms.html" class="hover:text-white transition-colors">利用規約</a>
+            <button onclick="openContactModal()" class="hover:text-white transition-colors focus:outline-none">サポートへ連絡</button>
         </div>
 
         <div class="text-slate-600">
@@ -29,23 +29,23 @@
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
             <div class="p-6">
-                <h3 class="text-2xl font-bold mb-2 text-white">Contact Support</h3>
-                <p class="text-slate-400 text-sm mb-6">Having issues or feature requests? We're here to help.</p>
+                <h3 class="text-2xl font-bold mb-2 text-white">サポートに連絡</h3>
+                <p class="text-slate-400 text-sm mb-6">問題や機能のリクエストがありますか？お気軽にお問い合わせください。</p>
                 <form onsubmit="handleContactSubmit(event)" class="space-y-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">Name</label>
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">お名前</label>
                         <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">Email Address</label>
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">メールアドレス</label>
                         <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">Message</label>
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">メッセージ内容</label>
                         <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"></textarea>
                     </div>
                     <button type="submit" class="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold py-3 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-                        <span>Send Message</span>
+                        <span>送信する</span>
                         <i data-lucide="send" class="w-4 h-4"></i>
                     </button>
                 </form>
@@ -63,21 +63,21 @@
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
             <div class="p-6 overflow-y-auto">
-                <h3 class="text-2xl font-bold mb-4 text-white">Privacy Policy</h3>
-                <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line">1. Data Collection & Usage
-GrokMediaDownloader is a client-side extension. We do NOT collect, store, or share any of your personal data, browsing history, or downloaded content. All processing happens locally on your device.
+                <h3 class="text-2xl font-bold mb-4 text-white">プライバシーポリシー</h3>
+                <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line">1. データ収集と使用
+GrokMediaDownloaderは完全にクライアントサイドで動作します。個人データ、閲覧履歴、ダウンロードコンテンツを収集・保存・共有することはありません。すべての処理はブラウザ内でローカルに行われます。
 
-2. Permissions
-The permissions we request are strictly for core functionality:
-- Reading the current Grok page to detect media.
-- Saving media files to your computer.
-- Storing your preferences locally.
+2. 権限について
+要求する権限は主要機能の実行にのみ使用：
+- Grokページのメディア検出
+- メディアファイルのコンピュータへの保存
+- 設定のローカル保存
 
-3. Third-Party Services
-Payments are processed via Lemon Squeezy. Your financial data is handled directly by Lemon Squeezy; this extension does not access sensitive financial information.
+3. 第三者サービス
+支払いはLemon Squeezyで処理。財務データはLemon Squeezyが直接処理・保護し、本拡張機能は機密財務情報にアクセスしません。
 
-4. Updates
-We reserve the right to update this policy. Changes will be posted on this page.</div>
+4. ポリシー更新
+本ポリシーを随時変更する権利を留保。変更は本ページで更新されます。</div>
             </div>
         </div>
     </div>
@@ -92,21 +92,21 @@ We reserve the right to update this policy. Changes will be posted on this page.
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
             <div class="p-6 overflow-y-auto">
-                <h3 class="text-2xl font-bold mb-4 text-white">Terms of Service</h3>
-                <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line">1. Acceptance
-By installing and using GrokMediaDownloader, you agree to these Terms.
+                <h3 class="text-2xl font-bold mb-4 text-white">利用規約</h3>
+                <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line">1. 規約への同意
+GrokMediaDownloaderのインストール・使用により、本規約に拘束されることに同意したものとみなされます。
 
-2. License
-We grant you a non-exclusive, non-transferable, limited license for personal, non-commercial use. You agree not to reverse engineer the extension.
+2. ライセンスと使用
+個人的・非商用目的での非独占的・譲渡不能な限定ライセンスを付与。リバースエンジニアリングは禁止。
 
-3. User Responsibility
-This tool is for convenience. You are responsible for content you download. Only download media you have rights to use.
+3. ユーザーの責任
+本ツールは利便性提供のためのもの。ダウンロードコンテンツはユーザー責任。権利を持つメディアのみダウンロード可。
 
-4. Disclaimer
-The Service is provided "AS IS" without warranties. We are not liable for data loss or damages.
+4. 免責事項
+本サービスは「現状有姿」で提供。エラーフリーや中断なしを保証しません。データ損失や損害について責任を負いません。
 
-5. Refunds
-Refunds for licenses purchased via Lemon Squeezy follow their platform policies. Contact support for technical issues.</div>
+5. 返金ポリシー
+Lemon Squeezy購入のライセンスは同プラットフォームの規定に従う。技術的問題はサポートまで。</div>
             </div>
         </div>
     </div>

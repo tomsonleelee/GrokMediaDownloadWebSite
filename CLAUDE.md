@@ -17,24 +17,28 @@ Static marketing website for the **GrokMediaDownloader** Chrome extension (Grok 
 | Icons | Lucide Icons via CDN |
 | Analytics | GA4 — Property ID: `G-6YPN8563C6` |
 | Components | `js/components.js` — shared header/footer loader, GA4 event tracking |
-| i18n | `js/i18n.js` — centralized translations (94 keys × 3 languages) |
+| i18n | `js/i18n.js` — toast translations only (4 keys × 3 languages) + language toggle |
 
 ## Multilingual Structure (i18n)
 
-Three languages, each with its own directory:
+Three languages, each with its own directory. **Body text is hardcoded in each HTML file** (no JS dependency for SEO).
 
 | Language | Path | HTML `lang` | Note |
 |----------|------|-------------|------|
-| 繁體中文 | `/` (root) | `zh-TW` | Default & primary |
-| English | `/en/` | `en` | |
+| English | `/` (root) | `en` | Default & primary (x-default) |
+| 繁體中文 | `/zh-TW/` | `zh-TW` | |
 | 日本語 | `/ja/` | `ja` | |
 
-Translation keys are defined in `js/i18n.js`. HTML elements reference keys via `data-i18n` attributes.
+**hreflang convention:**
+- `x-default` → `/` (root, English)
+- `hreflang="en"` → `/`
+- `hreflang="zh-TW"` → `/zh-TW/`
+- `hreflang="ja"` → `/ja/`
 
 ## Pages
 
-| Page | Root | `/en/` | `/ja/` |
-|------|------|--------|--------|
+| Page | Root (EN) | `/zh-TW/` | `/ja/` |
+|------|-----------|-----------|--------|
 | Homepage | `index.html` | ✅ | ✅ |
 | Story Mode | `story-mode.html` | ✅ | ✅ |
 | Video Gen Queue | `video-gen-queue.html` | ✅ | ✅ |
@@ -45,7 +49,9 @@ Translation keys are defined in `js/i18n.js`. HTML elements reference keys via `
 | Purchase Success | `success.html` | ✅ | ✅ |
 | 404 | `404.html` | — | — |
 
-Shared components loaded via JS: `components/header.html`, `components/footer.html`
+Shared components loaded via JS (language-specific versions):
+- `components/header.html` (EN), `components/header-zh-TW.html`, `components/header-ja.html`
+- `components/footer.html` (EN), `components/footer-zh-TW.html`, `components/footer-ja.html`
 
 ## Common Commands
 
@@ -77,8 +83,8 @@ python3 -m http.server 8080
 
 ## Key Reminders
 
-1. **Three-language sync**: When modifying any page content, update ALL three language versions (root, `/en/`, `/ja/`)
-2. **i18n key sync**: When adding/changing a translation key in `js/i18n.js`, add it to ALL three language blocks (`zh-TW`, `en`, `ja`)
+1. **Three-language sync**: When modifying any page content, update ALL three language versions (root EN, `/zh-TW/`, `/ja/`) — body text is hardcoded per language, no JS dependency
+2. **Component sync**: When modifying header/footer, update all 3 versions (`header.html`, `header-zh-TW.html`, `header-ja.html`, same for footer)
 3. **SEO sync**: When adding a new page, update `sitemap.xml` with hreflang links for all three languages
 4. **Assets**: Always reference images from `assets/resized/` (not originals). Run `./resize-images.sh` after adding new feature images
 5. **Schema.org**: Homepage includes `SoftwareApplication`, `WebSite`, `BreadcrumbList`, and `VideoObject` structured data

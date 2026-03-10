@@ -405,11 +405,22 @@ window.Analytics = Analytics;
 
 // --- Component Loader ---
 
+// Detect language from URL path
+function getLangFromPath() {
+    const p = window.location.pathname;
+    if (p.startsWith('/zh-TW/') || p === '/zh-TW') return 'zh-TW';
+    if (p.startsWith('/ja/') || p === '/ja') return 'ja';
+    return 'en';
+}
+
 // Load shared components (header & footer)
 async function loadComponents() {
     try {
+        const lang = getLangFromPath();
+        const suffix = lang === 'en' ? '' : `-${lang}`;
+
         // Load header
-        const headerResponse = await fetch('/components/header.html');
+        const headerResponse = await fetch(`/components/header${suffix}.html`);
         if (headerResponse.ok) {
             const headerHTML = await headerResponse.text();
             const headerEl = document.getElementById('header-placeholder');
@@ -419,7 +430,7 @@ async function loadComponents() {
         }
 
         // Load footer
-        const footerResponse = await fetch('/components/footer.html');
+        const footerResponse = await fetch(`/components/footer${suffix}.html`);
         if (footerResponse.ok) {
             const footerHTML = await footerResponse.text();
             const footerEl = document.getElementById('footer-placeholder');
@@ -437,14 +448,6 @@ async function loadComponents() {
 
 // Initialize interactive components
 function initializeComponents() {
-    // Update i18n content
-    if (window.i18n) {
-        window.i18n.updateContent();
-    }
-
-    // Update navigation links based on current language
-    updateNavigationLinks();
-
     // Initialize Lucide icons
     if (window.lucide) {
         lucide.createIcons();
@@ -476,53 +479,6 @@ function initializeComponents() {
 
     // Initialize pricing card interaction tracking
     initPricingCardTracking();
-}
-
-// Update navigation links to match current language
-function updateNavigationLinks() {
-    const currentLang = window.i18n ? window.i18n.currentLang : (localStorage.getItem('site_lang') || 'zh-TW');
-
-    // Define language prefix
-    let langPrefix = '';
-    if (currentLang === 'en') {
-        langPrefix = '/en';
-    } else if (currentLang === 'ja') {
-        langPrefix = '/ja';
-    }
-
-    // Find all navigation links (header nav, mobile menu, and footer)
-    const navLinks = document.querySelectorAll('nav a[href], #mobile-menu a[href], footer a[href]');
-
-    navLinks.forEach(link => {
-        let href = link.getAttribute('href');
-
-        // Skip external links, anchor links, and hash links
-        if (!href || href.startsWith('http') || href.startsWith('#') || href === '/') {
-            // For home link, update to language-specific home
-            if (href === '/') {
-                link.setAttribute('href', langPrefix + '/');
-            }
-            return;
-        }
-
-        // Remove existing language prefix if any
-        if (href.startsWith('/en/')) {
-            href = href.substring(3);
-        } else if (href.startsWith('/ja/')) {
-            href = href.substring(3);
-        }
-
-        // Handle hash links with paths (e.g., /#features)
-        if (href.startsWith('/#')) {
-            link.setAttribute('href', langPrefix + href);
-            return;
-        }
-
-        // Add language prefix for internal links
-        if (href.startsWith('/')) {
-            link.setAttribute('href', langPrefix + href);
-        }
-    });
 }
 
 // Mobile Menu Toggle
@@ -584,9 +540,10 @@ function highlightCurrentPage() {
 
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
+        // Match exact path or index variants
         if (href === currentPath ||
-            (currentPath === '/' && href === '/index.html') ||
-            (currentPath === '/index.html' && href === '/')) {
+            (currentPath.endsWith('/') && href === currentPath + 'index.html') ||
+            (currentPath.endsWith('/index.html') && href === currentPath.replace('/index.html', '/'))) {
             link.classList.add('text-pink-400');
             link.classList.remove('text-slate-300');
         }
@@ -778,7 +735,7 @@ window.openChromeStore = openChromeStore;
 window.openLemonSqueezy = openLemonSqueezy;
 window.toggleLanguage = function() {
     if (window.i18n) {
-        const currentLang = window.i18n.currentLang || 'zh-TW';
+        const currentLang = window.i18n.currentLang;
         window.i18n.toggleLanguage();
         const newLang = window.i18n.currentLang;
         Analytics.trackLanguageChange(currentLang, newLang);

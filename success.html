@@ -16,8 +16,8 @@
             var orderId = params.get('order_id') || params.get('checkout_id') || '';
             var storageKey = 'purchase_tracked_' + orderId;
 
-            // Deduplicate: only fire once per order_id
-            if (orderId && sessionStorage.getItem(storageKey)) return;
+            // Deduplicate: only fire once per order_id (localStorage persists across tabs/sessions)
+            if (orderId && localStorage.getItem(storageKey)) return;
 
             gtag('event', 'purchase', {
                 transaction_id: orderId || ('fallback_' + Date.now()),
@@ -31,7 +31,7 @@
                 }]
             });
 
-            if (orderId) sessionStorage.setItem(storageKey, '1');
+            if (orderId) localStorage.setItem(storageKey, '1');
         })();
     </script>
     <meta charset="UTF-8">

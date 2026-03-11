@@ -8,5 +8,5 @@
     { "source": "/ko/index.html", "destination": "/ko/", "permanent": true },
     { "source": "/index.html", "destination": "/", "permanent": true }
   ],
-  "trailingSlash": false
+  "trailingSlash": true
 }

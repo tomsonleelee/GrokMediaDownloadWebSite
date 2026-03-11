@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
-            <a href="/ja/" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+            <a href="/ko/" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
                 <div class="w-8 h-8 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-pink-500/20">
                     <i data-lucide="download" class="text-white w-5 h-5"></i>
                 </div>
@@ -12,30 +12,30 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-6">
-                <a href="/ja/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">ホーム</a>
-                <a href="/ja/story-mode.html" class="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors">Story Mode</a>
-                <a href="/ja/video-gen-queue.html" class="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors">Video Gen Queue</a>
-                <a href="/ja/#features" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">機能</a>
-                <a href="/ja/pricing.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">価格</a>
-                <a href="/ja/faq.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">FAQ</a>
+                <a href="/ko/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">홈</a>
+                <a href="/ko/story-mode.html" class="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors">Story Mode</a>
+                <a href="/ko/video-gen-queue.html" class="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors">Video Gen Queue</a>
+                <a href="/ko/#features" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">기능</a>
+                <a href="/ko/pricing.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">가격</a>
+                <a href="/ko/faq.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">FAQ</a>
 
                 <!-- Language Selector -->
                 <div class="relative" id="lang-dropdown">
                     <button onclick="toggleLangMenu()" class="flex items-center gap-1.5 text-sm font-medium text-slate-400 hover:text-white transition-colors px-2">
                         <i data-lucide="globe" class="w-4 h-4"></i>
-                        <span>JP</span>
+                        <span>KO</span>
                         <i data-lucide="chevron-down" class="w-3 h-3"></i>
                     </button>
                     <div id="lang-menu" class="hidden absolute right-0 mt-2 w-36 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-1 z-50">
                         <a onclick="switchLanguage('en')" class="block px-4 py-2 text-sm cursor-pointer text-slate-300 hover:bg-slate-700 hover:text-white rounded-lg mx-1">English</a>
                         <a onclick="switchLanguage('zh-TW')" class="block px-4 py-2 text-sm cursor-pointer text-slate-300 hover:bg-slate-700 hover:text-white rounded-lg mx-1">繁體中文</a>
-                        <a onclick="switchLanguage('ja')" class="block px-4 py-2 text-sm cursor-pointer text-white bg-slate-700/50 rounded-lg mx-1">日本語</a>
-                        <a onclick="switchLanguage('ko')" class="block px-4 py-2 text-sm cursor-pointer text-slate-300 hover:bg-slate-700 hover:text-white rounded-lg mx-1">한국어</a>
+                        <a onclick="switchLanguage('ja')" class="block px-4 py-2 text-sm cursor-pointer text-slate-300 hover:bg-slate-700 hover:text-white rounded-lg mx-1">日本語</a>
+                        <a onclick="switchLanguage('ko')" class="block px-4 py-2 text-sm cursor-pointer text-white bg-slate-700/50 rounded-lg mx-1">한국어</a>
                     </div>
                 </div>
 
                 <button onclick="openLemonSqueezy()" class="bg-white text-slate-900 hover:bg-slate-200 px-5 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 shadow-lg shadow-white/10 flex items-center gap-2">
-                    <span>PROを入手</span>
+                    <span>PRO 구매</span>
                     <i data-lucide="zap" class="w-4 h-4 fill-current text-yellow-500"></i>
                 </button>
             </div>
@@ -52,24 +52,24 @@
     <!-- Mobile Menu Panel -->
     <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 absolute w-full">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/ja/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">ホーム</a>
-            <a href="/ja/story-mode.html" class="block px-3 py-2 rounded-md text-base font-medium text-pink-400 hover:text-pink-300 hover:bg-slate-800">Story Mode</a>
-            <a href="/ja/video-gen-queue.html" class="block px-3 py-2 rounded-md text-base font-medium text-pink-400 hover:text-pink-300 hover:bg-slate-800">Video Gen Queue</a>
-            <a href="/ja/#features" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">機能</a>
-            <a href="/ja/pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">価格</a>
-            <a href="/ja/faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">FAQ</a>
+            <a href="/ko/" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">홈</a>
+            <a href="/ko/story-mode.html" class="block px-3 py-2 rounded-md text-base font-medium text-pink-400 hover:text-pink-300 hover:bg-slate-800">Story Mode</a>
+            <a href="/ko/video-gen-queue.html" class="block px-3 py-2 rounded-md text-base font-medium text-pink-400 hover:text-pink-300 hover:bg-slate-800">Video Gen Queue</a>
+            <a href="/ko/#features" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">기능</a>
+            <a href="/ko/pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">가격</a>
+            <a href="/ko/faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">FAQ</a>
             <div class="border-t border-slate-700 mt-2 pt-2">
                 <p class="px-3 py-1 text-xs text-slate-500 uppercase tracking-wider">Language</p>
                 <a onclick="switchLanguage('en')" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800 cursor-pointer">English</a>
                 <a onclick="switchLanguage('zh-TW')" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800 cursor-pointer">繁體中文</a>
-                <a onclick="switchLanguage('ja')" class="block px-3 py-2 rounded-md text-sm font-medium text-white bg-slate-800">日本語</a>
-                <a onclick="switchLanguage('ko')" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800 cursor-pointer">한국어</a>
+                <a onclick="switchLanguage('ja')" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800 cursor-pointer">日本語</a>
+                <a onclick="switchLanguage('ko')" class="block px-3 py-2 rounded-md text-sm font-medium text-white bg-slate-800">한국어</a>
             </div>
             <button onclick="openLemonSqueezy()" class="w-full mt-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white px-5 py-3 rounded-lg text-base font-bold flex items-center justify-center gap-2">
-                <span>今すぐPROを購入</span>
+                <span>지금 PRO 구매</span>
             </button>
             <button onclick="openChromeStore()" class="w-full mt-2 bg-blue-600 text-white px-5 py-3 rounded-lg text-base font-bold flex items-center justify-center gap-2">
-                <span>Chromeに追加</span>
+                <span>Chrome에 추가</span>
             </button>
         </div>
     </div>

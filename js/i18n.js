@@ -1,5 +1,5 @@
 // --- Internationalization (i18n) Module ---
-// Slim version: toast translations + language toggle + path detection
+// Slim version: toast translations + language switch + path detection
 
 const translations = {
     "zh-TW": {
@@ -19,6 +19,12 @@ const translations = {
         toast_chrome: "Chrome ウェブストアへ移動中...",
         toast_sent: "送信しました！確認次第ご返信いたします。",
         toast_error: "送信に失敗しました。後でもう一度お試しください。"
+    },
+    ko: {
+        toast_checkout: "Lemon Squeezy 보안 결제 페이지를 열고 있습니다...",
+        toast_chrome: "Chrome 웹 스토어로 이동 중...",
+        toast_sent: "메시지가 전송되었습니다! 곧 답변드리겠습니다.",
+        toast_error: "전송에 실패했습니다. 나중에 다시 시도해 주세요."
     }
 };
 
@@ -27,13 +33,14 @@ function getLangFromPath() {
     const p = window.location.pathname;
     if (p.startsWith('/zh-TW/') || p === '/zh-TW') return 'zh-TW';
     if (p.startsWith('/ja/') || p === '/ja') return 'ja';
+    if (p.startsWith('/ko/') || p === '/ko') return 'ko';
     return 'en';
 }
 
-// Cycle language: en → zh-TW → ja → en
-function toggleLanguage() {
-    const lang = getLangFromPath();
-    const nextLang = lang === 'en' ? 'zh-TW' : lang === 'zh-TW' ? 'ja' : 'en';
+// Switch to a specific language
+function switchLanguage(targetLang) {
+    const currentLang = getLangFromPath();
+    if (targetLang === currentLang) return;
 
     // Get base path (remove current language prefix)
     let basePath = window.location.pathname;
@@ -41,11 +48,13 @@ function toggleLanguage() {
         basePath = basePath.substring(6) || '/';
     } else if (basePath.startsWith('/ja/') || basePath === '/ja') {
         basePath = basePath.substring(3) || '/';
+    } else if (basePath.startsWith('/ko/') || basePath === '/ko') {
+        basePath = basePath.substring(3) || '/';
     }
 
-    // Add new language prefix
-    const prefixMap = { 'en': '', 'zh-TW': '/zh-TW', 'ja': '/ja' };
-    const newPath = prefixMap[nextLang] + basePath;
+    // Add target language prefix
+    const prefixMap = { 'en': '', 'zh-TW': '/zh-TW', 'ja': '/ja', 'ko': '/ko' };
+    const newPath = prefixMap[targetLang] + basePath;
 
     window.location.href = newPath;
 }
@@ -60,6 +69,6 @@ function getTranslation(key) {
 const currentLang = getLangFromPath();
 window.i18n = {
     currentLang: currentLang,
-    toggleLanguage: toggleLanguage,
+    switchLanguage: switchLanguage,
     getTranslation: getTranslation
 };

@@ -5,6 +5,7 @@
     { "source": "/en/:path*", "destination": "/:path*", "permanent": true },
     { "source": "/zh-TW/index.html", "destination": "/zh-TW/", "permanent": true },
     { "source": "/ja/index.html", "destination": "/ja/", "permanent": true },
+    { "source": "/ko/index.html", "destination": "/ko/", "permanent": true },
     { "source": "/index.html", "destination": "/", "permanent": true }
   ],
   "trailingSlash": false

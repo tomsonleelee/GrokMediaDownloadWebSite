@@ -1,0 +1,116 @@
+<!-- Footer -->
+<footer class="bg-slate-950 border-t border-slate-900 py-12 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-2">
+            <div class="w-6 h-6 bg-pink-600 rounded flex items-center justify-center">
+                <i data-lucide="download" class="text-white w-3 h-3"></i>
+            </div>
+            <span class="font-bold text-slate-300">GrokMedia<span class="text-pink-400">Downloader</span></span>
+        </div>
+
+        <div class="flex gap-6 text-slate-500">
+            <a href="/ko/privacy.html" class="hover:text-white transition-colors">개인정보처리방침</a>
+            <a href="/ko/terms.html" class="hover:text-white transition-colors">이용약관</a>
+            <button onclick="openContactModal()" class="hover:text-white transition-colors focus:outline-none">고객 지원 문의</button>
+        </div>
+
+        <div class="text-slate-600">
+            &copy; 2025 Kario LLC. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<!-- Contact Modal -->
+<div id="contact-modal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeContactModal()"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative">
+            <button onclick="closeContactModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="p-6">
+                <h3 class="text-2xl font-bold mb-2 text-white">고객 지원 문의</h3>
+                <p class="text-slate-400 text-sm mb-6">문제가 있거나 기능을 요청하고 싶으신가요? 언제든지 문의해 주세요.</p>
+                <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">이름</label>
+                        <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">이메일</label>
+                        <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">메시지 내용</label>
+                        <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold py-3 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                        <span>보내기</span>
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Privacy Policy Modal -->
+<div id="privacy-modal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closePrivacyModal()"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative max-h-[80vh] flex flex-col">
+            <button onclick="closePrivacyModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white z-10">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="p-6 overflow-y-auto">
+                <h3 class="text-2xl font-bold mb-4 text-white">개인정보처리방침</h3>
+                <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line">1. 데이터 수집 및 사용
+GrokMediaDownloader는 완전히 클라이언트 측에서 작동합니다. 개인 데이터, 브라우징 기록, 다운로드한 콘텐츠를 수집, 저장 또는 공유하지 않습니다. 모든 처리는 브라우저 내에서 로컬로 이루어집니다.
+
+2. 권한에 대하여
+요청하는 권한은 핵심 기능 실행에만 사용됩니다:
+- Grok 페이지에서의 미디어 감지
+- 미디어 파일을 컴퓨터에 저장
+- 설정의 로컬 저장
+
+3. 제3자 서비스
+결제는 Lemon Squeezy에서 처리됩니다. 금융 데이터는 Lemon Squeezy가 직접 처리하고 보호하며, 본 확장 프로그램은 민감한 금융 정보에 접근하지 않습니다.
+
+4. 정책 업데이트
+본 정책을 수시로 변경할 권리를 보유합니다. 변경 사항은 이 페이지에서 업데이트됩니다.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Terms of Service Modal -->
+<div id="terms-modal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeTermsModal()"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden relative max-h-[80vh] flex flex-col">
+            <button onclick="closeTermsModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white z-10">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="p-6 overflow-y-auto">
+                <h3 class="text-2xl font-bold mb-4 text-white">이용약관</h3>
+                <div class="text-slate-400 text-sm space-y-4 leading-relaxed whitespace-pre-line">1. 약관 동의
+GrokMediaDownloader를 설치 및 사용함으로써 본 약관에 구속되는 것에 동의한 것으로 간주됩니다.
+
+2. 라이선스 및 사용
+개인적이고 비상업적 목적으로 사용할 수 있는 비독점적이고 양도 불가능한 제한적 라이선스를 부여합니다. 리버스 엔지니어링은 금지됩니다.
+
+3. 사용자 책임
+본 도구는 편의 제공을 위한 것입니다. 다운로드한 콘텐츠에 대한 책임은 사용자에게 있습니다. 권리가 있는 미디어만 다운로드하세요.
+
+4. 면책 조항
+본 서비스는 '있는 그대로' 제공됩니다. 오류 없음이나 중단 없음을 보장하지 않습니다. 데이터 손실이나 손해에 대해 책임을 지지 않습니다.
+
+5. 환불 정책
+Lemon Squeezy에서 구매한 라이선스는 해당 플랫폼의 규정을 따릅니다. 기술적 문제는 고객 지원에 문의하세요.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Toast Notification Container -->
+<div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2"></div>

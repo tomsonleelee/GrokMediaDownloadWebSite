@@ -19,11 +19,20 @@
                 <a href="/zh-TW/pricing.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">終身授權</a>
                 <a href="/zh-TW/faq.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">常見問題</a>
 
-                <!-- Language Toggle -->
-                <button onclick="toggleLanguage()" class="flex items-center gap-1 text-sm font-medium text-slate-400 hover:text-white transition-colors px-2">
-                    <i data-lucide="globe" class="w-4 h-4"></i>
-                    <span id="lang-text">JP</span>
-                </button>
+                <!-- Language Selector -->
+                <div class="relative" id="lang-dropdown">
+                    <button onclick="toggleLangMenu()" class="flex items-center gap-1.5 text-sm font-medium text-slate-400 hover:text-white transition-colors px-2">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                        <span>中文</span>
+                        <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                    </button>
+                    <div id="lang-menu" class="hidden absolute right-0 mt-2 w-36 bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-1 z-50">
+                        <a onclick="switchLanguage('en')" class="block px-4 py-2 text-sm cursor-pointer text-slate-300 hover:bg-slate-700 hover:text-white rounded-lg mx-1">English</a>
+                        <a onclick="switchLanguage('zh-TW')" class="block px-4 py-2 text-sm cursor-pointer text-white bg-slate-700/50 rounded-lg mx-1">繁體中文</a>
+                        <a onclick="switchLanguage('ja')" class="block px-4 py-2 text-sm cursor-pointer text-slate-300 hover:bg-slate-700 hover:text-white rounded-lg mx-1">日本語</a>
+                        <a onclick="switchLanguage('ko')" class="block px-4 py-2 text-sm cursor-pointer text-slate-300 hover:bg-slate-700 hover:text-white rounded-lg mx-1">한국어</a>
+                    </div>
+                </div>
 
                 <button onclick="openLemonSqueezy()" class="bg-white text-slate-900 hover:bg-slate-200 px-5 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 shadow-lg shadow-white/10 flex items-center gap-2">
                     <span>獲取 PRO 授權</span>
@@ -32,10 +41,7 @@
             </div>
 
             <!-- Mobile Menu Button -->
-            <div class="md:hidden flex items-center gap-4">
-                <button onclick="toggleLanguage()" class="text-slate-300 hover:text-white">
-                    <span id="lang-text-mobile" class="font-bold text-sm">JP</span>
-                </button>
+            <div class="md:hidden flex items-center">
                 <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
@@ -52,6 +58,13 @@
             <a href="/zh-TW/#features" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">專業功能</a>
             <a href="/zh-TW/pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">終身授權</a>
             <a href="/zh-TW/faq.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800">常見問題</a>
+            <div class="border-t border-slate-700 mt-2 pt-2">
+                <p class="px-3 py-1 text-xs text-slate-500 uppercase tracking-wider">Language</p>
+                <a onclick="switchLanguage('en')" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800 cursor-pointer">English</a>
+                <a onclick="switchLanguage('zh-TW')" class="block px-3 py-2 rounded-md text-sm font-medium text-white bg-slate-800">繁體中文</a>
+                <a onclick="switchLanguage('ja')" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800 cursor-pointer">日本語</a>
+                <a onclick="switchLanguage('ko')" class="block px-3 py-2 rounded-md text-sm text-slate-300 hover:bg-slate-800 cursor-pointer">한국어</a>
+            </div>
             <button onclick="openLemonSqueezy()" class="w-full mt-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white px-5 py-3 rounded-lg text-base font-bold flex items-center justify-center gap-2">
                 <span>立即購買 PRO</span>
             </button>

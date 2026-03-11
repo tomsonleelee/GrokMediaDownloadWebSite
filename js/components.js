@@ -410,6 +410,7 @@ function getLangFromPath() {
     const p = window.location.pathname;
     if (p.startsWith('/zh-TW/') || p === '/zh-TW') return 'zh-TW';
     if (p.startsWith('/ja/') || p === '/ja') return 'ja';
+    if (p.startsWith('/ko/') || p === '/ko') return 'ko';
     return 'en';
 }
 
@@ -549,6 +550,21 @@ function highlightCurrentPage() {
         }
     });
 }
+
+// Language dropdown menu toggle
+function toggleLangMenu() {
+    const menu = document.getElementById('lang-menu');
+    if (menu) menu.classList.toggle('hidden');
+}
+
+// Close language menu when clicking outside
+document.addEventListener('click', function(e) {
+    const dropdown = document.getElementById('lang-dropdown');
+    const menu = document.getElementById('lang-menu');
+    if (dropdown && menu && !dropdown.contains(e.target)) {
+        menu.classList.add('hidden');
+    }
+});
 
 // Toast Notification Logic
 function showToast(messageKey) {
@@ -733,11 +749,11 @@ window.openTermsModal = openTermsModal;
 window.closeTermsModal = closeTermsModal;
 window.openChromeStore = openChromeStore;
 window.openLemonSqueezy = openLemonSqueezy;
-window.toggleLanguage = function() {
+window.switchLanguage = function(targetLang) {
     if (window.i18n) {
         const currentLang = window.i18n.currentLang;
-        window.i18n.toggleLanguage();
-        const newLang = window.i18n.currentLang;
-        Analytics.trackLanguageChange(currentLang, newLang);
+        window.i18n.switchLanguage(targetLang);
+        Analytics.trackLanguageChange(currentLang, targetLang);
     }
 };
+window.toggleLangMenu = toggleLangMenu;

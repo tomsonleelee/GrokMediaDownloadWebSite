@@ -1,5 +1,5 @@
 ---
-globs: ["sitemap.xml", "robots.txt", "*.html", "zh-TW/*.html", "ja/*.html"]
+globs: ["sitemap.xml", "robots.txt", "*.html", "zh-TW/*.html", "ja/*.html", "ko/*.html"]
 ---
 
 # SEO Rules
@@ -10,7 +10,7 @@ globs: ["sitemap.xml", "robots.txt", "*.html", "zh-TW/*.html", "ja/*.html"]
 2. `<meta name="description">` — unique per page, under 160 chars
 3. `<link rel="canonical">` — absolute URL to the current page
 4. `<meta property="og:*">` — Open Graph tags (title, description, image, url)
-5. `<link rel="alternate" hreflang="...">` — all three language versions + `x-default`
+5. `<link rel="alternate" hreflang="...">` — all four language versions + `x-default`
 6. **Body text in the correct language** — hardcoded, no JS dependency
 
 ## hreflang Template
@@ -21,6 +21,7 @@ Every page needs this set of hreflang links (adjust paths per page):
 <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/{page}" />
 <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/{page}" />
 <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/{page}" />
+<link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/{page}" />
 <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/{page}" />
 ```
 
@@ -28,17 +29,17 @@ Every page needs this set of hreflang links (adjust paths per page):
 
 ## Adding a New Page — SEO Checklist
 
-1. Create all three language versions (root EN, `/zh-TW/`, `/ja/`)
+1. Create all four language versions (root EN, `/zh-TW/`, `/ja/`, `/ko/`)
 2. **Hardcode body text** in the correct language for each version
 3. Add unique `<title>`, `<meta description>`, `<link canonical>` per version
-4. Add hreflang links to all three versions
+4. Add hreflang links to all four versions
 5. Add Open Graph meta tags
 6. Update `sitemap.xml`:
-   - Add `<url>` entry for each language version (3 entries)
+   - Add `<url>` entry for each language version (4 entries)
    - Include `<xhtml:link rel="alternate" hreflang="...">` in each entry
    - Set appropriate `<priority>` and `<changefreq>`
 7. Add Schema.org structured data if applicable (see below)
-8. Update navigation in all 3 header components (`header.html`, `header-zh-TW.html`, `header-ja.html`)
+8. Update navigation in all 4 header components (`header.html`, `header-zh-TW.html`, `header-ja.html`, `header-ko.html`)
 
 ## Schema.org Types Used
 

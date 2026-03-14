@@ -685,13 +685,31 @@ function openChromeStore() {
     }, 800);
 }
 
+// Standard GA4 e-commerce item for funnel tracking
+const PRO_ITEM = {
+    item_id: 'pro_lifetime',
+    item_name: 'GrokMediaDownloader PRO Lifetime',
+    price: 4.99,
+    quantity: 1
+};
+
 function openLemonSqueezy() {
     const url = 'https://kariostudio.lemonsqueezy.com/buy/4c60a74b-e0ea-4522-a989-d1d1aac08927';
     Analytics.trackCTA('purchase_pro', url);
     Analytics.trackExternalLink(url, 'Lemon Squeezy Checkout');
-    Analytics.trackFunnelStep('begin_checkout', {
-        page: window.location.pathname
+
+    // GA4 e-commerce: add_to_cart → begin_checkout (standard format for funnel)
+    gtag('event', 'add_to_cart', {
+        currency: 'USD',
+        value: 4.99,
+        items: [PRO_ITEM]
     });
+    gtag('event', 'begin_checkout', {
+        currency: 'USD',
+        value: 4.99,
+        items: [PRO_ITEM]
+    });
+
     showToast('toast_checkout');
     setTimeout(() => {
         window.open(url, '_blank');
@@ -706,6 +724,12 @@ function initConversionTracking() {
     if (path.includes('pricing.html')) {
         Analytics.trackFunnelStep('view_pricing', {
             page_language: document.documentElement.lang
+        });
+        // GA4 e-commerce: view_item (standard format for shopping funnel)
+        gtag('event', 'view_item', {
+            currency: 'USD',
+            value: 4.99,
+            items: [PRO_ITEM]
         });
     }
 

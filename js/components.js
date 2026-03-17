@@ -733,13 +733,6 @@ function initConversionTracking() {
         });
     }
 
-    // Track purchase completion
-    if (path.includes('success.html')) {
-        Analytics.trackFunnelStep('purchase_complete', {
-            page_language: document.documentElement.lang
-        });
-    }
-
     // Track "View Plans & Pricing" link clicks in hero
     document.addEventListener('click', function(e) {
         const link = e.target.closest('a[href*="pricing.html"]');

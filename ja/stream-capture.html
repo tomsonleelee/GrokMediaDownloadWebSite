@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ストリームキャプチャ | リアルタイムGrok画像自動キャプチャ - GrokMediaDownloader PRO</title>
+    <meta name="description" content="ストリームキャプチャはGrok AIをリアルタイムで監視し、生成された画像を自動キャプチャします。DOMオブザーバー技術でスクロール中の新しい画像を検出し、ワンクリックで一括ダウンロード。GrokMediaDownloader PROの機能です。">
+    <meta name="keywords" content="ストリームキャプチャ, grok画像キャプチャ, リアルタイム画像ダウンロード, DOMオブザーバー, 一括画像ダウンロード, grok AI画像, 自動キャプチャ, Chrome拡張機能">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/ja/stream-capture.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/stream-capture.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/stream-capture.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/stream-capture.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/stream-capture.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/stream-capture.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/ja/stream-capture.html">
+    <meta property="og:title" content="ストリームキャプチャ | リアルタイムGrok画像自動キャプチャ">
+    <meta property="og:description" content="Grok AIをリアルタイムで監視。DOMオブザーバー技術で生成された画像を自動キャプチャし、ワンクリックで一括ダウンロード。PRO機能。">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ストリームキャプチャ | GrokMediaDownloader PRO">
+    <meta name="twitter:description" content="DOMオブザーバー技術によるリアルタイムGrok画像自動キャプチャ。生成されたすべての画像をワンクリックで一括ダウンロード。">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://grokmedia.kario-studio.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ストリームキャプチャ",
+          "item": "https://grokmedia.kario-studio.com/ja/stream-capture.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(6, 182, 212, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+        メインコンテンツへスキップ
+    </a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ja/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ja/" class="text-sm text-slate-300 hover:text-white">ホーム</a><a href="/ja/story-mode.html" class="text-sm text-slate-300 hover:text-white">ストーリーモード</a><a href="/ja/video-gen-queue.html" class="text-sm text-slate-300 hover:text-white">動画生成キュー</a><a href="/ja/pricing.html" class="text-sm text-slate-300 hover:text-white">料金</a><a href="/ja/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                    <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+                    <span data-i18n="stream_badge">PRO機能</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    <span class="gradient-text" data-i18n="stream_title">ストリームキャプチャ</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-cyan-300 mb-4" data-i18n="stream_subtitle">リアルタイムGrok画像自動キャプチャ</p>
+
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_desc">ブラウジング中にGrok AIを監視。ストリームキャプチャはDOMオブザーバー技術を使用して、リアルタイムで新しく生成された画像を自動検出しキューに追加します。インスピレーションを見逃さず、ワンクリックですべてを一括ダウンロード。</p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="openChromeStore()" class="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="chrome" class="w-5 h-5"></i>
+                        <span data-i18n="hero_cta_chrome">Chromeに追加</span>
+                    </button>
+
+                    <button onclick="openLemonSqueezy()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                        <span data-i18n="price_pro_button">$4.99 PRO 永久ライセンス</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section class="py-16 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="stream_video_title">ストリームキャプチャの動作を見る</h2>
+                <p class="text-slate-400" data-i18n="stream_video_desc">監視開始 → Grokをブラウズ → 画像自動キャプチャ → 一括ダウンロード</p>
+            </div>
+
+            <!-- Video Container -->
+            <div class="relative rounded-2xl overflow-hidden border border-cyan-500/30 shadow-2xl shadow-cyan-500/10">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none z-10"></div>
+
+                <video
+                    class="w-full aspect-video bg-slate-900"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    poster="/assets/stream-capture-poster.jpg"
+                >
+                    <source src="/assets/stream-capture-demo.mp4" type="video/mp4">
+                    <div class="w-full aspect-video bg-slate-900 flex items-center justify-center">
+                        <p class="text-slate-400">お使いのブラウザは動画再生に対応していません。</p>
+                    </div>
+                </video>
+
+                <button
+                    onclick="toggleVideo(this)"
+                    class="absolute bottom-4 right-4 z-20 w-10 h-10 bg-slate-900/80 hover:bg-slate-800 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 hover:opacity-100 focus:opacity-100"
+                    aria-label="動画の再生/一時停止"
+                >
+                    <i data-lucide="pause" class="w-5 h-5 text-white video-pause-icon"></i>
+                    <i data-lucide="play" class="w-5 h-5 text-white video-play-icon hidden"></i>
+                </button>
+            </div>
+
+            <p class="text-center text-slate-500 text-sm mt-4" data-i18n="stream_video_caption">* ストリームキャプチャのリアルタイムキャプチャワークフローを紹介する動画です</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleVideo(button) {
+            const video = button.closest('section').querySelector('video');
+            const pauseIcon = button.querySelector('.video-pause-icon');
+            const playIcon = button.querySelector('.video-play-icon');
+
+            if (video.paused) {
+                video.play();
+                pauseIcon.classList.remove('hidden');
+                playIcon.classList.add('hidden');
+            } else {
+                video.pause();
+                pauseIcon.classList.add('hidden');
+                playIcon.classList.remove('hidden');
+            }
+        }
+    </script>
+
+    <!-- Core Features -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_core_title">コア機能</h2>
+                <p class="text-slate-400" data-i18n="stream_core_desc">ストリームキャプチャはシームレスなリアルタイム画像収集ワークフローを提供します</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-cyan-500/30 hover:border-cyan-500/60 transition-all">
+                    <div class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="eye" class="text-cyan-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_1_title">リアルタイムDOMオブザーバー</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_1_desc">MutationObserverを使用して、Grokが生成する新しい画像を監視します。手動更新不要で、検出は即座に行われます。</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-blue-500/30 hover:border-blue-500/60 transition-all">
+                    <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="layers" class="text-blue-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_2_title">自動キューシステム</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_2_desc">検出されたすべての画像は自動的にダウンロードキューに追加されます。スクロールし続けるだけで、ストリームキャプチャが残りを処理します。</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-emerald-500/30 hover:border-emerald-500/60 transition-all">
+                    <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="download-cloud" class="text-emerald-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_3_title">ワンクリック一括ダウンロード</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_3_desc">ブラウジングが終わったら、キャプチャしたすべての画像を一度にダウンロード。一枚ずつ保存する手間はもうありません。</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-pink-500/30 hover:border-pink-500/60 transition-all">
+                    <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="filter" class="text-pink-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_4_title">スマート重複排除</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_4_desc">ハッシュ比較を使用して、コレクション内の重複画像を自動的にフィルタリングします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_step_title">ストリームキャプチャの仕組み</h2>
+                <p class="text-slate-400">4つの簡単なステップでGrok画像を自動キャプチャ</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-600/30">1</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="play-circle" class="text-cyan-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_1_title">監視を開始</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_1_desc">拡張機能を開き、「ストリームキャプチャ開始」をクリックして、Grokページのリアルタイム監視を開始します。</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-600/30">2</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="scroll" class="text-blue-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_2_title">ブラウズ＆スクロール</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_2_desc">通常通りGrokをブラウズしてください。ページに表示される新しい画像はすべて自動的に検出されキューに追加されます。</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-emerald-600/30">3</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="check-square" class="text-emerald-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_3_title">キャプチャ結果を確認</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_3_desc">キャプチャキューで自動キャプチャされたすべての画像を確認。不要なものは削除できます。</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-pink-600/30">4</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="download" class="text-pink-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_4_title">一括ダウンロード</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_4_desc">「すべてダウンロード」をクリックして、キャプチャしたすべての画像をローカルドライブに一括保存します。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Technical Info -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">技術的なハイライト</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="eye" class="text-cyan-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">MutationObserver API</h4>
+                                <p class="text-slate-400 text-sm">ブラウザネイティブのMutationObserverを使用して、パフォーマンスに影響を与えずにDOM変更を効率的に検出します。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="cpu" class="text-pink-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">バックグラウンドサービスワーカー</h4>
+                                <p class="text-slate-400 text-sm">Chromeのサービスワーカーで動作し、タブを切り替えても永続的な監視を実現します。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="database" class="text-blue-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">IndexedDBキャッシュ</h4>
+                                <p class="text-slate-400 text-sm">キャプチャした画像メタデータをIndexedDBに保存し、高速な重複チェックとキュー管理を実現します。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield" class="text-emerald-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">プライバシー最優先</h4>
+                                <p class="text-slate-400 text-sm">すべての画像検出とダウンロードはローカルで処理されます。外部サーバーにデータは送信されません。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Mockup -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-cyan-500/10 blur-3xl rounded-full"></div>
+                    <div class="relative bg-slate-900 rounded-2xl border border-cyan-500/30 p-6 shadow-2xl">
+                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-slate-800">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="ml-2 text-slate-500 text-sm">Stream Capture v2.0</span>
+                        </div>
+
+                        <!-- Status Bar -->
+                        <div class="mb-4 p-3 bg-slate-800/50 rounded-lg flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span class="text-sm font-bold text-emerald-400">監視中</span>
+                            </div>
+                            <span class="text-sm text-slate-400">47枚の画像をキャプチャ</span>
+                        </div>
+
+                        <!-- Captured Items List -->
+                        <div class="mb-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="images" class="w-4 h-4 text-cyan-400"></i>
+                                <span class="text-sm font-bold text-white">キャプチャキュー</span>
+                                <span class="ml-auto text-xs text-slate-500">47件</span>
+                            </div>
+                            <div class="space-y-2">
+                                <!-- Item 1 -->
+                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-600/40 to-blue-600/40 rounded-lg"></div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm text-white truncate">grok_img_2026_03_001.jpg</p>
+                                        <p class="text-xs text-slate-500">1024 x 1024 · 2.4 MB</p>
+                                    </div>
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-600/40 to-pink-600/40 rounded-lg"></div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm text-white truncate">grok_img_2026_03_002.jpg</p>
+                                        <p class="text-xs text-slate-500">1024 x 1024 · 1.8 MB</p>
+                                    </div>
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg border border-cyan-500/30">
+                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-600/40 to-cyan-600/40 rounded-lg animate-pulse"></div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm text-white truncate">grok_img_2026_03_003.jpg</p>
+                                        <p class="text-xs text-cyan-400">キャプチャ中...</p>
+                                    </div>
+                                    <i data-lucide="loader" class="w-4 h-4 text-cyan-400 flex-shrink-0 animate-spin"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="grid grid-cols-2 gap-2">
+                            <button class="bg-cyan-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
+                                <i data-lucide="download" class="w-4 h-4"></i>
+                                すべてDL (47)
+                            </button>
+                            <button class="bg-slate-700 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                キューをクリア
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Grokの作品を見逃さない</h2>
+            <p class="text-slate-400 mb-8">ストリームキャプチャはPRO限定機能です</p>
+
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <button onclick="openChromeStore()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="chrome" class="w-5 h-5"></i>
+                    <span data-i18n="hero_cta_chrome">Chromeに追加</span>
+                </button>
+
+                <a href="/ja/pricing.html" class="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span data-i18n="price_pro_button">$4.99 PRO 永久ライセンス</span>
+                </a>
+            </div>
+
+            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">将来のすべてのアップデートを含む</p>
+            <a href="/ja/story-mode.html" class="inline-block mt-4 text-pink-400 hover:text-pink-300 transition-colors font-medium" data-i18n="cross_link_story">もう一つの強力な機能を探索: ストーリーモードヘルパー →</a>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+<script src="/js/i18n.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>

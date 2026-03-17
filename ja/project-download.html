@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プロジェクトダウンロード | 整理されたメディア管理 - GrokMediaDownloader v2.2</title>
+    <meta name="description" content="プロジェクトダウンロードはGrokメディアを構造化されたプロジェクトフォルダに整理します。ダウンロード前のスキャン、日付とプロンプトによる自動グループ化、メタデータJSONエクスポート。v2.2の新機能。">
+    <meta name="keywords" content="プロジェクトダウンロード, grokメディア整理, 一括ファイル管理, プロジェクトフォルダ, メタデータエクスポート, grokダウンロードマネージャー, Chrome拡張機能">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/ja/project-download.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/project-download.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/project-download.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/project-download.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/project-download.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/project-download.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/ja/project-download.html">
+    <meta property="og:title" content="プロジェクトダウンロード | 整理されたメディア管理">
+    <meta property="og:description" content="v2.2の新機能！ダウンロード前スキャン、日付とプロンプトによる自動グループ化、メタデータJSONエクスポート付きの構造化プロジェクトフォルダ。">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ko_KR">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="プロジェクトダウンロード | GrokMediaDownloader v2.2">
+    <meta name="twitter:description" content="整理されたメディア管理 - ダウンロード前スキャン、スマート自動グループ化、構造化プロジェクトフォルダ、メタデータJSONエクスポート。">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://grokmedia.kario-studio.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "プロジェクトダウンロード",
+          "item": "https://grokmedia.kario-studio.com/ja/project-download.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #F59E0B 0%, #EC4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(245, 158, 11, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+        メインコンテンツへスキップ
+    </a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ja/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ja/" class="text-sm text-slate-300 hover:text-white">ホーム</a><a href="/ja/story-mode.html" class="text-sm text-slate-300 hover:text-white">ストーリーモード</a><a href="/ja/video-gen-queue.html" class="text-sm text-slate-300 hover:text-white">動画生成キュー</a><a href="/ja/pricing.html" class="text-sm text-slate-300 hover:text-white">料金</a><a href="/ja/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                    <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                    <span data-i18n="project_badge">v2.2 新機能</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    <span class="gradient-text" data-i18n="project_title">プロジェクトダウンロード</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-amber-300 mb-4" data-i18n="project_subtitle">整理されたメディア管理</p>
+
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="project_desc">整理されていないダウンロードに溺れるのはもう終わり。プロジェクトダウンロードはGrokメディアを事前スキャンし、詳細な統計を表示し、日付とプロンプトでグループ化された構造化プロジェクトフォルダを自動作成します。</p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button onclick="openChromeStore()" class="px-8 py-4 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="chrome" class="w-5 h-5"></i>
+                        <span data-i18n="hero_cta_chrome">Chromeに追加</span>
+                    </button>
+
+                    <button onclick="openLemonSqueezy()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                        <span data-i18n="price_pro_button">$4.99 PRO 永久ライセンス</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section class="py-16 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="project_video_title">プロジェクトダウンロードの動作を見る</h2>
+                <p class="text-slate-400" data-i18n="project_video_desc">メディアスキャン → 統計プレビュー → プロジェクト作成 → 整理してダウンロード</p>
+            </div>
+
+            <!-- Video Container -->
+            <div class="relative rounded-2xl overflow-hidden border border-amber-500/30 shadow-2xl shadow-amber-500/10">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none z-10"></div>
+
+                <video
+                    class="w-full aspect-video bg-slate-900"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                >
+                    <source src="/assets/project-download-demo.mp4" type="video/mp4">
+                    <div class="w-full aspect-video bg-slate-900 flex items-center justify-center">
+                        <p class="text-slate-400">お使いのブラウザは動画再生に対応していません。</p>
+                    </div>
+                </video>
+
+                <button
+                    onclick="toggleVideo(this)"
+                    class="absolute bottom-4 right-4 z-20 w-10 h-10 bg-slate-900/80 hover:bg-slate-800 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 hover:opacity-100 focus:opacity-100"
+                    aria-label="動画の再生/一時停止"
+                >
+                    <i data-lucide="pause" class="w-5 h-5 text-white video-pause-icon"></i>
+                    <i data-lucide="play" class="w-5 h-5 text-white video-play-icon hidden"></i>
+                </button>
+            </div>
+
+            <p class="text-center text-slate-500 text-sm mt-4" data-i18n="project_video_caption">* プロジェクトダウンロードのワークフローを紹介する動画です</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleVideo(button) {
+            const video = button.closest('section').querySelector('video');
+            const pauseIcon = button.querySelector('.video-pause-icon');
+            const playIcon = button.querySelector('.video-play-icon');
+
+            if (video.paused) {
+                video.play();
+                pauseIcon.classList.remove('hidden');
+                playIcon.classList.add('hidden');
+            } else {
+                video.pause();
+                pauseIcon.classList.add('hidden');
+                playIcon.classList.remove('hidden');
+            }
+        }
+    </script>
+
+    <!-- Core Features -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="project_core_title">コア機能</h2>
+                <p class="text-slate-400" data-i18n="project_core_desc">プロジェクトダウンロードは完全な整理済みダウンロードワークフローを提供します</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-amber-500/30 hover:border-amber-500/60 transition-all">
+                    <div class="w-14 h-14 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="scan-search" class="text-amber-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="project_feat_1_title">ダウンロード前スキャン</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="project_feat_1_desc">ダウンロード前にGrokのお気に入りをスキャン。画像、SD動画、HD動画の合計数と詳細な内訳を確認できます。</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-orange-500/30 hover:border-orange-500/60 transition-all">
+                    <div class="w-14 h-14 bg-orange-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="folder-tree" class="text-orange-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="project_feat_2_title">スマート自動グループ化</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="project_feat_2_desc">作成日と生成プロンプトに基づいてファイルをプロジェクトフォルダに自動整理。手動の仕分けは不要です。</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-emerald-500/30 hover:border-emerald-500/60 transition-all">
+                    <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="file-json" class="text-emerald-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="project_feat_3_title">メタデータJSONエクスポート</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="project_feat_3_desc">各プロジェクトには生成プロンプト、タイムスタンプ、ファイル詳細を含むmetadata.jsonファイルが付属し、将来の参照に役立ちます。</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-blue-500/30 hover:border-blue-500/60 transition-all">
+                    <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="bar-chart-3" class="text-blue-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="project_feat_4_title">ダウンロード統計</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="project_feat_4_desc">リアルタイム統計でダウンロード進捗を追跡。完了、失敗、残りのアイテムを一目で確認できます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="project_step_title">プロジェクトダウンロードの仕組み</h2>
+                <p class="text-slate-400">4つの簡単なステップでGrokライブラリ全体を整理してダウンロード</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-amber-600/30">1</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="scan-search" class="text-amber-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_1_title">メディアをスキャン</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_1_desc">「スキャン」をクリックしてGrokのお気に入りを分析。拡張機能がダウンロード可能なすべての画像と動画をカウントします。</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-600/30">2</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="settings-2" class="text-orange-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_2_title">プレビュー＆設定</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_2_desc">画像数、動画数、推定ダウンロードサイズを表示するスキャン結果を確認。含めるものを選択します。</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-emerald-600/30">3</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="folder-plus" class="text-emerald-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_3_title">プロジェクトを作成</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_3_desc">プロジェクト名を付けます。ファイルは日付別フォルダ（例: 2024-03-15/）とプロンプト別サブフォルダに自動整理されます。</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-600/30">4</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="download" class="text-blue-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_4_title">すべてダウンロード</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_4_desc">一括ダウンロードを開始。ファイルは各グループのmetadata.json付きの整理されたプロジェクトフォルダに保存されます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Technical Info -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">技術的なハイライト</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="folder-tree" class="text-amber-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">階層型フォルダ構造</h4>
+                                <p class="text-slate-400 text-sm">ネストされたフォルダを作成：プロジェクト名 / 日付 / プロンプトグループで、数千のファイルを完璧に整理します。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="file-code" class="text-pink-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">メタデータ保存</h4>
+                                <p class="text-slate-400 text-sm">すべてのダウンロードグループに、元のGrokプロンプト、タイムスタンプ、ファイルチェックサムを含むJSONファイルが付属します。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="gauge" class="text-blue-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">並行ダウンロード</h4>
+                                <p class="text-slate-400 text-sm">ChromeのダウンロードAPIとスマートな並行制御を使用して、ブラウザに負担をかけずに速度を最大化します。</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield-check" class="text-emerald-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">レジューム対応</h4>
+                                <p class="text-slate-400 text-sm">ダウンロードが中断された場合、拡張機能が進捗を追跡し、中断した箇所から再開できます。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Mockup -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-500/10 blur-3xl rounded-full"></div>
+                    <div class="relative bg-slate-900 rounded-2xl border border-amber-500/30 p-6 shadow-2xl">
+                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-slate-800">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="ml-2 text-slate-500 text-sm">Project Download v2.2</span>
+                        </div>
+
+                        <!-- Header -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg">📂</span>
+                                <span class="text-lg font-bold text-white">プロジェクトダウンロード</span>
+                            </div>
+                            <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full font-semibold">v2.2</span>
+                        </div>
+
+                        <!-- Scan Results -->
+                        <div class="mb-4 p-4 bg-slate-800/50 rounded-lg space-y-2">
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">スキャン結果</div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">🖼️ 画像</span>
+                                <span class="text-white font-bold">342</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">🎬 SD動画</span>
+                                <span class="text-white font-bold">156</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">✨ HD動画</span>
+                                <span class="text-white font-bold">89</span>
+                            </div>
+                            <div class="border-t border-slate-700 pt-2 mt-2 flex items-center justify-between text-sm">
+                                <span class="text-slate-300">📊 合計</span>
+                                <span class="text-amber-300 font-bold">587ファイル</span>
+                            </div>
+                        </div>
+
+                        <!-- Project Name Input -->
+                        <div class="mb-4">
+                            <label class="text-xs text-slate-400 mb-1 block">プロジェクト名</label>
+                            <input type="text" value="my-grok-project" readonly class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+
+                        <!-- Folder Preview -->
+                        <div class="mb-4 p-3 bg-slate-800/50 rounded-lg">
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">フォルダプレビュー</div>
+                            <div class="text-sm font-mono space-y-1">
+                                <div class="text-amber-300">📁 my-grok-project/</div>
+                                <div class="text-slate-300 pl-4">📁 2024-03-15/</div>
+                                <div class="text-slate-400 pl-8">📁 cyberpunk-city/</div>
+                                <div class="text-slate-400 pl-8">📁 ocean-sunset/</div>
+                                <div class="text-slate-300 pl-4">📁 2024-03-14/</div>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <button class="w-full bg-amber-600 text-white font-bold py-3 rounded-lg text-sm flex items-center justify-center gap-2">
+                            <i data-lucide="download" class="w-4 h-4"></i>
+                            ダウンロード開始 (587ファイル)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Grokライブラリをプロのように整理</h2>
+            <p class="text-slate-400 mb-8">プロジェクトダウンロードはPRO限定機能です</p>
+
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <button onclick="openChromeStore()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="chrome" class="w-5 h-5"></i>
+                    <span data-i18n="hero_cta_chrome">Chromeに追加</span>
+                </button>
+
+                <a href="/ja/pricing.html" class="px-8 py-4 bg-gradient-to-r from-amber-600 to-pink-600 hover:from-amber-500 hover:to-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span data-i18n="price_pro_button">$4.99 PRO 永久ライセンス</span>
+                </a>
+            </div>
+
+            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">✨ 将来のすべてのアップデートを含む</p>
+            <a href="/ja/video-gen-queue.html" class="inline-block mt-4 text-pink-400 hover:text-pink-300 transition-colors font-medium" data-i18n="cross_link_queue">もう一つの強力な機能を探索: 動画生成キュー →</a>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+<script src="/js/i18n.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>

@@ -33,16 +33,16 @@
                 <p class="text-slate-400 text-sm mb-6">遇到問題或有功能建議？我們隨時傾聽。</p>
                 <form onsubmit="handleContactSubmit(event)" class="space-y-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">您的稱呼</label>
-                        <input type="text" name="name" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
+                        <label for="contact-name" class="block text-xs font-bold text-slate-400 mb-1 uppercase">您的稱呼</label>
+                        <input type="text" name="name" id="contact-name" autocomplete="name" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">電子信箱</label>
-                        <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
+                        <label for="contact-email" class="block text-xs font-bold text-slate-400 mb-1 uppercase">電子信箱</label>
+                        <input type="email" name="email" id="contact-email" autocomplete="email" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase">訊息內容</label>
-                        <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"></textarea>
+                        <label for="contact-message" class="block text-xs font-bold text-slate-400 mb-1 uppercase">訊息內容</label>
+                        <textarea name="message" id="contact-message" rows="4" required class="w-full bg-slate-950 border border-slate-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-pink-500 transition-colors"></textarea>
                     </div>
                     <button type="submit" class="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold py-3 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
                         <span>發送訊息</span>

@@ -8,7 +8,7 @@ const Analytics = {
                 page_path: window.location.pathname,
                 page_title: document.title
             });
-            console.log('[GA4]', eventName, params);
+            if (window.DEBUG) console.log('[GA4]', eventName, params);
         }
     },
 

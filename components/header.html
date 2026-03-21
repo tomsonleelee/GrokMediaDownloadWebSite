@@ -13,11 +13,25 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-6">
                 <a href="/" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Home</a>
-                <a href="/story-mode.html" class="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors">Story Mode</a>
-                <a href="/video-gen-queue.html" class="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors">Video Gen Queue</a>
-                <a href="/stream-capture.html" class="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors">Stream Capture</a>
-                <a href="/project-download.html" class="text-sm font-medium text-pink-400 hover:text-pink-300 transition-colors">Project Download</a>
-                <a href="/#features" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Features</a>
+
+                <!-- Features Dropdown -->
+                <div class="relative group">
+                    <button class="text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1">
+                        Features
+                        <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                    </button>
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="bg-slate-800 border border-slate-700 rounded-xl shadow-xl py-2 w-52">
+                            <a href="/story-mode.html" class="block px-4 py-2 text-sm text-pink-400 hover:bg-slate-700 hover:text-pink-300 rounded-lg mx-1">Story Mode</a>
+                            <a href="/video-gen-queue.html" class="block px-4 py-2 text-sm text-pink-400 hover:bg-slate-700 hover:text-pink-300 rounded-lg mx-1">Video Gen Queue</a>
+                            <a href="/stream-capture.html" class="block px-4 py-2 text-sm text-pink-400 hover:bg-slate-700 hover:text-pink-300 rounded-lg mx-1">Stream Capture</a>
+                            <a href="/project-download.html" class="block px-4 py-2 text-sm text-pink-400 hover:bg-slate-700 hover:text-pink-300 rounded-lg mx-1">Project Download</a>
+                            <div class="border-t border-slate-700 my-1"></div>
+                            <a href="/#features" class="block px-4 py-2 text-sm text-slate-300 hover:bg-slate-700 hover:text-white rounded-lg mx-1">All Features</a>
+                        </div>
+                    </div>
+                </div>
+
                 <a href="/pricing.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Pricing</a>
                 <a href="/faq.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">FAQ</a>
 

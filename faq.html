@@ -79,12 +79,20 @@
         {"@type": "Question", "name": "What does Generate List do?", "acceptedAnswer": {"@type": "Answer", "text": "It's a smart scan feature. Click on Grok/Imagine/Favorites and it reads the page, finds all media, filters out already downloaded files, and generates a to-download list."}},
         {"@type": "Question", "name": "What is the 'Only after' date filter?", "acceptedAnswer": {"@type": "Answer", "text": "A PRO exclusive. When you have thousands of images, set a date to only download new ones from 'today' or 'this week'."}},
         {"@type": "Question", "name": "What's the difference between Stream Capture and Generate List?", "acceptedAnswer": {"@type": "Answer", "text": "Generate List scans your Favorite List. Stream Capture is continuous monitoring that auto-captures new images as you generate them."}},
+        {"@type": "Question", "name": "How does HD Upgrade work?", "acceptedAnswer": {"@type": "Answer", "text": "Grok may store low-res previews. HD Upgrade auto-detects and requests 1080p high-quality versions from Grok. If HD video already exists, no duplicate request is sent."}},
+        {"@type": "Question", "name": "If I switch computers, is my history saved?", "acceptedAnswer": {"@type": "Answer", "text": "By default, history is stored locally. PRO users can use Export/Import Data to backup and restore."}},
         {"@type": "Question", "name": "What is Story Mode Helper?", "acceptedAnswer": {"@type": "Answer", "text": "A major v2.0 feature. It's a side panel video studio for managing Storyboards, extracting frames, sending to Grok for continuations, and local merge output."}},
+        {"@type": "Question", "name": "How do I use Send Frame to Grok?", "acceptedAnswer": {"@type": "Answer", "text": "In Story Mode Helper, select a video segment to view its last frame. Enter a prompt describing the next action and click send. The frame will be uploaded to Grok Imagine."}},
         {"@type": "Question", "name": "Is video merging done locally or in the cloud?", "acceptedAnswer": {"@type": "Answer", "text": "Completely local. We use WebAssembly FFmpeg, so all video processing happens in your browser without uploading to any server."}},
-        {"@type": "Question", "name": "How does HD Upgrade work?", "acceptedAnswer": {"@type": "Answer", "text": "Grok may store low-res previews. HD Upgrade auto-detects and requests 1080p high-quality versions from Grok."}},
-        {"@type": "Question", "name": "What is Video Gen Queue?", "acceptedAnswer": {"@type": "Answer", "text": "Video Gen Queue is a brand new v2.2 feature. It's an automated video generation scheduling system in the Side Panel. Batch add multiple video generation tasks with Custom/Normal/Fun/Spicy modes. Free version offers 50 uses, PRO is unlimited."}},
+        {"@type": "Question", "name": "What does 'Master' mean in Storyboard?", "acceptedAnswer": {"@type": "Answer", "text": "The first video in the Storyboard is marked as Master. When merging, other videos automatically adjust their resolution and frame rate to match the Master's specs, ensuring consistent output quality."}},
+        {"@type": "Question", "name": "Is there a storage limit for videos?", "acceptedAnswer": {"@type": "Answer", "text": "We use IndexedDB to store video data. Capacity depends on your browser settings, typically ranging from hundreds of MB to several GB. The Side Panel displays current storage usage."}},
+        {"@type": "Question", "name": "What is Video Gen Queue?", "acceptedAnswer": {"@type": "Answer", "text": "Video Gen Queue is a v2.2 feature. It's an automated video generation scheduling system in the Side Panel. Batch add multiple video generation tasks with Custom/Normal/Fun/Spicy modes. Free version offers 50 uses, PRO is unlimited."}},
         {"@type": "Question", "name": "What is Project-Based Download?", "acceptedAnswer": {"@type": "Answer", "text": "Project-Based Download scans and shows pre-download stats, then auto-creates project folders named by date and prompt. This keeps your downloads neatly organized. PRO exclusive feature."}},
+        {"@type": "Question", "name": "What features are in the Free version?", "acceptedAnswer": {"@type": "Answer", "text": "Free version allows analyzing and downloading images from favorites. Advanced features require Pro."}},
         {"@type": "Question", "name": "What is the scope of the Lifetime License?", "acceptedAnswer": {"@type": "Answer", "text": "The license allows installation on one Chrome account with up to 3 re-installations (e.g., for switching computers)."}},
+        {"@type": "Question", "name": "How do I enter my license key?", "acceptedAnswer": {"@type": "Answer", "text": "After purchase, you'll receive a license key. Open the extension's Popup panel, find the 'Activate PRO' or 'License' input field at the bottom, and paste your key to activate."}},
+        {"@type": "Question", "name": "Can I get a refund?", "acceptedAnswer": {"@type": "Answer", "text": "If you encounter technical issues that cannot be resolved, please contact support. Refund policy follows Lemon Squeezy platform guidelines."}},
+        {"@type": "Question", "name": "Do future updates require additional payment?", "acceptedAnswer": {"@type": "Answer", "text": "No! PRO Lifetime includes all future feature updates. The v2.0 Story Mode Helper is an example of a free update, and future new features will automatically be included in your license."}},
         {"@type": "Question", "name": "What is Lemon Squeezy? Is the payment secure?", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezy is a globally trusted payment platform designed for digital products. All transactions are SSL encrypted and PCI DSS compliant. We never see your credit card info."}}
       ]
     }
@@ -107,56 +115,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-    <!-- Schema.org - FAQPage -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Story Mode Helper?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Story Mode Helper is a v2.0 major feature. It's a side panel video studio for managing Storyboards, extracting frames, sending to Grok for video continuations, and merging videos locally with FFmpeg."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Send Frame to Grok work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "In Story Mode Helper, select a video segment to view its last frame. Enter a prompt describing the next action, then click send. The frame will be uploaded to Grok Imagine to generate a continuation video."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is video merging done locally or in the cloud?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Completely local. We use WebAssembly FFmpeg, so all video processing happens in your browser without uploading to any server."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Video Gen Queue?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Video Gen Queue is a v2.2 major feature. It's an automated video generation scheduling system in the side panel. You can batch add prompts to the queue, choose from 4 generation modes (Custom/Normal/Fun/Spicy), with auto-retry on failure and smart rate limit detection. Free version has 50 uses, PRO is unlimited."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Project-Based Download?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Project-Based Download is a v2.2 feature that organizes your downloads into project folders. Before downloading, it scans and shows statistics (image/video counts, HD/SD breakdown). Files are automatically organized into folders named by date and prompt, making it easy to manage your creations."
-          }
-        }
-      ]
-    }
-    </script>
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/css/styles.css">

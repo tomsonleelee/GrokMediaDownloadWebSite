@@ -76,16 +76,24 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "Generate List란 무엇인가요?", "acceptedAnswer": {"@type": "Answer", "text": "스마트 스캔 기능입니다. Grok/Imagine/Favorites에서 클릭하면 페이지를 로드하고, 모든 미디어를 감지하여 이미 다운로드한 파일을 제외한 리스트를 생성합니다."}},
-        {"@type": "Question", "name": "Only after 날짜 필터란?", "acceptedAnswer": {"@type": "Answer", "text": "PRO 전용 기능입니다. 수천 장이 있을 경우 날짜를 설정하여 '오늘' 또는 '이번 주'의 새 이미지만 다운로드할 수 있습니다."}},
-        {"@type": "Question", "name": "Stream Capture와 Generate List의 차이점은?", "acceptedAnswer": {"@type": "Answer", "text": "Generate List는 Favorite List를 스캔합니다. Stream Capture는 지속적으로 모니터링하여 새 이미지를 자동 캡처합니다."}},
-        {"@type": "Question", "name": "Story Mode Helper란?", "acceptedAnswer": {"@type": "Answer", "text": "v2.0의 주요 기능입니다. 사이드 패널 동영상 스튜디오로, Storyboard 관리, 프레임 추출, Grok 전송, 로컬 병합 출력이 가능합니다."}},
-        {"@type": "Question", "name": "동영상 병합은 로컬인가요, 클라우드인가요?", "acceptedAnswer": {"@type": "Answer", "text": "완전히 로컬입니다. WebAssembly FFmpeg를 사용하여 모든 동영상 처리가 브라우저 내에서 완료됩니다. 서버 업로드 없음."}},
-        {"@type": "Question", "name": "HD Upgrade는 어떻게 작동하나요?", "acceptedAnswer": {"@type": "Answer", "text": "Grok은 저해상도 미리보기를 저장하는 경우가 있습니다. HD Upgrade는 자동으로 감지하여 Grok에 1080p 고화질 버전을 요청합니다."}},
-        {"@type": "Question", "name": "Video Gen Queue란?", "acceptedAnswer": {"@type": "Answer", "text": "Video Gen Queue는 v2.2의 신기능입니다. 사이드 패널의 자동 동영상 생성 스케줄링 시스템으로, 여러 동영상 생성 작업을 일괄 추가할 수 있습니다. Custom/Normal/Fun/Spicy 모드를 지원합니다. 무료 버전은 50회, PRO 버전은 무제한입니다."}},
-        {"@type": "Question", "name": "Project-Based Download란?", "acceptedAnswer": {"@type": "Answer", "text": "Project-Based Download는 다운로드 전에 자동 스캔하여 통계 정보를 표시하고, 날짜와 프롬프트로 프로젝트 폴더를 자동 생성합니다. PRO 전용 기능입니다."}},
+        {"@type": "Question", "name": "Generate List는 무엇인가요?", "acceptedAnswer": {"@type": "Answer", "text": "스마트 스캔 기능입니다. Grok/Imagine/Favorites를 클릭하면 페이지를 읽고 모든 미디어를 찾아 이미 다운로드된 파일을 필터링하고 다운로드 목록을 생성합니다."}},
+        {"@type": "Question", "name": "'Only after' 날짜 필터란?", "acceptedAnswer": {"@type": "Answer", "text": "PRO 전용 기능입니다. 수천 장의 이미지가 있을 때 날짜를 설정하여 '오늘' 또는 '이번 주'의 새 작품만 다운로드할 수 있습니다."}},
+        {"@type": "Question", "name": "Stream Capture와 Generate List의 차이점은?", "acceptedAnswer": {"@type": "Answer", "text": "Generate List는 즐겨찾기 목록을 스캔합니다. Stream Capture는 새 이미지를 생성할 때 자동으로 캡처하는 지속적 모니터링입니다."}},
+        {"@type": "Question", "name": "HD Upgrade는 어떻게 작동하나요?", "acceptedAnswer": {"@type": "Answer", "text": "Grok은 저해상도 미리보기를 저장할 수 있습니다. HD Upgrade는 자동 감지하여 Grok에 1080p 고화질 버전을 요청합니다. HD 동영상이 이미 있으면 중복 요청을 보내지 않습니다."}},
+        {"@type": "Question", "name": "PC를 바꾸면 이력이 저장되나요?", "acceptedAnswer": {"@type": "Answer", "text": "기본적으로 이력은 로컬에 저장됩니다. PRO 사용자는 Export/Import Data로 백업 및 복원할 수 있습니다."}},
+        {"@type": "Question", "name": "Story Mode Helper란?", "acceptedAnswer": {"@type": "Answer", "text": "v2.0의 주요 기능입니다. Storyboard 관리, 프레임 추출, Grok으로 전송하여 후속 동영상 생성, 로컬 병합 출력이 가능한 사이드 패널 동영상 스튜디오입니다."}},
+        {"@type": "Question", "name": "'프레임을 Grok으로 보내기'는 어떻게 사용하나요?", "acceptedAnswer": {"@type": "Answer", "text": "Story Mode Helper에서 동영상 세그먼트를 선택하여 마지막 프레임을 봅니다. 다음 동작을 설명하는 프롬프트를 입력하고 전송하면 프레임이 Grok Imagine에 업로드됩니다."}},
+        {"@type": "Question", "name": "동영상 병합은 로컬인가요 클라우드인가요?", "acceptedAnswer": {"@type": "Answer", "text": "완전히 로컬입니다. WebAssembly FFmpeg를 사용하므로 모든 동영상 처리가 브라우저에서 이루어지며 서버에 업로드되지 않습니다."}},
+        {"@type": "Question", "name": "Storyboard의 'Master'란?", "acceptedAnswer": {"@type": "Answer", "text": "Storyboard의 첫 번째 동영상이 Master로 표시됩니다. 병합 시 다른 동영상은 Master의 해상도와 프레임 레이트에 맞게 자동 조정되어 일관된 출력 품질을 보장합니다."}},
+        {"@type": "Question", "name": "동영상 저장 용량 제한이 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "IndexedDB를 사용하여 동영상 데이터를 저장합니다. 용량은 브라우저 설정에 따라 다르며 일반적으로 수백 MB에서 수 GB입니다. 사이드 패널에 현재 저장 사용량이 표시됩니다."}},
+        {"@type": "Question", "name": "Video Gen Queue란?", "acceptedAnswer": {"@type": "Answer", "text": "v2.2의 새 기능입니다. 사이드 패널의 자동 동영상 생성 스케줄링 시스템입니다. Custom/Normal/Fun/Spicy 4가지 모드로 일괄 추가 가능. 무료 버전 50회, PRO 무제한."}},
+        {"@type": "Question", "name": "Project-Based Download란?", "acceptedAnswer": {"@type": "Answer", "text": "다운로드 전 통계를 스캔하고 날짜와 프롬프트로 명명된 프로젝트 폴더를 자동 생성합니다. PRO 전용 기능."}},
+        {"@type": "Question", "name": "무료 버전에는 어떤 기능이 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "무료 버전은 즐겨찾기의 이미지 분석 및 다운로드가 가능합니다. 고급 기능은 PRO 라이선스가 필요합니다."}},
         {"@type": "Question", "name": "평생 라이선스의 범위는?", "acceptedAnswer": {"@type": "Answer", "text": "하나의 Chrome 계정에서 사용 가능하며, 최대 3회 재설치(PC 교체 등)를 지원합니다."}},
-        {"@type": "Question", "name": "Lemon Squeezy란? 결제는 안전한가요?", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezy는 디지털 제품을 위해 설계된 국제적으로 신뢰받는 결제 플랫폼입니다. 모든 거래는 SSL 암호화되고 PCI DSS를 준수합니다. 신용카드 정보는 당사에서 일절 취급하지 않습니다."}}
+        {"@type": "Question", "name": "라이선스 키 입력 방법은?", "acceptedAnswer": {"@type": "Answer", "text": "구매 후 라이선스 키를 받습니다. 확장 프로그램의 Popup 패널을 열고 하단의 'Activate PRO' 또는 'License' 입력란에 키를 붙여넣어 활성화합니다."}},
+        {"@type": "Question", "name": "환불이 가능한가요?", "acceptedAnswer": {"@type": "Answer", "text": "해결할 수 없는 기술적 문제가 발생한 경우 페이지 하단의 '고객 지원'으로 문의해 주세요. 환불 정책은 Lemon Squeezy 플랫폼의 가이드라인을 따릅니다."}},
+        {"@type": "Question", "name": "향후 업데이트에 추가 비용이 필요한가요?", "acceptedAnswer": {"@type": "Answer", "text": "아니요! PRO 평생 버전에는 향후 모든 기능 업데이트가 포함됩니다. v2.0의 Story Mode Helper는 무료 업데이트의 예이며, 향후 새 기능도 라이선스에 자동으로 포함됩니다."}},
+        {"@type": "Question", "name": "Lemon Squeezy란? 결제는 안전한가요?", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezy는 디지털 제품을 위한 전 세계적으로 신뢰받는 결제 플랫폼입니다. 모든 거래는 SSL 암호화되며 PCI DSS를 준수합니다. 신용카드 정보를 당사가 볼 수 없습니다."}}
       ]
     }
     </script>
@@ -107,56 +115,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-    <!-- Schema.org - FAQPage (English) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Story Mode Helper?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Story Mode Helper is a v2.0 major feature. It's a side panel video studio for managing Storyboards, extracting frames, sending to Grok for video continuations, and merging videos locally with FFmpeg."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Send Frame to Grok work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "In Story Mode Helper, select a video segment to view its last frame. Enter a prompt describing the next action, then click send. The frame will be uploaded to Grok Imagine to generate a continuation video."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is video merging done locally or in the cloud?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Completely local. We use WebAssembly FFmpeg, so all video processing happens in your browser without uploading to any server."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Video Gen Queue?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Video Gen Queue is a v2.2 major feature. It's an automated video generation scheduling system in the side panel. You can batch add prompts to the queue, choose from 4 generation modes (Custom/Normal/Fun/Spicy), with auto-retry on failure and smart rate limit detection. Free version has 50 uses, PRO is unlimited."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Project-Based Download?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Project-Based Download is a v2.2 feature that organizes your downloads into project folders. Before downloading, it scans and shows statistics (image/video counts, HD/SD breakdown). Files are automatically organized into folders named by date and prompt, making it easy to manage your creations."
-          }
-        }
-      ]
-    }
-    </script>
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/css/styles.css">

@@ -76,16 +76,24 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "Generate List 按鈕是做什麼的？", "acceptedAnswer": {"@type": "Answer", "text": "這是一個智慧掃描功能。在 Grok/Imagine/Favorites 點擊後，Extension 會讀取頁面，找出所有圖片與影片，並自動過濾掉已下載過的檔案，生成「待下載清單」。"}},
-        {"@type": "Question", "name": "什麼是 \"Only after\" 日期過濾？", "acceptedAnswer": {"@type": "Answer", "text": "這是 PRO 版的獨家功能。當您累積了數千張圖片時，可設定日期只下載「今天」或「本週」生成的新圖。"}},
-        {"@type": "Question", "name": "Stream Capture 與 Generate List 有什麼不同？", "acceptedAnswer": {"@type": "Answer", "text": "Generate List 是掃描 Favorite List。Stream Capture 是持續監聽模式，會自動捕獲您生成的新圖片。"}},
-        {"@type": "Question", "name": "什麼是 Story Mode Helper？", "acceptedAnswer": {"@type": "Answer", "text": "這是 v2.0 的重磅功能。它是一個側邊面板影片工作室，讓您可以管理 Storyboard、擷取畫格、發送到 Grok 生成續集影片，並在本地合併輸出。"}},
-        {"@type": "Question", "name": "影片合併是在本地還是雲端處理？", "acceptedAnswer": {"@type": "Answer", "text": "完全在本地處理。我們使用 WebAssembly 版 FFmpeg，所有影片處理都在您的瀏覽器中完成，不會上傳到任何伺服器。"}},
-        {"@type": "Question", "name": "HD Upgrade 是如何運作的？", "acceptedAnswer": {"@type": "Answer", "text": "Grok 預設存儲的影片可能是低解析度預覽版。HD Upgrade 會自動偵測並向 Grok 發送請求取得 1080p 高畫質版本。"}},
-        {"@type": "Question", "name": "什麼是 Video Gen Queue？", "acceptedAnswer": {"@type": "Answer", "text": "Video Gen Queue 是 v2.2 的全新功能。它是一個自動化影片生成排程系統，可在 Side Panel 中批次加入多個影片生成任務，支援 Custom/Normal/Fun/Spicy 四種模式。免費版提供 50 次使用，PRO 版無限制。"}},
-        {"@type": "Question", "name": "什麼是 Project-Based Download？", "acceptedAnswer": {"@type": "Answer", "text": "Project-Based Download 會在下載前自動掃描統計，並依日期與提示詞自動建立專案資料夾，讓您的下載檔案分類井然有序。此功能為 PRO 專屬。"}},
+        {"@type": "Question", "name": "Generate List 有什麼功能？", "acceptedAnswer": {"@type": "Answer", "text": "這是一個智慧掃描功能。點擊 Grok/Imagine/Favorites，它會自動讀取頁面、找到所有媒體檔案、篩除已下載的，生成待下載清單。"}},
+        {"@type": "Question", "name": "「Only after」日期過濾是什麼？", "acceptedAnswer": {"@type": "Answer", "text": "PRO 專屬功能。當你有數千張圖片時，設定日期只下載「今天」或「本週」的新作品。"}},
+        {"@type": "Question", "name": "Stream Capture 和 Generate List 有什麼差別？", "acceptedAnswer": {"@type": "Answer", "text": "Generate List 掃描你的收藏清單。Stream Capture 是持續監控，在你生成新圖片時自動捕獲。"}},
+        {"@type": "Question", "name": "HD Upgrade 如何運作？", "acceptedAnswer": {"@type": "Answer", "text": "Grok 可能儲存低解析度預覽。HD Upgrade 自動偵測並向 Grok 請求 1080p 高畫質版本。如果 HD 影片已存在，不會重複請求。"}},
+        {"@type": "Question", "name": "更換電腦後，歷程紀錄還在嗎？", "acceptedAnswer": {"@type": "Answer", "text": "預設情況下，歷程紀錄儲存在本地。PRO 用戶可以使用 Export/Import Data 備份和還原。"}},
+        {"@type": "Question", "name": "什麼是 Story Mode Helper？", "acceptedAnswer": {"@type": "Answer", "text": "v2.0 的重要功能。它是一個側面板影片工作室，用於管理 Storyboard、擷取畫格、發送到 Grok 生成續集，以及本地合併輸出。"}},
+        {"@type": "Question", "name": "如何使用「發送畫格到 Grok」？", "acceptedAnswer": {"@type": "Answer", "text": "在 Story Mode Helper 中，選擇一個影片片段查看最後一幀。輸入描述下一步動作的提示詞，然後點擊發送。畫格會被上傳到 Grok Imagine。"}},
+        {"@type": "Question", "name": "影片合併是在本地還是雲端處理？", "acceptedAnswer": {"@type": "Answer", "text": "完全在本地處理。我們使用 WebAssembly FFmpeg，所有影片處理都在你的瀏覽器中完成，不會上傳到任何伺服器。"}},
+        {"@type": "Question", "name": "Storyboard 中的「Master」是什麼意思？", "acceptedAnswer": {"@type": "Answer", "text": "Storyboard 中的第一個影片被標記為 Master。合併時，其他影片會自動調整解析度和幀率以匹配 Master 的規格，確保輸出品質一致。"}},
+        {"@type": "Question", "name": "影片儲存有容量限制嗎？", "acceptedAnswer": {"@type": "Answer", "text": "我們使用 IndexedDB 儲存影片資料。容量取決於瀏覽器設定，通常從數百 MB 到數 GB。側面板會顯示目前的儲存使用量。"}},
+        {"@type": "Question", "name": "什麼是 Video Gen Queue？", "acceptedAnswer": {"@type": "Answer", "text": "Video Gen Queue 是 v2.2 的全新功能。它是側面板中的自動化影片生成排程系統。批次加入多個影片生成任務，支援 Custom/Normal/Fun/Spicy 四種模式。免費版 50 次，PRO 無限制。"}},
+        {"@type": "Question", "name": "什麼是 Project-Based Download？", "acceptedAnswer": {"@type": "Answer", "text": "Project-Based Download 會掃描並顯示下載前統計資料，然後自動建立以日期和提示詞命名的專案資料夾。PRO 專屬功能。"}},
+        {"@type": "Question", "name": "免費版有哪些功能？", "acceptedAnswer": {"@type": "Answer", "text": "免費版允許分析和下載收藏中的圖片。進階功能需要 PRO 授權。"}},
         {"@type": "Question", "name": "終身授權的範圍是什麼？", "acceptedAnswer": {"@type": "Answer", "text": "授權碼允許在一個 Chrome 帳號安裝使用，並允許最多 3 次重新安裝（例如更換電腦或重灌系統）。"}},
-        {"@type": "Question", "name": "Lemon Squeezy 是什麼？付款安全嗎？", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezy 是一家專為數位產品設計的國際知名支付平台。所有交易皆透過 SSL 加密保護，符合 PCI DSS 安全標準。我們不會接觸您的信用卡資訊。"}}
+        {"@type": "Question", "name": "如何輸入授權碼？", "acceptedAnswer": {"@type": "Answer", "text": "購買後會收到授權碼。開啟擴充功能的 Popup 面板，在底部找到「Activate PRO」或「License」輸入欄位，貼上授權碼即可啟用。"}},
+        {"@type": "Question", "name": "可以退款嗎？", "acceptedAnswer": {"@type": "Answer", "text": "若遇技術問題無法解決，請透過頁面底部的「聯絡支援」與我們聯繫。退款政策依循 Lemon Squeezy 平台規範。"}},
+        {"@type": "Question", "name": "未來更新需要額外付費嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不用！PRO 終身版包含所有未來功能更新。v2.0 的 Story Mode Helper 就是一個免費更新的例子，未來的新功能也會自動包含在你的授權中。"}},
+        {"@type": "Question", "name": "什麼是 Lemon Squeezy？付款安全嗎？", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezy 是全球受信賴的數位產品付款平台。所有交易都經過 SSL 加密，符合 PCI DSS 標準。我們永遠看不到你的信用卡資訊。"}}
       ]
     }
     </script>
@@ -107,56 +115,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-    <!-- Schema.org - FAQPage -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Story Mode Helper?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Story Mode Helper is a v2.0 major feature. It's a side panel video studio for managing Storyboards, extracting frames, sending to Grok for video continuations, and merging videos locally with FFmpeg."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Send Frame to Grok work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "In Story Mode Helper, select a video segment to view its last frame. Enter a prompt describing the next action, then click send. The frame will be uploaded to Grok Imagine to generate a continuation video."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is video merging done locally or in the cloud?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Completely local. We use WebAssembly FFmpeg, so all video processing happens in your browser without uploading to any server."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Video Gen Queue?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Video Gen Queue is a v2.2 major feature. It's an automated video generation scheduling system in the side panel. You can batch add prompts to the queue, choose from 4 generation modes (Custom/Normal/Fun/Spicy), with auto-retry on failure and smart rate limit detection. Free version has 50 uses, PRO is unlimited."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Project-Based Download?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Project-Based Download is a v2.2 feature that organizes your downloads into project folders. Before downloading, it scans and shows statistics (image/video counts, HD/SD breakdown). Files are automatically organized into folders named by date and prompt, making it easy to manage your creations."
-          }
-        }
-      ]
-    }
-    </script>
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/css/styles.css">

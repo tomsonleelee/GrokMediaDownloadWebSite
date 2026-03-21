@@ -76,16 +76,24 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "Generate Listとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "スマートスキャン機能です。Grok/Imagine/Favoritesでクリックすると、ページを読み込み、すべてのメディアを検出し、ダウンロード済みファイルを除外してリストを生成します。"}},
-        {"@type": "Question", "name": "Only after日付フィルターとは？", "acceptedAnswer": {"@type": "Answer", "text": "PRO限定機能。数千枚ある場合、日付を設定して「今日」「今週」の新しい画像だけダウンロードできます。"}},
-        {"@type": "Question", "name": "Stream CaptureとGenerate Listの違いは？", "acceptedAnswer": {"@type": "Answer", "text": "Generate ListはFavorite Listをスキャン。Stream Captureは継続監視で新画像を自動キャプチャ。"}},
-        {"@type": "Question", "name": "Story Mode Helperとは？", "acceptedAnswer": {"@type": "Answer", "text": "v2.0のメジャー機能。サイドパネル動画スタジオで、Storyboard管理、フレーム抽出、Grokへの送信、ローカルマージ出力が可能。"}},
-        {"@type": "Question", "name": "動画マージはローカルですか、クラウドですか？", "acceptedAnswer": {"@type": "Answer", "text": "完全にローカル。WebAssembly FFmpegを使用し、すべての動画処理はブラウザ内で完結。サーバーへのアップロードなし。"}},
-        {"@type": "Question", "name": "HD Upgradeはどう機能しますか？", "acceptedAnswer": {"@type": "Answer", "text": "Grokは低解像度プレビューを保存することがあります。HD Upgradeは自動検出してGrokに1080p高画質版をリクエスト。"}},
-        {"@type": "Question", "name": "Video Gen Queueとは？", "acceptedAnswer": {"@type": "Answer", "text": "Video Gen Queueはv2.2の新機能です。サイドパネルの自動動画生成スケジューリングシステムで、複数の動画生成タスクをバッチ追加可能。Custom/Normal/Fun/Spicyモードに対応。無料版は50回、PRO版は無制限です。"}},
-        {"@type": "Question", "name": "Project-Based Downloadとは？", "acceptedAnswer": {"@type": "Answer", "text": "Project-Based Downloadはダウンロード前に自動スキャンして統計情報を表示し、日付とプロンプトでプロジェクトフォルダを自動作成します。PRO限定機能です。"}},
+        {"@type": "Question", "name": "Generate List は何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "スマートスキャン機能です。Grok/Imagine/Favoritesをクリックすると、ページを読み取り、すべてのメディアを検出し、既にダウンロード済みのファイルを除外して、ダウンロードリストを生成します。"}},
+        {"@type": "Question", "name": "「Only after」日付フィルターとは？", "acceptedAnswer": {"@type": "Answer", "text": "PRO限定機能です。数千枚の画像がある場合、日付を設定して「今日」や「今週」の新しいものだけをダウンロードできます。"}},
+        {"@type": "Question", "name": "Stream Capture と Generate List の違いは？", "acceptedAnswer": {"@type": "Answer", "text": "Generate Listはお気に入りリストをスキャンします。Stream Captureは継続的な監視で、新しい画像を生成するたびに自動的にキャプチャします。"}},
+        {"@type": "Question", "name": "HD Upgradeはどのように機能しますか？", "acceptedAnswer": {"@type": "Answer", "text": "Grokは低解像度プレビューを保存している場合があります。HD Upgradeは自動検出し、Grokに1080p高画質版をリクエストします。HD動画が既に存在する場合、重複リクエストは送信されません。"}},
+        {"@type": "Question", "name": "PCを変えた場合、履歴は保存されますか？", "acceptedAnswer": {"@type": "Answer", "text": "デフォルトでは、履歴はローカルに保存されます。PROユーザーはExport/Import Dataでバックアップと復元ができます。"}},
+        {"@type": "Question", "name": "Story Mode Helperとは？", "acceptedAnswer": {"@type": "Answer", "text": "v2.0の主要機能です。Storyboard管理、フレーム抽出、Grokへの送信による続編生成、ローカルでの動画マージが可能なサイドパネル動画スタジオです。"}},
+        {"@type": "Question", "name": "「フレームをGrokに送信」はどう使いますか？", "acceptedAnswer": {"@type": "Answer", "text": "Story Mode Helperで動画セグメントを選択し、最後のフレームを表示します。次のアクションを説明するプロンプトを入力して送信すると、フレームがGrok Imagineにアップロードされます。"}},
+        {"@type": "Question", "name": "動画のマージはローカルですか？クラウドですか？", "acceptedAnswer": {"@type": "Answer", "text": "完全にローカルです。WebAssembly FFmpegを使用しているため、すべての動画処理はブラウザ内で行われ、サーバーにアップロードされることはありません。"}},
+        {"@type": "Question", "name": "Storyboardの「Master」とは？", "acceptedAnswer": {"@type": "Answer", "text": "Storyboardの最初の動画がMasterとしてマークされます。マージ時、他の動画はMasterの解像度とフレームレートに自動調整され、一貫した出力品質が保たれます。"}},
+        {"@type": "Question", "name": "動画のストレージ制限はありますか？", "acceptedAnswer": {"@type": "Answer", "text": "IndexedDBを使用して動画データを保存します。容量はブラウザの設定に依存し、通常数百MBから数GBです。サイドパネルに現在のストレージ使用量が表示されます。"}},
+        {"@type": "Question", "name": "Video Gen Queueとは？", "acceptedAnswer": {"@type": "Answer", "text": "v2.2の新機能です。サイドパネルでの自動動画生成スケジューリングシステムです。Custom/Normal/Fun/Spicyの4つのモードでバッチ追加可能。無料版50回、PROは無制限。"}},
+        {"@type": "Question", "name": "Project-Based Downloadとは？", "acceptedAnswer": {"@type": "Answer", "text": "ダウンロード前に統計情報をスキャン・表示し、日付とプロンプトで命名されたプロジェクトフォルダを自動作成します。PRO限定機能。"}},
+        {"@type": "Question", "name": "無料版にはどんな機能がありますか？", "acceptedAnswer": {"@type": "Answer", "text": "無料版ではお気に入りの画像の分析とダウンロードが可能です。高度な機能にはPROライセンスが必要です。"}},
         {"@type": "Question", "name": "永久ライセンスの範囲は？", "acceptedAnswer": {"@type": "Answer", "text": "1つのChromeアカウントで利用可能、最大3回の再インストール（PC買い替えなど）に対応。"}},
-        {"@type": "Question", "name": "Lemon Squeezyとは？決済は安全ですか？", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezyはデジタル製品向けに設計された国際的に信頼される決済プラットフォームです。すべての取引はSSL暗号化され、PCI DSS準拠。クレジットカード情報は当方では一切取り扱いません。"}}
+        {"@type": "Question", "name": "ライセンスキーの入力方法は？", "acceptedAnswer": {"@type": "Answer", "text": "購入後にライセンスキーが届きます。拡張機能のPopupパネルを開き、下部の「Activate PRO」または「License」入力欄にキーを貼り付けて有効化します。"}},
+        {"@type": "Question", "name": "返金は可能ですか？", "acceptedAnswer": {"@type": "Answer", "text": "解決できない技術的問題が発生した場合は、ページ下部の「サポートに連絡」からお問い合わせください。返金ポリシーはLemon Squeezyプラットフォームのガイドラインに従います。"}},
+        {"@type": "Question", "name": "将来のアップデートは追加料金が必要ですか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ！PRO永久版には将来のすべての機能アップデートが含まれます。v2.0のStory Mode Helperは無料アップデートの一例で、今後の新機能もライセンスに自動的に含まれます。"}},
+        {"@type": "Question", "name": "Lemon Squeezyとは？支払いは安全ですか？", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezyはデジタル製品向けの世界的に信頼されている決済プラットフォームです。すべての取引はSSL暗号化され、PCI DSS準拠です。クレジットカード情報を当社が見ることはありません。"}}
       ]
     }
     </script>
@@ -107,56 +115,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-    <!-- Schema.org - FAQPage -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Story Mode Helper?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Story Mode Helper is a v2.0 major feature. It's a side panel video studio for managing Storyboards, extracting frames, sending to Grok for video continuations, and merging videos locally with FFmpeg."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does Send Frame to Grok work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "In Story Mode Helper, select a video segment to view its last frame. Enter a prompt describing the next action, then click send. The frame will be uploaded to Grok Imagine to generate a continuation video."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is video merging done locally or in the cloud?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Completely local. We use WebAssembly FFmpeg, so all video processing happens in your browser without uploading to any server."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Video Gen Queue?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Video Gen Queue is a v2.2 major feature. It's an automated video generation scheduling system in the side panel. You can batch add prompts to the queue, choose from 4 generation modes (Custom/Normal/Fun/Spicy), with auto-retry on failure and smart rate limit detection. Free version has 50 uses, PRO is unlimited."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is Project-Based Download?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Project-Based Download is a v2.2 feature that organizes your downloads into project folders. Before downloading, it scans and shows statistics (image/video counts, HD/SD breakdown). Files are automatically organized into folders named by date and prompt, making it easy to manage your creations."
-          }
-        }
-      ]
-    }
-    </script>
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/css/styles.css">

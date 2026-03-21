@@ -9,7 +9,7 @@ globs: ["sitemap.xml", "robots.txt", "*.html", "zh-TW/*.html", "ja/*.html", "ko/
 1. `<title>` — unique, descriptive, includes "GrokMediaDownloader"
 2. `<meta name="description">` — unique per page, under 160 chars
 3. `<link rel="canonical">` — absolute URL to the current page
-4. `<meta property="og:*">` — Open Graph tags (title, description, image, url)
+4. `<meta property="og:*">` — Open Graph tags (title, description, image, url) + `og:image:width` (1200), `og:image:height` (630), `og:image:type` (image/jpeg)
 5. `<link rel="alternate" hreflang="...">` — all four language versions + `x-default`
 6. **Body text in the correct language** — hardcoded, no JS dependency
 
@@ -47,8 +47,27 @@ Every page needs this set of hreflang links (adjust paths per page):
 |-------------|---------|---------|
 | `SoftwareApplication` | Homepage | Product details, ratings, publisher |
 | `WebSite` | Homepage | Site identity, languages |
-| `BreadcrumbList` | Homepage | Navigation breadcrumbs |
+| `BreadcrumbList` | Homepage, FAQ, Pricing | Navigation breadcrumbs |
 | `VideoObject` | Homepage | Demo video metadata |
+| `FAQPage` | FAQ (all 4 languages) | 18 Q&A pairs for rich snippets |
+| `Product` | Pricing (all 4 languages) | Product/offer details with rating |
+
+## OG Images
+
+| Page | OG Image | Size |
+|------|----------|------|
+| Homepage / Pricing / FAQ / Legal | `assets/og-image.jpg` | 1200x630, ~67KB |
+| Story Mode | `assets/og-story-mode.jpg` | 1200x630, ~48KB |
+| Video Gen Queue | `assets/og-video-gen-queue.jpg` | 1200x630, ~54KB |
+| Stream Capture | `assets/og-stream-capture.jpg` | 1200x630, ~82KB |
+| Project Download | `assets/og-project-download.jpg` | 1200x630, ~53KB |
+
+## Known SEO Issues (as of 2026-03-21)
+
+- **GSC: 0 pages indexed** — All 23 pages show "Crawled - currently not indexed"
+- Likely causes: low domain authority, insufficient backlinks
+- Completed mitigations: Tailwind CDN → static CSS, FAQPage schema, CWS description backlinks
+- Pending: request indexing in GSC for all pages, build more external backlinks, monitor weekly
 
 ## Sitemap Priority Guide
 

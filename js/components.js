@@ -673,11 +673,18 @@ function closeTermsModal() {
 
 // --- External Links ---
 function openChromeStore() {
-    const url = 'https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi';
+    const page = window.location.pathname;
+    const utmParams = new URLSearchParams({
+        utm_source: 'marketing_site',
+        utm_medium: 'website',
+        utm_campaign: 'install_cta',
+        utm_content: page
+    });
+    const url = 'https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?' + utmParams.toString();
     Analytics.trackCTA('chrome_store', url);
     Analytics.trackExternalLink(url, 'Chrome Web Store');
     Analytics.trackFunnelStep('click_install_chrome', {
-        page: window.location.pathname
+        page: page
     });
     showToast('toast_chrome');
     setTimeout(() => {

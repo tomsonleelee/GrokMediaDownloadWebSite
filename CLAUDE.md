@@ -19,7 +19,7 @@ Static marketing website for the **GrokMediaDownloader** Chrome extension (Grok 
 |-------|------|
 | CSS | TailwindCSS v3 — static compiled (`css/styles.css`) via `npm run build:css` |
 | Icons | Lucide Icons via CDN |
-| Analytics | GA4 — Property ID: `G-6YPN8563C6` |
+| Analytics | GA4 — `G-6YPN8563C6` (marketing site) + `G-8DSYQ27F9Y` (CWS, via Connected Site Tags) |
 | Components | `js/components.js` — shared header/footer loader, GA4 event tracking |
 | i18n | `js/i18n.js` — toast translations only (4 keys × 4 languages) + language switch |
 

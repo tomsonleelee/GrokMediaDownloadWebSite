@@ -1,0 +1,26 @@
+{
+  "name": "grokmediadownloadwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "npx tailwindcss -i css/input.css -o css/styles.css --minify",
+    "watch:css": "npx tailwindcss -i css/input.css -o css/styles.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomsonleelee/GrokMediaDownloadWebSite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/tomsonleelee/GrokMediaDownloadWebSite/issues"
+  },
+  "homepage": "https://github.com/tomsonleelee/GrokMediaDownloadWebSite#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

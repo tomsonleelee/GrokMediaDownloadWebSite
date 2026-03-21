@@ -8,10 +8,9 @@ Static marketing website for the **GrokMediaDownloader** Chrome extension (Grok 
 - **Domain**: `https://grokmedia.kario-studio.com`
 - **Chrome Web Store**: `https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi`
 - **Extension ID**: `niebmpjbnghbfnjbbeajlndkjpgpamhi`
-- **CWS Users**: 5,000+ | **Rating**: 4.3/5 (13 reviews)
+- **CWS Stats**: Check [Chrome Web Store listing](https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi) for current user count and rating
 - **CWS Languages**: EN (default), zh-TW, JA, ES, DE, KO (6 languages — more than marketing site's 4)
 - **Payment**: LemonSqueezy integration for Pro license ($4.99 Lifetime)
-- **CWS Developer Dashboard**: `https://chrome.google.com/webstore/devconsole/48febf8e-6650-487f-bdb4-3261198e594d/niebmpjbnghbfnjbbeajlndkjpgpamhi/edit`
 
 ## Tech Stack
 
@@ -107,5 +106,5 @@ python3 -m http.server 8080
 5. **Schema.org**: Homepage includes `SoftwareApplication`, `WebSite`, `BreadcrumbList`, and `VideoObject` structured data
 6. **Tailwind CSS**: After adding/changing Tailwind classes, run `npm run build:css` to regenerate `css/styles.css`. The compiled CSS is committed to git so no build step is needed for deployment
 7. **CWS has 6 languages**: Marketing site has 4 (EN, zh-TW, JA, KO), but CWS listing has 6 (+ ES, DE). When updating CWS descriptions, update all 6
-8. **Social proof must use real data**: Use actual CWS stats (5,000+ users, 4.3/5 rating, 13 reviews). Testimonials must be based on real CWS reviews (Jerome, Tamas, lipo dipo). Never fabricate numbers
+8. **Social proof must use real data**: Always check CWS listing for current stats before using numbers. Testimonials must be based on real CWS reviews (Jerome, Tamas, lipo dipo). Never fabricate numbers
 9. **OG Images**: Homepage uses `assets/og-image.jpg` (1200x630). Feature pages use page-specific OG images (`assets/og-{feature}.jpg`). All include `og:image:width/height/type` meta tags

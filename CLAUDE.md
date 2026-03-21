@@ -4,7 +4,7 @@
 
 Static marketing website for the **GrokMediaDownloader** Chrome extension (Grok AI media management tool). Published by **Kario Studio**.
 
-- **Type**: Pure static HTML/CSS/JS — no build system, no bundler, no framework
+- **Type**: Static HTML/CSS/JS — Tailwind CSS compiled via CLI (no framework)
 - **Domain**: `https://grokmedia.kario-studio.com`
 - **Chrome Web Store**: `https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi`
 - **Payment**: LemonSqueezy integration for Pro license
@@ -13,7 +13,7 @@ Static marketing website for the **GrokMediaDownloader** Chrome extension (Grok 
 
 | Layer | Tool |
 |-------|------|
-| CSS | TailwindCSS via CDN (`<script src="https://cdn.tailwindcss.com">`) |
+| CSS | TailwindCSS v3 — static compiled (`css/styles.css`) via `npm run build:css` |
 | Icons | Lucide Icons via CDN |
 | Analytics | GA4 — Property ID: `G-6YPN8563C6` |
 | Components | `js/components.js` — shared header/footer loader, GA4 event tracking |
@@ -58,6 +58,15 @@ Shared components loaded via JS (language-specific versions):
 ## Common Commands
 
 ```bash
+# First-time setup (after git clone)
+npm install
+
+# Build Tailwind CSS (REQUIRED after changing any Tailwind classes)
+npm run build:css
+
+# Watch mode (auto-rebuild on changes during development)
+npm run watch:css
+
 # Local dev server
 python3 -m http.server 8080
 
@@ -90,3 +99,4 @@ python3 -m http.server 8080
 3. **SEO sync**: When adding a new page, update `sitemap.xml` with hreflang links for all four languages
 4. **Assets**: Always reference images from `assets/resized/` (not originals). Run `./resize-images.sh` after adding new feature images
 5. **Schema.org**: Homepage includes `SoftwareApplication`, `WebSite`, `BreadcrumbList`, and `VideoObject` structured data
+6. **Tailwind CSS**: After adding/changing Tailwind classes, run `npm run build:css` to regenerate `css/styles.css`. The compiled CSS is committed to git so no build step is needed for deployment

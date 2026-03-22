@@ -62,12 +62,29 @@ Every page needs this set of hreflang links (adjust paths per page):
 | Stream Capture | `assets/og-stream-capture.jpg` | 1200x630, ~82KB |
 | Project Download | `assets/og-project-download.jpg` | 1200x630, ~53KB |
 
-## Known SEO Issues (as of 2026-03-21)
+## SEO Improvements Log
 
-- **GSC: 0 pages indexed** — All 23 pages show "Crawled - currently not indexed"
-- Likely causes: low domain authority, insufficient backlinks
-- Completed mitigations: Tailwind CDN → static CSS, FAQPage schema, CWS description backlinks
-- Pending: request indexing in GSC for all pages, build more external backlinks, monitor weekly
+### Completed (2026-03-22)
+
+- **Title optimization**: Removed version numbers from homepage titles (EN, zh-TW), added keyword-rich descriptive titles with "Chrome Extension" / "Chrome 擴充功能"
+- **Image alt text**: Improved all 8 feature image alt texts across 4 languages (32 total) — from generic names to descriptive, keyword-rich alt text
+- **404.html fix**: Changed `lang="zh-TW"` → `lang="en"`, translated all UI text to English (was hardcoded Chinese on an English-path page)
+- **Nav fallback completion**: All 40 HTML pages now have complete static fallback nav (7 links) inside `<div id="header-placeholder">` — visible to Googlebot even without JS
+- **Footer fallback**: All 40 HTML pages now have simplified footer fallback (Privacy Policy + Terms of Service + copyright) inside `<div id="footer-placeholder">`
+
+### Previously Completed
+
+- Tailwind CDN → static compiled CSS (`css/styles.css`)
+- FAQPage schema (18 Q&A pairs × 4 languages)
+- CWS description backlinks to marketing site
+- Static fallback nav initial implementation (commit `3756eff`)
+
+## Known SEO Issues (as of 2026-03-22)
+
+- **GSC: 0 pages indexed** — All pages show "Crawled - currently not indexed"
+- Likely causes: low domain authority (new domain), insufficient external backlinks
+- **Next steps**: Request indexing in GSC for key pages, build external backlinks, monitor weekly
+- **Navigation SEO**: Header/footer loaded via JS `fetch()` in `loadComponents()` — mitigated by static fallback nav/footer in placeholder divs
 
 ## Sitemap Priority Guide
 

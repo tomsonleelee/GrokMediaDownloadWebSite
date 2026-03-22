@@ -60,6 +60,8 @@ Shared components loaded via JS (language-specific versions):
 - `components/header.html` (EN), `components/header-zh-TW.html`, `components/header-ja.html`, `components/header-ko.html`
 - `components/footer.html` (EN), `components/footer-zh-TW.html`, `components/footer-ja.html`, `components/footer-ko.html`
 
+**SEO fallback**: Each page has a static fallback nav inside `<div id="header-placeholder">` (7 links) and a simplified footer inside `<div id="footer-placeholder">` (Privacy + Terms + copyright). These are visible to crawlers when JS doesn't execute. `loadComponents()` replaces them with the full components via `innerHTML`.
+
 ## Common Commands
 
 ```bash

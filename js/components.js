@@ -672,7 +672,13 @@ function closeTermsModal() {
 }
 
 // --- External Links ---
-function openChromeStore() {
+// Chrome Store links use <a href> for SEO crawlability.
+// This listener adds UTM params and GA4 tracking on click.
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('a[href*="chromewebstore.google.com/detail/grok-media-downloader"]');
+    if (!link) return;
+
+    e.preventDefault();
     const page = window.location.pathname;
     const utmParams = new URLSearchParams({
         utm_source: 'marketing_site',
@@ -680,7 +686,7 @@ function openChromeStore() {
         utm_campaign: 'install_cta',
         utm_content: page
     });
-    const url = 'https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?' + utmParams.toString();
+    const url = link.href.split('?')[0] + '?' + utmParams.toString();
     Analytics.trackCTA('chrome_store', url);
     Analytics.trackExternalLink(url, 'Chrome Web Store');
     Analytics.trackFunnelStep('click_install_chrome', {
@@ -690,7 +696,7 @@ function openChromeStore() {
     setTimeout(() => {
         window.open(url, '_blank');
     }, 800);
-}
+});
 
 // Standard GA4 e-commerce item for funnel tracking
 const PRO_ITEM = {
@@ -771,7 +777,6 @@ window.openPrivacyModal = openPrivacyModal;
 window.closePrivacyModal = closePrivacyModal;
 window.openTermsModal = openTermsModal;
 window.closeTermsModal = closeTermsModal;
-window.openChromeStore = openChromeStore;
 window.openLemonSqueezy = openLemonSqueezy;
 window.switchLanguage = function(targetLang) {
     if (window.i18n) {

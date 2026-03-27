@@ -759,6 +759,14 @@ function initConversionTracking() {
     });
 }
 
+// --- Cross-Domain Linker ---
+// Enables session continuity between grokmedia.kario-studio.com and www.kario-studio.com
+if (typeof gtag === 'function') {
+    gtag('set', 'linker', {
+        domains: ['grokmedia.kario-studio.com', 'www.kario-studio.com']
+    });
+}
+
 // --- Initialization ---
 window.addEventListener('DOMContentLoaded', () => {
     loadComponents();

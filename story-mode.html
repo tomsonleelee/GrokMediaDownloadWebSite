@@ -70,6 +70,56 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Story Mode in GrokMediaDownloader?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Story Mode lets you compile your downloaded Grok AI images into a scrollable visual story or slideshow. You can arrange them in a meaningful sequence, preview the flow, and export the whole story as a single file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I create a story from my Grok images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open the Story Mode panel in the extension, select images from your collection, arrange them in the desired order by dragging and dropping, then click Create Story. The story is instantly generated and ready to preview or export."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize the order of images in my story?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Story Mode includes a drag-and-drop reordering interface. You can freely rearrange images before finalizing the story. The order you set is preserved in the exported output."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What export formats does Story Mode support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Story Mode can export your image sequence as a ZIP archive of the ordered images, or as a self-contained HTML slideshow file that can be opened in any browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Story Mode a free or PRO feature?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Story Mode is a PRO-exclusive feature. Upgrade to GrokMediaDownloader PRO for $4.99 (lifetime license) to unlock Story Mode along with Stream Capture, Video Gen Queue, and Project Download."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -452,6 +502,46 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-slate-400">Everything you need to know about Story Mode</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">What is Story Mode in GrokMediaDownloader?</h3>
+                    <p class="text-slate-400">Story Mode lets you compile your downloaded Grok AI images into a scrollable visual story or slideshow. Instead of a flat folder of images, you can arrange them in a meaningful sequence, preview the flow, and share or export the whole story as a single file. It is ideal for creators who generate image series or visual narratives with Grok.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">How do I create a story from my Grok images?</h3>
+                    <p class="text-slate-400">Open the Story Mode panel in the extension, select images from your collection, arrange them in the desired order by dragging and dropping, then click "Create Story." The story is instantly generated and ready to preview or export.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Can I customize the order of images in my story?</h3>
+                    <p class="text-slate-400">Yes. Story Mode includes a drag-and-drop reordering interface. You can freely rearrange images before finalizing the story. The order you set is preserved in the exported output.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">How many images can I include in a single story?</h3>
+                    <p class="text-slate-400">Story Mode supports up to several hundred images per story. For best performance we recommend keeping stories under 100 images, but there is no hard technical limit imposed by the extension itself.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">What export formats does Story Mode support?</h3>
+                    <p class="text-slate-400">Story Mode can export your image sequence as a ZIP archive of the ordered images, or as a self-contained HTML slideshow file that can be opened in any browser. More export formats may be added in future PRO updates.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Can I add captions or titles to images in my story?</h3>
+                    <p class="text-slate-400">Yes. Story Mode allows you to add a text caption to each image. Captions are displayed below the image in the story view and are included in the exported HTML slideshow, making it easy to add context or narration to each frame.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Is Story Mode a free or PRO feature?</h3>
+                    <p class="text-slate-400">Story Mode is a PRO-exclusive feature. Upgrade to GrokMediaDownloader PRO for $4.99 (lifetime license) to unlock Story Mode along with Stream Capture, Video Gen Queue, and Project Download.</p>
                 </div>
             </div>
         </div>

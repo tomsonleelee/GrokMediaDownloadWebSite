@@ -70,6 +70,64 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does Stream Capture work on all Grok pages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Stream Capture monitors any Grok page where image generation occurs, including the main feed, individual post pages, and search results. It uses DOM observation so it works wherever Grok renders new images."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many images can be captured in a single session?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no hard limit. Stream Capture can queue hundreds of images in a single monitoring session. The queue is stored in IndexedDB so it persists even if you switch tabs or briefly close the extension panel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will Stream Capture slow down my browser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Stream Capture uses Chrome's native MutationObserver API which is highly efficient. The observer only fires when DOM changes occur, so CPU usage is near zero while you are not actively generating images."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I pause and resume monitoring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Click the Stop Monitoring button in the extension panel to pause capture at any time. Previously captured images remain in the queue. Click Start Stream Capture again to resume — new images are added to the same queue."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Stream Capture automatically remove duplicate images?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Stream Capture uses hash comparison to detect and skip images that are already in your collection or already in the current queue. This prevents downloading the same image twice when you scroll back up or revisit a post."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Stream Capture available in the free version?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stream Capture is a PRO-exclusive feature. The free version of GrokMediaDownloader supports manual batch download of visible images. Upgrading to PRO ($4.99 lifetime) unlocks Stream Capture, Video Gen Queue, Story Mode, and Project Download."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -449,6 +507,46 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-slate-400">Everything you need to know about Stream Capture</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Does Stream Capture work on all Grok pages?</h3>
+                    <p class="text-slate-400">Yes. Stream Capture monitors any Grok page where image generation occurs, including the main feed, individual post pages, and search results. It uses DOM observation so it works wherever Grok renders new images.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">How many images can be captured in a single session?</h3>
+                    <p class="text-slate-400">There is no hard limit. Stream Capture can queue hundreds of images in a single monitoring session. The queue is stored in IndexedDB so it persists even if you switch tabs or briefly close the extension panel.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Will Stream Capture slow down my browser?</h3>
+                    <p class="text-slate-400">No. Stream Capture uses Chrome's native MutationObserver API which is highly efficient. The observer only fires when DOM changes occur, so CPU usage is near zero while you are not actively generating images. A background service worker handles queuing without blocking the main thread.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Can I pause and resume monitoring?</h3>
+                    <p class="text-slate-400">Yes. Click the "Stop Monitoring" button in the extension panel to pause capture at any time. Previously captured images remain in the queue. Click "Start Stream Capture" again to resume — new images are added to the same queue.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Does Stream Capture automatically remove duplicate images?</h3>
+                    <p class="text-slate-400">Yes. Stream Capture uses hash comparison to detect and skip images that are already in your collection or already in the current queue. This prevents downloading the same image twice when you scroll back up or revisit a post.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">What image formats does Stream Capture support?</h3>
+                    <p class="text-slate-400">Stream Capture downloads images in their original format as served by Grok — typically JPEG and PNG. The original resolution and quality are preserved. No re-encoding or compression is applied during download.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Is Stream Capture available in the free version?</h3>
+                    <p class="text-slate-400">Stream Capture is a PRO-exclusive feature. The free version of GrokMediaDownloader supports manual batch download of visible images. Upgrading to PRO ($4.99 lifetime) unlocks Stream Capture, Video Gen Queue, Story Mode, and Project Download.</p>
                 </div>
             </div>
         </div>

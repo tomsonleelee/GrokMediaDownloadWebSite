@@ -70,6 +70,56 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "GrokMediaDownloader のストーリーモードとは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ストーリーモードでは、ダウンロードした Grok AI 画像をスクロール可能なビジュアルストーリーやスライドショーにまとめることができます。意味のある順序で並べ、全体の流れをプレビューし、ストーリー全体を1つのファイルとして共有・エクスポートできます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Grok 画像からストーリーを作成するにはどうすればいいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "拡張機能のストーリーモードパネルを開き、コレクションから画像を選択し、ドラッグ＆ドロップで順番を並べ替え、「ストーリーを作成」をクリックします。ストーリーはすぐに生成され、プレビューやエクスポートの準備が整います。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ストーリー内の画像の順番をカスタマイズできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。ストーリーモードにはドラッグ＆ドロップの並べ替えインターフェースが含まれています。ストーリーを完成させる前に画像を自由に並べ替えることができます。設定した順序はエクスポートされた出力に保持されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ストーリーモードはどのエクスポート形式に対応していますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ストーリーモードは順序付き画像の ZIP アーカイブ、またはどのブラウザでも開けるスタンドアロンの HTML スライドショーファイルとしてエクスポートできます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ストーリーモードは無料ですか、PRO 機能ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ストーリーモードは PRO 限定機能です。$4.99（永続ライセンス）で GrokMediaDownloader PRO にアップグレードすると、ストーリーモードに加えてストリームキャプチャー、Video Gen Queue、プロジェクトダウンロードも利用できます。"
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -437,6 +487,46 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">よくある質問</h2>
+                <p class="text-slate-400">ストーリーモードに関するすべての疑問にお答えします</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">GrokMediaDownloader のストーリーモードとは何ですか？</h3>
+                    <p class="text-slate-400">ストーリーモードでは、ダウンロードした Grok AI 画像をスクロール可能なビジュアルストーリーやスライドショーにまとめることができます。単なる画像フォルダではなく、意味のある順序で並べ、全体の流れをプレビューし、ストーリー全体を1つのファイルとして共有・エクスポートできます。Grok で画像シリーズやビジュアルナラティブを制作するクリエイターに最適です。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Grok 画像からストーリーを作成するにはどうすればいいですか？</h3>
+                    <p class="text-slate-400">拡張機能のストーリーモードパネルを開き、コレクションから画像を選択し、ドラッグ＆ドロップで順番を並べ替え、「ストーリーを作成」をクリックします。ストーリーはすぐに生成され、プレビューやエクスポートの準備が整います。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">ストーリー内の画像の順番をカスタマイズできますか？</h3>
+                    <p class="text-slate-400">はい。ストーリーモードにはドラッグ＆ドロップの並べ替えインターフェースが含まれています。ストーリーを完成させる前に画像を自由に並べ替えることができます。設定した順序はエクスポートされた出力に保持されます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">1つのストーリーに何枚の画像を含めることができますか？</h3>
+                    <p class="text-slate-400">ストーリーモードは1ストーリーあたり数百枚の画像をサポートします。最良のパフォーマンスのため、100枚以内に抑えることをお勧めしますが、拡張機能自体には厳密な技術的上限はありません。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">ストーリーモードはどのエクスポート形式に対応していますか？</h3>
+                    <p class="text-slate-400">ストーリーモードは順序付き画像の ZIP アーカイブ、またはどのブラウザでも開けるスタンドアロンの HTML スライドショーファイルとしてエクスポートできます。将来の PRO アップデートでより多くのエクスポート形式が追加される予定です。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">ストーリー内の画像にキャプションやタイトルを追加できますか？</h3>
+                    <p class="text-slate-400">はい。ストーリーモードでは各画像にテキストキャプションを追加できます。キャプションはストーリービューの画像下に表示され、エクスポートされた HTML スライドショーにも含まれます。各フレームにコンテキストやナレーションを追加するのに便利です。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">ストーリーモードは無料ですか、PRO 機能ですか？</h3>
+                    <p class="text-slate-400">ストーリーモードは PRO 限定機能です。$4.99（永続ライセンス）で GrokMediaDownloader PRO にアップグレードすると、ストーリーモードに加えてストリームキャプチャー、Video Gen Queue、プロジェクトダウンロードも利用できます。</p>
                 </div>
             </div>
         </div>

@@ -70,6 +70,56 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "GrokMediaDownloader 的 Story Mode 是什麼？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Story Mode 讓你將下載的 Grok AI 圖片整合成可捲動的視覺故事或幻燈片。你可以按照有意義的順序排列圖片、預覽整體流程，並將整個故事匯出為單一檔案。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何從我的 Grok 圖片建立故事？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "開啟擴充功能中的 Story Mode 面板，從收藏中選取圖片，透過拖放方式排列順序，然後點擊「建立故事」。故事會立即生成並可供預覽或匯出。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以自訂故事中圖片的順序嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。Story Mode 提供拖放式重新排序介面，讓你在完成故事前自由調整圖片順序。設定的順序會保留在匯出的成品中。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Story Mode 支援哪些匯出格式？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Story Mode 可以將圖片序列匯出為包含排序圖片的 ZIP 壓縮檔，或匯出為可在任何瀏覽器中開啟的獨立 HTML 幻燈片檔案。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Story Mode 是免費還是 PRO 功能？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Story Mode 是 PRO 專屬功能。升級至 GrokMediaDownloader PRO（$4.99 終身授權）即可解鎖 Story Mode 以及 Stream Capture、Video Gen Queue 和 Project Download。"
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -461,6 +511,46 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">常見問題</h2>
+                <p class="text-slate-400">關於 Story Mode 的所有問題解答</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">GrokMediaDownloader 的 Story Mode 是什麼？</h3>
+                    <p class="text-slate-400">Story Mode 讓你將下載的 Grok AI 圖片整合成可捲動的視覺故事或幻燈片。不再只是平鋪的圖片資料夾，你可以按照有意義的順序排列圖片、預覽整體流程，並將整個故事匯出為單一檔案。特別適合使用 Grok 製作圖片系列或視覺敘事的創作者。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">如何從我的 Grok 圖片建立故事？</h3>
+                    <p class="text-slate-400">開啟擴充功能中的 Story Mode 面板，從收藏中選取圖片，透過拖放方式排列順序，然後點擊「建立故事」。故事會立即生成並可供預覽或匯出。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">可以自訂故事中圖片的順序嗎？</h3>
+                    <p class="text-slate-400">可以。Story Mode 提供拖放式重新排序介面，讓你在完成故事前自由調整圖片順序。設定的順序會保留在匯出的成品中。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">一個故事可以包含多少張圖片？</h3>
+                    <p class="text-slate-400">Story Mode 每個故事支援數百張圖片。為了最佳效能，建議每個故事保持在 100 張以內，但擴充功能本身並沒有嚴格的數量上限。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Story Mode 支援哪些匯出格式？</h3>
+                    <p class="text-slate-400">Story Mode 可以將圖片序列匯出為包含排序圖片的 ZIP 壓縮檔，或匯出為可在任何瀏覽器中開啟的獨立 HTML 幻燈片檔案。更多匯出格式可能會在未來的 PRO 更新中加入。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">可以為故事中的圖片加入說明文字嗎？</h3>
+                    <p class="text-slate-400">可以。Story Mode 允許為每張圖片加入文字說明。說明文字會顯示在故事檢視的圖片下方，並包含在匯出的 HTML 幻燈片中，讓你可以輕鬆為每個畫面添加背景資訊或旁白。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Story Mode 是免費還是 PRO 功能？</h3>
+                    <p class="text-slate-400">Story Mode 是 PRO 專屬功能。升級至 GrokMediaDownloader PRO（$4.99 終身授權）即可解鎖 Story Mode 以及 Stream Capture、Video Gen Queue 和 Project Download。</p>
                 </div>
             </div>
         </div>

@@ -70,6 +70,56 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Project Download 是什麼？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project Download 是一項 PRO 功能，讓你一次下載整個 Grok 專案的所有媒體。Grok「專案」是工作區中一組相關對話、已產生圖片和影片的集合。不需逐一下載，Project Download 會一次取回所有內容並在本機整理好。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "專案下載包含哪些內容？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "專案下載包含該專案內產生的所有圖片和影片。檔案按對話或產生批次整理，下載的資料夾結構會反映你的 Grok 專案架構。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Project Download 會保留原始檔名嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "會。Project Download 盡可能保留 Grok 指定的原始檔名。當原始檔名不可用時，會使用專案名稱、產生日期和序號來系統性命名，確保每個檔案都可以唯一識別。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "下載中途被中斷怎麼辦？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project Download 會在本機追蹤進度。如果因網路錯誤或關閉瀏覽器而中斷，只需在同一個專案頁面重新開啟擴充功能即可繼續。已下載的檔案會被跳過，只會繼續下載剩餘的檔案。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Project Download 是免費功能嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project Download 是 PRO 專屬功能。升級至 GrokMediaDownloader PRO（$4.99 終身授權）即可解鎖 Project Download 以及 Stream Capture、Video Gen Queue 和 Story Mode。"
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -443,6 +493,46 @@
                             開始下載 (587 個檔案)
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">常見問題</h2>
+                <p class="text-slate-400">關於 Project Download 的所有問題解答</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Project Download 是什麼？</h3>
+                    <p class="text-slate-400">Project Download 是一項 PRO 功能，讓你一次下載整個 Grok 專案的所有媒體。Grok「專案」是工作區中一組相關對話、已產生圖片和影片的集合。不需逐一下載，Project Download 會一次取回所有內容並在本機整理好。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">專案下載包含哪些內容？</h3>
+                    <p class="text-slate-400">專案下載包含該專案內產生的所有圖片和影片。檔案按對話或產生批次整理，下載的資料夾結構會反映你的 Grok 專案架構。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">如何開始專案下載？</h3>
+                    <p class="text-slate-400">前往你的 Grok 專案頁面，開啟 GrokMediaDownloader 擴充功能，點擊「下載專案」。擴充功能會掃描專案中的所有媒體資源，顯示摘要供確認後開始下載。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Project Download 會保留原始檔名嗎？</h3>
+                    <p class="text-slate-400">會。Project Download 盡可能保留 Grok 指定的原始檔名。當原始檔名不可用時，會使用專案名稱、產生日期和序號來系統性命名，確保每個檔案都可以唯一識別。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">下載中途被中斷怎麼辦？</h3>
+                    <p class="text-slate-400">Project Download 會在本機追蹤進度。如果因網路錯誤或關閉瀏覽器而中斷，只需在同一個專案頁面重新開啟擴充功能即可繼續。已下載的檔案會被跳過，只會繼續下載剩餘的檔案。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">可以同時下載多個 Grok 專案嗎？</h3>
+                    <p class="text-slate-400">目前 Project Download 一次處理一個專案。你可以開始下載一個專案，然後切換到另一個專案頁面再開始另一個下載。每個下載獨立運作，互不干擾。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Project Download 是免費功能嗎？</h3>
+                    <p class="text-slate-400">Project Download 是 PRO 專屬功能。升級至 GrokMediaDownloader PRO（$4.99 終身授權）即可解鎖 Project Download 以及 Stream Capture、Video Gen Queue 和 Story Mode。</p>
                 </div>
             </div>
         </div>

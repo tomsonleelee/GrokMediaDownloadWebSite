@@ -70,6 +70,56 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Project Download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project Download is a PRO feature that lets you download all media from an entire Grok project in one operation. A Grok project is a collection of related conversations, generated images, and videos grouped in your Grok workspace."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What content is included in a project download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A project download includes all images and videos generated within that project. Files are organized by conversation or generation batch so the structure of your Grok project is reflected in the downloaded folder."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Project Download preserve the original file names?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Project Download retains the original file names assigned by Grok wherever available. When original names are not available, files are named systematically using the project name, generation date, and a sequential index."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if a download is interrupted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project Download tracks progress locally. If a download is interrupted due to a network error or browser closing, you can resume it by reopening the extension on the same project page. Already-downloaded files are skipped."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Project Download available in the free version?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project Download is a PRO-exclusive feature. Upgrade to GrokMediaDownloader PRO for $4.99 (lifetime license) to unlock Project Download along with Stream Capture, Video Gen Queue, and Story Mode."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -443,6 +493,46 @@
                             Start Download (587 files)
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-slate-400">Everything you need to know about Project Download</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">What is Project Download?</h3>
+                    <p class="text-slate-400">Project Download is a PRO feature that lets you download all media from an entire Grok project in one operation. A Grok "project" is a collection of related conversations, generated images, and videos grouped under a single project in your Grok workspace. Instead of downloading items individually, Project Download fetches everything at once and organizes it locally.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">What content is included in a project download?</h3>
+                    <p class="text-slate-400">A project download includes all images and videos generated within that project. Files are organized by conversation or generation batch so the structure of your Grok project is reflected in the downloaded folder.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">How do I start a project download?</h3>
+                    <p class="text-slate-400">Navigate to your Grok project page, open the GrokMediaDownloader extension, and click "Download Project." The extension scans the project for all media assets, presents you with a summary, and begins downloading once you confirm.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Does Project Download preserve the original file names?</h3>
+                    <p class="text-slate-400">Yes. Project Download retains the original file names assigned by Grok wherever available. When original names are not available, files are named systematically using the project name, generation date, and a sequential index to ensure each file is uniquely identifiable.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">What happens if a download is interrupted?</h3>
+                    <p class="text-slate-400">Project Download tracks progress locally. If a download is interrupted — due to a network error or browser closing — you can resume it by reopening the extension on the same project page. Already-downloaded files are skipped, so only the remaining files are fetched.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Can I download multiple Grok projects at once?</h3>
+                    <p class="text-slate-400">Currently, Project Download processes one project at a time. You can start a download for one project, then switch to another project page and start another download. Each download runs independently and does not block the other.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Is Project Download available in the free version?</h3>
+                    <p class="text-slate-400">Project Download is a PRO-exclusive feature. Upgrade to GrokMediaDownloader PRO for $4.99 (lifetime license) to unlock Project Download along with Stream Capture, Video Gen Queue, and Story Mode.</p>
                 </div>
             </div>
         </div>

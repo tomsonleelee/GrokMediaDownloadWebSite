@@ -70,6 +70,64 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Stream Capture 能在所有 Grok 頁面上運作嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。Stream Capture 監控任何 Grok 產生圖片的頁面，包含主頁面、個別貼文頁面及搜尋結果。採用 DOM 觀察技術，只要 Grok 渲染新圖片，就能自動偵測。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "一次監控可以捕捉多少張圖片？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "沒有數量上限。Stream Capture 可以在單次監控期間排入數百張圖片。佇列儲存於 IndexedDB，即使切換分頁或關閉擴充功能面板也不會遺失。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Stream Capture 會讓瀏覽器變慢嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。Stream Capture 使用 Chrome 原生的 MutationObserver API，效率極高。觀察器只在 DOM 變更時才會觸發，在沒有主動產生圖片時 CPU 使用率接近零。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以暫停和恢復監控嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。在擴充功能面板中點擊「停止監控」即可暫停。之前捕捉的圖片仍保留在佇列中。再次點擊「開始 Stream Capture」即可繼續，新圖片會加入同一佇列。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Stream Capture 會自動去除重複圖片嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "會。Stream Capture 使用雜湊比對來偵測並跳過已在收藏或目前佇列中的圖片，避免在上滑或重新瀏覽貼文時重複下載同一張圖片。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Stream Capture 是免費功能嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stream Capture 是 PRO 專屬功能。免費版支援可見圖片的手動批次下載。升級至 PRO（$4.99 終身授權）可解鎖 Stream Capture、Video Gen Queue、Story Mode 和 Project Download。"
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -449,6 +507,46 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">常見問題</h2>
+                <p class="text-slate-400">關於 Stream Capture 的所有問題解答</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Stream Capture 能在所有 Grok 頁面上運作嗎？</h3>
+                    <p class="text-slate-400">可以。Stream Capture 監控任何 Grok 產生圖片的頁面，包含主頁面、個別貼文頁面及搜尋結果。採用 DOM 觀察技術，只要 Grok 渲染新圖片，就能自動偵測。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">一次監控可以捕捉多少張圖片？</h3>
+                    <p class="text-slate-400">沒有數量上限。Stream Capture 可以在單次監控期間排入數百張圖片。佇列儲存於 IndexedDB，即使切換分頁或關閉擴充功能面板也不會遺失。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Stream Capture 會讓瀏覽器變慢嗎？</h3>
+                    <p class="text-slate-400">不會。Stream Capture 使用 Chrome 原生的 MutationObserver API，效率極高。觀察器只在 DOM 變更時才會觸發，在沒有主動產生圖片時 CPU 使用率接近零。背景 Service Worker 負責佇列管理，不會阻塞主執行緒。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">可以暫停和恢復監控嗎？</h3>
+                    <p class="text-slate-400">可以。在擴充功能面板中點擊「停止監控」即可暫停。之前捕捉的圖片仍保留在佇列中。再次點擊「開始 Stream Capture」即可繼續，新圖片會加入同一佇列。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Stream Capture 會自動去除重複圖片嗎？</h3>
+                    <p class="text-slate-400">會。Stream Capture 使用雜湊比對來偵測並跳過已在收藏或目前佇列中的圖片，避免在上滑或重新瀏覽貼文時重複下載同一張圖片。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Stream Capture 支援哪些圖片格式？</h3>
+                    <p class="text-slate-400">Stream Capture 以 Grok 提供的原始格式下載圖片，通常為 JPEG 和 PNG。下載過程中不會對圖片進行重新編碼或壓縮，保留原始解析度和品質。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Stream Capture 是免費功能嗎？</h3>
+                    <p class="text-slate-400">Stream Capture 是 PRO 專屬功能。免費版支援可見圖片的手動批次下載。升級至 PRO（$4.99 終身授權）可解鎖 Stream Capture、Video Gen Queue、Story Mode 和 Project Download。</p>
                 </div>
             </div>
         </div>

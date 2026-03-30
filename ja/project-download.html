@@ -70,6 +70,56 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "プロジェクトダウンロードとは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "プロジェクトダウンロードは、Grok プロジェクト全体のすべてのメディアを1回の操作でダウンロードできる PRO 機能です。Grok の「プロジェクト」とは、ワークスペース内の関連する会話、生成された画像、動画をまとめたコレクションです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "プロジェクトダウンロードには何が含まれますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "プロジェクトダウンロードには、そのプロジェクト内で生成されたすべての画像と動画が含まれます。ファイルは会話や生成バッチごとに整理され、ダウンロードフォルダの構造が Grok プロジェクトの構造を反映します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "プロジェクトダウンロードは元のファイル名を保持しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。プロジェクトダウンロードは可能な限り Grok が割り当てた元のファイル名を保持します。元のファイル名が利用できない場合は、プロジェクト名、生成日付、連番インデックスを使用してシステム的に命名します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ダウンロードが中断された場合はどうなりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "プロジェクトダウンロードは進捗をローカルで追跡します。ネットワークエラーやブラウザの終了で中断された場合、同じプロジェクトページで拡張機能を再度開くと再開できます。すでにダウンロードされたファイルはスキップされます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "プロジェクトダウンロードは無料ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "プロジェクトダウンロードは PRO 限定機能です。$4.99（永続ライセンス）で GrokMediaDownloader PRO にアップグレードすると、プロジェクトダウンロードに加えてストリームキャプチャー、Video Gen Queue、ストーリーモードも利用できます。"
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -443,6 +493,46 @@
                             ダウンロード開始 (587ファイル)
                         </button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">よくある質問</h2>
+                <p class="text-slate-400">プロジェクトダウンロードに関するすべての疑問にお答えします</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">プロジェクトダウンロードとは何ですか？</h3>
+                    <p class="text-slate-400">プロジェクトダウンロードは、Grok プロジェクト全体のすべてのメディアを1回の操作でダウンロードできる PRO 機能です。Grok の「プロジェクト」とは、ワークスペース内の関連する会話、生成された画像、動画をまとめたコレクションです。個別にダウンロードする必要なく、すべてを一括取得してローカルに整理します。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">プロジェクトダウンロードには何が含まれますか？</h3>
+                    <p class="text-slate-400">プロジェクトダウンロードには、そのプロジェクト内で生成されたすべての画像と動画が含まれます。ファイルは会話や生成バッチごとに整理され、ダウンロードフォルダの構造が Grok プロジェクトの構造を反映します。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">プロジェクトダウンロードを開始するにはどうすればいいですか？</h3>
+                    <p class="text-slate-400">Grok プロジェクトページに移動し、GrokMediaDownloader 拡張機能を開いて「プロジェクトをダウンロード」をクリックします。拡張機能がプロジェクト内のすべてのメディアアセットをスキャンし、概要を表示してから確認後にダウンロードを開始します。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">プロジェクトダウンロードは元のファイル名を保持しますか？</h3>
+                    <p class="text-slate-400">はい。プロジェクトダウンロードは可能な限り Grok が割り当てた元のファイル名を保持します。元のファイル名が利用できない場合は、プロジェクト名、生成日付、連番インデックスを使用してシステム的に命名し、各ファイルが一意に識別できるようにします。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">ダウンロードが中断された場合はどうなりますか？</h3>
+                    <p class="text-slate-400">プロジェクトダウンロードは進捗をローカルで追跡します。ネットワークエラーやブラウザの終了で中断された場合、同じプロジェクトページで拡張機能を再度開くと再開できます。すでにダウンロードされたファイルはスキップされ、残りのファイルのみ取得されます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">複数の Grok プロジェクトを同時にダウンロードできますか？</h3>
+                    <p class="text-slate-400">現在、プロジェクトダウンロードは一度に1つのプロジェクトを処理します。1つのプロジェクトのダウンロードを開始してから、別のプロジェクトページに切り替えて別のダウンロードを開始できます。各ダウンロードは独立して実行され、互いにブロックしません。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">プロジェクトダウンロードは無料ですか？</h3>
+                    <p class="text-slate-400">プロジェクトダウンロードは PRO 限定機能です。$4.99（永続ライセンス）で GrokMediaDownloader PRO にアップグレードすると、プロジェクトダウンロードに加えてストリームキャプチャー、Video Gen Queue、ストーリーモードも利用できます。</p>
                 </div>
             </div>
         </div>

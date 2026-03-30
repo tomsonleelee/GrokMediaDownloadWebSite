@@ -70,6 +70,64 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ストリームキャプチャーはすべての Grok ページで動作しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。ストリームキャプチャーはメインフィード、個別投稿ページ、検索結果など、Grok が画像を生成するあらゆるページを監視します。DOM 観察技術を使用しているため、Grok が新しい画像をレンダリングする場所ならどこでも動作します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "1回のセッションで何枚の画像をキャプチャできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "上限はありません。ストリームキャプチャーは1回の監視セッションで数百枚の画像をキューに追加できます。キューは IndexedDB に保存されるため、タブを切り替えたり拡張機能パネルを閉じても保持されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ストリームキャプチャーはブラウザを遅くしますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ。Chrome のネイティブ MutationObserver API を使用しており、非常に効率的です。オブザーバーは DOM が変更されたときのみ起動するため、画像を生成していない間の CPU 使用率はほぼゼロです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "監視を一時停止して再開できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。拡張機能パネルの「監視を停止」ボタンをクリックすれば、いつでも一時停止できます。それまでにキャプチャされた画像はキューに残ります。「ストリームキャプチャーを開始」を再度クリックすると再開され、新しい画像が同じキューに追加されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "重複画像は自動的に除去されますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。ストリームキャプチャーはハッシュ比較を使用して、すでにコレクションやキューにある画像を検出してスキップします。上にスクロールしたり投稿を再訪したりしても、同じ画像を二度ダウンロードすることを防ぎます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ストリームキャプチャーは無料ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ストリームキャプチャーは PRO 限定機能です。無料版では表示されている画像の手動一括ダウンロードが可能です。PRO（$4.99 永続ライセンス）にアップグレードすると、ストリームキャプチャー、Video Gen Queue、ストーリーモード、プロジェクトダウンロードが使用できます。"
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -449,6 +507,46 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">よくある質問</h2>
+                <p class="text-slate-400">ストリームキャプチャーに関するすべての疑問にお答えします</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">ストリームキャプチャーはすべての Grok ページで動作しますか？</h3>
+                    <p class="text-slate-400">はい。ストリームキャプチャーはメインフィード、個別投稿ページ、検索結果など、Grok が画像を生成するあらゆるページを監視します。DOM 観察技術を使用しているため、Grok が新しい画像をレンダリングする場所ならどこでも動作します。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">1回のセッションで何枚の画像をキャプチャできますか？</h3>
+                    <p class="text-slate-400">上限はありません。ストリームキャプチャーは1回の監視セッションで数百枚の画像をキューに追加できます。キューは IndexedDB に保存されるため、タブを切り替えたり拡張機能パネルを閉じても保持されます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">ストリームキャプチャーはブラウザを遅くしますか？</h3>
+                    <p class="text-slate-400">いいえ。Chrome のネイティブ MutationObserver API を使用しており、非常に効率的です。オブザーバーは DOM が変更されたときのみ起動するため、画像を生成していない間の CPU 使用率はほぼゼロです。バックグラウンドのサービスワーカーがキュー管理を担当し、メインスレッドをブロックしません。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">監視を一時停止して再開できますか？</h3>
+                    <p class="text-slate-400">はい。拡張機能パネルの「監視を停止」ボタンをクリックすれば、いつでも一時停止できます。それまでにキャプチャされた画像はキューに残ります。「ストリームキャプチャーを開始」を再度クリックすると再開され、新しい画像が同じキューに追加されます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">重複画像は自動的に除去されますか？</h3>
+                    <p class="text-slate-400">はい。ストリームキャプチャーはハッシュ比較を使用して、すでにコレクションやキューにある画像を検出してスキップします。上にスクロールしたり投稿を再訪したりしても、同じ画像を二度ダウンロードすることを防ぎます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">ストリームキャプチャーはどの画像形式に対応していますか？</h3>
+                    <p class="text-slate-400">Grok が提供する元の形式（通常は JPEG と PNG）でダウンロードします。ダウンロード時に再エンコードや圧縮は行われず、元の解像度と品質が保持されます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">ストリームキャプチャーは無料ですか？</h3>
+                    <p class="text-slate-400">ストリームキャプチャーは PRO 限定機能です。無料版では表示されている画像の手動一括ダウンロードが可能です。PRO（$4.99 永続ライセンス）にアップグレードすると、ストリームキャプチャー、Video Gen Queue、ストーリーモード、プロジェクトダウンロードが使用できます。</p>
                 </div>
             </div>
         </div>

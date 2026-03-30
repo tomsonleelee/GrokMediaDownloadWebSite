@@ -70,6 +70,56 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Video Gen Queue とは何ですか？どのように動作しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Video Gen Queue は、セッション中に Grok が生成したすべての動画を自動追跡する PRO 機能です。Grok が動画生成リクエストを処理すると、完成した各動画をキューに追加し、ワンクリックで一括ダウンロードできます。動画を1本ずつ手動保存する必要はありません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "複数の Grok 動画を一度にダウンロードできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、それが Video Gen Queue の主な目的です。動画がキューに追加されたら「すべてダウンロード」をクリックするだけで、すべての動画を一括でローカルドライブに保存できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ダウンロードされる動画の形式は何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grok が提供する元の形式（通常 MP4）で動画をダウンロードします。拡張機能はソースファイルを直接ダウンロードするため、再エンコードなしに元の解像度、フレームレート、品質が保持されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "拡張機能パネルを閉じるとキューは消えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ。Video Gen Queue は IndexedDB に保存されるため、タブの切り替えや拡張機能パネルを閉じても維持されます。キューに入った動画は手動でクリアするかダウンロードするまで保持されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Video Gen Queue は無料で使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Video Gen Queue は PRO 限定機能です。$4.99（永続ライセンス）で PRO にアップグレードすると、Video Gen Queue に加えてストリームキャプチャー、ストーリーモード、プロジェクトダウンロードも利用できます。"
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -446,6 +496,46 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">よくある質問</h2>
+                <p class="text-slate-400">Video Gen Queue に関するすべての疑問にお答えします</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Video Gen Queue とは何ですか？どのように動作しますか？</h3>
+                    <p class="text-slate-400">Video Gen Queue は、セッション中に Grok が生成したすべての動画を自動追跡する PRO 機能です。Grok が動画生成リクエストを処理すると、完成した各動画をキューに追加し、ワンクリックで一括ダウンロードできます。動画を1本ずつ手動保存する必要はありません。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">複数の Grok 動画を一度にダウンロードできますか？</h3>
+                    <p class="text-slate-400">はい、それが Video Gen Queue の主な目的です。動画がキューに追加されたら「すべてダウンロード」をクリックするだけで、すべての動画を一括でローカルドライブに保存できます。ダウンロード前にキューから不要な動画を削除することもできます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Video Gen Queue はすべての Grok 動画生成タイプに対応していますか？</h3>
+                    <p class="text-slate-400">Video Gen Queue は Grok の AI 動画生成機能で生成されたすべての動画コンテンツに対応しています。ページにレンダリングされた動画 URL を自動検出してキューに追加するため、長さや解像度を問わず動作します。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">ダウンロードされる動画の形式は何ですか？</h3>
+                    <p class="text-slate-400">Grok が提供する元の形式（通常 MP4）で動画をダウンロードします。拡張機能はソースファイルを直接ダウンロードするため、再エンコードなしに元の解像度、フレームレート、品質が保持されます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">拡張機能パネルを閉じるとキューは消えますか？</h3>
+                    <p class="text-slate-400">いいえ。Video Gen Queue は IndexedDB に保存されるため、タブの切り替えや拡張機能パネルを閉じても維持されます。キューに入った動画は手動でクリアするかダウンロードするまで保持されます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">キュー内の各動画のステータスを確認できますか？</h3>
+                    <p class="text-slate-400">はい。キューパネルでは各動画のステータス（キュー待ち、ダウンロード中、完了）を確認できます。利用可能な場合はファイルサイズやサムネイルプレビューも表示され、動画コレクションの管理が簡単です。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Video Gen Queue は無料で使えますか？</h3>
+                    <p class="text-slate-400">Video Gen Queue は PRO 限定機能です。$4.99（永続ライセンス）で PRO にアップグレードすると、Video Gen Queue に加えてストリームキャプチャー、ストーリーモード、プロジェクトダウンロードも利用できます。</p>
                 </div>
             </div>
         </div>

@@ -70,6 +70,56 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "GrokMediaDownloader의 스토리 모드란 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "스토리 모드는 다운로드한 Grok AI 이미지를 스크롤 가능한 비주얼 스토리나 슬라이드쇼로 구성할 수 있게 해줍니다. 의미 있는 순서로 배열하고, 전체 흐름을 미리 보고, 전체 스토리를 하나의 파일로 공유하거나 내보낼 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Grok 이미지로 스토리를 어떻게 만드나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "확장 프로그램에서 스토리 모드 패널을 열고, 컬렉션에서 이미지를 선택한 다음, 드래그 앤 드롭으로 원하는 순서로 배열하고 스토리 만들기를 클릭합니다. 스토리가 즉시 생성되어 미리 보기나 내보내기를 할 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "스토리의 이미지 순서를 커스텀할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네. 스토리 모드에는 드래그 앤 드롭 재정렬 인터페이스가 포함되어 있습니다. 스토리를 완성하기 전에 이미지를 자유롭게 재배열할 수 있습니다. 설정한 순서는 내보낸 결과물에 유지됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "스토리 모드는 어떤 내보내기 형식을 지원하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "스토리 모드는 순서가 있는 이미지의 ZIP 아카이브나 어떤 브라우저에서도 열 수 있는 독립적인 HTML 슬라이드쇼 파일로 내보낼 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "스토리 모드는 무료인가요, PRO 기능인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "스토리 모드는 PRO 전용 기능입니다. $4.99(평생 라이선스)로 GrokMediaDownloader PRO로 업그레이드하면 스토리 모드와 함께 스트림 캡처, Video Gen Queue, 프로젝트 다운로드를 사용할 수 있습니다."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -437,6 +487,46 @@
                             </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">자주 묻는 질문</h2>
+                <p class="text-slate-400">스토리 모드에 관한 모든 질문에 답변드립니다</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">GrokMediaDownloader의 스토리 모드란 무엇인가요?</h3>
+                    <p class="text-slate-400">스토리 모드는 다운로드한 Grok AI 이미지를 스크롤 가능한 비주얼 스토리나 슬라이드쇼로 구성할 수 있게 해줍니다. 단순한 이미지 폴더가 아니라 의미 있는 순서로 배열하고, 전체 흐름을 미리 보고, 전체 스토리를 하나의 파일로 공유하거나 내보낼 수 있습니다. Grok으로 이미지 시리즈나 비주얼 내러티브를 제작하는 크리에이터에게 이상적입니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Grok 이미지로 스토리를 어떻게 만드나요?</h3>
+                    <p class="text-slate-400">확장 프로그램에서 스토리 모드 패널을 열고, 컬렉션에서 이미지를 선택한 다음, 드래그 앤 드롭으로 원하는 순서로 배열하고 "스토리 만들기"를 클릭합니다. 스토리가 즉시 생성되어 미리 보기나 내보내기를 할 수 있습니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">스토리의 이미지 순서를 커스텀할 수 있나요?</h3>
+                    <p class="text-slate-400">네. 스토리 모드에는 드래그 앤 드롭 재정렬 인터페이스가 포함되어 있습니다. 스토리를 완성하기 전에 이미지를 자유롭게 재배열할 수 있습니다. 설정한 순서는 내보낸 결과물에 유지됩니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">스토리 하나에 이미지를 몇 장까지 넣을 수 있나요?</h3>
+                    <p class="text-slate-400">스토리 모드는 스토리당 수백 장의 이미지를 지원합니다. 최적의 성능을 위해 100장 이내로 유지하는 것을 권장하지만, 확장 프로그램 자체에는 엄격한 기술적 제한이 없습니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">스토리 모드는 어떤 내보내기 형식을 지원하나요?</h3>
+                    <p class="text-slate-400">스토리 모드는 순서가 있는 이미지의 ZIP 아카이브나 어떤 브라우저에서도 열 수 있는 독립적인 HTML 슬라이드쇼 파일로 내보낼 수 있습니다. 향후 PRO 업데이트에서 더 많은 내보내기 형식이 추가될 수 있습니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">스토리의 이미지에 캡션이나 제목을 추가할 수 있나요?</h3>
+                    <p class="text-slate-400">네. 스토리 모드에서는 각 이미지에 텍스트 캡션을 추가할 수 있습니다. 캡션은 스토리 뷰에서 이미지 아래에 표시되고 내보낸 HTML 슬라이드쇼에도 포함되어 각 장면에 맥락이나 설명을 추가하기 편합니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">스토리 모드는 무료인가요, PRO 기능인가요?</h3>
+                    <p class="text-slate-400">스토리 모드는 PRO 전용 기능입니다. $4.99(평생 라이선스)로 GrokMediaDownloader PRO로 업그레이드하면 스토리 모드와 함께 스트림 캡처, Video Gen Queue, 프로젝트 다운로드를 사용할 수 있습니다.</p>
                 </div>
             </div>
         </div>

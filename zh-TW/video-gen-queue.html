@@ -70,6 +70,56 @@
     }
     </script>
 
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Video Gen Queue 是什麼，如何運作？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Video Gen Queue 是一項 PRO 功能，會自動追蹤 Grok 在使用期間產生的每部影片。當 Grok 處理影片產生請求時，擴充功能會將每部完成的影片加入佇列，讓你一鍵批次下載，不需一部一部手動儲存。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以一次下載多部 Grok 影片嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以，這正是 Video Gen Queue 的主要功能。影片加入佇列後，點擊「全部下載」即可一次將所有影片儲存到本機。下載前也可以從佇列中移除不需要的影片。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "下載的影片是什麼格式？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "影片以 Grok 提供的原始格式下載，通常為 MP4。擴充功能直接下載原始檔案，保留原始解析度、影格率和品質，不進行任何重新編碼。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "關閉擴充功能面板後佇列會消失嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。Video Gen Queue 儲存於 IndexedDB，即使切換分頁或關閉擴充功能面板也不會遺失。佇列中的影片會一直保留，直到你手動清除佇列或完成下載。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Video Gen Queue 是免費功能嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Video Gen Queue 是 PRO 專屬功能。升級至 PRO（$4.99 終身授權）即可解鎖 Video Gen Queue 以及 Stream Capture、Story Mode 和 Project Download。"
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#db2777">
@@ -450,6 +500,46 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">常見問題</h2>
+                <p class="text-slate-400">關於 Video Gen Queue 的所有問題解答</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Video Gen Queue 是什麼，如何運作？</h3>
+                    <p class="text-slate-400">Video Gen Queue 是一項 PRO 功能，會自動追蹤 Grok 在使用期間產生的每部影片。當 Grok 處理影片產生請求時，擴充功能會將每部完成的影片加入佇列，讓你一鍵批次下載，不需一部一部手動儲存。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">可以一次下載多部 Grok 影片嗎？</h3>
+                    <p class="text-slate-400">可以，這正是 Video Gen Queue 的主要功能。影片加入佇列後，點擊「全部下載」即可一次將所有影片儲存到本機。下載前也可以從佇列中移除不需要的影片。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Video Gen Queue 支援所有類型的 Grok 影片產生嗎？</h3>
+                    <p class="text-slate-400">Video Gen Queue 支援 Grok AI 影片產生功能所產生的所有影片內容。它會自動偵測頁面上渲染的影片 URL 並加入佇列，不限影片長度或解析度。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">下載的影片是什麼格式？</h3>
+                    <p class="text-slate-400">影片以 Grok 提供的原始格式下載，通常為 MP4。擴充功能直接下載原始檔案，保留原始解析度、影格率和品質，不進行任何重新編碼。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">關閉擴充功能面板後佇列會消失嗎？</h3>
+                    <p class="text-slate-400">不會。Video Gen Queue 儲存於 IndexedDB，即使切換分頁或關閉擴充功能面板也不會遺失。佇列中的影片會一直保留，直到你手動清除佇列或完成下載。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">可以查看佇列中每部影片的狀態嗎？</h3>
+                    <p class="text-slate-400">可以。佇列面板顯示每部影片的狀態：排隊中、下載中或已完成。在可用的情況下，還可以查看檔案大小和預覽縮圖，方便識別和管理你的影片收藏。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Video Gen Queue 是免費功能嗎？</h3>
+                    <p class="text-slate-400">Video Gen Queue 是 PRO 專屬功能。升級至 PRO（$4.99 終身授權）即可解鎖 Video Gen Queue 以及 Stream Capture、Story Mode 和 Project Download。</p>
                 </div>
             </div>
         </div>

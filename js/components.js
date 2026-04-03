@@ -454,6 +454,9 @@ function initializeComponents() {
         lucide.createIcons();
     }
 
+    // PH Launch announcement bar
+    initPHAnnouncementBar();
+
     // Setup mobile menu toggle
     setupMobileMenu();
 
@@ -480,6 +483,36 @@ function initializeComponents() {
 
     // Initialize pricing card interaction tracking
     initPricingCardTracking();
+}
+
+// PH Launch Announcement Bar
+function initPHAnnouncementBar() {
+    const bar = document.getElementById('ph-bar');
+    const closeBtn = document.getElementById('ph-bar-close');
+    const nav = document.getElementById('main-nav');
+
+    if (!bar) return;
+
+    if (!localStorage.getItem('ph_bar_v1_dismissed')) {
+        bar.style.display = 'flex';
+        const barH = bar.offsetHeight;
+        if (nav) nav.style.top = barH + 'px';
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            bar.style.display = 'none';
+            if (nav) nav.style.top = '0';
+            localStorage.setItem('ph_bar_v1_dismissed', '1');
+            Analytics.track('ph_bar_dismissed', { event_category: 'engagement' });
+        });
+    }
+
+    if (bar.style.display !== 'none') {
+        bar.querySelector('a')?.addEventListener('click', () => {
+            Analytics.trackCTA('ph_bar_support_link', 'producthunt');
+        });
+    }
 }
 
 // Mobile Menu Toggle
@@ -643,6 +676,36 @@ function handleContactSubmit(e) {
     });
 }
 
+function handlePHNotifySubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('ph-notify-btn');
+    const originalText = btn.textContent;
+    btn.textContent = '...';
+    btn.disabled = true;
+
+    fetch('https://formspree.io/f/xeodnlql', {
+        method: 'POST',
+        body: new FormData(e.target),
+        headers: { 'Accept': 'application/json' }
+    }).then(r => {
+        if (r.ok) {
+            e.target.innerHTML = '<p class="text-green-400 font-medium py-3">✓ You\'re in! We\'ll remind you on April 6.</p>';
+            Analytics.trackFormSubmit('ph_notify', true);
+            Analytics.track('ph_notify_signup', { event_category: 'conversion' });
+        } else {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            showToast('toast_error');
+            Analytics.trackFormSubmit('ph_notify', false);
+        }
+    }).catch(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        showToast('toast_error');
+        Analytics.trackFormSubmit('ph_notify', false);
+    });
+}
+
 function openPrivacyModal() {
     const modal = document.getElementById('privacy-modal');
     if (modal) {
@@ -794,3 +857,4 @@ window.switchLanguage = function(targetLang) {
     }
 };
 window.toggleLangMenu = toggleLangMenu;
+window.handlePHNotifySubmit = handlePHNotifySubmit;

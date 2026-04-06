@@ -284,7 +284,7 @@
             <div class="mb-12">
                 <h2 class="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2">
                     <i data-lucide="sparkles" class="w-5 h-5"></i>
-                    v2.2 新功能
+                    v2.2 功能
                 </h2>
 
                 <div class="space-y-4">
@@ -306,6 +306,40 @@
                         <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_13_a">
                             Project-Based Download 是 v2.2 的專案式下載管理功能。下載前會先掃描並顯示統計資訊（圖片/影片數量、HD/SD 比例），檔案自動依日期和提示詞建立專案資料夾（格式：{date}_{prompt}/），讓創作管理一目了然。
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: v2.3 New Features -->
+            <div class="mb-12">
+                <h2 class="text-xl font-bold text-amber-400 mb-6 flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    v2.3 新功能
+                </h2>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_14_q">什麼是標籤式下載？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_14_a">標籤式下載讓您可以從特定的 Grok 標籤（資料夾）下載媒體。在篩選區選擇「依標籤下載」，從下拉選單中選取標籤，即可下載該標籤內的所有媒體。每個標籤有獨立的下載歷史，檔案整理在 grok_downloads/tags/{標籤名稱}/ 下。PRO 專屬功能。</div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-violet-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_15_q">什麼是自訂檔名模板？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_15_a">自訂檔名模板提供三種命名方式：Grok 原生格式、Prompt 命名（使用提示詞文字）、或自訂模板（支援 {date}、{datetime}、{prompt}、{quality} 等代碼）。所有使用者皆可使用。若您之前使用「Prompt 作為檔名」，設定會自動遷移到新系統。</div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_16_q">Story Mode 的 Frame Lock 是什麼？</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_16_a">Frame Lock 是 Story Mode 的增強功能。生成續集影片時，您可以透過互動式膠捲選擇任意畫格（不只是最後一幀）。選定的畫格在生成後會以橘色標示鎖定。匯出時，FFmpeg 會自動在鎖定畫格處裁剪，避免重疊內容，確保片段間無縫銜接。</div>
                     </div>
                 </div>
             </div>

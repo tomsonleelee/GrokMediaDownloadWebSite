@@ -266,7 +266,7 @@
             <div class="mb-12">
                 <h2 class="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2">
                     <i data-lucide="sparkles" class="w-5 h-5"></i>
-                    v2.2 신기능
+                    v2.2 기능
                 </h2>
 
                 <div class="space-y-4">
@@ -284,6 +284,40 @@
                             <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
                         </button>
                         <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_13_a">Project-Based Download는 다운로드 전에 자동 스캔하여 통계 정보(이미지/동영상 수, HD/SD 비율)를 표시하고, 날짜와 프롬프트로 프로젝트 폴더({날짜}_{프롬프트}/)를 자동 생성합니다. PRO 전용 기능입니다.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: v2.3 New Features -->
+            <div class="mb-12">
+                <h2 class="text-xl font-bold text-amber-400 mb-6 flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    v2.3 신기능
+                </h2>
+
+                <div class="space-y-4">
+                    <div class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_14_q">태그별 다운로드란?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_14_a">태그별 다운로드를 사용하면 특정 Grok 태그(폴더)에서 미디어를 다운로드할 수 있습니다. 필터 섹션에서 '태그로 다운로드'를 선택하고, 드롭다운에서 태그를 선택하면 해당 태그의 모든 미디어를 다운로드합니다. 태그마다 독립적인 다운로드 기록이 있으며, 파일은 grok_downloads/tags/{태그명}/ 하위에 정리됩니다. PRO 전용 기능.</div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-violet-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_15_q">커스텀 파일명 템플릿이란?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_15_a">커스텀 파일명 템플릿은 세 가지 파일 명명 방식을 제공합니다: Grok 기본(원래 형식), 프롬프트 기반(프롬프트 텍스트 사용), 또는 커스텀({date}, {datetime}, {prompt}, {quality} 등 토큰을 사용한 자유 형식 템플릿). 모든 사용자가 이용 가능합니다. 이전에 '프롬프트를 파일명으로' 기능을 사용했다면, 설정이 자동으로 마이그레이션됩니다.</div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                            <span class="font-medium text-slate-200" data-i18n="faq_16_q">Story Mode의 Frame Lock이란?</span>
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_16_a">Frame Lock은 Story Mode의 향상된 기능입니다. 이어지는 동영상을 생성할 때, 인터랙티브 필름스트립에서 원하는 프레임을 선택할 수 있습니다(마지막 프레임만이 아닌). 선택된 프레임은 생성 후 주황색 표시로 잠깁니다. 내보내기 시 FFmpeg가 잠긴 프레임에서 자동으로 트리밍하여 중복을 방지하고, 클립 간 매끄러운 전환을 보장합니다.</div>
                     </div>
                 </div>
             </div>

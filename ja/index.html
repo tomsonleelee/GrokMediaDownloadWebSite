@@ -66,7 +66,7 @@
       "dateModified": "2026-03-25",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "screenshot": "https://grokmedia.kario-studio.com/assets/og-image.jpg",
-      "featureList": ["Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
+      "featureList": ["Tag-Based Download", "Custom Filename Templates", "Frame Lock & Trim", "Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
       "offers": {
         "@type": "Offer",
         "price": "4.99",
@@ -285,7 +285,7 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.2 最新アップデート | Video Gen Queue・プロジェクトダウンロード・動画スタジオ</span>
+                        <span data-i18n="hero_badge">v2.3 最新アップデート | タグダウンロード・ファイル名テンプレート・フレームロック</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -293,7 +293,7 @@
                         <span class="text-pink-500" data-i18n="hero_title_2">メディア資産管理</span>
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">単なるダウンローダーではなく、クリエイティブスタジオです。v2.2の新しいVideo Gen Queueで動画生成を自動スケジュール、Project-Based Downloadでファイルをプロジェクトフォルダに整理、4つの生成モードに対応。</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">単なるダウンローダーではなく、クリエイティブスタジオです。v2.3ではタグ別ダウンロードでメディアをタグ分類管理、カスタムファイル名テンプレートで柔軟な命名、Frame Lockでシームレスな動画連続生成に対応。</p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
@@ -320,7 +320,7 @@
                     <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
                         <span class="feature-tag"><span>📥</span> <span data-i18n="hero_tag_1">一括ダウンロード</span></span>
                         <span class="feature-tag"><span>🎯</span> <span data-i18n="hero_tag_2">Video Gen Queue</span></span>
-                        <span class="feature-tag"><span>🛠️</span> <span data-i18n="hero_tag_3">Video Studio</span></span>
+                        <span class="feature-tag"><span>🏷️</span> <span data-i18n="hero_tag_3">タグダウンロード</span></span>
                         <span class="feature-tag"><span>✨</span> <span data-i18n="hero_tag_4">HDアップグレード</span></span>
                         <span class="feature-tag"><span>📂</span> <span data-i18n="hero_tag_5">プロジェクトフォルダ</span></span>
                         <span class="feature-tag"><span>🌊</span> <span data-i18n="hero_tag_6">Stream Capture</span></span>
@@ -769,14 +769,13 @@
                     </div>
                 </div>
 
-                <!-- Feature 7: Video Gen Queue (NEW v2.2) -->
-                <div class="feat-card-border feat-border-green bg-gradient-to-br from-pink-900/50 to-orange-900/50 p-8 rounded-2xl border border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-pink-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 7: Video Gen Queue (v2.2) -->
+                <div class="feat-card-border feat-border-green bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-pink-500/30 transition-colors">
                         <i data-lucide="list-video" class="text-pink-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_8_title">Video Gen Queue (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_8_desc">自動動画生成キュー！バッチ追加、4つの生成モード、自動リトライ、レート制限検出。無料版50回、PRO無制限。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_8_desc">自動動画生成キュー！バッチ追加、4つの生成モード、自動リトライ、レート制限検出。無料版50回、PRO無制限。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Auto Retry</span>
                         <span class="mini-tag">Batch Add</span>
@@ -791,14 +790,13 @@
                     </div>
                 </div>
 
-                <!-- Feature 8: Project-Based Download (NEW v2.2) -->
-                <div class="feat-card-border feat-border-cyan bg-gradient-to-br from-teal-900/50 to-blue-900/50 p-8 rounded-2xl border border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 8: Project-Based Download (v2.2) -->
+                <div class="feat-card-border feat-border-cyan bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
                         <i data-lucide="folder-open" class="text-teal-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_9_title">Project-Based Download (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_9_desc">プロジェクトフォルダ管理！ダウンロード前の自動スキャン統計、日付とプロンプトでプロジェクトフォルダを自動作成。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_9_desc">プロジェクトフォルダ管理！ダウンロード前の自動スキャン統計、日付とプロンプトでプロジェクトフォルダを自動作成。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Auto Group</span>
                         <span class="mini-tag">Metadata JSON</span>
@@ -809,6 +807,34 @@
                             <i data-lucide="image" class="w-8 h-8 mb-2 text-teal-500/30"></i>
                             <p class="text-xs">feat-project-download.jpg</p>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Feature 9: Tag-Based Download (NEW v2.3) -->
+                <div class="feat-card-border feat-border-green bg-gradient-to-br from-amber-900/50 to-orange-900/50 p-8 rounded-2xl border border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
+                        <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">タグ別ダウンロード (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_10_desc">タグでメディアをダウンロード！タグフォルダを選択し、その中のメディアを一括ダウンロード。タグごとに独立したダウンロード履歴、tags/{tagName}/ に整理保存。</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">タグフォルダ</span>
+                        <span class="mini-tag">独立履歴</span>
+                    </div>
+                </div>
+
+                <!-- Feature 10: Custom Filename Templates (NEW v2.3) -->
+                <div class="feat-card-border feat-border-purple bg-gradient-to-br from-violet-900/50 to-indigo-900/50 p-8 rounded-2xl border border-violet-500/50 transition-all hover:shadow-lg hover:shadow-violet-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-violet-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-violet-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-violet-500/30 transition-colors">
+                        <i data-lucide="file-text" class="text-violet-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_11_title">カスタムファイル名テンプレート</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_11_desc">3つのファイル名モード：Grokネイティブ、プロンプトベース、またはカスタムテンプレート（{date}、{prompt}、{quality}等のトークン対応）。お好みの方法でファイル名を設定。</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">3モード</span>
+                        <span class="mini-tag">カスタムトークン</span>
                     </div>
                 </div>
             </div>

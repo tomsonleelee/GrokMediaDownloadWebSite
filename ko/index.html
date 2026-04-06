@@ -66,7 +66,7 @@
       "dateModified": "2026-03-25",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "screenshot": "https://grokmedia.kario-studio.com/assets/og-image.jpg",
-      "featureList": ["Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
+      "featureList": ["Tag-Based Download", "Custom Filename Templates", "Frame Lock & Trim", "Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
       "offers": {
         "@type": "Offer",
         "price": "4.99",
@@ -285,7 +285,7 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.2 최신 업데이트 | Video Gen Queue, 프로젝트 다운로드, 동영상 스튜디오</span>
+                        <span data-i18n="hero_badge">v2.3 최신 업데이트 | 태그 다운로드・파일명 템플릿・프레임 잠금</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -293,7 +293,7 @@
                         <span class="text-pink-500" data-i18n="hero_title_2">미디어 자산 관리</span>
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">단순한 다운로더가 아닌 크리에이티브 스튜디오입니다. v2.2의 새로운 Video Gen Queue로 동영상 생성을 자동 스케줄링, Project-Based Download로 파일을 프로젝트 폴더로 정리, 4가지 생성 모드를 지원합니다.</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">단순한 다운로더가 아닌 크리에이티브 스튜디오입니다. v2.3에서는 태그별 다운로드로 미디어를 태그 분류 관리, 커스텀 파일명 템플릿으로 유연한 명명, Frame Lock으로 매끄러운 동영상 연속 생성을 지원합니다.</p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
@@ -320,7 +320,7 @@
                     <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
                         <span class="feature-tag"><span>📥</span> <span data-i18n="hero_tag_1">일괄 다운로드</span></span>
                         <span class="feature-tag"><span>🎯</span> <span data-i18n="hero_tag_2">Video Gen Queue</span></span>
-                        <span class="feature-tag"><span>🛠️</span> <span data-i18n="hero_tag_3">Video Studio</span></span>
+                        <span class="feature-tag"><span>🏷️</span> <span data-i18n="hero_tag_3">태그 다운로드</span></span>
                         <span class="feature-tag"><span>✨</span> <span data-i18n="hero_tag_4">HD 업그레이드</span></span>
                         <span class="feature-tag"><span>📂</span> <span data-i18n="hero_tag_5">프로젝트 폴더</span></span>
                         <span class="feature-tag"><span>🌊</span> <span data-i18n="hero_tag_6">Stream Capture</span></span>
@@ -758,14 +758,13 @@
                     </div>
                 </div>
 
-                <!-- Feature 7: Video Gen Queue (NEW v2.2) -->
-                <div class="feat-card-border feat-border-green bg-gradient-to-br from-pink-900/50 to-orange-900/50 p-8 rounded-2xl border border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-pink-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 7: Video Gen Queue (v2.2) -->
+                <div class="feat-card-border feat-border-green bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-pink-500/30 transition-colors">
                         <i data-lucide="list-video" class="text-pink-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_8_title">Video Gen Queue (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_8_desc">자동 동영상 생성 큐! 일괄 추가, 4가지 생성 모드, 자동 재시도, 속도 제한 감지. 무료 50회, PRO 무제한.</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_8_desc">자동 동영상 생성 큐! 일괄 추가, 4가지 생성 모드, 자동 재시도, 속도 제한 감지. 무료 50회, PRO 무제한.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Auto Retry</span>
                         <span class="mini-tag">Batch Add</span>
@@ -780,14 +779,13 @@
                     </div>
                 </div>
 
-                <!-- Feature 8: Project-Based Download (NEW v2.2) -->
-                <div class="feat-card-border feat-border-cyan bg-gradient-to-br from-teal-900/50 to-blue-900/50 p-8 rounded-2xl border border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 8: Project-Based Download (v2.2) -->
+                <div class="feat-card-border feat-border-cyan bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
                         <i data-lucide="folder-open" class="text-teal-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_9_title">Project-Based Download (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_9_desc">프로젝트 폴더 관리! 다운로드 전 자동 스캔 통계, 날짜와 프롬프트로 프로젝트 폴더를 자동 생성.</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_9_desc">프로젝트 폴더 관리! 다운로드 전 자동 스캔 통계, 날짜와 프롬프트로 프로젝트 폴더를 자동 생성.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Auto Group</span>
                         <span class="mini-tag">Metadata JSON</span>
@@ -798,6 +796,34 @@
                             <i data-lucide="image" class="w-8 h-8 mb-2 text-teal-500/30"></i>
                             <p class="text-xs">feat-project-download.jpg</p>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Feature 9: Tag-Based Download (NEW v2.3) -->
+                <div class="feat-card-border feat-border-green bg-gradient-to-br from-amber-900/50 to-orange-900/50 p-8 rounded-2xl border border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
+                        <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">태그별 다운로드 (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_10_desc">태그로 미디어 다운로드! 태그 폴더를 선택하고 그 안의 모든 미디어를 일괄 다운로드. 태그별 독립 다운로드 기록, tags/{tagName}/ 하위에 정리 저장.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">태그 폴더</span>
+                        <span class="mini-tag">독립 기록</span>
+                    </div>
+                </div>
+
+                <!-- Feature 10: Custom Filename Templates (NEW v2.3) -->
+                <div class="feat-card-border feat-border-purple bg-gradient-to-br from-violet-900/50 to-indigo-900/50 p-8 rounded-2xl border border-violet-500/50 transition-all hover:shadow-lg hover:shadow-violet-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-violet-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-violet-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-violet-500/30 transition-colors">
+                        <i data-lucide="file-text" class="text-violet-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_11_title">커스텀 파일명 템플릿</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_11_desc">3가지 파일명 모드: Grok 기본, 프롬프트 기반, 또는 커스텀 템플릿({date}, {prompt}, {quality} 등 토큰 지원). 원하는 방식으로 다운로드 파일명을 지정하세요.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">3가지 모드</span>
+                        <span class="mini-tag">커스텀 토큰</span>
                     </div>
                 </div>
             </div>

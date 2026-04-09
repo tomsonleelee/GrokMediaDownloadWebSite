@@ -1,0 +1,35 @@
+# GrokMediaDownloader
+
+> GrokMediaDownloader is a Chrome extension for Grok AI media management. Batch download images and videos, automate video generation with Video Gen Queue, create video stories with Story Mode, capture live streams in real-time, and organize everything into project folders — all processed locally in your browser with zero data collection. Published by Kario Studio. One-time $4.99 PRO lifetime license.
+
+## Key Features
+- **Batch Download**: Scan and download all Grok AI images and videos at once with smart filtering by date, type, and resolution
+- **Video Gen Queue**: Automate video generation by queuing multiple image posts — the extension auto-generates videos in the background
+- **Story Mode**: Merge multiple Grok video clips into a single MP4 using in-browser WebAssembly FFmpeg — no server upload needed
+- **Stream Capture**: Real-time DOM observer detects and queues newly generated images as you browse Grok AI
+- **Project Download**: Group source images and resulting videos into organized project folders for bulk export
+- **HD Upgrade**: One-click upgrade images from standard to high resolution
+
+## Pages
+- Homepage: https://grokmedia.kario-studio.com/
+- FAQ: https://grokmedia.kario-studio.com/faq.html
+- Stream Capture: https://grokmedia.kario-studio.com/stream-capture.html
+- Story Mode: https://grokmedia.kario-studio.com/story-mode.html
+- Video Gen Queue: https://grokmedia.kario-studio.com/video-gen-queue.html
+- Project Download: https://grokmedia.kario-studio.com/project-download.html
+- Pricing: https://grokmedia.kario-studio.com/pricing.html
+- Privacy Policy: https://grokmedia.kario-studio.com/privacy.html
+
+## Links
+- Chrome Web Store: https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi
+- GitHub: https://github.com/tomsonlee150/GrokMediaDownloader
+
+## Stats
+- 6,000+ active users
+- 4.2/5 rating (19 reviews) on Chrome Web Store
+- Available in 6 languages: English, Traditional Chinese, Japanese, Korean, Spanish, German
+
+## Technical
+- 100% client-side processing (WebAssembly FFmpeg, IndexedDB, Chrome Side Panel API)
+- No data collection, no server uploads
+- Works with Grok AI (grok.com / x.ai)

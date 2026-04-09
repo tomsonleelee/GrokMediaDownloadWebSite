@@ -25,8 +25,8 @@
 - GitHub: https://github.com/tomsonlee150/GrokMediaDownloader
 
 ## Stats
-- 6,000+ active users
-- 4.2/5 rating (19 reviews) on Chrome Web Store
+- 8,000+ active users
+- 4.2/5 rating (20 reviews) on Chrome Web Store
 - Available in 6 languages: English, Traditional Chinese, Japanese, Korean, Spanish, German
 
 ## Technical

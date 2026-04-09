@@ -1,6 +1,30 @@
 # GrokMediaDownloader Website
 # https://grokmedia.kario-studio.com
 
+# AI search/citation crawlers — explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Training-only crawlers — blocked (not search/citation)
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# All other crawlers
 User-agent: *
 Allow: /
 

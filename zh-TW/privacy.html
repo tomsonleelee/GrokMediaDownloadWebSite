@@ -122,7 +122,7 @@
                 </div>
                 <div>
                     <h1 class="text-3xl md:text-4xl font-bold" data-i18n="legal_privacy_title">隱私權政策</h1>
-                    <p class="text-slate-400 text-sm">最後更新：2025 年 12 月</p>
+                    <p class="text-slate-400 text-sm">最後更新：2026 年 4 月</p>
                 </div>
             </div>
         </div>
@@ -133,41 +133,72 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
                 <div class="prose prose-invert prose-slate max-w-none">
-                    <div class="space-y-8 text-slate-300 leading-relaxed" data-i18n="legal_privacy_content">
+                    <div class="space-y-8 text-slate-300 leading-relaxed">
+
+                        <p>本隱私權政策說明 Kario LLC（以下簡稱「我們」）如何處理與 GrokMediaDownloader Chrome 擴充功能（以下簡稱「本擴充功能」）及行銷網站 grokmedia.kario-studio.com（以下簡稱「本網站」）相關的資訊。我們致力於保護您的隱私，並對我們的做法保持透明。</p>
+
                         <div>
-                            <h2 class="text-xl font-bold text-white mb-3">1. 資料收集與使用</h2>
-                            <p>本擴充功能（GrokMediaDownloader）是一個完全在客戶端運行的工具。我們不收集、不儲存、不分享您的任何個人資料、瀏覽紀錄或下載內容。所有的圖片處理與下載動作皆在您的瀏覽器本地完成。</p>
+                            <h2 class="text-xl font-bold text-white mb-3">1. 我們收集的資訊</h2>
+                            <p class="mb-3"><strong class="text-white">擴充功能內：</strong>GrokMediaDownloader 是一個 100% 在客戶端運行的工具。我們<strong class="text-white">不會</strong>在外部伺服器上收集、傳輸或儲存任何個人資料。本擴充功能不會收集您的姓名、電子郵件或任何其他個人識別資訊。擴充功能內部沒有任何分析、遙測或追蹤程式碼。所有媒體處理——包括下載、透過 FFmpeg WebAssembly 進行的影片合併、以及串流擷取——皆完全在您的瀏覽器本地裝置上進行。</p>
+                            <p><strong class="text-white">在網站上：</strong>我們的行銷網站使用 Google Analytics 4 (GA4) 進行標準的網站流量分析，例如頁面瀏覽數、流量來源及一般使用模式。GA4 可能使用 Cookie 來收集匿名化的彙總資料。此分析資料與擴充功能完全獨立，不會識別個別使用者。除了 GA4 標準配置所提供的資料外，本網站不會收集任何個人資訊。</p>
                         </div>
 
                         <div>
-                            <h2 class="text-xl font-bold text-white mb-3">2. 權限說明</h2>
-                            <p>我們請求的權限（如 "Storage", "Downloads", "Host Permissions"）僅用於執行擴充功能的核心功能：</p>
+                            <h2 class="text-xl font-bold text-white mb-3">2. 我們如何使用資訊</h2>
+                            <p>由於擴充功能不收集任何資料，因此沒有使用者資料可供使用、分享或出售。在擴充功能中，所有操作皆在本地執行，不會將任何資訊傳送到我們的伺服器或任何第三方伺服器。</p>
+                            <p class="mt-2">行銷網站的匿名化彙總分析資料僅用於了解一般流量模式及改善網站體驗。我們不會使用這些資料來識別、聯繫或鎖定個別使用者。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">3. 資料儲存</h2>
+                            <p>擴充功能產生的所有資料——包括下載紀錄、排程資料、使用者偏好設定及暫存影片檔案——皆使用 Chrome 內建的儲存 API（<code class="text-pink-300">chrome.storage.local</code>）和 IndexedDB 儲存在您的本地裝置上。這些資料永遠不會離開您的裝置，我們或任何第三方都無法存取。</p>
+                            <p class="mt-2">您隨時可以完全控制您的本地資料。您可以使用擴充功能內建的資料管理功能來匯出、匯入或清除您的資料。當您解除安裝擴充功能時，所有本地資料也會自動移除。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">4. 第三方服務</h2>
+                            <p class="mb-3"><strong class="text-white">付款處理：</strong>PRO 授權的購買由第三方付款處理商 LemonSqueezy 處理。當您購買授權時，您的付款資訊（如信用卡資料）由 LemonSqueezy 依其隱私政策直接收集和處理。Kario LLC 不會直接存取、儲存或處理您的信用卡資訊。我們僅接收授權驗證所需的最小化資訊，例如授權碼和訂單狀態。</p>
+                            <p><strong class="text-white">Google Analytics：</strong>行銷網站（非擴充功能）使用 Google Analytics 4 進行流量分析。您可以透過使用 Google Analytics 停用瀏覽器外掛程式或調整瀏覽器的 Cookie 設定來選擇退出 Google Analytics。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">5. Chrome 擴充功能權限</h2>
+                            <p class="mb-3">本擴充功能僅請求核心功能所需的最低權限。以下說明每個權限的用途：</p>
+                            <ul class="list-disc list-inside mt-2 space-y-2">
+                                <li><strong class="text-white">activeTab</strong> —— 允許擴充功能與您正在瀏覽的 Grok 頁面互動，以偵測和列出可用的媒體。</li>
+                                <li><strong class="text-white">storage</strong> —— 用於將您的下載紀錄、擴充功能設定和排程資料儲存在本地裝置上。</li>
+                                <li><strong class="text-white">downloads</strong> —— 讓擴充功能能夠將媒體檔案儲存到您電腦的本地檔案系統。</li>
+                                <li><strong class="text-white">sidePanel</strong> —— 驅動顯示在 Chrome 側邊面板中的 Video Studio 和排程使用者介面。</li>
+                                <li><strong class="text-white">offscreen</strong> —— 允許 FFmpeg WebAssembly 影片處理在背景文件中執行以提升效能。</li>
+                                <li><strong class="text-white">主機權限（<code class="text-pink-300">*://grok.com/*</code>）</strong> —— 限制擴充功能僅在 grok.com 網域上運作。本擴充功能不會在任何其他網站上執行或存取任何其他網站。</li>
+                            </ul>
+                            <p class="mt-3">本擴充功能不會設定任何 Cookie。透過這些權限收集的資料不會被傳輸到外部。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">6. 資料安全</h2>
+                            <p>由於擴充功能完全在您的本地裝置上運作，且不會將任何資料傳輸到外部伺服器，因此透過擴充功能發生資料外洩的風險實際上已被消除。您的媒體檔案、下載紀錄和設定僅保留在您的裝置上，由您自行控管。我們不會運營任何儲存擴充功能使用者資料的伺服器。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">7. 兒童隱私</h2>
+                            <p>本擴充功能並非針對 13 歲以下兒童設計。我們不會刻意收集任何兒童的個人資訊。由於本擴充功能不會收集任何使用者的個人資訊，因此不存在無意中收集未成年人資料的風險。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">8. 政策變更</h2>
+                            <p>我們可能會不定期更新本隱私權政策，以反映我們做法的變更或因應法律和法規要求。當我們進行重大變更時，將更新本頁頂部的「最後更新」日期，並可能透過擴充功能更新通知使用者。在任何變更後繼續使用本擴充功能或網站，即表示您接受更新後的政策。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">9. 聯絡我們</h2>
+                            <p>如果您對本隱私權政策或我們的隱私做法有任何疑問、疑慮或要求，請透過以下管道與我們聯繫：</p>
                             <ul class="list-disc list-inside mt-2 space-y-1">
-                                <li>讀取您當前瀏覽的 Grok 頁面以偵測媒體。</li>
-                                <li>將檔案下載到您指定的位置。</li>
-                                <li>儲存擴充功能的本地設定與下載歷史記錄。</li>
+                                <li>GitHub：<a href="https://github.com/tomsonlee150/GrokMediaDownloader/issues" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300">github.com/tomsonlee150/GrokMediaDownloader</a></li>
+                                <li>網站：<a href="https://grokmedia.kario-studio.com/zh-TW/" class="text-pink-400 hover:text-pink-300">grokmedia.kario-studio.com</a></li>
                             </ul>
                         </div>
 
-                        <div>
-                            <h2 class="text-xl font-bold text-white mb-3">3. 第三方服務</h2>
-                            <p>本擴充功能使用 LemonSqueezy 作為支付處理商。購買授權時，您的付款資訊將由 LemonSqueezy 依其隱私政策處理。我們僅接收授權驗證所需的最小化資訊（如授權碼）。</p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-bold text-white mb-3">4. 資料安全</h2>
-                            <p>由於我們不收集任何資料，因此不存在資料外洩的風險。您的所有內容都保留在您的裝置上。</p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-bold text-white mb-3">5. 政策更新</h2>
-                            <p>如有重大變更，我們將透過擴充功能更新通知使用者。繼續使用本服務即表示您接受更新後的政策。</p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-bold text-white mb-3">6. 聯絡我們</h2>
-                            <p>如有任何隱私相關問題，請透過頁面下方的「聯絡支援」與我們聯繫。</p>
-                        </div>
                     </div>
                 </div>
             </div>

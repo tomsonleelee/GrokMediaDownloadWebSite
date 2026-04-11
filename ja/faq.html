@@ -76,24 +76,27 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "Generate List は何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "スマートスキャン機能です。Grok/Imagine/Favoritesをクリックすると、ページを読み取り、すべてのメディアを検出し、既にダウンロード済みのファイルを除外して、ダウンロードリストを生成します。"}},
-        {"@type": "Question", "name": "「Only after」日付フィルターとは？", "acceptedAnswer": {"@type": "Answer", "text": "PRO限定機能です。数千枚の画像がある場合、日付を設定して「今日」や「今週」の新しいものだけをダウンロードできます。"}},
-        {"@type": "Question", "name": "Stream Capture と Generate List の違いは？", "acceptedAnswer": {"@type": "Answer", "text": "Generate Listはお気に入りリストをスキャンします。Stream Captureは継続的な監視で、新しい画像を生成するたびに自動的にキャプチャします。"}},
-        {"@type": "Question", "name": "HD Upgradeはどのように機能しますか？", "acceptedAnswer": {"@type": "Answer", "text": "Grokは低解像度プレビューを保存している場合があります。HD Upgradeは自動検出し、Grokに1080p高画質版をリクエストします。HD動画が既に存在する場合、重複リクエストは送信されません。"}},
-        {"@type": "Question", "name": "PCを変えた場合、履歴は保存されますか？", "acceptedAnswer": {"@type": "Answer", "text": "デフォルトでは、履歴はローカルに保存されます。PROユーザーはExport/Import Dataでバックアップと復元ができます。"}},
-        {"@type": "Question", "name": "Story Mode Helperとは？", "acceptedAnswer": {"@type": "Answer", "text": "v2.0の主要機能です。Storyboard管理、フレーム抽出、Grokへの送信による続編生成、ローカルでの動画マージが可能なサイドパネル動画スタジオです。"}},
-        {"@type": "Question", "name": "「フレームをGrokに送信」はどう使いますか？", "acceptedAnswer": {"@type": "Answer", "text": "Story Mode Helperで動画セグメントを選択し、最後のフレームを表示します。次のアクションを説明するプロンプトを入力して送信すると、フレームがGrok Imagineにアップロードされます。"}},
-        {"@type": "Question", "name": "動画のマージはローカルですか？クラウドですか？", "acceptedAnswer": {"@type": "Answer", "text": "完全にローカルです。WebAssembly FFmpegを使用しているため、すべての動画処理はブラウザ内で行われ、サーバーにアップロードされることはありません。"}},
-        {"@type": "Question", "name": "Storyboardの「Master」とは？", "acceptedAnswer": {"@type": "Answer", "text": "Storyboardの最初の動画がMasterとしてマークされます。マージ時、他の動画はMasterの解像度とフレームレートに自動調整され、一貫した出力品質が保たれます。"}},
-        {"@type": "Question", "name": "動画のストレージ制限はありますか？", "acceptedAnswer": {"@type": "Answer", "text": "IndexedDBを使用して動画データを保存します。容量はブラウザの設定に依存し、通常数百MBから数GBです。サイドパネルに現在のストレージ使用量が表示されます。"}},
-        {"@type": "Question", "name": "Video Gen Queueとは？", "acceptedAnswer": {"@type": "Answer", "text": "v2.2の新機能です。サイドパネルでの自動動画生成スケジューリングシステムです。Custom/Normal/Fun/Spicyの4つのモードでバッチ追加可能。無料版50回、PROは無制限。"}},
-        {"@type": "Question", "name": "Project-Based Downloadとは？", "acceptedAnswer": {"@type": "Answer", "text": "ダウンロード前に統計情報をスキャン・表示し、日付とプロンプトで命名されたプロジェクトフォルダを自動作成します。PRO限定機能。"}},
-        {"@type": "Question", "name": "無料版にはどんな機能がありますか？", "acceptedAnswer": {"@type": "Answer", "text": "無料版ではお気に入りの画像の分析とダウンロードが可能です。高度な機能にはPROライセンスが必要です。"}},
-        {"@type": "Question", "name": "永久ライセンスの範囲は？", "acceptedAnswer": {"@type": "Answer", "text": "1つのChromeアカウントで利用可能、最大3回の再インストール（PC買い替えなど）に対応。"}},
-        {"@type": "Question", "name": "ライセンスキーの入力方法は？", "acceptedAnswer": {"@type": "Answer", "text": "購入後にライセンスキーが届きます。拡張機能のPopupパネルを開き、下部の「Activate PRO」または「License」入力欄にキーを貼り付けて有効化します。"}},
-        {"@type": "Question", "name": "返金は可能ですか？", "acceptedAnswer": {"@type": "Answer", "text": "解決できない技術的問題が発生した場合は、ページ下部の「サポートに連絡」からお問い合わせください。返金ポリシーはLemon Squeezyプラットフォームのガイドラインに従います。"}},
-        {"@type": "Question", "name": "将来のアップデートは追加料金が必要ですか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ！PRO永久版には将来のすべての機能アップデートが含まれます。v2.0のStory Mode Helperは無料アップデートの一例で、今後の新機能もライセンスに自動的に含まれます。"}},
-        {"@type": "Question", "name": "Lemon Squeezyとは？支払いは安全ですか？", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezyはデジタル製品向けの世界的に信頼されている決済プラットフォームです。すべての取引はSSL暗号化され、PCI DSS準拠です。クレジットカード情報を当社が見ることはありません。"}}
+        {"@type": "Question", "name": "Generate Listとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "Generate ListはGrokMediaDownloaderの中核となる一括ダウンロード機能です。8,000人以上のユーザーに信頼されているこのChrome拡張機能は、Grok AIメディアの管理に特化しています。Grokのお気に入りページでGenerate Listをクリックすると、拡張機能がDOM解析によりページ全体をインテリジェントにスキャンし、画像や動画をすべて検出します。ソース画像から生成された動画を含む子投稿も対象です。システムはローカルのダウンロード履歴を確認して既にダウンロード済みのファイルを自動的にフィルタリングします。この履歴はOOM安全なキャッシュを使用し、5,000件以上のアイテムをクラッシュなく処理できます。生成されるリストには新規の未ダウンロードメディアのみが表示されます。HD優先を有効にして高画質版を優先したり、メタデータをJSONファイルとして保存したり、プロンプトテキストをファイル名として使用することもできます。すべての処理はブラウザ内で100%クライアントサイドで行われます。"}},
+        {"@type": "Question", "name": "「Only after」日付フィルターとは？", "acceptedAnswer": {"@type": "Answer", "text": "Only After日付フィルターはGrokMediaDownloaderのPRO限定機能で、Grok AIで大量のメディアライブラリを蓄積したパワーユーザー向けに設計されています。お気に入りに数千枚の画像や動画がある場合、毎回すべてをダウンロードするのは非効率で帯域幅の無駄になります。このフィルターを使えば特定のカットオフ日を設定でき、Generate Listのスキャンがその日付以降に作成されたメディアのみを対象とします。例えば、今日に設定すれば現在のセッションで生成したものだけをダウンロードでき、今週に設定すれば週次の定期的な一括ダウンロードルーティンが作れます。毎日Grokを使用し整理されたダウンロードワークフローを維持したいクリエイターに特に便利です。日付フィルターは既存の重複検出システムと連携し、どの新作品をダウンロードするか正確にコントロールできます。$4.99のPRO永久ライセンスで利用可能です。"}},
+        {"@type": "Question", "name": "Stream CaptureとGenerate Listの違いは？", "acceptedAnswer": {"@type": "Answer", "text": "Generate ListとStream CaptureはGrokMediaDownloaderで異なるワークフローに対応しています。Generate Listはバッチスキャンツールで、Grokのお気に入りページを読み取り、すべての画像と動画を見つけ、重複をフィルタリングし、ダウンロードキューを作成します。蓄積されたメディアをダウンロードしたい時に手動で実行します。一方、Stream CaptureはMutationObserverを使ってDOMの新しく出現する画像を監視するリアルタイム監視システムです。Stream Captureを有効にすると、grok.comでブラウジングや制作中に新しい画像が画面に表示された瞬間に自動検出しキューに追加します。1セッションあたり最大1,000枚の画像をキャプチャできます。Generate Listは保存済みコレクションからの遡及的バッチダウンロード、Stream Captureはリアルタイムで発生するすべてをキャッチするライブネットと考えてください。両機能ともクライアントサイドで完結し、外部サーバーへのデータ送信はありません。"}},
+        {"@type": "Question", "name": "HD Upgradeはどのように機能しますか？", "acceptedAnswer": {"@type": "Answer", "text": "HD UpgradeはGrokMediaDownloaderのスマートな動画品質向上機能です。Grok AIは帯域幅を節約するために生成動画の低解像度プレビュー版を保存することがあります。HD Upgradeはダウンロードリストをスキャンし、標準画質のプレビューがあるがサーバー上にHD版が利用可能な動画を自動的に識別します。そしてGrokに1080p高画質版の取得リクエストを送信します。インテリジェントな重複検出機能を搭載しており、特定の動画にHD版が既に存在する場合は冗長なリクエストを送信しません。ネイティブ720p SuperGrok動画も適切に認識しスキップします。プロセス全体は開始後自動的に実行され、リスト内のすべての動画がチェックされ可能な限りアップグレードされると終了します。HD Upgradeはバッチダウンロードシステムと連携し、アップグレード前にプレビューの確認スキャンが可能です。すべての動画処理はChromeブラウザ内で100%クライアントサイドで行われます。"}},
+        {"@type": "Question", "name": "PCを変えた場合、履歴は保存されますか？", "acceptedAnswer": {"@type": "Answer", "text": "デフォルトでは、GrokMediaDownloaderは現在のコンピューターのChromeローカルストレージにダウンロード履歴を保存します。そのため、新しいコンピューターに切り替えたり、ドライブをフォーマットしたり、Chromeを再インストールした場合、履歴は自動的に転送されません。ただし、PROユーザーはExport/Import Data機能にアクセスでき、ダウンロード履歴全体をファイルとしてバックアップし、他のデバイスで復元できます。コンピューターのアップグレードや複数のワークステーション維持時のクロスデバイス転送に便利です。エクスポートはすべてのダウンロード記録を含むポータブルデータファイルを作成し、インポートプロセスですべてをシームレスに復元します。GrokMediaDownloaderはManifest V3 Chrome拡張機能として100%クライアントサイド処理で構築されているため、個人データが外部サーバーに送信されることは一切ありません。履歴は常にプライベートで管理下にあり、ローカルChromeストレージにのみ保存されます。"}},
+        {"@type": "Question", "name": "Story Mode Helperとは？", "acceptedAnswer": {"@type": "Answer", "text": "Story Mode HelperはGrokMediaDownloader v2.0で導入された主要機能で、Chromeのサイドパネル内の完全な動画スタジオとして設計されています。ドラッグ＆ドロップでの並び替えに対応したストーリーボードマネージャーを提供し、複数の動画クリップを一貫したナラティブシーケンスに配置できます。任意の動画セグメントから特定のフレームを抽出し、Send Frame to Grok機能でフレームをカスタムプロンプトと共にGrok Imagineにアップロードして、ストーリーを拡張する続編動画を生成できます。動画マージ機能はFFmpeg.js（FFmpegのWebAssembly実装）を使用し、完全にブラウザ内で実行されます。つまり、正規化、解像度マッチング、最終マージを含むすべての動画処理がローカルで行われ、サーバーへのアップロードは一切ありません。動画データは大容量バイナリの効率的な処理のためIndexedDBに保存されます。Story Mode HelperはGrok AIを単なる画像生成器からブラウザ内の完全なクリエイティブストーリーテリングプラットフォームへと変革します。"}},
+        {"@type": "Question", "name": "「フレームをGrokに送信」はどう使いますか？", "acceptedAnswer": {"@type": "Answer", "text": "Send Frame to GrokはStory Mode Helperのワークフロー機能で、既存の動画クリップと新しいGrok AI生成を橋渡しします。使用するには、まずChromeサイドパネルでStory Mode Helperを開きます。ストーリーボードから動画セグメントを選択してフレームを表示します。インタラクティブなフィルムストリップで動画をブラウズし、最後のフレームだけでなく任意のフレームを選択できます。続きを生成したいフレームを選んだら、動画の次に何が起こるべきかを説明するテキストプロンプトを入力します。送信ボタンをクリックすると、拡張機能が選択したフレーム画像とプロンプトをGrok Imagineに自動的にアップロードします。Grokはそのフレームから視覚的に続く新しい動画を生成します。生成された動画はストーリーボードに追加してさらなる編集やマージが可能です。これにより、ブラウザ内で完全にAI生成の長編動画ナラティブを構築するシームレスな反復ワークフローが実現します。"}},
+        {"@type": "Question", "name": "動画のマージはローカルですか？クラウドですか？", "acceptedAnswer": {"@type": "Answer", "text": "GrokMediaDownloaderでのすべての動画マージは完全にブラウザ内のローカルで実行されます。拡張機能はFFmpeg.js（業界標準FFmpeg動画処理ライブラリのWebAssembly（WASM）コンパイル版）を使用しています。つまり、FFmpegのフルパワーがChromeブラウザ内でクライアントサイドコードとして直接実行され、動画データが外部サーバーやクラウドサービスにアップロードされることは一切ありません。Story Mode Helperで動画をマージする際、FFmpeg.jsエンジンがブラウザのメモリ内で動画の正規化、解像度調整、フレームレートマッチング、最終結合をすべて処理します。動画ブロブは処理中にIndexedDBに一時保存されます。このアプローチにより、クリエイティブコンテンツがデバイスから出ることがないため、完全なプライバシーが保証されます。Kario LLCが公開するGrokMediaDownloaderは、ゼロサーバーアーキテクチャで設計されています。Chrome Web Storeで8,000人以上のユーザーと4.2/5の評価を得ているこの拡張機能は、すべてをクライアントサイドで処理します。"}},
+        {"@type": "Question", "name": "Storyboardの「Master」とは？", "acceptedAnswer": {"@type": "Answer", "text": "GrokMediaDownloaderのStory Mode Helperにおいて、Masterの指定はストーリーボードシーケンスの最初の動画クリップに割り当てられます。Master動画はマージ出力全体の基準となります。マージプロセスを開始すると、ストーリーボード内の他のすべての動画クリップは自動的にMasterの仕様に合わせて解像度とフレームレートが調整されます。これにより、最終的なマージ動画全体で一貫した視覚品質が保たれ、異なるサイズや速度のクリップ間での不自然なトランジションを防ぎます。例えば、Masterが1080p・24fpsの動画の場合、すべての後続クリップはマージ前にFFmpeg.jsを使ってその正確な仕様に正規化されます。ストーリーボードをドラッグ＆ドロップで並び替えることでMasterを変更できます。最高品質のクリップをMasterとして選ぶことが最良の出力結果のために推奨されます。この正規化とマージプロセス全体がWebAssemblyを通じてローカルで実行され、クラウド処理は一切関与しません。"}},
+        {"@type": "Question", "name": "動画のストレージ容量に制限はありますか？", "acceptedAnswer": {"@type": "Answer", "text": "GrokMediaDownloaderはStory Mode Helperの動画データを保存するためにIndexedDB（ブラウザネイティブのデータベース）を使用しています。ストレージ容量はブラウザの設定と利用可能なディスク容量に依存します。最新のChrome環境では通常、追加の許可を求める前にIndexedDBは数百MBから数GBのストレージを使用できます。サイドパネルインターフェースに現在のストレージ使用量がリアルタイムで表示されるため、ストーリーボード動画がどれだけの容量を消費しているかを監視できます。ストレージ制限に近づいた場合は、完成したプロジェクトをエクスポートし古い動画データをクリアして空き容量を確保できます。IndexedDBが他のストレージ方法ではなく特に選ばれた理由は、動画ファイルのような大きなバイナリブロブをブラウザのパフォーマンスを低下させることなく効率的に処理できるためです。GrokMediaDownloaderのすべての処理はManifest V3アーキテクチャによりクライアントサイドで行われるため、動画データがローカルブラウザストレージから出ることは決してありません。"}},
+        {"@type": "Question", "name": "Video Gen Queueとは？", "acceptedAnswer": {"@type": "Answer", "text": "Video Gen QueueはGrokMediaDownloader v2.2で導入された自動動画生成スケジューリングシステムで、Chromeのサイドパネルからアクセスできます。複数の動画生成タスクをキューに追加し、手動操作なしで順次処理させることができます。投稿ページのフローティングボタンで個別に追加したり、最近の投稿から一括追加することも可能です。Custom、Normal、Fun、Spicyの4つの生成モードをサポートし、各生成動画のクリエイティブスタイルをコントロールできます。Video Gen QueueにはGrokのモデレーションシステムが生成を拒否した際の自動リトライを含むスマートエラーハンドリングが搭載され、レート制限（HTTP 429）レスポンスを検出して自動一時停止する機能でスロットリングを回避します。キューはMAIN worldのTipTap統合を使ってGrokのエディターインターフェースと直接やり取りします。無料版は50回使用可能で、$4.99のPRO永久ライセンスで本格的なクリエイター向けに無制限使用が解放されます。"}},
+        {"@type": "Question", "name": "Project-Based Downloadとは？", "acceptedAnswer": {"@type": "Answer", "text": "Project-Based DownloadはGrokMediaDownloader v2.2で導入された整理機能で、ダウンロードを構造化されたプロジェクトフォルダに自動的にグループ分けします。ダウンロード前にメディアをスキャンし、画像数、動画数、HDとSDの内訳を含む包括的なダウンロード前統計を表示します。ダウンロードを進めると、{日付}_{プロンプト}のパターンでプロジェクトフォルダが自動作成されます。日付はメディアが作成された日、プロンプトは生成時に使用したテキストです。各プロジェクトフォルダにはダウンロードされたメディアの詳細情報を含むmetadata.jsonファイルも含まれます。これにより、Grok AIでの創作物が1つのフォルダにまとめて放り込まれるのではなく、プロジェクトごとに整理整頓されます。Project-Based Downloadは$4.99の永久ライセンスで利用できるPRO限定機能です。GrokMediaDownloaderの他の一括ダウンロード機能と連携し、プロジェクト間の重複を防ぐ既存のダウンロード履歴システムと統合されています。"}},
+        {"@type": "Question", "name": "タグ別ダウンロードとは？", "acceptedAnswer": {"@type": "Answer", "text": "タグ別ダウンロードはGrokMediaDownloader v2.3で導入された機能で、Grokのタグ（フォルダ）システムに基づいてメディアをダウンロードできます。すべてのお気に入りを一度にダウンロードする代わりに、フィルターセクションで「タグでダウンロード」を選択し、ドロップダウンメニューからタグを選んで特定のタグをターゲットにできます。拡張機能は選択したタグ内のすべてのメディアをスキャンしてダウンロードします。各タグは独自の独立したダウンロード履歴を維持するため、タグ間の重複を心配せずに異なるタグのダウンロードを再実行できます。ダウンロードされたファイルはコンピューター上のgrok_downloads/tags/{タグ名}/に自動的に整理され、各タグのメディアがきちんと分離されます。Grokのタグシステムを使って異なるプロジェクト、テーマ、キャラクターコレクションを整理するクリエイターに特に便利です。タグ別ダウンロードは$4.99永久ライセンスに含まれるPRO限定機能です。"}},
+        {"@type": "Question", "name": "カスタムファイル名テンプレートとは？", "acceptedAnswer": {"@type": "Answer", "text": "カスタムファイル名テンプレートはGrokMediaDownloader v2.3で導入された機能で、ダウンロードファイルの命名に3つの柔軟な方法を提供します。最初のオプションはGrokネイティブで、Grokが割り当てた元のファイル名形式を保持します。2番目はプロンプトベースで、生成プロンプトテキストをファイル名として使用し簡単に識別できます。3番目はカスタムで、{date}、{datetime}、{prompt}、{quality}などのトークンを使った自由形式のテンプレートを作成でき、ダウンロード時に動的に置換されます。例えば、{date}_{prompt}_{quality}というテンプレートは20260409_sunset-landscape_HD.jpgのようなファイル名を生成します。この機能は無料版・PRO版の全ユーザーが利用可能です。以前の「プロンプトをファイル名に」設定を使用していた場合、テンプレートシステムの新しいプロンプトベースオプションに自動的に移行されます。カスタムファイル名テンプレートは一括ダウンロード、Stream Capture、タグ別ダウンロードを含むすべてのダウンロードモードで機能します。"}},
+        {"@type": "Question", "name": "Story ModeのFrame Lockとは？", "acceptedAnswer": {"@type": "Answer", "text": "Frame LockはGrokMediaDownloader v2.3で導入されたStory Modeの強化機能で、動画の続行ポイントを正確にコントロールできます。Send Frame to Grokで続編動画を生成する際、デフォルトの最後のフレームだけでなく、インタラクティブなフィルムストリップで動画クリップの任意のフレームを選択できるようになりました。これにより、Grokに続きを作ってほしい正確な視覚的瞬間を選べます。フレームを送信しGrokが続編動画を生成した後、選択されたフレームはフィルムストリップ上にオレンジ色のインジケーターでロックされ、トランジションポイントが示されます。最終動画をエクスポートまたはマージする際、FFmpeg.jsがロックされたフレーム位置でソースクリップを自動的にトリミングします。これにより連続するクリップ間の重複や繰り返しコンテンツが防止され、マージされたストーリーボード出力でシームレスな視覚的トランジションが実現します。Frame Lockは以前必要だった手動トリミングを排除します。"}},
+        {"@type": "Question", "name": "無料版にはどんな機能がありますか？", "acceptedAnswer": {"@type": "Answer", "text": "GrokMediaDownloaderの無料版はGrok AIユーザーに必須のメディア管理機能を提供します。Generate Listを使ってGrokのお気に入りページをスキャンし、完全な一括ダウンロードサポートで画像をダウンロードできます。無料版にはBasic Stream Capture機能と、FFmpeg.js WebAssemblyによるコアストーリーボードと動画マージ機能を備えたStory Mode Helperへのアクセスも含まれています。Video Gen Queueは50回まで利用可能です。カスタムファイル名テンプレートの3つの命名モードもすべて無料版に含まれています。ただし、高度な機能にはPROライセンスが必要です。対象となるのは、ターゲットダウンロード用のOnly After日付フィルター、自動動画品質向上用のHD Upgrade、整理されたフォルダ構造用のProject-Based Download、タグ別メディア取得用のタグ別ダウンロード、クロスデバイス履歴転送用のExport/Import Data、および無制限のVideo Gen Queue使用です。PROの永久ライセンスはLemon Squeezyで$4.99の一回払いです。"}},
+        {"@type": "Question", "name": "永久ライセンスの範囲は？", "acceptedAnswer": {"@type": "Answer", "text": "GrokMediaDownloader PRO永久ライセンスはLemon Squeezy決済プラットフォームでの$4.99の一回購入で、サブスクリプションや定期的な課金はありません。ライセンスキーは1つのChromeアカウントに紐付けられ、新しいコンピューターへの切り替え、ドライブのフォーマット、Chromeの再インストールなどのシナリオに対応して最大3回の再インストールが可能です。購入後、メールでライセンスキーが届き、拡張機能のポップアップパネルに入力するとPRO機能が即座にアクティベートされます。永久とは、追加費用なしで将来のすべての機能アップデートを受け取れることを意味します。例えば、v2.0のStory Mode Helper、v2.2のVideo Gen Queue、v2.3のタグ別ダウンロードはすべて既存のPROユーザーに自動的に提供されました。Kario LLCが公開するこの拡張機能はChrome Web Storeで8,000人以上のユーザーに信頼され、4.2/5の評価を得ています。ライセンスのサポートが必要な場合は、このページ下部のサポートリンクからお問い合わせください。"}},
+        {"@type": "Question", "name": "ライセンスキーの入力方法は？", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezyで$4.99のGrokMediaDownloader PRO永久ライセンスを購入後、メールでライセンスキーが届きます。ライセンスをアクティベートするには、ChromeツールバーのGrokMediaDownloader拡張機能アイコンをクリックしてポップアップパネルを開きます。ポップアップの下部までスクロールすると、「Activate PRO」または「License」と表示された入力欄があります。ライセンスキーをこの欄に貼り付けてアクティベートボタンをクリックします。拡張機能がオンラインでキーを検証し、HD Upgrade、Only After日付フィルター、Project-Based Download、タグ別ダウンロード、Export/Import Data、無制限Video Gen Queueを含むすべてのPRO機能が即座にアンロックされます。アクティベーションプロセスはわずか数秒で完了します。ライセンスはChromeアカウントに紐付けられているため、新しいデバイスでChromeにサインインした場合はキーの再入力が必要な場合があります。各ライセンス購入で最大3回の再インストールが可能です。"}},
+        {"@type": "Question", "name": "返金は可能ですか？", "acceptedAnswer": {"@type": "Answer", "text": "トラブルシューティングで解決できないGrokMediaDownloaderの技術的問題が発生した場合、喜んでご懸念に対応いたします。このページ下部の「サポートに連絡」ボタンまたはChrome Web Storeリストのサポートリンクからサポートチームにお問い合わせください。Kario LLCが公開する当チームが、お客様が経験している技術的問題の診断と修正に協力いたします。返金ポリシーはGrokMediaDownloader PROライセンス購入に使用される決済プロセッサーであるLemon Squeezyプラットフォームのガイドラインに従います。Lemon Squeezyは購入者保護を提供し、返金リクエストを含むすべての支払い関連事項を処理します。多くの問題は迅速に解決できるため、返金をリクエストする前にまずサポートにご連絡いただくことをお勧めします。GrokMediaDownloaderは8,000人以上のユーザーに4.2/5の評価で信頼されており、すべてのユーザーに良い体験を確保することが当社の目標です。"}},
+        {"@type": "Question", "name": "将来のアップデートは追加料金が必要ですか？", "acceptedAnswer": {"@type": "Answer", "text": "いいえ、GrokMediaDownloader PRO永久ライセンスには追加費用なしで将来のすべての機能アップデートが含まれています。$4.99の一回購入で、現在および今後のすべてのPRO機能への永久アクセスが得られます。これは複数の主要アップデートで実証されています：v2.0リリースではFFmpeg.js WebAssemblyによる動画マージを備えたStory Mode Helperが追加され、v2.2ではVideo Gen QueueとProject-Based Downloadが導入され、v2.3ではタグ別ダウンロード、カスタムファイル名テンプレート、Frame Lockが加わりました。これらすべての機能は追加支払いなしで既存のPROユーザーに自動的に提供されました。Kario LLCが公開するGrokMediaDownloaderは、アーリーアダプターや忠実なユーザーに報いるために特に永久ライセンスモデルを採用しています。Grok AIメディア管理の新機能で進化し続ける中、一回の購入で常にフル機能セットにアクセスできます。現在Chrome Web Storeで8,000人以上のユーザーにサービスを提供しています。"}},
+        {"@type": "Question", "name": "Lemon Squeezyとは？決済は安全ですか？", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezyはデジタル製品向けに特化した世界的に信頼される決済プラットフォームで、世界中の数万の企業に利用されています。GrokMediaDownloaderはLemon Squeezyを使ってすべてのPROライセンス購入を安全に処理しています。すべての取引はSSL暗号化で保護され、PCI DSS（Payment Card Industry Data Security Standard）に完全準拠しています。これは最高レベルの決済セキュリティ認証です。クレジットカード情報はLemon Squeezyの安全なインフラストラクチャで完全に処理され、GrokMediaDownloaderの開発元であるKario LLCがお客様の支払い情報にアクセスすることは一切ありません。チェックアウトプロセスは主要なクレジットカード、PayPal、地域に応じたその他の支払い方法をサポートしています。支払い完了後、ライセンスキーがメールに即時配信されます。Lemon Squeezyは購入者保護、注文管理、支払い関連の質問への直接カスタマーサポートも提供しています。"}}
       ]
     }
     </script>
@@ -134,6 +137,9 @@
         ::-webkit-scrollbar-track { background: #0f172a; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        details summary::-webkit-details-marker { display: none; }
+        details summary { list-style: none; }
+        details[open] .faq-chevron { transform: rotate(180deg); }
     </style>
 </head>
 
@@ -162,229 +168,162 @@
 
             <!-- Category: Basic Features -->
             <div class="mb-12">
-                <h2 class="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2" data-i18n="faq_cat_basic">基本機能<i data-lucide="settings" class="w-5 h-5"></i>
+                <h2 class="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2" data-i18n="faq_cat_basic">
+                    <i data-lucide="settings" class="w-5 h-5"></i>
                     基本機能
                 </h2>
 
                 <div class="space-y-4">
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_1_q">Generate Listとは何ですか？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_1_a">スマートスキャン機能です。Grok/Imagine/Favoritesでクリックすると、ページを読み込み、すべてのメディアを検出し、ダウンロード済みファイルを除外してリストを生成します。</div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_1_a">Generate ListはGrokMediaDownloaderの中核となる一括ダウンロード機能です。8,000人以上のユーザーに信頼されているこのChrome拡張機能は、Grok AIメディアの管理に特化しています。Grokのお気に入りページでGenerate Listをクリックすると、拡張機能がDOM解析によりページ全体をインテリジェントにスキャンし、画像や動画をすべて検出します。ソース画像から生成された動画を含む子投稿も対象です。システムはローカルのダウンロード履歴を確認して既にダウンロード済みのファイルを自動的にフィルタリングします。この履歴はOOM安全なキャッシュを使用し、5,000件以上のアイテムをクラッシュなく処理できます。生成されるリストには新規の未ダウンロードメディアのみが表示されます。HD優先を有効にして高画質版を優先したり、メタデータをJSONファイルとして保存したり、プロンプトテキストをファイル名として使用することもできます。すべての処理はブラウザ内で100%クライアントサイドで行われます。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_2_q">Only after日付フィルターとは？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_2_a">PRO限定機能。数千枚ある場合、日付を設定して「今日」「今週」の新しい画像だけダウンロードできます。</div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_2_a">Only After日付フィルターはGrokMediaDownloaderのPRO限定機能で、Grok AIで大量のメディアライブラリを蓄積したパワーユーザー向けに設計されています。お気に入りに数千枚の画像や動画がある場合、毎回すべてをダウンロードするのは非効率で帯域幅の無駄になります。このフィルターを使えば特定のカットオフ日を設定でき、Generate Listのスキャンがその日付以降に作成されたメディアのみを対象とします。例えば、今日に設定すれば現在のセッションで生成したものだけをダウンロードでき、今週に設定すれば週次の定期的な一括ダウンロードルーティンが作れます。毎日Grokを使用し整理されたダウンロードワークフローを維持したいクリエイターに特に便利です。日付フィルターは既存の重複検出システムと連携し、どの新作品をダウンロードするか正確にコントロールできます。$4.99のPRO永久ライセンスで利用可能です。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_6_q">Stream CaptureとGenerate Listの違いは？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_6_a">Generate ListはFavorite Listをスキャン。Stream Captureは継続監視で新画像を自動キャプチャ。</div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_6_a">Generate ListとStream CaptureはGrokMediaDownloaderで異なるワークフローに対応しています。Generate Listはバッチスキャンツールで、Grokのお気に入りページを読み取り、すべての画像と動画を見つけ、重複をフィルタリングし、ダウンロードキューを作成します。蓄積されたメディアをダウンロードしたい時に手動で実行します。一方、Stream CaptureはMutationObserverを使ってDOMの新しく出現する画像を監視するリアルタイム監視システムです。Stream Captureを有効にすると、grok.comでブラウジングや制作中に新しい画像が画面に表示された瞬間に自動検出しキューに追加します。1セッションあたり最大1,000枚の画像をキャプチャできます。Generate Listは保存済みコレクションからの遡及的バッチダウンロード、Stream Captureはリアルタイムで発生するすべてをキャッチするライブネットと考えてください。両機能ともクライアントサイドで完結し、外部サーバーへのデータ送信はありません。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_10_q">HD Upgradeはどう機能しますか？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_10_a">Grokは低解像度プレビューを保存することがあります。HD Upgradeは自動検出してGrokに1080p高画質版をリクエスト。既にHD動画がある場合は重複リクエストしません。全ての動画がHD画質の場合は自動終了します。</div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_10_a">HD UpgradeはGrokMediaDownloaderのスマートな動画品質向上機能です。Grok AIは帯域幅を節約するために生成動画の低解像度プレビュー版を保存することがあります。HD Upgradeはダウンロードリストをスキャンし、標準画質のプレビューがあるがサーバー上にHD版が利用可能な動画を自動的に識別します。そしてGrokに1080p高画質版の取得リクエストを送信します。インテリジェントな重複検出機能を搭載しており、特定の動画にHD版が既に存在する場合は冗長なリクエストを送信しません。ネイティブ720p SuperGrok動画も適切に認識しスキップします。プロセス全体は開始後自動的に実行され、リスト内のすべての動画がチェックされ可能な限りアップグレードされると終了します。HD Upgradeはバッチダウンロードシステムと連携し、アップグレード前にプレビューの確認スキャンが可能です。すべての動画処理はChromeブラウザ内で100%クライアントサイドで行われます。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_3_q">PC買い替えで履歴は消えますか？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_3_a">デフォルトでは履歴はローカル保存。PROユーザーはExport/Import Dataでバックアップと復元が可能。</div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_3_a">デフォルトでは、GrokMediaDownloaderは現在のコンピューターのChromeローカルストレージにダウンロード履歴を保存します。そのため、新しいコンピューターに切り替えたり、ドライブをフォーマットしたり、Chromeを再インストールした場合、履歴は自動的に転送されません。ただし、PROユーザーはExport/Import Data機能にアクセスでき、ダウンロード履歴全体をファイルとしてバックアップし、他のデバイスで復元できます。コンピューターのアップグレードや複数のワークステーション維持時のクロスデバイス転送に便利です。エクスポートはすべてのダウンロード記録を含むポータブルデータファイルを作成し、インポートプロセスですべてをシームレスに復元します。GrokMediaDownloaderはManifest V3 Chrome拡張機能として100%クライアントサイド処理で構築されているため、個人データが外部サーバーに送信されることは一切ありません。履歴は常にプライベートで管理下にあり、ローカルChromeストレージにのみ保存されます。</div>
+                    </details>
                 </div>
             </div>
 
             <!-- Category: Story Mode Helper -->
             <div class="mb-12">
-                <h2 class="text-xl font-bold text-purple-400 mb-6 flex items-center gap-2" data-i18n="faq_cat_story">Story Mode Helper<i data-lucide="clapperboard" class="w-5 h-5"></i>
+                <h2 class="text-xl font-bold text-purple-400 mb-6 flex items-center gap-2" data-i18n="faq_cat_story">
+                    <i data-lucide="clapperboard" class="w-5 h-5"></i>
                     Story Mode Helper
                 </h2>
 
                 <div class="space-y-4">
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200" data-i18n="faq_7_q">Story Mode Helperとは？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_7_a">v2.0のメジャー機能。サイドパネル動画スタジオで、Storyboard管理、フレーム抽出、Grokへの送信、ローカルマージ出力が可能。</div>
-                    </div>
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200" data-i18n="faq_7_q">Story Mode Helperとは？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_7_a">Story Mode HelperはGrokMediaDownloader v2.0で導入された主要機能で、Chromeのサイドパネル内の完全な動画スタジオとして設計されています。ドラッグ＆ドロップでの並び替えに対応したストーリーボードマネージャーを提供し、複数の動画クリップを一貫したナラティブシーケンスに配置できます。任意の動画セグメントから特定のフレームを抽出し、Send Frame to Grok機能でフレームをカスタムプロンプトと共にGrok Imagineにアップロードして、ストーリーを拡張する続編動画を生成できます。動画マージ機能はFFmpeg.js（FFmpegのWebAssembly実装）を使用し、完全にブラウザ内で実行されます。つまり、正規化、解像度マッチング、最終マージを含むすべての動画処理がローカルで行われ、サーバーへのアップロードは一切ありません。動画データは大容量バイナリの効率的な処理のためIndexedDBに保存されます。Story Mode HelperはGrok AIを単なる画像生成器からブラウザ内の完全なクリエイティブストーリーテリングプラットフォームへと変革します。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200" data-i18n="faq_8_q">Send Frame to Grokの使い方は？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_8_a">Story Mode Helperで動画セグメントを選択し、最後のフレームを表示。プロンプトを入力して送信ボタンをクリックすると、フレームがGrok Imagineにアップロードされます。</div>
-                    </div>
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200" data-i18n="faq_8_q">Send Frame to Grokの使い方は？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_8_a">Send Frame to GrokはStory Mode Helperのワークフロー機能で、既存の動画クリップと新しいGrok AI生成を橋渡しします。使用するには、まずChromeサイドパネルでStory Mode Helperを開きます。ストーリーボードから動画セグメントを選択してフレームを表示します。インタラクティブなフィルムストリップで動画をブラウズし、最後のフレームだけでなく任意のフレームを選択できます。続きを生成したいフレームを選んだら、動画の次に何が起こるべきかを説明するテキストプロンプトを入力します。送信ボタンをクリックすると、拡張機能が選択したフレーム画像とプロンプトをGrok Imagineに自動的にアップロードします。Grokはそのフレームから視覚的に続く新しい動画を生成します。生成された動画はストーリーボードに追加してさらなる編集やマージが可能です。これにより、ブラウザ内で完全にAI生成の長編動画ナラティブを構築するシームレスな反復ワークフローが実現します。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200" data-i18n="faq_9_q">動画マージはローカルですか、クラウドですか？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_9_a">完全にローカル。WebAssembly FFmpegを使用し、すべての動画処理はブラウザ内で完結。サーバーへのアップロードなし。</div>
-                    </div>
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200" data-i18n="faq_9_q">動画マージはローカルですか、クラウドですか？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_9_a">GrokMediaDownloaderでのすべての動画マージは完全にブラウザ内のローカルで実行されます。拡張機能はFFmpeg.js（業界標準FFmpeg動画処理ライブラリのWebAssembly（WASM）コンパイル版）を使用しています。つまり、FFmpegのフルパワーがChromeブラウザ内でクライアントサイドコードとして直接実行され、動画データが外部サーバーやクラウドサービスにアップロードされることは一切ありません。Story Mode Helperで動画をマージする際、FFmpeg.jsエンジンがブラウザのメモリ内で動画の正規化、解像度調整、フレームレートマッチング、最終結合をすべて処理します。動画ブロブは処理中にIndexedDBに一時保存されます。このアプローチにより、クリエイティブコンテンツがデバイスから出ることがないため、完全なプライバシーが保証されます。Kario LLCが公開するGrokMediaDownloaderは、ゼロサーバーアーキテクチャで設計されています。Chrome Web Storeで8,000人以上のユーザーと4.2/5の評価を得ているこの拡張機能は、すべてをクライアントサイドで処理します。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200">Storyboardの「Master」とは？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            Storyboardの最初の動画がMasterとしてマークされます。マージ時、他の動画は自動的にMasterの解像度とフレームレートに合わせて調整され、一貫した出力品質が保証されます。
-                        </div>
-                    </div>
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200">Storyboardの「Master」とは？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">GrokMediaDownloaderのStory Mode Helperにおいて、Masterの指定はストーリーボードシーケンスの最初の動画クリップに割り当てられます。Master動画はマージ出力全体の基準となります。マージプロセスを開始すると、ストーリーボード内の他のすべての動画クリップは自動的にMasterの仕様に合わせて解像度とフレームレートが調整されます。これにより、最終的なマージ動画全体で一貫した視覚品質が保たれ、異なるサイズや速度のクリップ間での不自然なトランジションを防ぎます。例えば、Masterが1080p・24fpsの動画の場合、すべての後続クリップはマージ前にFFmpeg.jsを使ってその正確な仕様に正規化されます。ストーリーボードをドラッグ＆ドロップで並び替えることでMasterを変更できます。最高品質のクリップをMasterとして選ぶことが最良の出力結果のために推奨されます。この正規化とマージプロセス全体がWebAssemblyを通じてローカルで実行され、クラウド処理は一切関与しません。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200">動画のストレージ容量に制限はありますか？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            IndexedDBを使用して動画データを保存しています。容量はブラウザの設定により、通常数百MBから数GBまで保存可能です。サイドパネルで現在のストレージ使用量を確認できます。
-                        </div>
-                    </div>
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200">動画のストレージ容量に制限はありますか？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">GrokMediaDownloaderはStory Mode Helperの動画データを保存するためにIndexedDB（ブラウザネイティブのデータベース）を使用しています。ストレージ容量はブラウザの設定と利用可能なディスク容量に依存します。最新のChrome環境では通常、追加の許可を求める前にIndexedDBは数百MBから数GBのストレージを使用できます。サイドパネルインターフェースに現在のストレージ使用量がリアルタイムで表示されるため、ストーリーボード動画がどれだけの容量を消費しているかを監視できます。ストレージ制限に近づいた場合は、完成したプロジェクトをエクスポートし古い動画データをクリアして空き容量を確保できます。IndexedDBが他のストレージ方法ではなく特に選ばれた理由は、動画ファイルのような大きなバイナリブロブをブラウザのパフォーマンスを低下させることなく効率的に処理できるためです。GrokMediaDownloaderのすべての処理はManifest V3アーキテクチャによりクライアントサイドで行われるため、動画データがローカルブラウザストレージから出ることは決してありません。</div>
+                    </details>
                 </div>
             </div>
 
             <!-- Category: v2.2 New Features -->
             <div class="mb-12">
-                <h2 class="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2">
-                    <i data-lucide="sparkles" class="w-5 h-5"></i>
-                    v2.2 機能
-                </h2>
-
+                <h2 class="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2"><i data-lucide="sparkles" class="w-5 h-5"></i>v2.2 機能</h2>
                 <div class="space-y-4">
-                    <div class="bg-slate-900 border border-pink-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200" data-i18n="faq_12_q">Video Gen Queueとは？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_12_a">Video Gen Queueはv2.2の新機能です。サイドパネルの自動動画生成スケジューリングシステムで、複数の動画生成タスクをバッチ追加可能。Custom/Normal/Fun/Spicyモードに対応。無料版は50回、PRO版は無制限です。</div>
-                    </div>
+                    <details class="bg-slate-900 border border-pink-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200" data-i18n="faq_12_q">Video Gen Queueとは？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_12_a">Video Gen QueueはGrokMediaDownloader v2.2で導入された自動動画生成スケジューリングシステムで、Chromeのサイドパネルからアクセスできます。複数の動画生成タスクをキューに追加し、手動操作なしで順次処理させることができます。投稿ページのフローティングボタンで個別に追加したり、最近の投稿から一括追加することも可能です。Custom、Normal、Fun、Spicyの4つの生成モードをサポートし、各生成動画のクリエイティブスタイルをコントロールできます。Video Gen QueueにはGrokのモデレーションシステムが生成を拒否した際の自動リトライを含むスマートエラーハンドリングが搭載され、レート制限（HTTP 429）レスポンスを検出して自動一時停止する機能でスロットリングを回避します。キューはMAIN worldのTipTap統合を使ってGrokのエディターインターフェースと直接やり取りします。無料版は50回使用可能で、$4.99のPRO永久ライセンスで本格的なクリエイター向けに無制限使用が解放されます。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-teal-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200" data-i18n="faq_13_q">Project-Based Downloadとは？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_13_a">Project-Based Downloadはダウンロード前に自動スキャンして統計情報（画像/動画数、HD/SD内訳）を表示し、日付とプロンプトでプロジェクトフォルダ（{日付}_{プロンプト}/）を自動作成します。PRO限定機能です。</div>
-                    </div>
+                    <details class="bg-slate-900 border border-teal-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200" data-i18n="faq_13_q">Project-Based Downloadとは？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_13_a">Project-Based DownloadはGrokMediaDownloader v2.2で導入された整理機能で、ダウンロードを構造化されたプロジェクトフォルダに自動的にグループ分けします。ダウンロード前にメディアをスキャンし、画像数、動画数、HDとSDの内訳を含む包括的なダウンロード前統計を表示します。ダウンロードを進めると、{日付}_{プロンプト}のパターンでプロジェクトフォルダが自動作成されます。日付はメディアが作成された日、プロンプトは生成時に使用したテキストです。各プロジェクトフォルダにはダウンロードされたメディアの詳細情報を含むmetadata.jsonファイルも含まれます。これにより、Grok AIでの創作物が1つのフォルダにまとめて放り込まれるのではなく、プロジェクトごとに整理整頓されます。Project-Based Downloadは$4.99の永久ライセンスで利用できるPRO限定機能です。GrokMediaDownloaderの他の一括ダウンロード機能と連携し、プロジェクト間の重複を防ぐ既存のダウンロード履歴システムと統合されています。</div>
+                    </details>
                 </div>
             </div>
 
             <!-- Category: v2.3 New Features -->
             <div class="mb-12">
-                <h2 class="text-xl font-bold text-amber-400 mb-6 flex items-center gap-2">
-                    <i data-lucide="sparkles" class="w-5 h-5"></i>
-                    v2.3 新機能
-                </h2>
-
+                <h2 class="text-xl font-bold text-amber-400 mb-6 flex items-center gap-2"><i data-lucide="sparkles" class="w-5 h-5"></i>v2.3 新機能</h2>
                 <div class="space-y-4">
-                    <div class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200" data-i18n="faq_14_q">タグ別ダウンロードとは？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_14_a">タグ別ダウンロードでは、特定のGrokタグ（フォルダ）からメディアをダウンロードできます。フィルターセクションで「タグでダウンロード」を選択し、ドロップダウンからタグを選んで、その中のすべてのメディアをダウンロード。タグごとに独立したダウンロード履歴があり、ファイルはgrok_downloads/tags/{タグ名}/に整理されます。PRO限定機能。</div>
-                    </div>
+                    <details class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200" data-i18n="faq_14_q">タグ別ダウンロードとは？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_14_a">タグ別ダウンロードはGrokMediaDownloader v2.3で導入された機能で、Grokのタグ（フォルダ）システムに基づいてメディアをダウンロードできます。すべてのお気に入りを一度にダウンロードする代わりに、フィルターセクションで「タグでダウンロード」を選択し、ドロップダウンメニューからタグを選んで特定のタグをターゲットにできます。拡張機能は選択したタグ内のすべてのメディアをスキャンしてダウンロードします。各タグは独自の独立したダウンロード履歴を維持するため、タグ間の重複を心配せずに異なるタグのダウンロードを再実行できます。ダウンロードされたファイルはコンピューター上のgrok_downloads/tags/{タグ名}/に自動的に整理され、各タグのメディアがきちんと分離されます。Grokのタグシステムを使って異なるプロジェクト、テーマ、キャラクターコレクションを整理するクリエイターに特に便利です。タグ別ダウンロードは$4.99永久ライセンスに含まれるPRO限定機能です。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-violet-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200" data-i18n="faq_15_q">カスタムファイル名テンプレートとは？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_15_a">カスタムファイル名テンプレートでは3つの命名方法を選択できます：Grokネイティブ（元のフォーマット）、プロンプトベース（プロンプトテキストを使用）、またはカスタム（{date}、{datetime}、{prompt}、{quality}等のトークンを使用する自由なテンプレート）。全ユーザーが利用可能。以前「プロンプトをファイル名に」を使用していた場合、設定は自動的に移行されます。</div>
-                    </div>
+                    <details class="bg-slate-900 border border-violet-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200" data-i18n="faq_15_q">カスタムファイル名テンプレートとは？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_15_a">カスタムファイル名テンプレートはGrokMediaDownloader v2.3で導入された機能で、ダウンロードファイルの命名に3つの柔軟な方法を提供します。最初のオプションはGrokネイティブで、Grokが割り当てた元のファイル名形式を保持します。2番目はプロンプトベースで、生成プロンプトテキストをファイル名として使用し簡単に識別できます。3番目はカスタムで、{date}、{datetime}、{prompt}、{quality}などのトークンを使った自由形式のテンプレートを作成でき、ダウンロード時に動的に置換されます。例えば、{date}_{prompt}_{quality}というテンプレートは20260409_sunset-landscape_HD.jpgのようなファイル名を生成します。この機能は無料版・PRO版の全ユーザーが利用可能です。以前の「プロンプトをファイル名に」設定を使用していた場合、テンプレートシステムの新しいプロンプトベースオプションに自動的に移行されます。カスタムファイル名テンプレートは一括ダウンロード、Stream Capture、タグ別ダウンロードを含むすべてのダウンロードモードで機能します。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200" data-i18n="faq_16_q">Story ModeのFrame Lockとは？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_16_a">Frame LockはStory Modeの強化機能です。続編動画を生成する際、インタラクティブなフィルムストリップで任意のフレームを選択できます（最後のフレームだけでなく）。選択されたフレームは生成後にオレンジ色のインジケーターでロックされます。エクスポート時、FFmpegがロックされたフレームで自動的にトリミングし、重複を防ぎ、クリップ間のシームレスな遷移を実現します。</div>
-                    </div>
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200" data-i18n="faq_16_q">Story ModeのFrame Lockとは？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_16_a">Frame LockはGrokMediaDownloader v2.3で導入されたStory Modeの強化機能で、動画の続行ポイントを正確にコントロールできます。Send Frame to Grokで続編動画を生成する際、デフォルトの最後のフレームだけでなく、インタラクティブなフィルムストリップで動画クリップの任意のフレームを選択できるようになりました。これにより、Grokに続きを作ってほしい正確な視覚的瞬間を選べます。フレームを送信しGrokが続編動画を生成した後、選択されたフレームはフィルムストリップ上にオレンジ色のインジケーターでロックされ、トランジションポイントが示されます。最終動画をエクスポートまたはマージする際、FFmpeg.jsがロックされたフレーム位置でソースクリップを自動的にトリミングします。これにより連続するクリップ間の重複や繰り返しコンテンツが防止され、マージされたストーリーボード出力でシームレスな視覚的トランジションが実現します。Frame Lockは以前必要だった手動トリミングを排除します。</div>
+                    </details>
                 </div>
             </div>
 
             <!-- Category: License -->
             <div class="mb-12">
-                <h2 class="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2" data-i18n="faq_cat_license">ライセンス<i data-lucide="key" class="w-5 h-5"></i>
-                    ライセンス
-                </h2>
-
+                <h2 class="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2" data-i18n="faq_cat_license"><i data-lucide="key" class="w-5 h-5"></i>ライセンス</h2>
                 <div class="space-y-4">
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200" data-i18n="faq_5_q">無料版では何ができますか？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_5_a">お気に入り画像の分析とダウンロードが可能。その他の機能はPro版で提供。</div>
-                    </div>
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200" data-i18n="faq_5_q">無料版では何ができますか？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_5_a">GrokMediaDownloaderの無料版はGrok AIユーザーに必須のメディア管理機能を提供します。Generate Listを使ってGrokのお気に入りページをスキャンし、完全な一括ダウンロードサポートで画像をダウンロードできます。無料版にはBasic Stream Capture機能と、FFmpeg.js WebAssemblyによるコアストーリーボードと動画マージ機能を備えたStory Mode Helperへのアクセスも含まれています。Video Gen Queueは50回まで利用可能です。カスタムファイル名テンプレートの3つの命名モードもすべて無料版に含まれています。ただし、高度な機能にはPROライセンスが必要です。対象となるのは、ターゲットダウンロード用のOnly After日付フィルター、自動動画品質向上用のHD Upgrade、整理されたフォルダ構造用のProject-Based Download、タグ別メディア取得用のタグ別ダウンロード、クロスデバイス履歴転送用のExport/Import Data、および無制限のVideo Gen Queue使用です。PROの永久ライセンスはLemon Squeezyで$4.99の一回払いです。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200" data-i18n="faq_4_q">永久ライセンスの範囲は？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_4_a">1つのChromeアカウントで利用可能、最大3回の再インストール（PC買い替えなど）に対応。</div>
-                    </div>
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200" data-i18n="faq_4_q">永久ライセンスの範囲は？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_4_a">GrokMediaDownloader PRO永久ライセンスはLemon Squeezy決済プラットフォームでの$4.99の一回購入で、サブスクリプションや定期的な課金はありません。ライセンスキーは1つのChromeアカウントに紐付けられ、新しいコンピューターへの切り替え、ドライブのフォーマット、Chromeの再インストールなどのシナリオに対応して最大3回の再インストールが可能です。購入後、メールでライセンスキーが届き、拡張機能のポップアップパネルに入力するとPRO機能が即座にアクティベートされます。永久とは、追加費用なしで将来のすべての機能アップデートを受け取れることを意味します。例えば、v2.0のStory Mode Helper、v2.2のVideo Gen Queue、v2.3のタグ別ダウンロードはすべて既存のPROユーザーに自動的に提供されました。Kario LLCが公開するこの拡張機能はChrome Web Storeで8,000人以上のユーザーに信頼され、4.2/5の評価を得ています。ライセンスのサポートが必要な場合は、このページ下部のサポートリンクからお問い合わせください。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200">ライセンスキーの入力方法は？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            購入後、ライセンスキーが届きます。拡張機能のポップアップパネルを開き、下部にある「Activate PRO」または「License」入力欄にキーを貼り付けて有効化してください。
-                        </div>
-                    </div>
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200">ライセンスキーの入力方法は？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">Lemon Squeezyで$4.99のGrokMediaDownloader PRO永久ライセンスを購入後、メールでライセンスキーが届きます。ライセンスをアクティベートするには、ChromeツールバーのGrokMediaDownloader拡張機能アイコンをクリックしてポップアップパネルを開きます。ポップアップの下部までスクロールすると、「Activate PRO」または「License」と表示された入力欄があります。ライセンスキーをこの欄に貼り付けてアクティベートボタンをクリックします。拡張機能がオンラインでキーを検証し、HD Upgrade、Only After日付フィルター、Project-Based Download、タグ別ダウンロード、Export/Import Data、無制限Video Gen Queueを含むすべてのPRO機能が即座にアンロックされます。アクティベーションプロセスはわずか数秒で完了します。ライセンスはChromeアカウントに紐付けられているため、新しいデバイスでChromeにサインインした場合はキーの再入力が必要な場合があります。各ライセンス購入で最大3回の再インストールが可能です。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200">返金は可能ですか？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            解決できない技術的問題が発生した場合は、ページ下部の「サポートに連絡」からお問い合わせください。返金ポリシーはLemon Squeezyプラットフォームのガイドラインに従います。
-                        </div>
-                    </div>
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200">返金は可能ですか？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">トラブルシューティングで解決できないGrokMediaDownloaderの技術的問題が発生した場合、喜んでご懸念に対応いたします。このページ下部の「サポートに連絡」ボタンまたはChrome Web Storeリストのサポートリンクからサポートチームにお問い合わせください。Kario LLCが公開する当チームが、お客様が経験している技術的問題の診断と修正に協力いたします。返金ポリシーはGrokMediaDownloader PROライセンス購入に使用される決済プロセッサーであるLemon Squeezyプラットフォームのガイドラインに従います。Lemon Squeezyは購入者保護を提供し、返金リクエストを含むすべての支払い関連事項を処理します。多くの問題は迅速に解決できるため、返金をリクエストする前にまずサポートにご連絡いただくことをお勧めします。GrokMediaDownloaderは8,000人以上のユーザーに4.2/5の評価で信頼されており、すべてのユーザーに良い体験を確保することが当社の目標です。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200">将来のアップデートは追加料金が必要ですか？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            いいえ！PRO永久版にはすべての将来の機能アップデートが含まれています。v2.0のStory Mode Helperは無料アップデートの一例であり、将来の新機能も自動的にライセンスに含まれます。
-                        </div>
-                    </div>
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200">将来のアップデートは追加料金が必要ですか？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">いいえ、GrokMediaDownloader PRO永久ライセンスには追加費用なしで将来のすべての機能アップデートが含まれています。$4.99の一回購入で、現在および今後のすべてのPRO機能への永久アクセスが得られます。これは複数の主要アップデートで実証されています：v2.0リリースではFFmpeg.js WebAssemblyによる動画マージを備えたStory Mode Helperが追加され、v2.2ではVideo Gen QueueとProject-Based Downloadが導入され、v2.3ではタグ別ダウンロード、カスタムファイル名テンプレート、Frame Lockが加わりました。これらすべての機能は追加支払いなしで既存のPROユーザーに自動的に提供されました。Kario LLCが公開するGrokMediaDownloaderは、アーリーアダプターや忠実なユーザーに報いるために特に永久ライセンスモデルを採用しています。Grok AIメディア管理の新機能で進化し続ける中、一回の購入で常にフル機能セットにアクセスできます。現在Chrome Web Storeで8,000人以上のユーザーにサービスを提供しています。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
-                            <span class="font-medium text-slate-200" data-i18n="faq_11_q">Lemon Squeezyとは？決済は安全ですか？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            <span data-i18n="faq_11_a">Lemon Squeezyはデジタル製品向けに設計された国際的に信頼される決済プラットフォームで、数万の企業に利用されています。すべての取引はSSL暗号化され、PCI DSS準拠。クレジットカード情報は当方では一切取り扱わず、Lemon Squeezyが直接処理します。</span>
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none"><span class="font-medium text-slate-200" data-i18n="faq_11_q">Lemon Squeezyとは？決済は安全ですか？</span><i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i></summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
+                            <span data-i18n="faq_11_a">Lemon Squeezyはデジタル製品向けに特化した世界的に信頼される決済プラットフォームで、世界中の数万の企業に利用されています。GrokMediaDownloaderはLemon Squeezyを使ってすべてのPROライセンス購入を安全に処理しています。すべての取引はSSL暗号化で保護され、PCI DSS（Payment Card Industry Data Security Standard）に完全準拠しています。これは最高レベルの決済セキュリティ認証です。クレジットカード情報はLemon Squeezyの安全なインフラストラクチャで完全に処理され、GrokMediaDownloaderの開発元であるKario LLCがお客様の支払い情報にアクセスすることは一切ありません。チェックアウトプロセスは主要なクレジットカード、PayPal、地域に応じたその他の支払い方法をサポートしています。支払い完了後、ライセンスキーがメールに即時配信されます。Lemon Squeezyは購入者保護、注文管理、支払い関連の質問への直接カスタマーサポートも提供しています。</span>
                             <a href="https://www.lemonsqueezy.com" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300 underline ml-1" data-i18n="price_secure_link">詳しく見る</a>
                         </div>
-                    </div>
+                    </details>
                 </div>
             </div>
 

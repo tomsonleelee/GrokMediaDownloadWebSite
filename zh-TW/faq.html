@@ -76,24 +76,27 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type": "Question", "name": "Generate List 有什麼功能？", "acceptedAnswer": {"@type": "Answer", "text": "這是一個智慧掃描功能。點擊 Grok/Imagine/Favorites，它會自動讀取頁面、找到所有媒體檔案、篩除已下載的，生成待下載清單。"}},
-        {"@type": "Question", "name": "「Only after」日期過濾是什麼？", "acceptedAnswer": {"@type": "Answer", "text": "PRO 專屬功能。當你有數千張圖片時，設定日期只下載「今天」或「本週」的新作品。"}},
-        {"@type": "Question", "name": "Stream Capture 和 Generate List 有什麼差別？", "acceptedAnswer": {"@type": "Answer", "text": "Generate List 掃描你的收藏清單。Stream Capture 是持續監控，在你生成新圖片時自動捕獲。"}},
-        {"@type": "Question", "name": "HD Upgrade 如何運作？", "acceptedAnswer": {"@type": "Answer", "text": "Grok 可能儲存低解析度預覽。HD Upgrade 自動偵測並向 Grok 請求 1080p 高畫質版本。如果 HD 影片已存在，不會重複請求。"}},
-        {"@type": "Question", "name": "更換電腦後，歷程紀錄還在嗎？", "acceptedAnswer": {"@type": "Answer", "text": "預設情況下，歷程紀錄儲存在本地。PRO 用戶可以使用 Export/Import Data 備份和還原。"}},
-        {"@type": "Question", "name": "什麼是 Story Mode Helper？", "acceptedAnswer": {"@type": "Answer", "text": "v2.0 的重要功能。它是一個側面板影片工作室，用於管理 Storyboard、擷取畫格、發送到 Grok 生成續集，以及本地合併輸出。"}},
-        {"@type": "Question", "name": "如何使用「發送畫格到 Grok」？", "acceptedAnswer": {"@type": "Answer", "text": "在 Story Mode Helper 中，選擇一個影片片段查看最後一幀。輸入描述下一步動作的提示詞，然後點擊發送。畫格會被上傳到 Grok Imagine。"}},
-        {"@type": "Question", "name": "影片合併是在本地還是雲端處理？", "acceptedAnswer": {"@type": "Answer", "text": "完全在本地處理。我們使用 WebAssembly FFmpeg，所有影片處理都在你的瀏覽器中完成，不會上傳到任何伺服器。"}},
-        {"@type": "Question", "name": "Storyboard 中的「Master」是什麼意思？", "acceptedAnswer": {"@type": "Answer", "text": "Storyboard 中的第一個影片被標記為 Master。合併時，其他影片會自動調整解析度和幀率以匹配 Master 的規格，確保輸出品質一致。"}},
-        {"@type": "Question", "name": "影片儲存有容量限制嗎？", "acceptedAnswer": {"@type": "Answer", "text": "我們使用 IndexedDB 儲存影片資料。容量取決於瀏覽器設定，通常從數百 MB 到數 GB。側面板會顯示目前的儲存使用量。"}},
-        {"@type": "Question", "name": "什麼是 Video Gen Queue？", "acceptedAnswer": {"@type": "Answer", "text": "Video Gen Queue 是 v2.2 的全新功能。它是側面板中的自動化影片生成排程系統。批次加入多個影片生成任務，支援 Custom/Normal/Fun/Spicy 四種模式。免費版 50 次，PRO 無限制。"}},
-        {"@type": "Question", "name": "什麼是 Project-Based Download？", "acceptedAnswer": {"@type": "Answer", "text": "Project-Based Download 會掃描並顯示下載前統計資料，然後自動建立以日期和提示詞命名的專案資料夾。PRO 專屬功能。"}},
-        {"@type": "Question", "name": "免費版有哪些功能？", "acceptedAnswer": {"@type": "Answer", "text": "免費版允許分析和下載收藏中的圖片。進階功能需要 PRO 授權。"}},
-        {"@type": "Question", "name": "終身授權的範圍是什麼？", "acceptedAnswer": {"@type": "Answer", "text": "授權碼允許在一個 Chrome 帳號安裝使用，並允許最多 3 次重新安裝（例如更換電腦或重灌系統）。"}},
-        {"@type": "Question", "name": "如何輸入授權碼？", "acceptedAnswer": {"@type": "Answer", "text": "購買後會收到授權碼。開啟擴充功能的 Popup 面板，在底部找到「Activate PRO」或「License」輸入欄位，貼上授權碼即可啟用。"}},
-        {"@type": "Question", "name": "可以退款嗎？", "acceptedAnswer": {"@type": "Answer", "text": "若遇技術問題無法解決，請透過頁面底部的「聯絡支援」與我們聯繫。退款政策依循 Lemon Squeezy 平台規範。"}},
-        {"@type": "Question", "name": "未來更新需要額外付費嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不用！PRO 終身版包含所有未來功能更新。v2.0 的 Story Mode Helper 就是一個免費更新的例子，未來的新功能也會自動包含在你的授權中。"}},
-        {"@type": "Question", "name": "什麼是 Lemon Squeezy？付款安全嗎？", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezy 是全球受信賴的數位產品付款平台。所有交易都經過 SSL 加密，符合 PCI DSS 標準。我們永遠看不到你的信用卡資訊。"}}
+        {"@type": "Question", "name": "Generate List 有什麼功能？", "acceptedAnswer": {"@type": "Answer", "text": "Generate List 是 GrokMediaDownloader 的核心批次下載功能，這款 Chrome 擴充功能已獲得超過 8,000 位用戶信賴，專門用於管理 Grok AI 媒體。當您在 Grok 收藏頁面點擊 Generate List 時，擴充功能會透過 DOM 分析對整個頁面進行智慧掃描，偵測所有圖片和影片，包括從原始圖片生成影片的子貼文。系統會自動透過檢查本地下載歷史來過濾已下載的檔案，該歷史使用防止記憶體溢出的快取機制，可處理超過 5,000 個項目而不會當機。生成的清單只顯示全新、未下載的媒體，供您批次下載。您還可以啟用 HD 優先以偏好高畫質版本、將中繼資料儲存為 JSON 檔案，或使用提示詞作為檔名。所有處理都在您的瀏覽器中 100% 客戶端完成，無需上傳到任何伺服器。"}},
+        {"@type": "Question", "name": "「Only after」日期過濾是什麼？", "acceptedAnswer": {"@type": "Answer", "text": "Only After 日期過濾器是 GrokMediaDownloader 的 PRO 專屬功能，專為在 Grok AI 上累積了大量媒體庫的進階用戶設計。當您的收藏夾包含數千張圖片和影片時，每次全部下載既不實際又浪費頻寬。這個過濾器讓您設定一個截止日期，使 Generate List 掃描只包含在該日期之後建立的媒體。例如，您可以設定為今天只下載當前工作階段中生成的內容，或設定為本週進行每週定期批次下載。這對於每天使用 Grok 並希望維持有序下載工作流程的創作者特別有用。日期過濾器與現有的重複偵測系統配合運作，讓您精確控制哪些新作品需要下載。此功能僅適用於 $4.99 的 PRO 終身授權。"}},
+        {"@type": "Question", "name": "Stream Capture 和 Generate List 有什麼差別？", "acceptedAnswer": {"@type": "Answer", "text": "Generate List 和 Stream Capture 在 GrokMediaDownloader 中服務於不同的工作流程。Generate List 是一個批次掃描工具，會讀取您的 Grok 收藏頁面，找出所有圖片和影片，過濾重複項目，並建立下載佇列。您可以在想要下載累積媒體時手動執行。相比之下，Stream Capture 是一個即時監控系統，使用 MutationObserver 監聽 DOM 中新出現的圖片。當您在 grok.com 上瀏覽和創作時，Stream Capture 會在新圖片出現在畫面上的瞬間自動偵測並加入佇列，每次工作階段最多可捕獲 1,000 張圖片。簡單來說，Generate List 是從您已儲存的收藏中進行回溯式批次下載，而 Stream Capture 則是一張即時捕獲網，能在媒體產生的當下就攔截。這兩項功能都完全在客戶端運作，不會將任何資料傳送到外部伺服器。"}},
+        {"@type": "Question", "name": "HD Upgrade 如何運作？", "acceptedAnswer": {"@type": "Answer", "text": "HD Upgrade 是 GrokMediaDownloader 中的智慧影片畫質提升功能。Grok AI 有時會儲存生成影片的低解析度預覽版本以節省頻寬。HD Upgrade 會掃描您的下載清單，自動識別那些有標準畫質預覽但伺服器上有 HD 版本可用的影片，然後向 Grok 發送請求以取得 1080p 高畫質版本。系統包含智慧重複偵測功能，如果某個影片的 HD 版本已經存在，就不會發送多餘的請求。它也能識別原生 720p SuperGrok 影片並適當跳過。整個流程在啟動後自動執行，當所有影片都已被檢查並在可能的情況下升級後便會結束。HD Upgrade 與批次下載系統整合，您可以在確認升級前先預覽掃描結果。所有影片處理都在您的 Chrome 瀏覽器中 100% 客戶端完成。"}},
+        {"@type": "Question", "name": "更換電腦後，歷程紀錄還在嗎？", "acceptedAnswer": {"@type": "Answer", "text": "預設情況下，GrokMediaDownloader 會將您的下載歷史儲存在當前電腦的 Chrome 本地儲存空間中。這意味著如果您更換到新電腦、格式化硬碟或重新安裝 Chrome，您的歷史紀錄不會自動轉移。然而，PRO 用戶可以使用 Export/Import Data 功能，將整個下載歷史匯出為檔案並在任何其他裝置上還原。這在升級電腦或維護多台工作站時進行跨裝置轉移非常實用。匯出功能會建立一個包含所有下載紀錄的可攜式資料檔案，而匯入流程則能無縫還原所有資料。由於 GrokMediaDownloader 是採用 Manifest V3 架構的 Chrome 擴充功能，100% 客戶端處理，不會將任何個人資料傳送到外部伺服器。您的歷史紀錄始終保持私密且在您的控制之下，僅儲存在本地 Chrome 儲存空間中。"}},
+        {"@type": "Question", "name": "什麼是 Story Mode Helper？", "acceptedAnswer": {"@type": "Answer", "text": "Story Mode Helper 是 GrokMediaDownloader v2.0 推出的重要功能，設計為 Chrome 側邊面板中的完整影片工作室。它提供支援拖放排序的故事板管理器，讓您將多個影片片段排列成連貫的敘事序列。您可以從任何影片片段中擷取特定畫格，並使用「發送畫格到 Grok」功能將畫格連同自訂提示詞上傳到 Grok Imagine，生成延續您故事的續集影片。影片合併功能使用 FFmpeg.js，這是 FFmpeg 的 WebAssembly 實作，完全在您的瀏覽器中運行。這意味著所有影片處理，包括標準化、解析度匹配和最終合併，都在本地完成，不會上傳任何內容到伺服器。影片資料儲存在 IndexedDB 中以有效處理大型二進位檔案。Story Mode Helper 將 Grok AI 從簡單的圖片生成器轉變為完整的創意故事講述平台，一切都在您的瀏覽器中完成。"}},
+        {"@type": "Question", "name": "如何使用「發送畫格到 Grok」？", "acceptedAnswer": {"@type": "Answer", "text": "「發送畫格到 Grok」是 Story Mode Helper 中的工作流程功能，連接您現有的影片片段和新的 Grok AI 生成。使用方法是先在 Chrome 側邊面板中開啟 Story Mode Helper，從故事板中選擇一個影片片段來檢視其畫格。您可以透過互動式膠捲瀏覽影片並選擇任意畫格，不僅限於最後一幀。選定要從哪個畫格繼續後，輸入描述影片下一步應該發生什麼的文字提示詞。點擊發送按鈕，擴充功能會自動將選定的畫格圖片連同您的提示詞上傳到 Grok Imagine。Grok 接著會生成一個從該畫格視覺上延續的新影片。生成的影片可以加回您的故事板進行進一步編輯或合併。這創造了一個無縫的迭代工作流程，完全在您的瀏覽器中建構更長的 AI 生成影片敘事。"}},
+        {"@type": "Question", "name": "影片合併是在本地還是雲端處理？", "acceptedAnswer": {"@type": "Answer", "text": "GrokMediaDownloader 中所有的影片合併都完全在您的瀏覽器本地執行。擴充功能使用 FFmpeg.js，這是業界標準 FFmpeg 影片處理庫的 WebAssembly（WASM）編譯版本。這意味著 FFmpeg 的完整功能直接在您的 Chrome 瀏覽器中作為客戶端程式碼運行，絕對不會將任何影片資料上傳到任何外部伺服器或雲端服務。當您在 Story Mode Helper 中合併影片時，FFmpeg.js 引擎會在您瀏覽器的記憶體中處理影片標準化、解析度調整、幀率匹配和最終串接。影片二進位資料在處理期間暫時儲存在 IndexedDB 中。這種方式確保了完全的隱私保護，因為您的創意內容永遠不會離開您的裝置。由 Kario LLC 發行的 GrokMediaDownloader 從一開始就採用零伺服器架構設計。這款在 Chrome Web Store 上獲得 8,000+ 用戶和 4.2/5 評分的擴充功能，所有處理都在客戶端完成。"}},
+        {"@type": "Question", "name": "Storyboard 中的「Master」是什麼意思？", "acceptedAnswer": {"@type": "Answer", "text": "在 GrokMediaDownloader 的 Story Mode Helper 中，Master 標記會指派給故事板序列中的第一個影片片段。Master 影片作為整個合併輸出的參考標準。當您啟動合併流程時，故事板中所有其他影片片段會自動調整解析度和幀率以匹配 Master 的規格。這確保了最終合併影片中一致的視覺品質，防止不同尺寸或速度的片段之間出現突兀的轉場。例如，如果您的 Master 是 1080p、24fps 的影片，所有後續片段在合併前都會使用 FFmpeg.js 標準化到這些確切的規格。您可以透過拖放重新排列故事板來更改哪個片段是 Master。建議選擇最高品質的片段作為 Master 以獲得最佳輸出結果。整個標準化和合併過程都透過 WebAssembly 在本地執行，不涉及任何雲端處理。"}},
+        {"@type": "Question", "name": "影片儲存有容量限制嗎？", "acceptedAnswer": {"@type": "Answer", "text": "GrokMediaDownloader 使用 IndexedDB（瀏覽器原生資料庫）來儲存 Story Mode Helper 的影片資料。儲存容量取決於您瀏覽器的設定和可用磁碟空間。大多數現代 Chrome 安裝允許 IndexedDB 使用從數百 MB 到數 GB 的儲存空間，超過後才會提示要求額外權限。側邊面板介面會即時顯示您目前的儲存使用量，讓您可以監控故事板影片佔用了多少空間。如果您接近儲存限制，可以匯出已完成的專案並清除較舊的影片資料以釋放空間。之所以特別選擇 IndexedDB 而非其他儲存方式，是因為它能有效處理影片檔案等大型二進位資料，而不會降低瀏覽器效能。由於 GrokMediaDownloader 中所有處理都透過其 Manifest V3 架構在客戶端完成，您的影片資料永遠不會離開本地瀏覽器儲存空間。這種設計同時確保了您創意工作的效能和隱私。"}},
+        {"@type": "Question", "name": "什麼是 Video Gen Queue？", "acceptedAnswer": {"@type": "Answer", "text": "Video Gen Queue 是 GrokMediaDownloader v2.2 推出的自動化影片生成排程系統，可透過 Chrome 側邊面板存取。它讓您將多個影片生成任務加入佇列，無需手動操作即可依序處理。您可以使用貼文頁面上的浮動按鈕逐一添加項目，或從最近的貼文批次添加。系統支援四種生成模式：Custom、Normal、Fun 和 Spicy，讓您控制每個生成影片的創意風格。Video Gen Queue 包含智慧錯誤處理，當 Grok 的審核系統拒絕生成時會自動重試，並能偵測速率限制（HTTP 429）回應並自動暫停以避免被節流。佇列使用 MAIN world TipTap 整合來直接與 Grok 的編輯器介面互動。免費版提供 50 次 Video Gen Queue 使用次數，而 $4.99 的 PRO 終身授權則為認真的創作者解鎖無限次使用。"}},
+        {"@type": "Question", "name": "什麼是 Project-Based Download？", "acceptedAnswer": {"@type": "Answer", "text": "Project-Based Download 是 GrokMediaDownloader v2.2 推出的組織功能，會自動將您的下載分組到結構化的專案資料夾中。下載前，它會掃描您的媒體並顯示完整的預下載統計資料，包括圖片數量、影片數量以及 HD 與 SD 的比例分析。當您開始下載時，系統會自動建立以 {date}_{prompt} 模式命名的專案資料夾，其中日期是媒體建立的時間，提示詞是您用來生成它的文字。每個專案資料夾還包含一個 metadata.json 檔案，記錄下載媒體的詳細資訊。這讓您的 Grok AI 創作按專案整齊組織，而非全部堆在單一資料夾中。Project-Based Download 是 PRO 專屬功能，隨 $4.99 終身授權提供。它與 GrokMediaDownloader 的其他批次下載功能並行運作，並與現有的下載歷史系統整合以防止跨專案的重複下載。"}},
+        {"@type": "Question", "name": "什麼是標籤式下載？", "acceptedAnswer": {"@type": "Answer", "text": "標籤式下載是 GrokMediaDownloader v2.3 推出的功能，讓您按照 Grok 的標籤（資料夾）系統來下載媒體。不需要一次下載所有收藏，您可以在篩選區選擇「依標籤下載」，然後從下拉選單中選取特定標籤來定向下載。擴充功能接著會掃描並下載該選定標籤內的所有媒體。每個標籤維護自己獨立的下載歷史，因此您可以對不同標籤重新執行下載，無需擔心跨標籤的重複問題。下載的檔案會自動整理在電腦的 grok_downloads/tags/{標籤名稱}/ 路徑下，保持每個標籤的媒體清楚分離。這對於使用 Grok 標籤系統來組織不同專案、主題或角色合集的創作者特別有用。標籤式下載是 PRO 專屬功能，包含在 $4.99 終身授權中，專為需要精確控制下載哪些媒體類別的用戶設計。"}},
+        {"@type": "Question", "name": "什麼是自訂檔名模板？", "acceptedAnswer": {"@type": "Answer", "text": "自訂檔名模板是 GrokMediaDownloader v2.3 推出的功能，提供三種靈活的檔案命名方式。第一個選項是 Grok 原生格式，保留 Grok 指定的原始檔名格式。第二個選項是 Prompt 命名，使用您的生成提示詞文字作為檔名以便識別。第三個選項是自訂模板，讓您使用 {date}、{datetime}、{prompt}、{quality} 等代碼建立自由格式的模板，這些代碼在下載時會動態替換。例如，{date}_{prompt}_{quality} 模板會產生像 20260409_日落風景_HD.jpg 這樣的檔名。此功能對所有用戶開放，包括免費版和 PRO 版。如果您之前使用了較早的「Prompt 作為檔名」設定，您的偏好會自動遷移到新的 Prompt 命名選項。自訂檔名模板適用於所有下載模式，包括批次下載、Stream Capture 和標籤式下載。"}},
+        {"@type": "Question", "name": "Story Mode 的 Frame Lock 是什麼？", "acceptedAnswer": {"@type": "Answer", "text": "Frame Lock 是 GrokMediaDownloader v2.3 推出的 Story Mode 增強功能，讓您精確控制影片延續點。當使用「發送畫格到 Grok」生成續集影片時，您現在可以透過互動式膠捲從影片片段中選擇任意畫格，而不僅是預設的最後一幀。這讓您可以選擇希望 Grok 從哪個確切的視覺時刻開始延續。在您發送畫格並且 Grok 生成續集影片後，選定的畫格會在膠捲上以橘色指示器鎖定，標記轉場點的位置。當您匯出或合併最終影片時，FFmpeg.js 會自動在鎖定畫格位置裁剪來源片段。這可以防止連續片段之間出現重疊或重複的內容，確保合併的故事板輸出中有無縫的視覺轉場。Frame Lock 消除了之前需要的手動裁剪，使迭代式影片創作工作流程對故事創作者來說顯著更加順暢。"}},
+        {"@type": "Question", "name": "免費版有哪些功能？", "acceptedAnswer": {"@type": "Answer", "text": "GrokMediaDownloader 的免費版為 Grok AI 用戶提供基本的媒體管理功能。您可以使用 Generate List 掃描 Grok 收藏頁面並支援完整批次下載圖片。免費版還包含基本的 Stream Capture 功能，以及搭載 FFmpeg.js WebAssembly 核心故事板和影片合併功能的 Story Mode Helper。Video Gen Queue 可使用 50 次。自訂檔名模板的三種命名模式也包含在免費版中。然而，進階功能需要 PRO 授權，包括 Only After 日期過濾器用於定向下載、HD Upgrade 用於自動影片畫質提升、Project-Based Download 用於組織化資料夾結構、標籤式下載用於特定標籤的媒體擷取、Export/Import Data 用於跨裝置歷史轉移，以及無限次 Video Gen Queue 使用。PRO 終身授權是透過 Lemon Squeezy 一次性支付 $4.99，無後續費用。"}},
+        {"@type": "Question", "name": "終身授權的範圍是什麼？", "acceptedAnswer": {"@type": "Answer", "text": "GrokMediaDownloader PRO 終身授權是透過 Lemon Squeezy 支付平台一次性購買 $4.99，沒有訂閱或定期收費。授權碼綁定一個 Chrome 帳號，允許最多 3 次重新安裝，適用於更換新電腦、格式化硬碟或重新安裝 Chrome 等情境。購買後，您會透過電子郵件收到授權碼，在擴充功能的彈出面板中輸入即可立即啟用 PRO 功能。終身的意思是您無需額外費用即可獲得所有未來的功能更新。例如，v2.0 的 Story Mode Helper、v2.2 的 Video Gen Queue 和 v2.3 的標籤式下載都自動提供給現有的 PRO 用戶。由 Kario LLC 發行，這款擴充功能在 Chrome Web Store 上獲得 8,000+ 用戶信賴，擁有 4.2/5 的評分。如果您的授權需要支援，請透過本頁底部的支援連結聯繫我們的團隊。"}},
+        {"@type": "Question", "name": "如何輸入授權碼？", "acceptedAnswer": {"@type": "Answer", "text": "透過 Lemon Squeezy 購買 $4.99 的 GrokMediaDownloader PRO 終身授權後，您會透過電子郵件收到授權碼。要啟用授權，請點擊 Chrome 工具列中的 GrokMediaDownloader 擴充功能圖示開啟彈出面板。捲動到彈出面板底部，您會找到標示為「Activate PRO」或「License」的輸入欄位。將您的授權碼貼上到此欄位並點擊啟用按鈕。擴充功能會在線上驗證您的授權碼，並立即解鎖所有 PRO 功能，包括 HD Upgrade、Only After 日期過濾器、Project-Based Download、標籤式下載、Export/Import Data 和無限次 Video Gen Queue。啟用過程只需幾秒鐘。您的授權綁定您的 Chrome 帳號，因此如果您在新裝置上登入 Chrome，可能需要重新輸入授權碼。每次購買允許最多三次重新安裝。"}},
+        {"@type": "Question", "name": "可以退款嗎？", "acceptedAnswer": {"@type": "Answer", "text": "如果您遇到無法透過疑難排解解決的 GrokMediaDownloader 技術問題，我們很樂意協助處理您的疑慮。請使用本頁底部的「聯絡支援」按鈕或透過 Chrome Web Store 列表中的支援連結聯繫我們的支援團隊。由 Kario LLC 發行的我們的團隊將與您合作診斷和修復您遇到的任何技術問題。退款政策遵循 Lemon Squeezy 平台指南，這是 GrokMediaDownloader PRO 授權購買所使用的支付處理器。Lemon Squeezy 提供買家保護並處理所有與支付相關的事務，包括退款請求。我們鼓勵您在請求退款之前先聯繫支援，因為許多問題可以快速解決。GrokMediaDownloader 獲得超過 8,000 位用戶信賴，擁有 4.2/5 的評分，我們的目標是確保每位用戶都能有良好的使用體驗。"}},
+        {"@type": "Question", "name": "未來更新需要額外付費嗎？", "acceptedAnswer": {"@type": "Answer", "text": "不需要，GrokMediaDownloader PRO 終身授權包含所有未來的功能更新，無需額外費用。當您購買一次性 $4.99 的授權時，您就獲得了對所有當前和即將推出的 PRO 功能的永久存取權。這已經透過多次重大更新得到驗證：v2.0 版本新增了搭載 FFmpeg.js WebAssembly 影片合併的 Story Mode Helper，v2.2 推出了 Video Gen Queue 和 Project-Based Download，v2.3 帶來了標籤式下載、自訂檔名模板和 Frame Lock。所有這些功能都自動提供給現有的 PRO 用戶，無需任何額外付款。由 Kario LLC 發行，GrokMediaDownloader 採用終身授權模式，專門為獎勵早期採用者和忠實用戶。隨著擴充功能持續為 Grok AI 媒體管理進化新功能，您的一次性購買確保您始終能存取完整的功能組合。目前在 Chrome Web Store 上服務超過 8,000 位用戶。"}},
+        {"@type": "Question", "name": "什麼是 Lemon Squeezy？付款安全嗎？", "acceptedAnswer": {"@type": "Answer", "text": "Lemon Squeezy 是一家專為數位產品設計的全球受信賴支付平台，被全球數萬家企業使用。GrokMediaDownloader 使用 Lemon Squeezy 來安全處理所有 PRO 授權購買。每筆交易都受到 SSL 加密保護，並完全符合 PCI DSS（支付卡產業資料安全標準），這是最高等級的支付安全認證。您的信用卡資訊完全由 Lemon Squeezy 的安全基礎設施處理，GrokMediaDownloader 的開發商 Kario LLC 永遠無法存取您的支付資訊。結帳流程支援主要的信用卡、PayPal 和其他支付方式（取決於您的地區）。成功付款後，您的授權碼會即時寄送到您的電子郵件。Lemon Squeezy 還提供買家保護、訂單管理和直接的客戶支援來處理任何與支付相關的問題。這確保了 $4.99 PRO 終身授權的安全透明購買體驗。"}}
       ]
     }
     </script>
@@ -134,6 +137,9 @@
         ::-webkit-scrollbar-track { background: #0f172a; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        details summary::-webkit-details-marker { display: none; }
+        details summary { list-style: none; }
+        details[open] .faq-chevron { transform: rotate(180deg); }
     </style>
 </head>
 
@@ -168,55 +174,45 @@
                 </h2>
 
                 <div class="space-y-4">
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_1_q">Generate List 按鈕是做什麼的？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_1_a">
-                            這是一個智慧掃描功能。在 Grok/Imagine/Favorites 點擊後，Extension 會讀取頁面，找出所有圖片與影片，並自動過濾掉已下載過的檔案，生成「待下載清單」。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_1_a">Generate List 是 GrokMediaDownloader 的核心批次下載功能，這款 Chrome 擴充功能已獲得超過 8,000 位用戶信賴，專門用於管理 Grok AI 媒體。當您在 Grok 收藏頁面點擊 Generate List 時，擴充功能會透過 DOM 分析對整個頁面進行智慧掃描，偵測所有圖片和影片，包括從原始圖片生成影片的子貼文。系統會自動透過檢查本地下載歷史來過濾已下載的檔案，該歷史使用防止記憶體溢出的快取機制，可處理超過 5,000 個項目而不會當機。生成的清單只顯示全新、未下載的媒體，供您批次下載。您還可以啟用 HD 優先以偏好高畫質版本、將中繼資料儲存為 JSON 檔案，或使用提示詞作為檔名。所有處理都在您的瀏覽器中 100% 客戶端完成，無需上傳到任何伺服器。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_2_q">什麼是 "Only after" 日期過濾？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_2_a">
-                            這是 PRO 版的獨家功能。當您累積了數千張圖片時，可設定日期只下載「今天」或「本週」生成的新圖。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_2_a">Only After 日期過濾器是 GrokMediaDownloader 的 PRO 專屬功能，專為在 Grok AI 上累積了大量媒體庫的進階用戶設計。當您的收藏夾包含數千張圖片和影片時，每次全部下載既不實際又浪費頻寬。這個過濾器讓您設定一個截止日期，使 Generate List 掃描只包含在該日期之後建立的媒體。例如，您可以設定為今天只下載當前工作階段中生成的內容，或設定為本週進行每週定期批次下載。這對於每天使用 Grok 並希望維持有序下載工作流程的創作者特別有用。日期過濾器與現有的重複偵測系統配合運作，讓您精確控制哪些新作品需要下載。此功能僅適用於 $4.99 的 PRO 終身授權。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_6_q">Stream Capture 與 Generate List 有什麼不同？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_6_a">
-                            Generate List 是掃描 Favorite List。Stream Capture 是持續監聽模式，會自動捕獲您生成的新圖片。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_6_a">Generate List 和 Stream Capture 在 GrokMediaDownloader 中服務於不同的工作流程。Generate List 是一個批次掃描工具，會讀取您的 Grok 收藏頁面，找出所有圖片和影片，過濾重複項目，並建立下載佇列。您可以在想要下載累積媒體時手動執行。相比之下，Stream Capture 是一個即時監控系統，使用 MutationObserver 監聽 DOM 中新出現的圖片。當您在 grok.com 上瀏覽和創作時，Stream Capture 會在新圖片出現在畫面上的瞬間自動偵測並加入佇列，每次工作階段最多可捕獲 1,000 張圖片。簡單來說，Generate List 是從您已儲存的收藏中進行回溯式批次下載，而 Stream Capture 則是一張即時捕獲網，能在媒體產生的當下就攔截。這兩項功能都完全在客戶端運作，不會將任何資料傳送到外部伺服器。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_10_q">HD Upgrade 是如何運作的？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_10_a">
-                            Grok 預設存儲的影片可能是低解析度預覽版。HD Upgrade 會自動偵測並向 Grok 發送請求取得 1080p 高畫質版本。如果已經產生 HD 影片，將不會重複發送，若全部影片都已經是 HD 畫質則會自動結束。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_10_a">HD Upgrade 是 GrokMediaDownloader 中的智慧影片畫質提升功能。Grok AI 有時會儲存生成影片的低解析度預覽版本以節省頻寬。HD Upgrade 會掃描您的下載清單，自動識別那些有標準畫質預覽但伺服器上有 HD 版本可用的影片，然後向 Grok 發送請求以取得 1080p 高畫質版本。系統包含智慧重複偵測功能，如果某個影片的 HD 版本已經存在，就不會發送多餘的請求。它也能識別原生 720p SuperGrok 影片並適當跳過。整個流程在啟動後自動執行，當所有影片都已被檢查並在可能的情況下升級後便會結束。HD Upgrade 與批次下載系統整合，您可以在確認升級前先預覽掃描結果。所有影片處理都在您的 Chrome 瀏覽器中 100% 客戶端完成。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_3_q">我換了電腦，下載紀錄還在嗎？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_3_a">
-                            預設情況下紀錄存在瀏覽器本地。PRO 用戶可使用 Export/Import Data 功能備份和恢復紀錄。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_3_a">預設情況下，GrokMediaDownloader 會將您的下載歷史儲存在當前電腦的 Chrome 本地儲存空間中。這意味著如果您更換到新電腦、格式化硬碟或重新安裝 Chrome，您的歷史紀錄不會自動轉移。然而，PRO 用戶可以使用 Export/Import Data 功能，將整個下載歷史匯出為檔案並在任何其他裝置上還原。這在升級電腦或維護多台工作站時進行跨裝置轉移非常實用。匯出功能會建立一個包含所有下載紀錄的可攜式資料檔案，而匯入流程則能無縫還原所有資料。由於 GrokMediaDownloader 是採用 Manifest V3 架構的 Chrome 擴充功能，100% 客戶端處理，不會將任何個人資料傳送到外部伺服器。您的歷史紀錄始終保持私密且在您的控制之下，僅儲存在本地 Chrome 儲存空間中。</div>
+                    </details>
                 </div>
             </div>
 
@@ -228,55 +224,45 @@
                 </h2>
 
                 <div class="space-y-4">
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_7_q">什麼是 Story Mode Helper？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_7_a">
-                            這是 v2.0 的重磅功能。它是一個側邊面板影片工作室，讓您可以管理 Storyboard、擷取畫格、發送到 Grok 生成續集影片，並在本地合併輸出。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_7_a">Story Mode Helper 是 GrokMediaDownloader v2.0 推出的重要功能，設計為 Chrome 側邊面板中的完整影片工作室。它提供支援拖放排序的故事板管理器，讓您將多個影片片段排列成連貫的敘事序列。您可以從任何影片片段中擷取特定畫格，並使用「發送畫格到 Grok」功能將畫格連同自訂提示詞上傳到 Grok Imagine，生成延續您故事的續集影片。影片合併功能使用 FFmpeg.js，這是 FFmpeg 的 WebAssembly 實作，完全在您的瀏覽器中運行。這意味著所有影片處理，包括標準化、解析度匹配和最終合併，都在本地完成，不會上傳任何內容到伺服器。影片資料儲存在 IndexedDB 中以有效處理大型二進位檔案。Story Mode Helper 將 Grok AI 從簡單的圖片生成器轉變為完整的創意故事講述平台，一切都在您的瀏覽器中完成。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_8_q">如何使用 Send Frame to Grok 功能？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_8_a">
-                            在 Story Mode Helper 中選擇一個影片片段，系統會顯示其最後一幀。輸入提示詞描述下一個動作，點擊發送按鈕，系統會自動將畫格上傳到 Grok Imagine。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_8_a">「發送畫格到 Grok」是 Story Mode Helper 中的工作流程功能，連接您現有的影片片段和新的 Grok AI 生成。使用方法是先在 Chrome 側邊面板中開啟 Story Mode Helper，從故事板中選擇一個影片片段來檢視其畫格。您可以透過互動式膠捲瀏覽影片並選擇任意畫格，不僅限於最後一幀。選定要從哪個畫格繼續後，輸入描述影片下一步應該發生什麼的文字提示詞。點擊發送按鈕，擴充功能會自動將選定的畫格圖片連同您的提示詞上傳到 Grok Imagine。Grok 接著會生成一個從該畫格視覺上延續的新影片。生成的影片可以加回您的故事板進行進一步編輯或合併。這創造了一個無縫的迭代工作流程，完全在您的瀏覽器中建構更長的 AI 生成影片敘事。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_9_q">影片合併是在本地還是雲端處理？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_9_a">
-                            完全在本地處理。我們使用 WebAssembly 版 FFmpeg，所有影片處理都在您的瀏覽器中完成，不會上傳到任何伺服器。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_9_a">GrokMediaDownloader 中所有的影片合併都完全在您的瀏覽器本地執行。擴充功能使用 FFmpeg.js，這是業界標準 FFmpeg 影片處理庫的 WebAssembly（WASM）編譯版本。這意味著 FFmpeg 的完整功能直接在您的 Chrome 瀏覽器中作為客戶端程式碼運行，絕對不會將任何影片資料上傳到任何外部伺服器或雲端服務。當您在 Story Mode Helper 中合併影片時，FFmpeg.js 引擎會在您瀏覽器的記憶體中處理影片標準化、解析度調整、幀率匹配和最終串接。影片二進位資料在處理期間暫時儲存在 IndexedDB 中。這種方式確保了完全的隱私保護，因為您的創意內容永遠不會離開您的裝置。由 Kario LLC 發行的 GrokMediaDownloader 從一開始就採用零伺服器架構設計。這款在 Chrome Web Store 上獲得 8,000+ 用戶和 4.2/5 評分的擴充功能，所有處理都在客戶端完成。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200">Storyboard 中的 Master 是什麼意思？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            Storyboard 中的第一個影片會被標記為 Master。合併輸出時，其他影片會自動調整解析度和幀率以匹配 Master 的規格，確保輸出品質一致。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">在 GrokMediaDownloader 的 Story Mode Helper 中，Master 標記會指派給故事板序列中的第一個影片片段。Master 影片作為整個合併輸出的參考標準。當您啟動合併流程時，故事板中所有其他影片片段會自動調整解析度和幀率以匹配 Master 的規格。這確保了最終合併影片中一致的視覺品質，防止不同尺寸或速度的片段之間出現突兀的轉場。例如，如果您的 Master 是 1080p、24fps 的影片，所有後續片段在合併前都會使用 FFmpeg.js 標準化到這些確切的規格。您可以透過拖放重新排列故事板來更改哪個片段是 Master。建議選擇最高品質的片段作為 Master 以獲得最佳輸出結果。整個標準化和合併過程都透過 WebAssembly 在本地執行，不涉及任何雲端處理。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200">影片儲存空間有限制嗎？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            我們使用 IndexedDB 儲存影片資料，容量取決於您的瀏覽器設定。一般來說可以儲存數百 MB 到數 GB 的資料。Side Panel 中會顯示目前的儲存使用量。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">GrokMediaDownloader 使用 IndexedDB（瀏覽器原生資料庫）來儲存 Story Mode Helper 的影片資料。儲存容量取決於您瀏覽器的設定和可用磁碟空間。大多數現代 Chrome 安裝允許 IndexedDB 使用從數百 MB 到數 GB 的儲存空間，超過後才會提示要求額外權限。側邊面板介面會即時顯示您目前的儲存使用量，讓您可以監控故事板影片佔用了多少空間。如果您接近儲存限制，可以匯出已完成的專案並清除較舊的影片資料以釋放空間。之所以特別選擇 IndexedDB 而非其他儲存方式，是因為它能有效處理影片檔案等大型二進位資料，而不會降低瀏覽器效能。由於 GrokMediaDownloader 中所有處理都透過其 Manifest V3 架構在客戶端完成，您的影片資料永遠不會離開本地瀏覽器儲存空間。這種設計同時確保了您創意工作的效能和隱私。</div>
+                    </details>
                 </div>
             </div>
 
@@ -288,25 +274,21 @@
                 </h2>
 
                 <div class="space-y-4">
-                    <div class="bg-slate-900 border border-pink-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-pink-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_12_q">什麼是 Video Gen Queue？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_12_a">
-                            Video Gen Queue 是 v2.2 的重磅功能。它是側邊面板中的自動化影片生成排程系統，可批次加入提示詞到佇列，選擇 Custom/Normal/Fun/Spicy 四種生成模式，失敗時自動重試，並智慧偵測速率限制。免費版可使用 50 次，PRO 版無限制。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_12_a">Video Gen Queue 是 GrokMediaDownloader v2.2 推出的自動化影片生成排程系統，可透過 Chrome 側邊面板存取。它讓您將多個影片生成任務加入佇列，無需手動操作即可依序處理。您可以使用貼文頁面上的浮動按鈕逐一添加項目，或從最近的貼文批次添加。系統支援四種生成模式：Custom、Normal、Fun 和 Spicy，讓您控制每個生成影片的創意風格。Video Gen Queue 包含智慧錯誤處理，當 Grok 的審核系統拒絕生成時會自動重試，並能偵測速率限制（HTTP 429）回應並自動暫停以避免被節流。佇列使用 MAIN world TipTap 整合來直接與 Grok 的編輯器介面互動。免費版提供 50 次 Video Gen Queue 使用次數，而 $4.99 的 PRO 終身授權則為認真的創作者解鎖無限次使用。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-teal-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-teal-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_13_q">什麼是 Project-Based Download？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_13_a">
-                            Project-Based Download 是 v2.2 的專案式下載管理功能。下載前會先掃描並顯示統計資訊（圖片/影片數量、HD/SD 比例），檔案自動依日期和提示詞建立專案資料夾（格式：{date}_{prompt}/），讓創作管理一目了然。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_13_a">Project-Based Download 是 GrokMediaDownloader v2.2 推出的組織功能，會自動將您的下載分組到結構化的專案資料夾中。下載前，它會掃描您的媒體並顯示完整的預下載統計資料，包括圖片數量、影片數量以及 HD 與 SD 的比例分析。當您開始下載時，系統會自動建立以 {date}_{prompt} 模式命名的專案資料夾，其中日期是媒體建立的時間，提示詞是您用來生成它的文字。每個專案資料夾還包含一個 metadata.json 檔案，記錄下載媒體的詳細資訊。這讓您的 Grok AI 創作按專案整齊組織，而非全部堆在單一資料夾中。Project-Based Download 是 PRO 專屬功能，隨 $4.99 終身授權提供。它與 GrokMediaDownloader 的其他批次下載功能並行運作，並與現有的下載歷史系統整合以防止跨專案的重複下載。</div>
+                    </details>
                 </div>
             </div>
 
@@ -318,29 +300,29 @@
                 </h2>
 
                 <div class="space-y-4">
-                    <div class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-amber-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_14_q">什麼是標籤式下載？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_14_a">標籤式下載讓您可以從特定的 Grok 標籤（資料夾）下載媒體。在篩選區選擇「依標籤下載」，從下拉選單中選取標籤，即可下載該標籤內的所有媒體。每個標籤有獨立的下載歷史，檔案整理在 grok_downloads/tags/{標籤名稱}/ 下。PRO 專屬功能。</div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_14_a">標籤式下載是 GrokMediaDownloader v2.3 推出的功能，讓您按照 Grok 的標籤（資料夾）系統來下載媒體。不需要一次下載所有收藏，您可以在篩選區選擇「依標籤下載」，然後從下拉選單中選取特定標籤來定向下載。擴充功能接著會掃描並下載該選定標籤內的所有媒體。每個標籤維護自己獨立的下載歷史，因此您可以對不同標籤重新執行下載，無需擔心跨標籤的重複問題。下載的檔案會自動整理在電腦的 grok_downloads/tags/{標籤名稱}/ 路徑下，保持每個標籤的媒體清楚分離。這對於使用 Grok 標籤系統來組織不同專案、主題或角色合集的創作者特別有用。標籤式下載是 PRO 專屬功能，包含在 $4.99 終身授權中，專為需要精確控制下載哪些媒體類別的用戶設計。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-violet-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-violet-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_15_q">什麼是自訂檔名模板？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_15_a">自訂檔名模板提供三種命名方式：Grok 原生格式、Prompt 命名（使用提示詞文字）、或自訂模板（支援 {date}、{datetime}、{prompt}、{quality} 等代碼）。所有使用者皆可使用。若您之前使用「Prompt 作為檔名」，設定會自動遷移到新系統。</div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_15_a">自訂檔名模板是 GrokMediaDownloader v2.3 推出的功能，提供三種靈活的檔案命名方式。第一個選項是 Grok 原生格式，保留 Grok 指定的原始檔名格式。第二個選項是 Prompt 命名，使用您的生成提示詞文字作為檔名以便識別。第三個選項是自訂模板，讓您使用 {date}、{datetime}、{prompt}、{quality} 等代碼建立自由格式的模板，這些代碼在下載時會動態替換。例如，{date}_{prompt}_{quality} 模板會產生像 20260409_日落風景_HD.jpg 這樣的檔名。此功能對所有用戶開放，包括免費版和 PRO 版。如果您之前使用了較早的「Prompt 作為檔名」設定，您的偏好會自動遷移到新的 Prompt 命名選項。自訂檔名模板適用於所有下載模式，包括批次下載、Stream Capture 和標籤式下載。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-purple-500/30 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_16_q">Story Mode 的 Frame Lock 是什麼？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_16_a">Frame Lock 是 Story Mode 的增強功能。生成續集影片時，您可以透過互動式膠捲選擇任意畫格（不只是最後一幀）。選定的畫格在生成後會以橘色標示鎖定。匯出時，FFmpeg 會自動在鎖定畫格處裁剪，避免重疊內容，確保片段間無縫銜接。</div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_16_a">Frame Lock 是 GrokMediaDownloader v2.3 推出的 Story Mode 增強功能，讓您精確控制影片延續點。當使用「發送畫格到 Grok」生成續集影片時，您現在可以透過互動式膠捲從影片片段中選擇任意畫格，而不僅是預設的最後一幀。這讓您可以選擇希望 Grok 從哪個確切的視覺時刻開始延續。在您發送畫格並且 Grok 生成續集影片後，選定的畫格會在膠捲上以橘色指示器鎖定，標記轉場點的位置。當您匯出或合併最終影片時，FFmpeg.js 會自動在鎖定畫格位置裁剪來源片段。這可以防止連續片段之間出現重疊或重複的內容，確保合併的故事板輸出中有無縫的視覺轉場。Frame Lock 消除了之前需要的手動裁剪，使迭代式影片創作工作流程對故事創作者來說顯著更加順暢。</div>
+                    </details>
                 </div>
             </div>
 
@@ -352,66 +334,56 @@
                 </h2>
 
                 <div class="space-y-4">
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_5_q">免費版可以使用什麼功能？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_5_a">
-                            免費版可以進行加入最愛的圖檔分析及下載，其他進階功能需要 Pro 版。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_5_a">GrokMediaDownloader 的免費版為 Grok AI 用戶提供基本的媒體管理功能。您可以使用 Generate List 掃描 Grok 收藏頁面並支援完整批次下載圖片。免費版還包含基本的 Stream Capture 功能，以及搭載 FFmpeg.js WebAssembly 核心故事板和影片合併功能的 Story Mode Helper。Video Gen Queue 可使用 50 次。自訂檔名模板的三種命名模式也包含在免費版中。然而，進階功能需要 PRO 授權，包括 Only After 日期過濾器用於定向下載、HD Upgrade 用於自動影片畫質提升、Project-Based Download 用於組織化資料夾結構、標籤式下載用於特定標籤的媒體擷取、Export/Import Data 用於跨裝置歷史轉移，以及無限次 Video Gen Queue 使用。PRO 終身授權是透過 Lemon Squeezy 一次性支付 $4.99，無後續費用。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_4_q">終身授權的範圍是什麼？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_4_a">
-                            授權碼允許在一個 Chrome 帳號安裝使用，並允許最多 3 次重新安裝（例如更換電腦或重灌系統）。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_4_a">GrokMediaDownloader PRO 終身授權是透過 Lemon Squeezy 支付平台一次性購買 $4.99，沒有訂閱或定期收費。授權碼綁定一個 Chrome 帳號，允許最多 3 次重新安裝，適用於更換新電腦、格式化硬碟或重新安裝 Chrome 等情境。購買後，您會透過電子郵件收到授權碼，在擴充功能的彈出面板中輸入即可立即啟用 PRO 功能。終身的意思是您無需額外費用即可獲得所有未來的功能更新。例如，v2.0 的 Story Mode Helper、v2.2 的 Video Gen Queue 和 v2.3 的標籤式下載都自動提供給現有的 PRO 用戶。由 Kario LLC 發行，這款擴充功能在 Chrome Web Store 上獲得 8,000+ 用戶信賴，擁有 4.2/5 的評分。如果您的授權需要支援，請透過本頁底部的支援連結聯繫我們的團隊。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200">如何輸入授權碼？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            購買後您會收到一組授權碼。開啟擴充功能的 Popup 面板，在底部找到「Activate PRO」或「License」輸入欄，貼上授權碼即可啟用。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">透過 Lemon Squeezy 購買 $4.99 的 GrokMediaDownloader PRO 終身授權後，您會透過電子郵件收到授權碼。要啟用授權，請點擊 Chrome 工具列中的 GrokMediaDownloader 擴充功能圖示開啟彈出面板。捲動到彈出面板底部，您會找到標示為「Activate PRO」或「License」的輸入欄位。將您的授權碼貼上到此欄位並點擊啟用按鈕。擴充功能會在線上驗證您的授權碼，並立即解鎖所有 PRO 功能，包括 HD Upgrade、Only After 日期過濾器、Project-Based Download、標籤式下載、Export/Import Data 和無限次 Video Gen Queue。啟用過程只需幾秒鐘。您的授權綁定您的 Chrome 帳號，因此如果您在新裝置上登入 Chrome，可能需要重新輸入授權碼。每次購買允許最多三次重新安裝。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200">可以退款嗎？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            若遇技術問題無法解決，請透過頁面底部的「聯絡支援」與我們聯繫。退款政策依循 Lemon Squeezy 平台規範。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">如果您遇到無法透過疑難排解解決的 GrokMediaDownloader 技術問題，我們很樂意協助處理您的疑慮。請使用本頁底部的「聯絡支援」按鈕或透過 Chrome Web Store 列表中的支援連結聯繫我們的支援團隊。由 Kario LLC 發行的我們的團隊將與您合作診斷和修復您遇到的任何技術問題。退款政策遵循 Lemon Squeezy 平台指南，這是 GrokMediaDownloader PRO 授權購買所使用的支付處理器。Lemon Squeezy 提供買家保護並處理所有與支付相關的事務，包括退款請求。我們鼓勵您在請求退款之前先聯繫支援，因為許多問題可以快速解決。GrokMediaDownloader 獲得超過 8,000 位用戶信賴，擁有 4.2/5 的評分，我們的目標是確保每位用戶都能有良好的使用體驗。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200">未來更新需要額外付費嗎？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            不需要！PRO 終身版包含所有未來功能更新。v2.0 的 Story Mode Helper 就是免費更新的例子，未來的新功能也會自動包含在您的授權中。
-                        </div>
-                    </div>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">不需要，GrokMediaDownloader PRO 終身授權包含所有未來的功能更新，無需額外費用。當您購買一次性 $4.99 的授權時，您就獲得了對所有當前和即將推出的 PRO 功能的永久存取權。這已經透過多次重大更新得到驗證：v2.0 版本新增了搭載 FFmpeg.js WebAssembly 影片合併的 Story Mode Helper，v2.2 推出了 Video Gen Queue 和 Project-Based Download，v2.3 帶來了標籤式下載、自訂檔名模板和 Frame Lock。所有這些功能都自動提供給現有的 PRO 用戶，無需任何額外付款。由 Kario LLC 發行，GrokMediaDownloader 採用終身授權模式，專門為獎勵早期採用者和忠實用戶。隨著擴充功能持續為 Grok AI 媒體管理進化新功能，您的一次性購買確保您始終能存取完整的功能組合。目前在 Chrome Web Store 上服務超過 8,000 位用戶。</div>
+                    </details>
 
-                    <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                        <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                        <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_11_q">Lemon Squeezy 是什麼？付款安全嗎？</span>
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform duration-300"></i>
-                        </button>
-                        <div class="faq-content hidden px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
-                            <span data-i18n="faq_11_a">Lemon Squeezy 是一家專為數位產品設計的國際知名支付平台，被數萬家企業採用。所有交易皆透過 SSL 加密保護，符合 PCI DSS 安全標準。我們不會接觸您的信用卡資訊，一切由 Lemon Squeezy 直接處理。</span>
+                            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
+                        </summary>
+                        <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">
+                            <span data-i18n="faq_11_a">Lemon Squeezy 是一家專為數位產品設計的全球受信賴支付平台，被全球數萬家企業使用。GrokMediaDownloader 使用 Lemon Squeezy 來安全處理所有 PRO 授權購買。每筆交易都受到 SSL 加密保護，並完全符合 PCI DSS（支付卡產業資料安全標準），這是最高等級的支付安全認證。您的信用卡資訊完全由 Lemon Squeezy 的安全基礎設施處理，GrokMediaDownloader 的開發商 Kario LLC 永遠無法存取您的支付資訊。結帳流程支援主要的信用卡、PayPal 和其他支付方式（取決於您的地區）。成功付款後，您的授權碼會即時寄送到您的電子郵件。Lemon Squeezy 還提供買家保護、訂單管理和直接的客戶支援來處理任何與支付相關的問題。這確保了 $4.99 PRO 終身授權的安全透明購買體驗。</span>
                             <a href="https://www.lemonsqueezy.com" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300 underline ml-1" data-i18n="price_secure_link">了解更多</a>
                         </div>
-                    </div>
+                    </details>
                 </div>
             </div>
 

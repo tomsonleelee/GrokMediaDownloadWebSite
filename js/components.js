@@ -527,29 +527,16 @@ function setupMobileMenu() {
     }
 }
 
-// FAQ Toggle Logic
+// FAQ Toggle Logic (details/summary native)
 function setupFAQToggles() {
-    const faqBtns = document.querySelectorAll('.faq-btn');
+    const faqDetails = document.querySelectorAll('details');
 
-    faqBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const content = btn.nextElementSibling;
-            const icon = btn.querySelector('svg') || btn.querySelector('i');
-            const wasHidden = content.classList.contains('hidden');
-
-            content.classList.toggle('hidden');
-
-            if (icon) {
-                if (content.classList.contains('hidden')) {
-                    icon.style.transform = 'rotate(0deg)';
-                } else {
-                    icon.style.transform = 'rotate(180deg)';
-                }
-            }
-
+    faqDetails.forEach(detail => {
+        detail.addEventListener('toggle', () => {
             // Track FAQ interaction
-            const questionText = btn.querySelector('span')?.textContent || btn.textContent;
-            Analytics.trackFAQ(questionText.trim(), wasHidden ? 'expand' : 'collapse');
+            const summary = detail.querySelector('summary');
+            const questionText = summary?.querySelector('span')?.textContent || summary?.textContent || '';
+            Analytics.trackFAQ(questionText.trim(), detail.open ? 'expand' : 'collapse');
         });
     });
 }

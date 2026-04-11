@@ -122,7 +122,7 @@
                 </div>
                 <div>
                     <h1 class="text-3xl md:text-4xl font-bold" data-i18n="legal_privacy_title">プライバシーポリシー</h1>
-                    <p class="text-slate-400 text-sm">最終更新：2025年12月</p>
+                    <p class="text-slate-400 text-sm">最終更新：2026年4月</p>
                 </div>
             </div>
         </div>
@@ -133,50 +133,72 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
                 <div class="prose prose-invert prose-slate max-w-none">
-                    <div class="space-y-8 text-slate-300 leading-relaxed" data-i18n="legal_privacy_content">1. データ収集と使用
-GrokMediaDownloaderは完全にクライアントサイドで動作します。個人データ、閲覧履歴、ダウンロードコンテンツを収集・保存・共有することはありません。すべての処理はブラウザ内でローカルに行われます。
+                    <div class="space-y-8 text-slate-300 leading-relaxed">
 
-2. 権限について
-要求する権限は主要機能の実行にのみ使用：
-- Grokページのメディア検出
-- メディアファイルのコンピュータへの保存
-- 設定のローカル保存
-
-3. 第三者サービス
-支払いはLemon Squeezyで処理。財務データはLemon Squeezyが直接処理・保護し、本拡張機能は機密財務情報にアクセスしません。
-
-4. ポリシー更新
-本ポリシーを随時変更する権利を留保。変更は本ページで更新されます。</div>
+                        <p>本プライバシーポリシーは、Kario LLC（以下「当社」）がGrokMediaDownloader Chrome拡張機能（以下「本拡張機能」）およびマーケティングサイト grokmedia.kario-studio.com（以下「本ウェブサイト」）に関連する情報をどのように取り扱うかについて説明します。当社はお客様のプライバシー保護に努め、当社の慣行について透明性を保つことをお約束します。</p>
 
                         <div>
-                            <h2 class="text-xl font-bold text-white mb-3">2. 権限の説明</h2>
-                            <p>当社が要求する権限（「Storage」、「Downloads」、「Host Permissions」など）は、拡張機能のコア機能を実行するためにのみ使用されます：</p>
+                            <h2 class="text-xl font-bold text-white mb-3">1. 収集する情報</h2>
+                            <p class="mb-3"><strong class="text-white">拡張機能内：</strong>GrokMediaDownloaderは100%クライアントサイドで動作するツールです。当社は外部サーバーで個人データを収集、送信、保存することは<strong class="text-white">一切ありません</strong>。本拡張機能はお客様の氏名、メールアドレス、その他の個人識別情報を収集しません。拡張機能内部にはアナリティクス、テレメトリ、トラッキングコードは一切含まれていません。ダウンロード、FFmpeg WebAssemblyによる動画結合、ストリームキャプチャを含むすべてのメディア処理は、お客様のブラウザ上でローカルに完結します。</p>
+                            <p><strong class="text-white">ウェブサイト上：</strong>当社のマーケティングサイトでは、ページビュー、参照元、一般的な利用パターンなどの標準的なウェブサイトトラフィック分析にGoogle Analytics 4（GA4）を使用しています。GA4は匿名化された集計データを収集するためにCookieを使用する場合があります。この分析データは拡張機能とは完全に独立しており、個々のユーザーを識別することはありません。GA4の標準構成で提供されるデータ以外に、本ウェブサイトを通じて個人情報を収集することはありません。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">2. 情報の利用方法</h2>
+                            <p>拡張機能はいかなるデータも収集しないため、使用、共有、販売するユーザーデータはありません。拡張機能内ではすべての操作がローカルで実行され、当社のサーバーやサードパーティのサーバーに情報が送信されることはありません。</p>
+                            <p class="mt-2">マーケティングサイトの匿名化・集計された分析データは、一般的なトラフィックパターンの把握とウェブサイト体験の向上のためにのみ使用されます。当社はこのデータを個々のユーザーの識別、連絡、ターゲティングに使用することはありません。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">3. データの保存</h2>
+                            <p>拡張機能によって生成されるすべてのデータ——ダウンロード履歴、キューデータ、ユーザー設定、一時的な動画ファイルを含む——は、Chromeの組み込みストレージAPI（<code class="text-pink-300">chrome.storage.local</code>）およびIndexedDBを使用して、お客様のローカルデバイスに保存されます。このデータがお客様のデバイスから離れることはなく、当社やサードパーティがアクセスすることはできません。</p>
+                            <p class="mt-2">お客様はローカルデータを常に完全にコントロールできます。拡張機能の組み込みデータ管理機能を使用して、データのエクスポート、インポート、削除が可能です。拡張機能をアンインストールすると、すべてのローカルデータも自動的に削除されます。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">4. サードパーティサービス</h2>
+                            <p class="mb-3"><strong class="text-white">決済処理：</strong>PROライセンスの購入は、サードパーティの決済処理業者であるLemonSqueezyによって処理されます。ライセンス購入時、お客様の支払い情報（クレジットカード情報など）は、LemonSqueezy独自のプライバシーポリシーに従ってLemonSqueezyが直接収集・処理します。Kario LLCはお客様のクレジットカード情報に直接アクセス、保存、処理することはありません。当社はライセンス認証に必要な最小限の情報（ライセンスキーや注文状況など）のみを受け取ります。</p>
+                            <p><strong class="text-white">Google Analytics：</strong>マーケティングサイト（拡張機能ではありません）では、トラフィック分析にGoogle Analytics 4を使用しています。Google Analyticsオプトアウトブラウザアドオンの使用やブラウザのCookie設定の調整により、Google Analyticsをオプトアウトすることができます。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">5. Chrome拡張機能の権限</h2>
+                            <p class="mb-3">本拡張機能は、コア機能に必要な最小限の権限のみを要求します。各権限の用途は以下の通りです：</p>
+                            <ul class="list-disc list-inside mt-2 space-y-2">
+                                <li><strong class="text-white">activeTab</strong> —— 現在閲覧中のGrokページと対話し、利用可能なメディアを検出・一覧表示します。</li>
+                                <li><strong class="text-white">storage</strong> —— ダウンロード履歴、拡張機能の設定、キューデータをローカルデバイスに保存します。</li>
+                                <li><strong class="text-white">downloads</strong> —— メディアファイルをコンピュータのローカルファイルシステムに保存します。</li>
+                                <li><strong class="text-white">sidePanel</strong> —— Chromeのサイドパネルに表示されるVideo Studioおよびキューのユーザーインターフェースを駆動します。</li>
+                                <li><strong class="text-white">offscreen</strong> —— パフォーマンス向上のため、FFmpeg WebAssembly動画処理をバックグラウンドドキュメントで実行します。</li>
+                                <li><strong class="text-white">ホスト権限（<code class="text-pink-300">*://grok.com/*</code>）</strong> —— 拡張機能の動作をgrok.comドメインのみに制限します。本拡張機能は他のウェブサイトでは動作せず、他のウェブサイトにアクセスすることもありません。</li>
+                            </ul>
+                            <p class="mt-3">本拡張機能はCookieを設定しません。これらの権限を通じて収集されたデータが外部に送信されることはありません。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">6. データセキュリティ</h2>
+                            <p>拡張機能はお客様のローカルデバイス上で完全に動作し、外部サーバーにデータを送信しないため、拡張機能を通じたデータ漏洩のリスクは実質的に排除されています。お客様のメディアファイル、ダウンロード履歴、設定はお客様のデバイス上にのみ保持され、お客様の管理下にあります。当社は拡張機能のユーザーデータを保存するサーバーを運営していません。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">7. お子様のプライバシー</h2>
+                            <p>本拡張機能は13歳未満のお子様を対象としていません。当社はお子様の個人情報を意図的に収集することはありません。本拡張機能はいかなるユーザーからも個人情報を収集しないため、未成年者のデータを不注意に収集するリスクはありません。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">8. ポリシーの変更</h2>
+                            <p>当社は、慣行の変更を反映するため、または法的・規制上の理由により、本プライバシーポリシーを随時更新する場合があります。重要な変更を行う場合は、本ページ上部の「最終更新」日を更新し、拡張機能のアップデートを通じてユーザーに通知する場合があります。変更後も拡張機能またはウェブサイトを継続して使用することにより、更新されたポリシーに同意したものとみなされます。</p>
+                        </div>
+
+                        <div>
+                            <h2 class="text-xl font-bold text-white mb-3">9. お問い合わせ</h2>
+                            <p>本プライバシーポリシーまたは当社のプライバシー慣行に関するご質問、ご懸念、ご要望がある場合は、以下のチャネルからお問い合わせください：</p>
                             <ul class="list-disc list-inside mt-2 space-y-1">
-                                <li>現在閲覧中のGrokページを読み取り、メディアを検出します。</li>
-                                <li>指定した場所にファイルをダウンロードします。</li>
-                                <li>拡張機能のローカル設定とダウンロード履歴を保存します。</li>
+                                <li>GitHub：<a href="https://github.com/tomsonlee150/GrokMediaDownloader/issues" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:text-pink-300">github.com/tomsonlee150/GrokMediaDownloader</a></li>
+                                <li>ウェブサイト：<a href="https://grokmedia.kario-studio.com/ja/" class="text-pink-400 hover:text-pink-300">grokmedia.kario-studio.com</a></li>
                             </ul>
                         </div>
 
-                        <div>
-                            <h2 class="text-xl font-bold text-white mb-3">3. サードパーティサービス</h2>
-                            <p>本拡張機能は、決済処理にLemonSqueezyを使用しています。ライセンス購入時、お客様の支払い情報はLemonSqueezyのプライバシーポリシーに従って処理されます。当社はライセンス認証に必要な最小限の情報（ライセンスキーなど）のみを受け取ります。</p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-bold text-white mb-3">4. データセキュリティ</h2>
-                            <p>当社はいかなるデータも収集しないため、データ漏洩のリスクはありません。お客様のすべてのコンテンツはお客様のデバイス上に保持されます。</p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-bold text-white mb-3">5. ポリシーの更新</h2>
-                            <p>重要な変更がある場合は、拡張機能のアップデートを通じてユーザーに通知します。本サービスの継続的な使用は、更新されたポリシーへの同意を意味します。</p>
-                        </div>
-
-                        <div>
-                            <h2 class="text-xl font-bold text-white mb-3">6. お問い合わせ</h2>
-                            <p>プライバシーに関するご質問がある場合は、ページ下部の「サポートに連絡」からお問い合わせください。</p>
-                        </div>
                     </div>
                 </div>
             </div>

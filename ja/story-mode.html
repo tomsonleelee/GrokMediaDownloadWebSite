@@ -492,6 +492,103 @@
         </div>
     </section>
 
+    <!-- Video Extension Workflow — unique to Story Mode -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 bg-purple-500/10 text-purple-400 rounded-full text-sm font-semibold mb-4" data-i18n="story_workflow_badge">反復クリエイション</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="story_workflow_title">ビデオ拡張ワークフロー</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="story_workflow_subtitle">短いクリップを連鎖させて長編AIビデオストーリーを制作。各イテレーションで続編ビデオを追加し、フレームごとにシームレスな物語を構築します。</p>
+            </div>
+
+            <!-- Timeline flow -->
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Connecting line -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/50 via-pink-500/50 to-purple-500/50"></div>
+
+                <!-- Step 1 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="md:w-1/2 md:text-right md:pr-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step1_title">1. ビデオをダウンロード</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step1_desc">Grokのお気に入りや生成結果からビデオをダウンロードします。これがストーリーの出発点になります。</p>
+                    </div>
+                    <div class="hidden md:flex w-12 h-12 bg-purple-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-purple-500/50">
+                        <i data-lucide="download" class="text-purple-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="md:w-1/2 md:pr-12"></div>
+                    <div class="hidden md:flex w-12 h-12 bg-pink-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-pink-500/50">
+                        <i data-lucide="mouse-pointer-click" class="text-pink-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step2_title">2. Video Studioに追加</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step2_desc">ビデオをVideo Studioパネルにドラッグ＆ドロップ。ストーリーボードのタイムラインにクリップとして表示されます。</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="md:w-1/2 md:text-right md:pr-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step3_title">3. 最終フレームを抽出</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step3_desc">拡張機能がビデオの最終フレームを自動的に抽出します。このフレームが次の続編を生成する際の視覚的な参照になります。</p>
+                    </div>
+                    <div class="hidden md:flex w-12 h-12 bg-blue-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-blue-500/50">
+                        <i data-lucide="image" class="text-blue-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="md:w-1/2 md:pr-12"></div>
+                    <div class="hidden md:flex w-12 h-12 bg-emerald-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-emerald-500/50">
+                        <i data-lucide="send" class="text-emerald-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step4_title">4. フレームをGrokに送信</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step4_desc">「Send to Grok」をクリックすると、抽出されたフレームがアップロードされた状態でGrok Imagineが開きます。すぐにプロンプトを入力できます。</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="md:w-1/2 md:text-right md:pr-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step5_title">5. 続編を生成</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step5_desc">次に起こることを説明するプロンプトを入力。Grokが前のクリップの最終フレームからシームレスに続く新しいビデオを生成します。</p>
+                    </div>
+                    <div class="hidden md:flex w-12 h-12 bg-amber-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-amber-500/50">
+                        <i data-lucide="sparkles" class="text-amber-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Step 6 — Loop -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6">
+                    <div class="md:w-1/2 md:pr-12"></div>
+                    <div class="hidden md:flex w-12 h-12 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-purple-500/50">
+                        <i data-lucide="repeat" class="text-purple-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step6_title">6. ダウンロードして繰り返し！</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step6_desc">新しいビデオをダウンロードしてストーリーボードに追加し、ループを再開。各サイクルが成長するビデオストーリーに新しいチャプターを追加します。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loop callout -->
+            <div class="mt-16 max-w-2xl mx-auto text-center">
+                <div class="inline-flex items-center gap-3 bg-purple-500/10 border border-purple-500/20 rounded-2xl px-6 py-4">
+                    <i data-lucide="infinity" class="text-purple-400 w-6 h-6 flex-shrink-0"></i>
+                    <p class="text-slate-300 text-sm" data-i18n="story_wf_loop_note">この反復ループで任意の長さのビデオストーリーを構築できます — 5、10、50以上のクリップを1つの連続した物語に連鎖させ、ワンクリックで統合。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="py-24 bg-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

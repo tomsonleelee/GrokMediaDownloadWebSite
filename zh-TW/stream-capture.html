@@ -512,6 +512,100 @@
         </div>
     </section>
 
+    <!-- Stream Capture vs Manual Download — unique to Stream Capture -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 bg-cyan-500/10 text-cyan-400 rounded-full text-sm font-semibold mb-4" data-i18n="stream_compare_badge">功能對比</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_compare_title">Stream Capture vs 手動下載</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="stream_compare_subtitle">看看自動化的 Stream Capture 在收集 Grok 生成圖片時，如何為你節省數小時的手動操作。</p>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="text-left py-4 px-6 text-slate-400 font-semibold text-sm uppercase tracking-wide border-b border-slate-800" data-i18n="stream_compare_feature">功能</th>
+                            <th class="text-center py-4 px-6 text-slate-400 font-semibold text-sm uppercase tracking-wide border-b border-slate-800" data-i18n="stream_compare_manual">手動下載</th>
+                            <th class="text-center py-4 px-6 text-cyan-400 font-semibold text-sm uppercase tracking-wide border-b border-cyan-500/30 bg-cyan-500/5 rounded-t-xl" data-i18n="stream_compare_stream">Stream Capture</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="search" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row1_label">偵測方式</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row1_manual">需要手動檢查頁面</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row1_stream">透過 MutationObserver 自動偵測新圖片</span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="zap" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row2_label">速度</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row2_manual">逐一點擊儲存</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row2_stream">一次批次下載所有已擷取的圖片</span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="scan-eye" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row3_label">覆蓋範圍</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row3_manual">容易遺漏新內容</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row3_stream">即時擷取所有內容</span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="gauge" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row4_label">所需精力</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row4_manual">高 — 需要持續監控</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row4_stream">零 — 正常瀏覽，背景自動擷取</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="hash" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row5_label">最大數量</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row5_manual">不適用</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5 rounded-b-xl">
+                                <span class="text-cyan-300 font-semibold" data-i18n="stream_compare_row5_stream">每次工作階段最多 1,000 張圖片</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Summary callout -->
+            <div class="mt-12 max-w-2xl mx-auto text-center">
+                <div class="inline-flex items-center gap-3 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl px-6 py-4">
+                    <i data-lucide="check-circle" class="text-cyan-400 w-6 h-6 flex-shrink-0"></i>
+                    <p class="text-slate-300 text-sm" data-i18n="stream_compare_summary">Stream Capture 消除了繁瑣的逐一點擊儲存流程。只需正常瀏覽 Grok，讓擴充功能自動收集每一張圖片。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="py-24 bg-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

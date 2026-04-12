@@ -512,6 +512,100 @@
         </div>
     </section>
 
+    <!-- Stream Capture vs Manual Download — unique to Stream Capture -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 bg-cyan-500/10 text-cyan-400 rounded-full text-sm font-semibold mb-4" data-i18n="stream_compare_badge">機能比較</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_compare_title">ストリームキャプチャー vs 手動ダウンロード</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="stream_compare_subtitle">Grok生成画像の収集において、自動ストリームキャプチャーが手動作業の何時間分を節約するかご覧ください。</p>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="text-left py-4 px-6 text-slate-400 font-semibold text-sm uppercase tracking-wide border-b border-slate-800" data-i18n="stream_compare_feature">機能</th>
+                            <th class="text-center py-4 px-6 text-slate-400 font-semibold text-sm uppercase tracking-wide border-b border-slate-800" data-i18n="stream_compare_manual">手動ダウンロード</th>
+                            <th class="text-center py-4 px-6 text-cyan-400 font-semibold text-sm uppercase tracking-wide border-b border-cyan-500/30 bg-cyan-500/5 rounded-t-xl" data-i18n="stream_compare_stream">ストリームキャプチャー</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="search" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row1_label">検出方法</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row1_manual">手動でページを確認する必要あり</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row1_stream">MutationObserverで新しい画像を自動検出</span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="zap" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row2_label">速度</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row2_manual">1枚ずつクリックして保存</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row2_stream">キャプチャした全画像を一括ダウンロード</span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="scan-eye" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row3_label">カバー範囲</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row3_manual">新しいコンテンツを見逃しやすい</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row3_stream">リアルタイムですべてをキャプチャ</span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="gauge" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row4_label">労力</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row4_manual">高い — 常時監視が必要</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row4_stream">ゼロ — 通常通りブラウズ、バックグラウンドで自動キャプチャ</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="hash" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row5_label">最大数</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row5_manual">該当なし</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5 rounded-b-xl">
+                                <span class="text-cyan-300 font-semibold" data-i18n="stream_compare_row5_stream">セッションあたり最大1,000枚</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Summary callout -->
+            <div class="mt-12 max-w-2xl mx-auto text-center">
+                <div class="inline-flex items-center gap-3 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl px-6 py-4">
+                    <i data-lucide="check-circle" class="text-cyan-400 w-6 h-6 flex-shrink-0"></i>
+                    <p class="text-slate-300 text-sm" data-i18n="stream_compare_summary">ストリームキャプチャーは面倒なクリック保存の繰り返しを解消します。通常通りGrokを閲覧するだけで、拡張機能がすべての画像を自動的に収集します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="py-24 bg-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

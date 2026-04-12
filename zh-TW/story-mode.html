@@ -516,6 +516,103 @@
         </div>
     </section>
 
+    <!-- Video Extension Workflow — unique to Story Mode -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 bg-purple-500/10 text-purple-400 rounded-full text-sm font-semibold mb-4" data-i18n="story_workflow_badge">迭代創作</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="story_workflow_title">影片延伸工作流程</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="story_workflow_subtitle">透過串接短片來創作長篇 AI 影片故事。每次迭代都會延伸一段新的續篇影片，逐幀建構無縫的敘事。</p>
+            </div>
+
+            <!-- Timeline flow -->
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Connecting line -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/50 via-pink-500/50 to-purple-500/50"></div>
+
+                <!-- Step 1 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="md:w-1/2 md:text-right md:pr-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step1_title">1. 下載影片</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step1_desc">從你的 Grok 收藏或任何生成結果中下載一段影片。這將成為你故事的起點。</p>
+                    </div>
+                    <div class="hidden md:flex w-12 h-12 bg-purple-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-purple-500/50">
+                        <i data-lucide="download" class="text-purple-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="md:w-1/2 md:pr-12"></div>
+                    <div class="hidden md:flex w-12 h-12 bg-pink-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-pink-500/50">
+                        <i data-lucide="mouse-pointer-click" class="text-pink-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step2_title">2. 加入 Video Studio</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step2_desc">將影片拖放到 Video Studio 面板中。它會以片段形式出現在你的故事板時間軸上。</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="md:w-1/2 md:text-right md:pr-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step3_title">3. 擷取最後一幀</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step3_desc">擴充功能會自動擷取影片的最後一幀。這個畫面將作為生成下一段續篇的視覺參考。</p>
+                    </div>
+                    <div class="hidden md:flex w-12 h-12 bg-blue-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-blue-500/50">
+                        <i data-lucide="image" class="text-blue-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="md:w-1/2 md:pr-12"></div>
+                    <div class="hidden md:flex w-12 h-12 bg-emerald-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-emerald-500/50">
+                        <i data-lucide="send" class="text-emerald-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step4_title">4. 傳送畫面至 Grok</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step4_desc">點擊「Send to Grok」開啟 Grok Imagine，擷取的畫面會自動上傳。畫面已預載好，你可以立即撰寫提示詞。</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
+                    <div class="md:w-1/2 md:text-right md:pr-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step5_title">5. 生成續篇影片</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step5_desc">撰寫描述接下來劇情的提示詞。Grok 會生成一段從上一段影片最後一幀無縫銜接的新影片。</p>
+                    </div>
+                    <div class="hidden md:flex w-12 h-12 bg-amber-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-amber-500/50">
+                        <i data-lucide="sparkles" class="text-amber-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12"></div>
+                </div>
+
+                <!-- Step 6 — Loop -->
+                <div class="relative flex flex-col md:flex-row items-center gap-6">
+                    <div class="md:w-1/2 md:pr-12"></div>
+                    <div class="hidden md:flex w-12 h-12 bg-gradient-to-br from-purple-500/30 to-pink-500/30 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-purple-500/50">
+                        <i data-lucide="repeat" class="text-purple-400 w-5 h-5"></i>
+                    </div>
+                    <div class="md:w-1/2 md:pl-12">
+                        <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step6_title">6. 下載並重複！</h3>
+                        <p class="text-slate-400" data-i18n="story_wf_step6_desc">下載新影片，加入故事板，然後重新開始循環。每次循環都為你不斷成長的影片故事增添新的篇章。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loop callout -->
+            <div class="mt-16 max-w-2xl mx-auto text-center">
+                <div class="inline-flex items-center gap-3 bg-purple-500/10 border border-purple-500/20 rounded-2xl px-6 py-4">
+                    <i data-lucide="infinity" class="text-purple-400 w-6 h-6 flex-shrink-0"></i>
+                    <p class="text-slate-300 text-sm" data-i18n="story_wf_loop_note">這個迭代循環讓你可以建構任意長度的影片故事 — 將 5、10 或 50 個以上的片段串接成一個連續的敘事，然後一鍵合併。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="py-24 bg-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

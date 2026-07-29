@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grok Media Downloader — Batch Download & Manage Grok AI Images & Videos | Chrome Extension</title>
-    <meta name="description" content="Download & manage Grok AI images and videos in bulk. Stream Capture, Story Mode, Video Gen Queue, HD Upgrade. Free Chrome extension with $4.99 PRO option.">
-    <meta name="keywords" content="Grok downloader, Story Mode Helper, Video Studio, Grok video editor, Storyboard, Frame Extraction, FFmpeg, Chrome extension, batch download, Stream Capture, HD Upgrade, Grok AI video, video merge">
+    <meta name="description" content="Download & manage Grok AI images and videos in bulk. v2.5 adds Whole Library Download by conversation and 1080p upgrade. Free Chrome extension with $4.99 PRO option.">
+    <meta name="keywords" content="Grok downloader, whole library download, download all Grok media, 1080p Grok video, conversation folders, Story Mode Helper, Video Studio, Storyboard, Frame Extraction, FFmpeg, Chrome extension, batch download, Stream Capture, HD Upgrade, Grok AI video">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Kario Studio">
     <meta name="googlebot" content="index, follow">
@@ -57,18 +57,18 @@
       "@type": "SoftwareApplication",
       "name": "GrokMediaDownloader",
       "alternateName": ["Grok Media Downloader", "Grok 圖片下載器", "Story Mode Helper"],
-      "description": "The best Chrome extension for Grok AI media management. Features Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
+      "description": "The best Chrome extension for Grok AI media management. v2.5 adds Whole Library Download by conversation and 1080p video upgrade, alongside Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "2.3.2",
+      "softwareVersion": "2.5.0",
       "datePublished": "2025-11-22",
-      "dateModified": "2026-04-11",
+      "dateModified": "2026-07-29",
       "url": "https://grokmedia.kario-studio.com/",
       "sameAs": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "screenshot": "https://grokmedia.kario-studio.com/assets/og-image.jpg",
-      "featureList": ["Tag-Based Download", "Custom Filename Templates", "Frame Lock & Trim", "Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
+      "featureList": ["Whole Library Download", "Conversation Folders", "1080p Video Upgrade", "Download Source Selector", "Tag-Based Download", "Custom Filename Templates", "Frame Lock & Trim", "Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
       "offers": {
         "@type": "Offer",
         "price": "4.99",
@@ -83,8 +83,8 @@
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.2",
-        "ratingCount": "20",
+        "ratingValue": "4.1",
+        "ratingCount": "24",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -240,7 +240,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <style>
         body {
@@ -296,7 +296,7 @@
     </a>
 
     <!-- Header Placeholder -->
-    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/" class="text-sm text-slate-300 hover:text-white">Home</a><a href="/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/pricing.html" class="text-sm text-slate-300 hover:text-white">Pricing</a><a href="/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/" class="text-sm text-slate-300 hover:text-white">Home</a><a href="/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/pricing.html" class="text-sm text-slate-300 hover:text-white">Pricing</a><a href="/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
 
     <!-- Hero Section -->
     <main id="main-content">
@@ -315,7 +315,7 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.3 Latest Update | Tag Download・Filename Templates・Frame Lock</span>
+                        <span data-i18n="hero_badge">v2.5 Latest Update | Whole Library Download・1080p Upgrade・New Grok API Ready</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -323,7 +323,7 @@
                         <span class="text-pink-500" data-i18n="hero_title_2">Media Asset Management</span>
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Not just a downloader, but your creative studio. v2.3 introduces Tag-Based Download for organizing media by tags, Custom Filename Templates with flexible naming, and Frame Lock for seamless video continuation in Story Mode.</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Not just a downloader, but your creative studio. v2.5 adapts to Grok’s new media backend and adds Whole Library Download — archive every generated image and video, organized by conversation — plus 1080p as its own quality tier.</p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
@@ -350,8 +350,8 @@
                     <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
                         <span class="feature-tag"><span>📥</span> <span data-i18n="hero_tag_1">Batch Download</span></span>
                         <span class="feature-tag"><span>🎯</span> <span data-i18n="hero_tag_2">Video Gen Queue</span></span>
-                        <span class="feature-tag"><span>🏷️</span> <span data-i18n="hero_tag_3">Tag Download</span></span>
-                        <span class="feature-tag"><span>✨</span> <span data-i18n="hero_tag_4">HD Upgrade</span></span>
+                        <span class="feature-tag"><span>📦</span> <span data-i18n="hero_tag_3">Whole Library</span></span>
+                        <span class="feature-tag"><span>💎</span> <span data-i18n="hero_tag_4">1080p Upgrade</span></span>
                         <span class="feature-tag"><span>📂</span> <span data-i18n="hero_tag_5">Project Folders</span></span>
                         <span class="feature-tag"><span>🌊</span> <span data-i18n="hero_tag_6">Stream Capture</span></span>
                     </div>
@@ -371,12 +371,12 @@
                         <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="flex items-center gap-3 bg-slate-800/60 border border-slate-700/50 rounded-xl px-4 py-2.5 hover:border-pink-500/30 transition-colors">
                             <div class="flex items-center gap-1 text-yellow-400">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
-                                <span class="font-bold">4.2</span>
+                                <span class="font-bold">4.1</span>
                             </div>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">8,000+ users</span>
+                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">4,000+ users</span>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-400" data-i18n="hero_social_reviews">20 reviews</span>
+                            <span class="text-slate-400" data-i18n="hero_social_reviews">24 reviews</span>
                             <span class="text-slate-600 text-xs" data-i18n="hero_social_source">Chrome Web Store</span>
                         </a>
                     </div>
@@ -391,7 +391,7 @@
                         <div class="bg-white border-b border-gray-100 p-3 flex items-center gap-2">
                             <i data-lucide="play-circle" class="w-5 h-5 text-slate-800"></i>
                             <span class="font-bold text-sm text-slate-900">Grok Media Downloader</span>
-                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.2</span>
+                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.5</span>
                         </div>
                         <div class="p-3 space-y-2 bg-[#F9FAFB]">
                             <div class="flex gap-1.5">
@@ -402,6 +402,7 @@
                                 <div class="flex justify-between text-gray-600"><span>🖼️ Images</span><span class="font-bold text-gray-900">342 / 342 / 0</span></div>
                                 <div class="flex justify-between text-gray-600"><span>🎬 SD Videos</span><span class="font-bold text-gray-900">156 / 120 / 36</span></div>
                                 <div class="flex justify-between text-gray-600"><span>✨ HD Videos</span><span class="font-bold text-gray-900">89 / 89 / 0</span></div>
+                                <div class="flex justify-between text-gray-600"><span>💎 1080p Videos</span><span class="font-bold text-gray-900">37 / 37 / 0</span></div>
                                 <div class="flex justify-between text-gray-600"><span>📂 Projects</span><span class="font-bold text-gray-900">47</span></div>
                             </div>
                             <div class="bg-blue-600 text-white text-center py-2 rounded-lg text-xs font-bold">1. Generate List</div>
@@ -696,7 +697,7 @@
                     <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_1_desc">No more manual searching. The extension automatically scans your favorite images and videos to generate a downloadable media list.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Images</span>
-                        <span class="mini-tag">SD/HD Videos</span>
+                        <span class="mini-tag">SD/HD/1080p</span>
                         <span class="mini-tag">Metadata</span>
                     </div>
                     <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
@@ -756,11 +757,11 @@
                         <i data-lucide="monitor-up" class="text-cyan-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_5_title">HD Video Upgrade (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_5_desc">Auto-scan all favorited videos, identify missing HD versions, and send upgrade requests via Grok API.</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_5_desc">Scan favorites or your whole library, see the SD / HD-720p / 1080p breakdown, and upgrade one tier at a time via Grok API.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Auto Scan</span>
                         <span class="mini-tag">Time Filter</span>
-                        <span class="mini-tag">480p → 720p</span>
+                        <span class="mini-tag">SD → HD → 1080p</span>
                     </div>
                     <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
                         <img src="/assets/resized/feat-hd-upgrade_1280x800.jpg" alt="GrokMediaDownloader HD video upgrade — auto-scan favorited videos and upgrade from SD to 720p HD" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
@@ -854,32 +855,68 @@
                     </div>
                 </div>
 
-                <!-- Feature 9: Tag-Based Download (NEW v2.3) -->
-                <div class="feat-card-border feat-border-green bg-gradient-to-br from-amber-900/50 to-orange-900/50 p-8 rounded-2xl border border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 9: Tag-Based Download (v2.3) -->
+                <div class="feat-card-border feat-border-green bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">Tag-Based Download (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_10_desc">Download media by tag! Select a tag folder, download all media within it. Separate download history per tag, files organized under tags/{tagName}/.</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">Download media by tag! Select a tag folder, download all media within it. Separate download history per tag, files organized under tags/{tagName}/.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Tag Folders</span>
                         <span class="mini-tag">Separate History</span>
                     </div>
                 </div>
 
-                <!-- Feature 10: Custom Filename Templates (NEW v2.3) -->
-                <div class="feat-card-border feat-border-purple bg-gradient-to-br from-violet-900/50 to-indigo-900/50 p-8 rounded-2xl border border-violet-500/50 transition-all hover:shadow-lg hover:shadow-violet-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-violet-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 10: Custom Filename Templates (v2.3) -->
+                <div class="feat-card-border feat-border-purple bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-violet-500/50 transition-all hover:shadow-lg hover:shadow-violet-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-violet-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-violet-500/30 transition-colors">
                         <i data-lucide="file-text" class="text-violet-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_11_title">Custom Filename Templates</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_11_desc">Three filename modes: Grok Native, Prompt Based, or fully Custom templates with tokens like {date}, {prompt}, {quality}. Name your downloads your way.</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_11_desc">Three filename modes: Grok Native, Prompt Based, or fully Custom templates with tokens like {date}, {prompt}, {quality}. Name your downloads your way.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">3 Modes</span>
                         <span class="mini-tag">Custom Tokens</span>
                     </div>
+                </div>
+
+                <!-- Feature 11: Whole Library Download (NEW v2.5) -->
+                <div class="feat-card-border feat-border-green bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-8 rounded-2xl border border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-colors">
+                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">Whole Library Download (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">Download every generated image and video — not just favorites. Files are grouped into one folder per conversation and named with the prompt that actually created them, with its own independent download history.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">By Conversation</span>
+                        <span class="mini-tag">Prompt Names</span>
+                        <span class="mini-tag">Independent History</span>
+                    </div>
+                    <a href="/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
+                        <span data-i18n="feat_12_link">Learn more</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 12: 1080p Upgrade (NEW v2.5) -->
+                <div class="feat-card-border feat-border-cyan bg-gradient-to-br from-teal-900/50 to-cyan-900/50 p-8 rounded-2xl border border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
+                        <i data-lucide="gem" class="text-teal-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_13_title">1080p Video Upgrade (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_13_desc">1080p is now its own quality tier. Downloads take the best available quality, and upgrades move one step at a time: SD → HD, then 720p/HD → 1080p. 1080p requires SuperGrok Heavy and an explicit opt-in.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">3 Quality Tiers</span>
+                        <span class="mini-tag">Opt-in Only</span>
+                        <span class="mini-tag">Whole-Library Scan</span>
+                    </div>
+                    <a href="/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-teal-300 hover:text-teal-200 transition-colors">
+                        <span data-i18n="feat_13_link">Learn more</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
                 </div>
             </div>
         </div>

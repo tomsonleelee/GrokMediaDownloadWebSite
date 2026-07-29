@@ -1,17 +1,24 @@
 # GrokMediaDownloader
 
-> GrokMediaDownloader is a Chrome extension for Grok AI media management. Batch download images and videos, automate video generation with Video Gen Queue, create video stories with Story Mode, capture live streams in real-time, and organize everything into project folders — all processed locally in your browser with zero data collection. Published by Kario Studio. One-time $4.99 PRO lifetime license.
+> GrokMediaDownloader is a Chrome extension for Grok AI media management. Batch download images and videos, archive your entire Grok library organized by conversation, automate video generation with Video Gen Queue, create video stories with Story Mode, capture live streams in real-time, and organize everything into project folders — all processed locally in your browser with zero data collection. Published by Kario Studio. One-time $4.99 PRO lifetime license. Current version: 2.5.0.
 
 ## Key Features
+- **Whole Library Download** (new in v2.5): Download every generated image and video in your Grok Imagine library, not just favorites. Files are grouped into one folder per conversation (named `yyyymmdd_prompt_shortID`) with filenames taken from the real generation prompt. Keeps its own download history separate from favorite and tag downloads
+- **Three Download Sources**: Favorite (liked items), Tag (one Grok tag/folder, output under `tags/{tagName}/`), and All Generated Media by Conversation. Each source has independent deduplication records
+- **1080p Support** (new in v2.5): 1080p is a distinct quality tier alongside SD and HD/720p. Downloads take the highest available quality; upgrades move one tier at a time (SD→HD, 720p/HD→1080p). 1080p upgrade requires a SuperGrok Heavy plan and an explicit opt-in that is off by default
 - **Batch Download**: Scan and download all Grok AI images and videos at once with smart filtering by date, type, and resolution
 - **Video Gen Queue**: Automate video generation by queuing multiple image posts — the extension auto-generates videos in the background
 - **Story Mode**: Merge multiple Grok video clips into a single MP4 using in-browser WebAssembly FFmpeg — no server upload needed
 - **Stream Capture**: Real-time DOM observer detects and queues newly generated images as you browse Grok AI
 - **Project Download**: Group source images and resulting videos into organized project folders for bulk export
-- **HD Upgrade**: One-click upgrade images from standard to high resolution
+- **HD Upgrade**: Scan favorites or your whole library for videos below the top quality tier and send upgrade requests via the Grok API
+
+## Compatibility Note
+In July 2026 Grok migrated to a new conversation-and-asset media backend. Extension versions before 2.5.0 cannot detect images and videos generated after that migration. Version 2.5.0 is a full adaptation to the new backend. After updating, reload the extension at chrome://extensions, refresh the Grok tab, and regenerate the download list once so the new naming rules apply.
 
 ## Pages
 - Homepage: https://grokmedia.kario-studio.com/
+- Whole Library Download: https://grokmedia.kario-studio.com/library-download.html
 - FAQ: https://grokmedia.kario-studio.com/faq.html
 - Stream Capture: https://grokmedia.kario-studio.com/stream-capture.html
 - Story Mode: https://grokmedia.kario-studio.com/story-mode.html
@@ -25,8 +32,8 @@
 - GitHub: https://github.com/tomsonlee150/GrokMediaDownloader
 
 ## Stats
-- 8,000+ active users
-- 4.2/5 rating (20 reviews) on Chrome Web Store
+- 4,000+ active users
+- 4.1/5 rating (24 reviews) on Chrome Web Store
 - Available in 6 languages: English, Traditional Chinese, Japanese, Korean, Spanish, German
 
 ## Technical

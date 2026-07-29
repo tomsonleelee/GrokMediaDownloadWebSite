@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grok 画像・動画 一括ダウンロード | GrokMediaDownloader - Chrome拡張機能</title>
-    <meta name="description" content="Grok AIの画像と動画を一括ダウンロード・管理。ストリームキャプチャ、ストーリーモード、動画生成キュー、HDアップグレード。無料Chrome拡張機能、PRO $4.99。">
-    <meta name="keywords" content="Grok downloader, Story Mode Helper, Video Studio, Grok ダウンローダー, Grok 動画編集, Storyboard, フレーム抽出, FFmpeg, Chrome 拡張機能, 一括ダウンロード, Stream Capture, HD Upgrade, Grok AI video, 動画結合">
+    <meta name="description" content="Grok AIの画像と動画を一括ダウンロード・管理。v2.5でライブラリ全体ダウンロード（会話別）と1080pアップグレードに対応。無料Chrome拡張機能、PRO $4.99。">
+    <meta name="keywords" content="Grok downloader, ライブラリ全体ダウンロード, Grokメディア一括保存, 1080p Grok動画, 会話別フォルダ, Story Mode Helper, Video Studio, Grok ダウンローダー, Chrome 拡張機能, 一括ダウンロード, Stream Capture, HD Upgrade">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Kario Studio">
     <meta name="googlebot" content="index, follow">
@@ -57,18 +57,18 @@
       "@type": "SoftwareApplication",
       "name": "GrokMediaDownloader",
       "alternateName": ["Grok Media Downloader", "Grok 圖片下載器", "Story Mode Helper"],
-      "description": "The best Chrome extension for Grok AI media management. Features Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
+      "description": "The best Chrome extension for Grok AI media management. v2.5 adds Whole Library Download by conversation and 1080p video upgrade, alongside Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "2.3.2",
+      "softwareVersion": "2.5.0",
       "datePublished": "2025-11-22",
-      "dateModified": "2026-04-11",
+      "dateModified": "2026-07-29",
       "url": "https://grokmedia.kario-studio.com/ja/",
       "sameAs": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "screenshot": "https://grokmedia.kario-studio.com/assets/og-image.jpg",
-      "featureList": ["Tag-Based Download", "Custom Filename Templates", "Frame Lock & Trim", "Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
+      "featureList": ["Whole Library Download", "Conversation Folders", "1080p Video Upgrade", "Download Source Selector", "Tag-Based Download", "Custom Filename Templates", "Frame Lock & Trim", "Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
       "offers": {
         "@type": "Offer",
         "price": "4.99",
@@ -83,8 +83,8 @@
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.2",
-        "ratingCount": "20",
+        "ratingValue": "4.1",
+        "ratingCount": "24",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -240,7 +240,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <style>
         body {
@@ -296,7 +296,7 @@
     </a>
 
     <!-- Header Placeholder -->
-    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ja/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ja/" class="text-sm text-slate-300 hover:text-white">ホーム</a><a href="/ja/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">ストーリーモード</a><a href="/ja/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">動画生成キュー</a><a href="/ja/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">ストリームキャプチャ</a><a href="/ja/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">プロジェクトDL</a><a href="/ja/pricing.html" class="text-sm text-slate-300 hover:text-white">料金</a><a href="/ja/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ja/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ja/" class="text-sm text-slate-300 hover:text-white">ホーム</a><a href="/ja/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">ライブラリ全体DL</a><a href="/ja/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">ストーリーモード</a><a href="/ja/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">動画生成キュー</a><a href="/ja/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">ストリームキャプチャ</a><a href="/ja/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">プロジェクトDL</a><a href="/ja/pricing.html" class="text-sm text-slate-300 hover:text-white">料金</a><a href="/ja/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
 
     <!-- Hero Section -->
     <main id="main-content">
@@ -315,7 +315,7 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.3 最新アップデート | タグダウンロード・ファイル名テンプレート・フレームロック</span>
+                        <span data-i18n="hero_badge">v2.5 最新アップデート | ライブラリ全体DL・1080pアップグレード・Grok新API対応</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -323,7 +323,7 @@
                         <span class="text-pink-500" data-i18n="hero_title_2">メディア資産管理</span>
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">単なるダウンローダーではなく、クリエイティブスタジオです。v2.3ではタグ別ダウンロードでメディアをタグ分類管理、カスタムファイル名テンプレートで柔軟な命名、Frame Lockでシームレスな動画連続生成に対応。</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">単なるダウンローダーではなく、クリエイティブスタジオです。v2.5はGrokの新しいメディアバックエンドに完全対応し、ライブラリ全体ダウンロードを追加 —— すべての生成画像と動画を会話別にアーカイブ —— さらに1080pを独立した品質階層として扱います。</p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
@@ -350,8 +350,8 @@
                     <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
                         <span class="feature-tag"><span>📥</span> <span data-i18n="hero_tag_1">一括ダウンロード</span></span>
                         <span class="feature-tag"><span>🎯</span> <span data-i18n="hero_tag_2">Video Gen Queue</span></span>
-                        <span class="feature-tag"><span>🏷️</span> <span data-i18n="hero_tag_3">タグダウンロード</span></span>
-                        <span class="feature-tag"><span>✨</span> <span data-i18n="hero_tag_4">HDアップグレード</span></span>
+                        <span class="feature-tag"><span>📦</span> <span data-i18n="hero_tag_3">ライブラリ全体</span></span>
+                        <span class="feature-tag"><span>💎</span> <span data-i18n="hero_tag_4">1080pアップグレード</span></span>
                         <span class="feature-tag"><span>📂</span> <span data-i18n="hero_tag_5">プロジェクトフォルダ</span></span>
                         <span class="feature-tag"><span>🌊</span> <span data-i18n="hero_tag_6">Stream Capture</span></span>
                     </div>
@@ -371,12 +371,12 @@
                         <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="flex items-center gap-3 bg-slate-800/60 border border-slate-700/50 rounded-xl px-4 py-2.5 hover:border-pink-500/30 transition-colors">
                             <div class="flex items-center gap-1 text-yellow-400">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
-                                <span class="font-bold">4.2</span>
+                                <span class="font-bold">4.1</span>
                             </div>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">8,000+ ユーザー</span>
+                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">4,000+ ユーザー</span>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-400" data-i18n="hero_social_reviews">20件のレビュー</span>
+                            <span class="text-slate-400" data-i18n="hero_social_reviews">24件のレビュー</span>
                             <span class="text-slate-600 text-xs" data-i18n="hero_social_source">Chrome ウェブストア</span>
                         </a>
                     </div>
@@ -391,7 +391,7 @@
                         <div class="bg-white border-b border-gray-100 p-3 flex items-center gap-2">
                             <i data-lucide="play-circle" class="w-5 h-5 text-slate-800"></i>
                             <span class="font-bold text-sm text-slate-900">Grok Media Downloader</span>
-                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.2</span>
+                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.5</span>
                         </div>
                         <div class="p-3 space-y-2 bg-[#F9FAFB]">
                             <div class="flex gap-1.5">
@@ -402,6 +402,7 @@
                                 <div class="flex justify-between text-gray-600"><span>🖼️ Images</span><span class="font-bold text-gray-900">342 / 342 / 0</span></div>
                                 <div class="flex justify-between text-gray-600"><span>🎬 SD Videos</span><span class="font-bold text-gray-900">156 / 120 / 36</span></div>
                                 <div class="flex justify-between text-gray-600"><span>✨ HD Videos</span><span class="font-bold text-gray-900">89 / 89 / 0</span></div>
+                                <div class="flex justify-between text-gray-600"><span>💎 1080p Videos</span><span class="font-bold text-gray-900">37 / 37 / 0</span></div>
                                 <div class="flex justify-between text-gray-600"><span>📂 Projects</span><span class="font-bold text-gray-900">47</span></div>
                             </div>
                             <div class="bg-blue-600 text-white text-center py-2 rounded-lg text-xs font-bold">1. Generate List</div>
@@ -696,7 +697,7 @@
                     <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_1_desc">手動で探す必要なし。お気に入りの画像や動画を自動スキャンし、ダウンロード可能なメディアリストを生成。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Images</span>
-                        <span class="mini-tag">SD/HD Videos</span>
+                        <span class="mini-tag">SD/HD/1080p</span>
                         <span class="mini-tag">Metadata</span>
                     </div>
                     <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
@@ -756,11 +757,11 @@
                         <i data-lucide="monitor-up" class="text-cyan-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_5_title">HD動画アップグレード (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_5_desc">お気に入り動画を自動スキャンし、HD版がないものを特定してGrok APIでアップグレードリクエスト。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_5_desc">お気に入りまたはライブラリ全体をスキャンし、SD／HD-720p／1080pの内訳を確認して、Grok APIで一度に1段階ずつアップグレード。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Auto Scan</span>
                         <span class="mini-tag">Time Filter</span>
-                        <span class="mini-tag">480p → 720p</span>
+                        <span class="mini-tag">SD → HD → 1080p</span>
                     </div>
                     <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
                         <img src="/assets/resized/feat-hd-upgrade_1280x800.jpg" alt="GrokMediaDownloader HD video upgrade — auto-scan favorited videos and upgrade from SD to 720p HD" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
@@ -854,32 +855,68 @@
                     </div>
                 </div>
 
-                <!-- Feature 9: Tag-Based Download (NEW v2.3) -->
-                <div class="feat-card-border feat-border-green bg-gradient-to-br from-amber-900/50 to-orange-900/50 p-8 rounded-2xl border border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 9: Tag-Based Download (v2.3) -->
+                <div class="feat-card-border feat-border-green bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">タグ別ダウンロード (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_10_desc">タグでメディアをダウンロード！タグフォルダを選択し、その中のメディアを一括ダウンロード。タグごとに独立したダウンロード履歴、tags/{tagName}/ に整理保存。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">タグでメディアをダウンロード！タグフォルダを選択し、その中のメディアを一括ダウンロード。タグごとに独立したダウンロード履歴、tags/{tagName}/ に整理保存。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">タグフォルダ</span>
                         <span class="mini-tag">独立履歴</span>
                     </div>
                 </div>
 
-                <!-- Feature 10: Custom Filename Templates (NEW v2.3) -->
-                <div class="feat-card-border feat-border-purple bg-gradient-to-br from-violet-900/50 to-indigo-900/50 p-8 rounded-2xl border border-violet-500/50 transition-all hover:shadow-lg hover:shadow-violet-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-violet-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 10: Custom Filename Templates (v2.3) -->
+                <div class="feat-card-border feat-border-purple bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-violet-500/50 transition-all hover:shadow-lg hover:shadow-violet-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-violet-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-violet-500/30 transition-colors">
                         <i data-lucide="file-text" class="text-violet-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_11_title">カスタムファイル名テンプレート</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_11_desc">3つのファイル名モード：Grokネイティブ、プロンプトベース、またはカスタムテンプレート（{date}、{prompt}、{quality}等のトークン対応）。お好みの方法でファイル名を設定。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_11_desc">3つのファイル名モード：Grokネイティブ、プロンプトベース、またはカスタムテンプレート（{date}、{prompt}、{quality}等のトークン対応）。お好みの方法でファイル名を設定。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">3モード</span>
                         <span class="mini-tag">カスタムトークン</span>
                     </div>
+                </div>
+
+                <!-- Feature 11: Whole Library Download (NEW v2.5) -->
+                <div class="feat-card-border feat-border-green bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-8 rounded-2xl border border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-colors">
+                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">ライブラリ全体ダウンロード (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">お気に入りだけでなく、すべての生成画像と動画をダウンロード。ファイルは会話ごとのフォルダにまとめられ、実際にそれを生み出したプロンプトで名付けられ、独立したダウンロード履歴を持ちます。</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">会話別に整理</span>
+                        <span class="mini-tag">プロンプト名</span>
+                        <span class="mini-tag">独立した履歴</span>
+                    </div>
+                    <a href="/ja/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
+                        <span data-i18n="feat_12_link">詳しく見る</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 12: 1080p Upgrade (NEW v2.5) -->
+                <div class="feat-card-border feat-border-cyan bg-gradient-to-br from-teal-900/50 to-cyan-900/50 p-8 rounded-2xl border border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
+                        <i data-lucide="gem" class="text-teal-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_13_title">1080p 動画アップグレード (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_13_desc">1080pが独立した品質階層になりました。ダウンロードは最高品質を自動選択し、アップグレードは一度に1段階ずつ：SD → HD、そして720p/HD → 1080p。1080pにはSuperGrok Heavyと明示的なオプトインが必要です。</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">3つの品質階層</span>
+                        <span class="mini-tag">明示的な選択制</span>
+                        <span class="mini-tag">ライブラリ全体対応</span>
+                    </div>
+                    <a href="/ja/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-teal-300 hover:text-teal-200 transition-colors">
+                        <span data-i18n="feat_13_link">詳しく見る</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
                 </div>
             </div>
         </div>

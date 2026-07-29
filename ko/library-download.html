@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전체 라이브러리 다운로드 | Grok 미디어를 대화별로 일괄 저장 - GrokMediaDownloader</title>
+    <meta name="description" content="Grok Imagine 라이브러리 전체를 다운로드하세요 —— 즐겨찾기만이 아닙니다. 대화별 폴더 정리, 실제 프롬프트 기반 파일명, 1080p 지원, 독립된 다운로드 기록. v2.5 신기능.">
+    <meta name="keywords" content="grok 미디어 전체 다운로드, grok 라이브러리 다운로드, grok 이미지 일괄 저장, grok 대화 폴더, 1080p grok 동영상, grok 에셋, 크롬 확장 프로그램">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/ko/library-download.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/library-download.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/library-download.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/library-download.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/library-download.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/library-download.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/ko/library-download.html">
+    <meta property="og:title" content="전체 라이브러리 다운로드 | 모든 이미지와 동영상을 정리된 상태로">
+    <meta property="og:description" content="v2.5 신기능! Grok Imagine 라이브러리 전체를 대화별로 다운로드하세요. 즐겨찾기나 태그 필터가 필요 없습니다. 1080p 지원, 프롬프트 기반 파일명.">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ja_JP">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="전체 라이브러리 다운로드 | GrokMediaDownloader v2.5">
+    <meta name="twitter:description" content="라이브러리의 모든 생성 이미지와 동영상을 대화별 폴더로 정리해 다운로드하세요. 1080p 지원.">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "홈",
+          "item": "https://grokmedia.kario-studio.com/ko/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "전체 라이브러리 다운로드",
+          "item": "https://grokmedia.kario-studio.com/ko/library-download.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "전체 라이브러리 다운로드란 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "전체 라이브러리 다운로드는 GrokMediaDownloader v2.5에서 새로 추가된 다운로드 소스로, Grok Imagine 라이브러리에 있는 모든 생성 이미지와 동영상을 가져옵니다. 즐겨찾기로 표시했거나 태그로 분류한 항목에만 국한되지 않습니다. 확장 프로그램 팝업에서는 기존의 즐겨찾기, 태그와 나란히 다운로드 소스 선택기에 \"📦 모든 생성 미디어(대화별)\"로 표시됩니다. 선별된 일부가 아니라 전체 에셋 목록을 읽기 때문에, 지금까지 생성한 모든 것을 로컬에 완전히 보관하고 싶을 때 알맞은 선택입니다. 파일은 대화당 하나의 폴더로 묶이므로, 스레드를 시작한 이미지와 그로부터 생성된 동영상이 평평한 다운로드 디렉터리에 흩어지지 않고 한곳에 모입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "즐겨찾기·태그 다운로드와 어떻게 다른가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "세 가지 소스는 각기 다른 필요에 대응하며 서로 완전히 독립적입니다. 즐겨찾기는 Grok에서 좋아요를 누른 항목만 다운로드하므로 대상이 작고 선별된 상태로 유지됩니다. 태그는 특정 Grok 태그나 폴더에 분류된 모든 것을 다운로드하고 tags/{tagName}/ 아래에 정리합니다. 전체 라이브러리는 두 필터를 모두 무시하고 생성 라이브러리 전체를 대상으로 하며, 대신 대화별로 출력을 정리합니다. 중요한 점은 각 소스가 자체 다운로드 기록을 유지한다는 것입니다. 따라서 전체 라이브러리를 다운로드해도 즐겨찾기가 이미 다운로드됨으로 표시되지 않으며 그 반대도 마찬가지입니다. 세 가지를 오래 병행해 사용해도 한쪽이 다른 쪽의 중복 제거 기록을 오염시키지 않습니다. 이는 v2.5 이전에 흔한 혼란의 원인이었습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "폴더와 파일 이름은 어떻게 정해지나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "각 대화가 하나의 폴더가 되며 yyyymmdd_프롬프트_짧은ID 패턴으로 이름이 지정됩니다. 대화에 제목이 없으면 확장 프로그램은 폴더를 \"untitled\"로 표시하는 대신 해당 대화의 프롬프트를 사용합니다. 몇 달 뒤에 다시 열어봐도 폴더 이름이 의미를 유지합니다. 이미지 파일명은 해당 이미지에 기록된 실제 생성 프롬프트를 사용하고, 동영상 파일명은 원본 이미지의 프롬프트를 사용합니다. Grok이 동영상 에셋 자체에는 프롬프트를 저장하지 않기 때문입니다. 기계적인 이름을 선호한다면 \"Grok 기본\" 파일명 모드가 grok_image_YYYYMMDD_id를 생성합니다. 파일명은 목록에 고정되지 않고 다운로드 시점에 생성되므로, 파일명 형식을 바꿔도 목록을 다시 생성할 필요가 없습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "새로 생성한 Grok 미디어가 왜 감지되지 않나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026년 7월 Grok은 새로운 \"대화 + 에셋\" 미디어 백엔드로 전환했습니다. 이전 확장 프로그램 버전이 의존하던 엔드포인트는 더 이상 Saved 및 미디어 라이브러리 화면을 지원하지 않으므로, v2.5.0 이전 버전은 전환 이후 생성된 이미지와 동영상을 볼 수 없습니다. GrokMediaDownloader v2.5.0은 새 백엔드에 대한 완전한 대응이며 새로 생성된 미디어의 감지를 복구합니다. 업데이트 후 chrome://extensions를 열어 확장 프로그램을 다시 로드하고 Grok 탭을 새로 고치세요. 다운로드 목록도 한 번 다시 생성해야 합니다. 프롬프트 기반 파일명과 새로운 대화 폴더 규칙은 \"목록 생성\" 단계에서 기록되며, 이전 버전으로 만든 목록에는 소급 적용되지 않기 때문입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "전체 라이브러리 다운로드를 날짜로 필터링할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네. 전체 라이브러리 소스는 다른 소스와 동일한 날짜 필터를 지원하며, 최근 N시간 구간과 명시적인 날짜 범위를 모두 다룹니다. 스캔은 최신순으로 라이브러리를 따라가다가 선택한 구간의 끝을 지나면 조기에 중단합니다. 따라서 날짜로 필터링할 때 결과를 보기 위해 라이브러리 전체를 다 훑을 필요가 없습니다. 이는 대규모 계정에서 특히 중요합니다. 적응형 스로틀링 및 429 속도 제한 백오프와 결합하면 8,000개 이상의 에셋을 가진 라이브러리도 끝까지 스캔할 수 있지만, 좁은 날짜 필터는 훨씬 빨리 끝납니다. \"목록 생성\" 버튼은 스캔, 동영상 품질 확인, 폴더 준비의 각 단계별 진행 상황을 보고하므로 지금 어느 단계가 실행 중인지 알 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "v2.5의 1080p 지원은 무엇을 더해주나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "v2.5는 확장 프로그램 전반에서 1080p를 독립된 품질 계층으로 인식합니다. 다운로드는 사용 가능한 최고 품질을 자동으로 선택하며, 1080p를 HD보다, HD를 원본 파일보다 우선합니다. 스캔 통계는 모든 것을 SD와 HD로 뭉뚱그리지 않고 SD, HD/720p, 1080p에 각각 몇 개의 동영상이 있는지 구분해 보여줍니다. 업그레이드 기능은 이제 한 번에 한 단계씩, SD에서 HD로, 720p 또는 HD에서 1080p로 끌어올릴 수 있습니다. 1080p 업그레이드에는 유료 Grok 플랜, 구체적으로 SuperGrok Heavy가 필요하므로 기본적으로 꺼져 있는 명시적 선택 체크박스 뒤에 있습니다. 체크하지 않으면 확장 프로그램은 1080p 요청을 전혀 보내지 않습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "이전에는 업그레이드 스캔을 반복할 때마다 결과가 달랐던 이유는 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grok 서버는 갓 생성된 동영상에 대해 HD 미디어 URL을 일관되지 않게 반환합니다. 같은 동영상을 몇 초 안에 두 번 조회하면 한 번은 해당 필드가 오고 다음에는 누락될 수 있었습니다. 해상도 필드 자체는 안정적인데도 말이죠. 그래서 같은 동영상이 어떤 스캔에서는 SD, 다음에는 HD로 보였고, \"최근 N시간 업그레이드\"를 반복할 때마다 다른 결과가 나왔습니다. v2.5는 업그레이드 판단 전용 품질 기억을 추가해 각 동영상에서 확인된 최고 품질을 기록하고, 이후 조회가 불완전하게 돌아와도 등급을 낮추지 않습니다. 기록에는 30일 유효 기간과 개수 상한이 있으며, 기억한 URL이 유효하지 않은 것으로 밝혀지면 자동으로 삭제됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "무료 버전에서도 전체 라이브러리 다운로드를 쓸 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "전체 라이브러리 다운로드는 PRO 기능입니다. GrokMediaDownloader PRO는 4.99달러 일회성 구매의 평생 라이선스이며 향후 모든 업데이트를 포함합니다. 전체 라이브러리 다운로드 외에도 PRO는 스트림 캡처, 스토리 모드 헬퍼, 무제한 동영상 생성 대기열, 프로젝트 기반 다운로드, 태그 기반 다운로드, 날짜 및 기록 필터링, HD와 1080p 업그레이드, 데이터 내보내기와 가져오기를 잠금 해제합니다. 무료 버전에서도 즐겨찾기의 기본 일괄 다운로드는 사용할 수 있으므로 결정하기 전에 핵심 워크플로를 확인할 수 있습니다. 모든 처리는 브라우저 내에서 로컬로 이루어지며, 확장 프로그램은 데이터를 수집하지 않고 어떤 서버에도 업로드하지 않습니다."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #10B981 0%, #0D9488 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+        본문으로 건너뛰기
+    </a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ko/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ko/" class="text-sm text-slate-300 hover:text-white">홈</a><a href="/ko/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">전체 라이브러리</a><a href="/ko/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">스토리 모드</a><a href="/ko/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">동영상 생성 대기열</a><a href="/ko/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">스트림 캡처</a><a href="/ko/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">프로젝트 다운로드</a><a href="/ko/pricing.html" class="text-sm text-slate-300 hover:text-white">가격</a><a href="/ko/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span data-i18n="library_badge">v2.5 신기능</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    <span class="gradient-text" data-i18n="library_title">전체 라이브러리 다운로드</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-emerald-300 mb-4" data-i18n="library_subtitle">모든 생성 이미지와 동영상을 대화별로 정리</p>
+
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="library_desc">즐겨찾기에는 좋아요를 누르는 것을 잊지 않은 것만 남습니다. 전체 라이브러리 다운로드는 Grok Imagine 라이브러리를 통째로 보관합니다 —— 모든 이미지와 모든 동영상을, 대화별 폴더로 묶고 실제로 그것을 만들어낸 프롬프트로 이름을 붙여서.</p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                        <span data-i18n="hero_cta_chrome">Chrome에 추가</span>
+                    </a>
+
+                    <button onclick="openLemonSqueezy()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                        <span data-i18n="price_pro_button">$4.99 PRO 평생 라이선스</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grok API Migration Notice — unique to Library Download -->
+    <section class="py-16 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6 md:p-8">
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="alert-triangle" class="text-amber-400 w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl md:text-2xl font-bold text-white mb-3" data-i18n="library_notice_title">Grok이 2026년 7월에 미디어 백엔드를 교체했습니다</h2>
+                        <p class="text-slate-300 leading-relaxed mb-4" data-i18n="library_notice_desc">Grok은 새로운 "대화 + 에셋" 모델로 전환했습니다. 이전 확장 프로그램 버전이 의존하던 엔드포인트는 더 이상 Saved 및 미디어 라이브러리 화면을 지원하지 않습니다. 즉 <strong class="text-white">v2.5.0 이전 버전은 새로 생성된 이미지와 동영상을 감지할 수 없습니다</strong>. v2.5.0은 새 백엔드에 대한 완전한 대응이며, 전체 라이브러리 다운로드는 이 새로운 API가 있었기에 가능해진 기능입니다.</p>
+                        <div class="grid sm:grid-cols-3 gap-3 text-sm">
+                            <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
+                                <div class="text-emerald-400 font-bold mb-1">1. 업데이트</div>
+                                <p class="text-slate-400" data-i18n="library_notice_step_1">Chrome 웹 스토어에서 v2.5.0 설치</p>
+                            </div>
+                            <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
+                                <div class="text-emerald-400 font-bold mb-1">2. 다시 로드</div>
+                                <p class="text-slate-400" data-i18n="library_notice_step_2">chrome://extensions에서 확장 프로그램을 다시 로드하고 Grok 탭 새로 고침</p>
+                            </div>
+                            <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
+                                <div class="text-emerald-400 font-bold mb-1">3. 재생성</div>
+                                <p class="text-slate-400" data-i18n="library_notice_step_3">다운로드 목록을 한 번 다시 생성해 새 명명 규칙 적용</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_core_title">핵심 기능</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_core_desc">선별된 일부가 아니라 아카이브 전체를 원하는 사람을 위해 만든 다운로드 소스.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_1_title">전체 라이브러리 스캔</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_1_desc">즐겨찾기 일부가 아니라 전체 에셋 목록을 읽습니다. 좋아요를 누르는 것을 잊었다는 이유로 작품이 누락되지 않습니다.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all">
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="messages-square" class="text-teal-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_2_title">대화별 폴더</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_2_desc">대화 하나에 폴더 하나. 원본 이미지와 그로부터 생성된 모든 동영상이 흩어지지 않고 한곳에 모입니다.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="git-branch" class="text-cyan-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_3_title">독립된 기록</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_3_desc">전체 라이브러리 다운로드는 자체 중복 제거 기록을 유지합니다. 전체를 보관해도 즐겨찾기가 다운로드됨으로 표시되지 않습니다.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="calendar-clock" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_4_title">조기 중단 날짜 필터</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_4_desc">최신순으로 스캔하다가 지정한 구간을 지나면 중단합니다. 날짜로 필터링할 때 라이브러리 전체를 훑을 필요가 없습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Download Sources — unique differentiator -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4" data-i18n="library_sources_badge">다운로드 소스 선택기</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_sources_title">세 가지 소스, 세 가지 역할</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_sources_subtitle">v2.5는 다운로드 소스를 날짜 필터에서 완전히 분리했습니다. 먼저 미디어의 출처를 고르고 그다음 필터링하세요 —— 둘은 더 이상 충돌하지 않습니다.</p>
+            </div>
+
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[720px] border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-700">
+                            <th class="text-left py-4 px-6 text-slate-400 font-semibold text-sm"></th>
+                            <th class="text-center py-4 px-6 text-white font-bold">⭐ 즐겨찾기</th>
+                            <th class="text-center py-4 px-6 text-white font-bold">🏷️ 태그</th>
+                            <th class="text-center py-4 px-6 bg-emerald-500/10 rounded-t-xl">
+                                <span class="text-emerald-300 font-bold">📦 모든 생성 미디어</span>
+                                <span class="block text-[10px] text-emerald-400/70 font-semibold uppercase tracking-wide mt-0.5">v2.5 신규</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_1">포함 범위</td>
+                            <td class="py-4 px-6 text-center text-slate-400">좋아요한 항목</td>
+                            <td class="py-4 px-6 text-center text-slate-400">Grok 태그/폴더 하나</td>
+                            <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">라이브러리 전체</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2">폴더 구조</td>
+                            <td class="py-4 px-6 text-center text-slate-400">평면/날짜별</td>
+                            <td class="py-4 px-6 text-center text-slate-400 font-mono text-xs">tags/{tagName}/</td>
+                            <td class="py-4 px-6 text-center text-emerald-300 font-mono text-xs bg-emerald-500/5">yyyymmdd_prompt_id/</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_3">다운로드 기록</td>
+                            <td class="py-4 px-6 text-center text-slate-400">독립</td>
+                            <td class="py-4 px-6 text-center text-slate-400">독립</td>
+                            <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">독립</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_4">날짜 필터</td>
+                            <td class="py-4 px-6 text-center text-emerald-400">✓</td>
+                            <td class="py-4 px-6 text-center text-emerald-400">✓</td>
+                            <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓ 조기 중단 지원</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_5">적합한 용도</td>
+                            <td class="py-4 px-6 text-center text-slate-400">엄선한 작품</td>
+                            <td class="py-4 px-6 text-center text-slate-400">단일 프로젝트 주제</td>
+                            <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">완전한 로컬 아카이브</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="text-center text-slate-500 text-sm mt-6" data-i18n="library_sources_note">⚠️ 전체 라이브러리 다운로드는 양이 매우 많을 수 있습니다. 즐겨찾기와 태그는 선별된 상태로 유지됩니다 —— 이 새 소스는 의도적으로 전부를 원할 때를 위한 것입니다.</p>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_step_title">전체 라이브러리 다운로드 작동 방식</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_step_desc">네 단계, 각 단계마다 진행 상황이 보입니다.</p>
+            </div>
+
+            <div class="space-y-8 max-w-3xl mx-auto">
+                <!-- Step 1 -->
+                <div class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">1</div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_1_title">소스 선택</h3>
+                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_1_desc">Grok Imagine 페이지에서 확장 프로그램을 열고 다운로드 소스 선택기에서 "📦 모든 생성 미디어(대화별)"를 선택합니다. 필요하면 최근 N시간 구간이나 날짜 범위를 설정하세요.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">2</div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_2_title">목록 생성</h3>
+                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_2_desc">확장 프로그램이 최신순으로 라이브러리를 스캔하고, 각 동영상의 품질 계층을 확인하며, 대화 폴더를 준비합니다. 스캔 중, 동영상 품질 확인 N/M, 폴더 준비 N/M 등 각 단계의 진행 상황이 보고됩니다.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">3</div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_3_title">요약 확인</h3>
+                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_3_desc">요약에는 다운로드 예정 및 완료된 이미지와 동영상 수가 표시되며, 동영상은 1080p, HD, 720p, SD로 나뉘어 표시되므로 무엇을 가져올지 정확히 알 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">4</div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_4_title">다운로드 및 보관</h3>
+                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_4_desc">파일은 대화별 폴더에 프롬프트 기반 이름으로 다운로드됩니다. 중단된 다운로드는 기록되므로 재시도 시 누락된 것만 가져오며 완료된 파일을 다시 받지 않습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Technical Info -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="library_tech_title">기술 하이라이트</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="gauge" class="text-emerald-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_1_title">적응형 스로틀링과 429 백오프</h4>
+                                <p class="text-slate-400 text-sm" data-i18n="library_tech_1_desc">스캔 속도가 서버 응답에 맞춰 조정되며 속도 제한 백오프를 갖췄습니다. 8,000개 이상의 라이브러리도 중간에 끊기지 않고 끝까지 스캔할 수 있습니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="zap" class="text-teal-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_2_title">동시 품질 확인</h4>
+                                <p class="text-slate-400 text-sm" data-i18n="library_tech_2_desc">동영상 품질을 제한된 동시성과 실시간 카운터로 확인해, 기존에 몇 분 걸리던 단계를 약 1분으로 단축했습니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="text-cursor-input" class="text-cyan-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_3_title">실제 프롬프트 파일명</h4>
+                                <p class="text-slate-400 text-sm" data-i18n="library_tech_3_desc">이미지는 자체 생성 프롬프트를 사용하고, 동영상은 원본 이미지의 프롬프트를 이어받습니다. Grok이 동영상 에셋 자체에는 프롬프트를 저장하지 않기 때문입니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="layers" class="text-emerald-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_4_title">대화 제목 일괄 조회</h4>
+                                <p class="text-slate-400 text-sm" data-i18n="library_tech_4_desc">실제로 필요한 대화의 제목만 일괄로 가져옵니다. 전체 대화 목록을 페이지 단위로 훑지 않습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Mockup -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full"></div>
+                    <div class="relative bg-slate-900 rounded-2xl border border-emerald-500/30 p-6 shadow-2xl">
+                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-slate-800">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="ml-2 text-slate-500 text-sm">Grok Media Downloader v2.5</span>
+                        </div>
+
+                        <!-- Download Source Selector -->
+                        <div class="mb-4">
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">🎯 다운로드 소스</div>
+                            <div class="space-y-1.5">
+                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-sm text-slate-400">
+                                    <span class="w-3 h-3 rounded-full border border-slate-600"></span>
+                                    <span>⭐ 즐겨찾기</span>
+                                </div>
+                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-sm text-slate-400">
+                                    <span class="w-3 h-3 rounded-full border border-slate-600"></span>
+                                    <span>🏷️ 태그</span>
+                                </div>
+                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/40 text-sm text-white font-semibold">
+                                    <span class="w-3 h-3 rounded-full bg-emerald-500 border border-emerald-400"></span>
+                                    <span>📦 모든 생성 미디어</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Scan Results -->
+                        <div class="mb-4 p-4 bg-slate-800/50 rounded-lg space-y-2">
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">스캔 결과</div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">🖼️ 이미지</span>
+                                <span class="text-white font-bold">1,284</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">💎 1080p 동영상</span>
+                                <span class="text-white font-bold">37</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">✨ HD / 720p 동영상</span>
+                                <span class="text-white font-bold">312</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">🎬 SD 동영상</span>
+                                <span class="text-white font-bold">148</span>
+                            </div>
+                            <div class="border-t border-slate-700 pt-2 mt-2 flex items-center justify-between text-sm">
+                                <span class="text-slate-300">💬 대화</span>
+                                <span class="text-emerald-300 font-bold">216개 폴더</span>
+                            </div>
+                        </div>
+
+                        <!-- Folder Preview -->
+                        <div class="mb-4 p-3 bg-slate-800/50 rounded-lg">
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">폴더 미리보기</div>
+                            <div class="text-sm font-mono space-y-1">
+                                <div class="text-emerald-300">📁 20260726_neon-city-rain_a3f9/</div>
+                                <div class="text-slate-400 pl-4">🖼️ neon-city-rain_01.jpg</div>
+                                <div class="text-slate-400 pl-4">🎬 neon-city-rain_01_1080p.mp4</div>
+                                <div class="text-emerald-300">📁 20260725_desert-sunrise_7b21/</div>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <button class="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg text-sm flex items-center justify-center gap-2">
+                            <i data-lucide="download" class="w-4 h-4"></i>
+                            다운로드 시작 (1,781개 파일)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1080p Quality Tiers — unique to Library Download -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4" data-i18n="library_quality_badge">v2.5 신규 추가</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_quality_title">1080p가 독립된 계층이 되었습니다</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_quality_subtitle">다운로드는 최고 품질을 자동 선택하고, 통계는 계층별로 나뉘며, 업그레이드는 한 번에 한 단계씩.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
+                <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 text-center">
+                    <div class="text-4xl mb-3">📦</div>
+                    <h3 class="text-lg font-bold text-white mb-2">SD</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="library_quality_sd">기본 출력 품질. 유료 Grok 플랜 없이도 HD로 업그레이드할 수 있습니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 text-center">
+                    <div class="text-4xl mb-3">🎥</div>
+                    <h3 class="text-lg font-bold text-white mb-2">HD / 720p</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="library_quality_hd">표준 업그레이드 대상. SD에서 한 단계로 도달합니다.</p>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 rounded-2xl border border-emerald-500/40 p-6 text-center">
+                    <div class="text-4xl mb-3">💎</div>
+                    <h3 class="text-lg font-bold text-white mb-2">1080p</h3>
+                    <p class="text-slate-300 text-sm" data-i18n="library_quality_1080">최상위 계층. SuperGrok Heavy와 명시적 선택이 필요합니다.</p>
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+                        <span data-i18n="library_quality_p1_title">명시적 선택, 예기치 않은 과금 없음</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p1_desc">1080p 업그레이드에는 유료 플랜이 필요하므로 체크박스는 기본적으로 꺼져 있습니다. 꺼둔 상태에서 확장 프로그램은 1080p 요청을 전혀 보내지 않고 SD에서 HD로의 업그레이드만 수행합니다 —— 그래도 확인 대화상자는 몇 개의 동영상이 1080p로 <em>갈 수 있는지</em> 알려주므로, 그것들이 조용히 사라지는 일은 없습니다. 계정에 권한이 없는 것으로 확인되면, 확장 프로그램은 한 번 감지한 시점에 이후의 1080p 요청을 중단하고 헛돌지 않습니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="history" class="w-4 h-4 text-emerald-400"></i>
+                        <span data-i18n="library_quality_p2_title">마침내 수렴하는 업그레이드 스캔</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p2_desc">Grok은 갓 생성된 동영상의 HD 미디어 URL을 일관되지 않게 반환해, 같은 동영상이 어떤 스캔에서는 SD로 다음에는 HD로 읽혔습니다 —— 그래서 "최근 N시간 업그레이드"를 반복할 때마다 답이 달라졌습니다. v2.5는 각 동영상에서 확인된 최고 품질을 기억하고 불완전한 조회에서는 등급을 낮추지 않습니다. 기록에는 30일 유효 기간과 개수 상한이 있으며, 기억한 URL이 유효하지 않으면 스스로 삭제됩니다. 속도 제한으로 전혀 확인할 수 없었던 동영상은 SD로 오인되지 않고 목록에서 제외되어 보고됩니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
+                        <i data-lucide="target" class="w-4 h-4 text-emerald-400"></i>
+                        <span data-i18n="library_quality_p3_title">즐겨찾기뿐 아니라 라이브러리 전체를 업그레이드</span>
+                    </h3>
+                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p3_desc">업그레이드 기능에도 자체 소스 선택기 —— 즐겨찾기 또는 전체 라이브러리 —— 가 추가되어, 좋아요를 누른 동영상만 업그레이드할 수 있다는 제약이 사라졌습니다. 확인 대화상자는 라이브러리를 SD, HD/720p, 1080p로 나눠 내역을 보여주고 이번에 실제로 몇 개를 업그레이드할지 명시합니다. 전체 라이브러리 스캔은 예상보다 오래 걸리면 도중에 중단할 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">자주 묻는 질문</h2>
+                <p class="text-slate-400">전체 라이브러리 다운로드에 대해 알아야 할 모든 것</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">전체 라이브러리 다운로드란 무엇인가요?</h3>
+                    <p class="text-slate-400 leading-relaxed">전체 라이브러리 다운로드는 GrokMediaDownloader v2.5에서 새로 추가된 다운로드 소스로, Grok Imagine 라이브러리에 있는 모든 생성 이미지와 동영상을 가져옵니다. 즐겨찾기로 표시했거나 태그로 분류한 항목에만 국한되지 않습니다. 확장 프로그램 팝업에서는 기존의 즐겨찾기, 태그와 나란히 다운로드 소스 선택기에 "📦 모든 생성 미디어(대화별)"로 표시됩니다. 선별된 일부가 아니라 전체 에셋 목록을 읽기 때문에, 지금까지 생성한 모든 것을 로컬에 완전히 보관하고 싶을 때 알맞은 선택입니다. 파일은 대화당 하나의 폴더로 묶이므로, 스레드를 시작한 이미지와 그로부터 생성된 동영상이 평평한 다운로드 디렉터리에 흩어지지 않고 한곳에 모입니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">즐겨찾기·태그 다운로드와 어떻게 다른가요?</h3>
+                    <p class="text-slate-400 leading-relaxed">세 가지 소스는 각기 다른 필요에 대응하며 서로 완전히 독립적입니다. 즐겨찾기는 Grok에서 좋아요를 누른 항목만 다운로드하므로 대상이 작고 선별된 상태로 유지됩니다. 태그는 특정 Grok 태그나 폴더에 분류된 모든 것을 다운로드하고 tags/{tagName}/ 아래에 정리합니다. 전체 라이브러리는 두 필터를 모두 무시하고 생성 라이브러리 전체를 대상으로 하며, 대신 대화별로 출력을 정리합니다. 중요한 점은 각 소스가 자체 다운로드 기록을 유지한다는 것입니다. 따라서 전체 라이브러리를 다운로드해도 즐겨찾기가 이미 다운로드됨으로 표시되지 않으며 그 반대도 마찬가지입니다. 세 가지를 오래 병행해 사용해도 한쪽이 다른 쪽의 중복 제거 기록을 오염시키지 않습니다. 이는 v2.5 이전에 흔한 혼란의 원인이었습니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">폴더와 파일 이름은 어떻게 정해지나요?</h3>
+                    <p class="text-slate-400 leading-relaxed">각 대화가 하나의 폴더가 되며 yyyymmdd_프롬프트_짧은ID 패턴으로 이름이 지정됩니다. 대화에 제목이 없으면 확장 프로그램은 폴더를 "untitled"로 표시하는 대신 해당 대화의 프롬프트를 사용합니다. 몇 달 뒤에 다시 열어봐도 폴더 이름이 의미를 유지합니다. 이미지 파일명은 해당 이미지에 기록된 실제 생성 프롬프트를 사용하고, 동영상 파일명은 원본 이미지의 프롬프트를 사용합니다. Grok이 동영상 에셋 자체에는 프롬프트를 저장하지 않기 때문입니다. 기계적인 이름을 선호한다면 "Grok 기본" 파일명 모드가 grok_image_YYYYMMDD_id를 생성합니다. 파일명은 목록에 고정되지 않고 다운로드 시점에 생성되므로, 파일명 형식을 바꿔도 목록을 다시 생성할 필요가 없습니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">새로 생성한 Grok 미디어가 왜 감지되지 않나요?</h3>
+                    <p class="text-slate-400 leading-relaxed">2026년 7월 Grok은 새로운 "대화 + 에셋" 미디어 백엔드로 전환했습니다. 이전 확장 프로그램 버전이 의존하던 엔드포인트는 더 이상 Saved 및 미디어 라이브러리 화면을 지원하지 않으므로, v2.5.0 이전 버전은 전환 이후 생성된 이미지와 동영상을 볼 수 없습니다. GrokMediaDownloader v2.5.0은 새 백엔드에 대한 완전한 대응이며 새로 생성된 미디어의 감지를 복구합니다. 업데이트 후 chrome://extensions를 열어 확장 프로그램을 다시 로드하고 Grok 탭을 새로 고치세요. 다운로드 목록도 한 번 다시 생성해야 합니다. 프롬프트 기반 파일명과 새로운 대화 폴더 규칙은 "목록 생성" 단계에서 기록되며, 이전 버전으로 만든 목록에는 소급 적용되지 않기 때문입니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">전체 라이브러리 다운로드를 날짜로 필터링할 수 있나요?</h3>
+                    <p class="text-slate-400 leading-relaxed">네. 전체 라이브러리 소스는 다른 소스와 동일한 날짜 필터를 지원하며, 최근 N시간 구간과 명시적인 날짜 범위를 모두 다룹니다. 스캔은 최신순으로 라이브러리를 따라가다가 선택한 구간의 끝을 지나면 조기에 중단합니다. 따라서 날짜로 필터링할 때 결과를 보기 위해 라이브러리 전체를 다 훑을 필요가 없습니다. 이는 대규모 계정에서 특히 중요합니다. 적응형 스로틀링 및 429 속도 제한 백오프와 결합하면 8,000개 이상의 에셋을 가진 라이브러리도 끝까지 스캔할 수 있지만, 좁은 날짜 필터는 훨씬 빨리 끝납니다. "목록 생성" 버튼은 스캔, 동영상 품질 확인, 폴더 준비의 각 단계별 진행 상황을 보고하므로 지금 어느 단계가 실행 중인지 알 수 있습니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">v2.5의 1080p 지원은 무엇을 더해주나요?</h3>
+                    <p class="text-slate-400 leading-relaxed">v2.5는 확장 프로그램 전반에서 1080p를 독립된 품질 계층으로 인식합니다. 다운로드는 사용 가능한 최고 품질을 자동으로 선택하며, 1080p를 HD보다, HD를 원본 파일보다 우선합니다. 스캔 통계는 모든 것을 SD와 HD로 뭉뚱그리지 않고 SD, HD/720p, 1080p에 각각 몇 개의 동영상이 있는지 구분해 보여줍니다. 업그레이드 기능은 이제 한 번에 한 단계씩, SD에서 HD로, 720p 또는 HD에서 1080p로 끌어올릴 수 있습니다. 1080p 업그레이드에는 유료 Grok 플랜, 구체적으로 SuperGrok Heavy가 필요하므로 기본적으로 꺼져 있는 명시적 선택 체크박스 뒤에 있습니다. 체크하지 않으면 확장 프로그램은 1080p 요청을 전혀 보내지 않습니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">이전에는 업그레이드 스캔을 반복할 때마다 결과가 달랐던 이유는 무엇인가요?</h3>
+                    <p class="text-slate-400 leading-relaxed">Grok 서버는 갓 생성된 동영상에 대해 HD 미디어 URL을 일관되지 않게 반환합니다. 같은 동영상을 몇 초 안에 두 번 조회하면 한 번은 해당 필드가 오고 다음에는 누락될 수 있었습니다. 해상도 필드 자체는 안정적인데도 말이죠. 그래서 같은 동영상이 어떤 스캔에서는 SD, 다음에는 HD로 보였고, "최근 N시간 업그레이드"를 반복할 때마다 다른 결과가 나왔습니다. v2.5는 업그레이드 판단 전용 품질 기억을 추가해 각 동영상에서 확인된 최고 품질을 기록하고, 이후 조회가 불완전하게 돌아와도 등급을 낮추지 않습니다. 기록에는 30일 유효 기간과 개수 상한이 있으며, 기억한 URL이 유효하지 않은 것으로 밝혀지면 자동으로 삭제됩니다.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">무료 버전에서도 전체 라이브러리 다운로드를 쓸 수 있나요?</h3>
+                    <p class="text-slate-400 leading-relaxed">전체 라이브러리 다운로드는 PRO 기능입니다. GrokMediaDownloader PRO는 4.99달러 일회성 구매의 평생 라이선스이며 향후 모든 업데이트를 포함합니다. 전체 라이브러리 다운로드 외에도 PRO는 스트림 캡처, 스토리 모드 헬퍼, 무제한 동영상 생성 대기열, 프로젝트 기반 다운로드, 태그 기반 다운로드, 날짜 및 기록 필터링, HD와 1080p 업그레이드, 데이터 내보내기와 가져오기를 잠금 해제합니다. 무료 버전에서도 즐겨찾기의 기본 일괄 다운로드는 사용할 수 있으므로 결정하기 전에 핵심 워크플로를 확인할 수 있습니다. 모든 처리는 브라우저 내에서 로컬로 이루어지며, 확장 프로그램은 데이터를 수집하지 않고 어떤 서버에도 업로드하지 않습니다.</p>
+                </div>
+            </div>
+
+            <p class="text-center text-slate-500 text-sm mt-8" data-i18n="library_faq_limit">알려진 제한: 직접 업로드했거나 생성 정보가 없는 에셋은 서버에 프롬프트나 대화 연결이 없습니다. 이런 항목은 에셋 ID로 정리됩니다.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="library_cta_title">Grok 라이브러리를 통째로 보관하세요</h2>
+            <p class="text-slate-400 mb-8" data-i18n="library_cta_desc">전체 라이브러리 다운로드는 PRO 전용 기능입니다</p>
+
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span data-i18n="hero_cta_chrome">Chrome에 추가</span>
+                </a>
+
+                <a href="/ko/pricing.html" class="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span data-i18n="price_pro_button">$4.99 PRO 평생 라이선스</span>
+                </a>
+            </div>
+
+            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">✨ 향후 모든 업데이트 포함</p>
+            <div class="mt-8 pt-6 border-t border-slate-800">
+                <p class="text-slate-400 text-sm font-semibold mb-3" data-i18n="explore_more">다른 기능 둘러보기</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="/ko/project-download.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">프로젝트 다운로드</a>
+                    <a href="/ko/story-mode.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">스토리 모드</a>
+                    <a href="/ko/video-gen-queue.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">동영상 생성 대기열</a>
+                    <a href="/ko/stream-capture.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">스트림 캡처</a>
+                </div>
+            </div>
+            <div class="flex justify-center gap-3 mt-6">
+                <a href="https://twitter.com/intent/tweet?text=Grok%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20%EC%A0%84%EC%B2%B4%EB%A5%BC%20%EB%8C%80%ED%99%94%EB%B3%84%EB%A1%9C%20%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C&url=https://grokmedia.kario-studio.com/ko/library-download.html?utm_source=twitter&utm_medium=social&utm_campaign=share" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <span>X에 공유</span>
+                </a>
+                <a href="https://www.reddit.com/submit?url=https://grokmedia.kario-studio.com/ko/library-download.html?utm_source=reddit&utm_medium=social&utm_campaign=share&title=%EC%A0%84%EC%B2%B4%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                    <span>Reddit에 공유</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/ko/privacy.html" class="hover:text-white">개인정보 처리방침</a> · <a href="/ko/terms.html" class="hover:text-white">이용약관</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></div></footer></div>
+
+    <!-- Scripts -->
+<script src="/js/i18n.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>

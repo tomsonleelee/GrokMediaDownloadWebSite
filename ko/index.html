@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrokMediaDownloader - Grok AI 미디어 관리 확장 프로그램</title>
-    <meta name="description" content="Grok AI 이미지와 비디오를 일괄 다운로드 및 관리. 스트림 캡처, 스토리 모드, 비디오 생성 큐, HD 업그레이드. 무료 Chrome 확장 프로그램, PRO $4.99.">
-    <meta name="keywords" content="Grok downloader, Story Mode Helper, Video Studio, Grok 다운로더, Grok 동영상 편집, Storyboard, 프레임 추출, FFmpeg, Chrome 확장 프로그램, 일괄 다운로드, Stream Capture, HD Upgrade, Grok AI video, 동영상 병합">
+    <meta name="description" content="Grok AI 이미지와 비디오를 일괄 다운로드 및 관리. v2.5에서 전체 라이브러리 다운로드(대화별)와 1080p 업그레이드 추가. 무료 Chrome 확장 프로그램, PRO $4.99.">
+    <meta name="keywords" content="Grok downloader, 전체 라이브러리 다운로드, Grok 미디어 전체 저장, 1080p Grok 동영상, 대화별 폴더, Story Mode Helper, Video Studio, Grok 다운로더, Chrome 확장 프로그램, 일괄 다운로드, Stream Capture, HD Upgrade">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Kario Studio">
     <meta name="googlebot" content="index, follow">
@@ -57,18 +57,18 @@
       "@type": "SoftwareApplication",
       "name": "GrokMediaDownloader",
       "alternateName": ["Grok Media Downloader", "Grok 미디어 다운로더", "Story Mode Helper"],
-      "description": "The best Chrome extension for Grok AI media management. Features Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
+      "description": "The best Chrome extension for Grok AI media management. v2.5 adds Whole Library Download by conversation and 1080p video upgrade, alongside Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "2.3.2",
+      "softwareVersion": "2.5.0",
       "datePublished": "2025-11-22",
-      "dateModified": "2026-04-11",
+      "dateModified": "2026-07-29",
       "url": "https://grokmedia.kario-studio.com/ko/",
       "sameAs": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "screenshot": "https://grokmedia.kario-studio.com/assets/og-image.jpg",
-      "featureList": ["Tag-Based Download", "Custom Filename Templates", "Frame Lock & Trim", "Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
+      "featureList": ["Whole Library Download", "Conversation Folders", "1080p Video Upgrade", "Download Source Selector", "Tag-Based Download", "Custom Filename Templates", "Frame Lock & Trim", "Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
       "offers": {
         "@type": "Offer",
         "price": "4.99",
@@ -83,8 +83,8 @@
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.2",
-        "ratingCount": "20",
+        "ratingValue": "4.1",
+        "ratingCount": "24",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -240,7 +240,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <style>
         body {
@@ -296,7 +296,7 @@
     </a>
 
     <!-- Header Placeholder -->
-    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ko/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ko/" class="text-sm text-slate-300 hover:text-white">홈</a><a href="/ko/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">스토리 모드</a><a href="/ko/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">비디오 생성 큐</a><a href="/ko/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">스트림 캡처</a><a href="/ko/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">프로젝트 다운로드</a><a href="/ko/pricing.html" class="text-sm text-slate-300 hover:text-white">가격</a><a href="/ko/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ko/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ko/" class="text-sm text-slate-300 hover:text-white">홈</a><a href="/ko/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">전체 라이브러리</a><a href="/ko/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">스토리 모드</a><a href="/ko/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">비디오 생성 큐</a><a href="/ko/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">스트림 캡처</a><a href="/ko/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">프로젝트 다운로드</a><a href="/ko/pricing.html" class="text-sm text-slate-300 hover:text-white">가격</a><a href="/ko/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
 
     <!-- Hero Section -->
     <main id="main-content">
@@ -315,7 +315,7 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.3 최신 업데이트 | 태그 다운로드・파일명 템플릿・프레임 잠금</span>
+                        <span data-i18n="hero_badge">v2.5 최신 업데이트 | 전체 라이브러리 다운로드・1080p 업그레이드・Grok 새 API 지원</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -323,7 +323,7 @@
                         <span class="text-pink-500" data-i18n="hero_title_2">미디어 자산 관리</span>
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">단순한 다운로더가 아닌 크리에이티브 스튜디오입니다. v2.3에서는 태그별 다운로드로 미디어를 태그 분류 관리, 커스텀 파일명 템플릿으로 유연한 명명, Frame Lock으로 매끄러운 동영상 연속 생성을 지원합니다.</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">단순한 다운로더가 아닌 크리에이티브 스튜디오입니다. v2.5는 Grok의 새로운 미디어 백엔드에 완전히 대응하고 전체 라이브러리 다운로드를 추가했습니다 —— 모든 생성 이미지와 동영상을 대화별로 보관 —— 여기에 1080p를 독립된 품질 계층으로 다룹니다.</p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
@@ -350,8 +350,8 @@
                     <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
                         <span class="feature-tag"><span>📥</span> <span data-i18n="hero_tag_1">일괄 다운로드</span></span>
                         <span class="feature-tag"><span>🎯</span> <span data-i18n="hero_tag_2">Video Gen Queue</span></span>
-                        <span class="feature-tag"><span>🏷️</span> <span data-i18n="hero_tag_3">태그 다운로드</span></span>
-                        <span class="feature-tag"><span>✨</span> <span data-i18n="hero_tag_4">HD 업그레이드</span></span>
+                        <span class="feature-tag"><span>📦</span> <span data-i18n="hero_tag_3">전체 라이브러리</span></span>
+                        <span class="feature-tag"><span>💎</span> <span data-i18n="hero_tag_4">1080p 업그레이드</span></span>
                         <span class="feature-tag"><span>📂</span> <span data-i18n="hero_tag_5">프로젝트 폴더</span></span>
                         <span class="feature-tag"><span>🌊</span> <span data-i18n="hero_tag_6">Stream Capture</span></span>
                     </div>
@@ -371,12 +371,12 @@
                         <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="flex items-center gap-3 bg-slate-800/60 border border-slate-700/50 rounded-xl px-4 py-2.5 hover:border-pink-500/30 transition-colors">
                             <div class="flex items-center gap-1 text-yellow-400">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
-                                <span class="font-bold">4.2</span>
+                                <span class="font-bold">4.1</span>
                             </div>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">8,000+ 사용자</span>
+                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">4,000+ 사용자</span>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-400" data-i18n="hero_social_reviews">리뷰 20개</span>
+                            <span class="text-slate-400" data-i18n="hero_social_reviews">리뷰 24개</span>
                             <span class="text-slate-600 text-xs" data-i18n="hero_social_source">Chrome 웹 스토어</span>
                         </a>
                     </div>
@@ -391,7 +391,7 @@
                         <div class="bg-white border-b border-gray-100 p-3 flex items-center gap-2">
                             <i data-lucide="play-circle" class="w-5 h-5 text-slate-800"></i>
                             <span class="font-bold text-sm text-slate-900">Grok Media Downloader</span>
-                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.2</span>
+                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.5</span>
                         </div>
                         <div class="p-3 space-y-2 bg-[#F9FAFB]">
                             <div class="flex gap-1.5">
@@ -402,6 +402,7 @@
                                 <div class="flex justify-between text-gray-600"><span>🖼️ Images</span><span class="font-bold text-gray-900">342 / 342 / 0</span></div>
                                 <div class="flex justify-between text-gray-600"><span>🎬 SD Videos</span><span class="font-bold text-gray-900">156 / 120 / 36</span></div>
                                 <div class="flex justify-between text-gray-600"><span>✨ HD Videos</span><span class="font-bold text-gray-900">89 / 89 / 0</span></div>
+                                <div class="flex justify-between text-gray-600"><span>💎 1080p Videos</span><span class="font-bold text-gray-900">37 / 37 / 0</span></div>
                                 <div class="flex justify-between text-gray-600"><span>📂 Projects</span><span class="font-bold text-gray-900">47</span></div>
                             </div>
                             <div class="bg-blue-600 text-white text-center py-2 rounded-lg text-xs font-bold">1. Generate List</div>
@@ -685,7 +686,7 @@
                     <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_1_desc">수동으로 찾을 필요 없음. 즐겨찾기의 이미지와 동영상을 자동 스캔하여 다운로드 가능한 미디어 리스트를 생성.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Images</span>
-                        <span class="mini-tag">SD/HD Videos</span>
+                        <span class="mini-tag">SD/HD/1080p</span>
                         <span class="mini-tag">Metadata</span>
                     </div>
                     <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
@@ -745,11 +746,11 @@
                         <i data-lucide="monitor-up" class="text-cyan-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_5_title">HD 동영상 업그레이드 (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_5_desc">즐겨찾기 동영상을 자동 스캔하여 HD 버전이 없는 것을 식별하고 Grok API로 업그레이드 요청.</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_5_desc">즐겨찾기 또는 전체 라이브러리를 스캔하고 SD / HD-720p / 1080p 내역을 확인해 Grok API로 한 번에 한 단계씩 업그레이드.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Auto Scan</span>
                         <span class="mini-tag">Time Filter</span>
-                        <span class="mini-tag">480p → 720p</span>
+                        <span class="mini-tag">SD → HD → 1080p</span>
                     </div>
                     <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
                         <img src="/assets/resized/feat-hd-upgrade_1280x800.jpg" alt="GrokMediaDownloader HD video upgrade — auto-scan favorited videos and upgrade from SD to 720p HD" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
@@ -843,32 +844,68 @@
                     </div>
                 </div>
 
-                <!-- Feature 9: Tag-Based Download (NEW v2.3) -->
-                <div class="feat-card-border feat-border-green bg-gradient-to-br from-amber-900/50 to-orange-900/50 p-8 rounded-2xl border border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 9: Tag-Based Download (v2.3) -->
+                <div class="feat-card-border feat-border-green bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">태그별 다운로드 (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_10_desc">태그로 미디어 다운로드! 태그 폴더를 선택하고 그 안의 모든 미디어를 일괄 다운로드. 태그별 독립 다운로드 기록, tags/{tagName}/ 하위에 정리 저장.</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">태그로 미디어 다운로드! 태그 폴더를 선택하고 그 안의 모든 미디어를 일괄 다운로드. 태그별 독립 다운로드 기록, tags/{tagName}/ 하위에 정리 저장.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">태그 폴더</span>
                         <span class="mini-tag">독립 기록</span>
                     </div>
                 </div>
 
-                <!-- Feature 10: Custom Filename Templates (NEW v2.3) -->
-                <div class="feat-card-border feat-border-purple bg-gradient-to-br from-violet-900/50 to-indigo-900/50 p-8 rounded-2xl border border-violet-500/50 transition-all hover:shadow-lg hover:shadow-violet-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-violet-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 10: Custom Filename Templates (v2.3) -->
+                <div class="feat-card-border feat-border-purple bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-violet-500/50 transition-all hover:shadow-lg hover:shadow-violet-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-violet-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-violet-500/30 transition-colors">
                         <i data-lucide="file-text" class="text-violet-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_11_title">커스텀 파일명 템플릿</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_11_desc">3가지 파일명 모드: Grok 기본, 프롬프트 기반, 또는 커스텀 템플릿({date}, {prompt}, {quality} 등 토큰 지원). 원하는 방식으로 다운로드 파일명을 지정하세요.</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_11_desc">3가지 파일명 모드: Grok 기본, 프롬프트 기반, 또는 커스텀 템플릿({date}, {prompt}, {quality} 등 토큰 지원). 원하는 방식으로 다운로드 파일명을 지정하세요.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">3가지 모드</span>
                         <span class="mini-tag">커스텀 토큰</span>
                     </div>
+                </div>
+
+                <!-- Feature 11: Whole Library Download (NEW v2.5) -->
+                <div class="feat-card-border feat-border-green bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-8 rounded-2xl border border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-colors">
+                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">전체 라이브러리 다운로드 (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">즐겨찾기뿐 아니라 모든 생성 이미지와 동영상을 다운로드하세요. 파일은 대화별 폴더로 묶이고 실제로 그것을 만들어낸 프롬프트로 이름이 지정되며, 자체 독립 다운로드 기록을 가집니다.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">대화별 정리</span>
+                        <span class="mini-tag">프롬프트 파일명</span>
+                        <span class="mini-tag">독립된 기록</span>
+                    </div>
+                    <a href="/ko/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
+                        <span data-i18n="feat_12_link">자세히 보기</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 12: 1080p Upgrade (NEW v2.5) -->
+                <div class="feat-card-border feat-border-cyan bg-gradient-to-br from-teal-900/50 to-cyan-900/50 p-8 rounded-2xl border border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
+                        <i data-lucide="gem" class="text-teal-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_13_title">1080p 동영상 업그레이드 (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_13_desc">1080p가 이제 독립된 품질 계층입니다. 다운로드는 사용 가능한 최고 품질을 선택하고, 업그레이드는 한 번에 한 단계씩 진행됩니다: SD → HD, 그다음 720p/HD → 1080p. 1080p는 SuperGrok Heavy와 명시적 선택이 필요합니다.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">3단계 품질</span>
+                        <span class="mini-tag">명시적 선택</span>
+                        <span class="mini-tag">전체 라이브러리 스캔</span>
+                    </div>
+                    <a href="/ko/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-teal-300 hover:text-teal-200 transition-colors">
+                        <span data-i18n="feat_13_link">자세히 보기</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
                 </div>
             </div>
         </div>

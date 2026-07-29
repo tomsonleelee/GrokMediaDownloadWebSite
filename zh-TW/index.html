@@ -13,8 +13,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grok Media Downloader — 批次下載管理 Grok AI 圖片影片 | Chrome 擴充功能</title>
-    <meta name="description" content="批次下載管理 Grok AI 圖片和影片。串流擷取、故事模式、影片生成排程、HD 升級。免費 Chrome 擴充功能，PRO 只要 $4.99。">
-    <meta name="keywords" content="Grok downloader, Video Gen Queue, Project Download, Story Mode Helper, Video Studio, Grok 下載器, Grok 影片生成, Chrome extension, batch download, Stream Capture, HD Upgrade, Grok AI video">
+    <meta name="description" content="批次下載管理 Grok AI 圖片和影片。v2.5 新增整庫下載（依對話）與 1080p 升級。免費 Chrome 擴充功能，PRO 只要 $4.99。">
+    <meta name="keywords" content="Grok downloader, 整庫下載, 下載所有 Grok 媒體, 1080p Grok 影片, 對話資料夾, Video Gen Queue, Project Download, Story Mode Helper, Grok 下載器, Chrome extension, batch download, Stream Capture, HD Upgrade">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Kario Studio">
     <meta name="googlebot" content="index, follow">
@@ -57,18 +57,18 @@
       "@type": "SoftwareApplication",
       "name": "GrokMediaDownloader",
       "alternateName": ["Grok Media Downloader", "Grok 圖片下載器", "Story Mode Helper"],
-      "description": "The best Chrome extension for Grok AI media management. Features Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
+      "description": "The best Chrome extension for Grok AI media management. v2.5 adds Whole Library Download by conversation and 1080p video upgrade, alongside Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "2.3.2",
+      "softwareVersion": "2.5.0",
       "datePublished": "2025-11-22",
-      "dateModified": "2026-04-11",
+      "dateModified": "2026-07-29",
       "url": "https://grokmedia.kario-studio.com/zh-TW/",
       "sameAs": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "screenshot": "https://grokmedia.kario-studio.com/assets/og-image.jpg",
-      "featureList": ["Tag-Based Download", "Custom Filename Templates", "Frame Lock & Trim", "Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
+      "featureList": ["Whole Library Download", "Conversation Folders", "1080p Video Upgrade", "Download Source Selector", "Tag-Based Download", "Custom Filename Templates", "Frame Lock & Trim", "Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
       "offers": {
         "@type": "Offer",
         "price": "4.99",
@@ -83,8 +83,8 @@
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.2",
-        "ratingCount": "20",
+        "ratingValue": "4.1",
+        "ratingCount": "24",
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -240,7 +240,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <style>
         body {
@@ -296,7 +296,7 @@
     </a>
 
     <!-- Header Placeholder -->
-    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/zh-TW/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/zh-TW/" class="text-sm text-slate-300 hover:text-white">首頁</a><a href="/zh-TW/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">故事模式</a><a href="/zh-TW/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">影片生成排程</a><a href="/zh-TW/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">串流擷取</a><a href="/zh-TW/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">專案下載</a><a href="/zh-TW/pricing.html" class="text-sm text-slate-300 hover:text-white">方案價格</a><a href="/zh-TW/faq.html" class="text-sm text-slate-300 hover:text-white">常見問題</a></div></div></div></nav></div>
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/zh-TW/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/zh-TW/" class="text-sm text-slate-300 hover:text-white">首頁</a><a href="/zh-TW/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">整庫下載</a><a href="/zh-TW/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">故事模式</a><a href="/zh-TW/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">影片生成排程</a><a href="/zh-TW/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">串流擷取</a><a href="/zh-TW/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">專案下載</a><a href="/zh-TW/pricing.html" class="text-sm text-slate-300 hover:text-white">方案價格</a><a href="/zh-TW/faq.html" class="text-sm text-slate-300 hover:text-white">常見問題</a></div></div></div></nav></div>
 
     <!-- Hero Section -->
     <main id="main-content">
@@ -315,7 +315,7 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.3 最新更新 | 標籤下載・檔名模板・Frame Lock</span>
+                        <span data-i18n="hero_badge">v2.5 最新更新 | 整庫下載・1080p 升級・支援 Grok 新 API</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -324,7 +324,7 @@
                     </h1>
 
                     <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">
-                        不只是下載器，更是您的創作工作室。v2.3 全新標籤式下載依標籤分類管理媒體、自訂檔名模板彈性命名、Story Mode Frame Lock 無縫銜接影片續集。
+                        不只是下載器，更是您的創作工作室。v2.5 完整適配 Grok 全新媒體後端，並新增整庫下載 —— 依對話封存每一張生成圖片與影片 —— 同時將 1080p 列為獨立畫質層級。
                     </p>
 
                     <!-- CTA Buttons -->
@@ -352,8 +352,8 @@
                     <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
                         <span class="feature-tag"><span>📥</span> <span data-i18n="hero_tag_1">批量下載</span></span>
                         <span class="feature-tag"><span>🎯</span> <span data-i18n="hero_tag_2">Video Gen Queue</span></span>
-                        <span class="feature-tag"><span>🏷️</span> <span data-i18n="hero_tag_3">標籤下載</span></span>
-                        <span class="feature-tag"><span>✨</span> <span data-i18n="hero_tag_4">HD 升級</span></span>
+                        <span class="feature-tag"><span>📦</span> <span data-i18n="hero_tag_3">整庫下載</span></span>
+                        <span class="feature-tag"><span>💎</span> <span data-i18n="hero_tag_4">1080p 升級</span></span>
                         <span class="feature-tag"><span>📂</span> <span data-i18n="hero_tag_5">專案資料夾</span></span>
                         <span class="feature-tag"><span>🌊</span> <span data-i18n="hero_tag_6">Stream Capture</span></span>
                     </div>
@@ -373,12 +373,12 @@
                         <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="flex items-center gap-3 bg-slate-800/60 border border-slate-700/50 rounded-xl px-4 py-2.5 hover:border-pink-500/30 transition-colors">
                             <div class="flex items-center gap-1 text-yellow-400">
                                 <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
-                                <span class="font-bold">4.2</span>
+                                <span class="font-bold">4.1</span>
                             </div>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">8,000+ 位用戶</span>
+                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">4,000+ 位用戶</span>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-400" data-i18n="hero_social_reviews">20 則評價</span>
+                            <span class="text-slate-400" data-i18n="hero_social_reviews">24 則評價</span>
                             <span class="text-slate-600 text-xs" data-i18n="hero_social_source">Chrome 線上應用程式商店</span>
                         </a>
                     </div>
@@ -393,7 +393,7 @@
                         <div class="bg-white border-b border-gray-100 p-3 flex items-center gap-2">
                             <i data-lucide="play-circle" class="w-5 h-5 text-slate-800"></i>
                             <span class="font-bold text-sm text-slate-900">Grok Media Downloader</span>
-                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.2</span>
+                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.5</span>
                         </div>
                         <div class="p-3 space-y-2 bg-[#F9FAFB]">
                             <div class="flex gap-1.5">
@@ -404,6 +404,7 @@
                                 <div class="flex justify-between text-gray-600"><span>🖼️ Images</span><span class="font-bold text-gray-900">342 / 342 / 0</span></div>
                                 <div class="flex justify-between text-gray-600"><span>🎬 SD Videos</span><span class="font-bold text-gray-900">156 / 120 / 36</span></div>
                                 <div class="flex justify-between text-gray-600"><span>✨ HD Videos</span><span class="font-bold text-gray-900">89 / 89 / 0</span></div>
+                                <div class="flex justify-between text-gray-600"><span>💎 1080p Videos</span><span class="font-bold text-gray-900">37 / 37 / 0</span></div>
                                 <div class="flex justify-between text-gray-600"><span>📂 Projects</span><span class="font-bold text-gray-900">47</span></div>
                             </div>
                             <div class="bg-blue-600 text-white text-center py-2 rounded-lg text-xs font-bold">1. Generate List</div>
@@ -704,7 +705,7 @@
                     <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_1_desc">無需手動逐一尋找。Extension 會自動掃描頁面與對話紀錄，智慧生成所有可下載的媒體清單。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Images</span>
-                        <span class="mini-tag">SD/HD Videos</span>
+                        <span class="mini-tag">SD/HD/1080p</span>
                         <span class="mini-tag">Metadata</span>
                     </div>
                     <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
@@ -764,11 +765,11 @@
                         <i data-lucide="monitor-up" class="text-cyan-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_5_title">HD 影片畫質升級 (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_5_desc">自動掃描所有收藏影片，篩選出缺少 HD 版本的項目，透過 Grok API 發送升級請求。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_5_desc">掃描收藏或整個媒體庫，檢視 SD／HD-720p／1080p 分層明細，透過 Grok API 一次升一階。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Auto Scan</span>
                         <span class="mini-tag">Time Filter</span>
-                        <span class="mini-tag">480p → 720p</span>
+                        <span class="mini-tag">SD → HD → 1080p</span>
                     </div>
                     <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
                         <img src="/assets/resized/feat-hd-upgrade_1280x800.jpg" alt="GrokMediaDownloader HD video upgrade — auto-scan favorited videos and upgrade from SD to 720p HD" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
@@ -862,32 +863,68 @@
                     </div>
                 </div>
 
-                <!-- Feature 9: Tag-Based Download (NEW v2.3) -->
-                <div class="feat-card-border feat-border-green bg-gradient-to-br from-amber-900/50 to-orange-900/50 p-8 rounded-2xl border border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 9: Tag-Based Download (v2.3) -->
+                <div class="feat-card-border feat-border-green bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">標籤式下載 (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_10_desc">依標籤下載媒體！選擇標籤資料夾，下載其中所有媒體。每個標籤獨立下載歷史，檔案整理在 tags/{tagName}/ 下。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">依標籤下載媒體！選擇標籤資料夾，下載其中所有媒體。每個標籤獨立下載歷史，檔案整理在 tags/{tagName}/ 下。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">標籤資料夾</span>
                         <span class="mini-tag">獨立歷史</span>
                     </div>
                 </div>
 
-                <!-- Feature 10: Custom Filename Templates (NEW v2.3) -->
-                <div class="feat-card-border feat-border-purple bg-gradient-to-br from-violet-900/50 to-indigo-900/50 p-8 rounded-2xl border border-violet-500/50 transition-all hover:shadow-lg hover:shadow-violet-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-violet-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                <!-- Feature 10: Custom Filename Templates (v2.3) -->
+                <div class="feat-card-border feat-border-purple bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-violet-500/50 transition-all hover:shadow-lg hover:shadow-violet-500/10 group flex flex-col">
                     <div class="w-12 h-12 bg-violet-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-violet-500/30 transition-colors">
                         <i data-lucide="file-text" class="text-violet-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_11_title">自訂檔名模板</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_11_desc">三種檔名模式：Grok 原生、Prompt 命名、或自訂模板搭配 {date}、{prompt}、{quality} 等代碼。依你的方式命名下載檔案。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_11_desc">三種檔名模式：Grok 原生、Prompt 命名、或自訂模板搭配 {date}、{prompt}、{quality} 等代碼。依你的方式命名下載檔案。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">3 種模式</span>
                         <span class="mini-tag">自訂代碼</span>
                     </div>
+                </div>
+
+                <!-- Feature 11: Whole Library Download (NEW v2.5) -->
+                <div class="feat-card-border feat-border-green bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-8 rounded-2xl border border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-colors">
+                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">整庫下載 (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">下載每一張生成圖片與影片 —— 不限於收藏。檔案依對話分成資料夾，並以真正創造它們的提示詞命名，且保有獨立的下載紀錄。</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">依對話分類</span>
+                        <span class="mini-tag">提示詞檔名</span>
+                        <span class="mini-tag">獨立紀錄</span>
+                    </div>
+                    <a href="/zh-TW/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
+                        <span data-i18n="feat_12_link">了解更多</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 12: 1080p Upgrade (NEW v2.5) -->
+                <div class="feat-card-border feat-border-cyan bg-gradient-to-br from-teal-900/50 to-cyan-900/50 p-8 rounded-2xl border border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
+                        <i data-lucide="gem" class="text-teal-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_13_title">1080p 影片升級 (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_13_desc">1080p 現在是獨立的畫質層級。下載自動取用最高畫質，升級則一次提升一階：SD → HD，再由 720p/HD → 1080p。1080p 需要 SuperGrok Heavy 並明確勾選。</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">三層畫質</span>
+                        <span class="mini-tag">需明確勾選</span>
+                        <span class="mini-tag">可掃整庫</span>
+                    </div>
+                    <a href="/zh-TW/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-teal-300 hover:text-teal-200 transition-colors">
+                        <span data-i18n="feat_13_link">了解更多</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
                 </div>
             </div>
         </div>

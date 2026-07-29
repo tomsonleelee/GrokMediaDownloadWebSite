@@ -49,14 +49,16 @@ Every page needs this set of hreflang links (adjust paths per page):
 | `WebSite` | Homepage | Site identity, languages |
 | `BreadcrumbList` | Homepage, FAQ, Pricing | Navigation breadcrumbs |
 | `VideoObject` | Homepage | Demo video metadata |
-| `FAQPage` | FAQ (all 4 languages) | 18 Q&A pairs for rich snippets |
+| `FAQPage` | FAQ (all 4 languages), feature pages | 24 Q&A pairs on `faq.html`, 8 on `library-download.html` |
 | `Product` | Pricing (all 4 languages) | Product/offer details with rating |
+| `Organization` | Homepage (all 4 languages) | Publisher identity (Kario Studio) |
 
 ## OG Images
 
 | Page | OG Image | Size |
 |------|----------|------|
 | Homepage / Pricing / FAQ / Legal | `assets/og-image.jpg` | 1200x630, ~67KB |
+| Whole Library Download | `assets/og-library-download.jpg` | 1200x630, ~57KB |
 | Story Mode | `assets/og-story-mode.jpg` | 1200x630, ~48KB |
 | Video Gen Queue | `assets/og-video-gen-queue.jpg` | 1200x630, ~54KB |
 | Stream Capture | `assets/og-stream-capture.jpg` | 1200x630, ~82KB |

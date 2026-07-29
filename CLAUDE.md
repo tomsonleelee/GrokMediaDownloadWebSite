@@ -45,6 +45,7 @@ Four languages, each with its own directory. **Body text is hardcoded in each HT
 | Page | Root (EN) | `/zh-TW/` | `/ja/` | `/ko/` |
 |------|-----------|-----------|--------|--------|
 | Homepage | `index.html` | ✅ | ✅ | ✅ |
+| Whole Library Download | `library-download.html` | ✅ | ✅ | ✅ |
 | Story Mode | `story-mode.html` | ✅ | ✅ | ✅ |
 | Video Gen Queue | `video-gen-queue.html` | ✅ | ✅ | ✅ |
 | Stream Capture | `stream-capture.html` | ✅ | ✅ | ✅ |

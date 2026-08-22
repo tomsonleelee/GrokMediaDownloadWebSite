@@ -61,9 +61,9 @@
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "2.5.0",
+      "softwareVersion": "2.5.2",
       "datePublished": "2025-11-22",
-      "dateModified": "2026-07-29",
+      "dateModified": "2026-08-17",
       "url": "https://grokmedia.kario-studio.com/zh-TW/",
       "sameAs": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
@@ -449,6 +449,27 @@
                                 <div class="text-[10px] text-gray-500 truncate">Ocean waves at sunset</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Favorite source notice (v2.5.1) -->
+    <section class="py-10 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 md:p-6">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="alert-triangle" class="text-amber-400 w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg md:text-xl font-bold text-white mb-2" data-i18n="legacy_notice_title">抓不到新生成的媒體？</h2>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-3" data-i18n="legacy_notice_body">Grok 在 2026 年 7 月更換媒體後端後，新生成的圖片與影片不會再自動加入收藏 —— 因此掃描「收藏」來源可能看起來是空的，HD 升級也可能回報「全部都已升級」。請將下載來源改為 <strong class="text-white">📦 所有生成媒體（依對話）</strong>，這正是 Grok 官方 Saved 頁面現在讀取的來源。自 v2.5.1 起它已是預設值，且對所有人免費開放。</p>
+                        <a href="/zh-TW/library-download.html" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
+                            <span data-i18n="legacy_notice_cta">了解整庫下載如何運作</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -868,8 +889,8 @@
                     <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">標籤式下載 (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">依標籤下載媒體！選擇標籤資料夾，下載其中所有媒體。每個標籤獨立下載歷史，檔案整理在 tags/{tagName}/ 下。</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">標籤式下載</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">依標籤下載媒體。v2.5.2 將標籤清單與標籤下載改用 Grok 現行的 collection API，新建立的標籤會正常出現、內容不再少抓。標籤下載現在也支援提示詞檔名，檔案整理在 tags/{tagName}/ 下。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">標籤資料夾</span>
                         <span class="mini-tag">獨立歷史</span>
@@ -891,16 +912,16 @@
 
                 <!-- Feature 11: Whole Library Download (NEW v2.5) -->
                 <div class="feat-card-border feat-border-green bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-8 rounded-2xl border border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="absolute top-3 right-3 flex gap-1"><span class="bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span><span class="bg-white/90 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded" data-i18n="feat_12_free">免費</span></div>
                     <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-colors">
                         <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">整庫下載 (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">下載每一張生成圖片與影片 —— 不限於收藏。檔案依對話分成資料夾，並以真正創造它們的提示詞命名，且保有獨立的下載紀錄。</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">整庫下載</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">下載每一張生成圖片與影片 —— 不限於收藏。檔案依對話分成資料夾，並以真正創造它們的提示詞命名，且保有獨立的下載紀錄。免費版涵蓋最近 7 天，PRO 解除限制。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">依對話分類</span>
                         <span class="mini-tag">提示詞檔名</span>
-                        <span class="mini-tag">獨立紀錄</span>
+                        <span class="mini-tag">免費 7 天</span>
                     </div>
                     <a href="/zh-TW/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
                         <span data-i18n="feat_12_link">了解更多</span>

@@ -61,9 +61,9 @@
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "2.5.0",
+      "softwareVersion": "2.5.2",
       "datePublished": "2025-11-22",
-      "dateModified": "2026-07-29",
+      "dateModified": "2026-08-17",
       "url": "https://grokmedia.kario-studio.com/ja/",
       "sameAs": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
@@ -447,6 +447,27 @@
                                 <div class="text-[10px] text-gray-500 truncate">Ocean waves at sunset</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Favorite source notice (v2.5.1) -->
+    <section class="py-10 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 md:p-6">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="alert-triangle" class="text-amber-400 w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg md:text-xl font-bold text-white mb-2" data-i18n="legacy_notice_title">新しく生成したメディアが見つかりませんか？</h2>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-3" data-i18n="legacy_notice_body">Grok の 2026 年 7 月のバックエンド変更以降、新しく生成された画像と動画はお気に入りに追加されなくなりました。そのため「お気に入り」をスキャンしても空に見えたり、HD アップグレードが「すべてアップグレード済み」と報告したりします。ダウンロード元を <strong class="text-white">📦 すべての生成メディア（会話別）</strong> に切り替えてください。Grok 自身の Saved ページが現在読み取っているのがこの元です。v2.5.1 以降は既定値で、どなたでも無料で使えます。</p>
+                        <a href="/ja/library-download.html" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
+                            <span data-i18n="legacy_notice_cta">ライブラリ全体ダウンロードの仕組み</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -860,8 +881,8 @@
                     <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">タグ別ダウンロード (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">タグでメディアをダウンロード！タグフォルダを選択し、その中のメディアを一括ダウンロード。タグごとに独立したダウンロード履歴、tags/{tagName}/ に整理保存。</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">タグ別ダウンロード</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">タグでメディアをダウンロード。v2.5.2 でタグ一覧とタグダウンロードを Grok 現行の collection API に移行したため、新しく作成したタグも表示され、取りこぼしもなくなりました。タグダウンロードもプロンプト名に対応。ファイルは tags/{tagName}/ に保存されます。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">タグフォルダ</span>
                         <span class="mini-tag">独立履歴</span>
@@ -883,16 +904,16 @@
 
                 <!-- Feature 11: Whole Library Download (NEW v2.5) -->
                 <div class="feat-card-border feat-border-green bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-8 rounded-2xl border border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="absolute top-3 right-3 flex gap-1"><span class="bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span><span class="bg-white/90 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded" data-i18n="feat_12_free">無料</span></div>
                     <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-colors">
                         <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">ライブラリ全体ダウンロード (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">お気に入りだけでなく、すべての生成画像と動画をダウンロード。ファイルは会話ごとのフォルダにまとめられ、実際にそれを生み出したプロンプトで名付けられ、独立したダウンロード履歴を持ちます。</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">ライブラリ全体ダウンロード</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">お気に入りだけでなく、すべての生成画像と動画をダウンロード。ファイルは会話ごとのフォルダにまとめられ、実際にそれを生み出したプロンプトで名付けられ、独立したダウンロード履歴を持ちます。無料版は直近 7 日間、PRO で制限解除。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">会話別に整理</span>
                         <span class="mini-tag">プロンプト名</span>
-                        <span class="mini-tag">独立した履歴</span>
+                        <span class="mini-tag">無料は7日間</span>
                     </div>
                     <a href="/ja/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
                         <span data-i18n="feat_12_link">詳しく見る</span>

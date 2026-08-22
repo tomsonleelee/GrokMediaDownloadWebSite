@@ -61,9 +61,9 @@
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "2.5.0",
+      "softwareVersion": "2.5.2",
       "datePublished": "2025-11-22",
-      "dateModified": "2026-07-29",
+      "dateModified": "2026-08-17",
       "url": "https://grokmedia.kario-studio.com/ko/",
       "sameAs": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
@@ -447,6 +447,27 @@
                                 <div class="text-[10px] text-gray-500 truncate">Ocean waves at sunset</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Favorite source notice (v2.5.1) -->
+    <section class="py-10 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 md:p-6">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="alert-triangle" class="text-amber-400 w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg md:text-xl font-bold text-white mb-2" data-i18n="legacy_notice_title">새로 생성한 미디어가 보이지 않나요?</h2>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-3" data-i18n="legacy_notice_body">Grok의 2026년 7월 백엔드 변경 이후 새로 생성된 이미지와 동영상은 더 이상 즐겨찾기에 추가되지 않습니다. 그래서 "즐겨찾기" 소스를 검색하면 비어 보이거나, HD 업그레이드가 "모두 업그레이드됨"이라고 보고할 수 있습니다. 다운로드 소스를 <strong class="text-white">📦 모든 생성 미디어(대화별)</strong>로 바꾸세요. Grok의 Saved 페이지가 현재 읽는 소스가 바로 이것입니다. v2.5.1부터 기본값이며 모두에게 무료입니다.</p>
+                        <a href="/ko/library-download.html" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
+                            <span data-i18n="legacy_notice_cta">전체 라이브러리 다운로드 알아보기</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -849,8 +870,8 @@
                     <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">태그별 다운로드 (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">태그로 미디어 다운로드! 태그 폴더를 선택하고 그 안의 모든 미디어를 일괄 다운로드. 태그별 독립 다운로드 기록, tags/{tagName}/ 하위에 정리 저장.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">태그별 다운로드</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">태그로 미디어를 다운로드하세요. v2.5.2에서 태그 목록과 태그 다운로드를 Grok의 현행 collection API로 이전해, 새로 만든 태그도 표시되고 누락도 없습니다. 태그 다운로드도 프롬프트 기반 파일명을 지원하며 파일은 tags/{tagName}/ 아래에 저장됩니다.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">태그 폴더</span>
                         <span class="mini-tag">독립 기록</span>
@@ -872,16 +893,16 @@
 
                 <!-- Feature 11: Whole Library Download (NEW v2.5) -->
                 <div class="feat-card-border feat-border-green bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-8 rounded-2xl border border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="absolute top-3 right-3 flex gap-1"><span class="bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span><span class="bg-white/90 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded" data-i18n="feat_12_free">무료</span></div>
                     <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-colors">
                         <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">전체 라이브러리 다운로드 (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">즐겨찾기뿐 아니라 모든 생성 이미지와 동영상을 다운로드하세요. 파일은 대화별 폴더로 묶이고 실제로 그것을 만들어낸 프롬프트로 이름이 지정되며, 자체 독립 다운로드 기록을 가집니다.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">전체 라이브러리 다운로드</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">즐겨찾기뿐 아니라 모든 생성 이미지와 동영상을 다운로드하세요. 파일은 대화별 폴더로 묶이고 실제로 그것을 만들어낸 프롬프트로 이름이 지정되며, 자체 독립 다운로드 기록을 가집니다. 무료는 최근 7일, PRO는 제한이 없습니다.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">대화별 정리</span>
                         <span class="mini-tag">프롬프트 파일명</span>
-                        <span class="mini-tag">독립된 기록</span>
+                        <span class="mini-tag">무료 7일</span>
                     </div>
                     <a href="/ko/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
                         <span data-i18n="feat_12_link">자세히 보기</span>

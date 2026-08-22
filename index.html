@@ -61,9 +61,9 @@
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "2.5.0",
+      "softwareVersion": "2.5.2",
       "datePublished": "2025-11-22",
-      "dateModified": "2026-07-29",
+      "dateModified": "2026-08-17",
       "url": "https://grokmedia.kario-studio.com/",
       "sameAs": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
@@ -447,6 +447,27 @@
                                 <div class="text-[10px] text-gray-500 truncate">Ocean waves at sunset</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Favorite source notice (v2.5.1) -->
+    <section class="py-10 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 md:p-6">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="alert-triangle" class="text-amber-400 w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg md:text-xl font-bold text-white mb-2" data-i18n="legacy_notice_title">Not seeing your newly generated media?</h2>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-3" data-i18n="legacy_notice_body">Since Grok’s July 2026 backend change, newly generated images and videos are no longer added to Favorites — so a scan of the Favorite source can look empty, and HD upgrade may report that everything is already upgraded. Switch the download source to <strong class="text-white">📦 All Generated Media (by Conversation)</strong>, which is what Grok’s own Saved page reads. Since v2.5.1 it is the default and free for everyone.</p>
+                        <a href="/library-download.html" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
+                            <span data-i18n="legacy_notice_cta">How Whole Library Download works</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -860,8 +881,8 @@
                     <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">Tag-Based Download (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">Download media by tag! Select a tag folder, download all media within it. Separate download history per tag, files organized under tags/{tagName}/.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">Tag-Based Download</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">Download media by tag. v2.5.2 moves tag discovery and downloads onto Grok’s current collection API, so newly created tags show up and nothing is under-reported. Tag downloads now use prompt-based filenames too. Files land under tags/{tagName}/.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Tag Folders</span>
                         <span class="mini-tag">Separate History</span>
@@ -883,16 +904,16 @@
 
                 <!-- Feature 11: Whole Library Download (NEW v2.5) -->
                 <div class="feat-card-border feat-border-green bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-8 rounded-2xl border border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/20 group relative overflow-hidden flex flex-col">
-                    <div class="absolute top-3 right-3 bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
+                    <div class="absolute top-3 right-3 flex gap-1"><span class="bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span><span class="bg-white/90 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded" data-i18n="feat_12_free">FREE</span></div>
                     <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-colors">
                         <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">Whole Library Download (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">Download every generated image and video — not just favorites. Files are grouped into one folder per conversation and named with the prompt that actually created them, with its own independent download history.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">Whole Library Download</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">Download every generated image and video — not just favorites. Files are grouped into one folder per conversation and named with the prompt that actually created them, with its own independent download history. Free covers the last 7 days; PRO removes the limit.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">By Conversation</span>
                         <span class="mini-tag">Prompt Names</span>
-                        <span class="mini-tag">Independent History</span>
+                        <span class="mini-tag">Free: 7 days</span>
                     </div>
                     <a href="/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
                         <span data-i18n="feat_12_link">Learn more</span>

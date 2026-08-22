@@ -137,7 +137,7 @@
           "name": "無料版でライブラリ全体ダウンロードは使えますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ライブラリ全体ダウンロードはPRO機能です。GrokMediaDownloader PROは4.99ドルの一回払い・永久ライセンスで、今後のすべてのアップデートを含みます。ライブラリ全体ダウンロードに加えて、PROではストリームキャプチャ、ストーリーモードヘルパー、無制限の動画生成キュー、プロジェクトダウンロード、タグベースダウンロード、日付と履歴のフィルタリング、HDおよび1080pアップグレード、データのエクスポートとインポートが利用可能になります。無料版でもお気に入りの基本的な一括ダウンロードは使えるので、決める前に中心的なワークフローを試せます。処理はすべてブラウザ内でローカルに行われ、拡張機能はデータを収集せず、いかなるサーバーにもアップロードしません。"
+            "text": "はい —— v2.5.1 以降、ダウンロード元セレクタはすべての方に無料で開放されています。自分のメディアが見えない元に固定されるべき人はいないからです。無料版でも「📦 すべての生成メディア（会話別）」を選択し、直近 7 日間のすべてをダウンロードできます。この範囲は黙って切り捨てるのではなく、UI に明示されます。GrokMediaDownloader PRO は 4.99 ドルの一回払い・永久ライセンスで、この期間制限を解除してライブラリ全体をアーカイブできるようにし、日付フィルター（指定範囲または直近 N 時間）も利用可能になります。PRO にはストリームキャプチャ、ストーリーモードヘルパー、無制限の動画生成キュー、プロジェクトダウンロード、HD および 1080p アップグレード、データのエクスポート・インポートも含まれます。処理はすべてブラウザ内でローカルに行われ、データの収集もアップロードもありません。"
           }
         }
       ]
@@ -349,6 +349,12 @@
                             <td class="py-4 px-6 text-center text-slate-400">フラット／日付別</td>
                             <td class="py-4 px-6 text-center text-slate-400 font-mono text-xs">tags/{tagName}/</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-mono text-xs bg-emerald-500/5">yyyymmdd_prompt_id/</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2b">動画のプロンプト名</td>
+                            <td class="py-4 px-6 text-center text-slate-500">—</td>
+                            <td class="py-4 px-6 text-center text-emerald-400">✓ v2.5.2 以降</td>
+                            <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓</td>
                         </tr>
                         <tr class="border-b border-slate-800">
                             <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_3">ダウンロード履歴</td>
@@ -643,7 +649,7 @@
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">無料版でライブラリ全体ダウンロードは使えますか？</h3>
-                    <p class="text-slate-400 leading-relaxed">ライブラリ全体ダウンロードはPRO機能です。GrokMediaDownloader PROは4.99ドルの一回払い・永久ライセンスで、今後のすべてのアップデートを含みます。ライブラリ全体ダウンロードに加えて、PROではストリームキャプチャ、ストーリーモードヘルパー、無制限の動画生成キュー、プロジェクトダウンロード、タグベースダウンロード、日付と履歴のフィルタリング、HDおよび1080pアップグレード、データのエクスポートとインポートが利用可能になります。無料版でもお気に入りの基本的な一括ダウンロードは使えるので、決める前に中心的なワークフローを試せます。処理はすべてブラウザ内でローカルに行われ、拡張機能はデータを収集せず、いかなるサーバーにもアップロードしません。</p>
+                    <p class="text-slate-400 leading-relaxed">はい —— v2.5.1 以降、ダウンロード元セレクタはすべての方に無料で開放されています。自分のメディアが見えない元に固定されるべき人はいないからです。無料版でも「📦 すべての生成メディア（会話別）」を選択し、直近 7 日間のすべてをダウンロードできます。この範囲は黙って切り捨てるのではなく、UI に明示されます。GrokMediaDownloader PRO は 4.99 ドルの一回払い・永久ライセンスで、この期間制限を解除してライブラリ全体をアーカイブできるようにし、日付フィルター（指定範囲または直近 N 時間）も利用可能になります。PRO にはストリームキャプチャ、ストーリーモードヘルパー、無制限の動画生成キュー、プロジェクトダウンロード、HD および 1080p アップグレード、データのエクスポート・インポートも含まれます。処理はすべてブラウザ内でローカルに行われ、データの収集もアップロードもありません。</p>
                 </div>
             </div>
 
@@ -655,7 +661,7 @@
     <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="library_cta_title">Grokライブラリを丸ごとアーカイブ</h2>
-            <p class="text-slate-400 mb-8" data-i18n="library_cta_desc">ライブラリ全体ダウンロードはPRO専用機能です</p>
+            <p class="text-slate-400 mb-8" data-i18n="library_cta_desc">無料版は直近 7 日間 —— PRO でライブラリ全体を解除</p>
 
             <div class="inline-flex flex-col sm:flex-row gap-4">
                 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">

@@ -137,7 +137,7 @@
           "name": "免費版有整庫下載嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "整庫下載是 PRO 功能。GrokMediaDownloader PRO 為一次性 $4.99 買斷、終身授權，並包含所有未來更新。除了整庫下載，PRO 還解鎖串流擷取、故事模式助手、無限次影片生成佇列、專案下載、標籤下載、日期與歷史篩選、HD 與 1080p 升級，以及資料匯出匯入。免費版仍可使用收藏的基本批次下載，讓您先評估核心流程再決定。所有處理都在您的瀏覽器本機完成 —— 擴充功能不收集任何資料，也不會上傳到任何伺服器。"
+            "text": "有 —— 自 v2.5.1 起，下載來源選擇器已對所有人免費開放，因為沒有人應該被鎖在一個看不到自己媒體的來源上。免費使用者可以選擇「📦 所有生成媒體（依對話）」並下載最近 7 天的全部內容；擴充功能會在介面上明確標示這個範圍，不會默默截斷結果。GrokMediaDownloader PRO 為一次性 $4.99 買斷、終身授權，可解除時間限制以封存完整媒體庫，並解鎖日期篩選（指定範圍或最近數小時）。PRO 同時涵蓋串流擷取、故事模式助手、無限次影片生成佇列、專案下載、HD 與 1080p 升級，以及資料匯出匯入。所有處理都在您的瀏覽器本機完成 —— 不收集任何資料，也不會上傳。"
           }
         }
       ]
@@ -349,6 +349,12 @@
                             <td class="py-4 px-6 text-center text-slate-400">扁平／依日期</td>
                             <td class="py-4 px-6 text-center text-slate-400 font-mono text-xs">tags/{tagName}/</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-mono text-xs bg-emerald-500/5">yyyymmdd_prompt_id/</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2b">影片提示詞檔名</td>
+                            <td class="py-4 px-6 text-center text-slate-500">—</td>
+                            <td class="py-4 px-6 text-center text-emerald-400">✓ v2.5.2 起</td>
+                            <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓</td>
                         </tr>
                         <tr class="border-b border-slate-800">
                             <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_3">下載紀錄</td>
@@ -643,7 +649,7 @@
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">免費版有整庫下載嗎？</h3>
-                    <p class="text-slate-400 leading-relaxed">整庫下載是 PRO 功能。GrokMediaDownloader PRO 為一次性 $4.99 買斷、終身授權，並包含所有未來更新。除了整庫下載，PRO 還解鎖串流擷取、故事模式助手、無限次影片生成佇列、專案下載、標籤下載、日期與歷史篩選、HD 與 1080p 升級，以及資料匯出匯入。免費版仍可使用收藏的基本批次下載，讓您先評估核心流程再決定。所有處理都在您的瀏覽器本機完成 —— 擴充功能不收集任何資料，也不會上傳到任何伺服器。</p>
+                    <p class="text-slate-400 leading-relaxed">有 —— 自 v2.5.1 起，下載來源選擇器已對所有人免費開放，因為沒有人應該被鎖在一個看不到自己媒體的來源上。免費使用者可以選擇「📦 所有生成媒體（依對話）」並下載最近 7 天的全部內容；擴充功能會在介面上明確標示這個範圍，不會默默截斷結果。GrokMediaDownloader PRO 為一次性 $4.99 買斷、終身授權，可解除時間限制以封存完整媒體庫，並解鎖日期篩選（指定範圍或最近數小時）。PRO 同時涵蓋串流擷取、故事模式助手、無限次影片生成佇列、專案下載、HD 與 1080p 升級，以及資料匯出匯入。所有處理都在您的瀏覽器本機完成 —— 不收集任何資料，也不會上傳。</p>
                 </div>
             </div>
 
@@ -655,7 +661,7 @@
     <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="library_cta_title">封存您完整的 Grok 媒體庫</h2>
-            <p class="text-slate-400 mb-8" data-i18n="library_cta_desc">整庫下載為 PRO 專屬功能</p>
+            <p class="text-slate-400 mb-8" data-i18n="library_cta_desc">免費版涵蓋最近 7 天 —— PRO 解鎖完整媒體庫</p>
 
             <div class="inline-flex flex-col sm:flex-row gap-4">
                 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">

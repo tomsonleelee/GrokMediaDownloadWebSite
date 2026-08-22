@@ -137,7 +137,7 @@
           "name": "Is Whole Library Download available in the free version?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Whole Library Download is a PRO feature. GrokMediaDownloader PRO is a one-time $4.99 purchase with a lifetime license and includes all future updates. Alongside Whole Library Download, PRO unlocks Stream Capture, Story Mode Helper, unlimited Video Gen Queue, Project-Based Download, Tag-Based Download, Date and History filtering, HD and 1080p upgrade, and data export and import. The free version still covers basic batch downloading of favorites, so you can evaluate the core workflow before deciding. All processing happens locally in your browser — the extension collects no data and uploads nothing to any server."
+            "text": "Yes — since v2.5.1 the download source selector is free for everyone, because nobody should be stuck on a source that cannot see their own media. Free users can select \"📦 All Generated Media (by Conversation)\" and download everything from the last 7 days; the extension states this window up front rather than silently truncating your results. GrokMediaDownloader PRO, a one-time $4.99 purchase with a lifetime licence, removes the time limit so you can archive your complete library, and unlocks date filtering (a specific range or a recent-hours window). PRO also covers Stream Capture, Story Mode Helper, unlimited Video Gen Queue, Project-Based Download, HD and 1080p upgrade, and data export and import. All processing happens locally in your browser — no data is collected and nothing is uploaded."
           }
         }
       ]
@@ -349,6 +349,12 @@
                             <td class="py-4 px-6 text-center text-slate-400">Flat / by date</td>
                             <td class="py-4 px-6 text-center text-slate-400 font-mono text-xs">tags/{tagName}/</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-mono text-xs bg-emerald-500/5">yyyymmdd_prompt_id/</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2b">Video prompt filenames</td>
+                            <td class="py-4 px-6 text-center text-slate-500">—</td>
+                            <td class="py-4 px-6 text-center text-emerald-400">✓ since v2.5.2</td>
+                            <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓</td>
                         </tr>
                         <tr class="border-b border-slate-800">
                             <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_3">Download history</td>
@@ -643,7 +649,7 @@
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Is Whole Library Download available in the free version?</h3>
-                    <p class="text-slate-400 leading-relaxed">Whole Library Download is a PRO feature. GrokMediaDownloader PRO is a one-time $4.99 purchase with a lifetime license and includes all future updates. Alongside Whole Library Download, PRO unlocks Stream Capture, Story Mode Helper, unlimited Video Gen Queue, Project-Based Download, Tag-Based Download, Date and History filtering, HD and 1080p upgrade, and data export and import. The free version still covers basic batch downloading of favorites, so you can evaluate the core workflow before deciding. All processing happens locally in your browser — the extension collects no data and uploads nothing to any server.</p>
+                    <p class="text-slate-400 leading-relaxed">Yes — since v2.5.1 the download source selector is free for everyone, because nobody should be stuck on a source that cannot see their own media. Free users can select "📦 All Generated Media (by Conversation)" and download everything from the last 7 days; the extension states this window up front rather than silently truncating your results. GrokMediaDownloader PRO, a one-time $4.99 purchase with a lifetime licence, removes the time limit so you can archive your complete library, and unlocks date filtering (a specific range or a recent-hours window). PRO also covers Stream Capture, Story Mode Helper, unlimited Video Gen Queue, Project-Based Download, HD and 1080p upgrade, and data export and import. All processing happens locally in your browser — no data is collected and nothing is uploaded.</p>
                 </div>
             </div>
 
@@ -655,7 +661,7 @@
     <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="library_cta_title">Archive Your Entire Grok Library</h2>
-            <p class="text-slate-400 mb-8" data-i18n="library_cta_desc">Whole Library Download is a PRO exclusive feature</p>
+            <p class="text-slate-400 mb-8" data-i18n="library_cta_desc">Free for the last 7 days — PRO unlocks your complete library</p>
 
             <div class="inline-flex flex-col sm:flex-row gap-4">
                 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">

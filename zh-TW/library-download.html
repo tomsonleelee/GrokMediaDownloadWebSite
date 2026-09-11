@@ -97,7 +97,7 @@
           "name": "資料夾與檔名是怎麼決定的？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "每個對話會成為一個資料夾，採用 yyyymmdd_提示詞_短ID 的命名格式。當對話沒有標題時，擴充功能會改用該對話的提示詞來命名，而不是標成「untitled」，讓您幾個月後再瀏覽時資料夾名稱依然有意義。圖片檔名取用該張圖片實際記錄的生成提示詞；影片檔名則取用其來源圖片的提示詞，因為 Grok 並未在影片資產本身儲存提示詞。若您偏好機器風格的命名，「Grok 原生」檔名模式會輸出 grok_image_YYYYMMDD_id。檔名現在改為在下載當下即時產生，而非寫死在清單中，因此切換檔名格式後不需要重新產生下載清單。"
+            "text": "每個對話會成為一個資料夾，採用 yyyymmdd_提示詞_短ID 的命名格式。當對話沒有標題時，擴充功能會改用該對話的提示詞來命名，而不是標成「untitled」，讓您幾個月後再瀏覽時資料夾名稱依然有意義。自 9 月起 Grok 不再於媒體清單提供提示詞，因此 v2.5.6 改從生成該項目的對話取回提示詞：影片會使用自己的動畫提示詞，沒有時才借用來源圖片的。新的提示詞快取會保存取回的結果，整庫重新產生清單因此由數分鐘降到秒級。提示詞只會在檔名或 metadata 設定真的用到時才擷取；變更這些設定之後，彈出視窗會提示您重新生成列表。若您偏好機器風格的命名，「Grok 原生」檔名模式會輸出 grok_image_YYYYMMDD_id。metadata.json 另外會記錄 userId，影片檔名也與產生的清單一致，帶有相同的短 ID 尾碼。"
           }
         },
         {
@@ -105,7 +105,7 @@
           "name": "為什麼我的擴充功能抓不到新產生的 Grok 媒體？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "2026 年 7 月起，Grok 改用全新的「對話 + 資產」媒體後端。舊版擴充功能所依賴的端點已不再支撐 Saved 與媒體庫畫面，因此 v2.5.0 之前的版本看不到該次遷移之後產生的圖片與影片。GrokMediaDownloader v2.5.0 是針對新後端的完整適配，恢復了對新生成媒體的偵測能力。更新後請開啟 chrome://extensions 重新載入擴充功能，並重新整理 Grok 分頁。您也應該重新產生一次下載清單，因為提示詞檔名與新的對話資料夾規則是在「產生清單」階段寫入的，不會回溯套用到舊版本建立的清單上。"
+            "text": "2026 年 7 月起，Grok 改用全新的「對話 + 資產」媒體後端。舊版擴充功能所依賴的端點已不再支撐 Saved 與媒體庫畫面，因此 v2.5.0 之前的版本看不到該次遷移之後產生的圖片與影片。GrokMediaDownloader v2.5.0 是針對新後端的完整適配，恢復了對新生成媒體的偵測能力。更新後請開啟 chrome://extensions 重新載入擴充功能，並重新整理 Grok 分頁。您也應該重新產生一次下載清單，讓合併後的標籤結果與 v2.5.6 從生成對話取回的提示詞能夠套用；提示詞檔名與對話資料夾規則是在「產生清單」階段寫入的，不會回溯套用到舊版本建立的清單上。"
           }
         },
         {
@@ -250,7 +250,7 @@
                         <div class="grid sm:grid-cols-3 gap-3 text-sm">
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">1. 更新</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_1">從 Chrome 線上應用程式商店安裝 v2.5.0</p>
+                                <p class="text-slate-400" data-i18n="library_notice_step_1">從 Chrome 線上應用程式商店安裝最新版本</p>
                             </div>
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">2. 重新載入</div>
@@ -258,7 +258,7 @@
                             </div>
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">3. 重新產生</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_3">重新產生一次下載清單，新的命名規則才會套用</p>
+                                <p class="text-slate-400" data-i18n="library_notice_step_3">重新產生一次下載清單，新的命名規則、合併後的標籤結果與從生成對話取回的提示詞才會套用</p>
                             </div>
                         </div>
                     </div>
@@ -353,7 +353,7 @@
                         <tr class="border-b border-slate-800">
                             <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2b">影片提示詞檔名</td>
                             <td class="py-4 px-6 text-center text-slate-500">—</td>
-                            <td class="py-4 px-6 text-center text-emerald-400">✓ v2.5.2 起</td>
+                            <td class="py-4 px-6 text-center text-emerald-400">✓ v2.5.6 起</td>
                             <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓</td>
                         </tr>
                         <tr class="border-b border-slate-800">
@@ -465,7 +465,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1" data-i18n="library_tech_3_title">真實提示詞檔名</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_3_desc">圖片使用自己的生成提示詞；影片沿用其來源圖片的提示詞，因為 Grok 並未在影片資產本身儲存提示詞。</p>
+                                <p class="text-slate-400 text-sm" data-i18n="library_tech_3_desc">圖片使用自己的生成提示詞；影片使用自己的動畫提示詞，沒有時才借用來源圖片的 —— 自 9 月起 Grok 不再於媒體清單提供提示詞，改由生成該項目的對話取回。</p>
                             </div>
                         </div>
 
@@ -629,11 +629,11 @@
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">資料夾與檔名是怎麼決定的？</h3>
-                    <p class="text-slate-400 leading-relaxed">每個對話會成為一個資料夾，採用 yyyymmdd_提示詞_短ID 的命名格式。當對話沒有標題時，擴充功能會改用該對話的提示詞來命名，而不是標成「untitled」，讓您幾個月後再瀏覽時資料夾名稱依然有意義。圖片檔名取用該張圖片實際記錄的生成提示詞；影片檔名則取用其來源圖片的提示詞，因為 Grok 並未在影片資產本身儲存提示詞。若您偏好機器風格的命名，「Grok 原生」檔名模式會輸出 grok_image_YYYYMMDD_id。檔名現在改為在下載當下即時產生，而非寫死在清單中，因此切換檔名格式後不需要重新產生下載清單。</p>
+                    <p class="text-slate-400 leading-relaxed">每個對話會成為一個資料夾，採用 yyyymmdd_提示詞_短ID 的命名格式。當對話沒有標題時，擴充功能會改用該對話的提示詞來命名，而不是標成「untitled」，讓您幾個月後再瀏覽時資料夾名稱依然有意義。自 9 月起 Grok 不再於媒體清單提供提示詞，因此 v2.5.6 改從生成該項目的對話取回提示詞：影片會使用自己的動畫提示詞，沒有時才借用來源圖片的。新的提示詞快取會保存取回的結果，整庫重新產生清單因此由數分鐘降到秒級。提示詞只會在檔名或 metadata 設定真的用到時才擷取；變更這些設定之後，彈出視窗會提示您重新生成列表。若您偏好機器風格的命名，「Grok 原生」檔名模式會輸出 grok_image_YYYYMMDD_id。metadata.json 另外會記錄 userId，影片檔名也與產生的清單一致，帶有相同的短 ID 尾碼。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">為什麼我的擴充功能抓不到新產生的 Grok 媒體？</h3>
-                    <p class="text-slate-400 leading-relaxed">2026 年 7 月起，Grok 改用全新的「對話 + 資產」媒體後端。舊版擴充功能所依賴的端點已不再支撐 Saved 與媒體庫畫面，因此 v2.5.0 之前的版本看不到該次遷移之後產生的圖片與影片。GrokMediaDownloader v2.5.0 是針對新後端的完整適配，恢復了對新生成媒體的偵測能力。更新後請開啟 chrome://extensions 重新載入擴充功能，並重新整理 Grok 分頁。您也應該重新產生一次下載清單，因為提示詞檔名與新的對話資料夾規則是在「產生清單」階段寫入的，不會回溯套用到舊版本建立的清單上。</p>
+                    <p class="text-slate-400 leading-relaxed">2026 年 7 月起，Grok 改用全新的「對話 + 資產」媒體後端。舊版擴充功能所依賴的端點已不再支撐 Saved 與媒體庫畫面，因此 v2.5.0 之前的版本看不到該次遷移之後產生的圖片與影片。GrokMediaDownloader v2.5.0 是針對新後端的完整適配，恢復了對新生成媒體的偵測能力。更新後請開啟 chrome://extensions 重新載入擴充功能，並重新整理 Grok 分頁。您也應該重新產生一次下載清單，讓合併後的標籤結果與 v2.5.6 從生成對話取回的提示詞能夠套用；提示詞檔名與對話資料夾規則是在「產生清單」階段寫入的，不會回溯套用到舊版本建立的清單上。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">整庫下載可以用日期篩選嗎？</h3>

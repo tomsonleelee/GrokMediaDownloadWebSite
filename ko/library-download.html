@@ -97,7 +97,7 @@
           "name": "폴더와 파일 이름은 어떻게 정해지나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "각 대화가 하나의 폴더가 되며 yyyymmdd_프롬프트_짧은ID 패턴으로 이름이 지정됩니다. 대화에 제목이 없으면 확장 프로그램은 폴더를 \"untitled\"로 표시하는 대신 해당 대화의 프롬프트를 사용합니다. 몇 달 뒤에 다시 열어봐도 폴더 이름이 의미를 유지합니다. 이미지 파일명은 해당 이미지에 기록된 실제 생성 프롬프트를 사용하고, 동영상 파일명은 원본 이미지의 프롬프트를 사용합니다. Grok이 동영상 에셋 자체에는 프롬프트를 저장하지 않기 때문입니다. 기계적인 이름을 선호한다면 \"Grok 기본\" 파일명 모드가 grok_image_YYYYMMDD_id를 생성합니다. 파일명은 목록에 고정되지 않고 다운로드 시점에 생성되므로, 파일명 형식을 바꿔도 목록을 다시 생성할 필요가 없습니다."
+            "text": "각 대화가 하나의 폴더가 되며 yyyymmdd_프롬프트_짧은ID 패턴으로 이름이 지정됩니다. 대화에 제목이 없으면 확장 프로그램은 폴더를 \"untitled\"로 표시하는 대신 해당 대화의 프롬프트를 사용합니다. 몇 달 뒤에 다시 열어봐도 폴더 이름이 의미를 유지합니다. 9월부터 Grok이 미디어 목록에 프롬프트를 보내지 않기 때문에, v2.5.6부터는 해당 항목을 생성한 대화에서 프롬프트를 되찾아옵니다. 동영상은 자체 애니메이션 프롬프트를 사용하고, 없을 때만 원본 이미지의 프롬프트를 빌려옵니다. 되찾은 프롬프트는 영구 캐시에 저장되므로 전체 라이브러리 목록 재생성이 몇 분에서 몇 초로 줄어듭니다. 프롬프트는 파일명이나 메타데이터 설정이 실제로 사용할 때만 가져오며, 이 설정을 변경하면 팝업이 목록을 다시 생성하라고 안내합니다. 기계적인 이름을 선호한다면 \"Grok 기본\" 파일명 모드가 grok_image_YYYYMMDD_id를 생성합니다. metadata.json에는 userId도 기록되며, 동영상 파일명도 같은 짧은 ID 접미사가 붙어 생성된 목록과 일치합니다."
           }
         },
         {
@@ -105,7 +105,7 @@
           "name": "새로 생성한 Grok 미디어가 왜 감지되지 않나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "2026년 7월 Grok은 새로운 \"대화 + 에셋\" 미디어 백엔드로 전환했습니다. 이전 확장 프로그램 버전이 의존하던 엔드포인트는 더 이상 Saved 및 미디어 라이브러리 화면을 지원하지 않으므로, v2.5.0 이전 버전은 전환 이후 생성된 이미지와 동영상을 볼 수 없습니다. GrokMediaDownloader v2.5.0은 새 백엔드에 대한 완전한 대응이며 새로 생성된 미디어의 감지를 복구합니다. 업데이트 후 chrome://extensions를 열어 확장 프로그램을 다시 로드하고 Grok 탭을 새로 고치세요. 다운로드 목록도 한 번 다시 생성해야 합니다. 프롬프트 기반 파일명과 새로운 대화 폴더 규칙은 \"목록 생성\" 단계에서 기록되며, 이전 버전으로 만든 목록에는 소급 적용되지 않기 때문입니다."
+            "text": "2026년 7월 Grok은 새로운 \"대화 + 에셋\" 미디어 백엔드로 전환했습니다. 이전 확장 프로그램 버전이 의존하던 엔드포인트는 더 이상 Saved 및 미디어 라이브러리 화면을 지원하지 않으므로, v2.5.0 이전 버전은 전환 이후 생성된 이미지와 동영상을 볼 수 없습니다. GrokMediaDownloader v2.5.0은 새 백엔드에 대한 완전한 대응이며 새로 생성된 미디어의 감지를 복구합니다. 업데이트 후 chrome://extensions를 열어 확장 프로그램을 다시 로드하고 Grok 탭을 새로 고치세요. 다운로드 목록도 한 번 다시 생성해야 합니다. 병합된 태그 결과와 v2.5.6이 생성 대화에서 되찾아온 프롬프트가 반영되도록 하기 위해서입니다. 프롬프트 기반 파일명과 대화 폴더 규칙도 \"목록 생성\" 단계에서 기록되며, 이전 버전으로 만든 목록에는 소급 적용되지 않기 때문입니다."
           }
         },
         {
@@ -250,7 +250,7 @@
                         <div class="grid sm:grid-cols-3 gap-3 text-sm">
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">1. 업데이트</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_1">Chrome 웹 스토어에서 v2.5.0 설치</p>
+                                <p class="text-slate-400" data-i18n="library_notice_step_1">Chrome 웹 스토어에서 최신 버전을 설치</p>
                             </div>
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">2. 다시 로드</div>
@@ -258,7 +258,7 @@
                             </div>
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">3. 재생성</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_3">다운로드 목록을 한 번 다시 생성해 새 명명 규칙 적용</p>
+                                <p class="text-slate-400" data-i18n="library_notice_step_3">다운로드 목록을 한 번 다시 생성해 새 명명 규칙, 병합된 태그 결과, 생성 대화에서 되찾아온 프롬프트 적용</p>
                             </div>
                         </div>
                     </div>
@@ -353,7 +353,7 @@
                         <tr class="border-b border-slate-800">
                             <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2b">동영상 프롬프트 파일명</td>
                             <td class="py-4 px-6 text-center text-slate-500">—</td>
-                            <td class="py-4 px-6 text-center text-emerald-400">✓ v2.5.2부터</td>
+                            <td class="py-4 px-6 text-center text-emerald-400">✓ v2.5.6부터</td>
                             <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓</td>
                         </tr>
                         <tr class="border-b border-slate-800">
@@ -465,7 +465,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1" data-i18n="library_tech_3_title">실제 프롬프트 파일명</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_3_desc">이미지는 자체 생성 프롬프트를 사용하고, 동영상은 원본 이미지의 프롬프트를 이어받습니다. Grok이 동영상 에셋 자체에는 프롬프트를 저장하지 않기 때문입니다.</p>
+                                <p class="text-slate-400 text-sm" data-i18n="library_tech_3_desc">이미지는 자체 생성 프롬프트를 사용하고, 동영상은 자체 애니메이션 프롬프트를 사용하며 없을 때만 원본 이미지의 프롬프트를 빌려옵니다. 9월부터 Grok이 미디어 목록에 프롬프트를 보내지 않기 때문에 생성 대화에서 되찾아옵니다.</p>
                             </div>
                         </div>
 
@@ -629,11 +629,11 @@
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">폴더와 파일 이름은 어떻게 정해지나요?</h3>
-                    <p class="text-slate-400 leading-relaxed">각 대화가 하나의 폴더가 되며 yyyymmdd_프롬프트_짧은ID 패턴으로 이름이 지정됩니다. 대화에 제목이 없으면 확장 프로그램은 폴더를 "untitled"로 표시하는 대신 해당 대화의 프롬프트를 사용합니다. 몇 달 뒤에 다시 열어봐도 폴더 이름이 의미를 유지합니다. 이미지 파일명은 해당 이미지에 기록된 실제 생성 프롬프트를 사용하고, 동영상 파일명은 원본 이미지의 프롬프트를 사용합니다. Grok이 동영상 에셋 자체에는 프롬프트를 저장하지 않기 때문입니다. 기계적인 이름을 선호한다면 "Grok 기본" 파일명 모드가 grok_image_YYYYMMDD_id를 생성합니다. 파일명은 목록에 고정되지 않고 다운로드 시점에 생성되므로, 파일명 형식을 바꿔도 목록을 다시 생성할 필요가 없습니다.</p>
+                    <p class="text-slate-400 leading-relaxed">각 대화가 하나의 폴더가 되며 yyyymmdd_프롬프트_짧은ID 패턴으로 이름이 지정됩니다. 대화에 제목이 없으면 확장 프로그램은 폴더를 "untitled"로 표시하는 대신 해당 대화의 프롬프트를 사용합니다. 몇 달 뒤에 다시 열어봐도 폴더 이름이 의미를 유지합니다. 9월부터 Grok이 미디어 목록에 프롬프트를 보내지 않기 때문에, v2.5.6부터는 해당 항목을 생성한 대화에서 프롬프트를 되찾아옵니다. 동영상은 자체 애니메이션 프롬프트를 사용하고, 없을 때만 원본 이미지의 프롬프트를 빌려옵니다. 되찾은 프롬프트는 영구 캐시에 저장되므로 전체 라이브러리 목록 재생성이 몇 분에서 몇 초로 줄어듭니다. 프롬프트는 파일명이나 메타데이터 설정이 실제로 사용할 때만 가져오며, 이 설정을 변경하면 팝업이 목록을 다시 생성하라고 안내합니다. 기계적인 이름을 선호한다면 "Grok 기본" 파일명 모드가 grok_image_YYYYMMDD_id를 생성합니다. metadata.json에는 userId도 기록되며, 동영상 파일명도 같은 짧은 ID 접미사가 붙어 생성된 목록과 일치합니다.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">새로 생성한 Grok 미디어가 왜 감지되지 않나요?</h3>
-                    <p class="text-slate-400 leading-relaxed">2026년 7월 Grok은 새로운 "대화 + 에셋" 미디어 백엔드로 전환했습니다. 이전 확장 프로그램 버전이 의존하던 엔드포인트는 더 이상 Saved 및 미디어 라이브러리 화면을 지원하지 않으므로, v2.5.0 이전 버전은 전환 이후 생성된 이미지와 동영상을 볼 수 없습니다. GrokMediaDownloader v2.5.0은 새 백엔드에 대한 완전한 대응이며 새로 생성된 미디어의 감지를 복구합니다. 업데이트 후 chrome://extensions를 열어 확장 프로그램을 다시 로드하고 Grok 탭을 새로 고치세요. 다운로드 목록도 한 번 다시 생성해야 합니다. 프롬프트 기반 파일명과 새로운 대화 폴더 규칙은 "목록 생성" 단계에서 기록되며, 이전 버전으로 만든 목록에는 소급 적용되지 않기 때문입니다.</p>
+                    <p class="text-slate-400 leading-relaxed">2026년 7월 Grok은 새로운 "대화 + 에셋" 미디어 백엔드로 전환했습니다. 이전 확장 프로그램 버전이 의존하던 엔드포인트는 더 이상 Saved 및 미디어 라이브러리 화면을 지원하지 않으므로, v2.5.0 이전 버전은 전환 이후 생성된 이미지와 동영상을 볼 수 없습니다. GrokMediaDownloader v2.5.0은 새 백엔드에 대한 완전한 대응이며 새로 생성된 미디어의 감지를 복구합니다. 업데이트 후 chrome://extensions를 열어 확장 프로그램을 다시 로드하고 Grok 탭을 새로 고치세요. 다운로드 목록도 한 번 다시 생성해야 합니다. 병합된 태그 결과와 v2.5.6이 생성 대화에서 되찾아온 프롬프트가 반영되도록 하기 위해서입니다. 프롬프트 기반 파일명과 대화 폴더 규칙도 "목록 생성" 단계에서 기록되며, 이전 버전으로 만든 목록에는 소급 적용되지 않기 때문입니다.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">전체 라이브러리 다운로드를 날짜로 필터링할 수 있나요?</h3>

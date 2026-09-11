@@ -61,7 +61,7 @@
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "2.5.2",
+      "softwareVersion": "2.5.6",
       "datePublished": "2025-11-22",
       "dateModified": "2026-08-17",
       "url": "https://grokmedia.kario-studio.com/zh-TW/",
@@ -890,7 +890,7 @@
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">標籤式下載</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">依標籤下載媒體。v2.5.2 將標籤清單與標籤下載改用 Grok 現行的 collection API，新建立的標籤會正常出現、內容不再少抓。標籤下載現在也支援提示詞檔名，檔案整理在 tags/{tagName}/ 下。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">依標籤下載媒體。Grok 的標籤遷移在新舊兩個儲存區都留下了內容，因此 v2.5.6 會同時讀取兩者並合併 —— 標籤清單與標籤內容都是兩者的聯集，包含舊標籤的完整內容，以及只存在於舊系統的標籤。標籤下載現在也支援提示詞檔名，檔案整理在 tags/{tagName}/ 下。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">標籤資料夾</span>
                         <span class="mini-tag">獨立歷史</span>
@@ -903,7 +903,7 @@
                         <i data-lucide="file-text" class="text-violet-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_11_title">自訂檔名模板</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_11_desc">三種檔名模式：Grok 原生、Prompt 命名、或自訂模板搭配 {date}、{prompt}、{quality} 等代碼。依你的方式命名下載檔案。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_11_desc">三種檔名模式：Grok 原生、Prompt 命名、或自訂模板搭配 {date}、{prompt}、{quality} 等代碼。依你的方式命名下載檔案。切換到會用到提示詞的模式時，彈出視窗會提示你重新產生一次清單；提示詞快取會讓這次重新產生很快完成。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">3 種模式</span>
                         <span class="mini-tag">自訂代碼</span>

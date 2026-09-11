@@ -61,7 +61,7 @@
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
-      "softwareVersion": "2.5.2",
+      "softwareVersion": "2.5.6",
       "datePublished": "2025-11-22",
       "dateModified": "2026-08-17",
       "url": "https://grokmedia.kario-studio.com/",
@@ -882,7 +882,7 @@
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">Tag-Based Download</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">Download media by tag. v2.5.2 moves tag discovery and downloads onto Grok’s current collection API, so newly created tags show up and nothing is under-reported. Tag downloads now use prompt-based filenames too. Files land under tags/{tagName}/.</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">Download media by tag. Grok’s tag migration left content in both its old and its new tag store, so v2.5.6 reads both and merges them — tag lists and tag contents are the union of the two, including the full contents of old tags and tags that exist only in the old system. Tag downloads now use prompt-based filenames too. Files land under tags/{tagName}/.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Tag Folders</span>
                         <span class="mini-tag">Separate History</span>
@@ -895,7 +895,7 @@
                         <i data-lucide="file-text" class="text-violet-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_11_title">Custom Filename Templates</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_11_desc">Three filename modes: Grok Native, Prompt Based, or fully Custom templates with tokens like {date}, {prompt}, {quality}. Name your downloads your way.</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_11_desc">Three filename modes: Grok Native, Prompt Based, or fully Custom templates with tokens like {date}, {prompt}, {quality}. Name your downloads your way. Switching to a mode that uses prompts makes the popup ask you to regenerate the list once, and a persistent prompt cache keeps that regenerate fast.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">3 Modes</span>
                         <span class="mini-tag">Custom Tokens</span>

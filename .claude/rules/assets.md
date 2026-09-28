@@ -1,5 +1,5 @@
 ---
-globs: ["assets/**", "resize-images.sh", "compress-video.sh"]
+paths: ["assets/**", "resize-images.sh", "compress-video.sh"]
 ---
 
 # Asset Management Rules
@@ -35,9 +35,3 @@ globs: ["assets/**", "resize-images.sh", "compress-video.sh"]
 - Codec: H.264 (libx264), medium preset
 - Audio: AAC
 - Output includes `-faststart` flag for web streaming
-
-## Current Asset Inventory
-
-- **Feature images**: 8 (feat-generate-list, feat-date-filter, feat-export-import, feat-hd-upgrade, feat-stream-capture, feat-story-mode, feat-video-gen-queue, feat-project-download)
-- **Demo videos**: 4 (story-mode-demo, stream-capture-demo, project-download-demo, video-gen-queue)
-- **Resized images**: 21 files in `assets/resized/`

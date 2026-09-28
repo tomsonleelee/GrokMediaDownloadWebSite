@@ -1,5 +1,5 @@
 ---
-globs: ["sitemap.xml", "robots.txt", "*.html", "zh-TW/*.html", "ja/*.html", "ko/*.html"]
+paths: ["sitemap.xml", "robots.txt", "*.html", "zh-TW/*.html", "ja/*.html", "ko/*.html"]
 ---
 
 # SEO Rules
@@ -49,7 +49,7 @@ Every page needs this set of hreflang links (adjust paths per page):
 | `WebSite` | Homepage | Site identity, languages |
 | `BreadcrumbList` | Homepage, FAQ, Pricing | Navigation breadcrumbs |
 | `VideoObject` | Homepage | Demo video metadata |
-| `FAQPage` | FAQ (all 4 languages), feature pages | 24 Q&A pairs on `faq.html`, 8 on `library-download.html` |
+| `FAQPage` | FAQ and feature pages (all 4 languages) | Q&A rich results; keep schema Q&A in sync with visible FAQ content |
 | `Product` | Pricing (all 4 languages) | Product/offer details with rating |
 | `Organization` | Homepage (all 4 languages) | Publisher identity (Kario Studio) |
 
@@ -64,29 +64,15 @@ Every page needs this set of hreflang links (adjust paths per page):
 | Stream Capture | `assets/og-stream-capture.jpg` | 1200x630, ~82KB |
 | Project Download | `assets/og-project-download.jpg` | 1200x630, ~53KB |
 
-## SEO Improvements Log
+## On-Page Conventions
 
-### Completed (2026-03-22)
+- `<title>`: no version numbers. Homepage titles carry the platform keyword in each language ("Chrome Extension" / "Chrome 擴充功能" / "Chrome拡張機能" / Korean equivalent).
+- Image `alt` text: descriptive and keyword-rich in the page's language, never a generic file or feature name.
+- `404.html` is served at the root (English path): keep `lang="en"` and English UI text.
 
-- **Title optimization**: Removed version numbers from homepage titles (EN, zh-TW), added keyword-rich descriptive titles with "Chrome Extension" / "Chrome 擴充功能"
-- **Image alt text**: Improved all 8 feature image alt texts across 4 languages (32 total) — from generic names to descriptive, keyword-rich alt text
-- **404.html fix**: Changed `lang="zh-TW"` → `lang="en"`, translated all UI text to English (was hardcoded Chinese on an English-path page)
-- **Nav fallback completion**: All 40 HTML pages now have complete static fallback nav (7 links) inside `<div id="header-placeholder">` — visible to Googlebot even without JS
-- **Footer fallback**: All 40 HTML pages now have simplified footer fallback (Privacy Policy + Terms of Service + copyright) inside `<div id="footer-placeholder">`
+## Navigation Rendering
 
-### Previously Completed
-
-- Tailwind CDN → static compiled CSS (`css/styles.css`)
-- FAQPage schema (18 Q&A pairs × 4 languages)
-- CWS description backlinks to marketing site
-- Static fallback nav initial implementation (commit `3756eff`)
-
-## Known SEO Issues (as of 2026-03-22)
-
-- **GSC: 0 pages indexed** — All pages show "Crawled - currently not indexed"
-- Likely causes: low domain authority (new domain), insufficient external backlinks
-- **Next steps**: Request indexing in GSC for key pages, build external backlinks, monitor weekly
-- **Navigation SEO**: Header/footer loaded via JS `fetch()` in `loadComponents()` — mitigated by static fallback nav/footer in placeholder divs
+- Header/footer are injected via JS `fetch()` in `loadComponents()` (`js/components.js`). Crawlers that skip JS see only the static fallback nav/footer inside `<div id="header-placeholder">` / `<div id="footer-placeholder">`, so every page that loads `js/components.js` must keep them.
 
 ## Sitemap Priority Guide
 

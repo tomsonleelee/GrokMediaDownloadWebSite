@@ -61,7 +61,7 @@ Shared components loaded via JS (language-specific versions):
 - `components/header.html` (EN), `components/header-zh-TW.html`, `components/header-ja.html`, `components/header-ko.html`
 - `components/footer.html` (EN), `components/footer-zh-TW.html`, `components/footer-ja.html`, `components/footer-ko.html`
 
-**SEO fallback**: Each page has a static fallback nav inside `<div id="header-placeholder">` (7 links) and a simplified footer inside `<div id="footer-placeholder">` (Privacy + Terms + copyright). These are visible to crawlers when JS doesn't execute. `loadComponents()` replaces them with the full components via `innerHTML`.
+**SEO fallback**: Each page has a static fallback nav inside `<div id="header-placeholder">` (links to the site's main pages) and a simplified footer inside `<div id="footer-placeholder">` (Privacy + Terms + copyright + GitHub link). These are visible to crawlers when JS doesn't execute. `loadComponents()` replaces them with the full components via `innerHTML`.
 
 ## Common Commands
 
@@ -98,7 +98,7 @@ python3 -m http.server 8080
 
 - Format: **Conventional Commits** — `feat:`, `fix:`, `docs:`, `refactor:`, `chore:`
 - Language: **English** commit messages
-- Co-author: Include `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>` when Claude writes the commit
+- Co-author: When Claude writes the commit, end it with the `Co-Authored-By:` trailer for the model that actually wrote it (the harness-supplied attribution lines)
 
 ## Key Reminders
 

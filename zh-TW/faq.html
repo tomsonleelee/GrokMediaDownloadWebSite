@@ -170,6 +170,25 @@
     </section>
 
     <!-- FAQ Sections -->
+    <!-- Start here: most common problems -->
+    <section class="pb-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-pink-500/30 bg-pink-500/5 p-6 md:p-8">
+                <h2 class="text-xl font-bold text-white mb-2">功能突然失效？先看這裡</h2>
+                <p class="text-slate-400 text-sm mb-5">2026 年 7 月以來的回報，幾乎都屬於以下其中一種情況。點選連結即可跳到下方對應的解答。</p>
+                <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+                    <li><a href="#empty-list" class="text-pink-300 hover:text-white underline">產生清單找不到東西／顯示「全部都已升級」</a></li>
+                    <li><a href="#missing-prompts" class="text-pink-300 hover:text-white underline">檔名與 metadata 裡沒有提示詞</a></li>
+                    <li><a href="#missing-tag" class="text-pink-300 hover:text-white underline">標籤不見了，或只下載到一個檔案</a></li>
+                    <li><a href="#redownload" class="text-pink-300 hover:text-white underline">檔案遺失，擴充功能卻顯示「已下載」</a></li>
+                    <li><a href="#after-update" class="text-pink-300 hover:text-white underline">更新之後應該先做什麼</a></li>
+                    <li><a href="#license-key" class="text-pink-300 hover:text-white underline">PRO 授權碼要在哪裡輸入</a></li>
+                </ul>
+                <p class="text-slate-500 text-xs mt-5">附截圖的逐步修復說明：<a href="/zh-TW/library-download.html#troubleshooting" class="underline hover:text-slate-300">整庫下載疑難排解</a>。各版本更新內容：<a href="/zh-TW/changelog.html" class="underline hover:text-slate-300">更新紀錄</a>。</p>
+            </div>
+        </div>
+    </section>
+
     <section class="pb-24">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -199,7 +218,7 @@
                             <span data-i18n="faq_v25_2_a">將影片升級到 1080p 需要付費的 Grok 方案，具體來說是 SuperGrok Heavy。由於會消耗付費額度，GrokMediaDownloader 把它放在一個名為「將 HD/720p 升級至 1080p」的選項後面，預設為關閉，必須明確勾選才會執行。未勾選時，擴充功能完全不會送出任何 1080p 請求，只執行 SD 到 HD 的升級，因此絕不會有意外扣費的情況。確認對話框仍會回報有多少支影片可以升級到 1080p，這些項目不會被默默略過而看不見。若您的帳號實際上沒有該權限，擴充功能偵測到一次後就會立即停止後續所有 1080p 請求，不會反覆失敗空轉。SD 到 HD 的升級則不需要付費方案，任何帳號都能使用。</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="after-update">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_3_q">更新到 v2.5.6 之後應該先做什麼？</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -208,7 +227,7 @@
                             <span data-i18n="faq_v25_3_a">三個步驟。第一，開啟 chrome://extensions 重新載入 GrokMediaDownloader，並重新整理所有已開啟的 Grok 分頁，讓新的內容腳本生效。第二，重新產生一次下載清單。提示詞檔名與新的對話資料夾命名是在「產生清單」階段寫入的，v2.5.6 也是在這個階段從生成該媒體的對話取回提示詞，因此舊版本產生的清單不會自動套用新規則。新的提示詞快取會保留取回的結果，之後整庫重新產生清單只需數秒，而非數分鐘。第三，若您想要有意義的檔名，請開啟設定並選擇「使用提示詞」檔名模式；若選擇「Grok 原生」，輸出的檔名會是 grok_image_YYYYMMDD_id 這種形式。提示詞只會在檔名格式或 metadata 設定真的用到時才擷取；變更這些設定之後，彈出視窗會提示您重新生成列表。另有一項已知限制需要留意：由您自行上傳、或沒有生成資訊的資產，伺服器端本身即無提示詞與對話歸屬，這類項目會以資產 ID 命名，而非以提示詞命名的資料夾。</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="redownload">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_4_q">檔案遺失了 —— 要怎麼重新下載已被記錄為「已下載」的媒體？</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -217,7 +236,7 @@
                             <span data-i18n="faq_v25_4_a">v2.5 為每個下載來源保留各自獨立的下載紀錄，因此該按哪個重置按鈕，取決於您當初用的是哪個來源。標示為「重置下載歷史（將重新下載所有檔案）」的按鈕只作用於「收藏」來源。若您當初是用「📦 所有生成媒體（依對話）」下載，請開啟擴充功能彈出視窗，展開「🧹 清除操作」區塊，點擊「清除對話歷史」。在出現「確定清除所有對話下載歷史？此操作無法復原。」的確認對話框時選擇確定，接著應會看到「對話下載歷史已清除」。此操作會清除「所有生成媒體」來源的下載紀錄，以及影片畫質判定的快取；不會動到您電腦上已儲存的檔案，也不會影響「收藏」或「標籤」的紀錄。完成後請重新選擇「所有生成媒體（依對話）」並再次執行「產生清單」，所有項目都會被視為尚未下載，即可完整重新下載。「標籤」來源則有自己的「清除標籤歷史」按鈕。</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="empty-list">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_5_q">產生清單找不到東西，或 HD 升級說全部都已升級 —— 是哪裡有問題？</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -226,7 +245,7 @@
                             <span data-i18n="faq_v25_5_a">您的下載來源很可能仍設定為「收藏」。Grok 在 2026 年 7 月的後端變更之後，新生成的媒體不會再自動加入收藏：以實際帳號實測，媒體庫最新的 30 個項目中有 11 個完全不在完整的收藏清單裡，而 Grok 官方的 Saved 頁面也已完全停止呼叫那支端點。因此掃描「收藏」來源可能真的回傳空的、或漏掉您最新的作品；而 HD 升級掃描讀的是同一份殘缺清單，於是回報「所有影片都已升級」。自 v2.5.1 起，下載與升級的預設來源都已改為整庫，且來源選擇器對所有人免費開放。請將下載來源改為「📦 所有生成媒體（依對話）」、升級來源改為「🌐 整庫」，然後重新掃描。您的媒體並沒有不見 —— 只是舊來源看不到它們。</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="missing-tag">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_6_q">剛在 Grok 建立的標籤，在擴充功能裡看不到</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -235,7 +254,7 @@
                             <span data-i18n="faq_v25_6_a">請更新到 v2.5.6。Grok 已把標籤系統改建在資產模型上（collection），但 8 月的這次遷移在新舊兩個方向都沒有完成。以實際帳號唯讀實測比對，兩邊各自都有對方缺少的東西：一個 2026-08-15 建立的標籤只存在於新系統，而舊儲存區最新的一筆停在 2026-03-28；反過來，某個舊標籤在新 API 只有 2 筆，在舊 API 卻有 233 筆。v2.5.6 會同時讀取新舊兩套標籤系統並合併，因此標籤清單與標籤內容一律是兩者的聯集 —— 新建立的標籤、舊標籤的完整內容，以及只存在於舊系統的標籤，全都會出現。v2.5.2 到 v2.5.4 只讀新的 collection API，這正是某些標籤只抓到一小部分檔案、甚至只抓到一個的原因；v2.5.3 與 v2.5.4 補上了標籤清單與內容的分頁修正，以及完整掃描診斷，讓標籤數量多的帳號也能看到較舊的標籤。標籤下載支援提示詞檔名，影片會使用自己的動畫提示詞，或借用來源圖片的。更新後請重新載入擴充功能，並重新產生一次下載清單。您也可能會看到一個名為「Liked」的內建標籤 —— 那是 Grok 新建的，內容與您過去的「收藏」並不相同。</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="missing-prompts">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_7_q">為什麼檔名、資料夾名與 metadata 裡沒有提示詞？</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -420,7 +439,7 @@
                         <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_4_a">GrokMediaDownloader PRO 終身授權是透過 Lemon Squeezy 支付平台一次性購買 $4.99，沒有訂閱或定期收費。授權碼綁定一個 Chrome 帳號，允許最多 3 次重新安裝，適用於更換新電腦、格式化硬碟或重新安裝 Chrome 等情境。購買後，您會透過電子郵件收到授權碼，在擴充功能的彈出面板中輸入即可立即啟用 PRO 功能。終身的意思是您無需額外費用即可獲得所有未來的功能更新。例如，v2.0 的 Story Mode Helper、v2.2 的 Video Gen Queue 和 v2.3 的標籤式下載都自動提供給現有的 PRO 用戶。由 Kario LLC 發行，這款擴充功能在 Chrome Web Store 上獲得 4,000+ 用戶信賴，擁有 4.1/5 的評分。如果您的授權需要支援，請透過本頁底部的支援連結聯繫我們的團隊。</div>
                     </details>
 
-                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden" id="license-key">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200">如何輸入授權碼？</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -476,6 +495,10 @@
     <!-- Scripts -->
 <script src="/js/i18n.js"></script>
     <script src="/js/components.js"></script>
+<script>
+// Open the FAQ entry a #hash points at (links from the "Start here" box and from other pages).
+(function () { function openTarget() { var el = location.hash && document.getElementById(location.hash.slice(1)); if (el && el.tagName === 'DETAILS') { el.open = true; } } window.addEventListener('hashchange', openTarget); openTarget(); })();
+</script>
 </body>
 
 </html>

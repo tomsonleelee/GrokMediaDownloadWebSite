@@ -170,6 +170,25 @@
     </section>
 
     <!-- FAQ Sections -->
+    <!-- Start here: most common problems -->
+    <section class="pb-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-pink-500/30 bg-pink-500/5 p-6 md:p-8">
+                <h2 class="text-xl font-bold text-white mb-2">Start here if something stopped working</h2>
+                <p class="text-slate-400 text-sm mb-5">Almost every report since July 2026 comes down to one of these. Each link opens the answer below.</p>
+                <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+                    <li><a href="#empty-list" class="text-pink-300 hover:text-white underline">Generate List finds nothing / "already upgraded"</a></li>
+                    <li><a href="#missing-prompts" class="text-pink-300 hover:text-white underline">Filenames and metadata have no prompt</a></li>
+                    <li><a href="#missing-tag" class="text-pink-300 hover:text-white underline">A tag is missing or downloads one file</a></li>
+                    <li><a href="#redownload" class="text-pink-300 hover:text-white underline">Lost files, extension says "already downloaded"</a></li>
+                    <li><a href="#after-update" class="text-pink-300 hover:text-white underline">What to do right after updating</a></li>
+                    <li><a href="#license-key" class="text-pink-300 hover:text-white underline">Where to enter the PRO license key</a></li>
+                </ul>
+                <p class="text-slate-500 text-xs mt-5">Step-by-step fixes with screenshots: <a href="/library-download.html#troubleshooting" class="underline hover:text-slate-300">Whole Library Download troubleshooting</a>. What changed in each version: <a href="/changelog.html" class="underline hover:text-slate-300">Changelog</a>.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="pb-24">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -199,7 +218,7 @@
                             <span data-i18n="faq_v25_2_a">Upgrading videos to 1080p requires a paid Grok plan, specifically SuperGrok Heavy. Because it consumes paid quota, GrokMediaDownloader keeps it behind an explicit opt-in checkbox labelled "Upgrade HD/720p to 1080p" that is switched off by default. With the box unchecked the extension sends no 1080p requests whatsoever and performs only SD to HD upgrades, so you can never be surprise-charged. The confirmation dialog still reports how many videos could be upgraded to 1080p, so they are never silently omitted from your view. If your account turns out not to have the entitlement, the extension detects this once and immediately stops issuing further 1080p requests rather than repeatedly failing. SD to HD upgrades do not require a paid plan and work on any account.</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="after-update">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_3_q">What should I do right after updating to v2.5.6?</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -208,7 +227,7 @@
                             <span data-i18n="faq_v25_3_a">Three steps. First, open chrome://extensions, reload GrokMediaDownloader, and refresh any open Grok tab so the new content scripts take effect. Second, regenerate your download list once. Prompt-based filenames and the new conversation folder naming are written during the Generate List step, and this is also where v2.5.6 recovers each prompt from the conversation that generated the media, so a list produced by an older version will not pick up the new rules automatically. A persistent prompt cache keeps what it recovers, so a later whole-library regenerate takes seconds instead of minutes. Third, if you want meaningful filenames, open Settings and choose the "Prompt Based" filename mode; choosing "Grok Native" instead produces names in the form grok_image_YYYYMMDD_id. Prompts are fetched only when your filename format or metadata settings actually use them, and after you change one of those settings the popup will ask you to regenerate the list. One known limitation to be aware of: assets you uploaded yourself, or that carry no generation information, have no prompt or conversation association on the server, so those items are filed under their asset ID rather than a prompt-named folder.</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="redownload">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_4_q">I lost my files — how do I re-download media the extension already recorded as downloaded?</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -217,7 +236,7 @@
                             <span data-i18n="faq_v25_4_a">Version 2.5 keeps a separate download history for each download source, so the reset button you need depends on which source you used. The button labelled "Reset Download History (will re-download all files)" applies only to the Favorite source. If you downloaded using "📦 All Generated Media (by Conversation)", open the extension popup, expand the "🧹 Clear Actions" section, and click "Clear Conversation History". Confirm the dialog reading "Clear all conversation download history? This cannot be undone." and you should see "Conversation download history cleared". This clears the download record for the All Generated Media source together with the cached video quality results; it does not touch files already saved on your computer, nor your Favorite or Tag history. Then select "All Generated Media (by Conversation)" again and run Generate List — every item will be treated as not yet downloaded, so a full re-download works. The Tag source has its own "Clear Tag History" button.</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="empty-list">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_5_q">Generate List finds nothing, or HD upgrade says everything is already upgraded — what is wrong?</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -226,7 +245,7 @@
                             <span data-i18n="faq_v25_5_a">Your download source is most likely still set to Favorite. Grok's July 2026 backend change means newly generated media is no longer added to Favorites: measured against a live account, 11 of the 30 newest library items were absent from the full liked list, and Grok's own Saved page stopped calling that endpoint entirely. So a scan of the Favorite source can legitimately come back empty or miss your newest work, and because the HD upgrade scan reads that same incomplete list, it reports that every video is already upgraded. Since v2.5.1 the default source for both downloading and upgrading is the whole library, and the source selector is free for everyone. Switch the download source to "📦 All Generated Media (by Conversation)" and the upgrade source to "🌐 Whole Library", then scan again. Nothing was lost — the old source simply cannot see it.</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="missing-tag">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_6_q">A tag I just created in Grok does not appear in the extension</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -235,7 +254,7 @@
                             <span data-i18n="faq_v25_6_a">Update to v2.5.6. Grok rebuilt tags on its asset model as collections in August, but that migration is incomplete in both directions. Verified read-only against a live account, each system is missing what the other has: a tag created on 2026-08-15 existed only in the new system — the old store's newest entry was 2026-03-28 — while an older tag returned only 2 items through the new API but 233 through the old one. Version 2.5.6 reads both tag systems and merges them, so tag lists and tag contents are always the union of the two — newly created tags, the full contents of old tags, and tags that exist only in the old system all appear. Versions 2.5.2 to 2.5.4 read the new collection API alone, which is why a tag could come back with only a fraction of its files, or even a single one; 2.5.3 and 2.5.4 added tag list and content pagination fixes and full scan diagnostics, so accounts with many tags see the older ones too. Tag downloads use prompt-based filenames, where a video uses its own animation prompt or borrows the source image's. After updating, reload the extension and regenerate your download list once. You may also notice a built-in tag named "Liked" — that one is Grok's own, and its contents differ from your previous Favorites.</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="missing-prompts">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_7_q">Why are prompts missing from my filenames, folder names and metadata?</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -420,7 +439,7 @@
                         <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_4_a">The GrokMediaDownloader PRO Lifetime License is a one-time purchase of $4.99 through the Lemon Squeezy payment platform, with no subscriptions or recurring charges. The license key is tied to one Chrome account and allows up to three re-installations, accommodating scenarios like switching to a new computer, reformatting your drive, or reinstalling Chrome. After purchase, you receive a license key via email that you enter in the extension's popup panel to activate PRO features immediately. The lifetime aspect means you receive all future feature updates at no additional cost. For example, Story Mode Helper in v2.0, Video Gen Queue in v2.2, and Tag-Based Download in v2.3 were all included automatically for existing PRO users. Published by Kario LLC, the extension is trusted by 4,000+ users with a 4.1/5 rating on the Chrome Web Store. If you need support with your license, contact our team through the support link at the bottom of this page.</div>
                     </details>
 
-                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden" id="license-key">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200">How do I enter my license key?</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -476,6 +495,10 @@
     <!-- Scripts -->
 <script src="/js/i18n.js"></script>
     <script src="/js/components.js"></script>
+<script>
+// Open the FAQ entry a #hash points at (links from the "Start here" box and from other pages).
+(function () { function openTarget() { var el = location.hash && document.getElementById(location.hash.slice(1)); if (el && el.tagName === 'DETAILS') { el.open = true; } } window.addEventListener('hashchange', openTarget); openTarget(); })();
+</script>
 </body>
 
 </html>

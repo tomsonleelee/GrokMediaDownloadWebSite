@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변경 내역 | GrokMediaDownloader</title>
+    <meta name="description" content="GrokMediaDownloader 각 릴리스의 변경 사항: 2026년 7월 Grok 백엔드 대응, 전체 라이브러리 다운로드, 1080p, 태그 시스템 병합, 프롬프트 복구, 그리고 2.5.x 업데이트별 수정 내용.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/ko/changelog.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/changelog.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/changelog.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/changelog.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/changelog.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/changelog.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/ko/changelog.html">
+    <meta property="og:title" content="변경 내역 | GrokMediaDownloader">
+    <meta property="og:description" content="GrokMediaDownloader Chrome 확장 프로그램의 릴리스 노트(최신순).">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="변경 내역 | GrokMediaDownloader">
+    <meta name="twitter:description" content="GrokMediaDownloader Chrome 확장 프로그램의 릴리스 노트(최신순).">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "홈",
+          "item": "https://grokmedia.kario-studio.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "변경 내역",
+          "item": "https://grokmedia.kario-studio.com/ko/changelog.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased">
+
+    <!-- Skip Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+        본문으로 건너뛰기
+    </a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ko/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ko/" class="text-sm text-slate-300 hover:text-white">홈</a><a href="/ko/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">전체 라이브러리</a><a href="/ko/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">스토리 모드</a><a href="/ko/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">비디오 생성 큐</a><a href="/ko/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">스트림 캡처</a><a href="/ko/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">프로젝트 다운로드</a><a href="/ko/pricing.html" class="text-sm text-slate-300 hover:text-white">가격</a><a href="/ko/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+<section class="pt-32 pb-12 lg:pt-44 lg:pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <i data-lucide="history" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold">변경 내역</h1>
+                    <p class="text-slate-400 text-sm">Chrome 웹 스토어에 출시된 GrokMediaDownloader의 모든 버전을 최신순으로 정리했습니다. 날짜는 해당 버전을 빌드한 날이며, 스토어 반영은 보통 며칠 뒤에 이루어집니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entries -->
+    <section class="pb-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <p class="text-slate-400 text-sm">이슈 번호는 공개 GitHub 저장소에 등록된 신고를 가리킵니다. 2.6.0 릴리스 노트는 해당 버전이 Chrome 웹 스토어에 공개되면 이곳에 게시됩니다.</p>
+            <article id="v2-5-6" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.6</h2>
+                    <time datetime="2026-09-14" class="text-slate-500 text-sm">2026-09-14</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">수정</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">태그는 빠짐없이, 파일명에는 프롬프트가 다시</h3>
+                <p class="text-slate-400 mb-4">두 가지 근본 원인을 수정했으며, 둘 다 Grok 쪽 변경에서 비롯된 문제입니다. 내용은 2.5.5와 같습니다. 2.5.5는 번들에 포함된(실행되지 않는) 서드파티 파일이 CDN을 참조한다는 이유로 Chrome 웹 스토어에 게시되지 않았고, 2.5.6에서 해당 파일을 제거했습니다.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">태그 다운로드가 파일 하나만 받아오던 문제(issue #13).</strong> Grok의 8월 태그 이전은 양방향 모두 불완전합니다. 새 컬렉션 API에는 과거 항목이 거의 없고 과거 기록은 기존 폴더 API에 남아 있으며, 각각 상대에게 없는 태그를 가지고 있습니다. 이제 태그 목록과 태그 내용은 두 API의 합집합이 되며, 2개만 반환되던 태그가 이제 233개를 반환합니다.</li>
+                    <li><strong class="text-white">파일명, 폴더명, metadata.json에 프롬프트가 없던 문제.</strong> 9월부터 Grok은 미디어 목록과 함께 프롬프트를 보내지 않습니다. 이제 해당 항목을 생성한 대화에서 프롬프트를 되찾아오며(동영상은 자체 애니메이션 프롬프트를 사용하거나 원본 이미지의 프롬프트를 가져옵니다), 재시도, 서킷 브레이커, 영구 캐시를 갖추었습니다. 전체 라이브러리 목록 재생성은 두 번째 실행에서 129초에서 10초로 줄었습니다.</li>
+                    <li>프롬프트는 파일명이나 메타데이터 설정이 실제로 필요로 할 때만 가져옵니다. 해당 설정을 변경하면 팝업이 목록을 다시 생성하라고 안내합니다.</li>
+                    <li>metadata.json에 <code>userId</code>가 기록되고, 동영상 파일명이 짧은 ID 접미사까지 포함해 목록과 일치하며, 일부만 실패한 태그 소스는 성공이 아닌 부분 완료로 표시됩니다.</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">실제 브라우저에서 처음부터 끝까지 검증했습니다. 61개 파일의 태그 다운로드와 206개 파일의 7일간 전체 라이브러리 다운로드를 Grok API와 파일 단위로 대조했습니다.</p>
+            </article>
+            <article id="v2-5-4" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.4</h2>
+                    <time datetime="2026-09-03" class="text-slate-500 text-sm">2026-09-03</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">수정</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">오래된 태그와 태그 내용 전체</h3>
+                <p class="text-slate-400 mb-4">태그 목록에서 오래된 태그가 누락되거나, 태그 내용이 첫 페이지 이후로 불러와지지 않을 수 있었습니다.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>두 요청 모두 이제 Grok 웹 앱과 동일한 파라미터를 사용하며 모든 페이지를 읽습니다.</li>
+                    <li>도중에 한 페이지가 실패해도 전체 배치를 버리지 않고 이미 가져온 항목은 유지합니다.</li>
+                </ul>
+            </article>
+            <article id="v2-5-3" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.3</h2>
+                    <time datetime="2026-08-31" class="text-slate-500 text-sm">2026-08-31</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">수정</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">태그 페이지네이션과 스캔 진단</h3>
+                <p class="text-slate-400 mb-4">태그가 많은 계정을 위한 2.5.2 후속 수정입니다.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>태그 목록과 태그 내용의 페이지네이션을 수정했습니다.</li>
+                    <li>"마지막 동영상만 업그레이드되었다"는 신고를 추적하기 위해 시스템 로그에 전체 스캔 진단 정보를 기록합니다.</li>
+                </ul>
+            </article>
+            <article id="v2-5-2" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.2</h2>
+                    <time datetime="2026-08-22" class="text-slate-500 text-sm">2026-08-22</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">수정</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">새로 만든 태그가 다시 표시됨</h3>
+                <p class="text-slate-400 mb-4">Grok이 태그를 에셋 모델 기반의 컬렉션으로 재구축하면서 기존 폴더 API가 더 이상 갱신되지 않아, 변경 이후 만든 태그가 확장 프로그램에 보이지 않았습니다.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>태그 목록과 태그 다운로드를 Grok의 현재 API로 전환했으며, 아직 이전되지 않은 계정은 자동으로 기존 API로 대체합니다.</li>
+                    <li>태그 다운로드에도 전체 라이브러리 소스처럼 프롬프트 기반 파일명이 적용됩니다.</li>
+                    <li>진단을 위해 모든 HD 업그레이드 응답을 시스템 로그에 기록합니다.</li>
+                </ul>
+            </article>
+            <article id="v2-5-1" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.1</h2>
+                    <time datetime="2026-08" class="text-slate-500 text-sm">2026-08</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">수정</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">기본 다운로드 소스가 고장 나서 변경했습니다</h3>
+                <p class="text-slate-400 mb-4">실제 계정에서 측정한 결과 라이브러리의 최신 항목 30개 중 11개가 즐겨찾기 목록에서 누락되었고, Grok 자체의 Saved 페이지도 더 이상 해당 엔드포인트를 호출하지 않습니다.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>기본 소스가 이제 전체 라이브러리("모든 생성 미디어")입니다. 이미 소스를 선택한 사용자는 기존 선택이 유지됩니다.</li>
+                    <li>다운로드 소스 선택기는 모두에게 무료입니다. 자신의 미디어를 볼 수 없는 소스에 묶여 있어서는 안 되기 때문입니다.</li>
+                    <li>무료 버전에서도 최근 7일간의 전체 라이브러리를 스캔할 수 있습니다.</li>
+                    <li>기존 소스가 선택되어 있을 때, 아무것도 찾지 못했을 때, HD 업그레이드할 항목이 없다고 나올 때 명확한 안내를 표시합니다.</li>
+                </ul>
+            </article>
+            <article id="v2-5-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.0</h2>
+                    <time datetime="2026-07-26" class="text-slate-500 text-sm">2026-07-26</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300">기능 릴리스</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">Grok의 새 미디어 백엔드 대응: 전체 라이브러리 다운로드와 1080p</h3>
+                <p class="text-slate-400 mb-4">Grok이 2026년 7월 대화 + 에셋 기반 백엔드로 전환하면서 이전 버전은 새 미디어를 인식할 수 없게 되었습니다. 이번 릴리스(공개되지 않았던 2.4.0의 작업도 포함)는 새 API를 기반으로 감지 기능을 재구축합니다.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">세 가지 다운로드 소스:</strong> 즐겨찾기, 태그, 그리고 새로운 대화별 전체 라이브러리. 소스마다 별도의 다운로드 기록, 조기 중단 날짜 필터, 대화별 폴더를 제공합니다.</li>
+                    <li><strong class="text-white">1080p를 독립된 품질 계층으로:</strong> 다운로드는 가능한 최고 화질을 받고, 통계는 1080p를 별도로 표시하며, 업그레이드는 한 단계씩 진행됩니다(SD → HD, 720p/HD → 1080p). 1080p 업그레이드는 선택 사항이며 계정에 권한이 없으면 즉시 중단됩니다.</li>
+                    <li><strong class="text-white">전체 라이브러리 HD 업그레이드</strong>: 즐겨찾기뿐 아니라 전체 라이브러리를 대상으로 하며, 확인 전에 화질별 내역을 보여 주고 스캔 중에는 중지 버튼을 제공합니다.</li>
+                    <li><strong class="text-white">파일 이름:</strong> 이미지 파일명은 실제 생성 프롬프트를, 동영상은 원본 이미지의 프롬프트를 사용하고, 폴더는 <code>yyyymmdd_prompt_shortid</code> 형식을 쓰며, "Grok 네이티브" 모드는 문서화된 형식과 일치합니다.</li>
+                    <li>스캔 결과가 실행할 때마다 일정하며, 15,000개 이상의 항목이 있는 라이브러리에서도 메모리 사용량이 늘지 않습니다.</li>
+                </ul>
+            </article>
+
+            <div class="mt-8 text-center">
+                <a href="/ko/faq.html" class="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 transition-colors">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>FAQ로 돌아가기</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/ko/privacy.html" class="hover:text-white">개인정보처리방침</a> · <a href="/ko/terms.html" class="hover:text-white">이용약관</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> <nav class="mt-3" aria-label="언어"><a href="/changelog.html" hreflang="en" class="hover:text-white">English</a> · <a href="/zh-TW/changelog.html" hreflang="zh-TW" class="hover:text-white">繁體中文</a> · <a href="/ja/changelog.html" hreflang="ja" class="hover:text-white">日本語</a> · <a href="/ko/changelog.html" hreflang="ko" class="hover:text-white text-slate-300">한국어</a></nav></div></footer></div>
+
+    <!-- Scripts -->
+<script src="/js/i18n.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>

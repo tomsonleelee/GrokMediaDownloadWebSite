@@ -52,6 +52,7 @@ Four languages, each with its own directory. **Body text is hardcoded in each HT
 | Project Download | `project-download.html` | ✅ | ✅ | ✅ |
 | Pricing | `pricing.html` | ✅ | ✅ | ✅ |
 | FAQ | `faq.html` | ✅ | ✅ | ✅ |
+| Changelog | `changelog.html` | ✅ | ✅ | ✅ |
 | Privacy Policy | `privacy.html` | ✅ | ✅ | ✅ |
 | Terms of Service | `terms.html` | ✅ | ✅ | ✅ |
 | Purchase Success | `success.html` | ✅ | ✅ | ✅ |

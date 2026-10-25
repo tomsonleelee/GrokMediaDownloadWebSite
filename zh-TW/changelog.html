@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更新紀錄 | GrokMediaDownloader</title>
+    <meta name="description" content="GrokMediaDownloader 各版本的更新內容：2026 年 7 月 Grok 後端適配、整庫下載、1080p、新舊標籤系統合併、提示詞取回，以及每次 2.5.x 更新背後的修正。">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/zh-TW/changelog.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/changelog.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/changelog.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/changelog.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/changelog.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/changelog.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/zh-TW/changelog.html">
+    <meta property="og:title" content="更新紀錄 | GrokMediaDownloader">
+    <meta property="og:description" content="GrokMediaDownloader Chrome 擴充功能的版本更新說明，由新到舊排列。">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="更新紀錄 | GrokMediaDownloader">
+    <meta name="twitter:description" content="GrokMediaDownloader Chrome 擴充功能的版本更新說明，由新到舊排列。">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://grokmedia.kario-studio.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "更新紀錄",
+          "item": "https://grokmedia.kario-studio.com/zh-TW/changelog.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased">
+
+    <!-- Skip Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+        跳至主要內容
+    </a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/zh-TW/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/zh-TW/" class="text-sm text-slate-300 hover:text-white">首頁</a><a href="/zh-TW/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">整庫下載</a><a href="/zh-TW/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">故事模式</a><a href="/zh-TW/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">影片生成排程</a><a href="/zh-TW/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">串流擷取</a><a href="/zh-TW/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">專案下載</a><a href="/zh-TW/pricing.html" class="text-sm text-slate-300 hover:text-white">方案價格</a><a href="/zh-TW/faq.html" class="text-sm text-slate-300 hover:text-white">常見問題</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+<section class="pt-32 pb-12 lg:pt-44 lg:pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <i data-lucide="history" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold">更新紀錄</h1>
+                    <p class="text-slate-400 text-sm">GrokMediaDownloader 在 Chrome 線上應用程式商店發布的每個版本，由新到舊排列。日期為該版本的建置日，商店上架通常會在幾天內跟進。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entries -->
+    <section class="pb-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <p class="text-slate-400 text-sm">Issue 編號指的是公開 GitHub 儲存庫上的回報。2.6.0 的更新說明會在該版本於 Chrome 線上應用程式商店上架後刊登於此。</p>
+            <article id="v2-5-6" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.6</h2>
+                    <time datetime="2026-09-14" class="text-slate-500 text-sm">2026-09-14</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">修正</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">標籤內容恢復完整，檔名重新帶有提示詞</h3>
+                <p class="text-slate-400 mb-4">修正了兩個根本原因，都出在 Grok 那一端。內容與 2.5.5 相同：2.5.5 因隨附的第三方檔案（從未被執行）含有 CDN 位址，未獲 Chrome 線上應用程式商店發布；2.5.6 已移除該檔案。</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">標籤下載只抓到一個檔案（issue #13）。</strong> Grok 8 月的標籤遷移在新舊兩個方向都不完整：新的 collection API 只有少數歷史項目，舊的 folder API 才有完整歷史，且兩邊各有對方缺少的標籤。標籤清單與標籤內容現在一律是兩個 API 的聯集；原本只抓到 2 筆的標籤，現在可抓到 233 筆。</li>
+                    <li><strong class="text-white">檔名、資料夾名稱與 metadata.json 沒有提示詞。</strong> 自 9 月起，Grok 不再隨媒體清單送出提示詞。現在改從生成該項目的對話取回提示詞（影片使用自己的動畫提示詞，沒有時借用來源圖片的提示詞），並具備重試、斷路器與持久化快取：整庫重新產生清單在第二次執行時由 129 秒降到 10 秒。</li>
+                    <li>只有在檔名或 metadata 設定需要時才會取回提示詞；變更這些設定後，彈出視窗會提示您重新產生清單。</li>
+                    <li>metadata.json 會記錄 <code>userId</code>；影片檔名與清單一致，包含短 ID 尾碼；標籤來源部分失敗時會標記為部分結果，而不是回報成功。</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">已在真實瀏覽器完成端對端驗證：61 個檔案的標籤下載，以及 206 個檔案的整庫 7 天下載，並與 Grok API 逐一比對每個檔案。</p>
+            </article>
+            <article id="v2-5-4" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.4</h2>
+                    <time datetime="2026-09-03" class="text-slate-500 text-sm">2026-09-03</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">修正</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">較舊的標籤與完整的標籤內容</h3>
+                <p class="text-slate-400 mb-4">標籤清單可能漏掉較舊的標籤，標籤內容也可能在第一頁之後就停止。</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>兩種請求現在都使用與 Grok 官方網頁相同的參數，並讀取所有分頁。</li>
+                    <li>若中途某一頁失敗，已取得的項目會保留下來，而不是整批捨棄。</li>
+                </ul>
+            </article>
+            <article id="v2-5-3" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.3</h2>
+                    <time datetime="2026-08-31" class="text-slate-500 text-sm">2026-08-31</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">修正</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">標籤分頁與掃描診斷</h3>
+                <p class="text-slate-400 mb-4">針對標籤數量多的帳號，延續 2.5.2 的後續修正。</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>修正標籤清單與標籤內容的分頁。</li>
+                    <li>在系統日誌中記錄完整的掃描診斷資訊，以追查「只有最後一支影片被升級」的回報。</li>
+                </ul>
+            </article>
+            <article id="v2-5-2" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.2</h2>
+                    <time datetime="2026-08-22" class="text-slate-500 text-sm">2026-08-22</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">修正</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">新建立的標籤重新出現</h3>
+                <p class="text-slate-400 mb-4">Grok 將標籤改建在資產模型上（collection），舊的 folder API 不再更新，因此變更後建立的標籤擴充功能都看不到。</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>標籤清單與標籤下載改用 Grok 目前的 API，尚未遷移的帳號會自動退回舊 API。</li>
+                    <li>標籤下載也支援以提示詞命名檔案，與整庫來源相同。</li>
+                    <li>每一次 HD 升級的回應都會寫入系統日誌，以便診斷。</li>
+                </ul>
+            </article>
+            <article id="v2-5-1" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.1</h2>
+                    <time datetime="2026-08" class="text-slate-500 text-sm">2026-08</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">修正</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">預設下載來源失效，因此改換</h3>
+                <p class="text-slate-400 mb-4">以實際帳號實測，媒體庫最新的 30 個項目中有 11 個不在收藏清單裡，而 Grok 自己的 Saved 頁面也已完全不再呼叫該端點。</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>預設來源改為整庫（「所有生成媒體」）；已自行選擇來源的使用者會保留原本的選擇。</li>
+                    <li>下載來源選擇器對所有人免費開放：不該有人被困在看不到自己媒體的來源上。</li>
+                    <li>免費版可掃描整庫最近 7 天的內容。</li>
+                    <li>在選用舊來源、找不到任何項目，以及 HD 升級回報沒有可升級的項目時，都會顯示明確的提示。</li>
+                </ul>
+            </article>
+            <article id="v2-5-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.0</h2>
+                    <time datetime="2026-07-26" class="text-slate-500 text-sm">2026-07-26</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300">功能更新</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">適配 Grok 新媒體後端：整庫下載與 1080p</h3>
+                <p class="text-slate-400 mb-4">Grok 在 2026 年 7 月改用「對話 + 資產」後端，舊版本因此看不到新生成的媒體。此版本（同時包含從未發布的 2.4.0 內容）以新 API 重建了偵測機制。</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">三種下載來源：</strong>收藏、標籤，以及新增的整庫（依對話），各自擁有獨立的下載紀錄、可提前停止的日期篩選，以及依對話分組的資料夾。</li>
+                    <li><strong class="text-white">1080p 成為獨立的畫質層級：</strong>下載時取用可取得的最佳畫質，統計會單獨列出 1080p，升級一次只往上一個層級（SD → HD、720p/HD → 1080p）。1080p 升級需自行開啟，若帳號沒有權限會立即停止。</li>
+                    <li><strong class="text-white">整庫 HD 升級</strong>，不再只限收藏；確認前會顯示畫質分布，掃描期間也有停止按鈕。</li>
+                    <li><strong class="text-white">命名：</strong>圖片檔名使用實際的生成提示詞，影片使用其來源圖片的提示詞，資料夾採用 <code>yyyymmdd_prompt_shortid</code>，「Grok 原生」模式也與文件記載的格式一致。</li>
+                    <li>每次掃描的結果一致；在超過 15,000 個項目的媒體庫上，記憶體用量也維持平穩。</li>
+                </ul>
+            </article>
+
+            <div class="mt-8 text-center">
+                <a href="/zh-TW/faq.html" class="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 transition-colors">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>返回常見問題</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/zh-TW/privacy.html" class="hover:text-white">隱私權政策</a> · <a href="/zh-TW/terms.html" class="hover:text-white">服務條款</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> <nav class="mt-3" aria-label="語言"><a href="/changelog.html" hreflang="en" class="hover:text-white">English</a> · <a href="/zh-TW/changelog.html" hreflang="zh-TW" class="hover:text-white text-slate-300">繁體中文</a> · <a href="/ja/changelog.html" hreflang="ja" class="hover:text-white">日本語</a> · <a href="/ko/changelog.html" hreflang="ko" class="hover:text-white">한국어</a></nav></div></footer></div>
+
+    <!-- Scripts -->
+<script src="/js/i18n.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>

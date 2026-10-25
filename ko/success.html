@@ -2,6 +2,21 @@
 <html lang="ko">
 
 <head>
+    <!-- Keep the Stripe session id out of analytics and referrers: stash it (tab-scoped), then drop it from the URL before gtag loads. /js/success.js reads it back. -->
+    <script>
+        (function () {
+            try {
+                var u = new URL(window.location.href);
+                var s = u.searchParams.get('session_id');
+                if (s) {
+                    window.__gmdCheckoutSession = s;
+                    try { sessionStorage.setItem('gmd_checkout_session', s); } catch (e) {}
+                    u.searchParams.delete('session_id');
+                    history.replaceState(null, '', u.pathname + u.search + u.hash);
+                }
+            } catch (e) {}
+        })();
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
     <script>

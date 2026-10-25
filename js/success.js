@@ -1,6 +1,7 @@
 // --- Purchase success page: Stripe Checkout session → license key ---
-// Reads ?session_id=… (Stripe), asks the license API for the key and renders it on the page so the
-// buyer never depends on the e-mail arriving (mistyped checkout e-mails were the #1 support ticket).
+// Reads the Stripe session id (stashed by the inline head script, which strips ?session_id= from the
+// URL so analytics/referrers never see it), asks the license API for the key and renders it on the
+// page so the buyer never depends on the e-mail arriving (mistyped e-mails were the #1 support ticket).
 // All copy lives in the HTML (one block per state, hardcoded per language); this file only toggles
 // blocks and fills values. API origin comes from js/components.js (window.CHECKOUT_API_BASE).
 //
@@ -11,7 +12,10 @@
 
     var API_BASE = window.CHECKOUT_API_BASE || 'https://api.kario-studio.com';
     var params = new URLSearchParams(window.location.search);
-    var sessionId = params.get('session_id') || '';
+    // The inline head script already removed session_id from the URL (so GA4 page_location and
+    // outbound referrers never carry it) and stashed it; sessionStorage keeps it across a reload.
+    var sessionId = window.__gmdCheckoutSession || params.get('session_id') || '';
+    if (!sessionId) { try { sessionId = sessionStorage.getItem('gmd_checkout_session') || ''; } catch (e) { /* blocked */ } }
     var legacyOrderId = params.get('order_id') || params.get('checkout_id') || '';
 
     var PRO = (typeof PRO_ITEM !== 'undefined') ? PRO_ITEM : {
@@ -26,6 +30,20 @@
     var ERROR_RETRY_MS = [4000, 12000];
 
     function $(id) { return document.getElementById(id); }
+
+    // Analytics never gets the raw session id (it unlocks the key for 24 h): the GA4 transaction_id
+    // is the Stripe payment_intent (order_ref) when the API returned one, else a SHA-256 prefix.
+    var hashedSession = (function () {
+        if (!sessionId) return Promise.resolve('');
+        if (window.crypto && crypto.subtle && window.TextEncoder) {
+            return crypto.subtle.digest('SHA-256', new TextEncoder().encode(sessionId)).then(function (buf) {
+                var h = ''; var b = new Uint8Array(buf);
+                for (var i = 0; i < 8; i++) h += ('0' + b[i].toString(16)).slice(-2);
+                return 'cs_' + h;
+            }).catch(function () { return 'cs_' + sessionId.slice(-10); });
+        }
+        return Promise.resolve('cs_' + sessionId.slice(-10));
+    })();
 
     function showState(name) {
         STATES.forEach(function (s) {
@@ -45,7 +63,13 @@
 
     // GA4 purchase — once per transaction id (localStorage dedupe survives reloads/tabs).
     function firePurchase(txId, value, currency, paymentStatus) {
-        if (typeof gtag !== 'function' || !txId) return;
+        if (typeof gtag !== 'function') return;
+        (txId ? Promise.resolve(txId) : hashedSession).then(function (id) {
+            if (id) firePurchaseNow(id, value, currency, paymentStatus);
+        });
+    }
+
+    function firePurchaseNow(txId, value, currency, paymentStatus) {
         var storageKey = 'purchase_tracked_' + txId;
         try { if (localStorage.getItem(storageKey)) return; } catch (e) { /* storage blocked */ }
         var v = parseFloat(value);
@@ -68,7 +92,7 @@
         for (var i = 0; i < wraps.length; i++) wraps[i].hidden = !hasEmail;
         renderRef(d.order_ref);
         showState('paid');
-        firePurchase(sessionId, d.amount_total, d.currency, 'paid');
+        firePurchase(d.order_ref || '', d.amount_total, d.currency, 'paid');
     }
 
     function renderPending(d) {
@@ -78,7 +102,7 @@
         renderRef(d.order_ref);
         showState('pending');
         // Stripe only sends buyers here after Checkout completes; async methods settle shortly after.
-        firePurchase(sessionId, d.amount_total, d.currency, 'pending');
+        firePurchase(d.order_ref || '', d.amount_total, d.currency, 'pending');
         if (pendingPolls < PENDING_MAX_POLLS) {
             pendingPolls++;
             setTimeout(lookup, PENDING_INTERVAL_MS);
@@ -88,7 +112,7 @@
     function renderFallback(reason) {
         showState('fallback');
         // Unknown outcome (API down / rate limited): still count the purchase so revenue isn't lost.
-        if (reason === 'error' || reason === 'rate_limited') firePurchase(sessionId, 4.99, 'USD', 'unknown');
+        if (reason === 'error' || reason === 'rate_limited') firePurchase('', 4.99, 'USD', 'unknown');
     }
 
     function renderRef(ref) {

@@ -316,15 +316,15 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.5 最新アップデート | ライブラリ全体DL・1080pアップグレード・Grok新API対応</span>
+                        <span data-i18n="hero_badge">Grok Imagine向けChrome拡張機能 · 無料、PRO $4.99 買い切り</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                        <span data-i18n="hero_title_1">Grokを完全自動化</span> <br>
-                        <span class="text-pink-500" data-i18n="hero_title_2">メディア資産管理</span>
+                        <span data-i18n="hero_title_1">Grokのライブラリを、</span> <br>
+                        <span class="text-pink-500" data-i18n="hero_title_2">ワンクリックでバックアップ</span>
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">単なるダウンローダーではなく、クリエイティブスタジオです。v2.5はGrokの新しいメディアバックエンドに完全対応し、ライブラリ全体ダウンロードを追加 —— すべての生成画像と動画を会話別にアーカイブ —— さらに1080pを独立した品質階層として扱います。</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Grokには一括ダウンロード機能がありません。数百件の生成画像や動画を1件ずつ保存し、先月作ったものを探し出し、1080p版を手元に残す——手作業では追いつきません。GrokMediaDownloaderはGrokのライブラリ全体をスキャンし、会話名のフォルダとプロンプトに基づくファイル名ですべてをダウンロード、動画は1080pにアップグレードします。処理はすべてブラウザ内で完結し、どこにもアップロードされません。</p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
@@ -473,6 +473,38 @@
                 </button>
             </div>
             <p class="text-center text-slate-500 text-xs mt-3">音楽： <a href="https://incompetech.com/music/royalty-free/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">"Wallpaper" by Kevin MacLeod (incompetech.com)</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">CC BY 4.0</a></p>
+        </div>
+    </section>
+
+    <!-- Why a dedicated Grok downloader (comparison) -->
+    <section id="compare" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">手動保存や汎用ダウンローダーではダメな理由</h2>
+                <p class="text-slate-400 max-w-3xl mx-auto">汎用の「画像ダウンローダー」拡張機能は、画面に表示されているものしか取得できません。Grokはライブラリの大半を画面外の独自メディアAPIの奥に保持しており、2026年7月以降は「保存済み」ページにもすべてが表示されなくなりました。GrokMediaDownloaderはそのAPIと直接やり取りします。</p>
+            </div>
+            <div class="overflow-x-auto rounded-2xl border border-slate-800">
+                <table class="w-full min-w-[640px] text-sm text-left">
+                    <thead class="bg-slate-900 text-slate-300">
+                        <tr>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold">必要なこと</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center">手動で保存</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center">汎用ダウンローダー</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center text-pink-400">GrokMediaDownloader</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr><td class="py-4 px-4 md:px-6">Grokのページに表示されなくなったメディアも見つける（2026年7月以降のバックエンド）</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ ライブラリ全体スキャン</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">数千件を1回でダウンロードしてもメモリ切れしない</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">画面に読み込まれた分のみ</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 15,000件超で検証済み</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">会話・タグ別フォルダ、日付・プロンプト・ID・シード値からファイル名を生成</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">すべて手動でリネーム</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">ランダムなファイル名</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ テンプレート</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">ダウンロード済みはスキップ、再読み込み後も再開</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ ソースごとの履歴</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">プレビューではなく1080p版の動画を取得</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">1件ずつ手作業</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">プレビュー画質</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ HD / 1080p一括アップグレード <span class="ml-1 inline-block align-middle text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-500/20 text-pink-300">PRO</span></td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">動画生成をキューに入れ、クリップを1本のストーリーに結合</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Video Gen Queue、Story Mode</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">メディアをプライベートに保つ</td><td class="py-4 px-4 md:px-6 text-center text-slate-400">はい</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">拡張機能による</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 100%ブラウザ内、サーバーなし</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center text-slate-500 text-xs mt-4">2026年10月時点のGrokメディアAPIの挙動に基づきます。無料版でもライブラリ全体スキャン、画像の一括ダウンロード、フォルダ分けが使えます。PRO機能の一覧は<a href="/ja/pricing.html" class="underline hover:text-slate-300">料金</a>をご覧ください。</p>
         </div>
     </section>
 

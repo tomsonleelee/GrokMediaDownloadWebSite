@@ -316,15 +316,15 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.5 최신 업데이트 | 전체 라이브러리 다운로드・1080p 업그레이드・Grok 새 API 지원</span>
+                        <span data-i18n="hero_badge">Grok Imagine용 Chrome 확장 프로그램 · 무료, PRO는 $4.99 1회 결제</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                        <span data-i18n="hero_title_1">Grok을 완전 자동화</span> <br>
-                        <span class="text-pink-500" data-i18n="hero_title_2">미디어 자산 관리</span>
+                        <span data-i18n="hero_title_1">Grok 라이브러리를</span> <br>
+                        <span class="text-pink-500" data-i18n="hero_title_2">클릭 한 번으로 백업</span>
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">단순한 다운로더가 아닌 크리에이티브 스튜디오입니다. v2.5는 Grok의 새로운 미디어 백엔드에 완전히 대응하고 전체 라이브러리 다운로드를 추가했습니다 —— 모든 생성 이미지와 동영상을 대화별로 보관 —— 여기에 1080p를 독립된 품질 계층으로 다룹니다.</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Grok에는 일괄 다운로드 기능이 없습니다. 수백 개의 생성 이미지와 동영상을 하나씩 저장하고, 지난달에 만든 작품을 찾고, 1080p 버전을 챙기는 일은 금방 한계에 부딪힙니다. GrokMediaDownloader는 Grok 라이브러리 전체를 스캔해 모든 미디어를 대화 이름으로 된 폴더에 프롬프트 기반 파일명으로 다운로드하고, 동영상을 1080p로 업그레이드합니다. 모든 작업은 브라우저 안에서만 이루어지며, 어떤 데이터도 외부로 업로드되지 않습니다.</p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
@@ -473,6 +473,38 @@
                 </button>
             </div>
             <p class="text-center text-slate-500 text-xs mt-3">음악: <a href="https://incompetech.com/music/royalty-free/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">"Wallpaper" by Kevin MacLeod (incompetech.com)</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">CC BY 4.0</a></p>
+        </div>
+    </section>
+
+    <!-- Why a dedicated Grok downloader (comparison) -->
+    <section id="compare" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">직접 저장하거나 일반 다운로더를 쓰면 안 될까요?</h2>
+                <p class="text-slate-400 max-w-3xl mx-auto">일반적인 "이미지 다운로더" 확장 프로그램은 화면에 보이는 것만 가져옵니다. Grok은 라이브러리 대부분을 화면 밖, 자체 미디어 API 뒤에 보관하며, 2026년 7월부터는 Saved 페이지에도 모든 항목이 표시되지 않습니다. GrokMediaDownloader는 이 API와 직접 통신합니다.</p>
+            </div>
+            <div class="overflow-x-auto rounded-2xl border border-slate-800">
+                <table class="w-full min-w-[640px] text-sm text-left">
+                    <thead class="bg-slate-900 text-slate-300">
+                        <tr>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold">필요한 기능</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center">직접 저장</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center">일반 다운로더</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center text-pink-400">GrokMediaDownloader</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr><td class="py-4 px-4 md:px-6">Grok 페이지에 더 이상 표시되지 않는 미디어까지 찾기 (2026년 7월 이후 백엔드)</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 전체 라이브러리 스캔</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">수천 개 항목을 메모리 부족 없이 한 번에 다운로드</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">화면에 로드된 항목만</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 15,000개 이상 테스트 완료</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">대화 또는 태그별 폴더, 날짜·프롬프트·ID·시드 기반 파일명</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">파일마다 직접 이름 변경</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">무작위 파일명</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 템플릿</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">이미 다운로드한 항목은 건너뛰고, 새로고침 후에도 이어서 진행</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 소스별 기록</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">미리보기가 아닌 1080p 동영상 받기</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">수동으로 하나씩</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">미리보기 화질</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ HD / 1080p 일괄 업그레이드 <span class="ml-1 inline-block align-middle text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-500/20 text-pink-300">PRO</span></td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">동영상 생성 대기열 관리 및 클립을 하나의 스토리로 병합</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Video Gen Queue, Story Mode</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">미디어를 비공개로 유지</td><td class="py-4 px-4 md:px-6 text-center text-slate-400">예</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">확장 프로그램마다 다름</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 100% 브라우저 내 처리, 서버 없음</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center text-slate-500 text-xs mt-4">2026년 10월 기준 Grok 미디어 API의 동작을 바탕으로 작성되었습니다. 무료 버전에는 전체 라이브러리 스캔, 이미지 일괄 다운로드, 폴더 정리가 포함됩니다. PRO 기능 목록은 <a href="/ko/pricing.html" class="underline hover:text-slate-300">가격</a> 페이지를 확인하세요.</p>
         </div>
     </section>
 

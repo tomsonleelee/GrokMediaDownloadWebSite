@@ -316,16 +316,16 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.5 最新更新 | 整庫下載・1080p 升級・支援 Grok 新 API</span>
+                        <span data-i18n="hero_badge">Grok Imagine 專用 Chrome 擴充功能 · 免費使用，PRO 一次買斷 $4.99</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                        <span data-i18n="hero_title_1">全自動化 Grok</span> <br>
-                        <span class="text-pink-500" data-i18n="hero_title_2">媒體資產管理</span>
+                        <span data-i18n="hero_title_1">您的 Grok 媒體庫，</span> <br>
+                        <span class="text-pink-500" data-i18n="hero_title_2">一鍵完整備份</span>
                     </h1>
 
                     <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">
-                        不只是下載器，更是您的創作工作室。v2.5 完整適配 Grok 全新媒體後端，並新增整庫下載 —— 依對話封存每一張生成圖片與影片 —— 同時將 1080p 列為獨立畫質層級。
+                        Grok 沒有批次下載功能。數百張生成圖片和影片要一個個手動儲存、想找上個月的作品得慢慢翻、還要記得保留 1080p 版本——這樣根本做不完。GrokMediaDownloader 會掃描您整個 Grok 媒體庫，把所有內容下載到以對話命名的資料夾，並依提示詞自動命名檔案，影片還能升級到 1080p。全程只在您的瀏覽器中執行，不會上傳任何資料。
                     </p>
 
                     <!-- CTA Buttons -->
@@ -475,6 +475,38 @@
                 </button>
             </div>
             <p class="text-center text-slate-500 text-xs mt-3">音樂： <a href="https://incompetech.com/music/royalty-free/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">"Wallpaper" by Kevin MacLeod (incompetech.com)</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">CC BY 4.0</a></p>
+        </div>
+    </section>
+
+    <!-- Why a dedicated Grok downloader (comparison) -->
+    <section id="compare" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">為什麼不手動存，或用一般下載器就好？</h2>
+                <p class="text-slate-400 max-w-3xl mx-auto">一般的「圖片下載器」擴充功能只能抓畫面上看得到的東西。但 Grok 媒體庫大部分內容並不在畫面上，而是藏在它自己的媒體 API 後面；自 2026 年 7 月起，連「收藏」頁面也不再顯示全部內容。GrokMediaDownloader 直接與這個 API 溝通。</p>
+            </div>
+            <div class="overflow-x-auto rounded-2xl border border-slate-800">
+                <table class="w-full min-w-[640px] text-sm text-left">
+                    <thead class="bg-slate-900 text-slate-300">
+                        <tr>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold">您需要的功能</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center">手動儲存</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center">一般下載器</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center text-pink-400">GrokMediaDownloader</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr><td class="py-4 px-4 md:px-6">找出 Grok 頁面已不再列出的媒體（2026 年 7 月後的新後端）</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 整庫掃描</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">一次下載數千件媒體，不會記憶體不足</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">只能抓畫面上已載入的</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 實測 15,000 件以上</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">依對話或標籤分資料夾，檔名可含日期、提示詞、ID 與 seed</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">每個檔案都要自己改名</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">檔名隨機</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 命名範本</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">自動略過已下載項目，重新整理後可接續</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 依來源記錄下載歷史</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">取得影片的 1080p 版本，而非預覽畫質</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">手動一個個來</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">預覽畫質</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 批次 HD / 1080p 升級 <span class="ml-1 inline-block align-middle text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-500/20 text-pink-300">PRO</span></td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">排程生成影片，並將片段合併成故事</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Video Gen Queue、Story Mode</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">媒體保持私密</td><td class="py-4 px-4 md:px-6 text-center text-slate-400">是</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">視擴充功能而定</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 100% 在瀏覽器中執行，無伺服器</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center text-slate-500 text-xs mt-4">依據 2026 年 10 月時 Grok 媒體 API 的運作情況。免費版即包含整庫掃描、批次圖片下載與資料夾分類；PRO 功能清單請見<a href="/zh-TW/pricing.html" class="underline hover:text-slate-300">方案價格</a>。</p>
         </div>
     </section>
 

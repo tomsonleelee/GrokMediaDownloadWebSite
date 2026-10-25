@@ -316,15 +316,15 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.5 Latest Update | Whole Library Download・1080p Upgrade・New Grok API Ready</span>
+                        <span data-i18n="hero_badge">Chrome extension for Grok Imagine · Free, PRO $4.99 once</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                        <span data-i18n="hero_title_1">Automated Grok</span> <br>
-                        <span class="text-pink-500" data-i18n="hero_title_2">Media Asset Management</span>
+                        <span data-i18n="hero_title_1">Your Grok library,</span> <br>
+                        <span class="text-pink-500" data-i18n="hero_title_2">backed up in one click</span>
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Not just a downloader, but your creative studio. v2.5 adapts to Grok’s new media backend and adds Whole Library Download — archive every generated image and video, organized by conversation — plus 1080p as its own quality tier.</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Grok has no bulk download. Saving hundreds of generated images and videos one by one, finding what you made last month, and keeping the 1080p versions does not scale. GrokMediaDownloader scans your whole Grok library, downloads everything into folders named after the conversation with prompt-based filenames, and upgrades videos to 1080p. It runs entirely in your browser; nothing is uploaded anywhere.</p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
@@ -473,6 +473,38 @@
                 </button>
             </div>
             <p class="text-center text-slate-500 text-xs mt-3">Music: <a href="https://incompetech.com/music/royalty-free/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">"Wallpaper" by Kevin MacLeod (incompetech.com)</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">CC BY 4.0</a></p>
+        </div>
+    </section>
+
+    <!-- Why a dedicated Grok downloader (comparison) -->
+    <section id="compare" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Why not just save manually, or use a generic downloader?</h2>
+                <p class="text-slate-400 max-w-3xl mx-auto">Generic "image downloader" extensions grab whatever is on the screen. Grok keeps most of your library off-screen, behind its own media API, and since July 2026 even the Saved page no longer shows everything. GrokMediaDownloader talks to that API directly.</p>
+            </div>
+            <div class="overflow-x-auto rounded-2xl border border-slate-800">
+                <table class="w-full min-w-[640px] text-sm text-left">
+                    <thead class="bg-slate-900 text-slate-300">
+                        <tr>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold">What you need</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center">Saving by hand</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center">Generic downloader</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center text-pink-400">GrokMediaDownloader</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr><td class="py-4 px-4 md:px-6">Finds media that Grok's page no longer lists (post-July-2026 backend)</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Whole Library scan</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Downloads thousands of items in one run without running out of memory</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">Only what is loaded on screen</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 15,000+ tested</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Folders per conversation or tag, filenames from date, prompt, ID and seed</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">You rename every file</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">Random file names</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Templates</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Skips what you already downloaded, resumes after a reload</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Per-source history</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Gets the 1080p version of videos, not the preview</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">Manual, one at a time</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">Preview quality</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Batch HD / 1080p upgrade <span class="ml-1 inline-block align-middle text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-500/20 text-pink-300">PRO</span></td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Queues video generation and merges clips into a story</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Video Gen Queue, Story Mode</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Keeps your media private</td><td class="py-4 px-4 md:px-6 text-center text-slate-400">Yes</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">Depends on the extension</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 100% in your browser, no server</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center text-slate-500 text-xs mt-4">Based on how Grok's media API behaved as of October 2026. The free version covers the Whole Library scan, batch image download and folders; see <a href="/pricing.html" class="underline hover:text-slate-300">Pricing</a> for the PRO list.</p>
         </div>
     </section>
 

@@ -139,10 +139,50 @@
             "@type": "Answer",
             "text": "Yes — since v2.5.1 the download source selector is free for everyone, because nobody should be stuck on a source that cannot see their own media. Free users can select \"📦 All Generated Media (by Conversation)\" and download everything from the last 7 days; the extension states this window up front rather than silently truncating your results. GrokMediaDownloader PRO, a one-time $4.99 purchase with a lifetime licence, removes the time limit so you can archive your complete library, and unlocks date filtering (a specific range or a recent-hours window). PRO also covers Stream Capture, Story Mode Helper, unlimited Video Gen Queue, Project-Based Download, HD and 1080p upgrade, and data export and import. All processing happens locally in your browser — no data is collected and nothing is uploaded."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Generate List finds nothing, or misses my newest images",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check the Download Source selector. If it still says Favorite, switch to All Generated Media (by Conversation). Since Grok's July 2026 change, new generations are no longer added to Favorites, so a Favorite scan can legitimately come back empty. The whole-library source is free for everyone and has been the default since v2.5.1. Then click Generate List again."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HD Upgrade says every video is already upgraded",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Same cause as above: the upgrade scan reads the list of the selected source, and the Favorite list is incomplete. Set the source to the whole library, regenerate the list, and run the upgrade scan again. Since v2.5 the scan converges: repeated runs return the same result, and 1080p is tracked as its own tier so a 720p file is never mistaken for the top quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Filenames, folder names or metadata.json have no prompt in them",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grok stopped sending the prompt with the media list in September 2026. Update to v2.5.6 or newer, which recovers each prompt from the conversation that generated the item, then regenerate the list once: names are decided during the Generate List step, so a list made by an older version keeps the old names. In Settings, choose the \"Prompt Based\" filename mode if you want prompts in filenames. A persistent cache keeps recovered prompts, so later regenerates take seconds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A tag I created in Grok is missing, or a tag downloads only one file",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grok runs two tag systems side by side since its August 2026 migration, and each is missing items the other has. Versions 2.5.2 to 2.5.4 read only the new one. Update to v2.5.6 or newer: it reads both and merges them, so tag lists and tag contents are the union of the two. After updating, regenerate the list for the tag."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I lost my files and the extension says everything is already downloaded",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each source keeps its own download history. For the whole-library source, open the popup, expand Clear Actions and click Clear Conversation History; confirm the dialog. The button \"Reset Download History\" applies to the Favorite source only. Clearing a history does not delete anything on Grok or on disk; it only lets the next run download those items again."
+          }
         }
       ]
     }
-    </script>
+  </script>
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
@@ -397,6 +437,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_1_title">Pick Your Source</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_1_desc">Open the extension on your Grok Imagine page and choose "All Generated Media (by Conversation)" in the Download Source selector. Optionally set a recent-hours window or a date range.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/resized/feat-generate-list_640x400.jpg" srcset="/assets/resized/feat-generate-list_640x400.jpg 640w, /assets/resized/feat-generate-list_1280x800.jpg 1280w" sizes="(min-width: 768px) 640px, 100vw" alt="GrokMediaDownloader popup: media type checkboxes, the PRO date filter and the "1. Generate List" and "2. Start Download" buttons" loading="lazy" width="1280" height="800" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Popup screenshot: media types, date filter, then Generate List and Start Download.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -406,6 +450,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_2_title">Generate the List</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_2_desc">The extension scans your library newest-first, resolves each video's quality tier, and prepares conversation folders. Progress is reported at each stage — scanning, resolving quality N/M, preparing folders N/M.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-sources.jpg" alt="Illustration of the three download sources: whole library by conversation, tags and collections, and liked posts" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">The three sources: Whole Library (by conversation), Tags &amp; Collections, Liked. Illustration from the product explainer.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -415,6 +463,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_3_title">Review the Summary</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_3_desc">A summary shows how many images and videos will be downloaded versus already done, with videos broken out by 1080p, HD, 720p and SD so you know exactly what you're about to fetch.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-scan.jpg" alt="Illustration of a library scan counter passing 15,000 items with flat memory use" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">The scan streams page by page, so a 15,000-item library finishes without the browser running out of memory. Illustration.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -424,6 +476,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_4_title">Download &amp; Archive</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_4_desc">Files download into per-conversation folders with prompt-based names. Interrupted downloads are tracked so a retry fetches only what's missing, never re-downloading what completed.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-folders.jpg" alt="Illustration of the naming template: folders per conversation or tag, filenames from date, time, prompt, ID and seed" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Folders per conversation or tag; filenames built from date, time, prompt, ID and seed. Illustration.</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -612,6 +668,39 @@
     </section>
 
     <!-- FAQ Section -->
+    <!-- Troubleshooting -->
+    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Troubleshooting</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">The five problems we hear about most, with the fix that resolved them in practice. All of them trace back to Grok's 2026 backend changes rather than to a broken setting.</p>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Generate List finds nothing, or misses my newest images<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Check the <strong class="text-slate-200">Download Source</strong> selector. If it still says Favorite, switch to <strong class="text-slate-200">All Generated Media (by Conversation)</strong>. Since Grok's July 2026 change, new generations are no longer added to Favorites, so a Favorite scan can legitimately come back empty. The whole-library source is free for everyone and has been the default since v2.5.1. Then click Generate List again.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">HD Upgrade says every video is already upgraded<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Same cause as above: the upgrade scan reads the list of the selected source, and the Favorite list is incomplete. Set the source to the whole library, regenerate the list, and run the upgrade scan again. Since v2.5 the scan converges: repeated runs return the same result, and 1080p is tracked as its own tier so a 720p file is never mistaken for the top quality.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Filenames, folder names or metadata.json have no prompt in them<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok stopped sending the prompt with the media list in September 2026. Update to v2.5.6 or newer, which recovers each prompt from the conversation that generated the item, then <strong class="text-slate-200">regenerate the list once</strong>: names are decided during the Generate List step, so a list made by an older version keeps the old names. In Settings, choose the "Prompt Based" filename mode if you want prompts in filenames. A persistent cache keeps recovered prompts, so later regenerates take seconds.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">A tag I created in Grok is missing, or a tag downloads only one file<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok runs two tag systems side by side since its August 2026 migration, and each is missing items the other has. Versions 2.5.2 to 2.5.4 read only the new one. Update to v2.5.6 or newer: it reads both and merges them, so tag lists and tag contents are the union of the two. After updating, regenerate the list for the tag.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">I lost my files and the extension says everything is already downloaded<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Each source keeps its own download history. For the whole-library source, open the popup, expand <strong class="text-slate-200">Clear Actions</strong> and click <strong class="text-slate-200">Clear Conversation History</strong>; confirm the dialog. The button "Reset Download History" applies to the Favorite source only. Clearing a history does not delete anything on Grok or on disk; it only lets the next run download those items again.</div>
+                </details>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-8">Still stuck? The <a href="/faq.html" class="underline hover:text-slate-300">FAQ</a> covers more cases, and the Contact Support button in the footer reaches a human.</p>
+        </div>
+    </section>
+
     <section class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">

@@ -139,6 +139,46 @@
             "@type": "Answer",
             "text": "네 —— v2.5.1부터 다운로드 소스 선택기는 모두에게 무료로 열려 있습니다. 자기 미디어를 볼 수 없는 소스에 묶여 있어야 할 사람은 없기 때문입니다. 무료 사용자도 \"📦 모든 생성 미디어(대화별)\"를 선택해 최근 7일간의 모든 항목을 다운로드할 수 있습니다. 이 범위는 조용히 잘라내지 않고 UI에 명확히 표시됩니다. GrokMediaDownloader PRO는 4.99달러 일회성 구매의 평생 라이선스로, 이 기간 제한을 해제해 전체 라이브러리를 보관할 수 있게 하고 날짜 필터(지정 범위 또는 최근 N시간)를 잠금 해제합니다. PRO에는 스트림 캡처, 스토리 모드 헬퍼, 무제한 동영상 생성 대기열, 프로젝트 다운로드, HD 및 1080p 업그레이드, 데이터 내보내기·가져오기도 포함됩니다. 모든 처리는 브라우저 내에서 로컬로 이루어지며 데이터를 수집하거나 업로드하지 않습니다."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "목록 생성에서 아무것도 찾지 못하거나 최신 이미지가 빠집니다",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "다운로드 소스 선택기를 확인하세요. 아직 \"즐겨찾기\"로 되어 있다면 📦 모든 생성 미디어(대화별)로 바꾸세요. Grok의 2026년 7월 변경 이후 새로 생성된 미디어는 더 이상 즐겨찾기에 추가되지 않으므로, 즐겨찾기 스캔이 비어 있는 것은 정상적인 결과일 수 있습니다. 전체 라이브러리 소스는 모두에게 무료이며 v2.5.1부터 기본값입니다. 그런 다음 \"목록 생성\"을 다시 클릭하세요."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HD 업그레이드가 모든 동영상이 이미 업그레이드됐다고 합니다",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "원인은 위와 같습니다. 업그레이드 스캔은 선택한 소스의 목록을 읽는데, 즐겨찾기 목록은 불완전합니다. 소스를 전체 라이브러리로 설정하고 목록을 다시 생성한 뒤 업그레이드 스캔을 다시 실행하세요. v2.5부터 스캔 결과가 수렴하므로 반복 실행해도 같은 결과가 나오며, 1080p를 별도 계층으로 추적하기 때문에 720p 파일을 최고 화질로 오인하지 않습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "파일명, 폴더 이름 또는 metadata.json에 프롬프트가 없습니다",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grok은 2026년 9월부터 미디어 목록에 프롬프트를 보내지 않습니다. v2.5.6 이상으로 업데이트하세요. 이 버전은 각 항목을 생성한 대화에서 프롬프트를 되찾아옵니다. 그다음 목록을 한 번 다시 생성하세요. 이름은 \"목록 생성\" 단계에서 정해지므로 이전 버전으로 만든 목록은 예전 이름을 그대로 유지합니다. 파일명에 프롬프트를 넣고 싶다면 설정에서 \"프롬프트 기반\" 파일명 모드를 선택하세요. 되찾은 프롬프트는 영구 캐시에 저장되므로 이후 재생성은 몇 초면 끝납니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Grok에서 만든 태그가 보이지 않거나, 태그에서 파일이 하나만 다운로드됩니다",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grok은 2026년 8월 이전 이후 두 가지 태그 시스템을 병행 운영하고 있으며, 각 시스템에는 다른 쪽에 있는 항목이 빠져 있습니다. 버전 2.5.2~2.5.4는 새 시스템만 읽습니다. v2.5.6 이상으로 업데이트하세요. 두 시스템을 모두 읽어 병합하므로 태그 목록과 태그 내용이 둘의 합집합이 됩니다. 업데이트 후 해당 태그의 목록을 다시 생성하세요."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "파일을 잃어버렸는데 확장 프로그램은 모두 이미 다운로드됐다고 합니다",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "다운로드 기록은 소스별로 따로 유지됩니다. 전체 라이브러리 소스라면 팝업을 열고 🧹 초기화 섹션을 펼친 뒤 대화 기록 지우기를 클릭하고 확인 대화상자에서 확인을 선택하세요. \"다운로드 기록 초기화\" 버튼은 즐겨찾기 소스에만 적용됩니다. 기록을 지워도 Grok이나 디스크에서는 아무것도 삭제되지 않으며, 다음 실행 때 해당 항목을 다시 다운로드할 수 있게 될 뿐입니다."
+          }
         }
       ]
     }
@@ -397,6 +437,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_1_title">소스 선택</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_1_desc">Grok Imagine 페이지에서 확장 프로그램을 열고 다운로드 소스 선택기에서 "📦 모든 생성 미디어(대화별)"를 선택합니다. 필요하면 최근 N시간 구간이나 날짜 범위를 설정하세요.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/resized/feat-generate-list_640x400.jpg" srcset="/assets/resized/feat-generate-list_640x400.jpg 640w, /assets/resized/feat-generate-list_1280x800.jpg 1280w" sizes="(min-width: 768px) 640px, 100vw" alt="GrokMediaDownloader 팝업: 미디어 유형 체크박스, PRO 날짜 필터, &quot;1. 목록 생성&quot; 및 &quot;2. 다운로드 시작&quot; 버튼" loading="lazy" width="1280" height="800" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">팝업 화면: 미디어 유형, 날짜 필터, 그다음 목록 생성과 다운로드 시작.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -406,6 +450,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_2_title">목록 생성</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_2_desc">확장 프로그램이 최신순으로 라이브러리를 스캔하고, 각 동영상의 품질 계층을 확인하며, 대화 폴더를 준비합니다. 스캔 중, 동영상 품질 확인 N/M, 폴더 준비 N/M 등 각 단계의 진행 상황이 보고됩니다.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-sources.jpg" alt="세 가지 다운로드 소스 일러스트: 대화별 전체 라이브러리, 태그 및 컬렉션, 좋아요한 게시물" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">세 가지 소스: 전체 라이브러리(대화별), 태그 및 컬렉션, 좋아요. 제품 소개 영상의 일러스트입니다.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -415,6 +463,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_3_title">요약 확인</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_3_desc">요약에는 다운로드 예정 및 완료된 이미지와 동영상 수가 표시되며, 동영상은 1080p, HD, 720p, SD로 나뉘어 표시되므로 무엇을 가져올지 정확히 알 수 있습니다.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-scan.jpg" alt="메모리 사용량이 일정한 채로 15,000개 항목을 넘어가는 라이브러리 스캔 카운터 일러스트" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">스캔은 페이지 단위로 스트리밍되므로 15,000개 항목의 라이브러리도 브라우저 메모리 부족 없이 끝까지 처리됩니다. 일러스트.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -424,6 +476,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_4_title">다운로드 및 보관</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_4_desc">파일은 대화별 폴더에 프롬프트 기반 이름으로 다운로드됩니다. 중단된 다운로드는 기록되므로 재시도 시 누락된 것만 가져오며 완료된 파일을 다시 받지 않습니다.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-folders.jpg" alt="이름 템플릿 일러스트: 대화 또는 태그별 폴더, 날짜·시간·프롬프트·ID·시드로 만든 파일명" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">대화 또는 태그별 폴더, 날짜·시간·프롬프트·ID·시드로 만든 파일명. 일러스트.</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -612,6 +668,39 @@
     </section>
 
     <!-- FAQ Section -->
+    <!-- Troubleshooting -->
+    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">문제 해결</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">가장 자주 문의되는 다섯 가지 문제와 실제로 효과가 있었던 해결 방법입니다. 모두 설정이 잘못된 것이 아니라 Grok의 2026년 백엔드 변경에서 비롯된 문제입니다.</p>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">목록 생성에서 아무것도 찾지 못하거나 최신 이미지가 빠집니다<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><strong class="text-slate-200">다운로드 소스</strong> 선택기를 확인하세요. 아직 "즐겨찾기"로 되어 있다면 <strong class="text-slate-200">📦 모든 생성 미디어(대화별)</strong>로 바꾸세요. Grok의 2026년 7월 변경 이후 새로 생성된 미디어는 더 이상 즐겨찾기에 추가되지 않으므로, 즐겨찾기 스캔이 비어 있는 것은 정상적인 결과일 수 있습니다. 전체 라이브러리 소스는 모두에게 무료이며 v2.5.1부터 기본값입니다. 그런 다음 "목록 생성"을 다시 클릭하세요.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">HD 업그레이드가 모든 동영상이 이미 업그레이드됐다고 합니다<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">원인은 위와 같습니다. 업그레이드 스캔은 선택한 소스의 목록을 읽는데, 즐겨찾기 목록은 불완전합니다. 소스를 전체 라이브러리로 설정하고 목록을 다시 생성한 뒤 업그레이드 스캔을 다시 실행하세요. v2.5부터 스캔 결과가 수렴하므로 반복 실행해도 같은 결과가 나오며, 1080p를 별도 계층으로 추적하기 때문에 720p 파일을 최고 화질로 오인하지 않습니다.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">파일명, 폴더 이름 또는 metadata.json에 프롬프트가 없습니다<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok은 2026년 9월부터 미디어 목록에 프롬프트를 보내지 않습니다. v2.5.6 이상으로 업데이트하세요. 이 버전은 각 항목을 생성한 대화에서 프롬프트를 되찾아옵니다. 그다음 <strong class="text-slate-200">목록을 한 번 다시 생성하세요</strong>. 이름은 "목록 생성" 단계에서 정해지므로 이전 버전으로 만든 목록은 예전 이름을 그대로 유지합니다. 파일명에 프롬프트를 넣고 싶다면 설정에서 "프롬프트 기반" 파일명 모드를 선택하세요. 되찾은 프롬프트는 영구 캐시에 저장되므로 이후 재생성은 몇 초면 끝납니다.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Grok에서 만든 태그가 보이지 않거나, 태그에서 파일이 하나만 다운로드됩니다<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok은 2026년 8월 이전 이후 두 가지 태그 시스템을 병행 운영하고 있으며, 각 시스템에는 다른 쪽에 있는 항목이 빠져 있습니다. 버전 2.5.2~2.5.4는 새 시스템만 읽습니다. v2.5.6 이상으로 업데이트하세요. 두 시스템을 모두 읽어 병합하므로 태그 목록과 태그 내용이 둘의 합집합이 됩니다. 업데이트 후 해당 태그의 목록을 다시 생성하세요.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">파일을 잃어버렸는데 확장 프로그램은 모두 이미 다운로드됐다고 합니다<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">다운로드 기록은 소스별로 따로 유지됩니다. 전체 라이브러리 소스라면 팝업을 열고 <strong class="text-slate-200">🧹 초기화</strong> 섹션을 펼친 뒤 <strong class="text-slate-200">대화 기록 지우기</strong>를 클릭하고 확인 대화상자에서 확인을 선택하세요. "다운로드 기록 초기화" 버튼은 즐겨찾기 소스에만 적용됩니다. 기록을 지워도 Grok이나 디스크에서는 아무것도 삭제되지 않으며, 다음 실행 때 해당 항목을 다시 다운로드할 수 있게 될 뿐입니다.</div>
+                </details>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-8">그래도 해결되지 않나요? <a href="/ko/faq.html" class="underline hover:text-slate-300">FAQ</a>에서 더 많은 사례를 다루고 있으며, 푸터의 고객 지원 문의 버튼으로 담당자에게 직접 연락할 수 있습니다.</p>
+        </div>
+    </section>
+
     <section class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">

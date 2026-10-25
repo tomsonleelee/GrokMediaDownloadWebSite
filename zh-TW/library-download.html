@@ -139,6 +139,46 @@
             "@type": "Answer",
             "text": "有 —— 自 v2.5.1 起，下載來源選擇器已對所有人免費開放，因為沒有人應該被鎖在一個看不到自己媒體的來源上。免費使用者可以選擇「📦 所有生成媒體（依對話）」並下載最近 7 天的全部內容；擴充功能會在介面上明確標示這個範圍，不會默默截斷結果。GrokMediaDownloader PRO 為一次性 $4.99 買斷、終身授權，可解除時間限制以封存完整媒體庫，並解鎖日期篩選（指定範圍或最近數小時）。PRO 同時涵蓋串流擷取、故事模式助手、無限次影片生成佇列、專案下載、HD 與 1080p 升級，以及資料匯出匯入。所有處理都在您的瀏覽器本機完成 —— 不收集任何資料，也不會上傳。"
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Generate List 找不到任何東西，或漏掉最新的圖片",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "請檢查 Download Source（下載來源）選擇器。如果仍是 Favorite（收藏），請切換到 All Generated Media (by Conversation)（所有生成媒體，依對話）。自 Grok 2026 年 7 月的變更後，新生成的作品不再自動加入收藏，所以用收藏來源掃描確實可能一無所獲。整庫來源對所有人免費，且自 v2.5.1 起已是預設來源。切換後再按一次 Generate List 即可。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HD 升級顯示所有影片都已升級",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "原因同上：升級掃描讀取的是所選來源的清單，而收藏清單並不完整。請把來源設為整庫、重新產生清單，再執行一次升級掃描。自 v2.5 起掃描結果會收斂：重複執行會得到相同結果，且 1080p 被視為獨立層級追蹤，720p 檔案不會再被誤認為最高畫質。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "檔名、資料夾名稱或 metadata.json 裡沒有提示詞",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grok 自 2026 年 9 月起不再隨媒體清單傳送提示詞。請更新到 v2.5.6 或更新版本，它會從生成該作品的對話中找回每一則提示詞；接著請重新產生一次清單：名稱是在 Generate List 步驟中決定的，舊版本產生的清單會沿用舊名稱。若想在檔名中使用提示詞，請在設定中選擇「Prompt Based」（依提示詞）檔名模式。找回的提示詞會存入持久快取，之後重新產生清單只需幾秒。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我在 Grok 建立的標籤不見了，或某個標籤只下載到一個檔案",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grok 自 2026 年 8 月遷移後同時運行兩套標籤系統，兩者各自缺少對方有的項目。v2.5.2 至 v2.5.4 只讀取新系統。請更新到 v2.5.6 或更新版本：它會同時讀取兩套系統並合併，標籤清單與標籤內容都是兩者的聯集。更新後，請為該標籤重新產生清單。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "檔案遺失了，擴充功能卻說全部都已下載",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "每個來源都保有各自的下載紀錄。若是整庫來源，請開啟彈出視窗，展開 Clear Actions（清除操作）並點選 Clear Conversation History（清除對話紀錄），再於對話框中確認。「Reset Download History」（重設下載紀錄）按鈕只適用於收藏來源。清除紀錄不會刪除 Grok 上或磁碟中的任何檔案，只是讓下一次執行能重新下載這些項目。"
+          }
         }
       ]
     }
@@ -397,6 +437,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_1_title">選擇來源</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_1_desc">在 Grok Imagine 頁面開啟擴充功能，於「下載來源」選擇器中選擇「📦 所有生成媒體（依對話）」。可另外設定最近幾小時的時間窗或日期範圍。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/resized/feat-generate-list_640x400.jpg" srcset="/assets/resized/feat-generate-list_640x400.jpg 640w, /assets/resized/feat-generate-list_1280x800.jpg 1280w" sizes="(min-width: 768px) 640px, 100vw" alt="GrokMediaDownloader 彈出視窗：媒體類型核取方塊、PRO 日期篩選，以及「1. Generate List」與「2. Start Download」按鈕" loading="lazy" width="1280" height="800" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">彈出視窗截圖：先選媒體類型與日期篩選，再按 Generate List 與 Start Download。</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -406,6 +450,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_2_title">產生清單</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_2_desc">擴充功能由新到舊掃描媒體庫、解析每支影片的畫質層級，並準備對話資料夾。各階段都會回報進度 —— 掃描中、解析影片畫質 N/M、準備對話資料夾 N/M。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-sources.jpg" alt="三種下載來源示意圖：依對話的整庫、標籤與收藏集、按讚的貼文" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">三種來源：整庫（依對話）、標籤與收藏集、按讚。插圖取自產品介紹影片。</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -415,6 +463,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_3_title">檢視摘要</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_3_desc">摘要會顯示有多少圖片與影片待下載、多少已完成，影片並依 1080p、HD、720p、SD 分層列出，讓您清楚知道即將抓取什麼。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-scan.jpg" alt="媒體庫掃描計數器突破 15,000 件、記憶體用量維持平穩的示意圖" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">掃描逐頁串流處理，即使是 15,000 件的媒體庫，也能在瀏覽器不耗盡記憶體的情況下完成。示意圖。</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -424,6 +476,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_4_title">下載並封存</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_4_desc">檔案會下載到各自的對話資料夾中，並採用提示詞命名。中斷的下載會被記錄下來，重試時只抓缺少的部分，不會重新下載已完成的檔案。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-folders.jpg" alt="命名範本示意圖：依對話或標籤建立資料夾，檔名由日期、時間、提示詞、ID 與 seed 組成" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">依對話或標籤分資料夾；檔名由日期、時間、提示詞、ID 與 seed 組成。示意圖。</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -612,6 +668,39 @@
     </section>
 
     <!-- FAQ Section -->
+    <!-- Troubleshooting -->
+    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">疑難排解</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">我們最常收到的五個問題，以及實際有效的解法。這些問題都源自 Grok 在 2026 年的後端變更，而不是您的設定出了錯。</p>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Generate List 找不到任何東西，或漏掉最新的圖片<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">請檢查 <strong class="text-slate-200">Download Source</strong>（下載來源）選擇器。如果仍是 Favorite（收藏），請切換到 <strong class="text-slate-200">All Generated Media (by Conversation)</strong>（所有生成媒體，依對話）。自 Grok 2026 年 7 月的變更後，新生成的作品不再自動加入收藏，所以用收藏來源掃描確實可能一無所獲。整庫來源對所有人免費，且自 v2.5.1 起已是預設來源。切換後再按一次 Generate List 即可。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">HD 升級顯示所有影片都已升級<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">原因同上：升級掃描讀取的是所選來源的清單，而收藏清單並不完整。請把來源設為整庫、重新產生清單，再執行一次升級掃描。自 v2.5 起掃描結果會收斂：重複執行會得到相同結果，且 1080p 被視為獨立層級追蹤，720p 檔案不會再被誤認為最高畫質。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">檔名、資料夾名稱或 metadata.json 裡沒有提示詞<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok 自 2026 年 9 月起不再隨媒體清單傳送提示詞。請更新到 v2.5.6 或更新版本，它會從生成該作品的對話中找回每一則提示詞；接著請<strong class="text-slate-200">重新產生一次清單</strong>：名稱是在 Generate List 步驟中決定的，舊版本產生的清單會沿用舊名稱。若想在檔名中使用提示詞，請在設定中選擇「Prompt Based」（依提示詞）檔名模式。找回的提示詞會存入持久快取，之後重新產生清單只需幾秒。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">我在 Grok 建立的標籤不見了，或某個標籤只下載到一個檔案<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok 自 2026 年 8 月遷移後同時運行兩套標籤系統，兩者各自缺少對方有的項目。v2.5.2 至 v2.5.4 只讀取新系統。請更新到 v2.5.6 或更新版本：它會同時讀取兩套系統並合併，標籤清單與標籤內容都是兩者的聯集。更新後，請為該標籤重新產生清單。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">檔案遺失了，擴充功能卻說全部都已下載<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">每個來源都保有各自的下載紀錄。若是整庫來源，請開啟彈出視窗，展開 <strong class="text-slate-200">Clear Actions</strong>（清除操作）並點選 <strong class="text-slate-200">Clear Conversation History</strong>（清除對話紀錄），再於對話框中確認。「Reset Download History」（重設下載紀錄）按鈕只適用於收藏來源。清除紀錄不會刪除 Grok 上或磁碟中的任何檔案，只是讓下一次執行能重新下載這些項目。</div>
+                </details>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-8">還是沒解決？<a href="/zh-TW/faq.html" class="underline hover:text-slate-300">常見問題</a>涵蓋更多情況，也可以透過頁尾的「聯絡客服」按鈕找到真人協助。</p>
+        </div>
+    </section>
+
     <section class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">

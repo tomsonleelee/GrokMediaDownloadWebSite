@@ -139,6 +139,46 @@
             "@type": "Answer",
             "text": "はい —— v2.5.1 以降、ダウンロード元セレクタはすべての方に無料で開放されています。自分のメディアが見えない元に固定されるべき人はいないからです。無料版でも「📦 すべての生成メディア（会話別）」を選択し、直近 7 日間のすべてをダウンロードできます。この範囲は黙って切り捨てるのではなく、UI に明示されます。GrokMediaDownloader PRO は 4.99 ドルの一回払い・永久ライセンスで、この期間制限を解除してライブラリ全体をアーカイブできるようにし、日付フィルター（指定範囲または直近 N 時間）も利用可能になります。PRO にはストリームキャプチャ、ストーリーモードヘルパー、無制限の動画生成キュー、プロジェクトダウンロード、HD および 1080p アップグレード、データのエクスポート・インポートも含まれます。処理はすべてブラウザ内でローカルに行われ、データの収集もアップロードもありません。"
           }
+        },
+        {
+          "@type": "Question",
+          "name": "リスト生成で何も見つからない、または最新の画像が漏れる",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ダウンロードソースセレクタを確認してください。まだ「お気に入り」になっている場合は、「📦 すべての生成メディア（会話別）」に切り替えます。Grokの2026年7月の変更以降、新しく生成したメディアはお気に入りに追加されなくなったため、お気に入りのスキャンが空で返るのは正常な動作です。ライブラリ全体ソースはすべての方に無料で、v2.5.1以降は既定のソースです。切り替えたら、もう一度「リスト生成」をクリックしてください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HDアップグレードで「すべての動画はアップグレード済み」と表示される",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "原因は上と同じです。アップグレードスキャンは選択中のソースの一覧を読みますが、お気に入りの一覧は不完全です。ソースをライブラリ全体に設定し、リストを再生成してから、アップグレードスキャンをもう一度実行してください。v2.5以降のスキャンは収束するため、繰り返し実行しても同じ結果になります。また1080pは独立した階層として扱われるので、720pのファイルが最高品質と誤認されることはありません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ファイル名、フォルダ名、metadata.json にプロンプトが含まれない",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grokは2026年9月、メディア一覧にプロンプトを含めなくなりました。v2.5.6以降に更新すると、その項目を生成した会話から各プロンプトを取り戻します。その後、リストを一度再生成してください。名前は「リスト生成」の段階で決まるため、旧バージョンで作成したリストは古い名前のままです。ファイル名にプロンプトを入れたい場合は、設定で「プロンプトベース」のファイル名モードを選んでください。取り戻したプロンプトは永続キャッシュに保存されるので、以降の再生成は数秒で終わります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Grokで作成したタグが見つからない、またはタグから1ファイルしかダウンロードされない",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grokは2026年8月の移行以降、2つのタグシステムを並行して運用しており、それぞれにもう一方にない項目があります。バージョン2.5.2〜2.5.4は新しい方しか読み取りません。v2.5.6以降に更新すると両方を読み取って統合するため、タグの一覧と中身は2つの和集合になります。更新後、そのタグのリストを再生成してください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ファイルを失ったのに、拡張機能がすべてダウンロード済みと表示する",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "各ソースは独自のダウンロード履歴を保持しています。ライブラリ全体ソースの場合は、ポップアップを開いて「🧹 クリア操作」を展開し、「会話履歴を消去」をクリックして確認ダイアログでOKを選びます。「ダウンロード履歴をリセット（全ファイルを再ダウンロード）」ボタンはお気に入りソース専用です。履歴を消去しても、Grok上やディスク上のファイルは何も削除されません。次回の実行でそれらの項目を再ダウンロードできるようになるだけです。"
+          }
         }
       ]
     }
@@ -397,6 +437,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_1_title">ソースを選ぶ</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_1_desc">Grok Imagineのページで拡張機能を開き、ダウンロードソースセレクタで「📦 すべての生成メディア（会話別）」を選択します。必要に応じて直近N時間のウィンドウや日付範囲を設定できます。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/resized/feat-generate-list_640x400.jpg" srcset="/assets/resized/feat-generate-list_640x400.jpg 640w, /assets/resized/feat-generate-list_1280x800.jpg 1280w" sizes="(min-width: 768px) 640px, 100vw" alt="GrokMediaDownloaderのポップアップ：メディア種類のチェックボックス、PROの日付フィルター、「1. リスト生成」と「2. ダウンロード開始」ボタン" loading="lazy" width="1280" height="800" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">ポップアップの画面：メディア種類と日付フィルターを設定し、リスト生成からダウンロード開始へ進みます。</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -406,6 +450,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_2_title">リストを生成</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_2_desc">拡張機能が新しい順にライブラリをスキャンし、各動画の品質階層を解決して、会話フォルダを準備します。スキャン中、動画品質の解決 N/M、フォルダ準備 N/M と各段階で進捗が報告されます。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-sources.jpg" alt="3つのダウンロードソースのイラスト：会話別のライブラリ全体、タグとコレクション、いいねした投稿" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">3つのソース：ライブラリ全体（会話別）、タグとコレクション、いいね。製品紹介動画のイラストです。</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -415,6 +463,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_3_title">概要を確認</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_3_desc">概要には、ダウンロード予定と完了済みの画像・動画の件数が表示され、動画は1080p・HD・720p・SDに分けて示されるため、これから何を取得するかが正確にわかります。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-scan.jpg" alt="ライブラリのスキャン件数が15,000件を超えてもメモリ使用量が一定であることを示すイラスト" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">スキャンはページ単位で逐次処理されるため、15,000件のライブラリでもブラウザのメモリ不足を起こさずに完了します。イラスト。</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -424,6 +476,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_4_title">ダウンロードしてアーカイブ</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_4_desc">ファイルは会話ごとのフォルダに、プロンプトベースの名前でダウンロードされます。中断したダウンロードは記録されるため、再試行では不足分だけを取得し、完了済みを再ダウンロードすることはありません。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-folders.jpg" alt="命名テンプレートのイラスト：会話またはタグごとのフォルダと、日付・時刻・プロンプト・ID・シードから作られるファイル名" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">会話またはタグごとのフォルダに保存され、ファイル名は日付・時刻・プロンプト・ID・シードから作られます。イラスト。</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -612,6 +668,39 @@
     </section>
 
     <!-- FAQ Section -->
+    <!-- Troubleshooting -->
+    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">トラブルシューティング</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">特によく寄せられる5つの問題と、実際に解決につながった対処法です。いずれも設定の不具合ではなく、Grokの2026年のバックエンド変更に起因しています。</p>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">リスト生成で何も見つからない、または最新の画像が漏れる<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><strong class="text-slate-200">ダウンロードソース</strong>セレクタを確認してください。まだ「お気に入り」になっている場合は、<strong class="text-slate-200">「📦 すべての生成メディア（会話別）」</strong>に切り替えます。Grokの2026年7月の変更以降、新しく生成したメディアはお気に入りに追加されなくなったため、お気に入りのスキャンが空で返るのは正常な動作です。ライブラリ全体ソースはすべての方に無料で、v2.5.1以降は既定のソースです。切り替えたら、もう一度「リスト生成」をクリックしてください。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">HDアップグレードで「すべての動画はアップグレード済み」と表示される<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">原因は上と同じです。アップグレードスキャンは選択中のソースの一覧を読みますが、お気に入りの一覧は不完全です。ソースをライブラリ全体に設定し、リストを再生成してから、アップグレードスキャンをもう一度実行してください。v2.5以降のスキャンは収束するため、繰り返し実行しても同じ結果になります。また1080pは独立した階層として扱われるので、720pのファイルが最高品質と誤認されることはありません。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">ファイル名、フォルダ名、metadata.json にプロンプトが含まれない<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grokは2026年9月、メディア一覧にプロンプトを含めなくなりました。v2.5.6以降に更新すると、その項目を生成した会話から各プロンプトを取り戻します。その後、<strong class="text-slate-200">リストを一度再生成</strong>してください。名前は「リスト生成」の段階で決まるため、旧バージョンで作成したリストは古い名前のままです。ファイル名にプロンプトを入れたい場合は、設定で「プロンプトベース」のファイル名モードを選んでください。取り戻したプロンプトは永続キャッシュに保存されるので、以降の再生成は数秒で終わります。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Grokで作成したタグが見つからない、またはタグから1ファイルしかダウンロードされない<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grokは2026年8月の移行以降、2つのタグシステムを並行して運用しており、それぞれにもう一方にない項目があります。バージョン2.5.2〜2.5.4は新しい方しか読み取りません。v2.5.6以降に更新すると両方を読み取って統合するため、タグの一覧と中身は2つの和集合になります。更新後、そのタグのリストを再生成してください。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">ファイルを失ったのに、拡張機能がすべてダウンロード済みと表示する<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">各ソースは独自のダウンロード履歴を保持しています。ライブラリ全体ソースの場合は、ポップアップを開いて<strong class="text-slate-200">「🧹 クリア操作」</strong>を展開し、<strong class="text-slate-200">「会話履歴を消去」</strong>をクリックして確認ダイアログでOKを選びます。「ダウンロード履歴をリセット（全ファイルを再ダウンロード）」ボタンはお気に入りソース専用です。履歴を消去しても、Grok上やディスク上のファイルは何も削除されません。次回の実行でそれらの項目を再ダウンロードできるようになるだけです。</div>
+                </details>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-8">それでも解決しない場合は、<a href="/ja/faq.html" class="underline hover:text-slate-300">よくある質問</a>でさらに多くのケースを紹介しています。フッターの「サポートに連絡」ボタンから担当者に問い合わせることもできます。</p>
+        </div>
+    </section>
+
     <section class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">

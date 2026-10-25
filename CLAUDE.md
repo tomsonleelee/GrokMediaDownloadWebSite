@@ -10,7 +10,7 @@ Static marketing website for the **GrokMediaDownloader** Chrome extension (Grok 
 - **Extension ID**: `niebmpjbnghbfnjbbeajlndkjpgpamhi`
 - **CWS Stats**: Check [Chrome Web Store listing](https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi) for current user count and rating
 - **CWS Languages**: EN (default), zh-TW, JA, ES, DE, KO (6 languages — more than marketing site's 4)
-- **Payment**: LemonSqueezy integration for Pro license ($4.99 Lifetime)
+- **Payment**: Stripe Checkout through the license API — `openCheckout()` in `js/components.js` sends the buyer to `CHECKOUT_API_BASE + /api/checkout?product=gmd&lang=<page lang>` (same tab; 303 to Stripe). Stripe returns to `/{lang}/success/?session_id=…` (vercel.json rewrites `/success` and `/pricing` to the `.html` files); `js/success.js` calls `/api/success?session_id=` and renders the key (paid / pending re-poll / fallback) and fires the GA4 `purchase` (transaction_id = session_id). $4.99 lifetime, 3 devices per key. Lemon Squeezy is legacy: pre-cutover orders only; `openLemonSqueezy()` is kept one release for rollback and `?order_id=` on the success page still shows the old e-mail notice.
 
 ## Tech Stack
 

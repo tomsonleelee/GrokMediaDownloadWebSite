@@ -10,34 +10,12 @@
         gtag('js', new Date());
         gtag('config', 'G-6YPN8563C6');
 
-        // GA4 Purchase Event — fires once per unique order
-        (function() {
-            var params = new URLSearchParams(window.location.search);
-            var orderId = params.get('order_id') || params.get('checkout_id') || '';
-            var storageKey = 'purchase_tracked_' + orderId;
-
-            // Deduplicate: only fire once per order_id (localStorage persists across tabs/sessions)
-            if (orderId && localStorage.getItem(storageKey)) return;
-
-            gtag('event', 'purchase', {
-                transaction_id: orderId || ('fallback_' + Date.now()),
-                value: 4.99,
-                currency: 'USD',
-                items: [{
-                    item_id: 'pro_lifetime',
-                    item_name: 'GrokMediaDownloader PRO Lifetime',
-                    price: 4.99,
-                    quantity: 1
-                }]
-            });
-
-            if (orderId) localStorage.setItem(storageKey, '1');
-        })();
+        // GA4 purchase event: fired by /js/success.js after the license lookup (transaction_id = Stripe session_id).
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>購入完了！ありがとうございます | GrokMediaDownloader</title>
-    <meta name="description" content="GrokMediaDownloader PROをご購入いただきありがとうございます！ライセンスキーはメールで送信されました。">
+    <meta name="description" content="GrokMediaDownloader PROをご購入いただきありがとうございます！ライセンスキーはこのページに表示され、メールでもお届けします。">
     <meta name="robots" content="noindex, nofollow">
     <meta name="author" content="Kario Studio">
 
@@ -110,7 +88,7 @@
     <!-- Header Placeholder -->
     <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ja/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ja/" class="text-sm text-slate-300 hover:text-white">ホーム</a><a href="/ja/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">ライブラリ全体DL</a><a href="/ja/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">ストーリーモード</a><a href="/ja/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">動画生成キュー</a><a href="/ja/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">ストリームキャプチャ</a><a href="/ja/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">プロジェクトDL</a><a href="/ja/pricing.html" class="text-sm text-slate-300 hover:text-white">料金</a><a href="/ja/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
 
-    <main id="main-content" class="min-h-screen flex items-center justify-center py-20">
+    <main id="main-content" class="min-h-screen flex items-center justify-center pt-32 pb-20">
         <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
             <!-- Success Icon -->
@@ -123,7 +101,55 @@
             <!-- Title -->
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent" data-i18n="success_title">ご購入ありがとうございます！</h1>
 
-            <p class="text-xl text-slate-400 mb-8" data-i18n="success_subtitle">PROライセンスキーはメールで送信されました</p>
+            <!-- License key states — toggled by /js/success.js (loading → paid | pending | fallback; legacy = Lemon Squeezy order_id) -->
+            <div id="lk-loading" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-8 mb-8">
+                <p class="text-slate-300 flex items-center justify-center gap-3">
+                    <i data-lucide="loader-circle" class="w-5 h-5 animate-spin text-pink-400"></i>
+                    <span>ライセンスキーを取得しています…</span>
+                </p>
+                <noscript><p class="text-slate-400 text-sm mt-4 text-left">件名 <em class="text-white not-italic">「Your GrokMediaDownloader license key」</em> のメールをご確認ください（迷惑メールフォルダも）。見つからない場合は <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline">support@kario-studio.com</a> までご連絡ください。注文番号があれば併せてお知らせください。</p></noscript>
+            </div>
+
+            <div id="lk-paid" class="bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-indigo-500/10 border border-pink-500/40 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300 mb-3">あなたのPROライセンスキー</p>
+                <div class="flex flex-col md:flex-row md:items-stretch gap-4">
+                    <code id="lk-key" class="flex-1 block font-mono text-2xl md:text-3xl font-extrabold tracking-wide text-white break-all select-all bg-slate-950/70 border border-slate-700 rounded-xl px-4 py-4 text-center md:text-left" aria-live="polite"></code>
+                    <button id="lk-copy" type="button" data-copied="コピーしました！" class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold transition-colors whitespace-nowrap">
+                        <i data-lucide="copy" class="w-5 h-5"></i>
+                        <span id="lk-copy-label">キーをコピー</span>
+                    </button>
+                </div>
+                <p class="lk-email-wrap text-slate-300 mt-5" hidden>同じキーを <strong class="lk-email text-white"></strong> にもメールしました。アドレスを間違えていても大丈夫です。キーはここにあります。今すぐ安全な場所に保存してください。</p>
+                <p class="text-slate-400 text-sm mt-3">Appleの「メールを非公開」をお使いの場合、メールは決済時に選んだ転送用アドレスに届きます。上のキーと同じものです。</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">注文番号: <span class="lk-ref"></span></span> — サポートへの連絡時にお知らせください。</p>
+            </div>
+
+            <div id="lk-pending" class="bg-amber-500/10 border border-amber-500/40 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="clock" class="w-5 h-5 text-amber-400"></i>
+                    <span>お支払いを処理中です</span>
+                </h2>
+                <p class="text-slate-300">一部の決済方法（PayPal、口座振替など）は入金確認に数分かかります。確認でき次第、ライセンスキーをメールでお送りします。このページを開いたままにしてください。自動的に再確認します。</p>
+                <p class="lk-email-wrap text-slate-300 mt-2" hidden>送信先：<strong class="lk-email text-white"></strong></p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">注文番号: <span class="lk-ref"></span></span> — サポートへの連絡時にお知らせください。</p>
+            </div>
+
+            <div id="lk-fallback" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5 text-pink-400"></i>
+                    <span>ライセンスキーはメールでお届けしています</span>
+                </h2>
+                <p class="text-slate-300">件名 <em class="text-white not-italic">「Your GrokMediaDownloader license key」</em> のメールをご確認ください（迷惑メールフォルダも）。見つからない場合は <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline">support@kario-studio.com</a> までご連絡ください。注文番号があれば併せてお知らせください。</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">注文番号: <span class="lk-ref"></span></span> — サポートへの連絡時にお知らせください。</p>
+            </div>
+
+            <div id="lk-legacy" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5 text-pink-400"></i>
+                    <span>メールを確認</span>
+                </h2>
+                <p class="text-slate-300">Lemon Squeezyからライセンスキーが記載されたメールが届きます（迷惑メールフォルダもご確認ください）。</p>
+            </div>
 
             <!-- Info Card -->
             <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-8 mb-8 text-left">
@@ -136,8 +162,8 @@
                     <div class="flex gap-4">
                         <div class="flex-shrink-0 w-8 h-8 bg-pink-500/20 text-pink-400 rounded-full flex items-center justify-center font-bold">1</div>
                         <div>
-                            <h3 class="font-semibold text-white" data-i18n="success_step1_title">メールを確認</h3>
-                            <p class="text-slate-400 text-sm" data-i18n="success_step1_desc">Lemon Squeezyからライセンスキーが記載されたメールが届きます（迷惑メールフォルダもご確認ください）。</p>
+                            <h3 class="font-semibold text-white" data-i18n="success_step1_title">ライセンスキーを保存</h3>
+                            <p class="text-slate-400 text-sm" data-i18n="success_step1_desc">キーは上に表示されており、メールでもお送りしています（件名：「Your GrokMediaDownloader license key」）。</p>
                         </div>
                     </div>
 
@@ -157,6 +183,11 @@
                         </div>
                     </div>
                 </div>
+
+                <p class="text-slate-500 text-xs mt-6 flex items-start gap-2 border-t border-slate-800 pt-4">
+                    <i data-lucide="monitor-smartphone" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                    <span>1つのキーで最大3台のデバイスを有効化できます。同じデバイスへの再インストールは枠を消費せず、拡張機能をアンインストールすると枠が解放されます。</span>
+                </p>
             </div>
 
             <!-- Rate Us CTA -->
@@ -204,6 +235,7 @@
     <!-- Scripts -->
 <script src="/js/i18n.js"></script>
     <script src="/js/components.js"></script>
+    <script src="/js/success.js"></script>
 </body>
 
 </html>

@@ -726,6 +726,45 @@ const PRO_ITEM = {
     quantity: 1
 };
 
+// --- Checkout ---
+// Single source of truth for the license API origin. The success page (js/success.js) reads
+// window.CHECKOUT_API_BASE so the dev preview URL / production domain is swapped in one place.
+// Local dev (python3 -m http.server) talks to a stub on 127.0.0.1:8787 instead.
+const CHECKOUT_API_BASE = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+    ? 'http://127.0.0.1:8787'
+    : 'https://api.kario-studio.com';
+window.CHECKOUT_API_BASE = CHECKOUT_API_BASE;
+
+// Stripe Checkout via the license API: GET /api/checkout?product=gmd&lang=… answers 303 to Stripe,
+// which returns the buyer to /{lang}/success/?session_id=… (cancel → /{lang}/pricing/).
+// Same-tab navigation on purpose: the buyer comes back to this origin with the same GA4 client_id,
+// and no popup is involved (window.open after a timeout can be blocked).
+function openCheckout() {
+    const lang = (typeof getLangFromPath === 'function') ? getLangFromPath() : (document.documentElement.lang || 'en');
+    const url = CHECKOUT_API_BASE + '/api/checkout?product=gmd&lang=' + encodeURIComponent(lang);
+    Analytics.trackCTA('purchase_pro', url);
+    Analytics.trackExternalLink(url, 'Stripe Checkout');
+
+    // GA4 e-commerce: add_to_cart → begin_checkout (standard format for funnel)
+    gtag('event', 'add_to_cart', {
+        currency: 'USD',
+        value: 4.99,
+        items: [PRO_ITEM]
+    });
+    gtag('event', 'begin_checkout', {
+        currency: 'USD',
+        value: 4.99,
+        items: [PRO_ITEM],
+        payment_type: 'stripe_checkout'
+    });
+
+    showToast('toast_checkout');
+    setTimeout(() => {
+        window.location.assign(url);
+    }, 800);
+}
+
+// Legacy Lemon Squeezy checkout — kept for one release as a rollback path. Not wired to any button.
 function openLemonSqueezy() {
     const url = 'https://kariostudio.lemonsqueezy.com/buy/4c60a74b-e0ea-4522-a989-d1d1aac08927';
     Analytics.trackCTA('purchase_pro', url);
@@ -754,7 +793,7 @@ function initConversionTracking() {
     const path = window.location.pathname;
 
     // Track pricing page view
-    if (path.includes('pricing.html')) {
+    if (path.includes('pricing.html') || /\/pricing\/?$/.test(path)) {
         Analytics.trackFunnelStep('view_pricing', {
             page_language: document.documentElement.lang
         });
@@ -805,7 +844,8 @@ window.openPrivacyModal = openPrivacyModal;
 window.closePrivacyModal = closePrivacyModal;
 window.openTermsModal = openTermsModal;
 window.closeTermsModal = closeTermsModal;
-window.openLemonSqueezy = openLemonSqueezy;
+window.openCheckout = openCheckout;
+window.openLemonSqueezy = openLemonSqueezy; // legacy, rollback only
 window.switchLanguage = function(targetLang) {
     if (window.i18n) {
         const currentLang = window.i18n.currentLang;

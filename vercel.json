@@ -1,31 +1,86 @@
 {
+  "rewrites": [
+    {
+      "source": "/success",
+      "destination": "/success.html"
+    },
+    {
+      "source": "/:lang(zh-TW|ja|ko)/success",
+      "destination": "/:lang/success.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/:lang(zh-TW|ja|ko)/pricing",
+      "destination": "/:lang/pricing.html"
+    }
+  ],
   "redirects": [
-    { "source": "/en", "destination": "/", "permanent": true },
-    { "source": "/en/index.html", "destination": "/", "permanent": true },
-    { "source": "/en/:path*", "destination": "/:path*", "permanent": true },
-    { "source": "/zh-TW/index.html", "destination": "/zh-TW/", "permanent": true },
-    { "source": "/ja/index.html", "destination": "/ja/", "permanent": true },
-    { "source": "/ko/index.html", "destination": "/ko/", "permanent": true },
-    { "source": "/index.html", "destination": "/", "permanent": true }
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/zh-TW/index.html",
+      "destination": "/zh-TW/",
+      "permanent": true
+    },
+    {
+      "source": "/ja/index.html",
+      "destination": "/ja/",
+      "permanent": true
+    },
+    {
+      "source": "/ko/index.html",
+      "destination": "/ko/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    }
   ],
   "trailingSlash": true,
   "headers": [
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/css/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/js/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
       ]
     }
   ]

@@ -10,34 +10,12 @@
         gtag('js', new Date());
         gtag('config', 'G-6YPN8563C6');
 
-        // GA4 Purchase Event — fires once per unique order
-        (function() {
-            var params = new URLSearchParams(window.location.search);
-            var orderId = params.get('order_id') || params.get('checkout_id') || '';
-            var storageKey = 'purchase_tracked_' + orderId;
-
-            // Deduplicate: only fire once per order_id (localStorage persists across tabs/sessions)
-            if (orderId && localStorage.getItem(storageKey)) return;
-
-            gtag('event', 'purchase', {
-                transaction_id: orderId || ('fallback_' + Date.now()),
-                value: 4.99,
-                currency: 'USD',
-                items: [{
-                    item_id: 'pro_lifetime',
-                    item_name: 'GrokMediaDownloader PRO Lifetime',
-                    price: 4.99,
-                    quantity: 1
-                }]
-            });
-
-            if (orderId) localStorage.setItem(storageKey, '1');
-        })();
+        // GA4 purchase event: fired by /js/success.js after the license lookup (transaction_id = Stripe session_id).
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purchase Successful! Thank You | GrokMediaDownloader</title>
-    <meta name="description" content="Thank you for purchasing GrokMediaDownloader PRO! Your license key has been sent to your email.">
+    <meta name="description" content="Thank you for purchasing GrokMediaDownloader PRO! Your license key is shown on this page and e-mailed to you.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="author" content="Kario Studio">
 
@@ -110,7 +88,7 @@
     <!-- Header Placeholder -->
     <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/" class="text-sm text-slate-300 hover:text-white">Home</a><a href="/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/pricing.html" class="text-sm text-slate-300 hover:text-white">Pricing</a><a href="/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
 
-    <main id="main-content" class="min-h-screen flex items-center justify-center py-20">
+    <main id="main-content" class="min-h-screen flex items-center justify-center pt-32 pb-20">
         <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
             <!-- Success Icon -->
@@ -123,7 +101,55 @@
             <!-- Title -->
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent" data-i18n="success_title">Thank You for Your Purchase!</h1>
 
-            <p class="text-xl text-slate-400 mb-8" data-i18n="success_subtitle">Your PRO license key has been sent to your email</p>
+            <!-- License key states — toggled by /js/success.js (loading → paid | pending | fallback; legacy = Lemon Squeezy order_id) -->
+            <div id="lk-loading" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-8 mb-8">
+                <p class="text-slate-300 flex items-center justify-center gap-3">
+                    <i data-lucide="loader-circle" class="w-5 h-5 animate-spin text-pink-400"></i>
+                    <span>Fetching your license key…</span>
+                </p>
+                <noscript><p class="text-slate-400 text-sm mt-4 text-left">Look for a message with the subject <em class="text-white not-italic">“Your GrokMediaDownloader license key”</em> (check the spam folder too). Can't find it? Write to <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline">support@kario-studio.com</a> and include your order reference if you have one.</p></noscript>
+            </div>
+
+            <div id="lk-paid" class="bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-indigo-500/10 border border-pink-500/40 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300 mb-3">Your PRO license key</p>
+                <div class="flex flex-col md:flex-row md:items-stretch gap-4">
+                    <code id="lk-key" class="flex-1 block font-mono text-2xl md:text-3xl font-extrabold tracking-wide text-white break-all select-all bg-slate-950/70 border border-slate-700 rounded-xl px-4 py-4 text-center md:text-left" aria-live="polite"></code>
+                    <button id="lk-copy" type="button" data-copied="Copied!" class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold transition-colors whitespace-nowrap">
+                        <i data-lucide="copy" class="w-5 h-5"></i>
+                        <span id="lk-copy-label">Copy key</span>
+                    </button>
+                </div>
+                <p class="lk-email-wrap text-slate-300 mt-5" hidden>We also e-mailed it to <strong class="lk-email text-white"></strong>. If that address is wrong, don&#x27;t worry — your key is right here. Save it somewhere safe now.</p>
+                <p class="text-slate-400 text-sm mt-3">Using Apple&#x27;s Hide My Email? The e-mail goes to the relay address you chose at checkout — the key above is the same one.</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">Order reference: <span class="lk-ref"></span></span> — quote it when you contact support.</p>
+            </div>
+
+            <div id="lk-pending" class="bg-amber-500/10 border border-amber-500/40 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="clock" class="w-5 h-5 text-amber-400"></i>
+                    <span>Payment is still processing</span>
+                </h2>
+                <p class="text-slate-300">Some payment methods (PayPal, bank debits) take a few minutes to settle. We&#x27;ll e-mail your key as soon as it clears. Keep this page open — it checks again automatically.</p>
+                <p class="lk-email-wrap text-slate-300 mt-2" hidden>It will go to <strong class="lk-email text-white"></strong>.</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">Order reference: <span class="lk-ref"></span></span> — quote it when you contact support.</p>
+            </div>
+
+            <div id="lk-fallback" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5 text-pink-400"></i>
+                    <span>Your license key is in your e-mail</span>
+                </h2>
+                <p class="text-slate-300">Look for a message with the subject <em class="text-white not-italic">“Your GrokMediaDownloader license key”</em> (check the spam folder too). Can't find it? Write to <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline">support@kario-studio.com</a> and include your order reference if you have one.</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">Order reference: <span class="lk-ref"></span></span> — quote it when you contact support.</p>
+            </div>
+
+            <div id="lk-legacy" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5 text-pink-400"></i>
+                    <span>Check Your Email</span>
+                </h2>
+                <p class="text-slate-300">Lemon Squeezy will send an email with your license key (please also check your spam folder).</p>
+            </div>
 
             <!-- Info Card -->
             <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-8 mb-8 text-left">
@@ -136,8 +162,8 @@
                     <div class="flex gap-4">
                         <div class="flex-shrink-0 w-8 h-8 bg-pink-500/20 text-pink-400 rounded-full flex items-center justify-center font-bold">1</div>
                         <div>
-                            <h3 class="font-semibold text-white" data-i18n="success_step1_title">Check Your Email</h3>
-                            <p class="text-slate-400 text-sm" data-i18n="success_step1_desc">Lemon Squeezy will send an email with your license key (please also check your spam folder).</p>
+                            <h3 class="font-semibold text-white" data-i18n="success_step1_title">Save your license key</h3>
+                            <p class="text-slate-400 text-sm" data-i18n="success_step1_desc">It&#x27;s shown above and was also e-mailed to you (subject: “Your GrokMediaDownloader license key”).</p>
                         </div>
                     </div>
 
@@ -157,6 +183,11 @@
                         </div>
                     </div>
                 </div>
+
+                <p class="text-slate-500 text-xs mt-6 flex items-start gap-2 border-t border-slate-800 pt-4">
+                    <i data-lucide="monitor-smartphone" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                    <span>One key activates up to 3 devices. Reinstalling on the same device doesn&#x27;t use a slot; uninstalling the extension frees one.</span>
+                </p>
             </div>
 
             <!-- Rate Us CTA -->
@@ -204,6 +235,7 @@
     <!-- Scripts -->
 <script src="/js/i18n.js"></script>
     <script src="/js/components.js"></script>
+    <script src="/js/success.js"></script>
 </body>
 
 </html>

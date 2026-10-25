@@ -10,34 +10,12 @@
         gtag('js', new Date());
         gtag('config', 'G-6YPN8563C6');
 
-        // GA4 Purchase Event — fires once per unique order
-        (function() {
-            var params = new URLSearchParams(window.location.search);
-            var orderId = params.get('order_id') || params.get('checkout_id') || '';
-            var storageKey = 'purchase_tracked_' + orderId;
-
-            // Deduplicate: only fire once per order_id (localStorage persists across tabs/sessions)
-            if (orderId && localStorage.getItem(storageKey)) return;
-
-            gtag('event', 'purchase', {
-                transaction_id: orderId || ('fallback_' + Date.now()),
-                value: 4.99,
-                currency: 'USD',
-                items: [{
-                    item_id: 'pro_lifetime',
-                    item_name: 'GrokMediaDownloader PRO Lifetime',
-                    price: 4.99,
-                    quantity: 1
-                }]
-            });
-
-            if (orderId) localStorage.setItem(storageKey, '1');
-        })();
+        // GA4 purchase event: fired by /js/success.js after the license lookup (transaction_id = Stripe session_id).
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>구매 완료 - GrokMediaDownloader</title>
-    <meta name="description" content="GrokMediaDownloader PRO를 구매해 주셔서 감사합니다! 라이선스 키가 이메일로 발송되었습니다.">
+    <meta name="description" content="GrokMediaDownloader PRO를 구매해 주셔서 감사합니다! 라이선스 키는 이 페이지에 표시되며 이메일로도 발송됩니다.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="author" content="Kario Studio">
 
@@ -110,7 +88,7 @@
     <!-- Header Placeholder -->
     <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ko/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ko/" class="text-sm text-slate-300 hover:text-white">홈</a><a href="/ko/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">전체 라이브러리</a><a href="/ko/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">스토리 모드</a><a href="/ko/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">비디오 생성 큐</a><a href="/ko/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">스트림 캡처</a><a href="/ko/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">프로젝트 다운로드</a><a href="/ko/pricing.html" class="text-sm text-slate-300 hover:text-white">가격</a><a href="/ko/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
 
-    <main id="main-content" class="min-h-screen flex items-center justify-center py-20">
+    <main id="main-content" class="min-h-screen flex items-center justify-center pt-32 pb-20">
         <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
             <!-- Success Icon -->
@@ -123,7 +101,55 @@
             <!-- Title -->
             <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent" data-i18n="success_title">구매해 주셔서 감사합니다!</h1>
 
-            <p class="text-xl text-slate-400 mb-8" data-i18n="success_subtitle">PRO 라이선스 키가 이메일로 발송되었습니다</p>
+            <!-- License key states — toggled by /js/success.js (loading → paid | pending | fallback; legacy = Lemon Squeezy order_id) -->
+            <div id="lk-loading" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-8 mb-8">
+                <p class="text-slate-300 flex items-center justify-center gap-3">
+                    <i data-lucide="loader-circle" class="w-5 h-5 animate-spin text-pink-400"></i>
+                    <span>라이선스 키를 가져오는 중…</span>
+                </p>
+                <noscript><p class="text-slate-400 text-sm mt-4 text-left">제목이 <em class="text-white not-italic">“Your GrokMediaDownloader license key”</em>인 메일을 확인해 주세요(스팸 폴더도 확인). 찾을 수 없다면 <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline">support@kario-studio.com</a>으로 연락해 주시고, 주문 번호가 있다면 함께 알려주세요.</p></noscript>
+            </div>
+
+            <div id="lk-paid" class="bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-indigo-500/10 border border-pink-500/40 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300 mb-3">내 PRO 라이선스 키</p>
+                <div class="flex flex-col md:flex-row md:items-stretch gap-4">
+                    <code id="lk-key" class="flex-1 block font-mono text-2xl md:text-3xl font-extrabold tracking-wide text-white break-all select-all bg-slate-950/70 border border-slate-700 rounded-xl px-4 py-4 text-center md:text-left" aria-live="polite"></code>
+                    <button id="lk-copy" type="button" data-copied="복사됨!" class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold transition-colors whitespace-nowrap">
+                        <i data-lucide="copy" class="w-5 h-5"></i>
+                        <span id="lk-copy-label">키 복사</span>
+                    </button>
+                </div>
+                <p class="lk-email-wrap text-slate-300 mt-5" hidden>같은 키를 <strong class="lk-email text-white"></strong> 으로도 보내드렸습니다. 주소를 잘못 입력했더라도 걱정하지 마세요. 키는 여기에 있으니 지금 안전한 곳에 저장해 두세요.</p>
+                <p class="text-slate-400 text-sm mt-3">Apple &#x27;나의 이메일 가리기&#x27;를 사용 중이신가요? 이메일은 결제 시 선택한 전달 주소로 발송되며, 위의 키와 동일합니다.</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">주문 번호: <span class="lk-ref"></span></span> — 고객 지원 문의 시 알려주세요.</p>
+            </div>
+
+            <div id="lk-pending" class="bg-amber-500/10 border border-amber-500/40 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="clock" class="w-5 h-5 text-amber-400"></i>
+                    <span>결제가 아직 처리 중입니다</span>
+                </h2>
+                <p class="text-slate-300">일부 결제 수단(PayPal, 계좌 이체 등)은 확인까지 몇 분이 걸립니다. 확인되는 즉시 라이선스 키를 이메일로 보내드립니다. 이 페이지를 닫지 마세요. 자동으로 다시 확인합니다.</p>
+                <p class="lk-email-wrap text-slate-300 mt-2" hidden>발송 주소: <strong class="lk-email text-white"></strong></p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">주문 번호: <span class="lk-ref"></span></span> — 고객 지원 문의 시 알려주세요.</p>
+            </div>
+
+            <div id="lk-fallback" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5 text-pink-400"></i>
+                    <span>라이선스 키가 이메일로 발송되었습니다</span>
+                </h2>
+                <p class="text-slate-300">제목이 <em class="text-white not-italic">“Your GrokMediaDownloader license key”</em>인 메일을 확인해 주세요(스팸 폴더도 확인). 찾을 수 없다면 <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline">support@kario-studio.com</a>으로 연락해 주시고, 주문 번호가 있다면 함께 알려주세요.</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">주문 번호: <span class="lk-ref"></span></span> — 고객 지원 문의 시 알려주세요.</p>
+            </div>
+
+            <div id="lk-legacy" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5 text-pink-400"></i>
+                    <span>이메일 확인</span>
+                </h2>
+                <p class="text-slate-300">Lemon Squeezy에서 라이선스 키가 포함된 이메일이 발송됩니다 (스팸 폴더도 확인해 주세요).</p>
+            </div>
 
             <!-- Info Card -->
             <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-8 mb-8 text-left">
@@ -136,8 +162,8 @@
                     <div class="flex gap-4">
                         <div class="flex-shrink-0 w-8 h-8 bg-pink-500/20 text-pink-400 rounded-full flex items-center justify-center font-bold">1</div>
                         <div>
-                            <h3 class="font-semibold text-white" data-i18n="success_step1_title">이메일 확인</h3>
-                            <p class="text-slate-400 text-sm" data-i18n="success_step1_desc">Lemon Squeezy에서 라이선스 키가 포함된 이메일이 발송됩니다 (스팸 폴더도 확인해 주세요).</p>
+                            <h3 class="font-semibold text-white" data-i18n="success_step1_title">라이선스 키 저장</h3>
+                            <p class="text-slate-400 text-sm" data-i18n="success_step1_desc">키는 위에 표시되어 있으며 이메일로도 발송되었습니다(제목: “Your GrokMediaDownloader license key”).</p>
                         </div>
                     </div>
 
@@ -157,6 +183,11 @@
                         </div>
                     </div>
                 </div>
+
+                <p class="text-slate-500 text-xs mt-6 flex items-start gap-2 border-t border-slate-800 pt-4">
+                    <i data-lucide="monitor-smartphone" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                    <span>키 하나로 최대 3대의 기기를 활성화할 수 있습니다. 같은 기기에 재설치해도 슬롯을 사용하지 않으며, 확장 프로그램을 삭제하면 슬롯이 해제됩니다.</span>
+                </p>
             </div>
 
             <!-- Rate Us CTA -->
@@ -204,6 +235,7 @@
     <!-- Scripts -->
 <script src="/js/i18n.js"></script>
     <script src="/js/components.js"></script>
+    <script src="/js/success.js"></script>
 </body>
 
 </html>

@@ -309,7 +309,7 @@
                         </div>
                     </div>
 
-                    <button onclick="openLemonSqueezy()" class="w-full py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-lg shadow-pink-500/20">
+                    <button onclick="openCheckout()" class="w-full py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-lg shadow-pink-500/20">
                         <span data-i18n="price_cta">立即啟用 PRO</span>
                         <i data-lucide="zap" class="w-5 h-5"></i>
                     </button>
@@ -321,7 +321,7 @@
                         </p>
                         <p class="text-xs text-slate-500 flex items-center gap-1">
                             <i data-lucide="lock" class="w-3 h-3"></i>
-                            <span data-i18n="price_secure">透過 Lemon Squeezy 安全支付，即時發送序號</span>
+                            <span data-i18n="price_secure">透過 Stripe 安全付款，結帳後立即顯示授權碼</span>
                         </p>
                     </div>
                 </div>
@@ -535,7 +535,7 @@
 
                 <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
                     <h3 class="font-bold text-white mb-2">付款方式有哪些？</h3>
-                    <p class="text-slate-400 text-sm">我們透過 Lemon Squeezy 處理付款，支援信用卡、PayPal 等主流付款方式。付款成功後會立即收到授權碼。</p>
+                    <p class="text-slate-400 text-sm">付款由 Stripe 處理，支援主要信用卡與金融卡、Apple Pay、Google Pay、PayPal 等方式（依地區而定）。付款成功後授權碼會立即顯示在確認頁面，並同時寄到您的信箱。在改用 Stripe 之前透過 Lemon Squeezy 購買的授權仍可正常使用。</p>
                 </div>
 
                 <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">

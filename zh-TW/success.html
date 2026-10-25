@@ -10,34 +10,12 @@
         gtag('js', new Date());
         gtag('config', 'G-6YPN8563C6');
 
-        // GA4 Purchase Event — fires once per unique order
-        (function() {
-            var params = new URLSearchParams(window.location.search);
-            var orderId = params.get('order_id') || params.get('checkout_id') || '';
-            var storageKey = 'purchase_tracked_' + orderId;
-
-            // Deduplicate: only fire once per order_id (localStorage persists across tabs/sessions)
-            if (orderId && localStorage.getItem(storageKey)) return;
-
-            gtag('event', 'purchase', {
-                transaction_id: orderId || ('fallback_' + Date.now()),
-                value: 4.99,
-                currency: 'USD',
-                items: [{
-                    item_id: 'pro_lifetime',
-                    item_name: 'GrokMediaDownloader PRO Lifetime',
-                    price: 4.99,
-                    quantity: 1
-                }]
-            });
-
-            if (orderId) localStorage.setItem(storageKey, '1');
-        })();
+        // GA4 purchase event: fired by /js/success.js after the license lookup (transaction_id = Stripe session_id).
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>購買成功！感謝您的支持 | GrokMediaDownloader</title>
-    <meta name="description" content="感謝您購買 GrokMediaDownloader PRO 授權！您的授權碼已發送至您的信箱。">
+    <meta name="description" content="感謝您購買 GrokMediaDownloader PRO！授權碼直接顯示在此頁，並同時寄到您的信箱。">
     <meta name="robots" content="noindex, nofollow">
     <meta name="author" content="Kario Studio">
 
@@ -110,7 +88,7 @@
     <!-- Header Placeholder -->
     <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/zh-TW/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/zh-TW/" class="text-sm text-slate-300 hover:text-white">首頁</a><a href="/zh-TW/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">整庫下載</a><a href="/zh-TW/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">故事模式</a><a href="/zh-TW/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">影片生成排程</a><a href="/zh-TW/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">串流擷取</a><a href="/zh-TW/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">專案下載</a><a href="/zh-TW/pricing.html" class="text-sm text-slate-300 hover:text-white">方案價格</a><a href="/zh-TW/faq.html" class="text-sm text-slate-300 hover:text-white">常見問題</a></div></div></div></nav></div>
 
-    <main id="main-content" class="min-h-screen flex items-center justify-center py-20">
+    <main id="main-content" class="min-h-screen flex items-center justify-center pt-32 pb-20">
         <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
             <!-- Success Icon -->
@@ -125,9 +103,55 @@
                 感謝您的購買！
             </h1>
 
-            <p class="text-xl text-slate-400 mb-8" data-i18n="success_subtitle">
-                您的 PRO 授權碼已發送至您的信箱
-            </p>
+            <!-- License key states — toggled by /js/success.js (loading → paid | pending | fallback; legacy = Lemon Squeezy order_id) -->
+            <div id="lk-loading" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-8 mb-8">
+                <p class="text-slate-300 flex items-center justify-center gap-3">
+                    <i data-lucide="loader-circle" class="w-5 h-5 animate-spin text-pink-400"></i>
+                    <span>正在取得您的授權碼…</span>
+                </p>
+                <noscript><p class="text-slate-400 text-sm mt-4 text-left">請尋找主旨為 <em class="text-white not-italic">「Your GrokMediaDownloader license key」</em> 的郵件（也請檢查垃圾郵件）。找不到？請來信 <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline">support@kario-studio.com</a>，若有訂單編號請一併附上。</p></noscript>
+            </div>
+
+            <div id="lk-paid" class="bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-indigo-500/10 border border-pink-500/40 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300 mb-3">您的 PRO 授權碼</p>
+                <div class="flex flex-col md:flex-row md:items-stretch gap-4">
+                    <code id="lk-key" class="flex-1 block font-mono text-2xl md:text-3xl font-extrabold tracking-wide text-white break-all select-all bg-slate-950/70 border border-slate-700 rounded-xl px-4 py-4 text-center md:text-left" aria-live="polite"></code>
+                    <button id="lk-copy" type="button" data-copied="已複製！" class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold transition-colors whitespace-nowrap">
+                        <i data-lucide="copy" class="w-5 h-5"></i>
+                        <span id="lk-copy-label">複製授權碼</span>
+                    </button>
+                </div>
+                <p class="lk-email-wrap text-slate-300 mt-5" hidden>我們也已寄到 <strong class="lk-email text-white"></strong>。如果這個地址填錯了也不用擔心，授權碼就在這裡，請現在就妥善保存。</p>
+                <p class="text-slate-400 text-sm mt-3">使用 Apple「隱藏我的電子郵件」？信件會寄到您結帳時選的轉寄地址，上方的授權碼和信裡的是同一組。</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">訂單編號: <span class="lk-ref"></span></span> — 聯絡客服時請附上。</p>
+            </div>
+
+            <div id="lk-pending" class="bg-amber-500/10 border border-amber-500/40 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="clock" class="w-5 h-5 text-amber-400"></i>
+                    <span>付款仍在處理中</span>
+                </h2>
+                <p class="text-slate-300">部分付款方式（PayPal、銀行扣款）需要幾分鐘才會入帳。入帳後我們會立即把授權碼寄給您。請保持本頁開啟，系統會自動重新查詢。</p>
+                <p class="lk-email-wrap text-slate-300 mt-2" hidden>將寄到 <strong class="lk-email text-white"></strong>。</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">訂單編號: <span class="lk-ref"></span></span> — 聯絡客服時請附上。</p>
+            </div>
+
+            <div id="lk-fallback" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5 text-pink-400"></i>
+                    <span>授權碼已寄到您的信箱</span>
+                </h2>
+                <p class="text-slate-300">請尋找主旨為 <em class="text-white not-italic">「Your GrokMediaDownloader license key」</em> 的郵件（也請檢查垃圾郵件）。找不到？請來信 <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline">support@kario-studio.com</a>，若有訂單編號請一併附上。</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">訂單編號: <span class="lk-ref"></span></span> — 聯絡客服時請附上。</p>
+            </div>
+
+            <div id="lk-legacy" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5 text-pink-400"></i>
+                    <span>查看您的信箱</span>
+                </h2>
+                <p class="text-slate-300">Lemon Squeezy 會發送一封包含授權碼的郵件到您的信箱（請同時檢查垃圾郵件資料夾）。</p>
+            </div>
 
             <!-- Info Card -->
             <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-8 mb-8 text-left">
@@ -140,8 +164,8 @@
                     <div class="flex gap-4">
                         <div class="flex-shrink-0 w-8 h-8 bg-pink-500/20 text-pink-400 rounded-full flex items-center justify-center font-bold">1</div>
                         <div>
-                            <h3 class="font-semibold text-white" data-i18n="success_step1_title">查看您的信箱</h3>
-                            <p class="text-slate-400 text-sm" data-i18n="success_step1_desc">Lemon Squeezy 會發送一封包含授權碼的郵件到您的信箱（請同時檢查垃圾郵件資料夾）。</p>
+                            <h3 class="font-semibold text-white" data-i18n="success_step1_title">保存您的授權碼</h3>
+                            <p class="text-slate-400 text-sm" data-i18n="success_step1_desc">授權碼顯示在上方，也已寄到您的信箱（主旨：「Your GrokMediaDownloader license key」）。</p>
                         </div>
                     </div>
 
@@ -161,6 +185,11 @@
                         </div>
                     </div>
                 </div>
+
+                <p class="text-slate-500 text-xs mt-6 flex items-start gap-2 border-t border-slate-800 pt-4">
+                    <i data-lucide="monitor-smartphone" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                    <span>一組授權碼最多可啟用 3 台裝置。同一台裝置重新安裝不會佔用名額；移除擴充功能會釋放名額。</span>
+                </p>
             </div>
 
             <!-- Rate Us CTA -->
@@ -208,6 +237,7 @@
     <!-- Scripts -->
 <script src="/js/i18n.js"></script>
     <script src="/js/components.js"></script>
+    <script src="/js/success.js"></script>
 </body>
 
 </html>

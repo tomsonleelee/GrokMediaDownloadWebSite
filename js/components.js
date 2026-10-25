@@ -594,6 +594,26 @@ function showToast(messageKey) {
 }
 
 // --- Modal Functions ---
+// Homepage explainer: autoplays muted; this button restarts it with sound (user gesture → allowed).
+function toggleExplainerSound() {
+    const video = document.getElementById('explainer-video');
+    const btn = document.getElementById('explainer-sound');
+    if (!video || !btn) return;
+    const label = btn.querySelector('span');
+    if (video.muted) {
+        video.muted = false;
+        video.currentTime = 0;
+        video.play().catch(() => {});
+        btn.setAttribute('aria-pressed', 'true');
+        if (label) label.textContent = btn.dataset.labelOff;
+        Analytics.trackCTA('explainer_sound_on', 'homepage_explainer');
+    } else {
+        video.muted = true;
+        btn.setAttribute('aria-pressed', 'false');
+        if (label) label.textContent = btn.dataset.labelOn;
+    }
+}
+
 function openContactModal() {
     const modal = document.getElementById('contact-modal');
     if (modal) {
@@ -794,3 +814,4 @@ window.switchLanguage = function(targetLang) {
     }
 };
 window.toggleLangMenu = toggleLangMenu;
+window.toggleExplainerSound = toggleExplainerSound;

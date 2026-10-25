@@ -106,8 +106,9 @@ python3 -m http.server 8080
 2. **Component sync**: When modifying header/footer, update all 4 versions (`header.html`, `header-zh-TW.html`, `header-ja.html`, `header-ko.html`, same for footer)
 3. **SEO sync**: When adding a new page, update `sitemap.xml` with hreflang links for all four languages
 4. **Assets**: Always reference images from `assets/resized/` (not originals). Run `./resize-images.sh` after adding new feature images
-5. **Schema.org**: Homepage includes `SoftwareApplication`, `WebSite`, `BreadcrumbList`, and `VideoObject` structured data
-6. **Tailwind CSS**: After adding/changing Tailwind classes, run `npm run build:css` to regenerate `css/styles.css`. The compiled CSS is committed to git so no build step is needed for deployment
-7. **CWS has 6 languages**: Marketing site has 4 (EN, zh-TW, JA, KO), but CWS listing has 6 (+ ES, DE). When updating CWS descriptions, update all 6
-8. **Social proof must use real data**: Always check CWS listing for current stats before using numbers. Testimonials must be based on real CWS reviews (Jerome, Tamas, lipo dipo). Never fabricate numbers
-9. **OG Images**: Homepage uses `assets/og-image.jpg` (1200x630). Feature pages use page-specific OG images (`assets/og-{feature}.jpg`). All include `og:image:width/height/type` meta tags
+5. **Schema.org**: Homepage includes `SoftwareApplication`, `WebSite`, `BreadcrumbList`, and `VideoObject` structured data. Never add `AggregateRating`/`Review` markup (self-serving reviews violate Google's policy; removed 2026-10-25)
+6. **Explainer video**: `assets/explainer/gmd-explainer.{mp4,webm}` + `gmd-explainer-poster.jpg` (28.5 s, 1080p60, English, shared by all editions) is rendered from the extension repo's `docs/marketing/gmd-explainer.html` (frame-by-frame via headless Chromium + ffmpeg). Music: "Wallpaper" by Kevin MacLeod (incompetech.com), CC BY 4.0 — the on-page caption under the video is the required attribution; keep it whenever the video is embedded. A no-music master and the as-authored variant (end card says 2.6.0) live outside the repo; the site uses the version-free end card until a release is live
+7. **Tailwind CSS**: After adding/changing Tailwind classes, run `npm run build:css` to regenerate `css/styles.css`. The compiled CSS is committed to git so no build step is needed for deployment
+8. **CWS has 6 languages**: Marketing site has 4 (EN, zh-TW, JA, KO), but CWS listing has 6 (+ ES, DE). When updating CWS descriptions, update all 6
+9. **Social proof must use real data**: Always check CWS listing for current stats before using numbers. Testimonials must be based on real CWS reviews (Jerome, Tamas, lipo dipo). Never fabricate numbers
+10. **OG Images**: Homepage uses `assets/og-image.jpg` (1200x630). Feature pages use page-specific OG images (`assets/og-{feature}.jpg`). All include `og:image:width/height/type` meta tags

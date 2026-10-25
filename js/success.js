@@ -133,7 +133,8 @@
     }
 
     function lookup() {
-        var url = API_BASE + '/api/success?session_id=' + encodeURIComponent(sessionId);
+        // product=gmd is required: the shared endpoint answers HTML for the other product without it.
+        var url = API_BASE + '/api/success?session_id=' + encodeURIComponent(sessionId) + '&product=gmd';
         fetch(url, { method: 'GET', credentials: 'omit', headers: { 'Accept': 'application/json' } })
             .then(function (res) {
                 if (res.status === 429) throw new Error('rate_limited');

@@ -732,8 +732,10 @@ const PRO_ITEM = {
 // Single source of truth for the license API origin. The success page (js/success.js) reads
 // window.CHECKOUT_API_BASE so the dev preview URL / production domain is swapped in one place.
 // Local dev (python3 -m http.server) talks to a stub on 127.0.0.1:8787 instead.
-const CHECKOUT_API_BASE = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
-    ? 'http://127.0.0.1:8787'
+// On localhost, localStorage.gmd_api_base (e.g. the Vercel dev preview) overrides the local stub.
+const IS_LOCALHOST = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+const CHECKOUT_API_BASE = IS_LOCALHOST
+    ? ((function () { try { return localStorage.getItem('gmd_api_base'); } catch (e) { return null; } })() || 'http://127.0.0.1:8787')
     : 'https://api.kario-studio.com';
 window.CHECKOUT_API_BASE = CHECKOUT_API_BASE;
 

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Capture | Automatische Echtzeit-Erfassung von Grok-Bildern - GrokMediaDownloader PRO</title>
+    <meta name="description" content="Stream Capture überwacht Grok AI in Echtzeit und erfasst generierte Bilder automatisch. Die DOM-Observer-Technologie erkennt neue Bilder beim Scrollen, mit Batch-Download per Klick. PRO-Funktion von GrokMediaDownloader.">
+    <meta name="keywords" content="Stream Capture, Grok Bilder erfassen, Bilder in Echtzeit herunterladen, DOM Observer, Bilder im Batch herunterladen, Grok AI Bilder, automatische Erfassung, Chrome-Erweiterung">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/de/stream-capture.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/stream-capture.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/stream-capture.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/stream-capture.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/stream-capture.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/stream-capture.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/stream-capture.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/stream-capture.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/de/stream-capture.html">
+    <meta property="og:title" content="Stream Capture | Automatische Echtzeit-Erfassung von Grok-Bildern">
+    <meta property="og:description" content="Überwache Grok AI in Echtzeit. Die DOM-Observer-Technologie erfasst generierte Bilder automatisch, mit Batch-Download per Klick. PRO-Funktion.">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-stream-capture.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="es_ES">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Stream Capture | GrokMediaDownloader PRO">
+    <meta name="twitter:description" content="Automatische Echtzeit-Erfassung von Grok-Bildern mit DOM-Observer-Technologie. Batch-Download aller generierten Bilder per Klick.">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-stream-capture.jpg">
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://grokmedia.kario-studio.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Stream Capture",
+          "item": "https://grokmedia.kario-studio.com/de/stream-capture.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Funktioniert Stream Capture auf allen Grok-Seiten?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Stream Capture überwacht jede Grok-Seite, auf der Bilder generiert werden, einschließlich des Haupt-Feeds, einzelner Post-Seiten und Suchergebnisse. Es nutzt DOM-Beobachtung und funktioniert daher überall dort, wo Grok neue Bilder rendert."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie viele Bilder lassen sich in einer Sitzung erfassen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es gibt keine feste Grenze. Stream Capture kann in einer einzigen Überwachungssitzung Hunderte Bilder einreihen. Die Warteschlange wird in IndexedDB gespeichert und bleibt daher auch erhalten, wenn du den Tab wechselst oder das Panel der Erweiterung kurz schließt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Verlangsamt Stream Capture meinen Browser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Stream Capture nutzt die native MutationObserver-API von Chrome, die äußerst effizient ist. Der Observer reagiert nur bei Änderungen am DOM, sodass die CPU-Last nahezu null ist, solange du nicht aktiv Bilder generierst."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich die Überwachung pausieren und fortsetzen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Klicke im Panel der Erweiterung auf „Stop Monitoring“, um die Erfassung jederzeit zu pausieren. Bereits erfasste Bilder bleiben in der Warteschlange. Klicke erneut auf „Start Stream Capture“, um fortzufahren – neue Bilder werden derselben Warteschlange hinzugefügt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Entfernt Stream Capture doppelte Bilder automatisch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Stream Capture erkennt per Hash-Vergleich Bilder, die bereits in deiner Sammlung oder in der aktuellen Warteschlange sind, und überspringt sie. So wird dasselbe Bild nicht zweimal heruntergeladen, wenn du zurückscrollst oder einen Post erneut aufrufst."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist Stream Capture in der kostenlosen Version verfügbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stream Capture ist exklusiv für PRO. Die kostenlose Version von GrokMediaDownloader unterstützt den manuellen Batch-Download sichtbarer Bilder. Ein Upgrade auf PRO ($4.99 auf Lebenszeit) schaltet Stream Capture, Video Gen Queue, Story Mode und Project Download frei."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(6, 182, 212, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-cyan-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Zum Hauptinhalt springen</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/de/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/de/" class="text-sm text-slate-300 hover:text-white">Startseite</a><a href="/de/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/de/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/de/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/de/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/de/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/de/pricing.html" class="text-sm text-slate-300 hover:text-white">Preise</a><a href="/de/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                    <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
+                    <span data-i18n="stream_badge">PRO-Funktion</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    <span class="gradient-text" data-i18n="stream_title">Stream Capture</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-cyan-300 mb-4" data-i18n="stream_subtitle">Automatische Echtzeit-Erfassung von Grok-Bildern</p>
+
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_desc">Überwache Grok AI, während du surfst. Stream Capture nutzt DOM-Observer-Technologie, um neu generierte Bilder in Echtzeit automatisch zu erkennen und einzureihen. Verpasse keine Inspiration mehr – lade alles mit einem Klick im Batch herunter.</p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                        <span data-i18n="hero_cta_chrome">Zu Chrome hinzufügen</span>
+                    </a>
+
+                    <button onclick="openCheckout()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                        <span data-i18n="price_pro_button">$4.99 PRO auf Lebenszeit</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section class="py-16 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="stream_video_title">Stream Capture in Aktion</h2>
+                <p class="text-slate-400" data-i18n="stream_video_desc">Überwachung starten → Grok durchsuchen → Bilder automatisch erfasst → Batch-Download</p>
+            </div>
+
+            <!-- Video Container -->
+            <div class="relative rounded-2xl overflow-hidden border border-cyan-500/30 shadow-2xl shadow-cyan-500/10">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none z-10"></div>
+
+                <video
+                    class="w-full aspect-video bg-slate-900"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    poster="/assets/resized/stream-capture-poster_1280x800.jpg"
+                >
+                    <source src="/assets/stream-capture-demo.mp4" type="video/mp4">
+                    <div class="w-full aspect-video bg-slate-900 flex items-center justify-center">
+                        <p class="text-slate-400">Dein Browser unterstützt keine Videowiedergabe.</p>
+                    </div>
+                </video>
+
+                <button
+                    onclick="toggleVideo(this)"
+                    class="absolute bottom-4 right-4 z-20 w-10 h-10 bg-slate-900/80 hover:bg-slate-800 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 hover:opacity-100 focus:opacity-100"
+                    aria-label="Videowiedergabe umschalten"
+                >
+                    <i data-lucide="pause" class="w-5 h-5 text-white video-pause-icon"></i>
+                    <i data-lucide="play" class="w-5 h-5 text-white video-play-icon hidden"></i>
+                </button>
+            </div>
+
+            <p class="text-center text-slate-500 text-sm mt-4" data-i18n="stream_video_caption">* Das Video zeigt den Echtzeit-Erfassungs-Workflow von Stream Capture</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleVideo(button) {
+            const video = button.closest('section').querySelector('video');
+            const pauseIcon = button.querySelector('.video-pause-icon');
+            const playIcon = button.querySelector('.video-play-icon');
+
+            if (video.paused) {
+                video.play();
+                pauseIcon.classList.remove('hidden');
+                playIcon.classList.add('hidden');
+            } else {
+                video.pause();
+                pauseIcon.classList.add('hidden');
+                playIcon.classList.remove('hidden');
+            }
+        }
+    </script>
+
+    <!-- Core Features -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_core_title">Kernfunktionen</h2>
+                <p class="text-slate-400" data-i18n="stream_core_desc">Stream Capture bietet einen nahtlosen Workflow zum Sammeln von Bildern in Echtzeit</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-cyan-500/30 hover:border-cyan-500/60 transition-all">
+                    <div class="w-14 h-14 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="eye" class="text-cyan-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_1_title">Echtzeit-DOM-Observer</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_1_desc">Nutzt MutationObserver, um neue Bilder zu erkennen, sobald Grok sie generiert. Die Erkennung erfolgt sofort, ohne manuelles Neuladen.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-blue-500/30 hover:border-blue-500/60 transition-all">
+                    <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="layers" class="text-blue-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_2_title">Automatisches Warteschlangensystem</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_2_desc">Jedes erkannte Bild wird automatisch zur Download-Warteschlange hinzugefügt. Scroll einfach weiter – Stream Capture erledigt den Rest.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-emerald-500/30 hover:border-emerald-500/60 transition-all">
+                    <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="download-cloud" class="text-emerald-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_3_title">Batch-Download per Klick</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_3_desc">Wenn du fertig bist, lädst du alle erfassten Bilder auf einmal herunter. Kein einzelnes Speichern mehr.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-pink-500/30 hover:border-pink-500/60 transition-all">
+                    <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="filter" class="text-pink-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_4_title">Intelligente Deduplizierung</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_4_desc">Filtert per Hash-Vergleich automatisch doppelte Bilder heraus, die bereits in deiner Sammlung sind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_step_title">So funktioniert Stream Capture</h2>
+                <p class="text-slate-400">Vier einfache Schritte, um jedes Grok-Bild automatisch zu erfassen</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-600/30">1</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="play-circle" class="text-cyan-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_1_title">Überwachung starten</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_1_desc">Öffne die Erweiterung und klicke auf „Start Stream Capture“, um die Echtzeit-Überwachung der Grok-Seite zu starten.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-600/30">2</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="scroll" class="text-blue-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_2_title">Surfen & scrollen</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_2_desc">Nutze Grok ganz normal. Jedes neue Bild, das auf der Seite erscheint, wird automatisch erkannt und eingereiht.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-emerald-600/30">3</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="check-square" class="text-emerald-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_3_title">Erfasstes prüfen</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_3_desc">Sieh dir in der Erfassungswarteschlange alle automatisch erfassten Bilder an. Entferne alle, die du nicht willst.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-pink-600/30">4</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="download" class="text-pink-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_4_title">Batch Download</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_4_desc">Klicke auf „Alle herunterladen“, um alle erfassten Bilder in einem Rutsch auf deinem lokalen Laufwerk zu speichern.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Technical Info -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Technische Highlights</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="eye" class="text-cyan-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">MutationObserver-API</h4>
+                                <p class="text-slate-400 text-sm">Nutzt den nativen MutationObserver des Browsers, um DOM-Änderungen effizient und ohne Performance-Einbußen zu erkennen.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="cpu" class="text-pink-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Background Service Worker</h4>
+                                <p class="text-slate-400 text-sm">Läuft im Service Worker von Chrome für eine dauerhafte Überwachung, auch beim Tab-Wechsel.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="database" class="text-blue-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">IndexedDB-Cache</h4>
+                                <p class="text-slate-400 text-sm">Speichert die Metadaten erfasster Bilder in IndexedDB für schnelle Duplikatprüfung und Warteschlangenverwaltung.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield" class="text-emerald-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Privatsphäre zuerst</h4>
+                                <p class="text-slate-400 text-sm">Die gesamte Bilderkennung und alle Downloads erfolgen lokal. Es werden keine Daten an externe Server gesendet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Mockup -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-cyan-500/10 blur-3xl rounded-full"></div>
+                    <div class="relative bg-slate-900 rounded-2xl border border-cyan-500/30 p-6 shadow-2xl">
+                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-slate-800">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="ml-2 text-slate-500 text-sm">Stream Capture v2.0</span>
+                        </div>
+
+                        <!-- Status Bar -->
+                        <div class="mb-4 p-3 bg-slate-800/50 rounded-lg flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span class="text-sm font-bold text-emerald-400">Überwachung aktiv</span>
+                            </div>
+                            <span class="text-sm text-slate-400">47 Bilder erfasst</span>
+                        </div>
+
+                        <!-- Captured Items List -->
+                        <div class="mb-4">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i data-lucide="images" class="w-4 h-4 text-cyan-400"></i>
+                                <span class="text-sm font-bold text-white">Erfassungswarteschlange</span>
+                                <span class="ml-auto text-xs text-slate-500">47 Einträge</span>
+                            </div>
+                            <div class="space-y-2">
+                                <!-- Item 1 -->
+                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-600/40 to-blue-600/40 rounded-lg"></div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm text-white truncate">grok_img_2026_03_001.jpg</p>
+                                        <p class="text-xs text-slate-500">1024 x 1024 · 2.4 MB</p>
+                                    </div>
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                </div>
+                                <!-- Item 2 -->
+                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-600/40 to-pink-600/40 rounded-lg"></div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm text-white truncate">grok_img_2026_03_002.jpg</p>
+                                        <p class="text-xs text-slate-500">1024 x 1024 · 1.8 MB</p>
+                                    </div>
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
+                                </div>
+                                <!-- Item 3 -->
+                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg border border-cyan-500/30">
+                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-600/40 to-cyan-600/40 rounded-lg animate-pulse"></div>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-sm text-white truncate">grok_img_2026_03_003.jpg</p>
+                                        <p class="text-xs text-cyan-400">Wird erfasst...</p>
+                                    </div>
+                                    <i data-lucide="loader" class="w-4 h-4 text-cyan-400 flex-shrink-0 animate-spin"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="grid grid-cols-2 gap-2">
+                            <button class="bg-cyan-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
+                                <i data-lucide="download" class="w-4 h-4"></i>Alle herunterladen (47)</button>
+                            <button class="bg-slate-700 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>Warteschlange leeren</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stream Capture vs Manual Download — unique to Stream Capture -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 bg-cyan-500/10 text-cyan-400 rounded-full text-sm font-semibold mb-4" data-i18n="stream_compare_badge">Direkter Vergleich</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_compare_title">Stream Capture vs. manueller Download</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="stream_compare_subtitle">Sieh, warum automatische Stream-Erfassung beim Sammeln von Grok-Bildern Stunden manueller Arbeit spart.</p>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="text-left py-4 px-6 text-slate-400 font-semibold text-sm uppercase tracking-wide border-b border-slate-800" data-i18n="stream_compare_feature">Funktion</th>
+                            <th class="text-center py-4 px-6 text-slate-400 font-semibold text-sm uppercase tracking-wide border-b border-slate-800" data-i18n="stream_compare_manual">Manueller Download</th>
+                            <th class="text-center py-4 px-6 text-cyan-400 font-semibold text-sm uppercase tracking-wide border-b border-cyan-500/30 bg-cyan-500/5 rounded-t-xl" data-i18n="stream_compare_stream">Stream Capture</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="search" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row1_label">Erkennung</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row1_manual">Seite muss manuell geprüft werden</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row1_stream">Erkennt neue Bilder automatisch per MutationObserver</span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="zap" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row2_label">Geschwindigkeit</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row2_manual">Einzeln, Klick für Klick speichern</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row2_stream">Alle erfassten Bilder auf einmal im Batch herunterladen</span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="scan-eye" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row3_label">Abdeckung</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row3_manual">Neue Inhalte werden leicht übersehen</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row3_stream">Erfasst alles in Echtzeit</span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-800/50">
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="gauge" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row4_label">Aufwand</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row4_manual">Hoch – ständige Kontrolle</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
+                                <span class="text-cyan-300" data-i18n="stream_compare_row4_stream">Null – normal surfen, die Erfassung läuft im Hintergrund</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="py-5 px-6">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="hash" class="text-slate-500 w-5 h-5 flex-shrink-0"></i>
+                                    <span class="text-white font-medium" data-i18n="stream_compare_row5_label">Max. Einträge</span>
+                                </div>
+                            </td>
+                            <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row5_manual">N/A</td>
+                            <td class="py-5 px-6 text-center text-sm bg-cyan-500/5 rounded-b-xl">
+                                <span class="text-cyan-300 font-semibold" data-i18n="stream_compare_row5_stream">Bis zu 1.000 Bilder pro Sitzung</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Summary callout -->
+            <div class="mt-12 max-w-2xl mx-auto text-center">
+                <div class="inline-flex items-center gap-3 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl px-6 py-4">
+                    <i data-lucide="check-circle" class="text-cyan-400 w-6 h-6 flex-shrink-0"></i>
+                    <p class="text-slate-300 text-sm" data-i18n="stream_compare_summary">Stream Capture beendet die mühsame Klick-und-Speichern-Schleife. Nutze Grok ganz normal und lass die Erweiterung jedes Bild automatisch sammeln.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Häufig gestellte Fragen</h2>
+                <p class="text-slate-400">Alles, was du über Stream Capture wissen musst</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Funktioniert Stream Capture auf allen Grok-Seiten?</h3>
+                    <p class="text-slate-400">Ja. Stream Capture überwacht jede Grok-Seite, auf der Bilder generiert werden, einschließlich des Haupt-Feeds, einzelner Post-Seiten und Suchergebnisse. Es nutzt DOM-Beobachtung und funktioniert daher überall dort, wo Grok neue Bilder rendert.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Wie viele Bilder lassen sich in einer Sitzung erfassen?</h3>
+                    <p class="text-slate-400">Es gibt keine feste Grenze. Stream Capture kann in einer einzigen Überwachungssitzung Hunderte Bilder einreihen. Die Warteschlange wird in IndexedDB gespeichert und bleibt daher auch erhalten, wenn du den Tab wechselst oder das Panel der Erweiterung kurz schließt.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Verlangsamt Stream Capture meinen Browser?</h3>
+                    <p class="text-slate-400">Nein. Stream Capture nutzt die native MutationObserver-API von Chrome, die äußerst effizient ist. Der Observer reagiert nur bei Änderungen am DOM, sodass die CPU-Last nahezu null ist, solange du nicht aktiv Bilder generierst. Ein Background Service Worker übernimmt das Einreihen, ohne den Haupt-Thread zu blockieren.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Kann ich die Überwachung pausieren und fortsetzen?</h3>
+                    <p class="text-slate-400">Ja. Klicke im Panel der Erweiterung auf „Stop Monitoring“, um die Erfassung jederzeit zu pausieren. Bereits erfasste Bilder bleiben in der Warteschlange. Klicke erneut auf „Start Stream Capture“, um fortzufahren – neue Bilder werden derselben Warteschlange hinzugefügt.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Entfernt Stream Capture doppelte Bilder automatisch?</h3>
+                    <p class="text-slate-400">Ja. Stream Capture erkennt per Hash-Vergleich Bilder, die bereits in deiner Sammlung oder in der aktuellen Warteschlange sind, und überspringt sie. So wird dasselbe Bild nicht zweimal heruntergeladen, wenn du zurückscrollst oder einen Post erneut aufrufst.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Welche Bildformate unterstützt Stream Capture?</h3>
+                    <p class="text-slate-400">Stream Capture lädt Bilder im Originalformat herunter, wie Grok sie ausliefert – in der Regel JPEG und PNG. Originalauflösung und Qualität bleiben erhalten. Beim Download wird weder neu kodiert noch komprimiert.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Ist Stream Capture in der kostenlosen Version verfügbar?</h3>
+                    <p class="text-slate-400">Stream Capture ist exklusiv für PRO. Die kostenlose Version von GrokMediaDownloader unterstützt den manuellen Batch-Download sichtbarer Bilder. Ein Upgrade auf PRO ($4.99 auf Lebenszeit) schaltet Stream Capture, Video Gen Queue, Story Mode und Project Download frei.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Verpasse nie wieder eine Grok-Kreation</h2>
+            <p class="text-slate-400 mb-8">Stream Capture ist eine exklusive PRO-Funktion</p>
+
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span data-i18n="hero_cta_chrome">Zu Chrome hinzufügen</span>
+                </a>
+
+                <a href="/de/pricing.html" class="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span data-i18n="price_pro_button">$4.99 PRO auf Lebenszeit</span>
+                </a>
+            </div>
+
+            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">Inklusive aller zukünftigen Updates</p>
+            <div class="mt-8 pt-6 border-t border-slate-800">
+                <p class="text-slate-400 text-sm font-semibold mb-3">Weitere Funktionen entdecken</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="/de/story-mode.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Story Mode</a>
+                    <a href="/de/video-gen-queue.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Video Gen Queue</a>
+                    <a href="/de/project-download.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Project Download</a>
+                </div>
+            </div>
+            <div class="flex justify-center gap-3 mt-6">
+                <a href="https://twitter.com/intent/tweet?text=Real-time%20Grok%20image%20auto-capture%20with%20Stream%20Capture&url=https://grokmedia.kario-studio.com/de/stream-capture.html?utm_source=twitter&utm_medium=social&utm_campaign=share" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <span>Auf X teilen</span>
+                </a>
+                <a href="https://www.reddit.com/submit?url=https://grokmedia.kario-studio.com/de/stream-capture.html?utm_source=reddit&utm_medium=social&utm_campaign=share&title=Stream%20Capture%20-%20Real-time%20Grok%20Image%20Auto-Capture" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                    <span>Auf Reddit teilen</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/de/privacy.html" class="hover:text-white">Datenschutzerklärung</a> · <a href="/de/terms.html" class="hover:text-white">Nutzungsbedingungen</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot;<a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></div></footer></div>
+
+    <!-- Scripts -->
+<script src="/js/i18n.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>

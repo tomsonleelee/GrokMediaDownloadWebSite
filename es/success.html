@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Keep the Stripe session id out of analytics and referrers: stash it (tab-scoped), then drop it from the URL before gtag loads. /js/success.js reads it back. -->
+    <script>
+        (function () {
+            try {
+                var u = new URL(window.location.href);
+                var s = u.searchParams.get('session_id');
+                if (s) {
+                    window.__gmdCheckoutSession = s;
+                    try { sessionStorage.setItem('gmd_checkout_session', s); } catch (e) {}
+                    u.searchParams.delete('session_id');
+                    history.replaceState(null, '', u.pathname + u.search + u.hash);
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+
+        // GA4 purchase event: fired by /js/success.js after the license lookup (transaction_id = Stripe session_id).
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Compra realizada con éxito! Gracias | GrokMediaDownloader</title>
+    <meta name="description" content="¡Gracias por comprar GrokMediaDownloader PRO! Tu clave de licencia se muestra en esta página y también se te envió por correo electrónico.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/success.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/success.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/success.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/success.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/success.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/success.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/success.html">
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(720deg); opacity: 0; }
+        }
+
+        .confetti {
+            animation: confetti 1s ease-out forwards;
+        }
+
+        @keyframes checkmark {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .checkmark-animate {
+            animation: checkmark 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/es/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/es/" class="text-sm text-slate-300 hover:text-white">Inicio</a><a href="/es/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/es/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/es/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/es/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/es/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/es/pricing.html" class="text-sm text-slate-300 hover:text-white">Precios</a><a href="/es/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content" class="min-h-screen flex items-center justify-center pt-32 pb-20">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+            <!-- Success Icon -->
+            <div class="mb-8">
+                <div class="w-24 h-24 mx-auto bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 checkmark-animate">
+                    <i data-lucide="check" class="w-12 h-12 text-white"></i>
+                </div>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent" data-i18n="success_title">¡Gracias por tu compra!</h1>
+
+            <!-- License key states — toggled by /js/success.js (loading → paid | pending | fallback; legacy = Lemon Squeezy order_id) -->
+            <div id="lk-loading" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-8 mb-8">
+                <p class="text-slate-300 flex items-center justify-center gap-3">
+                    <i data-lucide="loader-circle" class="w-5 h-5 animate-spin text-pink-400"></i>
+                    <span>Obteniendo tu clave de licencia…</span>
+                </p>
+                <noscript><p class="text-slate-400 text-sm mt-4 text-left">Busca un mensaje con el asunto <em class="text-white not-italic">“Your GrokMediaDownloader license key”</em> (revisa también la carpeta de spam). ¿No lo encuentras? Escribe a <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline">support@kario-studio.com</a> e incluye la referencia de tu pedido si la tienes.</p></noscript>
+            </div>
+
+            <div id="lk-paid" class="bg-gradient-to-br from-pink-500/10 via-purple-500/10 to-indigo-500/10 border border-pink-500/40 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-pink-300 mb-3">Tu clave de licencia PRO</p>
+                <div class="flex flex-col gap-4">
+                    <code id="lk-key" class="flex-1 block font-mono text-lg sm:text-2xl md:text-3xl font-extrabold text-white break-all select-all bg-slate-950/70 border border-slate-700 rounded-xl px-4 py-4 text-center" aria-live="polite"></code>
+                    <button id="lk-copy" type="button" data-copied="¡Copiada!" class="inline-flex items-center justify-center gap-2 px-6 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold transition-colors whitespace-nowrap">
+                        <i data-lucide="copy" class="w-5 h-5"></i>
+                        <span id="lk-copy-label">Copiar clave</span>
+                    </button>
+                </div>
+                <p class="lk-email-wrap text-slate-300 mt-5" hidden>También te la enviamos por correo electrónico a <strong class="lk-email text-white"></strong>. Si esa dirección es incorrecta, no te preocupes: tu clave está aquí mismo. Guárdala ahora en un lugar seguro.</p>
+                <p class="text-slate-400 text-sm mt-3">¿Usas Ocultar mi correo de Apple? El correo se envía a la dirección de reenvío que elegiste en el checkout; la clave de arriba es la misma.</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">Referencia del pedido: <span class="lk-ref"></span></span> — indícala cuando contactes con soporte.</p>
+            </div>
+
+            <div id="lk-pending" class="bg-amber-500/10 border border-amber-500/40 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="clock" class="w-5 h-5 text-amber-400"></i>
+                    <span>El pago todavía se está procesando</span>
+                </h2>
+                <p class="text-slate-300">Algunos métodos de pago (PayPal, débitos bancarios) tardan unos minutos en confirmarse. Te enviaremos tu clave por correo electrónico en cuanto se confirme. Mantén esta página abierta: vuelve a comprobarlo automáticamente.</p>
+                <p class="lk-email-wrap text-slate-300 mt-2" hidden>Se enviará a <strong class="lk-email text-white"></strong>.</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">Referencia del pedido: <span class="lk-ref"></span></span> — indícala cuando contactes con soporte.</p>
+            </div>
+
+            <div id="lk-fallback" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5 text-pink-400"></i>
+                    <span>Tu clave de licencia está en tu correo electrónico</span>
+                </h2>
+                <p class="text-slate-300">Busca un mensaje con el asunto <em class="text-white not-italic">“Your GrokMediaDownloader license key”</em> (revisa también la carpeta de spam). ¿No lo encuentras? Escribe a <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline">support@kario-studio.com</a> e incluye la referencia de tu pedido si la tienes.</p>
+                <p class="lk-ref-wrap text-slate-500 text-xs mt-4" hidden><span class="font-mono">Referencia del pedido: <span class="lk-ref"></span></span> — indícala cuando contactes con soporte.</p>
+            </div>
+
+            <div id="lk-legacy" class="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 md:p-8 mb-8 text-left" hidden>
+                <h2 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                    <i data-lucide="mail" class="w-5 h-5 text-pink-400"></i>
+                    <span>Revisa tu correo electrónico</span>
+                </h2>
+                <p class="text-slate-300">Lemon Squeezy te enviará un correo con tu clave de licencia (revisa también tu carpeta de spam).</p>
+            </div>
+
+            <!-- Info Card -->
+            <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-8 mb-8 text-left">
+                <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                    <i data-lucide="list-checks" class="w-5 h-5 text-pink-400"></i>
+                    <span data-i18n="success_next_steps">Próximos pasos</span>
+                </h2>
+
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-pink-500/20 text-pink-400 rounded-full flex items-center justify-center font-bold">1</div>
+                        <div>
+                            <h3 class="font-semibold text-white" data-i18n="success_step1_title">Guarda tu clave de licencia</h3>
+                            <p class="text-slate-400 text-sm" data-i18n="success_step1_desc">Se muestra arriba y también se te envió por correo electrónico (asunto: “Your GrokMediaDownloader license key”).</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-pink-500/20 text-pink-400 rounded-full flex items-center justify-center font-bold">2</div>
+                        <div>
+                            <h3 class="font-semibold text-white" data-i18n="success_step2_title">Abre la extensión</h3>
+                            <p class="text-slate-400 text-sm" data-i18n="success_step2_desc">Haz clic en el icono de GrokMediaDownloader en Chrome para abrir el panel de la extensión.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-pink-500/20 text-pink-400 rounded-full flex items-center justify-center font-bold">3</div>
+                        <div>
+                            <h3 class="font-semibold text-white" data-i18n="success_step3_title">Introduce tu clave de licencia</h3>
+                            <p class="text-slate-400 text-sm" data-i18n="success_step3_desc">Haz clic en el botón "Activate PRO" y pega tu clave de licencia para desbloquear todas las funciones PRO.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-slate-500 text-xs mt-6 flex items-start gap-2 border-t border-slate-800 pt-4">
+                    <i data-lucide="monitor-smartphone" class="w-4 h-4 mt-0.5 flex-shrink-0"></i>
+                    <span>Una clave activa hasta 3 dispositivos. Reinstalar en el mismo dispositivo no consume un espacio; desinstalar la extensión libera uno.</span>
+                </p>
+            </div>
+
+            <!-- Rate Us CTA -->
+            <div class="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 rounded-2xl p-6 mb-8">
+                <div class="flex items-center justify-center gap-1 mb-3">
+                    <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-2" data-i18n="success_rate_title">¿Te gusta GrokMediaDownloader?</h3>
+                <p class="text-slate-400 text-sm mb-4" data-i18n="success_rate_desc">Tu reseña ayuda a otros creadores a descubrir esta herramienta. ¡Solo te llevará un momento!</p>
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi/reviews?utm_source=marketing_site&utm_medium=website&utm_campaign=post_purchase&utm_content=leave_review" target="_blank" rel="noopener" onclick="Analytics.trackCTA('cws_review', this.href); Analytics.trackExternalLink(this.href, 'Chrome Web Store Review');" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-900 rounded-xl font-bold transition-colors text-sm">
+                    <i data-lucide="star" class="w-4 h-4"></i>
+                    <span data-i18n="success_rate_btn">Deja una reseña en Chrome Web Store</span>
+                </a>
+            </div>
+
+            <!-- Support Notice -->
+            <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-4 mb-8">
+                <p class="text-slate-400 text-sm flex items-center justify-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                    <span data-i18n="success_support">¿Necesitas ayuda? Escríbenos a support@kario-studio.com</span>
+                </p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/es/" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold transition-all shadow-lg shadow-pink-500/20">
+                    <i data-lucide="home" class="w-5 h-5"></i>
+                    <span data-i18n="success_back_home">Volver al inicio</span>
+                </a>
+                <a href="/es/faq.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold transition-colors border border-slate-700">
+                    <i data-lucide="help-circle" class="w-5 h-5"></i>
+                    <span data-i18n="success_view_faq">Ver preguntas frecuentes</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/es/privacy.html" class="hover:text-white">Política de privacidad</a> · <a href="/es/terms.html" class="hover:text-white">Términos del servicio</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></div></footer></div>
+
+    <!-- Scripts -->
+<script src="/js/i18n.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/success.js"></script>
+</body>
+
+</html>

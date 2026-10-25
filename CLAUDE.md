@@ -9,7 +9,7 @@ Static marketing website for the **GrokMediaDownloader** Chrome extension (Grok 
 - **Chrome Web Store**: `https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi`
 - **Extension ID**: `niebmpjbnghbfnjbbeajlndkjpgpamhi`
 - **CWS Stats**: Check [Chrome Web Store listing](https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi) for current user count and rating
-- **CWS Languages**: EN (default), zh-TW, JA, ES, DE, KO (6 languages — more than marketing site's 4)
+- **CWS Languages**: EN (default), zh-TW, JA, ES, DE, KO — the marketing site covers the same 6 languages since 2026-10-25
 - **Payment**: Stripe Checkout through the license API — `openCheckout()` in `js/components.js` sends the buyer to `CHECKOUT_API_BASE + /api/checkout?product=gmd&lang=<page lang>` (same tab; 303 to Stripe). Stripe returns to `/{lang}/success/?session_id=…` (vercel.json rewrites `/success` and `/pricing` to the `.html` files); `js/success.js` calls `/api/success?session_id=` and renders the key (paid / pending re-poll / fallback) and fires the GA4 `purchase` (transaction_id = session_id). $4.99 lifetime, 3 devices per key. Lemon Squeezy is legacy: pre-cutover orders only; `openLemonSqueezy()` is kept one release for rollback and `?order_id=` on the success page still shows the old e-mail notice.
 
 ## Tech Stack
@@ -20,11 +20,11 @@ Static marketing website for the **GrokMediaDownloader** Chrome extension (Grok 
 | Icons | Lucide Icons via CDN |
 | Analytics | GA4 — `G-6YPN8563C6` (marketing site) + `G-8DSYQ27F9Y` (CWS, via Connected Site Tags) |
 | Components | `js/components.js` — shared header/footer loader, GA4 event tracking |
-| i18n | `js/i18n.js` — toast translations only (4 keys × 4 languages) + language switch |
+| i18n | `js/i18n.js` — toast translations only (4 keys × 6 languages) + language switch |
 
 ## Multilingual Structure (i18n)
 
-Four languages, each with its own directory. **Body text is hardcoded in each HTML file** (no JS dependency for SEO).
+Six languages, each with its own directory. **Body text is hardcoded in each HTML file** (no JS dependency for SEO).
 
 | Language | Path | HTML `lang` | Note |
 |----------|------|-------------|------|
@@ -32,6 +32,8 @@ Four languages, each with its own directory. **Body text is hardcoded in each HT
 | 繁體中文 | `/zh-TW/` | `zh-TW` | |
 | 日本語 | `/ja/` | `ja` | |
 | 한국어 | `/ko/` | `ko` | |
+| Español | `/es/` | `es` | added 2026-10-25 |
+| Deutsch | `/de/` | `de` | added 2026-10-25 |
 
 **hreflang convention:**
 - `x-default` → `/` (root, English)
@@ -39,28 +41,30 @@ Four languages, each with its own directory. **Body text is hardcoded in each HT
 - `hreflang="zh-TW"` → `/zh-TW/`
 - `hreflang="ja"` → `/ja/`
 - `hreflang="ko"` → `/ko/`
+- `hreflang="es"` → `/es/`
+- `hreflang="de"` → `/de/`
 
 ## Pages
 
-| Page | Root (EN) | `/zh-TW/` | `/ja/` | `/ko/` |
-|------|-----------|-----------|--------|--------|
-| Homepage | `index.html` | ✅ | ✅ | ✅ |
-| Whole Library Download | `library-download.html` | ✅ | ✅ | ✅ |
-| Story Mode | `story-mode.html` | ✅ | ✅ | ✅ |
-| Video Gen Queue | `video-gen-queue.html` | ✅ | ✅ | ✅ |
-| Stream Capture | `stream-capture.html` | ✅ | ✅ | ✅ |
-| Project Download | `project-download.html` | ✅ | ✅ | ✅ |
-| Pricing | `pricing.html` | ✅ | ✅ | ✅ |
-| FAQ | `faq.html` | ✅ | ✅ | ✅ |
-| Changelog | `changelog.html` | ✅ | ✅ | ✅ |
-| Privacy Policy | `privacy.html` | ✅ | ✅ | ✅ |
-| Terms of Service | `terms.html` | ✅ | ✅ | ✅ |
-| Purchase Success | `success.html` | ✅ | ✅ | ✅ |
-| 404 | `404.html` | — | — | — |
+| Page | Root (EN) | `/zh-TW/` | `/ja/` | `/ko/` | `/es/` | `/de/` |
+|------|-----------|-----------|--------|--------|--------|--------|
+| Homepage | `index.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Whole Library Download | `library-download.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Story Mode | `story-mode.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Video Gen Queue | `video-gen-queue.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Stream Capture | `stream-capture.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Project Download | `project-download.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Pricing | `pricing.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| FAQ | `faq.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Changelog | `changelog.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Privacy Policy | `privacy.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Terms of Service | `terms.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Purchase Success | `success.html` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 404 | `404.html` | — | — | — | — | — |
 
 Shared components loaded via JS (language-specific versions):
-- `components/header.html` (EN), `components/header-zh-TW.html`, `components/header-ja.html`, `components/header-ko.html`
-- `components/footer.html` (EN), `components/footer-zh-TW.html`, `components/footer-ja.html`, `components/footer-ko.html`
+- `components/header.html` (EN), `components/header-zh-TW.html`, `components/header-ja.html`, `components/header-ko.html`, `components/header-es.html`, `components/header-de.html`
+- `components/footer.html` (EN), `components/footer-zh-TW.html`, `components/footer-ja.html`, `components/footer-ko.html`, `components/footer-es.html`, `components/footer-de.html`
 
 **SEO fallback**: Each page has a static fallback nav inside `<div id="header-placeholder">` (links to the site's main pages) and a simplified footer inside `<div id="footer-placeholder">` (Privacy + Terms + copyright + GitHub link). These are visible to crawlers when JS doesn't execute. `loadComponents()` replaces them with the full components via `innerHTML`.
 
@@ -103,13 +107,13 @@ python3 -m http.server 8080
 
 ## Key Reminders
 
-1. **Four-language sync**: When modifying any page content, update ALL four language versions (root EN, `/zh-TW/`, `/ja/`, `/ko/`) — body text is hardcoded per language, no JS dependency
-2. **Component sync**: When modifying header/footer, update all 4 versions (`header.html`, `header-zh-TW.html`, `header-ja.html`, `header-ko.html`, same for footer)
-3. **SEO sync**: When adding a new page, update `sitemap.xml` with hreflang links for all four languages
+1. **Six-language sync**: When modifying any page content, update ALL six language versions (root EN, `/zh-TW/`, `/ja/`, `/ko/`, `/es/`, `/de/`) — body text is hardcoded per language, no JS dependency
+2. **Component sync**: When modifying header/footer, update all 6 versions (`header.html`, `header-zh-TW.html`, `header-ja.html`, `header-ko.html`, `header-es.html`, `header-de.html`, same for footer)
+3. **SEO sync**: When adding a new page, update `sitemap.xml` with hreflang links for all six languages
 4. **Assets**: Always reference images from `assets/resized/` (not originals). Run `./resize-images.sh` after adding new feature images
 5. **Schema.org**: Homepage includes `SoftwareApplication`, `WebSite`, `BreadcrumbList`, and `VideoObject` structured data. Never add `AggregateRating`/`Review` markup (self-serving reviews violate Google's policy; removed 2026-10-25)
 6. **Explainer video**: `assets/explainer/gmd-explainer.{mp4,webm}` + `gmd-explainer-poster.jpg` (28.5 s, 1080p60, English, shared by all editions) is rendered from the extension repo's `docs/marketing/gmd-explainer.html` (frame-by-frame via headless Chromium + ffmpeg). Music: "Wallpaper" by Kevin MacLeod (incompetech.com), CC BY 4.0 — the on-page caption under the video is the required attribution; keep it whenever the video is embedded. A no-music master and the as-authored variant (end card says 2.6.0) live outside the repo; the site uses the version-free end card until a release is live
 7. **Tailwind CSS**: After adding/changing Tailwind classes, run `npm run build:css` to regenerate `css/styles.css`. The compiled CSS is committed to git so no build step is needed for deployment
-8. **CWS has 6 languages**: Marketing site has 4 (EN, zh-TW, JA, KO), but CWS listing has 6 (+ ES, DE). When updating CWS descriptions, update all 6
+8. **CWS has 6 languages**: Same six as the marketing site (EN, zh-TW, JA, KO, ES, DE). When updating CWS descriptions, update all 6
 9. **Social proof must use real data**: Always check CWS listing for current stats before using numbers. Testimonials must be based on real CWS reviews (Jerome, Tamas, lipo dipo). Never fabricate numbers
 10. **OG Images**: Homepage uses `assets/og-image.jpg` (1200x630). Feature pages use page-specific OG images (`assets/og-{feature}.jpg`). All include `og:image:width/height/type` meta tags

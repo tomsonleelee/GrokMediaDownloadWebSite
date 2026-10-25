@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok Media Downloader — Grok-AI-Bilder & -Videos im Batch herunterladen & verwalten | Chrome-Erweiterung</title>
+    <meta name="description" content="Grok-AI-Bilder und -Videos massenhaft herunterladen und verwalten. v2.5 bringt Whole Library Download nach Unterhaltung und 1080p-Upgrade. Kostenlose Chrome-Erweiterung, PRO für $4.99.">
+    <meta name="keywords" content="Grok Downloader, gesamte Bibliothek herunterladen, alle Grok-Medien herunterladen, 1080p Grok Video, Unterhaltungsordner, Story Mode Helper, Video Studio, Storyboard, Frame-Extraktion, FFmpeg, Chrome-Erweiterung, Batch-Download, Stream Capture, HD Upgrade, Grok AI Video">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Kario Studio">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/de/">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/de/">
+    <meta property="og:title" content="Grok Media Downloader — Grok-AI-Medien im Batch herunterladen & verwalten | Chrome-Erweiterung">
+    <meta property="og:description" content="Neu in v2.2: Video Gen Queue für automatisierte Videogenerierung, Project-Based Download für Projektverwaltung, vier Generierungsmodi. Die ultimative Erweiterung zur Verwaltung von Grok-AI-Medien.">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="es_ES">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://grokmedia.kario-studio.com/de/">
+    <meta name="twitter:title" content="Grok Media Downloader — Grok-AI-Medien im Batch herunterladen & verwalten | Chrome-Erweiterung">
+    <meta name="twitter:description" content="Neu: Video Gen Queue für automatisierte Videogenerierung, Project Download für Projektverwaltung, vier Generierungsmodi, Story Mode Helper.">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "GrokMediaDownloader",
+      "alternateName": ["Grok Media Downloader", "Grok 圖片下載器", "Story Mode Helper"],
+      "description": "Die beste Chrome-Erweiterung zur Verwaltung von Grok-AI-Medien. v2.5 bringt Whole Library Download nach Unterhaltung und 1080p-Video-Upgrade, dazu das Videostudio Story Mode Helper, Batch-Downloads, Stream Capture und HD-Upgrade.",
+      "operatingSystem": "Chrome",
+      "applicationCategory": "UtilitiesApplication",
+      "applicationSubCategory": "Browser Extension",
+      "softwareVersion": "2.5.6",
+      "datePublished": "2025-11-22",
+      "dateModified": "2026-09-14",
+      "url": "https://grokmedia.kario-studio.com/de/",
+      "sameAs": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
+      "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
+      "screenshot": "https://grokmedia.kario-studio.com/assets/og-image.jpg",
+      "featureList": ["Whole Library Download", "Conversation Folders", "1080p Video Upgrade", "Download Source Selector", "Tag-Based Download", "Custom Filename Templates", "Frame Lock & Trim", "Video Gen Queue", "Project-Based Download", "Video Generation Modes", "System Logging", "Story Mode Helper", "Video Studio", "Storyboard Manager", "Frame Extraction", "Send Frame to Grok", "FFmpeg Merge", "Batch Download", "Date Filter", "Stream Capture", "HD Upgrade"],
+      "offers": {
+        "@type": "Offer",
+        "price": "4.99",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2027-01-31",
+        "availability": "https://schema.org/InStock"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "url": "https://grokmedia.kario-studio.com"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.1",
+        "ratingCount": "24",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Jerome"
+          },
+          "reviewBody": "The Pro version is a game changer — and it's lifetime. No subscriptions, no recurring fees. Just pure value. Thank you!"
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Tamas"
+          },
+          "reviewBody": "Free version is good, but easily worth the $5 for Pro. Every other extension asks for a subscription these days, so a lifetime license is really appreciated."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "lipo dipo"
+          },
+          "reviewBody": "This extension is a game-changer, easily the best tool for Grok users. The bulk download and HD upgrade features save me hours every week."
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "GrokMediaDownloader",
+      "url": "https://grokmedia.kario-studio.com",
+      "description": "Offizielle Website von GrokMediaDownloader – der besten Chrome-Erweiterung zur Verwaltung von Grok-AI-Medien, mit dem Videostudio Story Mode Helper.",
+      "inLanguage": ["en", "zh-TW", "ja", "ko", "es", "de"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio"
+      },
+      "sameAs": [
+        "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
+        "https://github.com/tomsonlee150/GrokMediaDownloader",
+        "https://www.producthunt.com/products/grokmediadownloader",
+        "https://alternativeto.net/software/grokmediadownloader/about/"
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kario Studio",
+      "legalName": "Kario LLC",
+      "url": "https://www.kario-studio.com",
+      "logo": "https://grokmedia.kario-studio.com/assets/icon-512.png",
+      "sameAs": [
+        "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
+        "https://github.com/tomsonlee150/GrokMediaDownloader",
+        "https://www.producthunt.com/products/grokmediadownloader",
+        "https://alternativeto.net/software/grokmediadownloader/about/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "availableLanguage": ["en", "zh-TW", "ja", "ko"]
+      }
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Startseite",
+        "item": "https://grokmedia.kario-studio.com/de/"
+      }]
+    }
+    </script>
+
+    <!-- Schema.org - VideoObject -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Stream-Capture-Demo – GrokMediaDownloader",
+      "description": "Demonstration der Stream-Capture-Funktion der Chrome-Erweiterung GrokMediaDownloader. Zeigt, wie du Streaming-Videos von Grok AI direkt im Browser erfasst.",
+      "thumbnailUrl": "https://grokmedia.kario-studio.com/assets/stream-capture-poster.jpg",
+      "uploadDate": "2025-12-19T00:00:00+08:00",
+      "contentUrl": "https://grokmedia.kario-studio.com/assets/streamcapture.mp4",
+      "duration": "PT30S",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://grokmedia.kario-studio.com/assets/icon-512.png"
+        }
+      }
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+        /* Animated gradient orbs */
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; opacity: 0.3; }
+        .orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, #2196F3, transparent 70%); top: -150px; right: 100px; }
+        .orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, #7C4DFF, transparent 70%); bottom: -100px; left: 200px; }
+        .orb-3 { width: 300px; height: 300px; background: radial-gradient(circle, #00BCD4, transparent 70%); top: 100px; left: 50%; opacity: 0.15; }
+        /* Grid overlay */
+        .grid-overlay { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+        /* Feature card colored top borders */
+        .feat-card-border { position: relative; overflow: hidden; }
+        .feat-card-border::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 16px 16px 0 0; }
+        .feat-border-blue::before { background: linear-gradient(90deg, #2196F3, #64B5F6); }
+        .feat-border-purple::before { background: linear-gradient(90deg, #9C27B0, #CE93D8); }
+        .feat-border-blue-cyan::before { background: linear-gradient(90deg, #2196F3, #00BCD4); }
+        .feat-border-purple-pink::before { background: linear-gradient(90deg, #9C27B0, #CE93D8); }
+        .feat-border-green::before { background: linear-gradient(90deg, #4CAF50, #81C784); }
+        .feat-border-orange::before { background: linear-gradient(90deg, #FF9800, #FFB74D); }
+        .feat-border-cyan::before { background: linear-gradient(90deg, #00BCD4, #4DD0E1); }
+        .feat-border-pink::before { background: linear-gradient(90deg, #E91E63, #F48FB1); }
+        .feat-border-teal::before { background: linear-gradient(90deg, #009688, #4DB6AC); }
+        /* Workflow step connector */
+        .wf-arrow { color: #444; font-size: 20px; }
+        /* Feature tags */
+        .feature-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 6px 12px; font-size: 13px; color: #ccc; font-weight: 500; }
+        /* Mini tags */
+        .mini-tag { background: rgba(255,255,255,0.06); border-radius: 4px; padding: 3px 8px; font-size: 10px; color: #aaa; font-weight: 500; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Zum Hauptinhalt springen</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/de/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/de/" class="text-sm text-slate-300 hover:text-white">Startseite</a><a href="/de/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/de/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/de/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/de/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/de/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/de/pricing.html" class="text-sm text-slate-300 hover:text-white">Preise</a><a href="/de/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <!-- Hero Section -->
+    <main id="main-content">
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+        <!-- Animated gradient orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <!-- Grid overlay -->
+        <div class="grid-overlay"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
+                        <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+                        <span data-i18n="hero_badge">v2.5 – neuestes Update | Whole Library Download・1080p-Upgrade・bereit für die neue Grok-API</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                        <span data-i18n="hero_title_1">Automatisiertes Grok</span> <br>
+                        <span class="text-pink-500" data-i18n="hero_title_2">Medien-Asset-Management</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Nicht nur ein Downloader, sondern dein Kreativstudio. v2.5 ist an Groks neues Medien-Backend angepasst und bringt Whole Library Download – archiviere jedes generierte Bild und Video, sortiert nach Unterhaltung – sowie 1080p als eigene Qualitätsstufe.</p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
+                        <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="group relative px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-lg shadow-xl shadow-blue-600/20 transition-all transform hover:-translate-y-1 overflow-hidden flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                            <span data-i18n="hero_cta_chrome">Zu Chrome hinzufügen</span>
+                        </a>
+
+                        <button onclick="openCheckout()" class="group relative px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg shadow-xl shadow-purple-600/20 transition-all transform hover:-translate-y-1 overflow-hidden flex items-center justify-center gap-2">
+                            <i data-lucide="zap" class="w-5 h-5"></i>
+                            <span data-i18n="hero_cta_primary">PRO auf Lebenszeit holen</span>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-3 mb-6">
+                        <a href="/de/pricing.html" class="inline-flex items-center gap-2 px-6 py-2.5 border border-pink-500/40 hover:border-pink-400 text-pink-300 hover:text-white rounded-xl font-semibold text-sm transition-all hover:bg-pink-500/10">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span data-i18n="hero_cta_secondary">Pläne & Preise ansehen</span>
+                        </a>
+                        <span class="text-slate-500 text-xs">PRO $4.99 – einmalig, lebenslanger Zugang</span>
+                    </div>
+
+                    <!-- Hero Feature Tags -->
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
+                        <span class="feature-tag"><span>📥</span> <span data-i18n="hero_tag_1">Batch-Download</span></span>
+                        <span class="feature-tag"><span>🎯</span> <span data-i18n="hero_tag_2">Video Gen Queue</span></span>
+                        <span class="feature-tag"><span>📦</span> <span data-i18n="hero_tag_3">Ganze Bibliothek</span></span>
+                        <span class="feature-tag"><span>💎</span> <span data-i18n="hero_tag_4">1080p-Upgrade</span></span>
+                        <span class="feature-tag"><span>📂</span> <span data-i18n="hero_tag_5">Projektordner</span></span>
+                        <span class="feature-tag"><span>🌊</span> <span data-i18n="hero_tag_6">Stream Capture</span></span>
+                    </div>
+
+                    <div class="flex items-center justify-center lg:justify-start gap-6 text-sm text-slate-500">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-green-500"></i>
+                            <span data-i18n="hero_trust_1">Sicher & virenfrei</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="zap" class="w-4 h-4 text-yellow-500"></i>
+                            <span data-i18n="hero_trust_2">Schnelle Engine</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center lg:justify-start gap-4 mt-4 text-sm">
+                        <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="flex items-center gap-3 bg-slate-800/60 border border-slate-700/50 rounded-xl px-4 py-2.5 hover:border-pink-500/30 transition-colors">
+                            <div class="flex items-center gap-1 text-yellow-400">
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <span class="font-bold">4.1</span>
+                            </div>
+                            <span class="text-slate-500">|</span>
+                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">4.000+ Nutzer</span>
+                            <span class="text-slate-500">|</span>
+                            <span class="text-slate-400" data-i18n="hero_social_reviews">24 Bewertungen</span>
+                            <span class="text-slate-600 text-xs" data-i18n="hero_social_source">Chrome Web Store</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dual UI Mockup -->
+                <div class="relative mx-auto w-full max-w-lg" style="perspective: 1000px;">
+                    <div class="absolute -inset-4 bg-pink-500/20 blur-3xl rounded-full"></div>
+
+                    <!-- Popup Mockup (Left) -->
+                    <div class="relative bg-white rounded-xl shadow-2xl overflow-hidden border border-slate-200 text-slate-800 w-72" style="transform: rotateY(-5deg) rotateX(2deg); z-index: 2;">
+                        <div class="bg-white border-b border-gray-100 p-3 flex items-center gap-2">
+                            <i data-lucide="play-circle" class="w-5 h-5 text-slate-800"></i>
+                            <span class="font-bold text-sm text-slate-900">Grok Media Downloader</span>
+                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.5</span>
+                        </div>
+                        <div class="p-3 space-y-2 bg-[#F9FAFB]">
+                            <div class="flex gap-1.5">
+                                <div class="flex-1 py-1.5 rounded text-center text-xs font-bold text-white" style="background: linear-gradient(135deg, #667eea, #764ba2);">🛠️ Story Mode</div>
+                                <div class="flex-1 py-1.5 rounded text-center text-xs font-bold text-gray-800" style="background: linear-gradient(135deg, #f2994a, #f2c94c);">🎯 Warteschlange</div>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-2.5 text-xs space-y-1">
+                                <div class="flex justify-between text-gray-600"><span>🖼️ Bilder</span><span class="font-bold text-gray-900">342 / 342 / 0</span></div>
+                                <div class="flex justify-between text-gray-600"><span>🎬 SD-Videos</span><span class="font-bold text-gray-900">156 / 120 / 36</span></div>
+                                <div class="flex justify-between text-gray-600"><span>✨ HD-Videos</span><span class="font-bold text-gray-900">89 / 89 / 0</span></div>
+                                <div class="flex justify-between text-gray-600"><span>💎 1080p-Videos</span><span class="font-bold text-gray-900">37 / 37 / 0</span></div>
+                                <div class="flex justify-between text-gray-600"><span>📂 Projekte</span><span class="font-bold text-gray-900">47</span></div>
+                            </div>
+                            <div class="bg-blue-600 text-white text-center py-2 rounded-lg text-xs font-bold">1. Generate List</div>
+                            <div class="bg-green-600 text-white text-center py-2 rounded-lg text-xs font-bold">2. Download starten</div>
+                        </div>
+                    </div>
+
+                    <!-- Queue Panel Mockup (Right, overlapping) -->
+                    <div class="absolute right-0 top-16 bg-[#1a1a1a] rounded-xl shadow-2xl overflow-hidden border border-gray-700 w-60 text-white" style="transform: rotateY(5deg) rotateX(2deg); z-index: 3;">
+                        <div class="p-3 border-b border-gray-700 flex items-center gap-2">
+                            <span class="text-sm font-bold">🎯 Video Gen Queue</span>
+                        </div>
+                        <div class="p-2.5 space-y-2">
+                            <div class="flex gap-1">
+                                <div class="flex-1 py-1.5 rounded text-center text-xs font-bold bg-green-600">▶️ Start</div>
+                                <div class="flex-1 py-1.5 rounded text-center text-xs font-bold bg-gray-700 text-gray-400">⏹ Stopp</div>
+                            </div>
+                            <div class="flex justify-between items-center bg-gray-800 rounded px-2 py-1.5 text-xs">
+                                <span class="text-green-400 font-bold">● Läuft</span>
+                                <span class="text-gray-400">3/8 Einträge</span>
+                            </div>
+                            <!-- Queue Items -->
+                            <div class="bg-[#252a35] rounded-lg p-2 border-l-[3px] border-blue-500">
+                                <div class="flex justify-between items-center mb-0.5">
+                                    <span class="text-xs font-bold">Post aaf51ae1</span>
+                                    <span class="text-[8px] bg-blue-500/20 text-blue-400 px-1.5 py-0.5 rounded font-bold">ACTIVE</span>
+                                </div>
+                                <div class="text-[10px] text-gray-500 truncate">Ein Mädchen tanzt im Regen...</div>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-2 border-l-[3px] border-green-500">
+                                <div class="flex justify-between items-center mb-0.5">
+                                    <span class="text-xs font-bold">Post c82f4b21</span>
+                                    <span class="text-[8px] bg-green-500/20 text-green-400 px-1.5 py-0.5 rounded font-bold">DONE</span>
+                                </div>
+                                <div class="text-[10px] text-gray-500 truncate">Flug durch eine Cyberpunk-Stadt</div>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-2 border-l-[3px] border-gray-600">
+                                <div class="flex justify-between items-center mb-0.5">
+                                    <span class="text-xs font-bold">Post 9e3a1f07</span>
+                                    <span class="text-[8px] bg-gray-600 text-gray-300 px-1.5 py-0.5 rounded font-bold">PENDING</span>
+                                </div>
+                                <div class="text-[10px] text-gray-500 truncate">Meereswellen bei Sonnenuntergang</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Favorite source notice (v2.5.1) -->
+    <section class="py-10 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 md:p-6">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="alert-triangle" class="text-amber-400 w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg md:text-xl font-bold text-white mb-2" data-i18n="legacy_notice_title">Deine neu generierten Medien fehlen?</h2>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-3" data-i18n="legacy_notice_body">Seit Groks Backend-Umstellung im Juli 2026 werden neu generierte Bilder und Videos nicht mehr zu den Favoriten hinzugefügt – ein Scan der Quelle „Favoriten“ kann daher leer aussehen, und das HD-Upgrade meldet womöglich, dass bereits alles upgegradet ist. Stelle die Download-Quelle auf <strong class="text-white">📦 Alle generierten Medien (nach Unterhaltung)</strong> um – genau das liest auch Groks eigene Seite „Gespeichert“. Seit v2.5.1 ist das die Standardeinstellung und für alle kostenlos.</p>
+                        <a href="/de/library-download.html" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
+                            <span data-i18n="legacy_notice_cta">So funktioniert Whole Library Download</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gen Queue Highlight -->
+    <section id="video-gen-queue" class="py-24 bg-slate-950 relative border-t border-slate-800 overflow-hidden">
+        <div class="absolute inset-0 bg-pink-500/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="order-2 lg:order-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                        <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+                        <span data-i18n="queue_badge">v2.2 NEUE FUNKTION</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                        <span data-i18n="queue_title">Video Gen Queue</span>
+                    </h2>
+                    <p class="text-xl text-pink-300 mb-4" data-i18n="queue_subtitle">Automatisierte Warteschlange für Videogenerierung</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="queue_desc">Neue Side-Panel-Oberfläche für die Batch-Videogenerierung. Unterstützt die Modi Custom/Normal/Fun/Spicy, automatische Wiederholung bei Fehlern und intelligente Rate-Limit-Erkennung.</p>
+                    <!-- Feature bullet points -->
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <div class="w-5 h-5 bg-green-500/15 rounded flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-400"></i></div>
+                            <span class="text-sm" data-i18n="queue_feat_1_title">Automatische Wiederholung</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <div class="w-5 h-5 bg-green-500/15 rounded flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-400"></i></div>
+                            <span class="text-sm" data-i18n="queue_feat_2_title">Im Batch zur Warteschlange hinzufügen</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <div class="w-5 h-5 bg-green-500/15 rounded flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-400"></i></div>
+                            <span class="text-sm" data-i18n="queue_feat_3_title">4 Generierungsmodi</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-slate-300">
+                            <div class="w-5 h-5 bg-green-500/15 rounded flex items-center justify-center flex-shrink-0 mt-0.5"><i data-lucide="check" class="w-3 h-3 text-green-400"></i></div>
+                            <span class="text-sm" data-i18n="queue_feat_4_title">Rate-Limit-Erkennung</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Queue UI Mockup -->
+                <div class="order-1 lg:order-2 flex justify-center">
+                    <div class="bg-[#1a1a1a] rounded-2xl shadow-2xl border border-gray-700/50 w-full max-w-sm overflow-hidden" style="box-shadow: 0 25px 80px rgba(0,0,0,0.6);">
+                        <div class="p-4 border-b border-gray-700 flex justify-between items-center">
+                            <span class="text-white font-bold">🎯 Video Gen Queue</span>
+                            <span class="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded">v1.0</span>
+                        </div>
+                        <div class="p-3 mx-3 mt-3 bg-gray-800/60 rounded-xl space-y-2">
+                            <div class="flex gap-1.5">
+                                <div class="flex-1 py-2 rounded-lg text-center text-xs font-bold text-white bg-green-600">▶️ Start</div>
+                                <div class="flex-1 py-2 rounded-lg text-center text-xs font-bold text-gray-400 bg-gray-700">⏹ Stopp</div>
+                            </div>
+                            <div class="flex justify-between items-center bg-gray-900/60 rounded-lg px-3 py-2 text-xs">
+                                <span class="text-green-400 font-bold">● Läuft</span>
+                                <span class="text-gray-400">5/12</span>
+                                <span class="text-gray-500">🎬 23 / 50</span>
+                            </div>
+                        </div>
+                        <div class="px-4 mt-3 flex justify-between items-center">
+                            <span class="text-sm font-semibold text-gray-300">📋 Einträge in der Warteschlange</span>
+                            <span class="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded-full">12</span>
+                        </div>
+                        <div class="p-3 space-y-2">
+                            <div class="bg-[#252a35] rounded-lg p-3 border-l-[3px] border-blue-500">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-bold text-white">Post aaf51ae1</span>
+                                    <span class="text-[9px] bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded font-bold uppercase">Aktiv</span>
+                                </div>
+                                <div class="text-[11px] text-gray-500 truncate mb-1">Ein Mädchen tanzt anmutig im Regen unter Neonlichtern...</div>
+                                <div class="text-[11px] flex gap-2"><span class="text-green-400">✅ 2</span><span class="text-red-400">❌ 1</span><span class="text-gray-500">Ziel: 3</span></div>
+                            </div>
+                            <div class="bg-gray-800/60 rounded-lg p-3 border-l-[3px] border-green-500">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-bold text-white">Post c82f4b21</span>
+                                    <span class="text-[9px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded font-bold uppercase">Fertig</span>
+                                </div>
+                                <div class="text-[11px] text-gray-500 truncate">Nächtlicher Flug durch eine Cyberpunk-Stadt, Neonreflexionen</div>
+                            </div>
+                            <div class="bg-gray-800/60 rounded-lg p-3 border-l-[3px] border-red-500">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-bold text-white">Post 7a2bc891</span>
+                                    <span class="text-[9px] bg-red-500/20 text-red-400 px-2 py-0.5 rounded font-bold uppercase">Fehlgeschlagen</span>
+                                </div>
+                                <div class="text-[11px] text-gray-500 truncate">Fantasy-Drache speit Feuer über einer Burg</div>
+                            </div>
+                            <div class="bg-gray-800/60 rounded-lg p-3 border-l-[3px] border-gray-600">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-bold text-white">Post 9e3a1f07</span>
+                                    <span class="text-[9px] bg-gray-600 text-gray-300 px-2 py-0.5 rounded font-bold uppercase">Ausstehend</span>
+                                </div>
+                                <div class="text-[11px] text-gray-500 truncate">Astronaut schwebt durch einen Nebel</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Demo -->
+            <div class="mt-16">
+                <div class="relative rounded-2xl overflow-hidden border border-pink-500/30 shadow-2xl shadow-pink-500/10 max-w-5xl mx-auto">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none z-10"></div>
+                    <video
+                        class="w-full aspect-video bg-slate-900"
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="/assets/resized/feat-video-gen-queue_1280x800.jpg"
+                    >
+                        <source src="/assets/video-gen-queue.mp4" type="video/mp4">
+                        <div class="w-full aspect-video bg-slate-900 flex items-center justify-center">
+                            <p class="text-slate-400">Dein Browser unterstützt keine Videowiedergabe.</p>
+                        </div>
+                    </video>
+                </div>
+                <p class="text-center text-slate-500 text-sm mt-4" data-i18n="queue_demo_caption">* Das Video zeigt den kompletten Automatisierungs-Workflow der Video Gen Queue</p>
+
+                <div class="flex justify-center mt-6">
+                    <a href="/de/video-gen-queue.html" class="group relative px-6 py-3 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold transition-all flex items-center gap-2 w-fit">
+                        <span data-i18n="queue_cta">Mehr erfahren</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Studio / Story Mode Highlight -->
+    <section id="video-studio" class="py-24 bg-slate-950 relative border-t border-slate-800 overflow-hidden">
+        <div class="absolute inset-0 bg-purple-500/5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wide mb-4">
+                    <span>🛠️</span>
+                    <span data-i18n="studio_badge">Videostudio</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span data-i18n="studio_title">Story Mode Helper</span>
+                    <span class="text-purple-400"> — </span>
+                    <span class="text-purple-400" data-i18n="studio_subtitle">Studio für Video-Storys</span>
+                </h2>
+                <p class="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed" data-i18n="studio_desc">Vom Video-Download bis zum fertig zusammengefügten Clip – deine KI-Video-Story in 5 Schritten. Visuelles Storyboard-Management, automatische Frame-Extraktion und Senden an Grok per Klick für Fortsetzungen.</p>
+            </div>
+
+            <!-- 5-Step Workflow Diagram -->
+            <div class="flex flex-wrap items-center justify-center gap-2 md:gap-0 mb-16">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center w-28 md:w-36">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-3 relative shadow-lg" style="background: linear-gradient(135deg, #1a73e8, #2196F3);">
+                        📥
+                        <span class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white text-gray-900 rounded-full text-[10px] font-extrabold flex items-center justify-center">1</span>
+                    </div>
+                    <span class="text-xs font-semibold text-white mb-1" data-i18n="studio_step_1_label">Herunterladen</span>
+                    <span class="text-[10px] text-gray-500 text-center leading-tight" data-i18n="studio_step_1_desc">Video aus den Grok-Favoriten holen</span>
+                </div>
+                <div class="hidden md:flex items-center justify-center w-8 text-gray-600 text-lg mb-6">→</div>
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center w-28 md:w-36">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-3 relative shadow-lg" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                        🛠️
+                        <span class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white text-gray-900 rounded-full text-[10px] font-extrabold flex items-center justify-center">2</span>
+                    </div>
+                    <span class="text-xs font-semibold text-white mb-1" data-i18n="studio_step_2_label">Ins Studio</span>
+                    <span class="text-[10px] text-gray-500 text-center leading-tight" data-i18n="studio_step_2_desc">Per Drag & Drop ins Storyboard</span>
+                </div>
+                <div class="hidden md:flex items-center justify-center w-8 text-gray-600 text-lg mb-6">→</div>
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center w-28 md:w-36">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-3 relative shadow-lg" style="background: linear-gradient(135deg, #FF6B6B, #FF9800);">
+                        🖼️
+                        <span class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white text-gray-900 rounded-full text-[10px] font-extrabold flex items-center justify-center">3</span>
+                    </div>
+                    <span class="text-xs font-semibold text-white mb-1" data-i18n="studio_step_3_label">Frame extrahieren</span>
+                    <span class="text-[10px] text-gray-500 text-center leading-tight" data-i18n="studio_step_3_desc">Letzten Frame automatisch extrahieren</span>
+                </div>
+                <div class="hidden md:flex items-center justify-center w-8 text-gray-600 text-lg mb-6">→</div>
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center w-28 md:w-36">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-3 relative shadow-lg" style="background: linear-gradient(135deg, #00BCD4, #26C6DA);">
+                        🚀
+                        <span class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white text-gray-900 rounded-full text-[10px] font-extrabold flex items-center justify-center">4</span>
+                    </div>
+                    <span class="text-xs font-semibold text-white mb-1" data-i18n="studio_step_4_label">An Grok senden</span>
+                    <span class="text-[10px] text-gray-500 text-center leading-tight" data-i18n="studio_step_4_desc">Frame hochladen & generieren</span>
+                </div>
+                <div class="hidden md:flex items-center justify-center w-8 text-gray-600 text-lg mb-6">→</div>
+                <!-- Step 5 -->
+                <div class="flex flex-col items-center w-28 md:w-36">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-3 relative shadow-lg" style="background: linear-gradient(135deg, #4CAF50, #66BB6A);">
+                        🎬
+                        <span class="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white text-gray-900 rounded-full text-[10px] font-extrabold flex items-center justify-center">5</span>
+                    </div>
+                    <span class="text-xs font-semibold text-white mb-1" data-i18n="studio_step_5_label">Exportieren</span>
+                    <span class="text-[10px] text-gray-500 text-center leading-tight" data-i18n="studio_step_5_desc">Alle Clips zu einem Video zusammenfügen</span>
+                </div>
+            </div>
+
+            <!-- Demo Video -->
+            <div class="max-w-4xl mx-auto mb-8">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-purple-500/10 blur-3xl rounded-full"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-purple-500/30 shadow-2xl shadow-purple-500/10">
+                        <video
+                            class="w-full aspect-video bg-slate-900"
+                            autoplay muted loop playsinline
+                            poster="/assets/resized/story-mode-poster_1280x800.jpg"
+                        >
+                            <source src="/assets/story-mode-demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <p class="text-center text-slate-500 text-sm mt-4" data-i18n="story_video_caption">* Das Video zeigt den kompletten Workflow des Story Mode Helper</p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center">
+                <a href="/de/story-mode.html" class="group inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-bold transition-all">
+                    <i data-lucide="clapperboard" class="w-4 h-4"></i>
+                    <span data-i18n="studio_cta">Story Mode entdecken</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-slate-900/50 relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span data-i18n="feat_title_1">Für Power-User gebaut</span><br>
+                    <span class="text-pink-500" data-i18n="feat_title_2">PRO-Funktionen</span>
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="feat_desc">Auf Basis von echtem Nutzerfeedback haben wir das leistungsstärkste System zur Verwaltung von Grok-Medien gebaut.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1: Generate List -->
+                <div class="feat-card-border feat-border-blue bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/10 group flex flex-col">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
+                        <i data-lucide="list-checks" class="text-blue-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_1_title">Intelligente Listenerstellung</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_1_desc">Schluss mit manuellem Suchen. Die Erweiterung scannt automatisch deine favorisierten Bilder und Videos und erstellt eine herunterladbare Medienliste.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">Bilder</span>
+                        <span class="mini-tag">SD/HD/1080p</span>
+                        <span class="mini-tag">Metadaten</span>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
+                        <img src="/assets/resized/feat-generate-list_1280x800.jpg" alt="GrokMediaDownloader intelligente Listenerstellung – scannt automatisch Grok-AI-Favoriten und lädt Bilder und Videos im Batch herunter" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
+                            <i data-lucide="image" class="w-8 h-8 mb-2 text-blue-500/30"></i>
+                            <p class="text-xs">feat-generate-list.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Date Filter -->
+                <div class="feat-card-border feat-border-purple bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/10 group flex flex-col">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors">
+                        <i data-lucide="calendar-clock" class="text-purple-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_2_title">Datums- & Verlaufsfilter (PRO)</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_2_desc">Nur die Werke von heute? Lege mit dem Date Filter einen Zeitraum fest. Der Verlauf wird automatisch geprüft, um doppelte Downloads zu vermeiden.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">Zeitraum</span>
+                        <span class="mini-tag">Verlauf</span>
+                        <span class="mini-tag">Duplikate</span>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
+                        <img src="/assets/resized/feat-date-filter_1280x800.jpg" alt="GrokMediaDownloader Datums- und Verlaufsfilter – Zeitraum wählen und doppelte Downloads automatisch vermeiden" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
+                            <i data-lucide="image" class="w-8 h-8 mb-2 text-purple-500/30"></i>
+                            <p class="text-xs">feat-date-filter.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Export/Import Data -->
+                <div class="feat-card-border feat-border-blue-cyan bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition-all hover:shadow-lg hover:shadow-blue-500/10 group flex flex-col">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
+                        <i data-lucide="database" class="text-blue-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_3_title">Datenverwaltung & Backup (PRO)</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_3_desc">Kein Verlust des Verlaufs beim Computerwechsel. Mit Export/Import Data sicherst oder überträgst du deine Datenbank ganz einfach.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">Export</span>
+                        <span class="mini-tag">Import</span>
+                        <span class="mini-tag">Backup</span>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
+                        <img src="/assets/resized/feat-export-import_1280x800.jpg" alt="GrokMediaDownloader Datenexport und -import – Download-Verlauf sichern und zwischen Geräten übertragen" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
+                            <i data-lucide="image" class="w-8 h-8 mb-2 text-blue-500/30"></i>
+                            <p class="text-xs">feat-export-import.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4: HD Upgrade -->
+                <div class="feat-card-border feat-border-purple-pink bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all hover:shadow-lg hover:shadow-cyan-500/10 group flex flex-col">
+                    <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-cyan-500/20 transition-colors">
+                        <i data-lucide="monitor-up" class="text-cyan-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_5_title">HD-Video-Upgrade (PRO)</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_5_desc">Scanne deine Favoriten oder deine ganze Bibliothek, sieh die Aufteilung in SD / HD-720p / 1080p und upgrade Stufe für Stufe über die Grok-API.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">Auto-Scan</span>
+                        <span class="mini-tag">Zeitfilter</span>
+                        <span class="mini-tag">SD → HD → 1080p</span>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
+                        <img src="/assets/resized/feat-hd-upgrade_1280x800.jpg" alt="GrokMediaDownloader HD-Video-Upgrade – favorisierte Videos automatisch scannen und von SD auf 720p HD upgraden" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
+                            <i data-lucide="image" class="w-8 h-8 mb-2 text-cyan-500/30"></i>
+                            <p class="text-xs">feat-hd-upgrade.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5: Stream Capture -->
+                <div class="feat-card-border feat-border-green bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/10 group flex flex-col">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/20 transition-colors">
+                        <i data-lucide="camera" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_6_title">Stream Capture (PRO)</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_6_desc">Erfasst von Grok generierte Bilder in Echtzeit per DOM-Observer. Neue Bilder landen beim Scrollen automatisch in der Warteschlange.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">DOM-Observer</span>
+                        <span class="mini-tag">Auto-Warteschlange</span>
+                        <span class="mini-tag">Batch-DL</span>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-900 aspect-video flex items-center justify-center mt-4">
+                        <img src="/assets/resized/feat-stream-capture_1280x800.jpg" alt="GrokMediaDownloader Stream Capture – Grok-AI-Bilder beim Scrollen in Echtzeit automatisch erfassen" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
+                            <i data-lucide="image" class="w-8 h-8 mb-2 text-emerald-500/30"></i>
+                            <p class="text-xs">feat-stream-capture.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 6: Story Mode -->
+                <div class="feat-card-border feat-border-orange bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-purple-500/50 transition-all hover:shadow-lg hover:shadow-purple-500/10 group flex flex-col">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors">
+                        <i data-lucide="clapperboard" class="text-purple-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_7_title">Story Mode Helper (PRO)</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_7_desc">Neues Videostudio! Storyboard-Management, Frame-Extraktion, Senden an Grok für Fortsetzungen und lokale FFmpeg-Zusammenführung.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">Zusammenführen</span>
+                        <span class="mini-tag">Storyboard</span>
+                        <span class="mini-tag">FFmpeg</span>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-purple-500/20 bg-slate-900 aspect-video flex items-center justify-center mt-4">
+                        <img src="/assets/resized/feat-story-mode_1280x800.jpg" alt="GrokMediaDownloader Story Mode – visueller Storyboard-Editor mit Frame-Extraktion und FFmpeg-Videozusammenführung" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
+                            <i data-lucide="image" class="w-8 h-8 mb-2 text-purple-500/30"></i>
+                            <p class="text-xs">feat-story-mode.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 7: Video Gen Queue (v2.2) -->
+                <div class="feat-card-border feat-border-green bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all hover:shadow-lg hover:shadow-pink-500/10 group flex flex-col">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-pink-500/30 transition-colors">
+                        <i data-lucide="list-video" class="text-pink-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_8_title">Video Gen Queue (PRO)</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_8_desc">Automatisierte Warteschlange für Videogenerierung! Batch-Hinzufügen, 4 Generierungsmodi, automatische Wiederholung, Rate-Limit-Erkennung. Free: 50 Nutzungen, PRO: unbegrenzt.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">Auto-Wiederholung</span>
+                        <span class="mini-tag">Batch-Hinzufügen</span>
+                        <span class="mini-tag">4 Modi</span>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-pink-500/20 bg-slate-900 aspect-video flex items-center justify-center mt-4">
+                        <img src="/assets/resized/feat-video-gen-queue_1280x800.jpg" alt="GrokMediaDownloader Video Gen Queue – automatisierte Batch-Videogenerierung mit 4 Modi und automatischer Wiederholung" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
+                            <i data-lucide="image" class="w-8 h-8 mb-2 text-pink-500/30"></i>
+                            <p class="text-xs">feat-video-gen-queue.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 8: Project-Based Download (v2.2) -->
+                <div class="feat-card-border feat-border-cyan bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/10 group flex flex-col">
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
+                        <i data-lucide="folder-open" class="text-teal-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_9_title">Project-Based Download (PRO)</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_9_desc">Projektordner-Verwaltung! Scan vor dem Download mit Statistiken, automatisches Anlegen von Projektordnern nach Datum und Prompt für geordnete Dateien.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">Auto-Gruppierung</span>
+                        <span class="mini-tag">Metadaten-JSON</span>
+                    </div>
+                    <div class="relative rounded-lg overflow-hidden border border-teal-500/20 bg-slate-900 aspect-video flex items-center justify-center mt-4">
+                        <img src="/assets/resized/feat-project-download_1280x800.jpg" alt="GrokMediaDownloader Project Download – organisierte Projektordner mit Metadaten-Export als JSON" class="w-full h-full object-cover hidden" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
+                            <i data-lucide="image" class="w-8 h-8 mb-2 text-teal-500/30"></i>
+                            <p class="text-xs">feat-project-download.jpg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 9: Tag-Based Download (v2.3) -->
+                <div class="feat-card-border feat-border-green bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-amber-500/50 transition-all hover:shadow-lg hover:shadow-amber-500/10 group flex flex-col">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors">
+                        <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">Tag-basierter Download</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">Lade Medien nach Tag herunter. Groks Tag-Migration hat Inhalte sowohl im alten als auch im neuen Tag-Speicher hinterlassen. Deshalb liest v2.5.6 beide und führt sie zusammen – Tag-Listen und Tag-Inhalte sind die Vereinigung aus beiden, einschließlich der vollständigen Inhalte alter Tags und von Tags, die nur im alten System existieren. Auch Tag-Downloads nutzen jetzt Prompt-basierte Dateinamen. Dateien landen unter tags/{tagName}/.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">Tag-Ordner</span>
+                        <span class="mini-tag">Eigener Verlauf</span>
+                    </div>
+                </div>
+
+                <!-- Feature 10: Custom Filename Templates (v2.3) -->
+                <div class="feat-card-border feat-border-purple bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-violet-500/50 transition-all hover:shadow-lg hover:shadow-violet-500/10 group flex flex-col">
+                    <div class="w-12 h-12 bg-violet-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-violet-500/30 transition-colors">
+                        <i data-lucide="file-text" class="text-violet-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_11_title">Eigene Dateinamen-Vorlagen</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_11_desc">Drei Dateinamen-Modi: Grok Native, Prompt Based oder komplett eigene Vorlagen mit Platzhaltern wie {date}, {prompt}, {quality}. Benenne deine Downloads, wie du willst. Wechselst du zu einem Modus, der Prompts nutzt, bittet dich das Popup einmal, die Liste neu zu generieren – ein dauerhafter Prompt-Cache hält das schnell.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">3 Modi</span>
+                        <span class="mini-tag">Eigene Platzhalter</span>
+                    </div>
+                </div>
+
+                <!-- Feature 11: Whole Library Download (NEW v2.5) -->
+                <div class="feat-card-border feat-border-green bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-8 rounded-2xl border border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 flex gap-1"><span class="bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEU</span><span class="bg-white/90 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded" data-i18n="feat_12_free">GRATIS</span></div>
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-colors">
+                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">Whole Library Download</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">Lade jedes generierte Bild und Video herunter – nicht nur Favoriten. Die Dateien werden in einen Ordner pro Unterhaltung gruppiert und nach dem Prompt benannt, der sie tatsächlich erzeugt hat, mit eigenem, unabhängigem Download-Verlauf. Free deckt die letzten 7 Tage ab, PRO hebt das Limit auf.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">Nach Unterhaltung</span>
+                        <span class="mini-tag">Prompt-Namen</span>
+                        <span class="mini-tag">Free: 7 Tage</span>
+                    </div>
+                    <a href="/de/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
+                        <span data-i18n="feat_12_link">Mehr erfahren</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- Feature 12: 1080p Upgrade (NEW v2.5) -->
+                <div class="feat-card-border feat-border-cyan bg-gradient-to-br from-teal-900/50 to-cyan-900/50 p-8 rounded-2xl border border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/20 group relative overflow-hidden flex flex-col">
+                    <div class="absolute top-3 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEU</div>
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
+                        <i data-lucide="gem" class="text-teal-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_13_title">1080p-Video-Upgrade (PRO)</h3>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_13_desc">1080p ist jetzt eine eigene Qualitätsstufe. Downloads nutzen die beste verfügbare Qualität, und Upgrades erfolgen Schritt für Schritt: SD → HD, dann 720p/HD → 1080p. 1080p erfordert SuperGrok Heavy und eine ausdrückliche Aktivierung.</p>
+                    <div class="flex flex-wrap gap-1.5 mt-3">
+                        <span class="mini-tag">3 Qualitätsstufen</span>
+                        <span class="mini-tag">Nur per Opt-in</span>
+                        <span class="mini-tag">Scan der ganzen Bibliothek</span>
+                    </div>
+                    <a href="/de/library-download.html" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-teal-300 hover:text-teal-200 transition-colors">
+                        <span data-i18n="feat_13_link">Mehr erfahren</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stream Capture Video Demo Section -->
+    <section id="stream-capture-demo" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Text Content -->
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-4">
+                    <i data-lucide="camera" class="w-3 h-3"></i>
+                    <span data-i18n="stream_demo_badge">PRO-Funktion</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_demo_title">Stream Capture</h2>
+                <p class="text-slate-400 mb-6 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_demo_desc">Echtzeit-Überwachung von Grok-generierten Bildern. Automatische Erfassung beim Scrollen. Verpasse keine Inspiration mehr und lade alles im Batch lokal herunter.</p>
+                <div class="flex flex-wrap justify-center gap-6 text-slate-300">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
+                        <span data-i18n="stream_demo_feat_1">DOM-Listening-Technologie, sofortige Erfassung</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
+                        <span data-i18n="stream_demo_feat_2">Auto-Warteschlange, sammeln beim Scrollen</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400 flex-shrink-0"></i>
+                        <span data-i18n="stream_demo_feat_3">Batch-Download für mehr Effizienz</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Demo Area -->
+            <div class="relative">
+                <div class="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full"></div>
+                <div class="relative rounded-2xl overflow-hidden border border-emerald-500/30 shadow-2xl shadow-emerald-500/10">
+                    <video
+                        class="w-full aspect-video bg-slate-900"
+                        autoplay muted loop playsinline
+                        poster="/assets/resized/stream-capture-poster_1280x800.jpg"
+                    >
+                        <source src="/assets/stream-capture-demo.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <p class="text-center text-slate-500 text-sm mt-4" data-i18n="stream_demo_caption">* Zeigt die Echtzeit-Erfassung und den Batch-Download-Workflow von Stream Capture</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section id="pain-points" class="py-24 bg-slate-950 relative border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span data-i18n="pain_title_1">Eine riesige Grok-Bibliothek verwalten</span><br>
+                    <span class="text-pink-500" data-i18n="pain_title_2">– eine Qual?</span>
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="pain_desc">Wenn deine Grok-Sammlung von Hunderten auf Tausende Dateien wächst, werden diese Probleme immer größer.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-red-500/20 relative overflow-hidden">
+                    <div class="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="clock" class="text-red-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="pain_1_title">Manuelles Archivieren ist langsam</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="pain_1_desc">Bei Hunderten oder Tausenden Bildern ist es praktisch unmöglich, jedes einzeln zu speichern.</p>
+                </div>
+
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-orange-500/20 relative overflow-hidden">
+                    <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="shield-alert" class="text-orange-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="pain_2_title">Unvollständige Bereinigung der Privatsphäre</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="pain_2_desc">Ein entferntes Like löscht den Post auf Grok nicht wirklich. Deine Werke bleiben womöglich weiterhin auf der Plattform.</p>
+                </div>
+
+                <div class="bg-slate-900/50 p-6 rounded-2xl border border-yellow-500/20 relative overflow-hidden">
+                    <div class="w-12 h-12 bg-yellow-500/10 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="film" class="text-yellow-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="pain_3_title">Video-Storys zu erstellen ist kompliziert</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="pain_3_desc">Du willst mehrere Grok-Videos zu einer Story verketten? Ohne professionelle Tools nahezu unmöglich.</p>
+                </div>
+            </div>
+
+            <!-- Solution Arrow -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-green-300 text-sm font-semibold">
+                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    <span data-i18n="pain_solution_intro">GrokMediaDownloader bietet eine Komplettlösung</span>
+                    <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                </div>
+            </div>
+
+            <!-- Solutions -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/5 p-6 rounded-2xl border border-green-500/30">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="folder-down" class="text-green-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="solution_1_title">Lokale Massenarchivierung</h3>
+                    <p class="text-slate-300 text-sm" data-i18n="solution_1_desc">Stream Capture sorgt dafür, dass jedes Bild zwischengespeichert und per Klick für den Massen-Download bereit ist.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/5 p-6 rounded-2xl border border-green-500/30">
+                    <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="trash-2" class="text-green-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="solution_2_title">Echtes Massenlöschen</h3>
+                    <p class="text-slate-300 text-sm" data-i18n="solution_2_desc">Die Erweiterung bietet an, die eigentlichen Posts auf Grok zu löschen – statt sie nur aus den Favoriten zu entfernen.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/5 p-6 rounded-2xl border border-purple-500/30">
+                    <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="clapperboard" class="text-purple-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-white" data-i18n="solution_3_title">Volle Video-Automatisierung</h3>
+                    <p class="text-slate-300 text-sm" data-i18n="solution_3_desc">v2.2 Video Gen Queue für automatische Planung, Story Mode zum Bearbeiten & Zusammenführen, Project Download für geordnete Verwaltung – alles in einem.</p>
+                </div>
+            </div>
+
+            <!-- Performance Note -->
+            <div class="mt-12 text-center">
+                <div class="inline-flex items-center gap-3 bg-slate-900 border border-slate-700 rounded-xl px-6 py-4">
+                    <i data-lucide="zap" class="text-yellow-400 w-5 h-5"></i>
+                    <p class="text-slate-300 text-sm">
+                        <span class="font-bold text-white" data-i18n="perf_note_title">Großes Update v2.2:</span>
+                        <span data-i18n="perf_note_desc">Video Gen Queue mit automatischer Planung, Project-Based Download, 4 Generierungsmodi, Systemprotokollierung.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-3" data-i18n="testimonials_title">Beliebt bei Grok-Kreativen</h2>
+                <p class="text-slate-400" data-i18n="testimonials_subtitle">Echte Bewertungen von Nutzern im Chrome Web Store</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 hover:border-pink-500/20 transition-colors">
+                    <div class="flex items-center gap-1 mb-3">
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4" data-i18n="testimonial_1_body">„Die Pro-Version ist ein Gamechanger – und das auf Lebenszeit. Kein Abo, keine wiederkehrenden Gebühren. Einfach purer Mehrwert. Danke!“</p>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold">J</div>
+                        <div>
+                            <p class="text-white text-sm font-semibold">Jerome</p>
+                            <p class="text-slate-500 text-xs" data-i18n="testimonial_source">Chrome Web Store</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 hover:border-pink-500/20 transition-colors">
+                    <div class="flex items-center gap-1 mb-3">
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4" data-i18n="testimonial_2_body">„Die Gratisversion ist gut, aber Pro ist die $5 locker wert. Jede andere Erweiterung verlangt heutzutage ein Abo, da weiß man eine Lizenz auf Lebenszeit wirklich zu schätzen.“</p>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white text-xs font-bold">T</div>
+                        <div>
+                            <p class="text-white text-sm font-semibold">Tamas</p>
+                            <p class="text-slate-500 text-xs" data-i18n="testimonial_source">Chrome Web Store</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 hover:border-pink-500/20 transition-colors">
+                    <div class="flex items-center gap-1 mb-3">
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4" data-i18n="testimonial_3_body">„Diese Erweiterung ist ein Gamechanger und mit Abstand das beste Tool für Grok-Nutzer. Massen-Download und HD-Upgrade sparen mir jede Woche Stunden.“</p>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center text-white text-xs font-bold">L</div>
+                        <div>
+                            <p class="text-white text-sm font-semibold">lipo dipo</p>
+                            <p class="text-slate-500 text-xs" data-i18n="testimonial_source">Chrome Web Store</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="about_title">Entwickelt von Kario Studio</h2>
+            <p class="text-pink-400 text-sm font-medium mb-4" data-i18n="about_tagline">Tools für die Ära der KI-Kreativität</p>
+            <p class="text-slate-400 text-sm md:text-base max-w-2xl mx-auto mb-6" data-i18n="about_desc">Wir bauen präzise Tools, die die Lücke zwischen KI-Erstellung und Verbreitung schließen. Jedes Produkt, das wir veröffentlichen, beseitigt einen echten Reibungspunkt – nicht mit aufgeblähten Plattformen, sondern mit fokussierten Tools, die eine Sache außergewöhnlich gut machen.</p>
+            <div class="flex items-center justify-center gap-6 text-sm text-slate-400">
+                <a href="https://www.kario-studio.com" target="_blank" rel="noopener" class="hover:text-pink-400 transition-colors flex items-center gap-1.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>kario-studio.com </a>
+                <a href="mailto:support@kario-studio.com" class="hover:text-pink-400 transition-colors flex items-center gap-1.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> support@kario-studio.com </a>
+                <a href="https://github.com/tomsonlee150" target="_blank" rel="noopener" class="hover:text-pink-400 transition-colors flex items-center gap-1.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> GitHub </a>
+                <a href="https://x.com/Leelin15534" target="_blank" rel="noopener" class="hover:text-pink-400 transition-colors flex items-center gap-1.5">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="price_title">Volle Produktivität freischalten</h2>
+            <p class="text-slate-400 mb-8" data-i18n="price_desc">PRO-Funktionen für Vielnutzer.</p>
+
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span data-i18n="hero_cta_chrome">Zu Chrome hinzufügen</span>
+                </a>
+
+                <a href="/de/pricing.html" class="px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span data-i18n="price_pro_button">$4.99 PRO auf Lebenszeit</span>
+                </a>
+            </div>
+
+            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">✨ Inklusive aller zukünftigen Updates</p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/de/privacy.html" class="hover:text-white">Datenschutzerklärung</a> · <a href="/de/terms.html" class="hover:text-white">Nutzungsbedingungen</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot;<a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></div></footer></div>
+
+    <!-- Scripts -->
+    <script src="/js/i18n.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>

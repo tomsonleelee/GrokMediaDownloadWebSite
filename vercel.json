@@ -5,7 +5,7 @@
       "destination": "/success.html"
     },
     {
-      "source": "/:lang(zh-TW|ja|ko)/success",
+      "source": "/:lang(zh-TW|ja|ko|es|de)/success",
       "destination": "/:lang/success.html"
     },
     {
@@ -13,7 +13,7 @@
       "destination": "/pricing.html"
     },
     {
-      "source": "/:lang(zh-TW|ja|ko)/pricing",
+      "source": "/:lang(zh-TW|ja|ko|es|de)/pricing",
       "destination": "/:lang/pricing.html"
     }
   ],
@@ -46,6 +46,16 @@
     {
       "source": "/ko/index.html",
       "destination": "/ko/",
+      "permanent": true
+    },
+    {
+      "source": "/es/index.html",
+      "destination": "/es/",
+      "permanent": true
+    },
+    {
+      "source": "/de/index.html",
+      "destination": "/de/",
       "permanent": true
     },
     {

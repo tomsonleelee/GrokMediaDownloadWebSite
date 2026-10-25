@@ -411,6 +411,8 @@ function getLangFromPath() {
     if (p.startsWith('/zh-TW/') || p === '/zh-TW') return 'zh-TW';
     if (p.startsWith('/ja/') || p === '/ja') return 'ja';
     if (p.startsWith('/ko/') || p === '/ko') return 'ko';
+    if (p.startsWith('/es/') || p === '/es') return 'es';
+    if (p.startsWith('/de/') || p === '/de') return 'de';
     return 'en';
 }
 

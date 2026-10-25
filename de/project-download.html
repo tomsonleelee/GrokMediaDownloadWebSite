@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-Based Download | Geordnete Medienverwaltung - GrokMediaDownloader</title>
+    <meta name="description" content="Project-Based Download sortiert deine Grok-Medien in strukturierte Projektordner. Scan vor dem Download mit Statistiken, automatische Gruppierung nach Datum und Prompt, Metadaten-Export als JSON. Neu in v2.2.">
+    <meta name="keywords" content="Project Download, Grok Medien organisieren, Batch-Dateiverwaltung, Projektordner, Metadaten-Export, Grok Download-Manager, Chrome-Erweiterung">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/de/project-download.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/project-download.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/project-download.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/project-download.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/project-download.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/project-download.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/project-download.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/project-download.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/de/project-download.html">
+    <meta property="og:title" content="Project-Based Download | Geordnete Medienverwaltung">
+    <meta property="og:description" content="Neue Funktion in v2.2! Scan vor dem Download, automatische Gruppierung nach Datum und Prompt, strukturierte Projektordner mit Metadaten-Export als JSON.">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-project-download.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="es_ES">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Project-Based Download | GrokMediaDownloader v2.2">
+    <meta name="twitter:description" content="Geordnete Medienverwaltung – Scan vor dem Download, intelligente Auto-Gruppierung, strukturierte Projektordner, Metadaten-Export als JSON.">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-project-download.jpg">
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://grokmedia.kario-studio.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project-Based Download",
+          "item": "https://grokmedia.kario-studio.com/de/project-download.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist Project Download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project Download ist eine PRO-Funktion, mit der du alle Medien eines ganzen Grok-Projekts in einem Vorgang herunterlädst. Ein Grok-Projekt ist eine Sammlung zusammengehöriger Unterhaltungen, generierter Bilder und Videos, die in deinem Grok-Workspace gruppiert sind."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche Inhalte umfasst ein Projekt-Download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ein Projekt-Download umfasst alle Bilder und Videos, die in diesem Projekt generiert wurden. Die Dateien werden nach Unterhaltung oder Generierungs-Batch sortiert, sodass sich die Struktur deines Grok-Projekts im heruntergeladenen Ordner widerspiegelt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Behält Project Download die ursprünglichen Dateinamen bei?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Project Download übernimmt, wo verfügbar, die ursprünglichen Dateinamen von Grok. Sind keine Originalnamen verfügbar, werden die Dateien systematisch nach Projektname, Generierungsdatum und fortlaufender Nummer benannt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert, wenn ein Download unterbrochen wird?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project Download speichert den Fortschritt lokal. Wird ein Download durch einen Netzwerkfehler oder das Schließen des Browsers unterbrochen, kannst du ihn fortsetzen, indem du die Erweiterung auf derselben Projektseite erneut öffnest. Bereits heruntergeladene Dateien werden übersprungen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ist Project Download in der kostenlosen Version verfügbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project Download ist exklusiv für PRO. Upgrade für $4.99 (Lizenz auf Lebenszeit) auf GrokMediaDownloader PRO, um Project Download zusammen mit Stream Capture, Video Gen Queue und Story Mode freizuschalten."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #F59E0B 0%, #EC4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(245, 158, 11, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Zum Hauptinhalt springen</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/de/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/de/" class="text-sm text-slate-300 hover:text-white">Startseite</a><a href="/de/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/de/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/de/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/de/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/de/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/de/pricing.html" class="text-sm text-slate-300 hover:text-white">Preise</a><a href="/de/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                    <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                    <span data-i18n="project_badge">v2.2 NEUE FUNKTION</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    <span class="gradient-text" data-i18n="project_title">Project-Based Download</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-amber-300 mb-4" data-i18n="project_subtitle">Geordnete Medienverwaltung</p>
+
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="project_desc">Schluss mit dem Chaos unsortierter Downloads. Project-Based Download scannt deine Grok-Medien vorab, zeigt detaillierte Statistiken und legt automatisch strukturierte Projektordner an, gruppiert nach Datum und Prompt.</p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                        <span data-i18n="hero_cta_chrome">Zu Chrome hinzufügen</span>
+                    </a>
+
+                    <button onclick="openCheckout()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                        <span data-i18n="price_pro_button">$4.99 PRO auf Lebenszeit</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section class="py-16 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="project_video_title">Project Download in Aktion</h2>
+                <p class="text-slate-400" data-i18n="project_video_desc">Medien scannen → Statistik prüfen → Projekt anlegen → Geordnet herunterladen</p>
+            </div>
+
+            <!-- Video Container -->
+            <div class="relative rounded-2xl overflow-hidden border border-amber-500/30 shadow-2xl shadow-amber-500/10">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none z-10"></div>
+
+                <video
+                    class="w-full aspect-video bg-slate-900"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                >
+                    <source src="/assets/project-download-demo.mp4" type="video/mp4">
+                    <div class="w-full aspect-video bg-slate-900 flex items-center justify-center">
+                        <p class="text-slate-400">Dein Browser unterstützt keine Videowiedergabe.</p>
+                    </div>
+                </video>
+
+                <button
+                    onclick="toggleVideo(this)"
+                    class="absolute bottom-4 right-4 z-20 w-10 h-10 bg-slate-900/80 hover:bg-slate-800 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 hover:opacity-100 focus:opacity-100"
+                    aria-label="Videowiedergabe umschalten"
+                >
+                    <i data-lucide="pause" class="w-5 h-5 text-white video-pause-icon"></i>
+                    <i data-lucide="play" class="w-5 h-5 text-white video-play-icon hidden"></i>
+                </button>
+            </div>
+
+            <p class="text-center text-slate-500 text-sm mt-4" data-i18n="project_video_caption">* Das Video zeigt den Workflow von Project-Based Download</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleVideo(button) {
+            const video = button.closest('section').querySelector('video');
+            const pauseIcon = button.querySelector('.video-pause-icon');
+            const playIcon = button.querySelector('.video-play-icon');
+
+            if (video.paused) {
+                video.play();
+                pauseIcon.classList.remove('hidden');
+                playIcon.classList.add('hidden');
+            } else {
+                video.pause();
+                pauseIcon.classList.add('hidden');
+                playIcon.classList.remove('hidden');
+            }
+        }
+    </script>
+
+    <!-- Core Features -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="project_core_title">Kernfunktionen</h2>
+                <p class="text-slate-400" data-i18n="project_core_desc">Project-Based Download bietet einen kompletten Workflow für geordnete Downloads</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-amber-500/30 hover:border-amber-500/60 transition-all">
+                    <div class="w-14 h-14 bg-amber-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="scan-search" class="text-amber-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="project_feat_1_title">Scan vor dem Download</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="project_feat_1_desc">Scanne deine Grok-Favoriten vor dem Download. Sieh die Gesamtzahl der Bilder, SD-Videos und HD-Videos mit detaillierter Aufschlüsselung.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-orange-500/30 hover:border-orange-500/60 transition-all">
+                    <div class="w-14 h-14 bg-orange-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="folder-tree" class="text-orange-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="project_feat_2_title">Intelligente Auto-Gruppierung</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="project_feat_2_desc">Sortiert Dateien automatisch nach Erstellungsdatum und Generierungs-Prompt in Projektordner. Kein manuelles Sortieren nötig.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-emerald-500/30 hover:border-emerald-500/60 transition-all">
+                    <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="file-json" class="text-emerald-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="project_feat_3_title">Metadaten-Export als JSON</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="project_feat_3_desc">Jedes Projekt enthält eine metadata.json mit Generierungs-Prompts, Zeitstempeln und Dateidetails zum späteren Nachschlagen.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-blue-500/30 hover:border-blue-500/60 transition-all">
+                    <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <i data-lucide="bar-chart-3" class="text-blue-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="project_feat_4_title">Download-Statistik</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="project_feat_4_desc">Verfolge den Download-Fortschritt mit Echtzeit-Statistiken. Abgeschlossene, fehlgeschlagene und verbleibende Einträge auf einen Blick.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="project_step_title">So funktioniert Project Download</h2>
+                <p class="text-slate-400">Vier einfache Schritte, um deine gesamte Grok-Bibliothek zu ordnen und herunterzuladen</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-amber-600/30">1</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="scan-search" class="text-amber-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_1_title">Medien scannen</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_1_desc">Klicke auf „Scan“, um deine Grok-Favoriten zu analysieren. Die Erweiterung zählt alle Bilder und Videos, die zum Download verfügbar sind.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-600/30">2</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="settings-2" class="text-orange-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_2_title">Prüfen & konfigurieren</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_2_desc">Prüfe die Scan-Ergebnisse mit Anzahl der Bilder, Anzahl der Videos und geschätzter Download-Größe. Wähle aus, was enthalten sein soll.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-emerald-600/30">3</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="folder-plus" class="text-emerald-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_3_title">Projekt anlegen</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_3_desc">Gib deinem Projekt einen Namen. Die Dateien werden automatisch in Ordner nach Datum (z. B. 2024-03-15/) mit Prompt-basierten Unterordnern sortiert.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-600/30">4</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="download" class="text-blue-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_4_title">Alles herunterladen</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_4_desc">Starte den Batch-Download. Die Dateien werden in geordneten Projektordnern gespeichert, mit einer metadata.json für jede Gruppe.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Technical Info -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Technische Highlights</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="folder-tree" class="text-amber-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Hierarchische Ordnerstruktur</h4>
+                                <p class="text-slate-400 text-sm">Legt verschachtelte Ordner an: Projektname / Datum / Prompt-Gruppe – so bleiben auch Tausende Dateien perfekt geordnet.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="file-code" class="text-pink-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Metadaten bleiben erhalten</h4>
+                                <p class="text-slate-400 text-sm">Jede Download-Gruppe enthält eine JSON-Datei mit dem ursprünglichen Grok-Prompt, Zeitstempeln und Prüfsummen der Dateien.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="gauge" class="text-blue-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Parallele Downloads</h4>
+                                <p class="text-slate-400 text-sm">Nutzt die Download-API von Chrome mit intelligenter Parallelitätssteuerung für maximale Geschwindigkeit, ohne den Browser zu überlasten.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield-check" class="text-emerald-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Fortsetzen möglich</h4>
+                                <p class="text-slate-400 text-sm">Wird ein Download unterbrochen, speichert die Erweiterung den Fortschritt und kann dort weitermachen, wo sie aufgehört hat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Mockup -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-500/10 blur-3xl rounded-full"></div>
+                    <div class="relative bg-slate-900 rounded-2xl border border-amber-500/30 p-6 shadow-2xl">
+                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-slate-800">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="ml-2 text-slate-500 text-sm">Project Download v2.2</span>
+                        </div>
+
+                        <!-- Header -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg">📂</span>
+                                <span class="text-lg font-bold text-white">Project Download</span>
+                            </div>
+                            <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full font-semibold">v2.2</span>
+                        </div>
+
+                        <!-- Scan Results -->
+                        <div class="mb-4 p-4 bg-slate-800/50 rounded-lg space-y-2">
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">Scan-Ergebnisse</div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">🖼️ Bilder</span>
+                                <span class="text-white font-bold">342</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">🎬 SD-Videos</span>
+                                <span class="text-white font-bold">156</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">✨ HD-Videos</span>
+                                <span class="text-white font-bold">89</span>
+                            </div>
+                            <div class="border-t border-slate-700 pt-2 mt-2 flex items-center justify-between text-sm">
+                                <span class="text-slate-300">📊 Gesamt</span>
+                                <span class="text-amber-300 font-bold">587 Dateien</span>
+                            </div>
+                        </div>
+
+                        <!-- Project Name Input -->
+                        <div class="mb-4">
+                            <label class="text-xs text-slate-400 mb-1 block">Projektname</label>
+                            <input type="text" value="my-grok-project" readonly class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                        </div>
+
+                        <!-- Folder Preview -->
+                        <div class="mb-4 p-3 bg-slate-800/50 rounded-lg">
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">Ordnervorschau</div>
+                            <div class="text-sm font-mono space-y-1">
+                                <div class="text-amber-300">📁 my-grok-project/</div>
+                                <div class="text-slate-300 pl-4">📁 2024-03-15/</div>
+                                <div class="text-slate-400 pl-8">📁 cyberpunk-city/</div>
+                                <div class="text-slate-400 pl-8">📁 ocean-sunset/</div>
+                                <div class="text-slate-300 pl-4">📁 2024-03-14/</div>
+                            </div>
+                        </div>
+
+                        <!-- Action Button -->
+                        <button class="w-full bg-amber-600 text-white font-bold py-3 rounded-lg text-sm flex items-center justify-center gap-2">
+                            <i data-lucide="download" class="w-4 h-4"></i>Download starten (587 Dateien)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Folder Structure Preview — unique to Project Download -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 bg-amber-500/10 text-amber-400 rounded-full text-sm font-semibold mb-4" data-i18n="project_folder_badge">Geordnete Ausgabe</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="project_folder_title">Vorschau der Ordnerstruktur</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="project_folder_subtitle">Jeder Download wird in strukturierte Projektordner sortiert. Quellbilder, generierte Videos und Metadaten werden automatisch zusammen gruppiert.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
+                <!-- Left: Folder tree -->
+                <div class="bg-slate-900 rounded-2xl border border-amber-500/20 p-6 shadow-2xl">
+                    <div class="flex items-center gap-3 mb-5 pb-4 border-b border-slate-800">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="ml-2 text-slate-500 text-sm font-mono">~/Downloads</span>
+                    </div>
+                    <div class="font-mono text-sm space-y-1.5">
+                        <div class="text-amber-300 font-bold">grok_downloads/projects/</div>
+                        <div class="text-slate-300 pl-4 flex items-center gap-2">
+                            <i data-lucide="folder" class="text-amber-400 w-4 h-4 flex-shrink-0"></i>
+                            <span>20260123_a_girl_slapped_a_boy/</span>
+                        </div>
+                        <div class="text-slate-400 pl-10 flex items-center gap-2">
+                            <i data-lucide="image" class="text-blue-400 w-3.5 h-3.5 flex-shrink-0"></i>
+                            <span>source.png</span>
+                            <span class="text-slate-600 text-xs ml-auto"># Originalbild</span>
+                        </div>
+                        <div class="text-slate-400 pl-10 flex items-center gap-2">
+                            <i data-lucide="video" class="text-purple-400 w-3.5 h-3.5 flex-shrink-0"></i>
+                            <span>video_01_sd.mp4</span>
+                            <span class="text-slate-600 text-xs ml-auto"># SD-Video</span>
+                        </div>
+                        <div class="text-slate-400 pl-10 flex items-center gap-2">
+                            <i data-lucide="video" class="text-pink-400 w-3.5 h-3.5 flex-shrink-0"></i>
+                            <span>video_01_hd.mp4</span>
+                            <span class="text-slate-600 text-xs ml-auto"># HD-Video</span>
+                        </div>
+                        <div class="text-slate-400 pl-10 flex items-center gap-2">
+                            <i data-lucide="file-code" class="text-emerald-400 w-3.5 h-3.5 flex-shrink-0"></i>
+                            <span>metadata.json</span>
+                            <span class="text-slate-600 text-xs ml-auto"># Prompts & Infos</span>
+                        </div>
+                        <div class="text-slate-500 pl-4 mt-2 pt-2 border-t border-slate-800/50 flex items-center gap-2">
+                            <i data-lucide="folder" class="text-amber-400/60 w-4 h-4 flex-shrink-0"></i>
+                            <span>20260120_a_teddy_bear/</span>
+                        </div>
+                        <div class="text-slate-500 pl-10 flex items-center gap-2">
+                            <i data-lucide="video" class="text-purple-400/60 w-3.5 h-3.5 flex-shrink-0"></i>
+                            <span>video_sd.mp4</span>
+                            <span class="text-slate-600 text-xs ml-auto"># Text-zu-Video</span>
+                        </div>
+                        <div class="text-slate-500 pl-10 flex items-center gap-2">
+                            <i data-lucide="file-code" class="text-emerald-400/60 w-3.5 h-3.5 flex-shrink-0"></i>
+                            <span>metadata.json</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Explanation -->
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-amber-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="folder-tree" class="text-amber-400 w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1" data-i18n="project_folder_naming_title">Benennung nach Datum + Prompt</h4>
+                            <p class="text-slate-400 text-sm" data-i18n="project_folder_naming_desc">Ordner werden im Format {date}_{prompt} benannt, sodass du jedes Projekt leicht über das Erstellungsdatum oder den Inhalt findest.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="layers" class="text-blue-400 w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1" data-i18n="project_folder_grouping_title">Quelle + Videos gruppiert</h4>
+                            <p class="text-slate-400 text-sm" data-i18n="project_folder_grouping_desc">Originale Quellbilder und alle generierten Videovarianten (SD, HD) liegen im selben Ordner – so weißt du immer, welches Bild welche Videos erzeugt hat.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="file-code" class="text-emerald-400 w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1" data-i18n="project_folder_metadata_title">Inklusive metadata.json</h4>
+                            <p class="text-slate-400 text-sm" data-i18n="project_folder_metadata_desc">Jeder Projektordner enthält eine JSON-Datei mit den vollständigen Daten der Grok-API: ursprüngliche Prompts, Generierungszeitpunkte, Prüfsummen der Dateien, userId und Modellparameter.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="video" class="text-purple-400 w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white mb-1" data-i18n="project_folder_text2vid_title">Text-zu-Video-Unterstützung</h4>
+                            <p class="text-slate-400 text-sm" data-i18n="project_folder_text2vid_desc">Projekte, die aus Text-Prompts generiert wurden (ohne Quellbild), werden sauber behandelt – der Ordner enthält dann nur die Videodateien und die Metadaten.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Häufig gestellte Fragen</h2>
+                <p class="text-slate-400">Alles, was du über Project Download wissen musst</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Was ist Project Download?</h3>
+                    <p class="text-slate-400">Project Download ist eine PRO-Funktion, mit der du alle Medien eines ganzen Grok-Projekts in einem Vorgang herunterlädst. Ein Grok-„Projekt“ ist eine Sammlung zusammengehöriger Unterhaltungen, generierter Bilder und Videos, die in deinem Grok-Workspace unter einem einzigen Projekt gruppiert sind. Statt Einträge einzeln herunterzuladen, holt Project Download alles auf einmal und ordnet es lokal.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Welche Inhalte umfasst ein Projekt-Download?</h3>
+                    <p class="text-slate-400">Ein Projekt-Download umfasst alle Bilder und Videos, die in diesem Projekt generiert wurden. Die Dateien werden nach Unterhaltung oder Generierungs-Batch sortiert, sodass sich die Struktur deines Grok-Projekts im heruntergeladenen Ordner widerspiegelt.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Wie starte ich einen Projekt-Download?</h3>
+                    <p class="text-slate-400">Öffne deine Grok-Projektseite, öffne die Erweiterung GrokMediaDownloader und klicke auf „Download Project“. Die Erweiterung scannt das Projekt nach allen Medien-Assets, zeigt dir eine Zusammenfassung und beginnt nach deiner Bestätigung mit dem Download.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Behält Project Download die ursprünglichen Dateinamen bei?</h3>
+                    <p class="text-slate-400">Ja. Project Download übernimmt, wo verfügbar, die ursprünglichen Dateinamen von Grok. Sind keine Originalnamen verfügbar, werden die Dateien systematisch nach Projektname, Generierungsdatum und fortlaufender Nummer benannt, damit jede Datei eindeutig identifizierbar ist.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Was passiert, wenn ein Download unterbrochen wird?</h3>
+                    <p class="text-slate-400">Project Download speichert den Fortschritt lokal. Wird ein Download unterbrochen – durch einen Netzwerkfehler oder das Schließen des Browsers –, kannst du ihn fortsetzen, indem du die Erweiterung auf derselben Projektseite erneut öffnest. Bereits heruntergeladene Dateien werden übersprungen, sodass nur die restlichen Dateien abgerufen werden.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Kann ich mehrere Grok-Projekte gleichzeitig herunterladen?</h3>
+                    <p class="text-slate-400">Derzeit verarbeitet Project Download jeweils ein Projekt. Du kannst den Download für ein Projekt starten, dann zu einer anderen Projektseite wechseln und einen weiteren Download starten. Jeder Download läuft unabhängig und blockiert die anderen nicht.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Ist Project Download in der kostenlosen Version verfügbar?</h3>
+                    <p class="text-slate-400">Project Download ist exklusiv für PRO. Upgrade für $4.99 (Lizenz auf Lebenszeit) auf GrokMediaDownloader PRO, um Project Download zusammen mit Stream Capture, Video Gen Queue und Story Mode freizuschalten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Organisiere deine Grok-Bibliothek wie ein Profi</h2>
+            <p class="text-slate-400 mb-8">Project-Based Download ist eine exklusive PRO-Funktion</p>
+
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span data-i18n="hero_cta_chrome">Zu Chrome hinzufügen</span>
+                </a>
+
+                <a href="/de/pricing.html" class="px-8 py-4 bg-gradient-to-r from-amber-600 to-pink-600 hover:from-amber-500 hover:to-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span data-i18n="price_pro_button">$4.99 PRO auf Lebenszeit</span>
+                </a>
+            </div>
+
+            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">✨ Inklusive aller zukünftigen Updates</p>
+            <div class="mt-8 pt-6 border-t border-slate-800">
+                <p class="text-slate-400 text-sm font-semibold mb-3">Weitere Funktionen entdecken</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="/de/story-mode.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Story Mode</a>
+                    <a href="/de/video-gen-queue.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Video Gen Queue</a>
+                    <a href="/de/stream-capture.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Stream Capture</a>
+                </div>
+            </div>
+            <div class="flex justify-center gap-3 mt-6">
+                <a href="https://twitter.com/intent/tweet?text=Organize%20Grok%20media%20into%20project%20folders&url=https://grokmedia.kario-studio.com/de/project-download.html?utm_source=twitter&utm_medium=social&utm_campaign=share" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <span>Auf X teilen</span>
+                </a>
+                <a href="https://www.reddit.com/submit?url=https://grokmedia.kario-studio.com/de/project-download.html?utm_source=reddit&utm_medium=social&utm_campaign=share&title=Project-Based%20Download%20-%20Organized%20Grok%20Media%20Management" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                    <span>Auf Reddit teilen</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/de/privacy.html" class="hover:text-white">Datenschutzerklärung</a> · <a href="/de/terms.html" class="hover:text-white">Nutzungsbedingungen</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot;<a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></div></footer></div>
+
+    <!-- Scripts -->
+<script src="/js/i18n.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>

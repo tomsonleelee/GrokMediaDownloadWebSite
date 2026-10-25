@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gen Queue | Cola automatizada de generación de video - GrokMediaDownloader</title>
+    <meta name="description" content="Automatiza la generación de videos en Grok con Video Gen Queue. Programación por lotes, 4 modos de generación, reintento automático y detección del límite de velocidad. Función PRO de GrokMediaDownloader.">
+    <meta name="keywords" content="Video Gen Queue, generación automática de video, cola por lotes, video Grok AI, extensión de Chrome, reintento automático, detección del límite de velocidad">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/es/video-gen-queue.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/video-gen-queue.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/video-gen-queue.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/video-gen-queue.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/video-gen-queue.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/video-gen-queue.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/video-gen-queue.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/video-gen-queue.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/es/video-gen-queue.html">
+    <meta property="og:title" content="Video Gen Queue | Cola automatizada de generación de video">
+    <meta property="og:description" content="¡Nueva función de la v2.2! Cola automatizada de generación de video, 4 modos de generación, reintento automático y detección del límite de velocidad.">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-video-gen-queue.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Video Gen Queue | GrokMediaDownloader v2.2">
+    <meta name="twitter:description" content="Cola automatizada de generación de video: 4 modos de generación, reintento automático y detección del límite de velocidad.">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-video-gen-queue.jpg">
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://grokmedia.kario-studio.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Video Gen Queue",
+          "item": "https://grokmedia.kario-studio.com/es/video-gen-queue.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es Video Gen Queue y cómo funciona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Video Gen Queue es una función PRO que registra automáticamente cada video que Grok genera durante tu sesión. A medida que Grok procesa tus solicitudes de generación, la extensión pone en cola cada video terminado para descargarlo en lote con un clic, así nunca tendrás que guardar los videos uno por uno."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo descargar varios videos de Grok a la vez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Ese es el propósito principal de Video Gen Queue. Una vez que los videos están en cola, haz clic en Download All para guardar todos los videos en tu disco local en una sola operación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En qué formato se descargan los videos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los videos se descargan en su formato original tal como los entrega Grok, normalmente MP4. La extensión descarga directamente el archivo de origen y conserva la resolución, la velocidad de fotogramas y la calidad originales sin recodificar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se pierde la cola si cierro el panel de la extensión?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Video Gen Queue se guarda en IndexedDB, que sobrevive a los cambios de pestaña y al cierre del panel de la extensión. Tus videos en cola siguen disponibles hasta que vacíes la cola manualmente o los descargues."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Video Gen Queue está disponible en la versión gratuita?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Video Gen Queue es una función exclusiva de PRO. Pásate a PRO por $4.99 (licencia vitalicia) para desbloquear Video Gen Queue junto con Stream Capture, Story Mode y Project Download."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #EC4899 0%, #F43F5E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(236, 72, 153, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+        Saltar al contenido principal
+    </a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/es/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/es/" class="text-sm text-slate-300 hover:text-white">Inicio</a><a href="/es/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/es/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/es/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/es/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/es/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/es/pricing.html" class="text-sm text-slate-300 hover:text-white">Precios</a><a href="/es/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                    <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+                    <span data-i18n="queue_badge">NUEVA FUNCIÓN v2.2</span>
+                </div>
+
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    <span class="gradient-text" data-i18n="queue_title">Video Gen Queue</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-pink-300 mb-4" data-i18n="queue_subtitle">Cola automatizada de generación de video</p>
+
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="queue_page_desc">Nueva interfaz en el panel lateral para generar videos en lote. Admite 4 modos de generación, reintento automático en caso de fallo y detección inteligente del límite de velocidad para una generación de video totalmente automatizada.</p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                        <span data-i18n="hero_cta_chrome">Añadir a Chrome</span>
+                    </a>
+
+                    <button onclick="openCheckout()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                        <span data-i18n="price_pro_button">$4.99 PRO de por vida</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Demo Section -->
+    <section class="py-16 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="queue_video_title">Demo del flujo completo</h2>
+                <p class="text-slate-400" data-i18n="queue_video_desc">Añadir a la cola → Configurar ajustes → Generación automática → Recoger resultados</p>
+            </div>
+
+            <!-- Video Container -->
+            <div class="relative rounded-2xl overflow-hidden border border-pink-500/30 shadow-2xl shadow-pink-500/10">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent pointer-events-none z-10"></div>
+
+                <video
+                    class="w-full aspect-video bg-slate-900"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    poster="/assets/resized/feat-video-gen-queue_1280x800.jpg"
+                >
+                    <source src="/assets/video-gen-queue.mp4" type="video/mp4">
+                    <div class="w-full aspect-video bg-slate-900 flex items-center justify-center">
+                        <p class="text-slate-400">Tu navegador no admite la reproducción de video.</p>
+                    </div>
+                </video>
+
+                <button
+                    onclick="toggleVideo(this)"
+                    class="absolute bottom-4 right-4 z-20 w-10 h-10 bg-slate-900/80 hover:bg-slate-800 backdrop-blur-sm rounded-full flex items-center justify-center transition-all opacity-0 hover:opacity-100 focus:opacity-100 group-hover:opacity-100"
+                    aria-label="Reproducir o pausar el video"
+                >
+                    <i data-lucide="pause" class="w-5 h-5 text-white video-pause-icon"></i>
+                    <i data-lucide="play" class="w-5 h-5 text-white video-play-icon hidden"></i>
+                </button>
+            </div>
+
+            <p class="text-center text-slate-500 text-sm mt-4" data-i18n="queue_video_caption">* El video muestra el flujo completo de Video Gen Queue</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleVideo(button) {
+            const video = button.closest('section').querySelector('video');
+            const pauseIcon = button.querySelector('.video-pause-icon');
+            const playIcon = button.querySelector('.video-play-icon');
+
+            if (video.paused) {
+                video.play();
+                pauseIcon.classList.remove('hidden');
+                playIcon.classList.add('hidden');
+            } else {
+                video.pause();
+                pauseIcon.classList.add('hidden');
+                playIcon.classList.remove('hidden');
+            }
+        }
+    </script>
+
+    <!-- Core Features -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="queue_core_title">Funciones principales</h2>
+                <p class="text-slate-400" data-i18n="queue_core_desc">Video Gen Queue ofrece un conjunto completo de herramientas para generar videos de forma automatizada</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-pink-500/30 hover:border-pink-500/60 transition-all">
+                    <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">🔄</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_1_title">Reintento automático</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_1_desc">Las generaciones fallidas vuelven a la cola automáticamente para que cada tarea se complete con éxito.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-rose-500/30 hover:border-rose-500/60 transition-all">
+                    <div class="w-14 h-14 bg-rose-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">📋</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_2_title">Añadir a la cola en lote</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_2_desc">Selecciona varios elementos de tus favoritos y añádelos a la cola de generación en lote con un clic.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-blue-500/30 hover:border-blue-500/60 transition-all">
+                    <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">🎨</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_3_title">4 modos de generación</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_3_desc">Elige entre los modos Custom/Normal/Fun/Spicy según tu estilo creativo.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-slate-950 p-6 rounded-2xl border border-emerald-500/30 hover:border-emerald-500/60 transition-all">
+                    <div class="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <span class="text-2xl">🛡️</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_4_title">Detección del límite de velocidad</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_4_desc">Detección inteligente de los límites de velocidad de la API de Grok, con pausa automática y reanudación tras el periodo de espera.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="queue_step_title">Cómo funciona Video Gen Queue</h2>
+                <p class="text-slate-400" data-i18n="queue_step_desc">Cinco pasos sencillos para automatizar tu flujo de generación de video</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- Step 1 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-pink-600/30">1</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="image" class="text-pink-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_1_title">Explora Grok Imagine</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_1_desc">Explora o genera imágenes en grok.com. Encuentra los Posts que quieras convertir en videos.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-rose-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-rose-600/30">2</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-rose-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="list-plus" class="text-rose-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_2_title">Añade a la cola</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_2_desc">Haz clic en el botón flotante 🎯 o usa la adición en lote para elegir un rango de tiempo (1h~72h) y añadir los Posts recientes con un clic.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-600/30">3</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="settings" class="text-blue-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_3_title">Configura los ajustes</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_3_desc">Elige el modo (Custom/Normal/Fun/Spicy), la duración (6s/10s), la resolución (480p/720p), la cantidad objetivo y el máximo de reintentos.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-600/30">4</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="play" class="text-cyan-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_4_title">Inicia la generación</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_4_desc">Haz clic en Start. El sistema navega automáticamente a la página de cada Post y envía las solicitudes de generación en secuencia.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-emerald-600/30">5</div>
+                    <div class="bg-slate-900 p-6 pt-10 rounded-2xl border border-slate-800 h-full">
+                        <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <i data-lucide="check-circle" class="text-emerald-400 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_5_title">Recoge los resultados</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_5_desc">Los videos generados con éxito aparecen automáticamente en tus favoritos de Grok, listos para descargar cuando quieras.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details -->
+    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Technical Info -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="queue_tech_title">Aspectos técnicos destacados</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="panel-right" class="text-pink-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1" data-i18n="queue_tech_1_title">API Side Panel de Chrome</h4>
+                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_1_desc">Usa la API Side Panel más reciente de Chrome para un espacio de trabajo persistente que no interfiere con la navegación de la página principal.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-rose-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="hard-drive" class="text-rose-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1" data-i18n="queue_tech_2_title">Persistencia con IndexedDB</h4>
+                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_2_desc">Los datos de la cola y las estadísticas de prompts se guardan de forma independiente en IndexedDB. Los datos persisten incluso después de cerrar el navegador.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="wifi" class="text-blue-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1" data-i18n="queue_tech_3_title">Interceptor de Fetch</h4>
+                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_3_desc">Intercepción en el MAIN world de los resultados de generación, con respaldo por tiempo de espera de 90 segundos, para registrar con precisión cada generación.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="shield" class="text-emerald-400 w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1" data-i18n="queue_tech_4_title">Niveles Free/Pro</h4>
+                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_4_desc">Los usuarios gratuitos tienen 50 usos y los usuarios PRO acceso ilimitado, para adaptarse a distintas necesidades de uso.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Queue UI Mockup -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-pink-500/10 blur-3xl rounded-full"></div>
+                    <div class="relative bg-[#1a1a1a] rounded-2xl shadow-2xl border border-gray-700/50 w-full max-w-sm mx-auto overflow-hidden" style="box-shadow: 0 25px 80px rgba(0,0,0,0.6);">
+                        <div class="p-4 border-b border-gray-700 flex justify-between items-center">
+                            <span class="text-white font-bold">🎯 Video Gen Queue</span>
+                            <span class="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded">v1.0</span>
+                        </div>
+                        <div class="p-3 mx-3 mt-3 bg-gray-800/60 rounded-xl space-y-2">
+                            <div class="flex gap-1.5">
+                                <div class="flex-1 py-2 rounded-lg text-center text-xs font-bold text-white bg-green-600">▶️ Iniciar</div>
+                                <div class="flex-1 py-2 rounded-lg text-center text-xs font-bold text-gray-400 bg-gray-700">⏹ Detener</div>
+                            </div>
+                            <div class="flex justify-between items-center bg-gray-900/60 rounded-lg px-3 py-2 text-xs">
+                                <span class="text-green-400 font-bold">● En ejecución</span>
+                                <span class="text-gray-400">5/12</span>
+                                <span class="text-gray-500">🎬 23 / 50</span>
+                            </div>
+                        </div>
+                        <div class="px-4 mt-3 flex justify-between items-center">
+                            <span class="text-sm font-semibold text-gray-300">📋 Elementos en cola</span>
+                            <span class="text-xs text-gray-500 bg-gray-800 px-2 py-0.5 rounded-full">12</span>
+                        </div>
+                        <div class="p-3 space-y-2">
+                            <div class="bg-[#252a35] rounded-lg p-3 border-l-[3px] border-blue-500">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-bold text-white">Post aaf51ae1</span>
+                                    <span class="text-[9px] bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded font-bold uppercase">Activo</span>
+                                </div>
+                                <div class="text-[11px] text-gray-500 truncate mb-1">Una chica bailando con elegancia bajo la lluvia entre luces de neón...</div>
+                                <div class="text-[11px] flex gap-2"><span class="text-green-400">✅ 2</span><span class="text-red-400">❌ 1</span><span class="text-gray-500">Objetivo: 3</span></div>
+                            </div>
+                            <div class="bg-gray-800/60 rounded-lg p-3 border-l-[3px] border-green-500">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-bold text-white">Post c82f4b21</span>
+                                    <span class="text-[9px] bg-green-500/20 text-green-400 px-2 py-0.5 rounded font-bold uppercase">Listo</span>
+                                </div>
+                                <div class="text-[11px] text-gray-500 truncate">Recorrido aéreo nocturno por una ciudad cyberpunk, reflejos de neón</div>
+                            </div>
+                            <div class="bg-gray-800/60 rounded-lg p-3 border-l-[3px] border-red-500">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-bold text-white">Post 7a2bc891</span>
+                                    <span class="text-[9px] bg-red-500/20 text-red-400 px-2 py-0.5 rounded font-bold uppercase">Fallido</span>
+                                </div>
+                                <div class="text-[11px] text-gray-500 truncate">Dragón de fantasía escupiendo fuego sobre un castillo</div>
+                            </div>
+                            <div class="bg-gray-800/60 rounded-lg p-3 border-l-[3px] border-gray-600">
+                                <div class="flex justify-between items-center mb-1">
+                                    <span class="text-xs font-bold text-white">Post 9e3a1f07</span>
+                                    <span class="text-[9px] bg-gray-600 text-gray-300 px-2 py-0.5 rounded font-bold uppercase">Pendiente</span>
+                                </div>
+                                <div class="text-[11px] text-gray-500 truncate">Astronauta flotando a través de una nebulosa</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Generation Modes Explained — unique to Video Gen Queue -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 bg-pink-500/10 text-pink-400 rounded-full text-sm font-semibold mb-4" data-i18n="queue_modes_badge">4 modos de generación</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="queue_modes_title">Modos de generación explicados</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="queue_modes_subtitle">Cada elemento de la cola puede usar un modo distinto. Combínalos para obtener exactamente el estilo que quieres en cada video.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <!-- Custom Mode -->
+                <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 hover:border-pink-500/30 transition-colors group">
+                    <div class="w-14 h-14 bg-pink-500/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-pink-500/20 transition-colors">
+                        <i data-lucide="pen-tool" class="text-pink-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_custom_title">Custom</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_custom_desc">Escribe tu propio prompt para tener control creativo total. Escribe exactamente lo que quieres y la cola lo ejecutará para cada imagen seleccionada.</p>
+                </div>
+
+                <!-- Normal Mode -->
+                <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 hover:border-blue-500/30 transition-colors group">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-500/20 transition-colors">
+                        <i data-lucide="play" class="text-blue-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_normal_title">Normal</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_normal_desc">Generación de video estándar con el prompt original de la imagen. La opción más segura y predecible para resultados consistentes.</p>
+                </div>
+
+                <!-- Fun Mode -->
+                <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 hover:border-amber-500/30 transition-colors group">
+                    <div class="w-14 h-14 bg-amber-500/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-amber-500/20 transition-colors">
+                        <i data-lucide="party-popper" class="text-amber-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_fun_title">Fun</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_fun_desc">Añade un estilo lúdico y animado a la generación. Ideal para efectos de video caprichosos y de estilo caricatura.</p>
+                </div>
+
+                <!-- Spicy Mode -->
+                <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 hover:border-rose-500/30 transition-colors group">
+                    <div class="w-14 h-14 bg-rose-500/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-rose-500/20 transition-colors">
+                        <i data-lucide="flame" class="text-rose-400 w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_spicy_title">Spicy</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_spicy_desc">Lleva los límites creativos más allá con una interpretación artística más audaz. Espera movimientos más dramáticos y sorpresas visuales.</p>
+                </div>
+            </div>
+
+            <!-- Note callout -->
+            <div class="mt-12 max-w-2xl mx-auto text-center">
+                <div class="inline-flex items-center gap-3 bg-pink-500/10 border border-pink-500/20 rounded-2xl px-6 py-4">
+                    <i data-lucide="info" class="text-pink-400 w-6 h-6 flex-shrink-0"></i>
+                    <p class="text-slate-300 text-sm" data-i18n="queue_modes_note">Cada elemento de la cola puede usar un modo distinto. El reintento automático gestiona los rechazos de moderación por sí solo, así que la cola sigue funcionando sin interrupciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Preguntas frecuentes</h2>
+                <p class="text-slate-400">Todo lo que necesitas saber sobre Video Gen Queue</p>
+            </div>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Qué es Video Gen Queue y cómo funciona?</h3>
+                    <p class="text-slate-400">Video Gen Queue es una función PRO que registra automáticamente cada video que Grok genera durante tu sesión. A medida que Grok procesa tus solicitudes de generación, la extensión pone en cola cada video terminado para descargarlo en lote con un clic, así nunca tendrás que guardar los videos uno por uno.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Puedo descargar varios videos de Grok a la vez?</h3>
+                    <p class="text-slate-400">Sí. Ese es el propósito principal de Video Gen Queue. Una vez que los videos están en cola, haz clic en "Download All" para guardar todos los videos en tu disco local en una sola operación. También puedes quitar videos de la cola de forma selectiva antes de descargar.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Video Gen Queue funciona con todos los tipos de generación de video de Grok?</h3>
+                    <p class="text-slate-400">Video Gen Queue admite todo el contenido de video generado por la función de generación de video con IA de Grok. Detecta las URL de los videos a medida que se renderizan en la página y los añade a la cola automáticamente, sin importar su duración o resolución.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">¿En qué formato se descargan los videos?</h3>
+                    <p class="text-slate-400">Los videos se descargan en su formato original tal como los entrega Grok, normalmente MP4. La extensión descarga directamente el archivo de origen y conserva la resolución, la velocidad de fotogramas y la calidad originales sin recodificar.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Se pierde la cola si cierro el panel de la extensión?</h3>
+                    <p class="text-slate-400">No. Video Gen Queue se guarda en IndexedDB, que sobrevive a los cambios de pestaña y al cierre del panel de la extensión. Tus videos en cola siguen disponibles hasta que vacíes la cola manualmente o los descargues.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Puedo ver el estado de cada video en la cola?</h3>
+                    <p class="text-slate-400">Sí. El panel de la cola muestra cada video con su estado: en cola, descargando o completado. Puedes ver el tamaño de los archivos y miniaturas de vista previa cuando están disponibles, lo que facilita identificar y gestionar tu colección de videos.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Video Gen Queue está disponible en la versión gratuita?</h3>
+                    <p class="text-slate-400">Video Gen Queue es una función exclusiva de PRO. Pásate a PRO por $4.99 (licencia vitalicia) para desbloquear Video Gen Queue junto con Stream Capture, Story Mode y Project Download.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="queue_cta_start">Empieza a automatizar la generación de video</h2>
+            <p class="text-slate-400 mb-8" data-i18n="queue_tech_4_desc">Los usuarios gratuitos tienen 50 usos y los usuarios PRO acceso ilimitado, para adaptarse a distintas necesidades de uso.</p>
+
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span data-i18n="hero_cta_chrome">Añadir a Chrome</span>
+                </a>
+
+                <a href="/es/pricing.html" class="px-8 py-4 bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-500 hover:to-rose-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span data-i18n="price_pro_button">$4.99 PRO de por vida</span>
+                </a>
+            </div>
+
+            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">✨ Incluye todas las actualizaciones futuras</p>
+            <div class="mt-8 pt-6 border-t border-slate-800">
+                <p class="text-slate-400 text-sm font-semibold mb-3">Descubre más funciones</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="/es/story-mode.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Story Mode</a>
+                    <a href="/es/stream-capture.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Stream Capture</a>
+                    <a href="/es/project-download.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Project Download</a>
+                </div>
+            </div>
+            <div class="flex justify-center gap-3 mt-6">
+                <a href="https://twitter.com/intent/tweet?text=Automatiza%20la%20generaci%C3%B3n%20de%20videos%20en%20Grok%20con%20Video%20Gen%20Queue&url=https://grokmedia.kario-studio.com/es/video-gen-queue.html?utm_source=twitter&utm_medium=social&utm_campaign=share" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <span>Compartir en X</span>
+                </a>
+                <a href="https://www.reddit.com/submit?url=https://grokmedia.kario-studio.com/es/video-gen-queue.html?utm_source=reddit&utm_medium=social&utm_campaign=share&title=Video%20Gen%20Queue%20-%20Automatiza%20la%20generaci%C3%B3n%20de%20videos%20en%20Grok" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                    <span>Compartir en Reddit</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/es/privacy.html" class="hover:text-white">Política de privacidad</a> · <a href="/es/terms.html" class="hover:text-white">Términos del servicio</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></div></footer></div>
+
+    <!-- Scripts -->
+<script src="/js/i18n.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>

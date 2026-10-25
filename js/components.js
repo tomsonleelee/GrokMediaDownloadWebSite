@@ -415,6 +415,18 @@ function getLangFromPath() {
 }
 
 // Load shared components (header & footer)
+// The footer language row ships with links to the four language home pages so crawlers can
+// reach every edition without JS; once loaded, point each link at this page's own translation.
+function localizeFooterLanguageLinks() {
+    const prefixMap = { 'en': '', 'zh-TW': '/zh-TW', 'ja': '/ja', 'ko': '/ko' };
+    let basePath = window.location.pathname.replace(/^\/(zh-TW|ja|ko)(?=\/|$)/, '') || '/';
+    if (basePath.endsWith('/index.html')) basePath = basePath.slice(0, -'index.html'.length);
+    document.querySelectorAll('#footer-lang-links a[data-lang]').forEach(a => {
+        const prefix = prefixMap[a.dataset.lang];
+        if (prefix !== undefined) a.setAttribute('href', prefix + basePath);
+    });
+}
+
 async function loadComponents() {
     try {
         const lang = getLangFromPath();
@@ -442,6 +454,7 @@ async function loadComponents() {
 
         // Initialize components after loading
         initializeComponents();
+        localizeFooterLanguageLinks();
     } catch (error) {
         console.error('Error loading components:', error);
     }

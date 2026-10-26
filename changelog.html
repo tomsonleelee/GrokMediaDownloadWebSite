@@ -131,7 +131,29 @@
     <!-- Entries -->
     <section class="pb-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <p class="text-slate-400 text-sm">Issue numbers refer to reports on the public GitHub repository. The 2.6.0 release notes will appear here when that version is live on the Chrome Web Store.</p>
+            <p class="text-slate-400 text-sm">Issue numbers refer to reports on the public GitHub repository.</p>
+            <article id="v2-6-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.6.0</h2>
+                    <time datetime="2026-10-26" class="text-slate-500 text-sm">2026-10-26</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300">Feature release</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">License activation moves to our own server; existing keys keep working</h3>
+                <p class="text-slate-400 mb-4">The only functional change in 2.6.0 is how a PRO key is activated. Downloading, HD Upgrade, Story Mode and the Video Gen Queue are untouched. It is also the first store release since 2.5.6, so it carries the 2.5.7 Delete Old changes listed further down.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">Existing keys need nothing.</strong> Devices that are already activated keep working. On a new computer or after a reinstall, enter the same key you received by email. Activation now goes to Kario's own license server; if that server cannot be reached, the extension falls back to the original Lemon Squeezy activation by itself.</li>
+                    <li><strong class="text-white">Device slots are counted sensibly.</strong> Each key covers 3 devices. The extension keeps a fixed device id in Chrome sync storage, so reinstalling on the same computer no longer uses up another slot, and removing the extension frees its slot. The popup's license section shows the masked key and "Devices: n / 3". Chrome profiles synced under one Google account share a slot; with sync off, a reinstall gets a new id.</li>
+                    <li><strong class="text-white">Clear activation errors in all six languages.</strong> Invalid key, key for a different product, device limit reached (with n / 3), key disabled after a refund or revocation, and server unreachable each have their own message. The product check runs before a slot is consumed.</li>
+                    <li><strong class="text-white">Keys in the new GMD-XXXX-XXXX-XXXX-XXXX format are accepted</strong> alongside the existing UUID keys.</li>
+                    <li><strong class="text-white">No new permissions.</strong> The license server is called with CORS, so Chrome shows no re-authorisation prompt on update. Traditional Chinese strings now say 啟用 instead of 激活.</li>
+                </ul>
+                <p class="text-slate-400 mt-5 mb-3">Also in this release (2.5.7 changes, not published separately):</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">Delete Old reads the new media library.</strong> It used to scan Grok's old favourites list, which stopped receiving new media in July 2026, so a recent date range came back as "nothing in range". It now scans the same library as whole-library download and lists generated media only, never uploads. Deletion uses the call Grok's own Saved page makes: removing from Saved is a permanent delete, and the post goes with it.</li>
+                    <li><strong class="text-white">Renamed and simplified.</strong> "Remove Old" is now "Delete Old" and "Bulk Remove" is "Bulk Delete", because that is what they do. "Batch Select &amp; Delete", "Remove All", "Last N hours" and the "Also delete posts" checkbox were removed: Grok's Saved page has Select → Delete, and the other options either duplicated it or invited mistakes. Delete Old now takes a date range only (From and/or To).</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">After updating: reload the extension at chrome://extensions and refresh any open Grok tab. Existing users do not need to re-activate; if the popup still shows the old version number, restart the browser.</p>
+            </article>
             <article id="v2-5-6" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
                     <h2 class="text-2xl font-bold text-white">v2.5.6</h2>

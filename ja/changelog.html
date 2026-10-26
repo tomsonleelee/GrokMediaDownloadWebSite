@@ -131,7 +131,29 @@
     <!-- Entries -->
     <section class="pb-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <p class="text-slate-400 text-sm">issue番号は公開GitHubリポジトリに寄せられた報告の番号です。2.6.0のリリースノートは、そのバージョンがChromeウェブストアで公開され次第ここに掲載します。</p>
+            <p class="text-slate-400 text-sm">issue番号は公開GitHubリポジトリに寄せられた報告の番号です。</p>
+            <article id="v2-6-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.6.0</h2>
+                    <time datetime="2026-10-26" class="text-slate-500 text-sm">2026-10-26</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300">機能リリース</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">ライセンスの有効化が自社サーバー経由に。既存のキーはそのまま使えます</h3>
+                <p class="text-slate-400 mb-4">2.6.0で機能面に変わったのはPROキーの有効化方法だけです。ダウンロード、HD Upgrade、Story Mode、Video Gen Queueは変わっていません。2.5.6以降で初めてストアに公開されるバージョンでもあるため、下記の2.5.7「Delete Old」の変更も含まれています。</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">既存のキーは何もしなくて構いません。</strong>有効化済みの端末はそのまま使えます。新しいPCや再インストール後は、メールで受け取った同じキーを入力してください。有効化はKario自身のライセンスサーバーに対して行われ、そのサーバーに接続できない場合は拡張機能が自動的に従来のLemon Squeezyによる有効化に切り替えます。</li>
+                    <li><strong class="text-white">端末枠の数え方が合理的になりました。</strong>1つのキーで3台まで。拡張機能はChromeの同期ストレージに固定の端末IDを保存するため、同じPCへの再インストールで枠を余分に消費しなくなり、拡張機能を削除すると枠が解放されます。ポップアップのライセンス欄にマスクされたキーと「端末：n / 3」が表示されます。同じGoogleアカウントで同期している複数のChromeプロファイルは1つの枠を共有し、同期をオフにしている場合は再インストール後に新しい端末IDになります。</li>
+                    <li><strong class="text-white">有効化エラーのメッセージが6言語で明確になりました。</strong>無効なキー、別製品のキー、端末数の上限（n / 3を表示）、返金や取り消しによる無効化、サーバーに接続できない、それぞれに専用の説明が付きます。製品の確認は枠を消費する前に行われます。</li>
+                    <li><strong class="text-white">新しいGMD-XXXX-XXXX-XXXX-XXXX形式のキーに対応。</strong>従来のUUID形式のキーも引き続き有効です。</li>
+                    <li><strong class="text-white">新しい権限は追加していません。</strong>ライセンスサーバーはCORSで呼び出すため、更新時にChromeが再承認を求めることはありません。</li>
+                </ul>
+                <p class="text-slate-400 mt-5 mb-3">同時に含まれる変更（2.5.7、単独では公開されていません）：</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">Delete Oldが新しいメディアライブラリを読むようになりました。</strong>以前はGrokの古い「お気に入り」一覧を走査していましたが、その一覧は2026年7月以降新しいメディアを受け取らなくなったため、最近の日付範囲を選ぶと「範囲内に項目なし」になっていました。現在はライブラリ全体ダウンロードと同じライブラリを走査し、生成されたメディアだけを対象にします（アップロードした画像には触れません）。削除にはGrok自身の「保存済み」ページが使う呼び出しを用います。「保存済み」から外すことは完全な削除で、投稿も一緒に削除されます。</li>
+                    <li><strong class="text-white">名称変更と簡素化。</strong>「Remove Old」は「Delete Old」、「Bulk Remove」は「Bulk Delete」に改名し、削除であることを名前で示すようにしました。「Batch Select &amp; Delete」「Remove All」「Last N hours」「Also delete posts」チェックボックスは削除しました。Grokの「保存済み」ページ自体に「選択 → 削除」があり、他の選択肢は重複か誤削除を招くものだったためです。Delete Oldは日付範囲（FromとToの少なくとも一方）だけを指定します。</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">更新後：chrome://extensions で拡張機能を再読み込みし、開いているGrokのタブを更新してください。既存ユーザーの再有効化は不要です。ポップアップに古いバージョン番号が表示され続ける場合はブラウザを再起動してください。</p>
+            </article>
             <article id="v2-5-6" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
                     <h2 class="text-2xl font-bold text-white">v2.5.6</h2>

@@ -131,7 +131,29 @@
     <!-- Entries -->
     <section class="pb-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-            <p class="text-slate-400 text-sm">Issue 編號指的是公開 GitHub 儲存庫上的回報。2.6.0 的更新說明會在該版本於 Chrome 線上應用程式商店上架後刊登於此。</p>
+            <p class="text-slate-400 text-sm">Issue 編號指的是公開 GitHub 儲存庫上的回報。</p>
+            <article id="v2-6-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.6.0</h2>
+                    <time datetime="2026-10-26" class="text-slate-500 text-sm">2026-10-26</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300">功能更新</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">授權啟用改走自家伺服器，既有金鑰照常使用</h3>
+                <p class="text-slate-400 mb-4">2.6.0 唯一的功能變更是 PRO 金鑰的啟用方式；下載、HD 升級、Story Mode 與 Video Gen Queue 都沒有變。這也是 2.5.6 之後第一個上架商店的版本，因此一併帶入下方列出的 2.5.7「Delete Old」變更。</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">既有金鑰不需要任何動作。</strong>已啟用的裝置繼續有效；換新電腦或重灌後，輸入當初 email 收到的同一把金鑰即可。啟用現在改向 Kario 自家的授權伺服器；若該伺服器暫時連不上，擴充功能會自動改走原本的 Lemon Squeezy 啟用路徑。</li>
+                    <li><strong class="text-white">裝置名額算得更合理。</strong>每把金鑰 3 台裝置。擴充功能會在 Chrome 同步儲存空間保存一個固定的裝置 id，同一台電腦重灌不再多吃一個名額，移除擴充功能時會自動釋放名額。彈出視窗的授權區塊會顯示遮罩後的金鑰與「裝置：n / 3」。同一個 Google 帳號同步的多個 Chrome 設定檔共用一個名額；關閉同步的使用者重灌後會拿到新的裝置 id。</li>
+                    <li><strong class="text-white">六個語系的啟用錯誤訊息都更明確。</strong>金鑰無效、屬於其他產品、裝置數已滿（顯示 n / 3）、因退款或撤銷而停用、伺服器連不上，各有專屬說明。產品檢查改在消耗名額之前進行。</li>
+                    <li><strong class="text-white">接受新的 GMD-XXXX-XXXX-XXXX-XXXX 金鑰格式</strong>，原有的 UUID 金鑰同樣有效。</li>
+                    <li><strong class="text-white">不新增任何權限。</strong>授權伺服器透過 CORS 呼叫，更新時 Chrome 不會跳出重新授權提示。繁體中文介面改用「啟用」取代「激活」。</li>
+                </ul>
+                <p class="text-slate-400 mt-5 mb-3">同時包含（2.5.7 的變更，未另行上架）：</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">Delete Old 改讀新的媒體庫。</strong>它原本掃描 Grok 舊的「收藏」清單，而該清單自 2026 年 7 月起不再收到新媒體，所以選最近的日期範圍會得到「範圍內沒有項目」。現在改掃描與整庫下載相同的媒體庫，只列出生成的媒體，不會動到上傳的圖片。刪除改用 Grok「已儲存」頁面自己的呼叫：從「已儲存」移除就是永久刪除，貼文會一併刪除。</li>
+                    <li><strong class="text-white">改名並簡化。</strong>「Remove Old」改為「Delete Old」、「Bulk Remove」改為「Bulk Delete」，名稱直接說明這是刪除。移除「Batch Select &amp; Delete」、「Remove All」、「Last N hours」與「Also delete posts」勾選框：Grok「已儲存」頁面本身就有「選取 → 刪除」，其餘選項不是重複就是容易誤刪。Delete Old 現在只有日期範圍（From 與 To 至少填一個）。</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">更新後：到 chrome://extensions 重新載入擴充功能，並重新整理已開啟的 Grok 分頁。既有用戶不需重新啟用；若彈出視窗仍顯示舊版號，請重新啟動瀏覽器。</p>
+            </article>
             <article id="v2-5-6" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
                     <h2 class="text-2xl font-bold text-white">v2.5.6</h2>

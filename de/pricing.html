@@ -267,7 +267,7 @@
                         </div>
                         <div class="flex items-center gap-3 text-slate-200">
                             <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
-                            <span class="font-bold" data-i18n="price_feat_2">Massenentfernung</span>
+                            <span class="font-bold" data-i18n="price_feat_2">Massenlöschung</span>
                         </div>
                         <div class="flex items-center gap-3 text-slate-200">
                             <i data-lucide="check-circle" class="w-5 h-5 text-green-400 flex-shrink-0"></i>
@@ -331,6 +331,39 @@
         </div>
     </section>
 
+    <!-- Which plan do I need? -->
+    <section id="which-plan" class="py-20 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-3">Welcher Plan passt zu mir?</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Starte kostenlos; das ist keine Testversion und sie läuft nicht ab. Upgrade, sobald eine der PRO-Situationen unten auf dich zutrifft.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                    <h3 class="text-xl font-bold text-white mb-4">Free reicht dir, wenn du…</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5"></i><span>sichern willst, was du <strong class="text-white">in den letzten 7 Tagen</strong> generiert hast, und das etwa jede Woche machst</span></li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5"></i><span>vor allem <strong class="text-white">Bilder</strong> erstellst; Batch-Download von Bildern und die smarte Liste sind kostenlos</span></li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5"></i><span>Dateinamen aus Datum, Prompt, ID und Seed möchtest: Die Benennungsvorlagen sind kostenlos</span></li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5"></i><span>die Video Gen Queue gelegentlich nutzt (50 Durchläufe inklusive)</span></li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5"></i><span>deine neuesten Medien auf Groks Seite nicht siehst: Die Quelle für die ganze Bibliothek und alle drei Download-Quellen sind kostenlos, die Lösung für die Backend-Umstellung vom Juli 2026 kostet also nichts</span></li>
+                    </ul>
+                </div>
+                <div class="bg-gradient-to-b from-pink-500/10 to-slate-900 border border-pink-500/40 rounded-2xl p-6 md:p-8">
+                    <h3 class="text-xl font-bold text-white mb-4">Hol dir PRO (einmalig $4.99), wenn du…</h3>
+                    <ul class="space-y-3 text-slate-300">
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-pink-400 flex-shrink-0 mt-0.5"></i><span>die <strong class="text-white">ganze Bibliothek bis zum ersten Tag</strong> willst, nicht nur die letzten 7 Tage; ein Archiv mit 15.000 Elementen ist ein einziger Durchlauf</span></li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-pink-400 flex-shrink-0 mt-0.5"></i><span><strong class="text-white">Videos</strong> generierst und sie per Batch auf HD / 1080p statt Vorschauqualität upgraden willst</span></li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-pink-400 flex-shrink-0 mt-0.5"></i><span><strong class="text-white">Datumsfilter</strong> und Projektordner brauchst, weil du beruflich archivierst</span></li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-pink-400 flex-shrink-0 mt-0.5"></i><span>mit Stream Capture Bilder beim Surfen einfangen oder mit Story Mode Clips zusammenfügen willst, ohne den Browser zu verlassen</span></li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 text-pink-400 flex-shrink-0 mt-0.5"></i><span>die Video Gen Queue täglich nutzt und sie unbegrenzt brauchst</span></li>
+                    </ul>
+                    <p class="text-slate-500 text-sm mt-6">Eine Zahlung, alle künftigen Updates inklusive, 7 Tage Geld-zurück-Garantie. Ein Computerwechsel ist durch die Neuinstallationen abgedeckt, die unten unter „Fragen zur Lizenz“ beschrieben sind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Feature Comparison -->
     <section class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -367,7 +400,7 @@
                             <td class="py-4 px-6 text-center"><i data-lucide="check" class="w-5 h-5 text-green-400 mx-auto"></i></td>
                         </tr>
                         <tr>
-                            <td class="py-4 px-6 text-white">Massenentfernung</td>
+                            <td class="py-4 px-6 text-white">Massenlöschung</td>
                             <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-slate-600 mx-auto"></i></td>
                             <td class="py-4 px-6 text-center"><i data-lucide="check" class="w-5 h-5 text-green-400 mx-auto"></i></td>
                         </tr>

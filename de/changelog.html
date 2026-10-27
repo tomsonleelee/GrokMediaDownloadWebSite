@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog | GrokMediaDownloader</title>
+    <meta name="description" content="Was sich in jeder Version von GrokMediaDownloader geändert hat: Anpassung an Groks Backend vom Juli 2026, Whole Library Download, 1080p, Tag-Zusammenführung, Prompt-Wiederherstellung und die Fixes jedes 2.5.x-Updates.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/de/changelog.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/changelog.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/changelog.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/changelog.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/changelog.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/changelog.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/changelog.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/changelog.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/de/changelog.html">
+    <meta property="og:title" content="Changelog | GrokMediaDownloader">
+    <meta property="og:description" content="Versionshinweise der Chrome-Erweiterung GrokMediaDownloader, neueste zuerst.">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Changelog | GrokMediaDownloader">
+    <meta name="twitter:description" content="Versionshinweise der Chrome-Erweiterung GrokMediaDownloader, neueste zuerst.">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://grokmedia.kario-studio.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Changelog",
+          "item": "https://grokmedia.kario-studio.com/de/changelog.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased">
+
+    <!-- Skip Link -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">
+        Zum Hauptinhalt springen
+    </a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/de/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/de/" class="text-sm text-slate-300 hover:text-white">Startseite</a><a href="/de/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/de/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/de/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/de/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/de/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/de/pricing.html" class="text-sm text-slate-300 hover:text-white">Preise</a><a href="/de/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+<section class="pt-32 pb-12 lg:pt-44 lg:pb-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <i data-lucide="history" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold">Changelog</h1>
+                    <p class="text-slate-400 text-sm">Jede Chrome-Web-Store-Version von GrokMediaDownloader, neueste zuerst. Das Datum ist der Tag, an dem die Version gebaut wurde; der Store-Eintrag folgt meist innerhalb weniger Tage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entries -->
+    <section class="pb-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <p class="text-slate-400 text-sm">Issue-Nummern beziehen sich auf Meldungen im öffentlichen GitHub-Repository.</p>
+            <article id="v2-6-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.6.0</h2>
+                    <time datetime="2026-10-26" class="text-slate-500 text-sm">2026-10-26</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300">Funktionsupdate</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">Die Lizenzaktivierung zieht auf unseren eigenen Server um; bestehende Schlüssel funktionieren weiter</h3>
+                <p class="text-slate-400 mb-4">Die einzige funktionale Änderung in 2.6.0 betrifft die Aktivierung eines PRO-Schlüssels. Downloads, HD-Upgrade, Story Mode und die Video Gen Queue bleiben unverändert. Es ist außerdem die erste Store-Version seit 2.5.6 und enthält daher die weiter unten aufgeführten Delete-Old-Änderungen aus 2.5.7.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">Bestehende Schlüssel brauchen nichts.</strong> Bereits aktivierte Geräte funktionieren weiter. Auf einem neuen Computer oder nach einer Neuinstallation gibst du denselben Schlüssel ein, den du per E-Mail erhalten hast. Die Aktivierung läuft jetzt über Karios eigenen Lizenzserver; ist dieser nicht erreichbar, greift die Erweiterung von selbst auf die ursprüngliche Aktivierung über Lemon Squeezy zurück.</li>
+                    <li><strong class="text-white">Geräteplätze werden sinnvoll gezählt.</strong> Jeder Schlüssel deckt 3 Geräte ab. Die Erweiterung speichert eine feste Geräte-ID im Chrome-Sync-Speicher, sodass eine Neuinstallation auf demselben Computer keinen weiteren Platz mehr verbraucht und das Entfernen der Erweiterung ihren Platz freigibt. Der Lizenzbereich im Popup zeigt den maskierten Schlüssel und „Geräte: n / 3“. Chrome-Profile, die mit demselben Google-Konto synchronisiert werden, teilen sich einen Platz; bei ausgeschalteter Synchronisierung erhält eine Neuinstallation eine neue ID.</li>
+                    <li><strong class="text-white">Klare Aktivierungsfehler in allen sechs Sprachen.</strong> Ungültiger Schlüssel, Schlüssel für ein anderes Produkt, Gerätelimit erreicht (mit n / 3), Schlüssel nach Rückerstattung oder Widerruf deaktiviert und Server nicht erreichbar haben jeweils eine eigene Meldung. Die Produktprüfung läuft, bevor ein Platz verbraucht wird.</li>
+                    <li><strong class="text-white">Schlüssel im neuen Format GMD-XXXX-XXXX-XXXX-XXXX werden akzeptiert</strong>, zusätzlich zu den bestehenden UUID-Schlüsseln.</li>
+                    <li><strong class="text-white">Keine neuen Berechtigungen.</strong> Der Lizenzserver wird per CORS aufgerufen, daher fragt Chrome beim Update nicht erneut nach Berechtigungen. Die traditionell-chinesischen Texte sagen jetzt 啟用 statt 激活.</li>
+                </ul>
+                <p class="text-slate-400 mt-5 mb-3">Ebenfalls in dieser Version (Änderungen aus 2.5.7, nicht separat veröffentlicht):</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">Delete Old liest die neue Medienbibliothek.</strong> Bisher durchsuchte die Funktion Groks alte Favoritenliste, die seit Juli 2026 keine neuen Medien mehr erhält, sodass ein aktueller Zeitraum „nichts im Zeitraum“ ergab. Jetzt durchsucht sie dieselbe Bibliothek wie Whole Library Download und listet nur generierte Medien auf, nie Uploads. Gelöscht wird mit demselben Aufruf, den Groks eigene Saved-Seite verwendet: Das Entfernen aus Saved ist eine endgültige Löschung, und der Post wird mitgelöscht.</li>
+                    <li><strong class="text-white">Umbenannt und vereinfacht.</strong> „Remove Old“ heißt jetzt „Delete Old“ und „Bulk Remove“ heißt „Bulk Delete“, denn genau das tun sie. „Batch Select &amp; Delete“, „Remove All“, „Last N hours“ und die Checkbox „Also delete posts“ wurden entfernt: Groks Saved-Seite bietet Select → Delete, und die anderen Optionen haben das entweder doppelt abgebildet oder zu Fehlern verleitet. Delete Old nimmt jetzt nur noch einen Zeitraum entgegen (Von und/oder Bis).</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">Nach dem Update: Lade die Erweiterung unter chrome://extensions neu und aktualisiere alle offenen Grok-Tabs. Bestehende Nutzer müssen nicht neu aktivieren; zeigt das Popup noch die alte Versionsnummer, starte den Browser neu.</p>
+            </article>
+            <article id="v2-5-6" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.6</h2>
+                    <time datetime="2026-09-14" class="text-slate-500 text-sm">2026-09-14</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">Fehlerbehebung</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">Tags wieder vollständig, Prompts wieder in den Dateinamen</h3>
+                <p class="text-slate-400 mb-4">Zwei Grundursachen behoben, beide auf Groks Seite. Gleicher Inhalt wie 2.5.5, das der Chrome Web Store nicht veröffentlicht hat, weil eine mitgelieferte (nie ausgeführte) Drittanbieter-Datei auf ein CDN verwies; 2.5.6 entfernt diese Datei.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">Tag-Download lieferte nur eine Datei (Issue #13).</strong> Groks Tag-Migration vom August ist in beide Richtungen unvollständig: Die neue Collection-API enthält wenige historische Einträge, die alte Ordner-API enthält den Verlauf, und jede hat Tags, die der anderen fehlen. Tag-Listen und Tag-Inhalte sind jetzt die Vereinigung beider APIs; ein Tag, der 2 Einträge lieferte, liefert jetzt 233.</li>
+                    <li><strong class="text-white">Kein Prompt in Dateinamen, Ordnernamen oder metadata.json.</strong> Seit September liefert Grok den Prompt nicht mehr mit der Medienliste mit. Der Prompt wird jetzt aus der Unterhaltung wiederhergestellt, die das Element erzeugt hat (Videos nutzen ihren Animations-Prompt oder übernehmen den des Quellbilds), mit Wiederholungsversuchen, einem Circuit Breaker und einem dauerhaften Cache: Eine Neugenerierung der ganzen Bibliothek dauerte beim zweiten Durchlauf 10 s statt 129 s.</li>
+                    <li>Prompts werden nur abgerufen, wenn deine Dateinamen- oder Metadaten-Einstellungen sie brauchen; nachdem du diese Einstellungen geändert hast, bittet dich das Popup, die Liste neu zu generieren.</li>
+                    <li>metadata.json erfasst <code>userId</code>; Video-Dateinamen stimmen mit der Liste überein, einschließlich des Kurz-ID-Suffixes; eine Tag-Quelle, die teilweise fehlschlägt, wird als unvollständig markiert statt als Erfolg gemeldet.</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">Durchgängig in einem echten Browser geprüft: ein Tag-Download mit 61 Dateien und ein Whole-Library-Download der letzten sieben Tage mit 206 Dateien, Datei für Datei mit der Grok-API abgeglichen.</p>
+            </article>
+            <article id="v2-5-4" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.4</h2>
+                    <time datetime="2026-09-03" class="text-slate-500 text-sm">2026-09-03</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">Fehlerbehebung</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">Ältere Tags und vollständige Tag-Inhalte</h3>
+                <p class="text-slate-400 mb-4">Die Tag-Liste konnte ältere Tags übersehen, und Tag-Inhalte konnten nach der ersten Seite abbrechen.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>Beide Anfragen nutzen jetzt dieselben Parameter wie Groks eigene Web-App und lesen jede Seite.</li>
+                    <li>Schlägt zwischendurch eine Seite fehl, bleiben die bereits abgerufenen Einträge erhalten, statt dass der ganze Stapel verworfen wird.</li>
+                </ul>
+            </article>
+            <article id="v2-5-3" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.3</h2>
+                    <time datetime="2026-08-31" class="text-slate-500 text-sm">2026-08-31</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">Fehlerbehebung</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">Tag-Paginierung und Scan-Diagnose</h3>
+                <p class="text-slate-400 mb-4">Nachtrag zu 2.5.2 für Konten mit vielen Tags.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>Korrekturen der Paginierung von Tag-Liste und Tag-Inhalten.</li>
+                    <li>Vollständige Scan-Diagnose im Systemprotokoll, um Meldungen wie „nur das letzte Video wurde upgegradet“ nachzugehen.</li>
+                </ul>
+            </article>
+            <article id="v2-5-2" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.2</h2>
+                    <time datetime="2026-08-22" class="text-slate-500 text-sm">2026-08-22</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">Fehlerbehebung</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">Neu erstellte Tags erscheinen wieder</h3>
+                <p class="text-slate-400 mb-4">Grok hat Tags auf seinem Asset-Modell als Collections neu aufgebaut; die alte Ordner-API wurde nicht mehr aktualisiert, daher waren nach der Umstellung erstellte Tags für die Erweiterung unsichtbar.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>Tag-Liste und Tag-Download nutzen jetzt Groks aktuelle API, mit automatischem Rückgriff auf die alte für noch nicht migrierte Konten.</li>
+                    <li>Tag-Downloads erhalten Prompt-basierte Dateinamen, wie die Quelle für die ganze Bibliothek.</li>
+                    <li>Jede Antwort des HD-Upgrades wird zur Diagnose ins Systemprotokoll geschrieben.</li>
+                </ul>
+            </article>
+            <article id="v2-5-1" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.1</h2>
+                    <time datetime="2026-08" class="text-slate-500 text-sm">2026-08</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">Fehlerbehebung</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">Die Standard-Download-Quelle war defekt, also wurde sie geändert</h3>
+                <p class="text-slate-400 mb-4">Bei einer Messung an einem echten Konto fehlten 11 der 30 neuesten Bibliothekseinträge in der Favoritenliste, und Groks eigene Saved-Seite ruft diesen Endpunkt überhaupt nicht mehr auf.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li>Standardquelle ist jetzt die ganze Bibliothek („Alle generierten Medien“); wer bereits eine Quelle gewählt hatte, behält seine Wahl.</li>
+                    <li>Die Auswahl der Download-Quelle ist für alle kostenlos: Niemand sollte auf einer Quelle festsitzen, die die eigenen Medien nicht sehen kann.</li>
+                    <li>Die kostenlose Version kann die ganze Bibliothek für die letzten 7 Tage scannen.</li>
+                    <li>Klare Hinweise, wenn die alte Quelle gewählt ist, wenn nichts gefunden wird und wenn das HD-Upgrade nichts zum Upgraden meldet.</li>
+                </ul>
+            </article>
+            <article id="v2-5-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.5.0</h2>
+                    <time datetime="2026-07-26" class="text-slate-500 text-sm">2026-07-26</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300">Funktionsupdate</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">An Groks neues Medien-Backend angepasst: Download der ganzen Bibliothek und 1080p</h3>
+                <p class="text-slate-400 mb-4">Grok ist im Juli 2026 auf ein Backend auf Basis von Unterhaltungen und Assets umgestiegen, und ältere Versionen konnten neue Medien nicht mehr sehen. Diese Version (die auch die nie veröffentlichten Arbeiten an 2.4.0 enthält) baut die Erkennung auf der neuen API neu auf.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">Drei Download-Quellen:</strong> Favoriten, Tags und die neue ganze Bibliothek nach Unterhaltung, jeweils mit eigenem Download-Verlauf, Datumsfiltern mit vorzeitigem Stopp und Ordnern pro Unterhaltung.</li>
+                    <li><strong class="text-white">1080p als eigene Qualitätsstufe:</strong> Downloads nehmen die beste verfügbare Qualität, die Statistik führt 1080p separat auf, und Upgrades gehen jeweils eine Stufe nach oben (SD → HD, 720p/HD → 1080p). 1080p-Upgrades sind optional und stoppen sofort, wenn das Konto keinen Zugriff hat.</li>
+                    <li><strong class="text-white">HD-Upgrade für die ganze Bibliothek</strong>, nicht nur für Favoriten, mit einer Aufschlüsselung nach Qualität vor der Bestätigung und einem Stopp-Button während des Scans.</li>
+                    <li><strong class="text-white">Benennung:</strong> Bild-Dateinamen nutzen den echten Generierungs-Prompt, Videos den Prompt ihres Quellbilds, Ordner nutzen <code>yyyymmdd_prompt_shortid</code>, und der Modus „Grok Nativ“ entspricht seinem dokumentierten Format.</li>
+                    <li>Scan-Ergebnisse sind zwischen Durchläufen stabil; der Speicherverbrauch bleibt auch bei Bibliotheken mit über 15.000 Elementen konstant.</li>
+                </ul>
+            </article>
+
+            <div class="mt-8 text-center">
+                <a href="/de/faq.html" class="inline-flex items-center gap-2 text-pink-400 hover:text-pink-300 transition-colors">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>Zurück zur FAQ</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/de/privacy.html" class="hover:text-white">Datenschutzerklärung</a> · <a href="/de/terms.html" class="hover:text-white">Nutzungsbedingungen</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot;<a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a><nav class="mt-3" aria-label="Sprachen"><a href="/changelog.html" hreflang="en" class="hover:text-white">English</a> · <a href="/zh-TW/changelog.html" hreflang="zh-TW" class="hover:text-white">繁體中文</a> · <a href="/ja/changelog.html" hreflang="ja" class="hover:text-white">日本語</a> · <a href="/ko/changelog.html" hreflang="ko" class="hover:text-white">한국어</a> · <a href="/es/changelog.html" hreflang="es" class="hover:text-white">Español</a> · <a href="/de/changelog.html" hreflang="de" class="hover:text-white text-slate-300">Deutsch</a></nav></div></footer></div>
+
+    <!-- Scripts -->
+<script src="/js/i18n.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>

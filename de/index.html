@@ -156,8 +156,31 @@
       "description": "Demonstration der Stream-Capture-Funktion der Chrome-Erweiterung GrokMediaDownloader. Zeigt, wie du Streaming-Videos von Grok AI direkt im Browser erfasst.",
       "thumbnailUrl": "https://grokmedia.kario-studio.com/assets/stream-capture-poster.jpg",
       "uploadDate": "2025-12-19T00:00:00+08:00",
-      "contentUrl": "https://grokmedia.kario-studio.com/assets/streamcapture.mp4",
+      "contentUrl": "https://grokmedia.kario-studio.com/assets/stream-capture-demo.mp4",
       "duration": "PT30S",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://grokmedia.kario-studio.com/assets/icon-512.png"
+        }
+      }
+    }
+    </script>
+
+    <!-- Schema.org - VideoObject (explainer) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Grok Media Downloader in 28 Sekunden",
+      "description": "Funktionsübersicht der Chrome-Erweiterung GrokMediaDownloader: drei Download-Quellen, smarte Ordner und eigene Dateinamen, speicherschonendes Backup der ganzen Bibliothek, 1080p-Upscaling, Free vs. PRO.",
+      "thumbnailUrl": "https://grokmedia.kario-studio.com/assets/explainer/gmd-explainer-poster.jpg",
+      "uploadDate": "2026-10-25T00:00:00+08:00",
+      "contentUrl": "https://grokmedia.kario-studio.com/assets/explainer/gmd-explainer.mp4",
+      "duration": "PT29S",
+      "inLanguage": "en",
       "publisher": {
         "@type": "Organization",
         "name": "Kario Studio",
@@ -269,15 +292,15 @@
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6 animate-fade-in-up">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="hero_badge">v2.5 – neuestes Update | Whole Library Download・1080p-Upgrade・bereit für die neue Grok-API</span>
+                        <span data-i18n="hero_badge">Chrome-Erweiterung für Grok Imagine · Kostenlos, PRO einmalig $4.99</span>
                     </div>
 
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                        <span data-i18n="hero_title_1">Automatisiertes Grok</span> <br>
-                        <span class="text-pink-500" data-i18n="hero_title_2">Medien-Asset-Management</span>
+                        <span data-i18n="hero_title_1">Deine Grok-Bibliothek,</span> <br>
+                        <span class="text-pink-500" data-i18n="hero_title_2">mit einem Klick gesichert</span>
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Nicht nur ein Downloader, sondern dein Kreativstudio. v2.5 ist an Groks neues Medien-Backend angepasst und bringt Whole Library Download – archiviere jedes generierte Bild und Video, sortiert nach Unterhaltung – sowie 1080p als eigene Qualitätsstufe.</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Grok hat keinen Massen-Download. Hunderte generierte Bilder und Videos einzeln speichern, wiederfinden, was du letzten Monat erstellt hast, und dabei die 1080p-Versionen behalten – das skaliert nicht. GrokMediaDownloader durchsucht deine gesamte Grok-Bibliothek, lädt alles in Ordner herunter, die nach der Unterhaltung benannt sind, mit Dateinamen aus dem Prompt, und wertet Videos auf 1080p auf. Alles läuft vollständig in deinem Browser; nichts wird irgendwohin hochgeladen.</p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
@@ -408,6 +431,59 @@
     </section>
 
     <!-- Legacy Favorite source notice (v2.5.1) -->
+    <!-- Explainer video (28 s, English, shared by all editions) -->
+    <section id="explainer" class="py-16 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">In 28 Sekunden erklärt</h2>
+                <p class="text-slate-400 max-w-3xl mx-auto">Drei Download-Quellen, smarte Ordner, Bibliotheken mit 15.000 Elementen ohne Speicherprobleme, 1080p-Upscaling: die ganze Erweiterung in einem kurzen Clip.</p>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900">
+                <video id="explainer-video" class="w-full aspect-video bg-slate-900" autoplay muted loop playsinline preload="metadata" poster="/assets/explainer/gmd-explainer-poster.jpg">
+                    <source src="/assets/explainer/gmd-explainer.webm" type="video/webm">
+                    <source src="/assets/explainer/gmd-explainer.mp4" type="video/mp4">
+                </video>
+                <button type="button" id="explainer-sound" onclick="toggleExplainerSound()" aria-pressed="false" data-label-on="Ton an" data-label-off="Stumm" class="absolute bottom-4 right-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-950/80 backdrop-blur border border-slate-700 text-sm font-semibold text-white hover:border-pink-400 transition-colors">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                    <span>Ton an</span>
+                </button>
+            </div>
+            <p class="text-center text-slate-500 text-xs mt-3">Musik: <a href="https://incompetech.com/music/royalty-free/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">"Wallpaper" by Kevin MacLeod (incompetech.com)</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">CC BY 4.0</a></p>
+        </div>
+    </section>
+
+    <!-- Why a dedicated Grok downloader (comparison) -->
+    <section id="compare" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Warum nicht einfach manuell speichern oder einen allgemeinen Downloader nutzen?</h2>
+                <p class="text-slate-400 max-w-3xl mx-auto">Allgemeine „Image Downloader“-Erweiterungen greifen sich, was gerade auf dem Bildschirm ist. Grok hält den Großteil deiner Bibliothek außerhalb des Bildschirms hinter seiner eigenen Medien-API, und seit Juli 2026 zeigt nicht einmal mehr die Saved-Seite alles an. GrokMediaDownloader spricht direkt mit dieser API.</p>
+            </div>
+            <div class="overflow-x-auto rounded-2xl border border-slate-800">
+                <table class="w-full min-w-[640px] text-sm text-left">
+                    <thead class="bg-slate-900 text-slate-300">
+                        <tr>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold">Was du brauchst</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center">Von Hand speichern</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center">Allgemeiner Downloader</th>
+                            <th scope="col" class="py-4 px-4 md:px-6 font-semibold text-center text-pink-400">GrokMediaDownloader</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr><td class="py-4 px-4 md:px-6">Findet Medien, die Groks Seite nicht mehr auflistet (Backend seit Juli 2026)</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Whole-Library-Scan</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Lädt Tausende Elemente in einem Durchgang, ohne dass der Speicher ausgeht</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">Nur, was auf dem Bildschirm geladen ist</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Mit 15.000+ getestet</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Ordner pro Unterhaltung oder Tag, Dateinamen aus Datum, Prompt, ID und Seed</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">Du benennst jede Datei um</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">Zufällige Dateinamen</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Vorlagen</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Überspringt bereits Heruntergeladenes, setzt nach einem Neuladen fort</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Verlauf pro Quelle</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Holt die 1080p-Version von Videos, nicht die Vorschau</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">Manuell, eins nach dem anderen</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">Vorschauqualität</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Batch-HD-/1080p-Upgrade <span class="ml-1 inline-block align-middle text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-500/20 text-pink-300">PRO</span></td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Stellt Videogenerierung in eine Warteschlange und fügt Clips zu einer Story zusammen</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Video Gen Queue, Story Mode</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">Hält deine Medien privat</td><td class="py-4 px-4 md:px-6 text-center text-slate-400">Ja</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">Hängt von der Erweiterung ab</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 100 % in deinem Browser, kein Server</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center text-slate-500 text-xs mt-4">Stand: Verhalten von Groks Medien-API im Oktober 2026. Die kostenlose Version umfasst den Whole-Library-Scan, Downloads der letzten 7 Tage, Batch-Download von Bildern und Ordner; die PRO-Liste findest du unter <a href="/de/pricing.html" class="underline hover:text-slate-300">Preise</a>.</p>
+        </div>
+    </section>
+
     <section class="py-10 bg-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 md:p-6">

@@ -143,6 +143,46 @@
             "@type": "Answer",
             "text": "Ja – seit v2.5.1 ist die Auswahl der Download-Quelle für alle kostenlos, denn niemand sollte auf einer Quelle festsitzen, die die eigenen Medien nicht sehen kann. Free-Nutzer können „📦 Alle generierten Medien (nach Unterhaltung)“ wählen und alles aus den letzten 7 Tagen herunterladen. Die Erweiterung nennt dieses Zeitfenster von vornherein, statt deine Ergebnisse stillschweigend zu kürzen. GrokMediaDownloader PRO – ein einmaliger Kauf für $4.99 mit Lizenz auf Lebenszeit – hebt das Zeitlimit auf, damit du deine komplette Bibliothek archivieren kannst, und schaltet die Datumsfilterung frei (fester Zeitraum oder Fenster der letzten Stunden). PRO umfasst außerdem Stream Capture, Story Mode Helper, unbegrenzte Video Gen Queue, Project-Based Download, HD- und 1080p-Upgrade sowie Datenexport und -import. Die gesamte Verarbeitung erfolgt lokal in deinem Browser – es werden keine Daten erhoben und nichts hochgeladen."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Generate List findet nichts oder übersieht meine neuesten Bilder",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prüfe die Auswahl der Download-Quelle. Steht dort noch „Favoriten“, wechsle zu „📦 Alle generierten Medien (nach Unterhaltung)“. Seit Groks Umstellung im Juli 2026 werden neue Generierungen nicht mehr zu den Favoriten hinzugefügt, ein Favoriten-Scan kann also tatsächlich leer zurückkommen. Die Quelle für die ganze Bibliothek ist für alle kostenlos und seit v2.5.1 voreingestellt. Klicke danach erneut auf Generate List."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Das HD-Upgrade meldet, jedes Video sei bereits upgegradet",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gleiche Ursache wie oben: Der Upgrade-Scan liest die Liste der gewählten Quelle, und die Favoritenliste ist unvollständig. Stelle die Quelle auf die ganze Bibliothek um, generiere die Liste neu und starte den Upgrade-Scan noch einmal. Seit v2.5 konvergiert der Scan: Wiederholte Durchläufe liefern dasselbe Ergebnis, und 1080p wird als eigene Stufe geführt, sodass eine 720p-Datei nie für die höchste Qualität gehalten wird."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dateinamen, Ordnernamen oder metadata.json enthalten keinen Prompt",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grok liefert den Prompt seit September 2026 nicht mehr mit der Medienliste mit. Aktualisiere auf v2.5.6 oder neuer: Diese Version stellt jeden Prompt aus der Unterhaltung wieder her, die das Element erzeugt hat. Generiere die Liste danach einmal neu, denn Namen werden im Schritt Generate List festgelegt – eine mit einer älteren Version erstellte Liste behält die alten Namen. Wähle in den Einstellungen den Dateinamen-Modus „Prompt-basiert“ (Prompt Based), wenn du Prompts in den Dateinamen möchtest. Ein dauerhafter Cache speichert wiederhergestellte Prompts, sodass spätere Neugenerierungen nur Sekunden dauern."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ein Tag, den ich in Grok erstellt habe, fehlt, oder ein Tag lädt nur eine Datei herunter",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Seit seiner Migration im August 2026 betreibt Grok zwei Tag-Systeme parallel, und jedem fehlen Einträge, die das andere hat. Die Versionen 2.5.2 bis 2.5.4 lesen nur das neue. Aktualisiere auf v2.5.6 oder neuer: Diese Version liest beide und führt sie zusammen, sodass Tag-Listen und Tag-Inhalte die Vereinigung beider sind. Generiere nach dem Update die Liste für den Tag neu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Meine Dateien sind weg, und die Erweiterung sagt, alles sei bereits heruntergeladen",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jede Quelle führt ihren eigenen Download-Verlauf. Für die Quelle der ganzen Bibliothek öffnest du das Popup, klappst „🧹 Löschen“ auf und klickst auf „Unterhaltungsverlauf löschen“; bestätige den Dialog. Der Button „Download-Verlauf zurücksetzen“ gilt nur für die Quelle „Favoriten“. Das Löschen eines Verlaufs entfernt nichts auf Grok oder auf deiner Festplatte; es sorgt nur dafür, dass der nächste Durchlauf diese Einträge erneut herunterlädt."
+          }
         }
       ]
     }
@@ -399,6 +439,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_1_title">Quelle wählen</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_1_desc">Öffne die Erweiterung auf deiner Grok-Imagine-Seite und wähle in der Auswahl „🎯 Download-Quelle“ die Option „📦 Alle generierten Medien (nach Unterhaltung)“. Optional legst du ein Fenster der letzten Stunden oder einen Zeitraum fest.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/resized/feat-generate-list_640x400.jpg" srcset="/assets/resized/feat-generate-list_640x400.jpg 640w, /assets/resized/feat-generate-list_1280x800.jpg 1280w" sizes="(min-width: 768px) 640px, 100vw" alt="Popup von GrokMediaDownloader: Checkboxen für Medientypen, der PRO-Datumsfilter und die Buttons &quot;1. Generate List&quot; und &quot;2. Start Download&quot;" loading="lazy" width="1280" height="800" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Screenshot des Popups: Medientypen, Datumsfilter, dann Generate List und Start Download.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -408,6 +452,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_2_title">Liste generieren</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_2_desc">Die Erweiterung scannt deine Bibliothek vom Neuesten zum Ältesten, ermittelt die Qualitätsstufe jedes Videos und bereitet die Unterhaltungsordner vor. Der Fortschritt wird in jeder Phase angezeigt – Scannen, Qualität ermitteln N/M, Ordner vorbereiten N/M.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-sources.jpg" alt="Illustration der drei Download-Quellen: ganze Bibliothek nach Unterhaltung, Tags und Sammlungen sowie gelikte Posts" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Die drei Quellen: Whole Library (nach Unterhaltung), Tags &amp; Sammlungen, Likes. Illustration aus dem Produkt-Erklärvideo.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -417,6 +465,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_3_title">Zusammenfassung prüfen</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_3_desc">Eine Zusammenfassung zeigt, wie viele Bilder und Videos heruntergeladen werden und wie viele schon erledigt sind – Videos aufgeschlüsselt nach 1080p, HD, 720p und SD, damit du genau weißt, was du gleich abrufst.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-scan.jpg" alt="Illustration eines Bibliotheks-Scan-Zählers, der 15.000 Elemente überschreitet, bei gleichbleibendem Speicherverbrauch" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Der Scan arbeitet Seite für Seite, sodass auch eine Bibliothek mit 15.000 Elementen fertig wird, ohne dass dem Browser der Speicher ausgeht. Illustration.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -426,6 +478,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_4_title">Herunterladen &amp; archivieren</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_4_desc">Dateien werden in Ordner pro Unterhaltung mit Prompt-basierten Namen heruntergeladen. Unterbrochene Downloads werden erfasst, sodass ein erneuter Versuch nur das Fehlende abruft und nichts bereits Fertiges erneut herunterlädt.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-folders.jpg" alt="Illustration der Benennungsvorlage: Ordner pro Unterhaltung oder Tag, Dateinamen aus Datum, Uhrzeit, Prompt, ID und Seed" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Ordner pro Unterhaltung oder Tag; Dateinamen aus Datum, Uhrzeit, Prompt, ID und Seed. Illustration.</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -612,6 +668,39 @@
     </section>
 
     <!-- FAQ Section -->
+    <!-- Troubleshooting -->
+    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Fehlerbehebung</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Die fünf Probleme, von denen wir am häufigsten hören, mit der Lösung, die sie in der Praxis behoben hat. Alle gehen auf Groks Backend-Änderungen von 2026 zurück, nicht auf eine falsche Einstellung.</p>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Generate List findet nichts oder übersieht meine neuesten Bilder<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Prüfe die Auswahl <strong class="text-slate-200">Download-Quelle</strong>. Steht dort noch „Favoriten“, wechsle zu <strong class="text-slate-200">📦 Alle generierten Medien (nach Unterhaltung)</strong>. Seit Groks Umstellung im Juli 2026 werden neue Generierungen nicht mehr zu den Favoriten hinzugefügt, ein Favoriten-Scan kann also tatsächlich leer zurückkommen. Die Quelle für die ganze Bibliothek ist für alle kostenlos und seit v2.5.1 voreingestellt. Klicke danach erneut auf Generate List.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Das HD-Upgrade meldet, jedes Video sei bereits upgegradet<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Gleiche Ursache wie oben: Der Upgrade-Scan liest die Liste der gewählten Quelle, und die Favoritenliste ist unvollständig. Stelle die Quelle auf die ganze Bibliothek um, generiere die Liste neu und starte den Upgrade-Scan noch einmal. Seit v2.5 konvergiert der Scan: Wiederholte Durchläufe liefern dasselbe Ergebnis, und 1080p wird als eigene Stufe geführt, sodass eine 720p-Datei nie für die höchste Qualität gehalten wird.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Dateinamen, Ordnernamen oder metadata.json enthalten keinen Prompt<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok liefert den Prompt seit September 2026 nicht mehr mit der Medienliste mit. Aktualisiere auf v2.5.6 oder neuer: Diese Version stellt jeden Prompt aus der Unterhaltung wieder her, die das Element erzeugt hat. <strong class="text-slate-200">Generiere die Liste danach einmal neu</strong>, denn Namen werden im Schritt Generate List festgelegt – eine mit einer älteren Version erstellte Liste behält die alten Namen. Wähle in den Einstellungen den Dateinamen-Modus „Prompt-basiert“ (Prompt Based), wenn du Prompts in den Dateinamen möchtest. Ein dauerhafter Cache speichert wiederhergestellte Prompts, sodass spätere Neugenerierungen nur Sekunden dauern.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Ein Tag, den ich in Grok erstellt habe, fehlt, oder ein Tag lädt nur eine Datei herunter<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Seit seiner Migration im August 2026 betreibt Grok zwei Tag-Systeme parallel, und jedem fehlen Einträge, die das andere hat. Die Versionen 2.5.2 bis 2.5.4 lesen nur das neue. Aktualisiere auf v2.5.6 oder neuer: Diese Version liest beide und führt sie zusammen, sodass Tag-Listen und Tag-Inhalte die Vereinigung beider sind. Generiere nach dem Update die Liste für den Tag neu.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Meine Dateien sind weg, und die Erweiterung sagt, alles sei bereits heruntergeladen<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Jede Quelle führt ihren eigenen Download-Verlauf. Für die Quelle der ganzen Bibliothek öffnest du das Popup, klappst <strong class="text-slate-200">🧹 Löschen</strong> auf und klickst auf <strong class="text-slate-200">Unterhaltungsverlauf löschen</strong>; bestätige den Dialog. Der Button „Download-Verlauf zurücksetzen“ gilt nur für die Quelle „Favoriten“. Das Löschen eines Verlaufs entfernt nichts auf Grok oder auf deiner Festplatte; es sorgt nur dafür, dass der nächste Durchlauf diese Einträge erneut herunterlädt.</div>
+                </details>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-8">Kommst du trotzdem nicht weiter? Die <a href="/de/faq.html" class="underline hover:text-slate-300">FAQ</a> behandelt weitere Fälle, und über den Button „Support kontaktieren“ im Footer erreichst du einen Menschen.</p>
+        </div>
+    </section>
+
     <section class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">

@@ -143,10 +143,50 @@
             "@type": "Answer",
             "text": "Sí. Desde la v2.5.1 el selector de origen de descarga es gratis para todos, porque nadie debería quedarse atascado en un origen que no puede ver sus propios medios. Los usuarios gratuitos pueden seleccionar \"📦 All Generated Media (by Conversation)\" y descargar todo lo de los últimos 7 días; la extensión indica esta ventana desde el principio en lugar de recortar tus resultados en silencio. GrokMediaDownloader PRO, una compra única de $4.99 con licencia vitalicia, elimina el límite de tiempo para que puedas archivar toda tu biblioteca y desbloquea el filtrado por fecha (un rango concreto o una ventana de horas recientes). PRO también incluye Stream Capture, Story Mode Helper, Video Gen Queue ilimitado, Project-Based Download, mejora a HD y 1080p, y exportación e importación de datos. Todo el procesamiento ocurre localmente en tu navegador: no se recopilan datos y no se sube nada."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Generate List no encuentra nada o no muestra mis imágenes más recientes",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Revisa el selector Download Source. Si todavía indica Favorite, cambia a All Generated Media (by Conversation). Desde el cambio de Grok de julio de 2026, las nuevas generaciones ya no se añaden a Favoritos, así que un escaneo de Favorite puede volver vacío con toda razón. El origen de toda la biblioteca es gratis para todos y es el predeterminado desde la v2.5.1. Después, haz clic de nuevo en Generate List."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HD Upgrade dice que todos los videos ya están mejorados",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La causa es la misma: el escaneo de mejora lee la lista del origen seleccionado, y la lista de Favorite está incompleta. Cambia el origen a toda la biblioteca, vuelve a generar la lista y ejecuta de nuevo el escaneo de mejora. Desde la v2.5 el escaneo converge: las ejecuciones repetidas devuelven el mismo resultado, y 1080p se registra como nivel propio, así que un archivo de 720p nunca se confunde con la calidad máxima."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Los nombres de archivo, los nombres de carpeta o metadata.json no incluyen el prompt",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grok dejó de enviar el prompt junto con la lista de medios en septiembre de 2026. Actualiza a la v2.5.6 o posterior, que recupera cada prompt de la conversación que generó el elemento, y luego vuelve a generar la lista una vez: los nombres se deciden durante el paso Generate List, así que una lista creada con una versión anterior conserva los nombres antiguos. En Settings, elige el modo de nombre de archivo \"Prompt Based\" si quieres prompts en los nombres de archivo. Una caché persistente guarda los prompts recuperados, así que las regeneraciones posteriores tardan segundos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Falta una etiqueta que creé en Grok, o una etiqueta descarga solo un archivo",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Desde su migración de agosto de 2026, Grok mantiene dos sistemas de etiquetas en paralelo, y a cada uno le faltan elementos que el otro sí tiene. Las versiones 2.5.2 a 2.5.4 solo leen el nuevo. Actualiza a la v2.5.6 o posterior: lee ambos y los combina, así que las listas de etiquetas y su contenido son la unión de los dos. Tras actualizar, vuelve a generar la lista de la etiqueta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Perdí mis archivos y la extensión dice que ya está todo descargado",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cada origen guarda su propio historial de descargas. Para el origen de toda la biblioteca, abre el popup, despliega Clear Actions y haz clic en Clear Conversation History; confirma el diálogo. El botón \"Reset Download History\" solo se aplica al origen Favorite. Borrar un historial no elimina nada en Grok ni en el disco; solo permite que la siguiente ejecución vuelva a descargar esos elementos."
+          }
         }
       ]
     }
-    </script>
+  </script>
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
@@ -401,6 +441,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_1_title">Elige tu origen</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_1_desc">Abre la extensión en tu página de Grok Imagine y elige "All Generated Media (by Conversation)" en el selector Download Source. Si quieres, define una ventana de horas recientes o un rango de fechas.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/resized/feat-generate-list_640x400.jpg" srcset="/assets/resized/feat-generate-list_640x400.jpg 640w, /assets/resized/feat-generate-list_1280x800.jpg 1280w" sizes="(min-width: 768px) 640px, 100vw" alt="Popup de GrokMediaDownloader: casillas de tipo de medio, el filtro de fecha PRO y los botones &quot;1. Generate List&quot; y &quot;2. Start Download&quot;" loading="lazy" width="1280" height="800" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Captura del popup: tipos de medio, filtro de fecha y luego Generate List y Start Download.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -410,6 +454,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_2_title">Genera la lista</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_2_desc">La extensión escanea tu biblioteca de lo más reciente a lo más antiguo, resuelve el nivel de calidad de cada video y prepara las carpetas por conversación. Se informa el progreso en cada etapa: escaneo, resolución de calidad N/M y preparación de carpetas N/M.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-sources.jpg" alt="Ilustración de los tres orígenes de descarga: toda la biblioteca por conversación, etiquetas y colecciones, y publicaciones con me gusta" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Los tres orígenes: Whole Library (por conversación), Tags &amp; Collections y Liked. Ilustración del video explicativo del producto.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -419,6 +467,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_3_title">Revisa el resumen</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_3_desc">Un resumen muestra cuántas imágenes y videos se descargarán frente a los ya descargados, con los videos desglosados en 1080p, HD, 720p y SD para que sepas exactamente qué vas a obtener.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-scan.jpg" alt="Ilustración de un contador de escaneo de la biblioteca que supera los 15.000 elementos con un uso de memoria constante" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">El escaneo avanza página a página, así que una biblioteca de 15.000 elementos termina sin que el navegador se quede sin memoria. Ilustración.</figcaption>
+                        </figure>
                     </div>
                 </div>
 
@@ -428,6 +480,10 @@
                     <div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_4_title">Descarga y archiva</h3>
                         <p class="text-slate-400 leading-relaxed" data-i18n="library_step_4_desc">Los archivos se descargan en carpetas por conversación con nombres basados en el prompt. Las descargas interrumpidas quedan registradas, así que un reintento obtiene solo lo que falta y nunca vuelve a descargar lo completado.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/explainer/still-folders.jpg" alt="Ilustración de la plantilla de nombres: carpetas por conversación o etiqueta y nombres de archivo a partir de fecha, hora, prompt, ID y seed" loading="lazy" width="1280" height="720" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Carpetas por conversación o etiqueta; nombres de archivo a partir de fecha, hora, prompt, ID y seed. Ilustración.</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -616,6 +672,39 @@
     </section>
 
     <!-- FAQ Section -->
+    <!-- Troubleshooting -->
+    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Solución de problemas</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Los cinco problemas que más nos consultan, con la solución que los resolvió en la práctica. Todos se deben a los cambios de backend de Grok en 2026, no a un ajuste mal configurado.</p>
+            </div>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Generate List no encuentra nada o no muestra mis imágenes más recientes<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Revisa el selector <strong class="text-slate-200">Download Source</strong>. Si todavía indica Favorite, cambia a <strong class="text-slate-200">All Generated Media (by Conversation)</strong>. Desde el cambio de Grok de julio de 2026, las nuevas generaciones ya no se añaden a Favoritos, así que un escaneo de Favorite puede volver vacío con toda razón. El origen de toda la biblioteca es gratis para todos y es el predeterminado desde la v2.5.1. Después, haz clic de nuevo en Generate List.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">HD Upgrade dice que todos los videos ya están mejorados<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">La causa es la misma: el escaneo de mejora lee la lista del origen seleccionado, y la lista de Favorite está incompleta. Cambia el origen a toda la biblioteca, vuelve a generar la lista y ejecuta de nuevo el escaneo de mejora. Desde la v2.5 el escaneo converge: las ejecuciones repetidas devuelven el mismo resultado, y 1080p se registra como nivel propio, así que un archivo de 720p nunca se confunde con la calidad máxima.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Los nombres de archivo, los nombres de carpeta o metadata.json no incluyen el prompt<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok dejó de enviar el prompt junto con la lista de medios en septiembre de 2026. Actualiza a la v2.5.6 o posterior, que recupera cada prompt de la conversación que generó el elemento, y luego <strong class="text-slate-200">vuelve a generar la lista una vez</strong>: los nombres se deciden durante el paso Generate List, así que una lista creada con una versión anterior conserva los nombres antiguos. En Settings, elige el modo de nombre de archivo "Prompt Based" si quieres prompts en los nombres de archivo. Una caché persistente guarda los prompts recuperados, así que las regeneraciones posteriores tardan segundos.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Falta una etiqueta que creé en Grok, o una etiqueta descarga solo un archivo<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Desde su migración de agosto de 2026, Grok mantiene dos sistemas de etiquetas en paralelo, y a cada uno le faltan elementos que el otro sí tiene. Las versiones 2.5.2 a 2.5.4 solo leen el nuevo. Actualiza a la v2.5.6 o posterior: lee ambos y los combina, así que las listas de etiquetas y su contenido son la unión de los dos. Tras actualizar, vuelve a generar la lista de la etiqueta.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Perdí mis archivos y la extensión dice que ya está todo descargado<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Cada origen guarda su propio historial de descargas. Para el origen de toda la biblioteca, abre el popup, despliega <strong class="text-slate-200">Clear Actions</strong> y haz clic en <strong class="text-slate-200">Clear Conversation History</strong>; confirma el diálogo. El botón "Reset Download History" solo se aplica al origen Favorite. Borrar un historial no elimina nada en Grok ni en el disco; solo permite que la siguiente ejecución vuelva a descargar esos elementos.</div>
+                </details>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-8">¿Sigues con problemas? Las <a href="/es/faq.html" class="underline hover:text-slate-300">preguntas frecuentes</a> cubren más casos, y el botón «Contactar con soporte» del pie de página te pone en contacto con una persona.</p>
+        </div>
+    </section>
+
     <section class="py-24 bg-slate-900/50 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">

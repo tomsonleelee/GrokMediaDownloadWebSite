@@ -173,6 +173,26 @@
     </section>
 
     <!-- FAQ Sections -->
+    <!-- Start here: most common problems -->
+    <section class="pb-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-pink-500/30 bg-pink-500/5 p-6 md:p-8">
+                <h2 class="text-xl font-bold text-white mb-2">Starte hier, wenn etwas nicht mehr funktioniert</h2>
+                <p class="text-slate-400 text-sm mb-5">Fast jede Meldung seit Juli 2026 läuft auf einen dieser Punkte hinaus. Jeder Link öffnet die passende Antwort weiter unten.</p>
+                <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-2 text-sm">
+                    <li><a href="#empty-list" class="text-pink-300 hover:text-white underline">Generate List findet nichts / „bereits upgegradet“</a></li>
+                    <li><a href="#missing-prompts" class="text-pink-300 hover:text-white underline">Dateinamen und Metadaten enthalten keinen Prompt</a></li>
+                    <li><a href="#missing-tag" class="text-pink-300 hover:text-white underline">Ein Tag fehlt oder lädt nur eine Datei herunter</a></li>
+                    <li><a href="#redownload" class="text-pink-300 hover:text-white underline">Dateien weg, Erweiterung meldet „bereits heruntergeladen“</a></li>
+                    <li><a href="#after-update" class="text-pink-300 hover:text-white underline">Was direkt nach dem Update zu tun ist</a></li>
+                    <li><a href="#update-260" class="text-pink-300 hover:text-white underline">Auf v2.6.0 aktualisiert: Muss ich neu aktivieren?</a></li>
+                    <li><a href="#license-key" class="text-pink-300 hover:text-white underline">Wo der PRO-Lizenzschlüssel eingegeben wird</a></li>
+                </ul>
+                <p class="text-slate-500 text-xs mt-5">Schritt-für-Schritt-Lösungen mit Screenshots: <a href="/de/library-download.html#troubleshooting" class="underline hover:text-slate-300">Fehlerbehebung für Whole Library Download</a>. Was sich in jeder Version geändert hat: <a href="/de/changelog.html" class="underline hover:text-slate-300">Changelog</a>.</p>
+            </div>
+        </div>
+    </section>
+
     <section class="pb-24">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -200,7 +220,7 @@
                             <span data-i18n="faq_v25_2_a">Das Upgrade von Videos auf 1080p erfordert einen kostenpflichtigen Grok-Plan, nämlich SuperGrok Heavy. Da es kostenpflichtiges Kontingent verbraucht, liegt es bei GrokMediaDownloader hinter einer ausdrücklichen Opt-in-Checkbox namens „HD/720p auf 1080p aktualisieren“, die standardmäßig deaktiviert ist. Ohne Häkchen sendet die Erweiterung überhaupt keine 1080p-Anfragen und führt nur Upgrades von SD auf HD durch – so wirst du nie überraschend zur Kasse gebeten. Der Bestätigungsdialog zeigt trotzdem an, wie viele Videos auf 1080p upgegradet werden könnten, damit sie nie stillschweigend aus deiner Ansicht verschwinden. Stellt sich heraus, dass dein Konto die Berechtigung nicht hat, erkennt die Erweiterung das einmalig und sendet sofort keine weiteren 1080p-Anfragen mehr, statt wiederholt zu scheitern. Upgrades von SD auf HD erfordern keinen kostenpflichtigen Plan und funktionieren mit jedem Konto.</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="after-update">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_3_q">Was sollte ich direkt nach dem Update auf v2.5.6 tun?</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -209,7 +229,7 @@
                             <span data-i18n="faq_v25_3_a">Drei Schritte. Erstens: Öffne chrome://extensions, lade GrokMediaDownloader neu und aktualisiere alle offenen Grok-Tabs, damit die neuen Content-Scripts greifen. Zweitens: Generiere deine Download-Liste einmal neu. Prompt-basierte Dateinamen und die neue Benennung der Unterhaltungsordner werden im Schritt Generate List geschrieben, und genau hier stellt v2.5.6 auch jeden Prompt aus der Unterhaltung wieder her, die das Medium erzeugt hat. Eine mit einer älteren Version erstellte Liste übernimmt die neuen Regeln also nicht automatisch. Ein dauerhafter Prompt-Cache speichert das Wiederhergestellte, sodass eine spätere Neugenerierung der ganzen Bibliothek Sekunden statt Minuten dauert. Drittens: Wenn du aussagekräftige Dateinamen möchtest, öffne die Einstellungen und wähle den Dateinamen-Modus „Prompt-basiert“ (Prompt Based). Wählst du stattdessen „Grok Nativ“ (Grok Native), entstehen Namen im Format grok_image_YYYYMMDD_id. Prompts werden nur abgerufen, wenn dein Dateinamenformat oder deine Metadaten-Einstellungen sie tatsächlich verwenden, und nachdem du eine dieser Einstellungen geändert hast, bittet dich das Popup, die Liste neu zu generieren. Eine bekannte Einschränkung solltest du kennen: Assets, die du selbst hochgeladen hast oder die keine Generierungsinformationen enthalten, sind auf dem Server mit keinem Prompt und keiner Unterhaltung verknüpft. Diese Einträge werden daher unter ihrer Asset-ID abgelegt statt in einem nach dem Prompt benannten Ordner.</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="redownload">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_4_q">Meine Dateien sind weg – wie lade ich Medien erneut herunter, die die Erweiterung schon als heruntergeladen verbucht hat?</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -218,7 +238,7 @@
                             <span data-i18n="faq_v25_4_a">Version 2.5 führt für jede Download-Quelle einen separaten Download-Verlauf. Welchen Zurücksetzen-Button du brauchst, hängt also davon ab, welche Quelle du genutzt hast. Der Button „Download-Verlauf zurücksetzen (alle Dateien erneut herunterladen)“ gilt nur für die Quelle „Favoriten“. Wenn du über „📦 Alle generierten Medien (nach Unterhaltung)“ heruntergeladen hast, öffne das Popup der Erweiterung, klappe den Bereich „🧹 Löschen“ auf und klicke auf „Unterhaltungsverlauf löschen“. Bestätige den Dialog „Gesamten Unterhaltungs-Downloadverlauf löschen? Dies kann nicht rückgängig gemacht werden.“ – danach sollte „Unterhaltungs-Downloadverlauf gelöscht“ erscheinen. Damit werden die Download-Daten der Quelle „Alle generierten Medien“ zusammen mit den zwischengespeicherten Ergebnissen zur Videoqualität gelöscht. Dateien, die bereits auf deinem Computer gespeichert sind, sowie dein Favoriten- und Tag-Verlauf bleiben unberührt. Wähle anschließend erneut „Alle generierten Medien (nach Unterhaltung)“ und führe Generate List aus – jeder Eintrag gilt dann als noch nicht heruntergeladen, sodass ein vollständiger erneuter Download funktioniert. Die Quelle „Tag“ hat ihren eigenen Button „Tag-Verlauf löschen“.</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="empty-list">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_5_q">Generate List findet nichts, oder das HD-Upgrade meldet, alles sei bereits upgegradet – was ist los?</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -227,7 +247,7 @@
                             <span data-i18n="faq_v25_5_a">Höchstwahrscheinlich steht deine Download-Quelle noch auf „Favoriten“. Durch Groks Backend-Umstellung im Juli 2026 werden neu generierte Medien nicht mehr zu den Favoriten hinzugefügt: Bei einer Messung an einem echten Konto fehlten 11 der 30 neuesten Bibliothekseinträge in der vollständigen Liste der Likes, und Groks eigene Seite „Gespeichert“ ruft diesen Endpunkt überhaupt nicht mehr auf. Ein Scan der Quelle „Favoriten“ kann also tatsächlich leer zurückkommen oder deine neuesten Werke übersehen. Und da der Scan für das HD-Upgrade dieselbe unvollständige Liste liest, meldet er, jedes Video sei bereits upgegradet. Seit v2.5.1 ist die ganze Bibliothek die Standardquelle für Download und Upgrade, und die Quellenauswahl ist für alle kostenlos. Stelle die Download-Quelle auf „📦 Alle generierten Medien (nach Unterhaltung)“ und die Upgrade-Quelle auf „🌐 Gesamte Bibliothek“ um und scanne erneut. Nichts ist verloren – die alte Quelle kann es einfach nicht sehen.</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="missing-tag">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_6_q">Ein Tag, den ich gerade in Grok erstellt habe, erscheint nicht in der Erweiterung</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -236,7 +256,7 @@
                             <span data-i18n="faq_v25_6_a">Aktualisiere auf v2.5.6. Grok hat Tags im August auf seinem Asset-Modell als Sammlungen neu aufgebaut, aber diese Migration ist in beide Richtungen unvollständig. Schreibgeschützt an einem echten Konto überprüft, fehlt jedem System, was das andere hat: Ein am 2026-08-15 erstellter Tag existierte nur im neuen System – der neueste Eintrag im alten Speicher stammte vom 2026-03-28 –, während ein älterer Tag über die neue API nur 2 Einträge lieferte, über die alte aber 233. Version 2.5.6 liest beide Tag-Systeme und führt sie zusammen, sodass Tag-Listen und Tag-Inhalte immer die Vereinigung aus beiden sind – neu erstellte Tags, die vollständigen Inhalte alter Tags und Tags, die nur im alten System existieren, erscheinen alle. Die Versionen 2.5.2 bis 2.5.4 lasen nur die neue Collection-API, weshalb ein Tag mit nur einem Bruchteil seiner Dateien zurückkommen konnte, manchmal sogar mit nur einer einzigen. 2.5.3 und 2.5.4 brachten Paginierungs-Fixes für Tag-Listen und -Inhalte sowie vollständige Scan-Diagnosen, sodass Konten mit vielen Tags auch die älteren sehen. Tag-Downloads nutzen Prompt-basierte Dateinamen, wobei ein Video seinen eigenen Animations-Prompt nutzt oder den des Quellbilds übernimmt. Lade die Erweiterung nach dem Update neu und generiere deine Download-Liste einmal neu. Dir fällt vielleicht auch ein integrierter Tag namens „Liked“ auf – der stammt von Grok selbst, und sein Inhalt unterscheidet sich von deinen bisherigen Favoriten.</span>
                         </div>
                     </details>
-                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-emerald-500/30 rounded-xl overflow-hidden" id="missing-prompts">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200" data-i18n="faq_v25_7_q">Warum fehlen Prompts in meinen Dateinamen, Ordnernamen und Metadaten?</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -413,7 +433,7 @@
                         <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4" data-i18n="faq_4_a">Die GrokMediaDownloader PRO-Lizenz auf Lebenszeit ist ein einmaliger Kauf für $4.99, bezahlt über Stripe, ohne Abos oder wiederkehrende Kosten. Ein Schlüssel aktiviert bis zu drei Geräte. Eine Neuinstallation der Erweiterung auf demselben Gerät (mit aktivierter Chrome-Synchronisierung) belegt keinen Platz, das Deinstallieren der Erweiterung gibt ihren Platz frei, und Chrome-Profile, die mit demselben Google-Konto synchronisiert sind, teilen sich einen Platz. Lizenzen, die vor der Umstellung auf Stripe über Lemon Squeezy gekauft wurden, funktionieren unverändert weiter, mit dem Gerätelimit, das beim Kauf galt. Nach dem Kauf erhältst du per E-Mail einen Lizenzschlüssel, den du im Popup der Erweiterung eingibst, um die PRO-Funktionen sofort zu aktivieren. „Auf Lebenszeit“ bedeutet, dass du alle zukünftigen Funktionsupdates ohne Zusatzkosten erhältst. So waren zum Beispiel Story Mode Helper in v2.0, Video Gen Queue in v2.2 und Tag-Based Download in v2.3 für bestehende PRO-Nutzer automatisch enthalten. Die von Kario LLC veröffentlichte Erweiterung genießt das Vertrauen von über 4.000 Nutzern und hat im Chrome Web Store eine Bewertung von 4,1/5. Wenn du Hilfe zu deiner Lizenz brauchst, kontaktiere unser Team über den Support-Link unten auf dieser Seite.</div>
                     </details>
 
-                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden" id="license-key">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200">Wie gebe ich meinen Lizenzschlüssel ein?</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -421,7 +441,7 @@
                         <div class="faq-content px-6 pb-4 text-slate-400 border-t border-slate-800 pt-4">Nach dem Kauf der GrokMediaDownloader PRO-Lizenz auf Lebenszeit für $4.99 über Stripe wird dein Lizenzschlüssel (Format GMD-XXXX-XXXX-XXXX-XXXX) auf der Bestätigungsseite angezeigt und dir zusätzlich per E-Mail zugeschickt. Um deine Lizenz zu aktivieren, klicke in der Chrome-Symbolleiste auf das Symbol der Erweiterung GrokMediaDownloader, um das Popup zu öffnen. Scrolle ganz nach unten im Popup – dort findest du ein Eingabefeld für die PRO-Aktivierung bzw. die Lizenz. Füge deinen Lizenzschlüssel in dieses Feld ein und klicke auf „Aktivieren“. Die Erweiterung prüft deinen Schlüssel online und schaltet sofort alle PRO-Funktionen frei, darunter HD Upgrade, den Datumsfilter Only After, Project-Based Download, Tag-Based Download, Export/Import Data und die unbegrenzte Video Gen Queue. Die Aktivierung dauert nur wenige Sekunden. Jeder Schlüssel aktiviert bis zu drei Geräte – gib ihn auf jedem neuen Gerät erneut ein. Eine Neuinstallation auf demselben Gerät belegt keinen Platz.</div>
                     </details>
 
-                    <details class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <details id="update-260" class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
                         <summary class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center cursor-pointer focus:outline-none">
                             <span class="font-medium text-slate-200">Ich habe auf v2.6.0 aktualisiert – muss ich meine Lizenz neu aktivieren?</span>
                             <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-slate-500 transition-transform duration-300"></i>
@@ -477,6 +497,10 @@
     <!-- Scripts -->
 <script src="/js/i18n.js"></script>
     <script src="/js/components.js"></script>
+<script>
+// Open the FAQ entry a #hash points at (links from the "Start here" box and from other pages).
+(function () { function openTarget() { var el = location.hash && document.getElementById(location.hash.slice(1)); if (el && el.tagName === 'DETAILS') { el.open = true; } } window.addEventListener('hashchange', openTarget); openTarget(); })();
+</script>
 </body>
 
 </html>

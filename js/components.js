@@ -417,11 +417,11 @@ function getLangFromPath() {
 }
 
 // Load shared components (header & footer)
-// The footer language row ships with links to the four language home pages so crawlers can
+// The footer language row ships with links to the six language home pages so crawlers can
 // reach every edition without JS; once loaded, point each link at this page's own translation.
 function localizeFooterLanguageLinks() {
-    const prefixMap = { 'en': '', 'zh-TW': '/zh-TW', 'ja': '/ja', 'ko': '/ko' };
-    let basePath = window.location.pathname.replace(/^\/(zh-TW|ja|ko)(?=\/|$)/, '') || '/';
+    const prefixMap = { 'en': '', 'zh-TW': '/zh-TW', 'ja': '/ja', 'ko': '/ko', 'es': '/es', 'de': '/de' };
+    let basePath = window.location.pathname.replace(/^\/(zh-TW|ja|ko|es|de)(?=\/|$)/, '') || '/';
     if (basePath.endsWith('/index.html')) basePath = basePath.slice(0, -'index.html'.length);
     document.querySelectorAll('#footer-lang-links a[data-lang]').forEach(a => {
         const prefix = prefixMap[a.dataset.lang];

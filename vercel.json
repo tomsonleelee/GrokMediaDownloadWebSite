@@ -1,19 +1,19 @@
 {
   "rewrites": [
     {
-      "source": "/success",
+      "source": "/success/",
       "destination": "/success.html"
     },
     {
-      "source": "/:lang(zh-TW|ja|ko|es|de)/success",
+      "source": "/:lang(zh-TW|ja|ko|es|de)/success/",
       "destination": "/:lang/success.html"
     },
     {
-      "source": "/pricing",
+      "source": "/pricing/",
       "destination": "/pricing.html"
     },
     {
-      "source": "/:lang(zh-TW|ja|ko|es|de)/pricing",
+      "source": "/:lang(zh-TW|ja|ko|es|de)/pricing/",
       "destination": "/:lang/pricing.html"
     }
   ],

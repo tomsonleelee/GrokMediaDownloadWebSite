@@ -3,10 +3,17 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6"></script>
     <script>
+        // GA4: never load or send from local dev/test hosts (localhost, 127.0.0.1). Production only.
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            window['ga-disable-G-6YPN8563C6'] = true;
+        } else {
+            var gtagScript = document.createElement('script'); gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6';
+            document.head.appendChild(gtagScript);
+        }
         gtag('js', new Date());
         gtag('config', 'G-6YPN8563C6');
     </script>

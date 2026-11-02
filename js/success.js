@@ -61,17 +61,22 @@
         if (window.Analytics && typeof Analytics.track === 'function') Analytics.track(eventName, p);
     }
 
-    // GA4 purchase — once per transaction id (localStorage dedupe survives reloads/tabs).
+    // GA4 purchase — once per transaction id AND once per checkout session (localStorage dedupe
+    // survives reloads/tabs). The session key matters when the first fire had no order_ref (API
+    // down → 'unknown' with the cs_ hash) and a later reload gets the payment_intent: without it
+    // the two different transaction ids would count the same purchase twice.
     function firePurchase(txId, value, currency, paymentStatus) {
         if (typeof gtag !== 'function') return;
-        (txId ? Promise.resolve(txId) : hashedSession).then(function (id) {
-            if (id) firePurchaseNow(id, value, currency, paymentStatus);
+        hashedSession.then(function (sessionKey) {
+            var id = txId || sessionKey;
+            if (id) firePurchaseNow(id, sessionKey, value, currency, paymentStatus);
         });
     }
 
-    function firePurchaseNow(txId, value, currency, paymentStatus) {
-        var storageKey = 'purchase_tracked_' + txId;
-        try { if (localStorage.getItem(storageKey)) return; } catch (e) { /* storage blocked */ }
+    function firePurchaseNow(txId, sessionKey, value, currency, paymentStatus) {
+        var keys = ['purchase_tracked_' + txId];
+        if (sessionKey && sessionKey !== txId) keys.push('purchase_tracked_' + sessionKey);
+        try { for (var k = 0; k < keys.length; k++) if (localStorage.getItem(keys[k])) return; } catch (e) { /* storage blocked */ }
         var v = parseFloat(value);
         if (!isFinite(v) || v <= 0) v = 4.99;
         gtag('event', 'purchase', {
@@ -81,7 +86,7 @@
             payment_status: paymentStatus,
             items: [PRO]
         });
-        try { localStorage.setItem(storageKey, '1'); } catch (e) { /* ignore */ }
+        try { for (var j = 0; j < keys.length; j++) localStorage.setItem(keys[j], '1'); } catch (e) { /* ignore */ }
     }
 
     function renderPaid(d) {

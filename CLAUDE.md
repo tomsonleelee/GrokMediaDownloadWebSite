@@ -18,7 +18,7 @@ Static marketing website for the **GrokMediaDownloader** Chrome extension (Grok 
 |-------|------|
 | CSS | TailwindCSS v3 — static compiled (`css/styles.css`) via `npm run build:css` |
 | Icons | Lucide Icons via CDN |
-| Analytics | GA4 — `G-6YPN8563C6` (marketing site) + `G-8DSYQ27F9Y` (CWS, via Connected Site Tags) |
+| Analytics | GA4 — `G-6YPN8563C6` (marketing site) + `G-8DSYQ27F9Y` (CWS, via Connected Site Tags). The inline head loader on every page skips gtag.js and sets `ga-disable-G-6YPN8563C6` on `localhost`/`127.0.0.1`, so local dev and Playwright runs never reach production GA4; when driving the **live** site with a browser, block `googletagmanager.com`/`google-analytics.com` requests yourself |
 | Components | `js/components.js` — shared header/footer loader, GA4 event tracking |
 | i18n | `js/i18n.js` — toast translations only (4 keys × 6 languages) + language switch |
 

@@ -140,6 +140,24 @@
     <section class="pb-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             <p class="text-slate-400 text-sm">Los números de issue hacen referencia a reportes en el repositorio público de GitHub.</p>
+            <article id="v2-6-1" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.6.1</h2>
+                    <time datetime="2026-11-02" class="text-slate-500 text-sm">2026-11-02</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">Corrección</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">Activación más robusta, una barra de progreso fiel con tiempo estimado y escaneos que sobreviven al cierre del popup</h3>
+                <p class="text-slate-400 mb-4">Una versión de mantenimiento: sin funciones nuevas ni permisos nuevos. Refuerza el flujo de activación de la 2.6.0 y corrige varios problemas de los trabajos largos que solo aparecen en bibliotecas grandes.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">La activación recurre a una alternativa segura.</strong> Si el servidor de licencias responde con un formato inesperado, la extensión ahora lo trata como inaccesible: las claves de Lemon Squeezy pasan directamente a su ruta de activación original en lugar de marcarse como no válidas, y las claves GMD- muestran un mensaje de "inténtalo más tarde". Es la defensa del lado del cliente para el incidente del 2026-10-27, que se corrigió en el servidor ese mismo día.</li>
+                    <li><strong class="text-white">La barra de progreso de descarga vuelve a ser correcta.</strong> Podía marcar 100 % con la mitad del trabajo pendiente y luego pasarse; ahora se calcula como completados / (completados + restantes), con un tope de 100 %, y la fase de video cuenta los elementos 720p nativos que antes omitía.</li>
+                    <li><strong class="text-white">Nuevo: tiempo restante estimado</strong> junto al porcentaje ("23 % · quedan ~1 h 40 min"), calculado a partir del ritmo real de esta ejecución en cada fase. Las esperas por límite de solicitudes no cuentan para el ritmo y las que aún faltan se vuelven a sumar. Se actualiza cada 15 s y se conserva al cerrar y volver a abrir el popup. En seis idiomas.</li>
+                    <li><strong class="text-white">Delete Old ya no pierde su resultado al cerrar el popup.</strong> El escaneo de la biblioteca ahora se ejecuta en la pestaña de Grok y no dentro del popup, así que puedes cerrar el popup durante un escaneo de varios minutos y la confirmación te estará esperando al volver a abrirlo. No se borra nada sin esa confirmación; un resultado de hace más de una hora se descarta. Si el servidor rechaza cinco borrados seguidos (sesión caducada, verificación antibots), se detiene y muestra la respuesta del servidor en lugar de recorrer miles de fallos idénticos.</li>
+                    <li><strong class="text-white">Las bibliotecas grandes se escanean con más paciencia.</strong> La paginación de la biblioteca reintenta más veces, con esperas más largas entre intentos, y va más despacio mientras Grok limita las solicitudes, así que es menos probable que una biblioteca de miles de elementos termine con una lista parcial. La recuperación de prompts ya no se rinde ante una ráfaga de límites de solicitudes o una conversación eliminada (404): se reintentan u omiten conversación por conversación y nunca activan el corte tras cinco fallos, que se reserva para fallos reales.</li>
+                    <li><strong class="text-white">Generate List muestra que sigue activa.</strong> El System Log recibe una línea de latido cada 60 s mientras corre un escaneo, y un popup abierto a mitad del escaneo se vuelve a conectar a él con la fase y el progreso en vivo, en lugar de volver por un instante al estado "Completado" de la lista anterior. El historial de descargas ahora también se guarda al cancelar, al pausar por un límite de solicitudes y al final de cada ejecución.</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">Gracias a Greg, usuario PRO, por los reportes sobre la barra de progreso y Delete Old. Después de actualizar: Chrome aplica la actualización automáticamente; actualiza las pestañas de Grok que tengas abiertas. No hace falta volver a activar.</p>
+            </article>
             <article id="v2-6-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
                     <h2 class="text-2xl font-bold text-white">v2.6.0</h2>

@@ -141,6 +141,24 @@
     <section class="pb-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             <p class="text-slate-400 text-sm">이슈 번호는 공개 GitHub 저장소에 등록된 신고를 가리킵니다.</p>
+            <article id="v2-6-1" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.6.1</h2>
+                    <time datetime="2026-11-02" class="text-slate-500 text-sm">2026-11-02</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">수정</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">더 견고해진 활성화, 남은 시간까지 보여주는 정확한 진행률 표시줄, 팝업을 닫아도 계속되는 스캔</h3>
+                <p class="text-slate-400 mb-4">유지보수 릴리스입니다. 새 기능도, 새 권한도 없습니다. 2.6.0의 활성화 흐름을 강화하고, 대용량 라이브러리에서 오래 걸리는 작업에서만 나타나던 몇 가지 문제를 수정했습니다.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">활성화가 안전하게 기존 방식으로 전환됩니다.</strong> 라이선스 서버가 예상치 못한 형식으로 응답하면 확장 프로그램은 이제 서버에 연결할 수 없는 것으로 처리합니다. Lemon Squeezy 키는 유효하지 않다고 표시되지 않고 곧바로 기존 활성화 방식으로 진행되며, GMD- 키에는 "나중에 다시 시도하세요" 메시지가 표시됩니다. 이는 2026-10-27 장애에 대한 클라이언트 측 방어책이며, 서버 측은 당일에 수정되었습니다.</li>
+                    <li><strong class="text-white">다운로드 진행률 표시줄이 다시 정확해졌습니다.</strong> 작업이 절반이나 남았는데 100 %로 표시되고 그 이상으로 넘어가는 경우가 있었습니다. 이제는 완료 ÷ (완료 + 남은 항목)으로 계산하고 100 %를 넘지 않으며, 동영상 단계에서는 이전에 빠뜨리던 네이티브 720p 항목도 셉니다.</li>
+                    <li><strong class="text-white">새 기능: 예상 남은 시간</strong>이 백분율 옆에 표시됩니다("23% · 약 1시간 40분 남음"). 이번 실행의 단계별 실제 속도로 계산합니다. 속도 제한 대기 시간은 속도 계산에서 제외하고, 앞으로 남은 대기 시간은 더해서 반영합니다. 15초마다 갱신되며 팝업을 닫았다 다시 열어도 유지됩니다. 6개 언어를 지원합니다.</li>
+                    <li><strong class="text-white">Delete Old의 결과가 팝업을 닫아도 사라지지 않습니다.</strong> 라이브러리 스캔이 이제 팝업 안이 아니라 Grok 탭에서 실행되므로, 몇 분씩 걸리는 스캔 중에 팝업을 닫아도 다시 열면 확인 창이 기다리고 있습니다. 이 확인 없이는 아무것도 삭제되지 않으며, 1시간이 지난 결과는 폐기됩니다. 서버가 삭제를 5번 연속 거부하면(세션 만료, 봇 방지 확인) 수천 건의 똑같은 실패를 반복하지 않고 중단한 뒤 서버의 응답을 보여줍니다.</li>
+                    <li><strong class="text-white">대용량 라이브러리를 더 끈기 있게 스캔합니다.</strong> 라이브러리 페이지 요청은 재시도 횟수를 늘리고 재시도 간격을 더 길게 두며, Grok이 속도를 제한하는 동안에는 속도를 늦춥니다. 그래서 항목이 수천 개인 라이브러리도 일부 목록만으로 끝날 가능성이 줄었습니다. 프롬프트 복구는 속도 제한이 몰리거나 삭제된 대화(404)를 만나도 더 이상 중도에 포기하지 않습니다. 이런 경우는 대화별로 재시도하거나 건너뛰며, "5번 실패하면 중단" 안전장치를 작동시키지 않습니다. 이 안전장치는 실제 실패에만 쓰입니다.</li>
+                    <li><strong class="text-white">Generate List가 작동 중인지 확인할 수 있습니다.</strong> 스캔이 진행되는 동안 System Log에 60초마다 하트비트 줄이 기록되며, 스캔 도중 연 팝업은 현재 단계와 진행률에 다시 연결되어 이전 목록의 "완료" 상태로 잠깐 되돌아가지 않습니다. 다운로드 기록은 이제 중단할 때, 속도 제한으로 일시 정지할 때, 실행이 끝날 때에도 저장됩니다.</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">진행률 표시줄과 Delete Old 문제를 알려주신 PRO 사용자 Greg 님께 감사드립니다. 업데이트 후: Chrome이 업데이트를 자동으로 적용합니다. 열려 있는 Grok 탭을 새로고침하세요. 다시 활성화할 필요는 없습니다.</p>
+            </article>
             <article id="v2-6-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
                     <h2 class="text-2xl font-bold text-white">v2.6.0</h2>

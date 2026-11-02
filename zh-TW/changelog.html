@@ -141,6 +141,24 @@
     <section class="pb-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             <p class="text-slate-400 text-sm">Issue 編號指的是公開 GitHub 儲存庫上的回報。</p>
+            <article id="v2-6-1" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.6.1</h2>
+                    <time datetime="2026-11-02" class="text-slate-500 text-sm">2026-11-02</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">修正</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">啟用更穩、進度條會說實話並附預估時間、掃描不再因關閉彈出視窗而中斷</h3>
+                <p class="text-slate-400 mb-4">這是維護版：沒有新功能、沒有新權限。強化 2.6.0 的啟用流程，並修正幾個只有在大型媒體庫長時間作業時才會出現的問題。</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">啟用會安全地退回原路徑。</strong>授權伺服器若回傳格式異常，擴充功能現在一律視為連不上：Lemon Squeezy 金鑰直接改走原本的啟用路徑，不會再被誤判為無效；GMD- 金鑰則顯示「請稍後再試」。這是針對 2026-10-27 事件的客戶端防禦，伺服器端當天已修正。</li>
+                    <li><strong class="text-white">下載進度條恢復正確。</strong>之前可能跑到一半就顯示 100 % 然後繼續超過；現在改為「已完成 ÷（已完成＋剩餘）」並以 100 % 為上限，影片階段也會把原生 720p 項目算進去。</li>
+                    <li><strong class="text-white">新增預估剩餘時間</strong>，顯示在百分比旁（例如「23% · 約 1 小時 40 分」），依本次執行各階段實測速度計算。限流冷卻時間不計入速度，但尚未到來的冷卻會加回去。每 15 秒更新一次，關閉再開啟彈出視窗仍保留。六個語系皆有。</li>
+                    <li><strong class="text-white">Delete Old 不再因關閉彈出視窗而丟失結果。</strong>媒體庫掃描改在 Grok 分頁內執行而不是在彈出視窗裡，所以長達數分鐘的掃描期間可以關掉彈出視窗，重新開啟時確認對話框已經在等你。沒有確認就不會刪除任何東西；超過一小時的掃描結果會作廢。若伺服器連續拒絕五次刪除（登入逾期、反機器人驗證），會提早停止並顯示伺服器的回應，而不是把數千個相同的失敗跑完。</li>
+                    <li><strong class="text-white">大型媒體庫掃描更有耐心。</strong>媒體庫分頁改為重試更多次、退避更久，並在 Grok 限流時放慢速度，數千筆素材的媒體庫較不會以「部分清單」收場。提示詞回填遇到限流或已刪除的對話（404）不再提早放棄：前者重試、後者逐對話跳過，兩者都不會觸發「連續五次失敗即停止」的保險絲，保險絲只留給真正的失敗。</li>
+                    <li><strong class="text-white">Generate List 看得出還活著。</strong>掃描期間 System Log 每 60 秒寫一行心跳；掃描中重新開啟彈出視窗會接回目前的階段與進度，不再閃回上一份清單的「已完成」狀態。下載歷史現在在中止、限流暫停與結束時也會寫入。</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">感謝 PRO 使用者 Greg 回報進度條與 Delete Old 問題。更新後：Chrome 會自動套用更新，請重新整理已開啟的 Grok 分頁。不需重新啟用。</p>
+            </article>
             <article id="v2-6-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
                     <h2 class="text-2xl font-bold text-white">v2.6.0</h2>

@@ -141,6 +141,24 @@
     <section class="pb-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             <p class="text-slate-400 text-sm">Issue numbers refer to reports on the public GitHub repository.</p>
+            <article id="v2-6-1" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.6.1</h2>
+                    <time datetime="2026-11-02" class="text-slate-500 text-sm">2026-11-02</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">Fix</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">Sturdier activation, an honest progress bar with a time estimate, and scans that survive a closed popup</h3>
+                <p class="text-slate-400 mb-4">A maintenance release: no new features, no new permissions. It hardens the 2.6.0 activation flow and fixes a handful of long-running-job problems that only show up on large libraries.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">Activation falls back safely.</strong> If the license server answers in an unexpected shape, the extension now treats it as unreachable: Lemon Squeezy keys go straight to their original activation path instead of being reported invalid, and GMD- keys get a "try again later" message. This is the client-side defence for the 2026-10-27 incident, which was fixed on the server the same day.</li>
+                    <li><strong class="text-white">The download progress bar is correct again.</strong> It could show 100 % with half the run still to go and then overshoot; it is now done / (done + remaining), capped at 100 %, and the video phase counts native 720p items it used to skip.</li>
+                    <li><strong class="text-white">New: estimated time remaining</strong> next to the percentage ("23% · ~1 h 40 min left"), measured from this run's own pace per phase. Rate-limit cooldowns are excluded from the pace and the cooldowns still ahead are added back. Refreshed every 15 s and kept when the popup is closed and reopened. Six languages.</li>
+                    <li><strong class="text-white">Delete Old no longer loses its result when the popup closes.</strong> The library scan now runs in the Grok tab instead of inside the popup, so you can close the popup during a multi-minute scan and the confirmation is waiting when you reopen it. Nothing is deleted without that confirmation; a result older than an hour is discarded. When the server rejects five deletes in a row (expired session, anti-bot challenge), it stops and shows the server's answer instead of walking through thousands of identical failures.</li>
+                    <li><strong class="text-white">Large libraries scan more patiently.</strong> Library paging retries more times with longer back-off and slows down while Grok is rate-limiting, so a multi-thousand-asset library is less likely to end as a partial list. Prompt recovery no longer gives up when a rate-limit burst or a deleted conversation (404) appears: those are retried or skipped per conversation and never trip the stop-after-five-failures breaker, which is kept for real failures.</li>
+                    <li><strong class="text-white">Generate List is visibly alive.</strong> The System Log gets a heartbeat line every 60 s while a scan runs, and a popup opened mid-scan re-attaches to it with the live phase and progress instead of flickering back to the previous list's "Completed" state. Download history is now also saved on abort, on a rate-limit pause and at the end of a run.</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">Thanks to Greg, a PRO user, for the progress-bar and Delete Old reports. After updating: Chrome applies the update automatically; refresh any open Grok tab. No re-activation is needed.</p>
+            </article>
             <article id="v2-6-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
                     <h2 class="text-2xl font-bold text-white">v2.6.0</h2>

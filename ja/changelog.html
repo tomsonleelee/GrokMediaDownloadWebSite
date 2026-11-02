@@ -141,6 +141,24 @@
     <section class="pb-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             <p class="text-slate-400 text-sm">issue番号は公開GitHubリポジトリに寄せられた報告の番号です。</p>
+            <article id="v2-6-1" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.6.1</h2>
+                    <time datetime="2026-11-02" class="text-slate-500 text-sm">2026-11-02</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">修正</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">有効化がより堅牢に、残り時間付きの正確な進捗バー、ポップアップを閉じても止まらないスキャン</h3>
+                <p class="text-slate-400 mb-4">メンテナンスリリースです。新機能も新しい権限もありません。2.6.0の有効化フローを強化し、大きなライブラリでの長時間処理でのみ発生するいくつかの問題を修正しました。</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">有効化が安全に従来の方法へ切り替わります。</strong>ライセンスサーバーから想定外の形式の応答が返った場合、拡張機能はサーバーに接続できないものとして扱うようになりました。Lemon Squeezyのキーは無効と判定されることなく、そのまま従来の有効化方法に進み、GMD-キーには「しばらくしてから再度お試しください」と表示されます。これは2026-10-27の障害に対するクライアント側の防御策で、サーバー側は同日に修正済みです。</li>
+                    <li><strong class="text-white">ダウンロードの進捗バーが再び正確になりました。</strong>処理が半分残っているのに100 %と表示され、さらにそれを超えることがありました。現在は「完了 ÷（完了＋残り）」で計算し、上限を100 %とします。動画フェーズでは、これまで数えていなかったネイティブ720pの項目も数えます。</li>
+                    <li><strong class="text-white">新機能：残り時間の目安</strong>をパーセンテージの横に表示します（「23% · 残り約1時間40分」）。今回の実行における各フェーズの実際のペースから算出します。レート制限による待機時間はペースの計算から除外し、これから発生する待機時間は加算します。15秒ごとに更新され、ポップアップを閉じて開き直しても保持されます。6言語に対応しています。</li>
+                    <li><strong class="text-white">Delete Oldの結果がポップアップを閉じても失われなくなりました。</strong>ライブラリのスキャンをポップアップ内ではなくGrokのタブ内で実行するようになったため、数分かかるスキャンの途中でポップアップを閉じても、開き直すと確認画面が待っています。この確認なしに削除されることはありません。1時間以上前の結果は破棄されます。サーバーが削除を5回連続で拒否した場合（セッション切れ、ボット対策のチャレンジ）は、何千件もの同じ失敗を繰り返さずに停止し、サーバーの応答を表示します。</li>
+                    <li><strong class="text-white">大きなライブラリのスキャンがより粘り強くなりました。</strong>ライブラリのページ取得は再試行回数を増やして待機間隔を長くし、Grokがレート制限をかけている間は速度を落とします。そのため、数千件のアセットがあるライブラリでも途中までのリストで終わりにくくなりました。プロンプトの取得は、レート制限の集中や削除済みの会話（404）に遭遇しても途中で諦めなくなりました。これらは会話ごとに再試行またはスキップされ、「5回失敗したら停止」の安全装置を作動させることはありません。この安全装置は本当の失敗のために残しています。</li>
+                    <li><strong class="text-white">Generate Listの動作状況が見えるようになりました。</strong>スキャン中はSystem Logに60秒ごとにハートビートの行が記録されます。スキャン中に開いたポップアップは現在のフェーズと進捗に再接続し、前回のリストの「完了」状態に一瞬戻ることはなくなりました。ダウンロード履歴は中止時、レート制限による一時停止時、実行終了時にも保存されるようになりました。</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">進捗バーとDelete Oldについて報告してくださったPROユーザーのGregさんに感謝します。更新後：Chromeが自動的に更新を適用します。開いているGrokのタブを更新してください。再有効化は不要です。</p>
+            </article>
             <article id="v2-6-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
                     <h2 class="text-2xl font-bold text-white">v2.6.0</h2>

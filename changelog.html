@@ -157,7 +157,7 @@
                     <li><strong class="text-white">Large libraries scan more patiently.</strong> Library paging retries more times with longer back-off and slows down while Grok is rate-limiting, so a multi-thousand-asset library is less likely to end as a partial list. Prompt recovery no longer gives up when a rate-limit burst or a deleted conversation (404) appears: those are retried or skipped per conversation and never trip the stop-after-five-failures breaker, which is kept for real failures.</li>
                     <li><strong class="text-white">Generate List is visibly alive.</strong> The System Log gets a heartbeat line every 60 s while a scan runs, and a popup opened mid-scan re-attaches to it with the live phase and progress instead of flickering back to the previous list's "Completed" state. Download history is now also saved on abort, on a rate-limit pause and at the end of a run.</li>
                 </ul>
-                <p class="text-slate-500 text-sm mt-4">Thanks to Greg, a PRO user, for the progress-bar and Delete Old reports. After updating: Chrome applies the update automatically; refresh any open Grok tab. No re-activation is needed.</p>
+                <p class="text-slate-500 text-sm mt-4">Thanks to Greg Pavlik, a PRO user, for the progress-bar and Delete Old reports. After updating: Chrome applies the update automatically; refresh any open Grok tab. No re-activation is needed.</p>
             </article>
             <article id="v2-6-0" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">

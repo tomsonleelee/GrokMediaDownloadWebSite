@@ -141,6 +141,19 @@
     <section class="pb-20">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
             <p class="text-slate-400 text-sm">Issue-Nummern beziehen sich auf Meldungen im öffentlichen GitHub-Repository.</p>
+            <article id="v2-6-2" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
+                    <h2 class="text-2xl font-bold text-white">v2.6.2</h2>
+                    <time datetime="2026-11-11" class="text-slate-500 text-sm">2026-11-11</time>
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/15 text-amber-300">Fehlerbehebung</span>
+                </div>
+                <h3 class="text-lg font-semibold text-pink-300 mb-3">Ein erneut geöffnetes Popup bindet sich an den allerersten Generate-List-Scan an</h3>
+                <p class="text-slate-400 mb-4">Eine einzelne Fehlerbehebung: keine neuen Funktionen, keine neuen Berechtigungen, keine Änderung an Preisen oder Lizenzen.</p>
+                <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                    <li><strong class="text-white">Das Popup während des ersten Scans erneut zu öffnen zeigt den laufenden Scan wieder an.</strong> In 2.6.1 funktionierte die Wiederanbindung nur, wenn bereits eine frühere Liste existierte. Der erste Scan nach der Installation (oder jeder Scan direkt nach Clear) zeigte deshalb nach dem Schließen und erneuten Öffnen des Popups einen untätigen Generate-Button; der Scan selbst lief trotzdem zu Ende. Ohne vorhandene Liste werden jetzt die aktuelle Phase und die Anzahl angezeigt, Start bleibt deaktiviert und das Ergebnis erscheint, sobald der Scan endet.</li>
+                </ul>
+                <p class="text-slate-500 text-sm mt-4">Nach dem Update: Chrome übernimmt das Update automatisch; aktualisiere alle offenen Grok-Tabs. Eine erneute Aktivierung ist nicht nötig.</p>
+            </article>
             <article id="v2-6-1" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8">
                 <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
                     <h2 class="text-2xl font-bold text-white">v2.6.1</h2>

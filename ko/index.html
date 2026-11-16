@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrokMediaDownloader - Grok AI 미디어 관리 확장 프로그램</title>
-    <meta name="description" content="Grok AI 이미지와 비디오를 일괄 다운로드 및 관리. v2.5에서 전체 라이브러리 다운로드(대화별)와 1080p 업그레이드 추가. 무료 Chrome 확장 프로그램, PRO $4.99.">
+    <meta name="description" content="Grok AI 이미지와 비디오를 일괄 다운로드 및 관리. 전체 라이브러리 다운로드(대화별), 1080p 업그레이드, Video Gen Queue, Story Mode 지원. 무료 Chrome 확장 프로그램, PRO $4.99.">
     <meta name="keywords" content="Grok downloader, 전체 라이브러리 다운로드, Grok 미디어 전체 저장, 1080p Grok 동영상, 대화별 폴더, Story Mode Helper, Video Studio, Grok 다운로더, Chrome 확장 프로그램, 일괄 다운로드, Stream Capture, HD Upgrade">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Kario Studio">
@@ -72,13 +72,13 @@
         "Grok 미디어 다운로더",
         "Story Mode Helper"
       ],
-      "description": "The best Chrome extension for Grok AI media management. v2.5 adds Whole Library Download by conversation and 1080p video upgrade, alongside Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
+      "description": "The best Chrome extension for Grok AI media management: Whole Library Download by conversation, 1080p video upgrade, Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
       "softwareVersion": "2.6.2",
       "datePublished": "2025-11-22",
-      "dateModified": "2026-11-11",
+      "dateModified": "2026-11-17",
       "url": "https://grokmedia.kario-studio.com/ko/",
       "sameAs": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
@@ -386,9 +386,9 @@
                                 <span class="font-bold">4.1</span>
                             </div>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">4,000+ 사용자</span>
+                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">5,000+ 사용자</span>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-400" data-i18n="hero_social_reviews">리뷰 24개</span>
+                            <span class="text-slate-400" data-i18n="hero_social_reviews">평가 27개</span>
                             <span class="text-slate-600 text-xs" data-i18n="hero_social_source">Chrome 웹 스토어</span>
                         </a>
                     </div>
@@ -403,7 +403,6 @@
                         <div class="bg-white border-b border-gray-100 p-3 flex items-center gap-2">
                             <i data-lucide="play-circle" class="w-5 h-5 text-slate-800"></i>
                             <span class="font-bold text-sm text-slate-900">Grok Media Downloader</span>
-                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.5</span>
                         </div>
                         <div class="p-3 space-y-2 bg-[#F9FAFB]">
                             <div class="flex gap-1.5">
@@ -548,7 +547,7 @@
                 <div class="order-2 lg:order-1">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="queue_badge">v2.2 신기능</span>
+                        <span data-i18n="queue_badge">자동 생성</span>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">
                         <span data-i18n="queue_title">Video Gen Queue</span>
@@ -956,7 +955,7 @@
                     </div>
                 </div>
 
-                <!-- Feature 11: Whole Library Download (NEW v2.5) -->
+                <!-- Feature 11: Whole Library Download (v2.5) -->
                 <div class="feat-card-border feat-border-green bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-8 rounded-2xl border border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/20 group relative overflow-hidden flex flex-col">
                     <div class="absolute top-3 right-3 flex gap-1"><span class="bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</span><span class="bg-white/90 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded" data-i18n="feat_12_free">무료</span></div>
                     <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-colors">
@@ -975,7 +974,7 @@
                     </a>
                 </div>
 
-                <!-- Feature 12: 1080p Upgrade (NEW v2.5) -->
+                <!-- Feature 12: 1080p Upgrade (v2.5) -->
                 <div class="feat-card-border feat-border-cyan bg-gradient-to-br from-teal-900/50 to-cyan-900/50 p-8 rounded-2xl border border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/20 group relative overflow-hidden flex flex-col">
                     <div class="absolute top-3 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded">NEW</div>
                     <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
@@ -1104,7 +1103,7 @@
                         <i data-lucide="clapperboard" class="text-purple-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-lg font-bold mb-2 text-white" data-i18n="solution_3_title">동영상 제작 완전 자동화</h3>
-                    <p class="text-slate-300 text-sm" data-i18n="solution_3_desc">v2.2 Video Gen Queue로 자동 스케줄링, Story Mode로 편집 및 병합, Project Download로 정리 정돈 -- 올인원.</p>
+                    <p class="text-slate-300 text-sm" data-i18n="solution_3_desc">Video Gen Queue로 자동 스케줄링, Story Mode로 편집 및 병합, Project Download로 정리 정돈 -- 올인원.</p>
                 </div>
             </div>
 
@@ -1113,7 +1112,7 @@
                 <div class="inline-flex items-center gap-3 bg-slate-900 border border-slate-700 rounded-xl px-6 py-4">
                     <i data-lucide="zap" class="text-yellow-400 w-5 h-5"></i>
                     <p class="text-slate-300 text-sm">
-                        <span class="font-bold text-white" data-i18n="perf_note_title">v2.2 메이저 업데이트:</span>
+                        <span class="font-bold text-white" data-i18n="perf_note_title">자동화 기능:</span>
                         <span data-i18n="perf_note_desc">Video Gen Queue 자동 스케줄링, Project-Based Download, 4가지 생성 모드, 시스템 로그.</span>
                     </p>
                 </div>

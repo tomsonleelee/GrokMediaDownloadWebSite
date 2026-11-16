@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grok Media Downloader — Descarga y gestiona imágenes y videos de Grok AI en lote | Extensión de Chrome</title>
-    <meta name="description" content="Descarga y gestiona imágenes y videos de Grok AI en lote. La v2.5 añade Whole Library Download por conversación y mejora a 1080p. Extensión de Chrome gratuita con opción PRO de $4.99.">
+    <meta name="description" content="Descarga y gestiona imágenes y videos de Grok AI en lote: Whole Library Download por conversación, mejora a 1080p, Video Gen Queue y Story Mode. Extensión de Chrome gratuita con opción PRO de $4.99.">
     <meta name="keywords" content="descargador de Grok, descargar toda la biblioteca, descargar todos los medios de Grok, video Grok 1080p, carpetas por conversación, Story Mode Helper, Video Studio, Storyboard, extracción de fotogramas, FFmpeg, extensión de Chrome, descarga en lote, Stream Capture, HD Upgrade, video Grok AI">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Kario Studio">
@@ -42,7 +42,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://grokmedia.kario-studio.com/es/">
     <meta property="og:title" content="Grok Media Downloader — Descarga y gestiona medios de Grok AI en lote | Extensión de Chrome">
-    <meta property="og:description" content="Nuevo en v2.2: generación automática de videos con Video Gen Queue, gestión de proyectos con Project-Based Download y cuatro modos de generación. La extensión definitiva para gestionar medios de Grok AI.">
+    <meta property="og:description" content="Whole Library Download, mejora a 1080p, generación automática de videos con Video Gen Queue, Project-Based Download y Story Mode. La extensión definitiva para gestionar medios de Grok AI.">
     <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -58,7 +58,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://grokmedia.kario-studio.com/es/">
     <meta name="twitter:title" content="Grok Media Downloader — Descarga y gestiona medios de Grok AI en lote | Extensión de Chrome">
-    <meta name="twitter:description" content="Nuevo: generación automática de videos con Video Gen Queue, gestión con Project Download, cuatro modos de generación y Story Mode Helper.">
+    <meta name="twitter:description" content="Whole Library Download, mejora a 1080p, Video Gen Queue, Project Download y Story Mode Helper.">
     <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
 
     <!-- Schema.org - SoftwareApplication -->
@@ -68,13 +68,13 @@
       "@type": "SoftwareApplication",
       "name": "GrokMediaDownloader",
       "alternateName": ["Grok Media Downloader", "Grok 圖片下載器", "Story Mode Helper"],
-      "description": "La mejor extensión de Chrome para gestionar medios de Grok AI. La v2.5 añade Whole Library Download por conversación y mejora de video a 1080p, junto con el estudio de video Story Mode Helper, descarga en lote, Stream Capture y HD Upgrade.",
+      "description": "La mejor extensión de Chrome para gestionar medios de Grok AI: Whole Library Download por conversación, mejora de video a 1080p, el estudio de video Story Mode Helper, descarga en lote, Stream Capture y HD Upgrade.",
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
       "softwareVersion": "2.6.2",
       "datePublished": "2025-11-22",
-      "dateModified": "2026-11-11",
+      "dateModified": "2026-11-17",
       "url": "https://grokmedia.kario-studio.com/es/",
       "sameAs": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
       "downloadUrl": "https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi",
@@ -360,9 +360,9 @@
                                 <span class="font-bold">4.1</span>
                             </div>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">Más de 4,000 usuarios</span>
+                            <span class="text-slate-300 font-semibold" data-i18n="hero_social_users">Más de 5,000 usuarios</span>
                             <span class="text-slate-500">|</span>
-                            <span class="text-slate-400" data-i18n="hero_social_reviews">24 reseñas</span>
+                            <span class="text-slate-400" data-i18n="hero_social_reviews">27 valoraciones</span>
                             <span class="text-slate-600 text-xs" data-i18n="hero_social_source">Chrome Web Store</span>
                         </a>
                     </div>
@@ -377,7 +377,6 @@
                         <div class="bg-white border-b border-gray-100 p-3 flex items-center gap-2">
                             <i data-lucide="play-circle" class="w-5 h-5 text-slate-800"></i>
                             <span class="font-bold text-sm text-slate-900">Grok Media Downloader</span>
-                            <span class="ml-auto bg-pink-100 text-pink-700 text-xs font-bold px-2 py-0.5 rounded">v2.5</span>
                         </div>
                         <div class="p-3 space-y-2 bg-[#F9FAFB]">
                             <div class="flex gap-1.5">
@@ -522,7 +521,7 @@
                 <div class="order-2 lg:order-1">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6">
                         <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
-                        <span data-i18n="queue_badge">NUEVA FUNCIÓN v2.2</span>
+                        <span data-i18n="queue_badge">Generación automática</span>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-4">
                         <span data-i18n="queue_title">Video Gen Queue</span>
@@ -941,7 +940,7 @@
                     </div>
                 </div>
 
-                <!-- Feature 11: Whole Library Download (NEW v2.5) -->
+                <!-- Feature 11: Whole Library Download (v2.5) -->
                 <div class="feat-card-border feat-border-green bg-gradient-to-br from-emerald-900/50 to-teal-900/50 p-8 rounded-2xl border border-emerald-500/50 transition-all hover:shadow-lg hover:shadow-emerald-500/20 group relative overflow-hidden flex flex-col">
                     <div class="absolute top-3 right-3 flex gap-1"><span class="bg-emerald-500 text-white text-xs font-bold px-2 py-0.5 rounded">NUEVO</span><span class="bg-white/90 text-emerald-700 text-xs font-bold px-2 py-0.5 rounded" data-i18n="feat_12_free">GRATIS</span></div>
                     <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 transition-colors">
@@ -960,7 +959,7 @@
                     </a>
                 </div>
 
-                <!-- Feature 12: 1080p Upgrade (NEW v2.5) -->
+                <!-- Feature 12: 1080p Upgrade (v2.5) -->
                 <div class="feat-card-border feat-border-cyan bg-gradient-to-br from-teal-900/50 to-cyan-900/50 p-8 rounded-2xl border border-teal-500/50 transition-all hover:shadow-lg hover:shadow-teal-500/20 group relative overflow-hidden flex flex-col">
                     <div class="absolute top-3 right-3 bg-teal-500 text-white text-xs font-bold px-2 py-0.5 rounded">NUEVO</div>
                     <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-teal-500/30 transition-colors">
@@ -1095,7 +1094,7 @@
                         <i data-lucide="clapperboard" class="text-purple-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-lg font-bold mb-2 text-white" data-i18n="solution_3_title">Automatización total del video</h3>
-                    <p class="text-slate-300 text-sm" data-i18n="solution_3_desc">Video Gen Queue de la v2.2 para programar automáticamente, Story Mode para editar y unir, Project Download para una gestión organizada: todo en uno.</p>
+                    <p class="text-slate-300 text-sm" data-i18n="solution_3_desc">Video Gen Queue para programar automáticamente, Story Mode para editar y unir, Project Download para una gestión organizada: todo en uno.</p>
                 </div>
             </div>
 
@@ -1104,7 +1103,7 @@
                 <div class="inline-flex items-center gap-3 bg-slate-900 border border-slate-700 rounded-xl px-6 py-4">
                     <i data-lucide="zap" class="text-yellow-400 w-5 h-5"></i>
                     <p class="text-slate-300 text-sm">
-                        <span class="font-bold text-white" data-i18n="perf_note_title">Gran actualización v2.2:</span>
+                        <span class="font-bold text-white" data-i18n="perf_note_title">Automatización integrada:</span>
                         <span data-i18n="perf_note_desc">Programación automática con Video Gen Queue, Project-Based Download, 4 modos de generación y registro del sistema.</span>
                     </p>
                 </div>

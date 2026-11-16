@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // GA4: never load or send from local dev/test hosts (localhost, 127.0.0.1). Production only.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            window['ga-disable-G-6YPN8563C6'] = true;
+        } else {
+            var gtagScript = document.createElement('script'); gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6';
+            document.head.appendChild(gtagScript);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok Media Manager — Organize, tag and search your Grok Imagine library | Chrome extension</title>
+    <meta name="description" content="Grok Media Manager is a Chrome extension that syncs everything you made in Grok Imagine into one workspace: tags that sync with your Grok collections, categories, ratings, notes, prompt search, four gallery views, and files saved to your own disk. Free, Pro $3/month or $40 once.">
+    <meta name="keywords" content="grok media manager, grok imagine library, organize grok images, grok tags, grok prompt search, grok imagine backup, chrome extension">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/manager/">
+
+    <!-- Hreflang: English only until the Manager page is translated -->
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/manager/">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/manager/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/manager/">
+    <meta property="og:title" content="Grok Media Manager — your Grok Imagine library, in order">
+    <meta property="og:description" content="Sync, tag, rate, categorize and search everything you made in Grok Imagine. Tags sync with your Grok collections; files are saved to your own disk. Free, Pro $3/month or $40 once.">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-manager.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grok Media Manager — your Grok Imagine library, in order">
+    <meta name="twitter:description" content="Sync, tag, rate, categorize and search everything you made in Grok Imagine. Free, Pro $3/month or $40 once.">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-manager.jpg">
+
+    <!-- Schema.org - SoftwareApplication (no ratings markup: self-serving reviews violate Google's policy) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Grok Media Manager",
+      "operatingSystem": "Chrome",
+      "applicationCategory": "UtilitiesApplication",
+      "applicationSubCategory": "Browser Extension",
+      "description": "A Chrome extension that syncs your Grok Imagine library into a local workspace: tags synced with Grok collections, categories, ratings, notes, prompt search, four gallery views, and media saved to your own disk.",
+      "url": "https://grokmedia.kario-studio.com/manager/",
+      "image": "https://grokmedia.kario-studio.com/assets/og-manager.jpg",
+      "author": { "@type": "Organization", "name": "Kario Studio", "url": "https://www.kario-studio.com" },
+      "offers": [
+        { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Pro Monthly", "price": "3", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Pro Lifetime", "price": "40", "priceCurrency": "USD" }
+      ],
+      "inLanguage": ["en", "zh-TW", "ja", "ko", "de", "es"]
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://grokmedia.kario-studio.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Grok Media Manager", "item": "https://grokmedia.kario-studio.com/manager/" }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage (mirrors the FAQ section below) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How is Grok Media Manager different from Grok Media Downloader?", "acceptedAnswer": {"@type": "Answer", "text": "Grok Media Downloader gets files out of Grok: it is a downloader. Grok Media Manager organizes the library: it syncs what you made, lets you tag, rate, categorize, search and group it, and keeps copies on your disk. They are two separate extensions and work side by side."}},
+        {"@type": "Question", "name": "Where is my data stored?", "acceptedAnswer": {"@type": "Answer", "text": "In your browser (IndexedDB) and, for saved media and backups, in a folder you pick on your own disk. The only server call is license validation. There is no account and no analytics inside the extension; prompts and media never leave your device."}},
+        {"@type": "Question", "name": "What does the Manager change on Grok?", "acceptedAnswer": {"@type": "Answer", "text": "Only your tags. Tags are two-way synced with your Grok collections, so a tag you add or remove in the Manager is added or removed on Grok too. Media, prompts, conversation titles, ratings, categories and notes are never written back to Grok."}},
+        {"@type": "Question", "name": "What is free and what needs Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Free: both syncs, passive capture, unlimited tags, ratings, notes, search, filters, the four views, grouping, conversation titles, prompt recovery and Chrome downloads, with up to 1,000 items shown in a gallery view and 3 categories. Pro removes the item and category limits and adds Save to Local and Backup & Restore."}},
+        {"@type": "Question", "name": "How do I activate Pro after paying?", "acceptedAnswer": {"@type": "Answer", "text": "The payment success page shows an Activate in Grok Media Manager button; one click turns Pro on. You can also paste the license key into the License panel inside the Manager."}},
+        {"@type": "Question", "name": "Which languages does it support?", "acceptedAnswer": {"@type": "Answer", "text": "English, Traditional Chinese, Japanese, Korean, German and Spanish. The extension follows Chrome's UI language."}}
+      ]
+    }
+    </script>
+
+    <!-- Fonts (same families as the rest of the site) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        /* The Manager's own palette: graphite surfaces and the extension's marker-yellow accent. */
+        :root {
+            --gmm-accent: #F5C542;
+            --gmm-accent-deep: #E8B92F;
+            --gmm-ink: #0b0f1a;
+        }
+        body { font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif; scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        .accent { color: var(--gmm-accent); }
+        .btn-accent { background: var(--gmm-accent); color: var(--gmm-ink); }
+        .btn-accent:hover { background: var(--gmm-accent-deep); }
+        .ring-accent { border-color: rgba(245, 197, 66, 0.45); }
+        .hero-wash { background: radial-gradient(60% 50% at 70% 20%, rgba(245,197,66,0.10) 0%, rgba(0,0,0,0) 70%); }
+
+        /* ── Mock of the full-tab Manager (light table) ─────────────────────────── */
+        .lt { background: #141414; border: 1px solid #2a2a2a; border-radius: 14px; overflow: hidden; color: #d6d6d6; font-size: 11px; box-shadow: 0 30px 80px rgba(0,0,0,.55); }
+        .lt-top { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-bottom: 1px solid #262626; background: #181818; }
+        .lt-dot { width: 8px; height: 8px; border-radius: 50%; background: #333; }
+        .lt-body { display: grid; grid-template-columns: 132px 1fr 150px; min-height: 330px; }
+        .lt-side { border-right: 1px solid #262626; padding: 10px; background: #161616; }
+        .lt-side h4, .lt-detail h4 { font-size: 9px; letter-spacing: .06em; text-transform: uppercase; color: #8a8a8a; margin: 10px 0 6px; font-weight: 600; }
+        .lt-side h4:first-child { margin-top: 0; }
+        .lt-tree div { padding: 3px 6px; border-radius: 5px; color: #bdbdbd; white-space: nowrap; }
+        .lt-tree .on { background: rgba(245,197,66,.14); color: var(--gmm-accent); }
+        .lt-tree .l2 { padding-left: 18px; color: #9a9a9a; }
+        .lt-sync { margin-top: 10px; border: 1px solid #2a2a2a; border-radius: 8px; padding: 8px; background: #1b1b1b; }
+        .lt-btn { display: block; text-align: center; border-radius: 6px; padding: 5px 6px; margin-top: 5px; font-weight: 600; font-size: 10px; border: 1px solid #333; color: #d6d6d6; }
+        .lt-btn.pri { background: var(--gmm-accent); color: var(--gmm-ink); border-color: var(--gmm-accent); }
+        .lt-main { display: flex; flex-direction: column; min-width: 0; }
+        .lt-bar { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-bottom: 1px solid #262626; }
+        .lt-seg { display: inline-flex; border: 1px solid #333; border-radius: 6px; overflow: hidden; }
+        .lt-seg span { padding: 3px 7px; color: #a3a3a3; }
+        .lt-seg .on { background: #2a2a2a; color: #fff; }
+        .lt-search { flex: 1; min-width: 0; border: 1px solid #333; border-radius: 6px; padding: 3px 8px; color: #777; background: #1a1a1a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .lt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; padding: 10px; }
+        .lt-group { grid-column: 1 / -1; color: #9a9a9a; font-size: 10px; display: flex; justify-content: space-between; padding-top: 2px; }
+        .lt-card { border-radius: 7px; overflow: hidden; background: #1c1c1c; border: 1px solid #2a2a2a; }
+        .lt-thumb { aspect-ratio: 4 / 3; position: relative; }
+        .lt-thumb i { position: absolute; right: 4px; top: 4px; font-style: normal; font-size: 8px; font-weight: 700; padding: 1px 4px; border-radius: 3px; background: rgba(0,0,0,.6); color: #eee; }
+        .lt-meta { padding: 5px 6px; display: flex; flex-direction: column; gap: 3px; }
+        .lt-stars { color: var(--gmm-accent); font-size: 9px; letter-spacing: 1px; }
+        .lt-stars b { color: #444; font-weight: 400; }
+        .lt-chips span { display: inline-block; font-size: 8px; padding: 1px 5px; border-radius: 3px; background: #262626; color: #bdbdbd; margin-right: 3px; }
+        .lt-detail { border-left: 1px solid #262626; padding: 10px; background: #161616; }
+        .lt-detail p { color: #bdbdbd; line-height: 1.35; }
+        .lt-detail .k { color: #8a8a8a; }
+        .lt-sel { outline: 2px solid var(--gmm-accent); outline-offset: -2px; }
+        .t1 { background: linear-gradient(135deg, #3b4a6b, #1e2a44); }
+        .t2 { background: linear-gradient(135deg, #6b4a3b, #44261e); }
+        .t3 { background: linear-gradient(135deg, #3b6b5a, #1e4436); }
+        .t4 { background: linear-gradient(135deg, #5a3b6b, #361e44); }
+        .t5 { background: linear-gradient(135deg, #6b6b3b, #44441e); }
+        .t6 { background: linear-gradient(135deg, #3b5a6b, #1e3644); }
+        .t7 { background: linear-gradient(135deg, #6b3b4a, #441e2a); }
+        .t8 { background: linear-gradient(135deg, #4a6b3b, #2a441e); }
+        @media (max-width: 640px) { .lt-body { grid-template-columns: 1fr; } .lt-side, .lt-detail { display: none; } .lt-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        /* Feature ledger */
+        .ledger > div { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 18px 0; border-top: 1px solid #1e293b; }
+        @media (min-width: 768px) { .ledger > div { grid-template-columns: 220px 1fr; gap: 24px; } }
+        .ledger > div:last-child { border-bottom: 1px solid #1e293b; }
+        .ui { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; padding: 1px 6px; border-radius: 4px; background: #1e293b; color: #e2e8f0; white-space: nowrap; }
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] .chev { transform: rotate(180deg); }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-yellow-400 selection:text-slate-950">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-yellow-400 focus:text-slate-950 focus:px-4 focus:py-2 focus:rounded-lg">Skip to main content</a>
+
+    <!-- Navigation: the Manager page has its own nav; the GMD header is not loaded here. -->
+    <nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md" aria-label="Main">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/manager/" class="flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg flex items-center justify-center btn-accent shadow-lg shadow-yellow-500/10"><i data-lucide="layout-grid" class="w-5 h-5"></i></span>
+                    <span class="font-bold text-lg tracking-tight">Grok Media Manager</span>
+                </a>
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                    <a href="#features" class="hover:text-white">Features</a>
+                    <a href="#how" class="hover:text-white">How it works</a>
+                    <a href="#privacy" class="hover:text-white">Privacy</a>
+                    <a href="#pricing" class="hover:text-white">Pricing</a>
+                    <a href="#faq" class="hover:text-white">FAQ</a>
+                    <a href="/" class="text-slate-500 hover:text-slate-300" title="The sister extension: a downloader">Grok Media Downloader</a>
+                </div>
+                <a href="#pricing" class="md:hidden text-sm font-semibold accent">Pricing</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+    <!-- Hero: the product itself is the picture -->
+    <section class="relative pt-28 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute inset-0 hero-wash"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <p class="text-sm text-slate-400 mb-5">Chrome extension for Grok Imagine · Free, Pro $3/month or $40 once</p>
+                    <h1 class="text-4xl md:text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                        Everything you made in Grok Imagine, <span class="accent">in order.</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 leading-relaxed mb-8 max-w-xl">
+                        Grok Media Manager syncs your library into a workspace you own. Tag it, rate it, file it into categories, search it by prompt, group it by conversation, and keep the files on your own disk.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                        <a href="https://chromewebstore.google.com/" target="_blank" rel="noopener" id="cta-chrome" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold btn-accent transition-colors" onclick="trackCta('add_to_chrome', this.href)">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                            Add to Chrome, free
+                        </a>
+                        <a href="#pricing" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold bg-slate-800 hover:bg-slate-700 text-white transition-colors">See what Pro adds</a>
+                    </div>
+                    <p class="text-sm text-slate-500">No account. Nothing uploaded. Works in your own signed-in grok.com tab.</p>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="lt" role="img" aria-label="The full-tab Manager: a category sidebar with the sync card, a gallery grouped by conversation with tags, ratings and quality badges, and the detail panel of the selected item.">
+                        <div class="lt-top"><span class="lt-dot"></span><span class="lt-dot"></span><span class="lt-dot"></span><span class="ml-2 text-[10px] text-neutral-400">Grok Media Manager</span><span class="ml-auto text-[10px] text-neutral-500">2,847 items</span></div>
+                        <div class="lt-body">
+                            <aside class="lt-side">
+                                <h4>Categories</h4>
+                                <div class="lt-tree">
+                                    <div class="on">All Media</div>
+                                    <div>Portfolio</div>
+                                    <div class="l2">Hero shots</div>
+                                    <div class="l2">Variations</div>
+                                    <div>Characters</div>
+                                    <div>Backgrounds</div>
+                                    <div class="text-neutral-500">+ New Category</div>
+                                </div>
+                                <div class="lt-sync">
+                                    <div class="text-[9px] text-neutral-500">Library synced today</div>
+                                    <span class="lt-btn pri">Sync Now</span>
+                                    <span class="lt-btn">Sync Full Library</span>
+                                </div>
+                            </aside>
+                            <div class="lt-main">
+                                <div class="lt-bar">
+                                    <span class="lt-seg"><span class="on">Grid</span><span>List</span><span>Nest</span><span>Prompt</span></span>
+                                    <span class="lt-search">Search prompts, notes and IDs</span>
+                                    <span class="text-neutral-400 whitespace-nowrap">Group by · Conversation</span>
+                                </div>
+                                <div class="lt-grid">
+                                    <div class="lt-group"><span>Golden hour street scenes</span><span>6 items</span></div>
+                                    <div class="lt-card lt-sel"><div class="lt-thumb t1"><i>1080p</i></div><div class="lt-meta"><span class="lt-stars">★★★★★</span><span class="lt-chips"><span>hero</span><span>final</span></span></div></div>
+                                    <div class="lt-card"><div class="lt-thumb t2"><i>HD</i></div><div class="lt-meta"><span class="lt-stars">★★★★<b>★</b></span><span class="lt-chips"><span>hero</span></span></div></div>
+                                    <div class="lt-card"><div class="lt-thumb t3"></div><div class="lt-meta"><span class="lt-stars">★★★<b>★★</b></span><span class="lt-chips"><span>variation</span></span></div></div>
+                                    <div class="lt-card"><div class="lt-thumb t4"><i>SD</i></div><div class="lt-meta"><span class="lt-stars"><b>★★★★★</b></span><span class="lt-chips"><span>variation</span></span></div></div>
+                                    <div class="lt-group"><span>Character sheet, round two</span><span>4 items</span></div>
+                                    <div class="lt-card"><div class="lt-thumb t5"></div><div class="lt-meta"><span class="lt-stars">★★★★<b>★</b></span><span class="lt-chips"><span>character</span><span>sheet</span></span></div></div>
+                                    <div class="lt-card"><div class="lt-thumb t6"><i>HD</i></div><div class="lt-meta"><span class="lt-stars">★★★★★</span><span class="lt-chips"><span>character</span></span></div></div>
+                                    <div class="lt-card"><div class="lt-thumb t7"></div><div class="lt-meta"><span class="lt-stars">★★<b>★★★</b></span><span class="lt-chips"><span>character</span></span></div></div>
+                                    <div class="lt-card"><div class="lt-thumb t8"><i>1080p</i></div><div class="lt-meta"><span class="lt-stars">★★★★<b>★</b></span><span class="lt-chips"><span>sheet</span></span></div></div>
+                                </div>
+                            </div>
+                            <aside class="lt-detail">
+                                <h4>Prompt</h4>
+                                <p>Golden hour street scene, wet asphalt, long shadows, 35mm</p>
+                                <h4>Tags</h4>
+                                <p class="lt-chips"><span>hero</span><span>final</span></p>
+                                <p class="text-[9px] text-neutral-500 mt-1">Synced with Grok</p>
+                                <h4>Rating</h4>
+                                <p class="lt-stars">★★★★★</p>
+                                <h4>Notes</h4>
+                                <p>Best take for the opening frame.</p>
+                                <h4>Properties</h4>
+                                <p><span class="k">Quality</span> 1080p<br><span class="k">Local</span> Saved</p>
+                            </aside>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3 text-center lg:text-right">Illustration of the Manager layout. Screenshots of the real extension are coming.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Positioning: Manager vs Downloader -->
+    <section class="py-12 border-y border-slate-800/70 bg-slate-900/40">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 text-sm">
+            <div>
+                <p class="font-semibold text-white mb-1">Grok Media Manager organizes the library.</p>
+                <p class="text-slate-400">Sync what you made, then tag, rate, categorize, search and group it. Keep copies on your disk so a deletion on Grok is not the end of the file.</p>
+            </div>
+            <div>
+                <p class="font-semibold text-white mb-1"><a href="/" class="underline decoration-slate-600 underline-offset-4 hover:decoration-slate-300">Grok Media Downloader</a> gets files out of Grok.</p>
+                <p class="text-slate-400">A downloader for bulk export, HD upgrades and video generation queues. The two are separate extensions and work side by side.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features: a ledger, each row named by the control you will actually see -->
+    <section id="features" class="py-20 lg:py-28">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-3">What it keeps in order</h2>
+            <p class="text-slate-400 mb-10 max-w-2xl">Each row names the control as it appears in the extension, so what you read here is what you will click.</p>
+
+            <div class="ledger">
+                <div>
+                    <div><span class="ui">Sync Now</span> <span class="ui">Sync Full Library</span></div>
+                    <div class="text-slate-300">Sync Now imports your liked media. Sync Full Library imports every image and video you generated, liked or not. While you browse grok.com, new items are captured passively. After a complete library sync, media deleted on Grok is marked as deleted; the <em>Only model-generated</em> option leaves your uploads out. Video quality is tracked as SD, HD or 1080p, and a video is never downgraded.</div>
+                </div>
+                <div>
+                    <div><span class="ui">Tags</span> <span class="ui">Manage Tags</span></div>
+                    <div class="text-slate-300">Tags are your Grok collections, synced both ways: a tag you add in the Manager appears on Grok, and vice versa. Older Grok folders are read too. There is no tag limit, Free or Pro.</div>
+                </div>
+                <div>
+                    <div><span class="ui">Categories</span> <span class="ui">Set Category</span></div>
+                    <div class="text-slate-300">A nested category tree that lives only in the Manager. Drag cards onto a category to file them, or set a category for a whole selection. Free has 3 categories; Pro has no limit.</div>
+                </div>
+                <div>
+                    <div><span class="ui">Rating</span> <span class="ui">Notes</span></div>
+                    <div class="text-slate-300">One to five stars and free-text notes, kept locally. Rate or categorize many items at once from the selection bar.</div>
+                </div>
+                <div>
+                    <div><span class="ui">Search</span> <span class="ui">Minimum rating</span></div>
+                    <div class="text-slate-300">Search prompts, notes and IDs. Filter by type, video quality, minimum rating, tags, and Cloud (still on Grok) or Local (saved on your disk). Sort newest, oldest, by prompt, by rating, by most children.</div>
+                </div>
+                <div>
+                    <div><span class="ui">Grid</span> <span class="ui">List</span> <span class="ui">Nest</span> <span class="ui">Prompt</span></div>
+                    <div class="text-slate-300">Four gallery views: Grid; List with the columns you choose; Nest, which shows a source image with the videos made from it; and Prompt, grouped by prompt. Group by day, week, month, prompt, rating or Grok conversation, with conversation titles. A slider sets thumbnail size.</div>
+                </div>
+                <div>
+                    <div><span class="ui">Recover prompts</span></div>
+                    <div class="text-slate-300">Fills in prompts that are missing from the sync by reading your Grok conversations, and links videos to their source images. It can be stopped and resumed.</div>
+                </div>
+                <div>
+                    <div><span class="ui">Select All</span> <span class="ui">Download</span></div>
+                    <div class="text-slate-300">Select many items with Shift or Ctrl-click, a drag box, or Select All. Then manage tags, rate, set a category, or download through Chrome, flat or into folders by category.</div>
+                </div>
+                <div>
+                    <div><span class="ui">Save to Local</span> <span class="ui">Save All to Local</span> <span class="text-xs font-semibold accent ml-1">Pro</span></div>
+                    <div class="text-slate-300">Copies media into a folder on your computer, so it stays viewable after Grok deletes it. Save a selection or everything. The run is paced to stay within Grok's limits: one file at a time, an automatic pause with a countdown when Grok asks for one, and Cancel at any point.</div>
+                </div>
+                <div>
+                    <div><span class="ui">Backup &amp; Restore</span> <span class="ui">Backup Now</span> <span class="text-xs font-semibold accent ml-1">Pro</span></div>
+                    <div class="text-slate-300">A daily automatic backup of tags, categories, ratings and notes into your media folder, kept for 30 days. Manual backups are kept forever. Restore from any of them.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three places + how to start -->
+    <section id="how" class="py-20 lg:py-28 border-t border-slate-800/70 bg-slate-900/40">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">Three places to use it</h2>
+                    <p class="text-slate-400 mb-8">One extension, three surfaces, all reading the same library.</p>
+                    <dl class="space-y-6">
+                        <div class="flex gap-4">
+                            <i data-lucide="app-window" class="w-6 h-6 accent flex-shrink-0 mt-0.5"></i>
+                            <div><dt class="font-semibold text-white">The full-tab Manager</dt><dd class="text-slate-400 text-sm mt-1">Sidebar with categories and the sync card, the gallery, and the detail panel. Where the organizing happens.</dd></div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i data-lucide="mouse-pointer-click" class="w-6 h-6 accent flex-shrink-0 mt-0.5"></i>
+                            <div><dt class="font-semibold text-white">The toolbar popup</dt><dd class="text-slate-400 text-sm mt-1">Sync Now, Sync Full Library and Open Manager, one click from any tab.</dd></div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i data-lucide="panel-right" class="w-6 h-6 accent flex-shrink-0 mt-0.5"></i>
+                            <div><dt class="font-semibold text-white">The side panel</dt><dd class="text-slate-400 text-sm mt-1">Preview and search next to grok.com while you keep generating.</dd></div>
+                        </div>
+                    </dl>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-3">Start in three steps</h2>
+                    <p class="text-slate-400 mb-8">No account needed. The library stays on your device.</p>
+                    <ol class="space-y-6">
+                        <li class="flex gap-4"><span class="w-8 h-8 rounded-full btn-accent font-bold flex items-center justify-center flex-shrink-0">1</span><div><p class="font-semibold text-white">Install</p><p class="text-slate-400 text-sm mt-1">Add the free extension from the Chrome Web Store. It works alongside grok.com in your own signed-in tab.</p></div></li>
+                        <li class="flex gap-4"><span class="w-8 h-8 rounded-full btn-accent font-bold flex items-center justify-center flex-shrink-0">2</span><div><p class="font-semibold text-white">Sync</p><p class="text-slate-400 text-sm mt-1">Open grok.com, then click <span class="ui">Sync Now</span> for your liked media or <span class="ui">Sync Full Library</span> for everything.</p></div></li>
+                        <li class="flex gap-4"><span class="w-8 h-8 rounded-full btn-accent font-bold flex items-center justify-center flex-shrink-0">3</span><div><p class="font-semibold text-white">Organize</p><p class="text-slate-400 text-sm mt-1">Tag, rate, categorize, add notes, and search across the whole library. Pro keeps the files on your disk too.</p></div></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy -->
+    <section id="privacy" class="py-20 lg:py-28">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Where your data lives</h2>
+            <div class="space-y-4 text-slate-300 leading-relaxed">
+                <p><strong class="text-white">Everything stays in the browser.</strong> The library, tags, categories, ratings and notes are stored in IndexedDB. Saved media and backups go to a folder you pick on your own disk.</p>
+                <p><strong class="text-white">The only server call is license validation.</strong> There is no account and no analytics inside the extension. Prompts and media never leave your device.</p>
+                <p><strong class="text-white">It reads Grok's responses in your grok.com tab.</strong> The only thing it writes back to Grok is tag edits, to your Grok collections. Media, prompts, conversation titles, ratings, categories and notes are never written to Grok.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free vs Pro -->
+    <section id="compare" class="py-20 lg:py-28 border-t border-slate-800/70 bg-slate-900/40">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-3">Free and Pro</h2>
+            <p class="text-slate-400 mb-10">Free is a complete organizer for up to 1,000 items in view. Pro removes the limits and keeps your files.</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="text-left text-slate-400 border-b border-slate-700">
+                            <th class="py-3 pr-4 font-medium">Feature</th>
+                            <th class="py-3 px-4 font-medium w-32">Free</th>
+                            <th class="py-3 px-4 font-medium w-32 accent">Pro</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800">
+                        <tr><td class="py-3 pr-4 text-slate-300">Sync (liked + full library), passive capture</td><td class="py-3 px-4">✓</td><td class="py-3 px-4">✓</td></tr>
+                        <tr><td class="py-3 pr-4 text-slate-300">Tags, two-way sync with Grok collections</td><td class="py-3 px-4">✓ unlimited</td><td class="py-3 px-4">✓ unlimited</td></tr>
+                        <tr><td class="py-3 pr-4 text-slate-300">Ratings, notes, search, filters, 4 views, grouping</td><td class="py-3 px-4">✓</td><td class="py-3 px-4">✓</td></tr>
+                        <tr><td class="py-3 pr-4 text-slate-300">Conversation titles, prompt recovery</td><td class="py-3 px-4">✓</td><td class="py-3 px-4">✓</td></tr>
+                        <tr><td class="py-3 pr-4 text-slate-300">Download (Chrome downloads)</td><td class="py-3 px-4">✓</td><td class="py-3 px-4">✓</td></tr>
+                        <tr><td class="py-3 pr-4 text-slate-300">Items shown in a gallery view</td><td class="py-3 px-4">first 1,000</td><td class="py-3 px-4">unlimited</td></tr>
+                        <tr><td class="py-3 pr-4 text-slate-300">Categories</td><td class="py-3 px-4">3</td><td class="py-3 px-4">unlimited</td></tr>
+                        <tr><td class="py-3 pr-4 text-slate-300">Save to Local (selected / all)</td><td class="py-3 px-4 text-slate-600">—</td><td class="py-3 px-4">✓</td></tr>
+                        <tr><td class="py-3 pr-4 text-slate-300">Backup &amp; Restore</td><td class="py-3 px-4 text-slate-600">—</td><td class="py-3 px-4">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 lg:py-28">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-3">Pricing</h2>
+            <p class="text-slate-400 mb-10">Payments are processed by Stripe. After checkout, one click activates Pro in the extension.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-white mb-1">Monthly</h3>
+                    <p class="text-slate-400 mb-6">Cancel anytime.</p>
+                    <div class="flex items-baseline gap-1 mb-8"><span class="text-5xl font-extrabold text-white">$3</span><span class="text-slate-500">/ month</span></div>
+                    <ul class="space-y-3 text-slate-300 text-sm mb-8">
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 accent flex-shrink-0"></i>All Pro features</li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 accent flex-shrink-0"></i>Unlimited items in view, unlimited categories</li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 accent flex-shrink-0"></i>Save to Local, Backup &amp; Restore</li>
+                    </ul>
+                    <button type="button" onclick="openGmmCheckout('monthly')" class="w-full py-4 rounded-xl font-semibold bg-slate-800 hover:bg-slate-700 text-white transition-colors">Subscribe monthly</button>
+                </div>
+
+                <div class="relative bg-gradient-to-br from-slate-900 to-slate-800 border-2 ring-accent rounded-3xl p-8 shadow-2xl shadow-yellow-500/5">
+                    <span class="absolute -top-3.5 left-8 btn-accent text-xs font-bold px-3 py-1 rounded-full">Best long-term value</span>
+                    <h3 class="text-2xl font-bold text-white mb-1">Lifetime</h3>
+                    <p class="text-slate-400 mb-6">One payment, forever.</p>
+                    <div class="flex items-baseline gap-1 mb-8"><span class="text-5xl font-extrabold text-white">$40</span><span class="text-slate-500">/ one-time</span></div>
+                    <ul class="space-y-3 text-slate-300 text-sm mb-8">
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 accent flex-shrink-0"></i>Everything in Monthly</li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 accent flex-shrink-0"></i>No recurring charges</li>
+                        <li class="flex gap-3"><i data-lucide="check" class="w-5 h-5 accent flex-shrink-0"></i>All future updates included</li>
+                    </ul>
+                    <button type="button" onclick="openGmmCheckout('lifetime')" class="w-full py-4 rounded-xl font-semibold btn-accent transition-colors">Buy Lifetime</button>
+                </div>
+            </div>
+
+            <!-- Existing license: upgrade discount -->
+            <details class="mt-10 bg-slate-900/60 border border-slate-800 rounded-2xl">
+                <summary class="px-6 py-4 flex items-center justify-between text-slate-200 font-medium">
+                    <span>Already have a license key? Upgrade with a discount.</span>
+                    <i data-lucide="chevron-down" class="chev w-5 h-5 text-slate-500 transition-transform"></i>
+                </summary>
+                <div class="px-6 pb-6 border-t border-slate-800 pt-5">
+                    <p class="text-sm text-slate-400 mb-4">Enter your existing key: Monthly starts with the first month free, Lifetime is $10 off.</p>
+                    <form id="upgrade-form" class="flex flex-col sm:flex-row gap-3" novalidate>
+                        <label class="sr-only" for="upgrade-key">License key</label>
+                        <input id="upgrade-key" type="text" autocomplete="off" spellcheck="false" placeholder="License key" required class="flex-1 min-w-0 bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-400">
+                        <label class="sr-only" for="upgrade-plan">Plan</label>
+                        <select id="upgrade-plan" class="bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-400">
+                            <option value="lifetime">Lifetime, $10 off</option>
+                            <option value="monthly">Monthly, first month free</option>
+                        </select>
+                        <button type="submit" id="upgrade-submit" class="px-6 py-3 rounded-xl font-semibold btn-accent transition-colors whitespace-nowrap">Redeem upgrade</button>
+                    </form>
+                    <p id="upgrade-error" role="alert" class="hidden text-sm text-red-400 mt-3"></p>
+                </div>
+            </details>
+            <p class="text-xs text-slate-500 mt-6">Prices in USD. Checkout opens on api.kario-studio.com, the license service for Kario Studio extensions.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 lg:py-28 border-t border-slate-800/70 bg-slate-900/40">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10">Questions</h2>
+            <div class="space-y-3">
+                <details class="bg-slate-900 border border-slate-800 rounded-xl">
+                    <summary class="px-6 py-4 flex justify-between items-center font-medium text-white"><span>How is Grok Media Manager different from Grok Media Downloader?</span><i data-lucide="chevron-down" class="chev w-5 h-5 text-slate-500 transition-transform flex-shrink-0 ml-4"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 border-t border-slate-800 pt-4">Grok Media Downloader gets files out of Grok: it is a downloader. Grok Media Manager organizes the library: it syncs what you made, lets you tag, rate, categorize, search and group it, and keeps copies on your disk. They are two separate extensions and work side by side.</div>
+                </details>
+                <details class="bg-slate-900 border border-slate-800 rounded-xl">
+                    <summary class="px-6 py-4 flex justify-between items-center font-medium text-white"><span>Where is my data stored?</span><i data-lucide="chevron-down" class="chev w-5 h-5 text-slate-500 transition-transform flex-shrink-0 ml-4"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 border-t border-slate-800 pt-4">In your browser (IndexedDB) and, for saved media and backups, in a folder you pick on your own disk. The only server call is license validation. There is no account and no analytics inside the extension; prompts and media never leave your device.</div>
+                </details>
+                <details class="bg-slate-900 border border-slate-800 rounded-xl">
+                    <summary class="px-6 py-4 flex justify-between items-center font-medium text-white"><span>What does the Manager change on Grok?</span><i data-lucide="chevron-down" class="chev w-5 h-5 text-slate-500 transition-transform flex-shrink-0 ml-4"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 border-t border-slate-800 pt-4">Only your tags. Tags are two-way synced with your Grok collections, so a tag you add or remove in the Manager is added or removed on Grok too. Media, prompts, conversation titles, ratings, categories and notes are never written back to Grok.</div>
+                </details>
+                <details class="bg-slate-900 border border-slate-800 rounded-xl">
+                    <summary class="px-6 py-4 flex justify-between items-center font-medium text-white"><span>What is free and what needs Pro?</span><i data-lucide="chevron-down" class="chev w-5 h-5 text-slate-500 transition-transform flex-shrink-0 ml-4"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 border-t border-slate-800 pt-4">Free: both syncs, passive capture, unlimited tags, ratings, notes, search, filters, the four views, grouping, conversation titles, prompt recovery and Chrome downloads, with up to 1,000 items shown in a gallery view and 3 categories. Pro removes the item and category limits and adds Save to Local and Backup &amp; Restore.</div>
+                </details>
+                <details class="bg-slate-900 border border-slate-800 rounded-xl">
+                    <summary class="px-6 py-4 flex justify-between items-center font-medium text-white"><span>How do I activate Pro after paying?</span><i data-lucide="chevron-down" class="chev w-5 h-5 text-slate-500 transition-transform flex-shrink-0 ml-4"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 border-t border-slate-800 pt-4">The payment success page shows an <span class="ui">Activate in Grok Media Manager</span> button; one click turns Pro on. You can also paste the license key into the License panel inside the Manager.</div>
+                </details>
+                <details class="bg-slate-900 border border-slate-800 rounded-xl">
+                    <summary class="px-6 py-4 flex justify-between items-center font-medium text-white"><span>Which languages does it support?</span><i data-lucide="chevron-down" class="chev w-5 h-5 text-slate-500 transition-transform flex-shrink-0 ml-4"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 border-t border-slate-800 pt-4">English, 繁體中文, 日本語, 한국어, Deutsch and Español. The extension follows Chrome's UI language.</div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-900 py-10 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-slate-500">
+            <p>© 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> · Grok Media Manager is not affiliated with xAI or Grok.</p>
+            <nav class="flex flex-wrap gap-x-5 gap-y-2" aria-label="Footer">
+                <a href="#privacy" class="hover:text-white">Privacy</a>
+                <a href="#pricing" class="hover:text-white">Pricing</a>
+                <a href="/" class="hover:text-white">Grok Media Downloader</a>
+                <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario Studio</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-slate-800 border border-slate-700 text-white px-6 py-3 rounded-lg shadow-2xl text-sm"></div>
+
+    <script>
+        // Checkout goes through the license API, like the rest of the site: a JS button, never a link
+        // (crawlers follow links). Dev previews use the API's preview host.
+        var IS_LOCALHOST = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        var CHECKOUT_API_BASE = IS_LOCALHOST ? 'https://grok-media-manager-api.vercel.app' : 'https://api.kario-studio.com';
+        var GMM_ITEMS = {
+            monthly: { item_id: 'gmm_pro_monthly', item_name: 'Grok Media Manager Pro Monthly', price: 3, quantity: 1 },
+            lifetime: { item_id: 'gmm_pro_lifetime', item_name: 'Grok Media Manager Pro Lifetime', price: 40, quantity: 1 }
+        };
+        function toast(text) {
+            var el = document.getElementById('toast');
+            el.textContent = text; el.classList.remove('hidden');
+            clearTimeout(toast.t); toast.t = setTimeout(function () { el.classList.add('hidden'); }, 2500);
+        }
+        function trackCta(name, destination) {
+            if (typeof gtag === 'function') gtag('event', 'cta_click', { cta_name: name, cta_destination: destination, product: 'gmm' });
+        }
+        function openGmmCheckout(plan) {
+            var item = GMM_ITEMS[plan]; if (!item) return;
+            var url = CHECKOUT_API_BASE + '/api/checkout?product=gmm&plan=' + encodeURIComponent(plan) + '&lang=en';
+            if (typeof gtag === 'function') {
+                gtag('event', 'add_to_cart', { currency: 'USD', value: item.price, items: [item] });
+                gtag('event', 'begin_checkout', { currency: 'USD', value: item.price, items: [item], payment_type: 'stripe_checkout', product: 'gmm' });
+            }
+            toast('Taking you to secure checkout…');
+            setTimeout(function () { window.location.assign(url); }, 500);
+        }
+        document.getElementById('upgrade-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            var err = document.getElementById('upgrade-error'); err.classList.add('hidden');
+            var key = document.getElementById('upgrade-key').value.trim();
+            var plan = document.getElementById('upgrade-plan').value;
+            if (!key) { err.textContent = 'Enter your license key first.'; err.classList.remove('hidden'); return; }
+            var btn = document.getElementById('upgrade-submit'); btn.disabled = true;
+            try {
+                var res = await fetch(CHECKOUT_API_BASE + '/api/upgrade', {
+                    method: 'POST', headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ license_key: key, plan: plan })
+                });
+                var data = await res.json();
+                if (data.url) {
+                    if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency: 'USD', value: GMM_ITEMS[plan].price, items: [GMM_ITEMS[plan]], payment_type: 'stripe_checkout', product: 'gmm', upgrade: true });
+                    window.location.assign(data.url);
+                    return;
+                }
+                err.textContent = data.error || 'That key could not be used for an upgrade.';
+            } catch (ex) {
+                err.textContent = 'Network error. Please try again.';
+            }
+            err.classList.remove('hidden'); btn.disabled = false;
+        });
+        document.addEventListener('DOMContentLoaded', function () { if (window.lucide) lucide.createIcons(); });
+    </script>
+</body>
+
+</html>

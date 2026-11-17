@@ -412,17 +412,17 @@
                 </div>
             </div>
 
-            <!-- Existing license: upgrade discount -->
+            <!-- Grok Media Downloader Pro owners: upgrade discount (POST /api/upgrade with the GMD license key) -->
             <details class="mt-10 bg-slate-900/60 border border-slate-800 rounded-2xl">
                 <summary class="px-6 py-4 flex items-center justify-between text-slate-200 font-medium">
-                    <span>Already have a license key? Upgrade with a discount.</span>
+                    <span>Own Grok Media Downloader Pro? Get the Manager at a discount.</span>
                     <i data-lucide="chevron-down" class="chev w-5 h-5 text-slate-500 transition-transform"></i>
                 </summary>
                 <div class="px-6 pb-6 border-t border-slate-800 pt-5">
-                    <p class="text-sm text-slate-400 mb-4">Enter your existing key: Monthly starts with the first month free, Lifetime is $10 off.</p>
+                    <p class="text-sm text-slate-400 mb-4">Enter the license key from your <a href="/" class="underline decoration-slate-600 underline-offset-4 hover:decoration-slate-300">Grok Media Downloader</a> Pro purchase, the one in your license e-mail. Monthly starts with the first month free; Lifetime is $10 off. Each key can be used once.</p>
                     <form id="upgrade-form" class="flex flex-col sm:flex-row gap-3" novalidate>
-                        <label class="sr-only" for="upgrade-key">License key</label>
-                        <input id="upgrade-key" type="text" autocomplete="off" spellcheck="false" placeholder="License key" required class="flex-1 min-w-0 bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-400">
+                        <label class="sr-only" for="upgrade-key">Grok Media Downloader license key</label>
+                        <input id="upgrade-key" type="text" autocomplete="off" spellcheck="false" placeholder="Grok Media Downloader license key" required class="flex-1 min-w-0 bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-yellow-400">
                         <label class="sr-only" for="upgrade-plan">Plan</label>
                         <select id="upgrade-plan" class="bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-yellow-400">
                             <option value="lifetime">Lifetime, $10 off</option>
@@ -518,7 +518,7 @@
             var err = document.getElementById('upgrade-error'); err.classList.add('hidden');
             var key = document.getElementById('upgrade-key').value.trim();
             var plan = document.getElementById('upgrade-plan').value;
-            if (!key) { err.textContent = 'Enter your license key first.'; err.classList.remove('hidden'); return; }
+            if (!key) { err.textContent = 'Enter your Grok Media Downloader license key first.'; err.classList.remove('hidden'); return; }
             var btn = document.getElementById('upgrade-submit'); btn.disabled = true;
             try {
                 var res = await fetch(CHECKOUT_API_BASE + '/api/upgrade', {

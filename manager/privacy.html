@@ -68,7 +68,7 @@
         .btn-accent:hover { background: var(--gmm-accent-deep); }
         .policy h2 { font-size: 1.25rem; font-weight: 700; color: #fff; margin-bottom: .75rem; }
         .policy h3 { font-weight: 600; color: #e2e8f0; margin: 1rem 0 .35rem; }
-        .policy p + p { margin-top: .5rem; }
+        .policy p + p, .policy ul + p { margin-top: .5rem; }
         .policy ul { list-style: disc; padding-left: 1.4rem; margin-top: .5rem; }
         .policy li + li { margin-top: .25rem; }
         .policy a { color: var(--gmm-accent); }
@@ -117,32 +117,41 @@
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
                 <div class="policy space-y-8 text-slate-300 leading-relaxed">
 
-                    <p>This Privacy Policy explains how Kario LLC ("we", "us", or "our") handles information in connection with the Grok Media Manager Chrome extension ("the Extension") and its page at <a href="https://grokmedia.kario-studio.com/manager/">grokmedia.kario-studio.com/manager/</a>. The short version: your library stays on your device, the only thing the Extension sends to us is a license key when you activate Pro, and we do not track, sell or share your data.</p>
+                    <p>This Privacy Policy explains how Kario LLC ("we", "us", or "our") handles information in connection with the Grok Media Manager Chrome extension ("the Extension") and its page at <a href="https://grokmedia.kario-studio.com/manager/">grokmedia.kario-studio.com/manager/</a>. The short version: your library stays on your device; when you use Pro, the Extension sends us your license key and a one-way code that ties the license to one Grok account (never the account ID, your e-mail address or your name); and we do not track, sell or share your data.</p>
 
                     <div>
                         <h2>1. Data stored on your device only</h2>
                         <p>The Extension keeps everything it manages in your own browser and on your own disk. We cannot see any of it.</p>
                         <ul>
                             <li><strong class="text-white">IndexedDB (in Chrome):</strong> media metadata read from Grok (Grok item IDs, media URLs, prompts, model name, dimensions, file size and dates) together with the tags, categories, ratings and notes you create.</li>
-                            <li><strong class="text-white">chrome.storage:</strong> your settings, sync state and cached conversation titles.</li>
-                            <li><strong class="text-white">A folder you pick on your disk (File System Access API):</strong> media files you save with Save to Local, and metadata backups made by Backup &amp; Restore.</li>
+                            <li><strong class="text-white">chrome.storage:</strong> your settings, sync state and cached conversation titles; the Grok account your library belongs to (its Grok user ID and a masked hint such as jo&bull;&bull;&bull;th@example.com); and the state of your Pro license's seat.</li>
+                            <li><strong class="text-white">A folder you pick on your disk (File System Access API):</strong> media files you save with Save to Local, and metadata backups made by Backup &amp; Restore. A backup also records the Grok user ID and the masked hint of the library's account, so a restore can tell which Grok account the backup belongs to.</li>
                         </ul>
                     </div>
 
                     <div>
                         <h2>2. What the Extension reads from Grok, and what it writes</h2>
                         <p>Inside your own signed-in grok.com tab, the Extension reads your media lists, your tags and collections, your conversation titles and prompts, and downloads media from assets.grok.com. All of this happens between your browser and Grok; none of it is sent to us.</p>
+                        <p>Each library belongs to one Grok account: the one signed in on grok.com when you first sync. Before it syncs or writes tags, the Extension checks inside your grok.com tab which Grok account is signed in. It asks Grok's own account endpoint (<code>/rest/auth/get-user</code>) and compares Grok's <code>x-userid</code> cookie. Only the account ID and a masked hint (for example jo&bull;&bull;&bull;th@example.com, or a masked X handle or first name) leave the grok.com page; your full e-mail address and name do not. If grok.com is signed in to a different Grok account, syncs and tag changes wait until you switch back. None of this is sent to us.</p>
                         <p>The only thing the Extension writes to Grok is your tag edits: a tag you add or remove in the Extension is added to or removed from your Grok collections. Media, prompts, conversation titles, ratings, categories and notes are never written to Grok.</p>
                     </div>
 
                     <div>
                         <h2>3. The license service</h2>
-                        <p>Pro is activated and validated through our license API at <code>api.kario-studio.com</code> (previously <code>grok-media-manager-api.vercel.app</code>). The only data the Extension sends there is your license key. The reply (plan, expiry date and the purchase e-mail) is cached in <code>chrome.storage.sync</code>, which Chrome may synchronize between your own signed-in browsers. No media, prompts, tags or notes are ever sent to the license service.</p>
+                        <p>Pro is activated and validated through our license API at <code>grok-media-manager-api.vercel.app</code> (the same service as <code>api.kario-studio.com</code>). One license works with one Grok account, on any number of computers and Chrome profiles. For that, the Extension sends:</p>
+                        <ul>
+                            <li>your license key;</li>
+                            <li>a one-way code derived from the Grok account ID of your library (HMAC-SHA256, keyed with your license key). The account ID cannot be read back from it, and it is the same on every computer where you use the same Grok account;</li>
+                            <li>a label made of "Grok account" and that code's last 4 characters, which the Extension's License panel also shows, so that you and our support can name the same seat;</li>
+                            <li>the Extension's version number.</li>
+                        </ul>
+                        <p>The Extension never sends your Grok account ID, your e-mail address or your name. It checks the license once a day; that check also updates the seat's "last seen" date. The reply (plan, expiry date and the purchase e-mail) is cached in <code>chrome.storage.sync</code>, which Chrome may synchronize between your own signed-in browsers; the seat state stays in the browser profile and is not synchronized. No media, prompts, tags or notes are ever sent to the license service.</p>
+                        <p>To move your license to another Grok account, reply to your license e-mail or write to <a href="mailto:support@kario-studio.com">support@kario-studio.com</a>. A seat that has not been used for 60 days is also released when the license is next activated for another Grok account.</p>
                     </div>
 
                     <div>
                         <h2>4. Payments</h2>
-                        <p>Purchases are processed by Stripe through Stripe Checkout. Stripe collects your e-mail address and payment details; we never see your card details. Stripe's handling of your data is described in <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe's privacy policy</a>. We keep the purchase e-mail and the license record so that we can validate your key and help you if you lose it.</p>
+                        <p>Purchases are processed by Stripe through Stripe Checkout. Stripe collects your e-mail address and payment details; we never see your card details. Stripe's handling of your data is described in <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe's privacy policy</a>. We keep the purchase e-mail and the license record so that we can validate your key and help you if you lose it. With the license record we keep its seat: the one-way code, its label, the Extension version and the last-seen date, so that one license serves one Grok account.</p>
                     </div>
 
                     <div>
@@ -160,10 +169,10 @@
                         <h2>6. Chrome permissions and why they are needed</h2>
                         <ul>
                             <li><code>storage</code>, <code>unlimitedStorage</code>: the local library and your settings.</li>
-                            <li><code>tabs</code>, <code>scripting</code> and host access to <code>grok.com</code>, <code>*.grok.com</code> and <code>*.x.ai</code>: reading your Grok data in your own tab, and writing your tag edits there.</li>
+                            <li><code>tabs</code>, <code>scripting</code> and host access to <code>grok.com</code>, <code>*.grok.com</code> and <code>*.x.ai</code>: reading your Grok data in your own tab, checking which Grok account is signed in there, and writing your tag edits there.</li>
                             <li><code>downloads</code>: the Download feature.</li>
                             <li><code>sidePanel</code>: the side panel next to grok.com.</li>
-                            <li><code>alarms</code>: retrying tag write-backs to Grok when they fail.</li>
+                            <li><code>alarms</code>: retrying tag write-backs to Grok when they fail, and checking the Pro license once a day (the same check confirms its seat).</li>
                             <li>Host access to <code>grok-media-manager-api.vercel.app</code>, and a page script that runs only on the <code>/api/success</code> page of <code>api.kario-studio.com</code>: talking to the license service, and the one-click activation button after a purchase.</li>
                         </ul>
                     </div>
@@ -171,6 +180,7 @@
                     <div>
                         <h2>7. Removing your data</h2>
                         <p>Uninstalling the Extension deletes its IndexedDB database and its chrome.storage data. Media files and backups you saved to your own folder are ordinary files on your disk; they stay there until you delete them.</p>
+                        <p>Uninstalling does not delete the seat record kept with your license on our license service. It is deleted when our support releases it at your request, or when, after 60 days without use, the license is activated for another Grok account.</p>
                     </div>
 
                     <div>
@@ -187,6 +197,7 @@
                         <h2>10. Contact</h2>
                         <p>Questions about this policy or about your data:</p>
                         <ul>
+                            <li>E-mail: <a href="mailto:support@kario-studio.com">support@kario-studio.com</a> (also for moving a license to another Grok account)</li>
                             <li>Website: <a href="https://grokmedia.kario-studio.com/manager/">grokmedia.kario-studio.com/manager/</a></li>
                             <li>Kario Studio: <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer">www.kario-studio.com</a></li>
                         </ul>

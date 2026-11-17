@@ -134,6 +134,33 @@
         @media (min-width: 768px) { .ledger > div { grid-template-columns: 220px 1fr; gap: 24px; } }
         .ledger > div:last-child { border-bottom: 1px solid #1e293b; }
         .ui { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; padding: 1px 6px; border-radius: 4px; background: #1e293b; color: #e2e8f0; white-space: nowrap; }
+
+        /* Screenshot lightbox */
+        .shot-btn { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; position: relative; border-radius: 12px; text-align: left; }
+        .shot-btn:focus-visible { outline: 2px solid var(--gmm-accent); outline-offset: 3px; }
+        .shot-btn img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid #1e293b; transition: border-color .15s; }
+        .shot-btn:hover img, .shot-btn:focus-visible img { border-color: rgba(245,197,66,.6); }
+        .shot-zoom { position: absolute; right: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border-radius: 6px; background: rgba(2,6,23,.8); color: #e2e8f0; font-size: 11px; font-weight: 600; border: 1px solid #334155; }
+        .shot-dialog { border: 0; padding: 0; margin: 0; background: transparent; max-width: none; max-height: none; width: 100vw; height: 100vh; color: #f8fafc; }
+        .shot-dialog::backdrop { background: rgba(2,6,23,.94); }
+        .shot-frame { position: relative; display: grid; grid-template-columns: 1fr; width: min(1480px, 100vw); height: 100vh; margin: 0 auto; overflow: auto; background: #020617; }
+        .shot-media { display: flex; align-items: center; justify-content: center; padding: 60px 16px 8px; min-width: 0; }
+        .shot-media img { max-width: 100%; max-height: 60vh; width: auto; height: auto; border-radius: 10px; border: 1px solid #1e293b; background: #0b0f1a; }
+        .shot-text { padding: 20px 20px 40px; }
+        .shot-nav { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 8px; border: 1px solid #334155; background: #0f172a; color: #e2e8f0; font-size: 14px; font-weight: 500; }
+        .shot-nav:hover { border-color: #64748b; }
+        .shot-nav:focus-visible, .shot-close:focus-visible { outline: 2px solid var(--gmm-accent); outline-offset: 2px; }
+        .shot-close { position: fixed; top: 12px; right: 12px; width: 40px; height: 40px; display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; border: 1px solid #334155; background: #0f172a; color: #e2e8f0; z-index: 2; }
+        @media (min-width: 1024px) {
+            .shot-frame { grid-template-columns: minmax(0, 1fr) 380px; overflow: hidden; }
+            .shot-media { padding: 24px; }
+            .shot-media img { max-height: calc(100vh - 48px); }
+            .shot-frame { background: transparent; }
+            .shot-text { overflow: auto; background: #0f172a; border-left: 1px solid #1e293b; padding: 28px 28px 40px; }
+        }
+        body:has(dialog[open]) { overflow: hidden; }
+        @media (prefers-reduced-motion: no-preference) { .shot-dialog[open] { animation: shot-in .18s ease-out; } }
+        @keyframes shot-in { from { opacity: 0; } to { opacity: 1; } }
         details > summary { list-style: none; cursor: pointer; }
         details > summary::-webkit-details-marker { display: none; }
         details[open] .chev { transform: rotate(180deg); }
@@ -215,34 +242,103 @@
     </section>
 
     <!-- Screens: real screenshots; the captions use the same control names as the ledger below -->
+    <!-- Screens: real screenshots; click opens the lightbox with the full description -->
     <section id="screens" class="py-20 lg:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-3">Six ways to look at the same library</h2>
-            <p class="text-slate-400 mb-12 max-w-2xl">Every picture on this page is the extension itself. The control names in the captions are the ones you will click.</p>
+            <p class="text-slate-400 mb-12 max-w-2xl">Every picture on this page is the extension itself. Click one to see it full size with the full story; the control names are the ones you will click.</p>
             <div class="grid md:grid-cols-2 gap-x-8 gap-y-12">
-                <figure>
-                    <img src="/assets/manager/detail-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="The detail panel of a selected item: Download, Save to Local and Open on Grok buttons, the prompt, a Landscape tag marked Synced with Grok, a five-star rating, the Wallpapers category, a note, and the file properties." class="w-full h-auto rounded-xl border border-slate-800">
-                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">Rating</span> <span class="ui">Notes</span> <span class="ui">Category</span><span class="block mt-2">One item selected. The tag came from Grok; the rating, category and note live only in the Manager.</span></figcaption>
+                <figure data-shot>
+                    <button type="button" class="shot-btn" aria-haspopup="dialog" aria-label="Enlarge: The detail panel">
+                        <img src="/assets/manager/detail-1280.jpg" data-full="/assets/manager/detail-2560.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="The detail panel of a selected item: Download, Save to Local and Open on Grok buttons, the prompt, a Landscape tag marked Synced with Grok, a five-star rating, the Wallpapers category, a note, and the file properties.">
+                        <span class="shot-zoom" aria-hidden="true"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>Enlarge</span>
+                    </button>
+                    <figcaption class="mt-4">
+                        <h3 class="font-semibold text-white">The detail panel</h3>
+                        <p class="text-sm text-slate-400 mt-1">One item selected. The tag came from Grok; the rating, category and note live only in the Manager.</p>
+                        <p class="mt-2"><span class="ui">Rating</span> <span class="ui">Notes</span> <span class="ui">Category</span></p>
+                        <div class="shot-more hidden">
+                            <p>Click any item and the panel on the right fills in. At the top, three buttons: <b>Download</b> through Chrome downloads, <b>Save to Local</b> into your media folder (Pro), and <b>Open on Grok</b>.</p>
+                            <p>Below them, the prompt with a copy button, then the tags. A tag marked <b>Synced with Grok</b> is one of your Grok collections: add or remove it here and Grok changes too. Rating, category and notes sit in the box marked <b>Only in Media Manager</b>; they are yours alone and never leave the device.</p>
+                            <p>Properties list what the file is: type, source (generated or uploaded), origin, model, format, dimensions, file size, creation date, and whether a local copy exists.</p>
+                        </div>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="/assets/manager/bulk-tags-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Four items selected in the gallery with the Manage Tags popover open, showing the Landscape tag applied to 4 of 4 and a field to add a new tag to all selected." class="w-full h-auto rounded-xl border border-slate-800">
-                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">Select All</span> <span class="ui">Manage Tags</span><span class="block mt-2">Four selected. One tag, one category or one rating goes onto all of them at once.</span></figcaption>
+                <figure data-shot>
+                    <button type="button" class="shot-btn" aria-haspopup="dialog" aria-label="Enlarge: Select many, tag once">
+                        <img src="/assets/manager/bulk-tags-1280.jpg" data-full="/assets/manager/bulk-tags-2560.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Four items selected in the gallery with the Manage Tags popover open, showing the Landscape tag applied to 4 of 4 and a field to add a new tag to all selected.">
+                        <span class="shot-zoom" aria-hidden="true"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>Enlarge</span>
+                    </button>
+                    <figcaption class="mt-4">
+                        <h3 class="font-semibold text-white">Select many, tag once</h3>
+                        <p class="text-sm text-slate-400 mt-1">Four selected. One tag, one category or one rating goes onto all of them at once.</p>
+                        <p class="mt-2"><span class="ui">Select All</span> <span class="ui">Manage Tags</span></p>
+                        <div class="shot-more hidden">
+                            <p>Click items to select them, Shift-click or Ctrl-click to add more, or use <b>Select All</b> for everything in the current view. The bar at the bottom shows the count and the actions that apply to the whole selection: rate, set category, tag, download, save to local.</p>
+                            <p><b>Manage Tags</b> opens the popover in the picture. Tags synced with your Grok collections are listed first with a count such as 4/4, meaning all four selected items already carry it. Tick a tag to add it to every selected item, untick to remove it, or type a new name and press Add to create the tag and apply it in one go.</p>
+                            <p>The panel on the right summarises the selection: how many images and videos, and where the bulk actions are.</p>
+                        </div>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="/assets/manager/list-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="List view: each item as a row with thumbnail, prompt, type, source, size, rating, tags and creation date, sorted by rating." class="w-full h-auto rounded-xl border border-slate-800">
-                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">List</span><span class="block mt-2">The same library as columns: prompt, type, source, size, rating, tags, date. Sort by any of them.</span></figcaption>
+                <figure data-shot>
+                    <button type="button" class="shot-btn" aria-haspopup="dialog" aria-label="Enlarge: List view">
+                        <img src="/assets/manager/list-1280.jpg" data-full="/assets/manager/list-2560.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="List view: each item as a row with thumbnail, prompt, type, source, size, rating, tags and creation date, sorted by rating.">
+                        <span class="shot-zoom" aria-hidden="true"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>Enlarge</span>
+                    </button>
+                    <figcaption class="mt-4">
+                        <h3 class="font-semibold text-white">List view</h3>
+                        <p class="text-sm text-slate-400 mt-1">The same library as columns: prompt, type, source, size, rating, tags, date. Sort by any of them.</p>
+                        <p class="mt-2"><span class="ui">List</span></p>
+                        <div class="shot-more hidden">
+                            <p>Switch to <b>List</b> when you want to compare rather than browse. Every item becomes a row: thumbnail, the full prompt, type (image or video), source, pixel size, rating as stars, tags as chips, and the creation date.</p>
+                            <p>Click a column header to sort; the arrow on Rating in the picture shows the current order. The icon at the top left of the table chooses which columns are shown. The toolbar filters (type, tag, cloud or local, minimum rating) apply here exactly as they do in Grid.</p>
+                        </div>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="/assets/manager/prompt-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Prompt view: 18 prompts as collapsible groups, the first one open and showing 25 autumn forest images generated from it, with a rating for the whole group." class="w-full h-auto rounded-xl border border-slate-800">
-                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">Prompt</span><span class="block mt-2">Everything generated from one prompt, together. Rate the group, then pick the keeper.</span></figcaption>
+                <figure data-shot>
+                    <button type="button" class="shot-btn" aria-haspopup="dialog" aria-label="Enlarge: Prompt view">
+                        <img src="/assets/manager/prompt-1280.jpg" data-full="/assets/manager/prompt-2560.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Prompt view: 18 prompts as collapsible groups, the first one open and showing 25 autumn forest images generated from it, with a rating for the whole group.">
+                        <span class="shot-zoom" aria-hidden="true"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>Enlarge</span>
+                    </button>
+                    <figcaption class="mt-4">
+                        <h3 class="font-semibold text-white">Prompt view</h3>
+                        <p class="text-sm text-slate-400 mt-1">Everything generated from one prompt, together. Rate the group, then pick the keeper.</p>
+                        <p class="mt-2"><span class="ui">Prompt</span></p>
+                        <div class="shot-more hidden">
+                            <p>Grok Imagine often gives you ten or twenty variations of the same prompt. <b>Prompt</b> view groups them: the header shows the prompt text, the number of items in the group, and a star control that rates the whole group at once. Collapse the groups you are done with and expand the one you are choosing from.</p>
+                            <p>The toolbar count changes to items and prompts, so you can see how many distinct prompts the current filter covers. Inside a group the usual selection, tagging and download actions work as in Grid.</p>
+                        </div>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="/assets/manager/nest-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Nest view: source images carry a +1 badge where a video was generated from them, and the detail panel lists that child video under Children with a Find and an Open on Grok link." class="w-full h-auto rounded-xl border border-slate-800">
-                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">Nest</span><span class="block mt-2">An image and the video made from it stay together. The +1 badge marks the parent; the panel lists its children.</span></figcaption>
+                <figure data-shot>
+                    <button type="button" class="shot-btn" aria-haspopup="dialog" aria-label="Enlarge: Nest view: parents and children">
+                        <img src="/assets/manager/nest-1280.jpg" data-full="/assets/manager/nest-2560.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Nest view: source images carry a +1 badge where a video was generated from them, and the detail panel lists that child video under Children with a Find and an Open on Grok link.">
+                        <span class="shot-zoom" aria-hidden="true"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>Enlarge</span>
+                    </button>
+                    <figcaption class="mt-4">
+                        <h3 class="font-semibold text-white">Nest view: parents and children</h3>
+                        <p class="text-sm text-slate-400 mt-1">An image and the video made from it stay together. The +1 badge marks the parent; the panel lists its children.</p>
+                        <p class="mt-2"><span class="ui">Nest</span></p>
+                        <div class="shot-more hidden">
+                            <p>When you animate an image on Grok, the result is a new item with its own ID. <b>Nest</b> view keeps the two connected: the source image carries a <b>+1</b> badge (or +2, +3) for the videos made from it, and the toolbar counts posts rather than items.</p>
+                            <p>Select the parent and the detail panel adds a <b>Relations</b> block: the Grok conversation it came from, with a link that shows every item in that conversation, and a <b>Children</b> list with each derived video, its quality tier, a <b>Find</b> link that jumps to it in the gallery, and <b>Open on Grok</b>.</p>
+                        </div>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="/assets/manager/videos-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="The type filter set to Videos: the gallery shows only video items, each thumbnail with a play mark." class="w-full h-auto rounded-xl border border-slate-800">
-                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">All Types</span> <span class="ui">Videos</span><span class="block mt-2">Filter by type, tag, rating or cloud-versus-local, then sort. Videos only, in one click.</span></figcaption>
+                <figure data-shot>
+                    <button type="button" class="shot-btn" aria-haspopup="dialog" aria-label="Enlarge: Filters: videos only">
+                        <img src="/assets/manager/videos-1280.jpg" data-full="/assets/manager/videos-2560.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="The type filter set to Videos: the gallery shows only video items, each thumbnail with a play mark.">
+                        <span class="shot-zoom" aria-hidden="true"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>Enlarge</span>
+                    </button>
+                    <figcaption class="mt-4">
+                        <h3 class="font-semibold text-white">Filters: videos only</h3>
+                        <p class="text-sm text-slate-400 mt-1">Filter by type, tag, rating or cloud-versus-local, then sort. Videos only, in one click.</p>
+                        <p class="mt-2"><span class="ui">All Types</span> <span class="ui">Videos</span></p>
+                        <div class="shot-more hidden">
+                            <p>The toolbar carries the filters that narrow any view: <b>Tags</b>, the type picker (All Types, Images, <b>Videos</b>), <b>Cloud</b> or <b>Local</b> (everything synced, or only what is saved on your disk), a minimum star rating, and the sort order (Highest Rated in the picture).</p>
+                            <p>Here the type picker is set to Videos, so the gallery shows only video items, each with a play mark on the thumbnail. Filters combine, so "videos, tagged Landscape, four stars and up" is three clicks.</p>
+                        </div>
+                    </figcaption>
                 </figure>
             </div>
         </div>
@@ -385,13 +481,36 @@
                 </table>
             </div>
             <div class="grid md:grid-cols-2 gap-x-8 gap-y-10 mt-14">
-                <figure>
-                    <img src="/assets/manager/save-to-local-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Save to Local running on 50 selected items: the sync card shows the folder, saved count and a Saving to local button; a Saving 4 of 50 progress pill with Cancel floats over the gallery, and saved items carry a check mark." class="w-full h-auto rounded-xl border border-slate-800">
-                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">Save to Local</span> <span class="text-xs font-semibold accent">Pro</span><span class="block mt-2">Fifty selected, saving into a folder you chose. Each file gets a check mark as it lands on your disk.</span></figcaption>
+                <figure data-shot>
+                    <button type="button" class="shot-btn" aria-haspopup="dialog" aria-label="Enlarge: Save to Local">
+                        <img src="/assets/manager/save-to-local-1280.jpg" data-full="/assets/manager/save-to-local-2560.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Save to Local running on 50 selected items: the sync card shows the folder, saved count and a Saving to local button; a Saving 4 of 50 progress pill with Cancel floats over the gallery, and saved items carry a check mark.">
+                        <span class="shot-zoom" aria-hidden="true"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>Enlarge</span>
+                    </button>
+                    <figcaption class="mt-4">
+                        <h3 class="font-semibold text-white">Save to Local</h3>
+                        <p class="text-sm text-slate-400 mt-1">Fifty selected, saving into a folder you chose. Each file gets a check mark as it lands on your disk.</p>
+                        <p class="mt-2"><span class="ui">Save to Local</span> <span class="text-xs font-semibold accent">Pro</span></p>
+                        <div class="shot-more hidden">
+                            <p>Pro keeps the files, not just the records. Choose a folder once; from then on <b>Save to Local</b> on the selection bar, or <b>Save All to Local</b> in the sync card, copies the originals into it at a pace Grok tolerates.</p>
+                            <p>While it runs, a pill shows "Saving 4 / 50" with a <b>Cancel</b> button, saved items get a check mark, and the sync card keeps a running total of what is on disk and what is not. Items already saved are skipped on the next run, so saving everything is safe to repeat.</p>
+                            <p>If Grok later deletes an item, your copy stays. The <b>Local</b> filter then shows exactly what you still have.</p>
+                        </div>
+                    </figcaption>
                 </figure>
-                <figure>
-                    <img src="/assets/manager/backup-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="The Backup and Restore panel open in the sidebar after Backup Now: Backup Now, Restore from Backup and Re-link Media Folder, with the saved backup file name and size underneath." class="w-full h-auto rounded-xl border border-slate-800">
-                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">Backup &amp; Restore</span> <span class="ui">Backup Now</span> <span class="text-xs font-semibold accent">Pro</span><span class="block mt-2">One click writes the whole library, tags, ratings and notes to a JSON file. Restore it on any machine.</span></figcaption>
+                <figure data-shot>
+                    <button type="button" class="shot-btn" aria-haspopup="dialog" aria-label="Enlarge: Backup &amp; Restore">
+                        <img src="/assets/manager/backup-1280.jpg" data-full="/assets/manager/backup-2560.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="The Backup and Restore panel open in the sidebar after Backup Now: Backup Now, Restore from Backup and Re-link Media Folder, with the saved backup file name and size underneath.">
+                        <span class="shot-zoom" aria-hidden="true"><i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>Enlarge</span>
+                    </button>
+                    <figcaption class="mt-4">
+                        <h3 class="font-semibold text-white">Backup &amp; Restore</h3>
+                        <p class="text-sm text-slate-400 mt-1">One click writes the whole library, tags, ratings and notes to a JSON file. Restore it on any machine.</p>
+                        <p class="mt-2"><span class="ui">Backup &amp; Restore</span> <span class="ui">Backup Now</span> <span class="text-xs font-semibold accent">Pro</span></p>
+                        <div class="shot-more hidden">
+                            <p><b>Backup Now</b> writes the whole database to a JSON file: every record, tag, rating, category and note, plus the links to your local files. The panel shows the file name, its size and how long it took, as in the picture.</p>
+                            <p><b>Restore from Backup</b> loads such a file on a new machine or after a reinstall. <b>Re-link Media Folder</b> points the library at your files again if the folder moved. Backups are plain files you own; nothing is uploaded anywhere.</p>
+                        </div>
+                    </figcaption>
                 </figure>
             </div>
         </div>
@@ -488,6 +607,26 @@
         </div>
     </section>
 
+
+    <!-- Lightbox for the screenshots (native dialog; Esc closes, arrows move) -->
+    <dialog id="shot-dialog" class="shot-dialog" aria-labelledby="shot-title">
+        <div class="shot-frame">
+            <div class="shot-media">
+                <img id="shot-img" src="" alt="" width="1280" height="800" decoding="async">
+            </div>
+            <div class="shot-text">
+                <p id="shot-count" class="text-xs text-slate-500"></p>
+                <h3 id="shot-title" class="text-xl font-bold text-white mt-1"></h3>
+                <p id="shot-chips" class="mt-3"></p>
+                <div id="shot-desc" class="mt-4 text-sm text-slate-300 leading-relaxed space-y-3"></div>
+                <div class="mt-8 flex items-center gap-2">
+                    <button type="button" id="shot-prev" class="shot-nav" aria-label="Previous screenshot"><i data-lucide="arrow-left" class="w-4 h-4"></i>Previous</button>
+                    <button type="button" id="shot-next" class="shot-nav" aria-label="Next screenshot">Next<i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+                </div>
+            </div>
+            <button type="button" id="shot-close" class="shot-close" aria-label="Close"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+    </dialog>
     </main>
 
     <footer class="bg-slate-950 border-t border-slate-900 py-10 text-sm">
@@ -555,6 +694,48 @@
             }
             err.classList.remove('hidden'); btn.disabled = false;
         });
+
+        // Screenshot lightbox
+        (function () {
+            var dlg = document.getElementById('shot-dialog');
+            if (!dlg || typeof dlg.showModal !== 'function') return;
+            var figs = Array.prototype.slice.call(document.querySelectorAll('figure[data-shot]'));
+            var img = document.getElementById('shot-img'), title = document.getElementById('shot-title'),
+                chips = document.getElementById('shot-chips'), desc = document.getElementById('shot-desc'),
+                count = document.getElementById('shot-count'), closeBtn = document.getElementById('shot-close');
+            var cur = 0, opener = null;
+            function show(i) {
+                cur = (i + figs.length) % figs.length;
+                var f = figs[cur], src = f.querySelector('img');
+                var full = src.getAttribute('data-full') || src.getAttribute('src');
+                img.removeAttribute('srcset');
+                img.src = full;
+                img.srcset = src.getAttribute('src') + ' 1280w, ' + full + ' 2560w';
+                img.sizes = '(min-width: 1024px) calc(100vw - 380px), 100vw';
+                img.alt = src.alt;
+                title.innerHTML = f.querySelector('h3').innerHTML;
+                chips.innerHTML = '';
+                f.querySelectorAll('figcaption .ui, figcaption .accent').forEach(function (c) { chips.appendChild(c.cloneNode(true)); chips.appendChild(document.createTextNode(' ')); });
+                desc.innerHTML = f.querySelector('.shot-more').innerHTML;
+                count.textContent = (cur + 1) + ' / ' + figs.length;
+                dlg.querySelector('.shot-frame').scrollTop = 0;
+                if (typeof gtag === 'function') gtag('event', 'view_screenshot', { product: 'gmm', screenshot: full.split('/').pop() });
+            }
+            figs.forEach(function (f, i) {
+                f.querySelector('.shot-btn').addEventListener('click', function () {
+                    opener = this; show(i); dlg.showModal(); closeBtn.focus();
+                });
+            });
+            document.getElementById('shot-prev').addEventListener('click', function () { show(cur - 1); });
+            document.getElementById('shot-next').addEventListener('click', function () { show(cur + 1); });
+            closeBtn.addEventListener('click', function () { dlg.close(); });
+            dlg.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowRight') { e.preventDefault(); show(cur + 1); }
+                if (e.key === 'ArrowLeft') { e.preventDefault(); show(cur - 1); }
+            });
+            dlg.addEventListener('click', function (e) { if (e.target === dlg || e.target.classList.contains('shot-media')) dlg.close(); });
+            dlg.addEventListener('close', function () { img.removeAttribute('src'); img.removeAttribute('srcset'); if (opener) opener.focus(); });
+        })();
         document.addEventListener('DOMContentLoaded', function () { if (window.lucide) lucide.createIcons(); });
     </script>
 </body>

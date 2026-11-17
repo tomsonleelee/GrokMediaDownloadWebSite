@@ -138,20 +138,20 @@
 
                     <div>
                         <h2>3. The license service</h2>
-                        <p>Pro is activated and validated through our license API at <code>grok-media-manager-api.vercel.app</code> (the same service as <code>api.kario-studio.com</code>). One license works with one Grok account, on any number of computers and Chrome profiles. For that, the Extension sends:</p>
+                        <p>Pro is activated and validated through our license API at <code>api.kario-studio.com</code>. One license works with one Grok account, on any number of computers and Chrome profiles. For that, the Extension sends:</p>
                         <ul>
                             <li>your license key;</li>
                             <li>a one-way code derived from the Grok account ID of your library (HMAC-SHA256, keyed with your license key). The account ID cannot be read back from it, and it is the same on every computer where you use the same Grok account;</li>
                             <li>a label made of "Grok account" and that code's last 4 characters, which the Extension's License panel also shows, so that you and our support can name the same seat;</li>
                             <li>the Extension's version number.</li>
                         </ul>
-                        <p>The Extension never sends your Grok account ID, your e-mail address or your name. It checks the license once a day; that check also updates the seat's "last seen" date. The reply (plan, expiry date and the purchase e-mail) is cached in <code>chrome.storage.sync</code>, which Chrome may synchronize between your own signed-in browsers; the seat state stays in the browser profile and is not synchronized. No media, prompts, tags or notes are ever sent to the license service.</p>
+                        <p>The Extension never sends your Grok account ID, your e-mail address or your name. It checks the license once a day; that check also updates the seat's "last seen" date. The reply (plan, expiry date and the purchase e-mail) is cached in <code>chrome.storage.sync</code>, which Chrome may synchronize between your own signed-in browsers; the seat state stays in the browser profile and is not synchronized. No media, prompts, tags or notes are ever sent to the license service. Like any web server, the license service sees the IP address of each request; it is used only to limit abuse (rate limiting) and is kept briefly in counters and server logs, not with your license.</p>
                         <p>To move your license to another Grok account, reply to your license e-mail or write to <a href="mailto:support@kario-studio.com">support@kario-studio.com</a>. A seat that has not been used for 60 days is also released when the license is next activated for another Grok account.</p>
                     </div>
 
                     <div>
                         <h2>4. Payments</h2>
-                        <p>Purchases are processed by Stripe through Stripe Checkout. Stripe collects your e-mail address and payment details; we never see your card details. Stripe's handling of your data is described in <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe's privacy policy</a>. We keep the purchase e-mail and the license record so that we can validate your key and help you if you lose it. With the license record we keep its seat: the one-way code, its label, the Extension version and the last-seen date, so that one license serves one Grok account.</p>
+                        <p>Purchases are processed by Stripe through Stripe Checkout. Stripe collects your e-mail address and payment details; we never see your card details. Stripe's handling of your data is described in <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">Stripe's privacy policy</a>. We keep the purchase e-mail and the license record so that we can validate your key and help you if you lose it. With the license record we keep its seat: the one-way code, its label, the Extension version, the activation date and the last-seen date, so that one license serves one Grok account.</p>
                     </div>
 
                     <div>
@@ -173,14 +173,14 @@
                             <li><code>downloads</code>: the Download feature.</li>
                             <li><code>sidePanel</code>: the side panel next to grok.com.</li>
                             <li><code>alarms</code>: retrying tag write-backs to Grok when they fail, and checking the Pro license once a day (the same check confirms its seat).</li>
-                            <li>Host access to <code>grok-media-manager-api.vercel.app</code>, and a page script that runs only on the <code>/api/success</code> page of <code>api.kario-studio.com</code>: talking to the license service, and the one-click activation button after a purchase.</li>
+                            <li>Host access to <code>api.kario-studio.com</code>: talking to the license service. A page script that runs only on the <code>/api/success</code> page of <code>api.kario-studio.com</code> (and, for older purchase links, of <code>grok-media-manager-api.vercel.app</code>): the one-click Activate in Grok Media Manager button after a purchase, nothing else.</li>
                         </ul>
                     </div>
 
                     <div>
                         <h2>7. Removing your data</h2>
                         <p>Uninstalling the Extension deletes its IndexedDB database and its chrome.storage data. Media files and backups you saved to your own folder are ordinary files on your disk; they stay there until you delete them.</p>
-                        <p>Uninstalling does not delete the seat record kept with your license on our license service. It is deleted when our support releases it at your request, or when, after 60 days without use, the license is activated for another Grok account.</p>
+                        <p>Uninstalling does not delete the seat record kept with your license on our license service. It is deleted when our support releases it at your request, or when, after 60 days without use, the license is activated for another Grok account. Our license log keeps a short record of seat changes (date, a short prefix of the one-way code, and the Extension version) so that support can answer questions about the license.</p>
                     </div>
 
                     <div>

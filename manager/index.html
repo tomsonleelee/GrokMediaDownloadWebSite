@@ -61,6 +61,7 @@
       "description": "A Chrome extension that syncs your Grok Imagine library into a local workspace: tags synced with Grok collections, categories, ratings, notes, prompt search, four gallery views, and media saved to your own disk.",
       "url": "https://grokmedia.kario-studio.com/manager/",
       "image": "https://grokmedia.kario-studio.com/assets/og-manager.jpg",
+      "screenshot": "https://grokmedia.kario-studio.com/assets/manager/overview-1600.jpg",
       "author": { "@type": "Organization", "name": "Kario Studio", "url": "https://www.kario-studio.com" },
       "offers": [
         { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
@@ -128,49 +129,6 @@
         .ring-accent { border-color: rgba(245, 197, 66, 0.45); }
         .hero-wash { background: radial-gradient(60% 50% at 70% 20%, rgba(245,197,66,0.10) 0%, rgba(0,0,0,0) 70%); }
 
-        /* ── Mock of the full-tab Manager (light table) ─────────────────────────── */
-        .lt { background: #141414; border: 1px solid #2a2a2a; border-radius: 14px; overflow: hidden; color: #d6d6d6; font-size: 11px; box-shadow: 0 30px 80px rgba(0,0,0,.55); }
-        .lt-top { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-bottom: 1px solid #262626; background: #181818; }
-        .lt-dot { width: 8px; height: 8px; border-radius: 50%; background: #333; }
-        .lt-body { display: grid; grid-template-columns: 132px 1fr 150px; min-height: 330px; }
-        .lt-side { border-right: 1px solid #262626; padding: 10px; background: #161616; }
-        .lt-side h4, .lt-detail h4 { font-size: 9px; letter-spacing: .06em; text-transform: uppercase; color: #8a8a8a; margin: 10px 0 6px; font-weight: 600; }
-        .lt-side h4:first-child { margin-top: 0; }
-        .lt-tree div { padding: 3px 6px; border-radius: 5px; color: #bdbdbd; white-space: nowrap; }
-        .lt-tree .on { background: rgba(245,197,66,.14); color: var(--gmm-accent); }
-        .lt-tree .l2 { padding-left: 18px; color: #9a9a9a; }
-        .lt-sync { margin-top: 10px; border: 1px solid #2a2a2a; border-radius: 8px; padding: 8px; background: #1b1b1b; }
-        .lt-btn { display: block; text-align: center; border-radius: 6px; padding: 5px 6px; margin-top: 5px; font-weight: 600; font-size: 10px; border: 1px solid #333; color: #d6d6d6; }
-        .lt-btn.pri { background: var(--gmm-accent); color: var(--gmm-ink); border-color: var(--gmm-accent); }
-        .lt-main { display: flex; flex-direction: column; min-width: 0; }
-        .lt-bar { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-bottom: 1px solid #262626; }
-        .lt-seg { display: inline-flex; border: 1px solid #333; border-radius: 6px; overflow: hidden; }
-        .lt-seg span { padding: 3px 7px; color: #a3a3a3; }
-        .lt-seg .on { background: #2a2a2a; color: #fff; }
-        .lt-search { flex: 1; min-width: 0; border: 1px solid #333; border-radius: 6px; padding: 3px 8px; color: #777; background: #1a1a1a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .lt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; padding: 10px; }
-        .lt-group { grid-column: 1 / -1; color: #9a9a9a; font-size: 10px; display: flex; justify-content: space-between; padding-top: 2px; }
-        .lt-card { border-radius: 7px; overflow: hidden; background: #1c1c1c; border: 1px solid #2a2a2a; }
-        .lt-thumb { aspect-ratio: 4 / 3; position: relative; }
-        .lt-thumb i { position: absolute; right: 4px; top: 4px; font-style: normal; font-size: 8px; font-weight: 700; padding: 1px 4px; border-radius: 3px; background: rgba(0,0,0,.6); color: #eee; }
-        .lt-meta { padding: 5px 6px; display: flex; flex-direction: column; gap: 3px; }
-        .lt-stars { color: var(--gmm-accent); font-size: 9px; letter-spacing: 1px; }
-        .lt-stars b { color: #444; font-weight: 400; }
-        .lt-chips span { display: inline-block; font-size: 8px; padding: 1px 5px; border-radius: 3px; background: #262626; color: #bdbdbd; margin-right: 3px; }
-        .lt-detail { border-left: 1px solid #262626; padding: 10px; background: #161616; }
-        .lt-detail p { color: #bdbdbd; line-height: 1.35; }
-        .lt-detail .k { color: #8a8a8a; }
-        .lt-sel { outline: 2px solid var(--gmm-accent); outline-offset: -2px; }
-        .t1 { background: linear-gradient(135deg, #3b4a6b, #1e2a44); }
-        .t2 { background: linear-gradient(135deg, #6b4a3b, #44261e); }
-        .t3 { background: linear-gradient(135deg, #3b6b5a, #1e4436); }
-        .t4 { background: linear-gradient(135deg, #5a3b6b, #361e44); }
-        .t5 { background: linear-gradient(135deg, #6b6b3b, #44441e); }
-        .t6 { background: linear-gradient(135deg, #3b5a6b, #1e3644); }
-        .t7 { background: linear-gradient(135deg, #6b3b4a, #441e2a); }
-        .t8 { background: linear-gradient(135deg, #4a6b3b, #2a441e); }
-        @media (max-width: 640px) { .lt-body { grid-template-columns: 1fr; } .lt-side, .lt-detail { display: none; } .lt-grid { grid-template-columns: repeat(3, 1fr); } }
-
         /* Feature ledger */
         .ledger > div { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 18px 0; border-top: 1px solid #1e293b; }
         @media (min-width: 768px) { .ledger > div { grid-template-columns: 220px 1fr; gap: 24px; } }
@@ -233,61 +191,10 @@
                 </div>
 
                 <div class="lg:col-span-7">
-                    <div class="lt" role="img" aria-label="The full-tab Manager: a category sidebar with the sync card, a gallery grouped by conversation with tags, ratings and quality badges, and the detail panel of the selected item.">
-                        <div class="lt-top"><span class="lt-dot"></span><span class="lt-dot"></span><span class="lt-dot"></span><span class="ml-2 text-[10px] text-neutral-400">Grok Media Manager</span><span class="ml-auto text-[10px] text-neutral-500">2,847 items</span></div>
-                        <div class="lt-body">
-                            <aside class="lt-side">
-                                <h4>Categories</h4>
-                                <div class="lt-tree">
-                                    <div class="on">All Media</div>
-                                    <div>Portfolio</div>
-                                    <div class="l2">Hero shots</div>
-                                    <div class="l2">Variations</div>
-                                    <div>Characters</div>
-                                    <div>Backgrounds</div>
-                                    <div class="text-neutral-500">+ New Category</div>
-                                </div>
-                                <div class="lt-sync">
-                                    <div class="text-[9px] text-neutral-500">Library synced today</div>
-                                    <span class="lt-btn pri">Sync Now</span>
-                                    <span class="lt-btn">Sync Full Library</span>
-                                </div>
-                            </aside>
-                            <div class="lt-main">
-                                <div class="lt-bar">
-                                    <span class="lt-seg"><span class="on">Grid</span><span>List</span><span>Nest</span><span>Prompt</span></span>
-                                    <span class="lt-search">Search prompts, notes and IDs</span>
-                                    <span class="text-neutral-400 whitespace-nowrap">Group by · Conversation</span>
-                                </div>
-                                <div class="lt-grid">
-                                    <div class="lt-group"><span>Golden hour street scenes</span><span>6 items</span></div>
-                                    <div class="lt-card lt-sel"><div class="lt-thumb t1"><i>1080p</i></div><div class="lt-meta"><span class="lt-stars">★★★★★</span><span class="lt-chips"><span>hero</span><span>final</span></span></div></div>
-                                    <div class="lt-card"><div class="lt-thumb t2"><i>HD</i></div><div class="lt-meta"><span class="lt-stars">★★★★<b>★</b></span><span class="lt-chips"><span>hero</span></span></div></div>
-                                    <div class="lt-card"><div class="lt-thumb t3"></div><div class="lt-meta"><span class="lt-stars">★★★<b>★★</b></span><span class="lt-chips"><span>variation</span></span></div></div>
-                                    <div class="lt-card"><div class="lt-thumb t4"><i>SD</i></div><div class="lt-meta"><span class="lt-stars"><b>★★★★★</b></span><span class="lt-chips"><span>variation</span></span></div></div>
-                                    <div class="lt-group"><span>Character sheet, round two</span><span>4 items</span></div>
-                                    <div class="lt-card"><div class="lt-thumb t5"></div><div class="lt-meta"><span class="lt-stars">★★★★<b>★</b></span><span class="lt-chips"><span>character</span><span>sheet</span></span></div></div>
-                                    <div class="lt-card"><div class="lt-thumb t6"><i>HD</i></div><div class="lt-meta"><span class="lt-stars">★★★★★</span><span class="lt-chips"><span>character</span></span></div></div>
-                                    <div class="lt-card"><div class="lt-thumb t7"></div><div class="lt-meta"><span class="lt-stars">★★<b>★★★</b></span><span class="lt-chips"><span>character</span></span></div></div>
-                                    <div class="lt-card"><div class="lt-thumb t8"><i>1080p</i></div><div class="lt-meta"><span class="lt-stars">★★★★<b>★</b></span><span class="lt-chips"><span>sheet</span></span></div></div>
-                                </div>
-                            </div>
-                            <aside class="lt-detail">
-                                <h4>Prompt</h4>
-                                <p>Golden hour street scene, wet asphalt, long shadows, 35mm</p>
-                                <h4>Tags</h4>
-                                <p class="lt-chips"><span>hero</span><span>final</span></p>
-                                <p class="text-[9px] text-neutral-500 mt-1">Synced with Grok</p>
-                                <h4>Rating</h4>
-                                <p class="lt-stars">★★★★★</p>
-                                <h4>Notes</h4>
-                                <p>Best take for the opening frame.</p>
-                                <h4>Properties</h4>
-                                <p><span class="k">Quality</span> 1080p<br><span class="k">Local</span> Saved</p>
-                            </aside>
-                        </div>
-                    </div>
-                    <p class="text-xs text-slate-500 mt-3 text-center lg:text-right">Illustration of the Manager layout. Screenshots of the real extension are coming.</p>
+                    <figure class="m-0">
+                        <img src="/assets/manager/overview-1600.jpg" srcset="/assets/manager/overview-1600.jpg 1600w, /assets/manager/overview-2560.jpg 2560w" sizes="(min-width: 1024px) 56vw, 100vw" width="1600" height="1000" fetchpriority="high" decoding="async" alt="The full-tab Manager: a category sidebar with the sync card and the Save All to Local button, the gallery in Grid view with the prompt under each thumbnail, and the Grid, List, Nest and Prompt view switcher." class="w-full h-auto rounded-xl border border-slate-800 shadow-2xl shadow-black/60">
+                        <figcaption class="text-xs text-slate-500 mt-3 text-center lg:text-right">The extension in Grid view. Demo images generated for this page.</figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -303,6 +210,32 @@
             <div>
                 <p class="font-semibold text-white mb-1"><a href="/" class="underline decoration-slate-600 underline-offset-4 hover:decoration-slate-300">Grok Media Downloader</a> gets files out of Grok.</p>
                 <p class="text-slate-400">A downloader for bulk export, HD upgrades and video generation queues. The two are separate extensions and work side by side.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screens: real screenshots; the captions use the same control names as the ledger below -->
+    <section id="screens" class="py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-3">Four ways to look at the same library</h2>
+            <p class="text-slate-400 mb-12 max-w-2xl">Every picture on this page is the extension itself. The control names in the captions are the ones you will click.</p>
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-12">
+                <figure>
+                    <img src="/assets/manager/detail-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="The detail panel of a selected item: Download, Save to Local and Open on Grok buttons, the prompt, a Landscape tag marked Synced with Grok, a five-star rating, the Wallpapers category, a note, and the file properties." class="w-full h-auto rounded-xl border border-slate-800">
+                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">Rating</span> <span class="ui">Notes</span> <span class="ui">Category</span><span class="block mt-2">One item selected. The tag came from Grok; the rating, category and note live only in the Manager.</span></figcaption>
+                </figure>
+                <figure>
+                    <img src="/assets/manager/bulk-tags-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Four items selected in the gallery with the Manage Tags popover open, showing the Landscape tag applied to 4 of 4 and a field to add a new tag to all selected." class="w-full h-auto rounded-xl border border-slate-800">
+                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">Select All</span> <span class="ui">Manage Tags</span><span class="block mt-2">Four selected. One tag, one category or one rating goes onto all of them at once.</span></figcaption>
+                </figure>
+                <figure>
+                    <img src="/assets/manager/list-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="List view: each item as a row with thumbnail, prompt, type, source, size, rating, tags and creation date, sorted by rating." class="w-full h-auto rounded-xl border border-slate-800">
+                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">List</span><span class="block mt-2">The same library as columns: prompt, type, source, size, rating, tags, date. Sort by any of them.</span></figcaption>
+                </figure>
+                <figure>
+                    <img src="/assets/manager/prompt-1280.jpg" width="1280" height="800" loading="lazy" decoding="async" alt="Prompt view: 18 prompts as collapsible groups, the first one open and showing 25 autumn forest images generated from it, with a rating for the whole group." class="w-full h-auto rounded-xl border border-slate-800">
+                    <figcaption class="mt-4 text-sm text-slate-400"><span class="ui">Prompt</span><span class="block mt-2">Everything generated from one prompt, together. Rate the group, then pick the keeper.</span></figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -379,6 +312,16 @@
                             <div><dt class="font-semibold text-white">The side panel</dt><dd class="text-slate-400 text-sm mt-1">Preview and search next to grok.com while you keep generating.</dd></div>
                         </div>
                     </dl>
+                    <div class="mt-10 flex gap-5 items-start">
+                        <figure class="flex-1 max-w-xs">
+                            <img src="/assets/manager/popup.jpg" width="760" height="724" loading="lazy" decoding="async" alt="The toolbar popup: the item count, Sync Full Library and Sync Now buttons, the only-model-generated checkbox, Save All to Local, and Open Manager." class="w-full h-auto rounded-lg border border-slate-800">
+                            <figcaption class="text-xs text-slate-500 mt-2">The toolbar popup</figcaption>
+                        </figure>
+                        <figure class="w-32 sm:w-36 flex-shrink-0">
+                            <img src="/assets/manager/sidepanel.jpg" width="600" height="1200" loading="lazy" decoding="async" alt="The side panel: a search box, the gallery in three narrow columns, and the same sync card as the popup." class="w-full h-auto rounded-lg border border-slate-800">
+                            <figcaption class="text-xs text-slate-500 mt-2">The side panel</figcaption>
+                        </figure>
+                    </div>
                 </div>
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-3">Start in three steps</h2>

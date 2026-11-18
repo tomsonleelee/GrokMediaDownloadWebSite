@@ -102,6 +102,23 @@
     }
     </script>
 
+    <!-- Schema.org - VideoObject (walkthrough, hosted on YouTube) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Grok Media Manager – organize, tag and search your Grok Imagine library",
+      "description": "Organize, tag and search your Grok Imagine library: a two-minute walkthrough of the Grok Media Manager Chrome extension.",
+      "thumbnailUrl": "https://grokmedia.kario-studio.com/assets/manager/walkthrough-poster.jpg",
+      "uploadDate": "2026-11-18",
+      "duration": "PT2M3S",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/MGLyww0HNMI",
+      "contentUrl": "https://www.youtube.com/watch?v=MGLyww0HNMI",
+      "inLanguage": "en",
+      "publisher": { "@type": "Organization", "name": "Kario Studio", "url": "https://www.kario-studio.com" }
+    }
+    </script>
+
     <!-- Fonts (same families as the rest of the site) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -226,6 +243,31 @@
                     </figure>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Walkthrough video (2:03, English UI and captions): a click-to-load facade; YouTube is contacted only after the visitor presses play -->
+    <section id="video" class="py-16 lg:py-20 border-t border-slate-800/70">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-3">See it in two minutes</h2>
+                <p class="text-slate-400 max-w-3xl mx-auto">Sync a library, tag and rate it, find a prompt again, keep copies on your disk: the whole extension in one short walkthrough.</p>
+            </div>
+            <div id="walkthrough" class="relative aspect-video rounded-2xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900">
+                <button type="button" id="walkthrough-play" class="group absolute inset-0 w-full h-full p-0 border-0 bg-transparent cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400" aria-label="Play the walkthrough video (2 minutes, opens the YouTube player)">
+                    <img src="/assets/manager/walkthrough-poster.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="Walkthrough video cover: Organize your Grok Imagine library, free Chrome extension, next to the extension's Grid view." class="absolute inset-0 w-full h-full object-cover">
+                    <span class="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/15 transition-colors"></span>
+                    <span class="sm:hidden absolute inset-0 flex items-center justify-center">
+                        <span class="inline-flex items-center justify-center w-14 h-14 rounded-full btn-accent shadow-xl"><i data-lucide="play" class="w-6 h-6"></i></span>
+                    </span>
+                    <span class="hidden sm:flex absolute bottom-8 right-8">
+                        <span class="inline-flex items-center gap-3 px-6 py-3 rounded-full btn-accent font-semibold text-base shadow-xl">
+                            <i data-lucide="play" class="w-5 h-5"></i>Play walkthrough<span class="text-slate-900/70 font-normal">2:03</span>
+                        </span>
+                    </span>
+                </button>
+            </div>
+            <p class="text-center text-slate-500 text-xs mt-3">Loads from YouTube in privacy-enhanced mode when you press play. Music: <a href="https://incompetech.com/music/royalty-free/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">"Easy Lemon" by Kevin MacLeod (incompetech.com)</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 underline">CC BY 4.0</a></p>
         </div>
     </section>
 
@@ -751,6 +793,23 @@
             }
             btn.disabled = false; btn.textContent = label;
         });
+
+        // Walkthrough video facade: the YouTube iframe exists only after a click
+        (function () {
+            var box = document.getElementById('walkthrough');
+            var play = document.getElementById('walkthrough-play');
+            if (!box || !play) return;
+            play.addEventListener('click', function () {
+                var f = document.createElement('iframe');
+                f.src = 'https://www.youtube-nocookie.com/embed/MGLyww0HNMI?autoplay=1&rel=0';
+                f.title = 'Grok Media Manager walkthrough';
+                f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+                f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+                f.className = 'absolute inset-0 w-full h-full border-0';
+                box.replaceChild(f, play);
+                if (typeof gtag === 'function') gtag('event', 'video_start', { video_title: 'Grok Media Manager walkthrough', video_provider: 'youtube', product: 'gmm' });
+            });
+        })();
 
         // Screenshot lightbox
         (function () {

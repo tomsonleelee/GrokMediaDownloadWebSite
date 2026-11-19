@@ -822,6 +822,16 @@ function initConversionTracking() {
     });
 }
 
+// Grok Media Manager cross-links (nav, footer, homepage section)
+document.addEventListener('click', function(e) {
+    const link = e.target.closest('a[href="/manager/"]');
+    if (!link) return;
+    Analytics.track('gmm_link_click', {
+        link_location: link.getAttribute('data-track') || 'other',
+        link_text: link.textContent.trim().substring(0, 50)
+    });
+});
+
 // --- Cross-Domain Linker ---
 // Enables session continuity between grokmedia.kario-studio.com and www.kario-studio.com
 if (typeof gtag === 'function') {

@@ -616,55 +616,6 @@ function toggleExplainerSound() {
     }
 }
 
-function openContactModal() {
-    const modal = document.getElementById('contact-modal');
-    if (modal) {
-        modal.classList.remove('hidden');
-        if (window.lucide) lucide.createIcons();
-        Analytics.trackModalOpen('contact');
-    }
-}
-
-function closeContactModal() {
-    const modal = document.getElementById('contact-modal');
-    if (modal) modal.classList.add('hidden');
-}
-
-function handleContactSubmit(e) {
-    e.preventDefault();
-
-    const btn = e.target.querySelector('button');
-    const originalText = btn.innerHTML;
-
-    btn.innerHTML = '<div class="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>';
-    btn.disabled = true;
-
-    const formData = new FormData(e.target);
-
-    fetch("https://formspree.io/f/xeodnlql", {
-        method: "POST",
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
-        if (response.ok) {
-            showToast('toast_sent');
-            closeContactModal();
-            e.target.reset();
-            Analytics.trackFormSubmit('contact', true);
-        } else {
-            showToast('toast_error');
-            Analytics.trackFormSubmit('contact', false);
-        }
-    }).catch(error => {
-        showToast('toast_error');
-        Analytics.trackFormSubmit('contact', false);
-        console.error('Error:', error);
-    }).finally(() => {
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-    });
-}
-
 function openPrivacyModal() {
     const modal = document.getElementById('privacy-modal');
     if (modal) {
@@ -851,9 +802,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Export functions for global use
 window.showToast = showToast;
-window.openContactModal = openContactModal;
-window.closeContactModal = closeContactModal;
-window.handleContactSubmit = handleContactSubmit;
 window.openPrivacyModal = openPrivacyModal;
 window.closePrivacyModal = closePrivacyModal;
 window.openTermsModal = openTermsModal;

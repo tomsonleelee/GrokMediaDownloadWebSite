@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // GA4: never load or send from local dev/test hosts (localhost, 127.0.0.1). Production only.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            window['ga-disable-G-6YPN8563C6'] = true;
+        } else {
+            var gtagScript = document.createElement('script'); gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6';
+            document.head.appendChild(gtagScript);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a problem | Kario Studio</title>
+    <meta name="description" content="Something not working in Grok Media Downloader or Grok Media Manager? Send us a report and we will reply by e-mail.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/support.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/support.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/support.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/support.html">
+    <meta property="og:title" content="Report a problem | Kario Studio">
+    <meta property="og:description" content="Something not working in Grok Media Downloader or Grok Media Manager? Send us a report and we will reply by e-mail.">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Report a problem | Kario Studio">
+    <meta name="twitter:description" content="Something not working in Grok Media Downloader or Grok Media Manager? Send us a report and we will reply by e-mail.">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/styles.css?v=20261121">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body { font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+
+        /* Honeypot: off-screen for people, present for bots. Not display:none, so naive bots still "see" it. */
+        .hp { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+
+        .field { width: 100%; background: #020617; border: 1px solid #334155; border-radius: .75rem; padding: .75rem 1rem; color: #fff; transition: border-color .15s; }
+        .field::placeholder { color: #475569; }
+        .field:focus { outline: none; border-color: #ec4899; box-shadow: 0 0 0 3px rgba(236, 72, 153, .2); }
+        .field[aria-invalid="true"] { border-color: #f87171; }
+        select.field { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 6 4 4 4-4'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.75rem; }
+
+        /* Product tiles */
+        .tile input { position: absolute; opacity: 0; pointer-events: none; }
+        .tile span.box { display: flex; align-items: center; gap: .75rem; border: 1px solid #334155; border-radius: .75rem; padding: .75rem 1rem; background: #020617; cursor: pointer; transition: border-color .15s, background .15s; }
+        .tile input:focus-visible + span.box { box-shadow: 0 0 0 3px rgba(236, 72, 153, .35); }
+        .tile input:checked + span.box { border-color: #ec4899; background: rgba(236, 72, 153, .08); }
+        .tile input:checked + span.box .check { opacity: 1; }
+        .tile .check { opacity: 0; margin-left: auto; color: #ec4899; transition: opacity .15s; }
+        .tile .ic { width: 2rem; height: 2rem; border-radius: .5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .tile .ic-gmd { background: #db2777; color: #fff; }
+        .tile .ic-gmm { background: #F5C542; color: #0b0f1a; }
+
+        @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-pink-500 selection:text-white">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to main content</a>
+
+    <nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md" aria-label="Main">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="https://www.kario-studio.com" class="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+                    <span class="w-8 h-8 rounded-lg flex items-center justify-center bg-slate-800 text-white"><i data-lucide="life-buoy" class="w-5 h-5"></i></span>
+                    <span class="font-bold text-lg tracking-tight whitespace-nowrap">Kario Studio <span class="text-slate-400 font-medium hidden sm:inline">Support</span></span>
+                </a>
+                <div class="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm font-medium text-slate-300 whitespace-nowrap">
+                    <a href="/" class="hover:text-white">Grok Media Downloader</a>
+                    <a href="/manager/" class="hover:text-white">Grok Media Manager</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="pt-32 pb-8 lg:pt-40 lg:pb-10">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Report a problem</h1>
+                <p class="text-slate-400 mt-3 leading-relaxed">Something broken, a payment question, or an idea? Tell us what happened and we will reply by e-mail. Prefer mail? Write to <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline underline-offset-2">support@kario-studio.com</a>.</p>
+            </div>
+        </section>
+
+        <section class="pb-20">
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <form id="report-form" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 space-y-6" novalidate>
+
+                    <fieldset>
+                        <legend class="block text-sm font-semibold text-slate-200 mb-2">Which extension?</legend>
+                        <div class="grid sm:grid-cols-2 gap-3">
+                            <label class="tile relative">
+                                <input type="radio" name="product" value="gmd" required>
+                                <span class="box">
+                                    <span class="ic ic-gmd"><i data-lucide="download" class="w-4 h-4"></i></span>
+                                    <span class="text-sm font-semibold text-white">Grok Media Downloader</span>
+                                    <i data-lucide="check" class="check w-5 h-5"></i>
+                                </span>
+                            </label>
+                            <label class="tile relative">
+                                <input type="radio" name="product" value="gmm" required>
+                                <span class="box">
+                                    <span class="ic ic-gmm"><i data-lucide="layout-grid" class="w-4 h-4"></i></span>
+                                    <span class="text-sm font-semibold text-white">Grok Media Manager</span>
+                                    <i data-lucide="check" class="check w-5 h-5"></i>
+                                </span>
+                            </label>
+                        </div>
+                        <p class="field-error text-sm text-red-400 mt-2" data-for="product" hidden>Choose the extension this is about.</p>
+                    </fieldset>
+
+                    <div>
+                        <label for="category" class="block text-sm font-semibold text-slate-200 mb-2">What is it about?</label>
+                        <select id="category" name="category" class="field" required>
+                            <option value="bug">Something is broken</option>
+                            <option value="billing">Payment or subscription</option>
+                            <option value="license">License key or activation</option>
+                            <option value="feature">Feature request</option>
+                            <option value="other">Something else</option>
+                        </select>
+                    </div>
+
+                    <div class="grid sm:grid-cols-5 gap-4">
+                        <div class="sm:col-span-3">
+                            <label for="email" class="block text-sm font-semibold text-slate-200 mb-2">Your e-mail</label>
+                            <input type="email" id="email" name="email" class="field" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+                            <p class="text-xs text-slate-500 mt-1.5">We reply here. For license or payment questions, use the address you paid with.</p>
+                            <p class="field-error text-sm text-red-400 mt-1.5" data-for="email" hidden>Enter a valid e-mail address so we can reply.</p>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label for="version" class="block text-sm font-semibold text-slate-200 mb-2">Extension version <span class="font-normal text-slate-500">(optional)</span></label>
+                            <input type="text" id="version" name="version" class="field" maxlength="32" autocomplete="off" spellcheck="false" placeholder="e.g. 2.6.2">
+                            <p class="text-xs text-slate-500 mt-1.5">Shown in <span class="font-mono">chrome://extensions</span>.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-slate-200 mb-2">What happened?</label>
+                        <textarea id="message" name="message" class="field" rows="7" minlength="10" maxlength="3000" required placeholder="What did you do, what did you expect, and what happened instead? Error messages help a lot."></textarea>
+                        <div class="flex justify-between gap-4 mt-1.5 text-xs text-slate-500">
+                            <span>Need to attach a screenshot? Send it by e-mail after you submit.</span>
+                            <span class="whitespace-nowrap"><span id="count">0</span> / 3000</span>
+                        </div>
+                        <p class="field-error text-sm text-red-400 mt-1.5" data-for="message" hidden>Write at least 10 characters, and no more than 3000.</p>
+                    </div>
+
+                    <!-- Honeypot: people never see or fill this. Bots that fill every field do. -->
+                    <div class="hp" aria-hidden="true">
+                        <label for="website">Website</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit" id="submit-btn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold transition-all shadow-lg shadow-pink-500/20 disabled:opacity-60 disabled:cursor-not-allowed">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <span id="submit-label">Send report</span>
+                        </button>
+                        <p id="form-status" class="text-sm mt-4 leading-relaxed" role="alert" aria-live="polite" hidden></p>
+                        <p class="text-xs text-slate-500 mt-4">What you write here is used only to reply to you. It goes to our support mailbox and nowhere else. <a href="/privacy.html" class="underline underline-offset-2 hover:text-slate-300">Privacy policy</a></p>
+                    </div>
+                </form>
+
+                <div id="report-done" class="bg-slate-900 border border-emerald-500/40 rounded-2xl p-6 md:p-8" hidden>
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0"><i data-lucide="check" class="w-5 h-5"></i></div>
+                        <div>
+                            <h2 class="text-xl font-bold text-white">Thanks, we got your report.</h2>
+                            <p id="done-text" class="text-slate-300 mt-2 leading-relaxed">We will reply by e-mail, usually within 1–2 business days.</p>
+                            <p class="text-slate-400 text-sm mt-3">Have a screenshot or a video? Reply to our e-mail, or send it to <a href="mailto:support@kario-studio.com" class="text-pink-400 hover:text-pink-300 underline underline-offset-2">support@kario-studio.com</a>.</p>
+                            <button type="button" id="again-btn" class="mt-5 text-sm font-semibold text-slate-300 hover:text-white underline underline-offset-2">Send another report</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-sm text-slate-400 leading-relaxed">
+                    <h2 class="text-base font-semibold text-slate-200 mb-2">What helps us fix it faster</h2>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>The exact steps you took and what you saw instead.</li>
+                        <li>Your Chrome version and whether other extensions are running.</li>
+                        <li>For license questions: the e-mail you paid with, and your order reference if you have it. Never send your card details.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-950 border-t border-slate-900 py-10 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-slate-500">
+            <p>© 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> · Not affiliated with xAI or Grok.</p>
+            <nav class="flex flex-wrap gap-x-5 gap-y-2" aria-label="Footer">
+                <a href="/privacy.html" class="hover:text-white">Privacy</a>
+                <a href="/terms.html" class="hover:text-white">Terms</a>
+                <a href="/faq.html" class="hover:text-white">FAQ</a>
+                <a href="mailto:support@kario-studio.com" class="hover:text-white">support@kario-studio.com</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // Same origin rule as js/components.js: production talks to the license API; local dev
+        // (python3 -m http.server) talks to a stub on 127.0.0.1:8787 unless localStorage.gmd_api_base says otherwise.
+        var IS_LOCALHOST = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        var API_BASE = IS_LOCALHOST
+            ? ((function () { try { return localStorage.getItem('gmd_api_base'); } catch (e) { return null; } })() || 'http://127.0.0.1:8787')
+            : 'https://api.kario-studio.com';
+        var ENDPOINT = API_BASE + '/api/report';
+        var MAIL = '<a href="mailto:support@kario-studio.com" class="underline underline-offset-2 hover:text-white">support@kario-studio.com</a>';
+
+        var form = document.getElementById('report-form');
+        var done = document.getElementById('report-done');
+        var status = document.getElementById('form-status');
+        var btn = document.getElementById('submit-btn');
+        var label = document.getElementById('submit-label');
+        var email = document.getElementById('email');
+        var version = document.getElementById('version');
+        var message = document.getElementById('message');
+        var category = document.getElementById('category');
+        var count = document.getElementById('count');
+
+        // --- Prefill from the extension's link: ?product=gmm|gmd&v=<version> ---
+        try {
+            var qs = new URLSearchParams(location.search);
+            var p = (qs.get('product') || '').toLowerCase();
+            var radio = form.querySelector('input[name="product"][value="' + p + '"]');
+            if (radio) radio.checked = true;
+            var v = (qs.get('v') || '').replace(/[^0-9A-Za-z._+-]/g, '').slice(0, 32);
+            if (v) version.value = v;
+        } catch (e) {}
+
+        function escapeHtml(s) {
+            return String(s).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+
+        function showStatus(html, kind) {
+            status.innerHTML = html;
+            status.className = 'text-sm mt-4 leading-relaxed ' + (kind === 'error' ? 'text-red-400' : 'text-slate-300');
+            status.hidden = false;
+        }
+
+        function setFieldError(name, on) {
+            var el = form.querySelector('.field-error[data-for="' + name + '"]');
+            if (el) el.hidden = !on;
+            var input = form.querySelector('[name="' + name + '"]');
+            if (input && input.type !== 'radio') input.setAttribute('aria-invalid', on ? 'true' : 'false');
+        }
+
+        function track(success, reason) {
+            if (typeof gtag !== 'function') return;
+            gtag('event', 'form_submit', { form_name: 'report', success: success, event_category: 'conversion', reason: reason || '' });
+        }
+
+        message.addEventListener('input', function () { count.textContent = message.value.length; });
+        count.textContent = message.value.length;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            status.hidden = true;
+
+            var product = (form.querySelector('input[name="product"]:checked') || {}).value || '';
+            var msg = message.value.trim();
+            var mail = email.value.trim();
+            var ver = version.value.trim().slice(0, 32);
+
+            var bad = false;
+            setFieldError('product', !product); bad = bad || !product;
+            var mailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail);
+            setFieldError('email', !mailOk); bad = bad || !mailOk;
+            var msgOk = msg.length >= 10 && msg.length <= 3000;
+            setFieldError('message', !msgOk); bad = bad || !msgOk;
+            if (bad) {
+                var first = form.querySelector('[aria-invalid="true"], .field-error:not([hidden])');
+                if (first) first.scrollIntoView({ block: 'center' });
+                return;
+            }
+
+            var payload = {
+                product: product,
+                email: mail,
+                category: category.value,
+                message: msg,
+                version: ver,
+                website: document.getElementById('website').value
+            };
+
+            btn.disabled = true;
+            label.textContent = 'Sending…';
+
+            var finished = false;
+            function fail(html, reason) {
+                if (finished) return; finished = true;
+                btn.disabled = false;
+                label.textContent = 'Send report';
+                showStatus(html, 'error');
+                track(false, reason);
+            }
+
+            var controller = ('AbortController' in window) ? new AbortController() : null;
+            var timer = setTimeout(function () { if (controller) controller.abort(); }, 20000);
+
+            fetch(ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(payload),
+                signal: controller ? controller.signal : undefined
+            }).then(function (res) {
+                clearTimeout(timer);
+                return res.text().then(function (text) {
+                    var data = null;
+                    try { data = text ? JSON.parse(text) : null; } catch (e) {}
+                    return { status: res.status, data: data };
+                });
+            }).then(function (r) {
+                if (r.status === 200 && r.data && r.data.ok) {
+                    finished = true;
+                    form.hidden = true;
+                    done.hidden = false;
+                    document.getElementById('done-text').textContent =
+                        'We will reply to ' + mail + ', usually within 1–2 business days.';
+                    done.scrollIntoView({ block: 'start' });
+                    track(true);
+                    return;
+                }
+                if (r.status === 400) {
+                    var why = (r.data && r.data.error) ? escapeHtml(r.data.error) : 'Please check the form and try again.';
+                    fail(why.replace(/[.!]?\s*$/, '.') + ' Or e-mail ' + MAIL + '.', 'invalid');
+                } else if (r.status === 429) {
+                    fail('Too many reports from this connection. Please wait a few minutes and try again, or e-mail ' + MAIL + '.', 'rate_limited');
+                } else {
+                    fail('We couldn’t save your report just now. Please try again in a minute, or e-mail ' + MAIL + '.', 'server_' + r.status);
+                }
+            }).catch(function (err) {
+                clearTimeout(timer);
+                var timedOut = err && err.name === 'AbortError';
+                fail((timedOut ? 'The request timed out.' : 'We couldn’t reach the server.') + ' Check your connection and try again, or e-mail ' + MAIL + '.', timedOut ? 'timeout' : 'network');
+            });
+        });
+
+        document.getElementById('again-btn').addEventListener('click', function () {
+            message.value = '';
+            count.textContent = '0';
+            btn.disabled = false;
+            label.textContent = 'Send report';
+            done.hidden = true;
+            form.hidden = false;
+            status.hidden = true;
+            message.focus();
+        });
+
+        document.addEventListener('DOMContentLoaded', function () { if (window.lucide) lucide.createIcons(); });
+        if (document.readyState !== 'loading' && window.lucide) lucide.createIcons();
+    })();
+    </script>
+</body>
+
+</html>

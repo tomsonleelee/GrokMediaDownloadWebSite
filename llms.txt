@@ -28,6 +28,7 @@ In July 2026 Grok migrated to a new conversation-and-asset media backend. Extens
 - Project Download: https://grokmedia.kario-studio.com/project-download.html
 - Pricing: https://grokmedia.kario-studio.com/pricing.html
 - Privacy Policy: https://grokmedia.kario-studio.com/privacy.html
+- Report a problem (support form for Grok Media Downloader and Grok Media Manager): https://grokmedia.kario-studio.com/support.html
 
 ## Links
 - Chrome Web Store: https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi

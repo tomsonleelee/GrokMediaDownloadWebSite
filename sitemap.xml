@@ -60,6 +60,14 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://grokmedia.kario-studio.com/support.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/support.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/support.html"/>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://grokmedia.kario-studio.com/library-download.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/library-download.html"/>
     <xhtml:link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/library-download.html"/>

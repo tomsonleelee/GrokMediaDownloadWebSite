@@ -653,13 +653,18 @@ document.addEventListener('click', function(e) {
 
     e.preventDefault();
     const page = window.location.pathname;
-    const utmParams = new URLSearchParams({
-        utm_source: 'marketing_site',
-        utm_medium: 'website',
-        utm_campaign: 'install_cta',
-        utm_content: page
-    });
-    const url = link.href.split('?')[0] + '?' + utmParams.toString();
+    // Prefer the UTM already on the link (one utm_source per site, utm_content = button position);
+    // fall back to the generic tag for links that carry none.
+    const target = new URL(link.href);
+    if (!target.searchParams.has('utm_source')) {
+        target.search = new URLSearchParams({
+            utm_source: 'grokmedia_site',
+            utm_medium: 'website',
+            utm_campaign: 'install_cta',
+            utm_content: page
+        }).toString();
+    }
+    const url = target.toString();
     Analytics.trackCTA('chrome_store', url);
     Analytics.trackExternalLink(url, 'Chrome Web Store');
     Analytics.trackFunnelStep('click_install_chrome', {

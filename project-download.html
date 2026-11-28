@@ -92,31 +92,47 @@
           "name": "What is Project Download?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Project Download is a PRO feature that lets you download all media from an entire Grok project in one operation. A Grok project is a collection of related conversations, generated images, and videos grouped in your Grok workspace."
+            "text": "Project Download is a download mode for the Favorites source. Instead of separate image and video folders, it saves each source image together with the videos generated from it in one project folder, with a metadata.json file that describes them. Because project folders are built around videos and video downloads need PRO, Project Download is a PRO feature."
           }
         },
         {
           "@type": "Question",
-          "name": "What content is included in a project download?",
+          "name": "How do I turn on Project Download?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A project download includes all images and videos generated within that project. Files are organized by conversation or generation batch so the structure of your Grok project is reflected in the downloaded folder."
+            "text": "In the popup, open ⚙️ Settings and, in the Favorite group, set Download Mode to Group by Project. Choose Favorite as the download source, then click Generate List and Start Download as usual. The setting applies only to the Favorite source; Tag and All Generated Media use their own folder layouts."
           }
         },
         {
           "@type": "Question",
-          "name": "Does Project Download preserve the original file names?",
+          "name": "What does a project folder contain?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Project Download retains the original file names assigned by Grok wherever available. When original names are not available, files are named systematically using the project name, generation date, and a sequential index."
+            "text": "One folder per source image under grok_downloads/projects, named after the date and prompt (for example 20260123_a_teddy_bear). It holds the source image, the videos and images generated from it, and a metadata.json with the prompt, creation times and the list of generated items. A text-to-video generation without a source image gets a folder with just its videos."
           }
         },
         {
           "@type": "Question",
-          "name": "What happens if a download is interrupted?",
+          "name": "Why are some project folders missing files?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Project Download tracks progress locally. If a download is interrupted due to a network error or browser closing, you can resume it by reopening the extension on the same project page. Already-downloaded files are skipped."
+            "text": "Files already saved in an earlier run are skipped, because download history prevents duplicates. To build complete project folders for items you downloaded before in Standard mode, clear the Favorite download history first; the popup shows this tip when you choose Group by Project."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Project Download include media I generated after July 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only what is in your Grok Favorites. Since Grok's July 2026 backend change, newly generated media is no longer added to Favorites, so project folders cover what the Favorites list contains. To back up everything, use the All Generated Media source, which saves one folder per conversation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if the download is interrupted or pauses by itself?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Download history records every saved file, so after a reload you can click Generate List and Start Download again and already-saved files are skipped. The extension also pauses on purpose after every 250 videos to stay within Grok's limits, 3 minutes by default (⚙️ Settings → ⏱️ Rate Limit Cooldown), then continues on its own."
           }
         },
         {
@@ -124,7 +140,7 @@
           "name": "Is Project Download available in the free version?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Project Download is a PRO-exclusive feature. Upgrade to GrokMediaDownloader PRO for $4.99 (lifetime license) to unlock Project Download along with Stream Capture, Video Gen Queue, and Story Mode."
+            "text": "No. Project folders pair each image with its generated videos, and video downloads need PRO; the free version downloads images in the standard folder layout. Upgrading to GrokMediaDownloader PRO ($4.99 one-time, lifetime license) unlocks video downloads and Project Download, along with Stream Capture, Story Mode export and unlimited Video Gen Queue."
           }
         }
       ]
@@ -206,7 +222,7 @@
 
                 <p class="text-xl md:text-2xl text-amber-300 mb-4" data-i18n="project_subtitle">Organized Media Management</p>
 
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="project_desc">Stop drowning in unorganized downloads. Project-Based Download pre-scans your Grok media, shows detailed stats, and automatically creates structured project folders grouped by date and prompt.</p>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="project_desc">Project-Based Download puts each Grok source image and the videos generated from it into one folder named after the date and prompt, with a metadata.json. It works with the Favorite source; video downloads need PRO.</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=project-download&amp;utm_content=hero&amp;utm_term=en" target="_blank" rel="noopener" class="px-8 py-4 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
@@ -228,7 +244,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="project_video_title">See Project Download in Action</h2>
-                <p class="text-slate-400" data-i18n="project_video_desc">Scan Media → Preview Stats → Create Project → Download Organized</p>
+                <p class="text-slate-400" data-i18n="project_video_desc">Generate List → Check the counts → Start Download → Project folders</p>
             </div>
 
             <!-- Video Container -->
@@ -295,7 +311,7 @@
                         <i data-lucide="scan-search" class="text-amber-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="project_feat_1_title">Pre-Download Scanning</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="project_feat_1_desc">Scan your Grok favorites before downloading. See total counts for images, SD videos, and HD videos with detailed breakdowns.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="project_feat_1_desc">Generate List scans your Grok Favorites first and shows how many projects, images and videos (SD, HD, 1080p) will be downloaded.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -333,7 +349,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="project_step_title">How Project Download Works</h2>
-                <p class="text-slate-400">Four simple steps to organize and download your entire Grok library</p>
+                <p class="text-slate-400">Four steps to organize your Grok Favorites into project folders</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -344,8 +360,8 @@
                         <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="scan-search" class="text-amber-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_1_title">Scan Your Media</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="project_step_1_desc">Click 'Scan' to analyze your Grok favorites. The extension counts all images and videos available for download.</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_1_title">Pick the Mode</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_1_desc">Choose Favorite as the download source and, in ⚙️ Settings, set Download Mode to Group by Project.</p>
                     </div>
                 </div>
 
@@ -356,8 +372,8 @@
                         <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="settings-2" class="text-orange-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_2_title">Preview & Configure</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="project_step_2_desc">Review the scan results showing image count, video count, and estimated download size. Choose what to include.</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_2_title">Generate List</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_2_desc">Click Generate List. The popup shows how many projects, images and videos are still to download, and you can choose whether to include images and videos.</p>
                     </div>
                 </div>
 
@@ -368,8 +384,8 @@
                         <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="folder-plus" class="text-emerald-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_3_title">Create Project</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="project_step_3_desc">Give your project a name. Files will be auto-organized into folders by date (e.g., 2024-03-15/) with prompt-based subfolders.</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_3_title">Start Download</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_3_desc">Click Start Download. Each source image gets its own folder under grok_downloads/projects, named {date}_{prompt}.</p>
                     </div>
                 </div>
 
@@ -380,8 +396,8 @@
                         <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="download" class="text-blue-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_4_title">Download Everything</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="project_step_4_desc">Start the batch download. Files are saved in organized project folders with metadata.json for each group.</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_4_title">Get Organized Folders</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_4_desc">Each folder holds the source image, the videos and images generated from it, and a metadata.json. Files already downloaded are skipped.</p>
                     </div>
                 </div>
             </div>
@@ -402,8 +418,8 @@
                                 <i data-lucide="folder-tree" class="text-amber-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">Hierarchical Folder Structure</h4>
-                                <p class="text-slate-400 text-sm">Creates nested folders: Project Name / Date / Prompt Group, keeping thousands of files perfectly organized.</p>
+                                <h4 class="font-bold text-white mb-1">One Folder per Source Image</h4>
+                                <p class="text-slate-400 text-sm">grok_downloads/projects/{date}_{prompt}/ holds the source image, its generated videos and a metadata.json, so related files stay together.</p>
                             </div>
                         </div>
 
@@ -413,7 +429,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1">Metadata Preservation</h4>
-                                <p class="text-slate-400 text-sm">Every download group includes a JSON file with the original Grok prompt, timestamps, and file checksums.</p>
+                                <p class="text-slate-400 text-sm">Each project folder includes a metadata.json with the prompt, creation times and the list of generated items.</p>
                             </div>
                         </div>
 
@@ -422,8 +438,8 @@
                                 <i data-lucide="gauge" class="text-blue-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">Concurrent Downloads</h4>
-                                <p class="text-slate-400 text-sm">Uses Chrome's download API with smart concurrency control to maximize speed without overwhelming the browser.</p>
+                                <h4 class="font-bold text-white mb-1">Rate-Limit Cooldown</h4>
+                                <p class="text-slate-400 text-sm">After every 250 videos the extension pauses on purpose to stay within Grok's limits, 3 minutes by default (⚙️ Settings → ⏱️ Rate Limit Cooldown), then continues on its own.</p>
                             </div>
                         </div>
 
@@ -432,8 +448,8 @@
                                 <i data-lucide="shield-check" class="text-emerald-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">Resume Support</h4>
-                                <p class="text-slate-400 text-sm">If a download is interrupted, the extension tracks progress and can resume from where it left off.</p>
+                                <h4 class="font-bold text-white mb-1">Skips What You Have</h4>
+                                <p class="text-slate-400 text-sm">Download history records every saved file, so running Generate List and Start Download again after an interruption skips files that are already saved.</p>
                             </div>
                         </div>
                     </div>
@@ -460,7 +476,11 @@
 
                         <!-- Scan Results -->
                         <div class="mb-4 p-4 bg-slate-800/50 rounded-lg space-y-2">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">Scan Results</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">1. Generate List</div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">📂 Projects</span>
+                                <span class="text-amber-300 font-bold">47</span>
+                            </div>
                             <div class="flex items-center justify-between text-sm">
                                 <span class="text-slate-300">🖼️ Images</span>
                                 <span class="text-white font-bold">342</span>
@@ -473,34 +493,29 @@
                                 <span class="text-slate-300">✨ HD Videos</span>
                                 <span class="text-white font-bold">89</span>
                             </div>
-                            <div class="border-t border-slate-700 pt-2 mt-2 flex items-center justify-between text-sm">
-                                <span class="text-slate-300">📊 Total</span>
-                                <span class="text-amber-300 font-bold">587 files</span>
-                            </div>
                         </div>
 
-                        <!-- Project Name Input -->
+                        <!-- Download Mode -->
                         <div class="mb-4">
-                            <label class="text-xs text-slate-400 mb-1 block">Project Name</label>
-                            <input type="text" value="my-grok-project" readonly class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                            <label class="text-xs text-slate-400 mb-1 block">📂 Download Mode</label>
+                            <input type="text" value="Group by Project" readonly class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
                         </div>
 
                         <!-- Folder Preview -->
                         <div class="mb-4 p-3 bg-slate-800/50 rounded-lg">
                             <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">Folder Preview</div>
                             <div class="text-sm font-mono space-y-1">
-                                <div class="text-amber-300">📁 my-grok-project/</div>
-                                <div class="text-slate-300 pl-4">📁 2024-03-15/</div>
-                                <div class="text-slate-400 pl-8">📁 cyberpunk-city/</div>
-                                <div class="text-slate-400 pl-8">📁 ocean-sunset/</div>
-                                <div class="text-slate-300 pl-4">📁 2024-03-14/</div>
+                                <div class="text-amber-300">📁 grok_downloads/projects/</div>
+                                <div class="text-slate-300 pl-4">📁 20260315_cyberpunk_city/</div>
+                                <div class="text-slate-300 pl-4">📁 20260315_ocean_sunset/</div>
+                                <div class="text-slate-300 pl-4">📁 20260314_a_teddy_bear/</div>
                             </div>
                         </div>
 
                         <!-- Action Button -->
                         <button class="w-full bg-amber-600 text-white font-bold py-3 rounded-lg text-sm flex items-center justify-center gap-2">
                             <i data-lucide="download" class="w-4 h-4"></i>
-                            Start Download (587 files)
+                            2. Start Download
                         </button>
                     </div>
                 </div>
@@ -596,7 +611,7 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-white mb-1" data-i18n="project_folder_metadata_title">metadata.json Included</h4>
-                            <p class="text-slate-400 text-sm" data-i18n="project_folder_metadata_desc">Each project folder includes a JSON file with the full Grok API data: original prompts, generation timestamps, file checksums, userId, and model parameters.</p>
+                            <p class="text-slate-400 text-sm" data-i18n="project_folder_metadata_desc">Each project folder includes a metadata.json with the prompt, creation times, the source image and the list of generated items.</p>
                         </div>
                     </div>
 
@@ -624,31 +639,31 @@
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">What is Project Download?</h3>
-                    <p class="text-slate-400">Project Download is a PRO feature that lets you download all media from an entire Grok project in one operation. A Grok "project" is a collection of related conversations, generated images, and videos grouped under a single project in your Grok workspace. Instead of downloading items individually, Project Download fetches everything at once and organizes it locally.</p>
+                    <p class="text-slate-400">Project Download is a download mode for the Favorites source. Instead of separate image and video folders, it saves each source image together with the videos generated from it in one project folder, with a metadata.json file that describes them. Because project folders are built around videos and video downloads need PRO, Project Download is a PRO feature.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">What content is included in a project download?</h3>
-                    <p class="text-slate-400">A project download includes all images and videos generated within that project. Files are organized by conversation or generation batch so the structure of your Grok project is reflected in the downloaded folder.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">How do I turn on Project Download?</h3>
+                    <p class="text-slate-400">In the popup, open ⚙️ Settings and, in the Favorite group, set Download Mode to Group by Project. Choose Favorite as the download source, then click Generate List and Start Download as usual. The setting applies only to the Favorite source; Tag and All Generated Media use their own folder layouts.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">How do I start a project download?</h3>
-                    <p class="text-slate-400">Navigate to your Grok project page, open the GrokMediaDownloader extension, and click "Download Project." The extension scans the project for all media assets, presents you with a summary, and begins downloading once you confirm.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">What does a project folder contain?</h3>
+                    <p class="text-slate-400">One folder per source image under grok_downloads/projects, named after the date and prompt (for example 20260123_a_teddy_bear). It holds the source image, the videos and images generated from it, and a metadata.json with the prompt, creation times and the list of generated items. A text-to-video generation without a source image gets a folder with just its videos.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Does Project Download preserve the original file names?</h3>
-                    <p class="text-slate-400">Yes. Project Download retains the original file names assigned by Grok wherever available. When original names are not available, files are named systematically using the project name, generation date, and a sequential index to ensure each file is uniquely identifiable.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Why are some project folders missing files?</h3>
+                    <p class="text-slate-400">Files already saved in an earlier run are skipped, because download history prevents duplicates. To build complete project folders for items you downloaded before in Standard mode, clear the Favorite download history first; the popup shows this tip when you choose Group by Project.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">What happens if a download is interrupted?</h3>
-                    <p class="text-slate-400">Project Download tracks progress locally. If a download is interrupted — due to a network error or browser closing — you can resume it by reopening the extension on the same project page. Already-downloaded files are skipped, so only the remaining files are fetched.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Does Project Download include media I generated after July 2026?</h3>
+                    <p class="text-slate-400">Only what is in your Grok Favorites. Since Grok's July 2026 backend change, newly generated media is no longer added to Favorites, so project folders cover what the Favorites list contains. To back up everything, use the All Generated Media source, which saves one folder per conversation.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Can I download multiple Grok projects at once?</h3>
-                    <p class="text-slate-400">Currently, Project Download processes one project at a time. You can start a download for one project, then switch to another project page and start another download. Each download runs independently and does not block the other.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">What happens if the download is interrupted or pauses by itself?</h3>
+                    <p class="text-slate-400">Download history records every saved file, so after a reload you can click Generate List and Start Download again and already-saved files are skipped. The extension also pauses on purpose after every 250 videos to stay within Grok's limits, 3 minutes by default (⚙️ Settings → ⏱️ Rate Limit Cooldown), then continues on its own.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Is Project Download available in the free version?</h3>
-                    <p class="text-slate-400">Project Download is a PRO-exclusive feature. Upgrade to GrokMediaDownloader PRO for $4.99 (lifetime license) to unlock Project Download along with Stream Capture, Video Gen Queue, and Story Mode.</p>
+                    <p class="text-slate-400">No. Project folders pair each image with its generated videos, and video downloads need PRO; the free version downloads images in the standard folder layout. Upgrading to GrokMediaDownloader PRO ($4.99 one-time, lifetime license) unlocks video downloads and Project Download, along with Stream Capture, Story Mode export and unlimited Video Gen Queue.</p>
                 </div>
             </div>
         </div>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // GA4: never load or send from local dev/test hosts (localhost, 127.0.0.1). Production only.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            window['ga-disable-G-6YPN8563C6'] = true;
+        } else {
+            var gtagScript = document.createElement('script'); gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6';
+            document.head.appendChild(gtagScript);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok 收藏不顯示？備份你的媒體庫 - GrokMediaDownloader</title>
+    <meta name="description" content="Grok 在 2026 年 7 月更換媒體後端後，新生成的圖片和影片不再進入收藏。說明原因、哪些功能仍然可用，以及如何備份整個 Grok 媒體庫。">
+    <meta name="keywords" content="Grok 收藏不顯示, Grok 收藏不見, Grok 收藏 載入不出來, Grok Saved 沒有新圖片, 備份 Grok 媒體庫, 下載 Grok 媒體庫, Grok Imagine 收藏">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/zh-TW/grok-favorites-not-loading.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/grok-favorites-not-loading.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/zh-TW/grok-favorites-not-loading.html">
+    <meta property="og:title" content="Grok 收藏不顯示？備份你的媒體庫">
+    <meta property="og:description" content="為什麼 2026 年 7 月起新的 Grok 作品不在收藏裡，以及如何用「所有生成媒體」備份整個媒體庫。">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grok 收藏不顯示？備份你的媒體庫">
+    <meta name="twitter:description" content="為什麼 2026 年 7 月起新的 Grok 作品不在收藏裡，以及如何用「所有生成媒體」備份整個媒體庫。">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
+
+    <!-- Schema.org - Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Grok 收藏不顯示？備份你的媒體庫",
+      "description": "Grok 在 2026 年 7 月更換媒體後端後，新生成的圖片和影片不再進入收藏。說明原因、哪些功能仍然可用，以及如何備份整個 Grok 媒體庫。",
+      "inLanguage": "zh-TW",
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28",
+      "author": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "url": "https://www.kario-studio.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://grokmedia.kario-studio.com/assets/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://grokmedia.kario-studio.com/zh-TW/grok-favorites-not-loading.html"
+      },
+      "image": "https://grokmedia.kario-studio.com/assets/og-library-download.jpg"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://grokmedia.kario-studio.com/zh-TW/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grok 收藏不顯示",
+          "item": "https://grokmedia.kario-studio.com/zh-TW/grok-favorites-not-loading.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "不在收藏裡，代表我的 Grok 作品不見了嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "通常不是。從 2026 年 7 月起，許多帳號新生成的媒體不會再加入舊的收藏清單，但它們仍存放在你的 Grok 媒體庫中。📦 所有生成媒體來源讀取的是媒體庫，所以能找到收藏掃描漏掉的近期作品。如果 Grok 的 Library 裡也找不到，請查看 Grok 官方說明。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以免費備份 Grok 媒體庫嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以，但有範圍限制。免費版搭配 📦 所有生成媒體來源，可下載最近 7 天的圖片。PRO 是 $4.99 的一次性購買，另外支援影片、不限時間的完整媒體庫和日期篩選。請見價格方案頁。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "下載的檔案存在哪裡？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "存在 Chrome 的下載資料夾。整庫來源使用 grok_downloads/conversations，每個對話一個資料夾。收藏來源使用 grok_downloads/images 和 grok_downloads/videos，標籤來源使用 grok_downloads/tags。這些路徑可以在 ⚙️ 設定 中修改。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "再跑一次備份會下載重複的檔案嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "同一個來源不會。每個來源都有下載紀錄，已存過的檔案會被略過，所以下次只會下載新的媒體。不過各來源的紀錄是分開的：透過 🌟 收藏存過的檔案，用 📦 所有生成媒體時可能會再下載一次。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "還需要用收藏來源嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "如果你只想要舊收藏清單裡的那一批內容，就用它。要下載 2026 年 7 月之後生成的作品，或做完整備份，請用 📦 所有生成媒體（依對話）。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "擴充功能會把我的作品上傳到任何地方嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。所有處理都在你的瀏覽器本機進行，檔案直接從 Grok 下載到你的硬碟。唯一的對外連線是 PRO 授權驗證，只會連到 Kario Studio 的授權伺服器。"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css?v=20261119">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        @media (min-width: 768px) {
+            .guide-side { display: flex; gap: 1.5rem; align-items: flex-start; }
+            .guide-side > figure { margin-top: 0.25rem; flex-shrink: 0; width: 338px; }
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">跳至主要內容</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/zh-TW/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/zh-TW/" class="text-sm text-slate-300 hover:text-white">首頁</a><a href="/zh-TW/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">整庫下載</a><a href="/zh-TW/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">故事模式</a><a href="/zh-TW/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">影片生成佇列</a><a href="/zh-TW/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">串流擷取</a><a href="/zh-TW/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">專案下載</a><a href="/zh-TW/pricing.html" class="text-sm text-slate-300 hover:text-white">價格方案</a><a href="/zh-TW/faq.html" class="text-sm text-slate-300 hover:text-white">常見問題</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+    <section class="relative pt-32 pb-12 lg:pt-40 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <nav aria-label="導覽路徑" class="text-sm text-slate-500 mb-6">
+                <a href="/zh-TW/" class="hover:text-white">首頁</a>
+                <span aria-hidden="true" class="px-2">/</span>
+                <span class="text-slate-300">Grok 收藏不顯示</span>
+            </nav>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>疑難排解指南 · 2026 年 11 月 28 日更新</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white">Grok 收藏不顯示？備份你的媒體庫</h1>
+            <p class="text-lg text-slate-300 leading-relaxed mb-8">Grok 收藏看起來是空的、停在舊的項目，或者找不到這週才做的作品？問題通常不在你的瀏覽器。Grok 在 2026 年 7 月改變了媒體的儲存方式，許多帳號的舊收藏清單從此不再收到新作品。這篇指南說明改了什麼、哪些功能仍然可用，以及如何把整個 Grok 媒體庫完整備份到自己的硬碟。</p>
+
+            <!-- Short answer -->
+            <div class="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 md:p-8 mb-8">
+                <p class="text-emerald-300 text-sm font-semibold uppercase tracking-wide mb-3">簡答</p>
+                <p class="text-slate-200 leading-relaxed mb-3">Grok 在 2026 年 7 月更換媒體後端之後，許多帳號新生成的圖片和影片不會再加入舊的收藏清單，所以凡是讀取這份清單的工具都會漏掉你最近的作品。作品本身仍然在你的 Grok 媒體庫裡。</p><p class="text-slate-200 leading-relaxed mb-3">要備份它們：開啟 <a class="text-emerald-400 underline hover:text-white" href="https://grok.com/library" target="_blank" rel="noopener">grok.com/library</a>，點 Grok Media Downloader 的圖示，在下載來源選 <strong class="text-white font-semibold">📦 所有生成媒體（依對話）</strong>，再依序點 <strong class="text-white font-semibold">1. 生成下載列表</strong> 和 <strong class="text-white font-semibold">2. 開始下載</strong>。免費版可保存最近 7 天的圖片；PRO 另外支援影片、完整媒體庫和日期篩選。</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=grok-favorites-not-loading&amp;utm_content=hero&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>加到 Chrome</span>
+                </a>
+                <a href="/zh-TW/pricing.html" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                    <span>查看 PRO 方案</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide body -->
+    <div class="pb-8">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="what-changed" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">2026 年 7 月改了什麼</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">2026 年 7 月，Grok 把媒體搬到以「對話」和「資產」為核心的新後端。你生成的每張圖片、每支影片都屬於某個對話，並以資產的形式存放在媒體庫裡。改版之後，許多帳號的舊收藏清單（Grok 頁面上顯示為 Saved）就不再收到新生成的媒體。</p><p class="text-slate-300 leading-relaxed mb-4">這個變化很容易被誤會。清單裡可能還留著較早的項目，看起來並沒有壞掉，只是少了你最近生成的作品。任何依賴這份清單的工具都有同樣的缺口，包括舊版的瀏覽器擴充功能，以及 Grok Media Downloader 的 <strong class="text-white font-semibold">🌟 收藏</strong> 來源。</p><p class="text-slate-300 leading-relaxed mb-4">Grok Media Downloader 從 2.5.0 版起改用新後端。自 2.5.1 版起，讀取整個媒體庫、而不是收藏清單的 <strong class="text-white font-semibold">📦 所有生成媒體（依對話）</strong> 來源成為預設值，而且所有人都能免費使用。選擇收藏來源時，彈出視窗會顯示提醒：<em class="not-italic text-slate-200">「⚠️ Grok 2026 年 7 月改版後，新生成的媒體不會再自動加入收藏，最新項目可能不在這裡。」</em></p>
+        </section>
+        <aside class="mt-10 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6">
+            <div class="flex gap-4 items-start">
+                <i data-lucide="wifi-off" class="w-6 h-6 text-amber-400 flex-shrink-0 mt-1"></i>
+                <div>
+                    <p class="font-semibold text-white mb-2">Grok 自己的頁面完全打不開？</p>
+                    <p class="text-slate-300 leading-relaxed">grok.com 出現空白頁、錯誤訊息或一直轉圈，是 Grok 端或你的網路連線出了問題，任何擴充功能都修不了。請查看 Grok 官方說明，或稍後再試。下面的步驟適用於 grok.com 能正常載入之後，把你的作品下載下來。</p>
+                </div>
+            </div>
+        </aside>
+        <section id="what-still-works" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">哪些功能仍然可用</h2>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4"><li><strong class="text-white font-semibold">你的媒體庫。</strong>改版後生成的作品仍存放在 Grok 媒體庫中。📦 所有生成媒體來源直接讀取媒體庫，所以找得到收藏掃描漏掉的近期作品，並依所屬的對話分組。</li><li><strong class="text-white font-semibold">你以前的收藏。</strong>🌟 收藏來源仍然會下載舊清單裡的所有項目。如果你只想要那一批精選內容，就用它。</li><li><strong class="text-white font-semibold">標籤。</strong>如果你用 Grok 的標籤整理作品，🏷️ 標籤來源會下載某個標籤裡的全部內容。</li><li><strong class="text-white font-semibold">下載紀錄。</strong>每個來源都有自己的下載紀錄，記得哪些檔案已經存過，所以同一個備份再跑一次時只會抓新檔案。</li></ul><p class="text-slate-300 leading-relaxed mb-4">簡單說，收藏清單已經不能完整反映你的作品，但媒體庫仍然是完整的。從媒體庫讀取的備份完全不依賴那份清單。</p>
+        </section>
+        <section id="november-2026" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">2026 年 11 月：Imagine 併入 Grok 的 Library</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">2026 年 11 月 12–13 日又有第二次改版。Grok 把 Imagine 併入主要的 Grok 應用程式，側邊欄改為顯示 Library。部分帳號的 Imagine 分頁和 <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">/imagine</code> 頁面消失了，這些網址現在會轉址到 Library 或首頁。如果你以前透過 Imagine 分頁打開收藏，請改找側邊欄的 Library，或直接前往 <a class="text-emerald-400 underline hover:text-white" href="https://grok.com/library" target="_blank" rel="noopener">grok.com/library</a>。</p><p class="text-slate-300 leading-relaxed mb-4">2.6.3 之前的擴充功能版本只會在 <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">/imagine</code> 頁面上啟用按鈕，所以這次改版後，<strong class="text-white font-semibold">1. 生成下載列表</strong> 和 <strong class="text-white font-semibold">2. 開始下載</strong> 可能一直是灰色的。2.6.3 版可以在任何 grok.com 頁面使用，建議在 grok.com/library 上操作。如果你的按鈕是灰色的，請先依照<a class="text-emerald-400 underline hover:text-white" href="/zh-TW/grok-download-button-missing.html">Grok 更新後下載按鈕不見了</a>處理，再回到這裡。</p>
+        </section>
+        <section id="back-up" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">如何備份整個 Grok 媒體庫</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">以下步驟使用 📦 所有生成媒體（依對話）來源。它讀取的是媒體庫而不是收藏清單，每個對話放在一個資料夾，並略過你已經下載過的檔案。媒體庫很大時，第一次執行可能要花一段時間，請在可以讓分頁一直開著的時候開始。</p>
+            <ol class="space-y-8 mt-8">
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">1</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">安裝或更新 Grok Media Downloader</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">從 <a target="_blank" rel="noopener" class="text-emerald-400 underline hover:text-white" href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=grok-favorites-not-loading&amp;utm_content=steps&amp;utm_term=zh-TW">Chrome 線上應用程式商店</a>安裝 Grok Media Downloader，並把它釘選到工具列，讓圖示一直看得到。如果你已經裝過，請確認版本是 2.6.3 或更新：開啟 <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">chrome://extensions</code>，查看擴充功能卡片上的版本號碼。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">2</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">開啟 grok.com 並登入</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">開啟 <a class="text-emerald-400 underline hover:text-white" href="https://grok.com/library" target="_blank" rel="noopener">grok.com/library</a>，確認已登入要備份的帳號。從 2.6.3 版起任何 grok.com 頁面都能用；在仍保有該頁面的帳號上，grok.com/imagine/saved 也可以。點擴充功能圖示時，請讓這個分頁保持在作用中。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">3</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">下載來源選擇 📦 所有生成媒體</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">點擴充功能圖示打開彈出視窗。在 <strong class="text-white font-semibold">📥 下載來源與篩選</strong> 區塊的 <strong class="text-white font-semibold">🎯 下載來源</strong> 底下，選擇 <strong class="text-white font-semibold">📦 所有生成媒體（依對話）</strong>。目前的版本預設就是它，但如果你以前切換過來源，請再確認一次。免費版會在下方顯示提示：<em class="not-italic text-slate-200">「ℹ️ 免費版僅掃描最近 7 天。升級 Pro 可下載完整媒體庫並使用日期篩選。」</em></p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 338px;">
+                            <img src="/assets/guides/zh-TW/popup-sources.jpg" alt="Grok Media Downloader 彈出視窗的下載來源選擇器，可選收藏、標籤和所有生成媒體（依對話），下方是免費版僅掃描最近 7 天的提示" loading="lazy" width="336" height="521" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">下載來源選擇器。📦 所有生成媒體讀取的是整個媒體庫，而不是收藏清單。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">4</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">選擇媒體類型；PRO 可設定日期區間</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">在 <strong class="text-white font-semibold">🎬 媒體類型</strong> 中保持勾選 <strong class="text-white font-semibold">🖼️ 圖片</strong>。<strong class="text-white font-semibold">🎬 視頻 (Pro)</strong> 在免費版是鎖住的。PRO 使用者還可以把一次下載限制在某個 <strong class="text-white font-semibold">日期區間</strong> 或最近幾小時內，或保持 <strong class="text-white font-semibold">下載全部</strong> 來封存所有內容。免費版每次都只涵蓋最近 7 天。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">5</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">點 1. 生成下載列表</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">擴充功能會從最新的作品開始掃描媒體庫並計數，過程中彈出視窗會顯示目前找到幾個項目。掃描完成後會跳出 <strong class="text-white font-semibold">📊 下載摘要</strong> 對話框，列出還需要下載的圖片和影片數量（影片再依 1080p、HD、720p、SD 細分），並詢問<em class="not-italic text-slate-200">「確定開始下載？」</em>。按「確定」會立刻開始下載；想先看看列表就按「取消」，數量會留在彈出視窗中，<strong class="text-white font-semibold">2. 開始下載</strong> 也會保持可用。</p><p class="text-slate-300 leading-relaxed mb-4">如果掃描提前中斷，彈出視窗會顯示<em class="not-italic text-slate-200">「掃描中斷 — 已保留部分清單」</em>。等幾分鐘後再點一次 <strong class="text-white font-semibold">1. 生成下載列表</strong>。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 338px;">
+                            <img src="/assets/guides/zh-TW/popup-list-ready.jpg" alt="生成下載列表後的彈出視窗，顯示還需要下載的圖片和影片數量，開始下載按鈕已可點選" loading="lazy" width="336" height="820" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">掃描完成：列出還需要下載的項目，2. 開始下載 已可使用。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">6</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">開始下載</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">如果你在摘要中按了「確定」，下載已經開始；否則請點 <strong class="text-white font-semibold">2. 開始下載</strong>。檔案會一個接一個下載。進度條和預估剩餘時間會顯示目前進度，<strong class="text-white font-semibold">⏹ 中斷下載</strong> 可以停止這次下載。下載完成前請讓 grok.com 分頁保持開啟。之後想繼續，再點一次 <strong class="text-white font-semibold">2. 開始下載</strong> 即可，已存好的檔案會被略過。超過 250 支影片的下載會有預定的暫停：每下載 250 支影片，擴充功能會先等待（預設 3 分鐘），再自動繼續。下載摘要會在開始前提醒這件事，暫停時間可在 <strong class="text-white font-semibold">⚙️ 設定</strong> 的 <strong class="text-white font-semibold">⏱️ 速率限制冷卻</strong> 調整為 1 到 60 分鐘。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 338px;">
+                            <img src="/assets/guides/zh-TW/popup-downloading.jpg" alt="下載中的彈出視窗，顯示進度條、預估剩餘時間和中斷下載按鈕" loading="lazy" width="336" height="725" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">下載進行中：進度條、剩餘時間和 ⏹ 中斷下載。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">7</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">找到你的檔案</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">檔案會存到 Chrome 的下載資料夾。整庫來源會把檔案存在 <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">grok_downloads/conversations</code> 底下，每個對話一個資料夾，圖片和用它做出的影片會放在一起。資料夾名稱可以在 <strong class="text-white font-semibold">⚙️ 設定</strong> 中修改。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <a href="/assets/guides/download-folders.jpg" target="_blank" rel="noopener" class="block"><img src="/assets/guides/download-folders.jpg" alt="grok_downloads 資料夾範例（檔名模式「使用提示詞」）：conversations/ 內每個對話一個資料夾，另有 images/、videos/、tags/、projects/ 資料夾，圖片旁附一份 .json 資訊檔，專案資料夾內有 metadata.json" width="1280" height="1130" loading="lazy" class="w-full h-auto"></a>
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">grok_downloads 資料夾範例（「使用提示詞」檔名）：conversations/、images/、videos/、tags/、projects/，加上 .json 資訊檔與專案的 metadata.json。點圖可開啟原尺寸。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">8</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">定期重新備份</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">想更新備份時，再依序點 <strong class="text-white font-semibold">1. 生成下載列表</strong> 和 <strong class="text-white font-semibold">2. 開始下載</strong>，只會下載新的檔案。使用免費版時，每週執行一次就能跟上圖片的 7 天範圍。</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <section id="free-vs-pro" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">媒體庫備份的免費版與 PRO</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">選對來源所需的功能全部免費。限制在於整庫來源能往回找多遠，以及影片。</p>
+            <div class="overflow-x-auto -mx-4 px-4 mb-6">
+                <table class="w-full border-collapse text-sm" style="hyphens: auto; -webkit-hyphens: auto;">
+                    <thead><tr class="border-b border-slate-700"><th class="py-3 px-4 text-left text-white font-bold"></th><th class="py-3 px-4 text-center text-white font-bold">免費版</th><th class="py-3 px-4 text-center text-white font-bold">PRO</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">下載來源選擇器：收藏、標籤、所有生成媒體</td><td class="py-3 px-4 text-center text-slate-400">✓</td><td class="py-3 px-4 text-center text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">📦 所有生成媒體（整個媒體庫）</td><td class="py-3 px-4 text-center text-slate-400">最近 7 天</td><td class="py-3 px-4 text-center text-slate-400">完整媒體庫</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">下載圖片</td><td class="py-3 px-4 text-center text-slate-400">✓</td><td class="py-3 px-4 text-center text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">下載影片</td><td class="py-3 px-4 text-center text-slate-400">—</td><td class="py-3 px-4 text-center text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">日期區間與最近幾小時篩選</td><td class="py-3 px-4 text-center text-slate-400">—</td><td class="py-3 px-4 text-center text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">下載紀錄、檔名範本、.json 附檔</td><td class="py-3 px-4 text-center text-slate-400">✓</td><td class="py-3 px-4 text-center text-slate-400">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-300 leading-relaxed mb-4">PRO 是 $4.99 的一次性購買，終身授權，並提供 7 天退款保證。詳情請見<a class="text-emerald-400 underline hover:text-white" href="/zh-TW/pricing.html">價格方案頁</a>。</p>
+        </section>
+
+        <section id="troubleshooting" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">疑難排解</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">Grok 2026 年的改版之後，大部分問題都出在選擇的來源、免費版的 7 天範圍，或作用中的分頁。請先檢查這些。</p>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">生成下載列表什麼都沒找到<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">檢查三件事。第一，下載來源：如果是 🌟 收藏，請改成 📦 所有生成媒體（依對話）。第二，時間範圍：免費版只看最近 7 天，這段時間沒有生成任何作品的話，列表就會是空的。第三，下載紀錄：列表只計算還需要下載的檔案，所以完整跑過一次後，可能已經沒有東西要下載了。</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">列表裡沒有我最新的圖片<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">列表是你點 1. 生成下載列表 當下的快照。請確認來源是 📦 所有生成媒體，而不是 🌟 收藏，然後重新生成列表，把上次掃描後新做的作品也算進來。</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">生成下載列表和開始下載按鈕是灰色的<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">原因可能是作用中的分頁不是 grok.com 頁面，或擴充功能版本低於 2.6.3，無法在 grok.com/library 上使用。請參考<a class="text-emerald-400 underline hover:text-white" href="/zh-TW/grok-download-button-missing.html">Grok 更新後下載按鈕不見了</a>。</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">影片沒有被下載<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">免費版只下載圖片，所以 🎬 視頻 (Pro) 是鎖住的。PRO 使用者請勾選它，並在開始前重新點一次 1. 生成下載列表。</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">下載很久之後開始失敗<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">下載時間很長時，Grok 可能開始拒絕下載，例如在幾千支影片之後回應 HTTP 403 錯誤。請重新整理 grok.com 分頁，打開彈出視窗，再點一次 2. 開始下載。已存好的檔案會被略過。</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">彈出視窗顯示「生成失敗」<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">請確認已登入 grok.com，重新整理分頁後再試一次。</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">我刪掉了檔案，擴充功能卻說全部都下載過了<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">每個來源都有自己的下載紀錄。整庫來源請打開 🧹 清除操作，點 清除對話歷史。這只會重設擴充功能的紀錄，不會刪除 Grok 上或硬碟裡的任何東西。</p></div>
+                </details>
+            </div>
+        </section>
+
+        <section id="faq" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">常見問題</h2>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">不在收藏裡，代表我的 Grok 作品不見了嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">通常不是。從 2026 年 7 月起，許多帳號新生成的媒體不會再加入舊的收藏清單，但它們仍存放在你的 Grok 媒體庫中。📦 所有生成媒體來源讀取的是媒體庫，所以能找到收藏掃描漏掉的近期作品。如果 Grok 的 Library 裡也找不到，請查看 Grok 官方說明。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">可以免費備份 Grok 媒體庫嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">可以，但有範圍限制。免費版搭配 📦 所有生成媒體來源，可下載最近 7 天的圖片。PRO 是 $4.99 的一次性購買，另外支援影片、不限時間的完整媒體庫和日期篩選。請見<a class="text-emerald-400 underline hover:text-white" href="/zh-TW/pricing.html">價格方案頁</a>。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">下載的檔案存在哪裡？</h3>
+                    <p class="text-slate-400 leading-relaxed">存在 Chrome 的下載資料夾。整庫來源使用 grok_downloads/conversations，每個對話一個資料夾。收藏來源使用 grok_downloads/images 和 grok_downloads/videos，標籤來源使用 grok_downloads/tags。這些路徑可以在 ⚙️ 設定 中修改。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">再跑一次備份會下載重複的檔案嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">同一個來源不會。每個來源都有下載紀錄，已存過的檔案會被略過，所以下次只會下載新的媒體。不過各來源的紀錄是分開的：透過 🌟 收藏存過的檔案，用 📦 所有生成媒體時可能會再下載一次。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">還需要用收藏來源嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">如果你只想要舊收藏清單裡的那一批內容，就用它。要下載 2026 年 7 月之後生成的作品，或做完整備份，請用 📦 所有生成媒體（依對話）。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">擴充功能會把我的作品上傳到任何地方嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">不會。所有處理都在你的瀏覽器本機進行，檔案直接從 Grok 下載到你的硬碟。唯一的對外連線是 PRO 授權驗證，只會連到 Kario Studio 的授權伺服器。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="related" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">相關指南</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <a href="/zh-TW/library-download.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">如何一次下載所有 Grok Imagine 收藏</span>
+                    <span class="block text-sm text-slate-400">生成一次列表，就能一口氣下載所有圖片和影片。</span>
+                </a>
+                <a href="/zh-TW/save-grok-imagine-prompts.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">下載 Grok Imagine 影片並保留提示詞</span>
+                    <span class="block text-sm text-slate-400">把提示詞寫進檔名，或存成每支影片旁的 .json 檔。</span>
+                </a>
+                <a href="/zh-TW/download-grok-videos-hd.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">下載 HD 高畫質的 Grok 影片</span>
+                    <span class="block text-sm text-slate-400">把影片升級到 720p，或在 SuperGrok Heavy 方案下升級到 1080p，再下載可取得的最高畫質。</span>
+                </a>
+                <a href="/zh-TW/grok-download-button-missing.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">Grok 更新後下載按鈕不見了</span>
+                    <span class="block text-sm text-slate-400">Grok 2026 年 11 月改版後，修好變灰的「生成下載列表」和「開始下載」按鈕。</span>
+                </a>
+                <a href="/zh-TW/faq.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">常見問題</span>
+                    <span class="block text-sm text-slate-400">關於擴充功能、PRO 和 Grok 近期改版的簡短解答。</span>
+                </a>
+            </div>
+        </section>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="mt-16 py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">為你的 Grok 媒體庫留一份自己的備份</h2>
+            <p class="text-slate-400 mb-8">免費版：最近 7 天的圖片。PRO：完整媒體庫、影片和日期篩選，一次付費 $4.99。</p>
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=grok-favorites-not-loading&amp;utm_content=bottom_cta&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>加到 Chrome</span>
+                </a>
+                <a href="/zh-TW/pricing.html" class="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span>$4.99 PRO 終身授權</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-sm mt-6">一次付費。免費版使用者同樣會收到更新。</p>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/zh-TW/privacy.html" class="hover:text-white">隱私權政策</a> · <a href="/zh-TW/terms.html" class="hover:text-white">服務條款</a> · <a href="/manager/" class="hover:text-white">Grok Media Manager</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> <nav class="mt-3" aria-label="語言"><a href="/grok-favorites-not-loading.html" hreflang="en" class="hover:text-white">English</a> · <a href="/zh-TW/grok-favorites-not-loading.html" hreflang="zh-TW" class="hover:text-white text-slate-300">繁體中文</a> · <a href="/ja/grok-favorites-not-loading.html" hreflang="ja" class="hover:text-white">日本語</a> · <a href="/ko/grok-favorites-not-loading.html" hreflang="ko" class="hover:text-white">한국어</a> · <a href="/es/grok-favorites-not-loading.html" hreflang="es" class="hover:text-white">Español</a> · <a href="/de/grok-favorites-not-loading.html" hreflang="de" class="hover:text-white">Deutsch</a></nav></div></footer></div>
+
+    <!-- Scripts -->
+    <script src="/js/i18n.js?v=20261119"></script>
+    <script src="/js/components.js?v=20261119"></script>
+</body>
+
+</html>

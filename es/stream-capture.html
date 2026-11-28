@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stream Capture | Captura automática de imágenes de Grok en tiempo real - GrokMediaDownloader PRO</title>
-    <meta name="description" content="Stream Capture monitorea Grok AI en tiempo real para capturar automáticamente las imágenes generadas. La tecnología de observador del DOM detecta imágenes nuevas mientras haces scroll, con descarga en lote en un clic. Función PRO de GrokMediaDownloader.">
+    <meta name="description" content="Stream Capture vigila una pestaña de grok.com, recoge las imágenes que Grok genera en ella y las descarga todas a la vez. Función PRO de GrokMediaDownloader.">
     <meta name="keywords" content="stream capture, captura de imágenes de grok, descarga de imágenes en tiempo real, observador del DOM, descarga de imágenes en lote, imágenes de grok AI, captura automática, extensión de Chrome">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -89,42 +89,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Stream Capture funciona en todas las páginas de Grok?",
+          "name": "¿Qué captura Stream Capture y dónde funciona?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Stream Capture monitorea cualquier página de Grok donde se generen imágenes, incluido el feed principal, las páginas de publicaciones individuales y los resultados de búsqueda. Usa la observación del DOM, así que funciona en cualquier lugar donde Grok renderice imágenes nuevas."
+            "text": "Vigila la pestaña de grok.com en la que lo activas y recoge las imágenes generadas que Grok envía a la página mientras creas en Imagine. Ignora las imágenes pequeñas, como miniaturas e iconos (menos de unos 120 KB), y solo captura imágenes, no videos."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Cuántas imágenes se pueden capturar en una sola sesión?",
+          "name": "¿Cuántas imágenes puede guardar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No hay un límite estricto. Stream Capture puede poner en cola cientos de imágenes en una sola sesión de monitoreo. La cola se guarda en IndexedDB, así que persiste aunque cambies de pestaña o cierres brevemente el panel de la extensión."
+            "text": "Hasta 1.000 imágenes por sesión. Al llegar a 1.000 se detiene y te pide que descargues y limpies las imágenes capturadas antes de seguir."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Stream Capture ralentiza mi navegador?",
+          "name": "¿Cómo guardo las imágenes capturadas?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Stream Capture usa la API nativa MutationObserver de Chrome, que es muy eficiente. El observador solo se activa cuando hay cambios en el DOM, así que el uso de CPU es casi nulo mientras no estás generando imágenes."
+            "text": "Haz clic en Descargar capturados en el popup. Los archivos van a grok_downloads/stream dentro de tu carpeta de descargas (puedes cambiar la ruta en Configuración) y se llaman grok_stream_ seguido de la hora de captura. Limpiar capturados vacía la lista."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo pausar y reanudar el monitoreo?",
+          "name": "¿Se conservan las imágenes capturadas si recargo o cierro la pestaña?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Haz clic en el botón Stop Monitoring del panel de la extensión para pausar la captura cuando quieras. Las imágenes ya capturadas siguen en la cola. Haz clic de nuevo en Start Stream Capture para reanudar: las imágenes nuevas se añaden a la misma cola."
+            "text": "No. Las imágenes capturadas se guardan en la memoria de esa pestaña de grok.com hasta que las descargas, así que descárgalas antes de recargar o cerrar la pestaña."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Stream Capture elimina automáticamente las imágenes duplicadas?",
+          "name": "¿Puedo pausar y reanudar la captura?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Stream Capture usa comparación de hashes para detectar y omitir las imágenes que ya están en tu colección o en la cola actual. Así evita descargar la misma imagen dos veces cuando vuelves a subir o revisas de nuevo una publicación."
+            "text": "Sí. Desactiva el interruptor Activar para dejar de vigilar imágenes nuevas; lo que ya capturaste sigue en la lista. Vuelve a activarlo para seguir añadiendo a la misma lista."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Captura la misma imagen dos veces?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Cada imagen nueva se compara con las ya capturadas en la sesión, así que una imagen que vuelve a aparecer no se añade otra vez."
           }
         },
         {
@@ -132,7 +140,7 @@
           "name": "¿Stream Capture está disponible en la versión gratuita?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stream Capture es una función exclusiva de PRO. La versión gratuita de GrokMediaDownloader permite la descarga manual en lote de las imágenes visibles. Pasarte a PRO ($4.99 de por vida) desbloquea Stream Capture, Video Gen Queue, Story Mode y Project Download."
+            "text": "No, Stream Capture es una función PRO. La versión gratuita descarga tus imágenes en lote desde Favoritos, una etiqueta o los últimos 7 días de tu biblioteca. Pasarte a PRO ($4.99 en un solo pago, licencia vitalicia) desbloquea Stream Capture junto con la descarga de videos, la exportación de Story Mode, Project Download y Video Gen Queue sin límite."
           }
         }
       ]
@@ -214,7 +222,7 @@
 
                 <p class="text-xl md:text-2xl text-cyan-300 mb-4" data-i18n="stream_subtitle">Captura automática de imágenes de Grok en tiempo real</p>
 
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_desc">Monitorea Grok AI mientras navegas. Stream Capture usa tecnología de observador del DOM para detectar y poner en cola automáticamente las imágenes recién generadas en tiempo real. No te pierdas ninguna inspiración: descárgalo todo en lote con un clic.</p>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_desc">Actívalo en una pestaña de grok.com y Stream Capture recoge en tiempo real, con un observador del DOM, las imágenes que Grok genera en ella. Descárgalas todas con un clic antes de recargar o cerrar la pestaña.</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=stream-capture&amp;utm_content=hero&amp;utm_term=es" target="_blank" rel="noopener" class="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
@@ -236,7 +244,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="stream_video_title">Mira Stream Capture en acción</h2>
-                <p class="text-slate-400" data-i18n="stream_video_desc">Iniciar monitoreo → Navegar por Grok → Imágenes capturadas automáticamente → Descarga en lote</p>
+                <p class="text-slate-400" data-i18n="stream_video_desc">Activar → Crear en Imagine → Imágenes capturadas → Descargar capturados</p>
             </div>
 
             <!-- Video Container -->
@@ -312,8 +320,8 @@
                     <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="layers" class="text-blue-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_2_title">Sistema de cola automática</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_2_desc">Cada imagen detectada se añade automáticamente a la cola de descargas. Tú sigue haciendo scroll; Stream Capture se encarga del resto.</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_2_title">Lista de captura automática</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_2_desc">Cada imagen generada de unos 120 KB o más se añade a la lista de capturas; las miniaturas y los iconos se omiten. El popup muestra el recuento, hasta 1.000 por sesión.</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -330,8 +338,8 @@
                     <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="filter" class="text-pink-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_4_title">Deduplicación inteligente</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_4_desc">Filtra automáticamente las imágenes duplicadas que ya están en tu colección mediante comparación de hashes.</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_4_title">Sin repeticiones en la sesión</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_4_desc">Una imagen que ya está en la lista de capturas de esta sesión no se añade por segunda vez.</p>
                 </div>
             </div>
         </div>
@@ -342,7 +350,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_step_title">Cómo funciona Stream Capture</h2>
-                <p class="text-slate-400">Cuatro pasos sencillos para capturar automáticamente cada imagen de Grok</p>
+                <p class="text-slate-400">Cuatro pasos para capturar las imágenes que generas</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -353,8 +361,8 @@
                         <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="play-circle" class="text-cyan-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_1_title">Inicia el monitoreo</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_1_desc">Abre la extensión y haz clic en 'Start Stream Capture' para empezar a monitorear la página de Grok en tiempo real.</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_1_title">Actívalo</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_1_desc">Abre el popup en una pestaña de grok.com y enciende Activar en la sección 🌊 Captura de flujo.</p>
                     </div>
                 </div>
 
@@ -365,8 +373,8 @@
                         <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="scroll" class="text-blue-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_2_title">Navega y haz scroll</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_2_desc">Navega por Grok con normalidad. Cada imagen nueva que aparece en la página se detecta y se pone en cola automáticamente.</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_2_title">Crea en Imagine</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_2_desc">Genera imágenes en Grok Imagine como siempre. Las imágenes nuevas que Grok coloca en la página se capturan automáticamente.</p>
                     </div>
                 </div>
 
@@ -377,8 +385,8 @@
                         <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="check-square" class="text-emerald-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_3_title">Revisa lo capturado</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_3_desc">Consulta la cola de captura para ver todas las imágenes capturadas automáticamente. Quita las que no quieras.</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_3_title">Revisa el recuento</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_3_desc">El popup muestra cuántas imágenes hay capturadas. Limpiar capturados vacía la lista si quieres empezar de nuevo.</p>
                     </div>
                 </div>
 
@@ -390,7 +398,7 @@
                             <i data-lucide="download" class="text-pink-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_4_title">Descarga en lote</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_4_desc">Haz clic en 'Download All' para guardar todas las imágenes capturadas en tu disco local de una sola vez.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_4_desc">Haz clic en Descargar capturados para guardar de una vez todas las imágenes capturadas en grok_downloads/stream. Descárgalas antes de recargar o cerrar la pestaña.</p>
                     </div>
                 </div>
             </div>
@@ -421,8 +429,8 @@
                                 <i data-lucide="cpu" class="text-pink-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">Service worker en segundo plano</h4>
-                                <p class="text-slate-400 text-sm">Se ejecuta en el service worker de Chrome para un monitoreo persistente incluso al cambiar de pestaña.</p>
+                                <h4 class="font-bold text-white mb-1">Funciona en la pestaña de grok.com</h4>
+                                <p class="text-slate-400 text-sm">La captura se hace dentro de la pestaña de grok.com donde la activas, y las imágenes capturadas se guardan en la memoria de esa pestaña. Al recargarla o cerrarla se pierden, así que descárgalas antes.</p>
                             </div>
                         </div>
 
@@ -431,8 +439,8 @@
                                 <i data-lucide="database" class="text-blue-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">Caché en IndexedDB</h4>
-                                <p class="text-slate-400 text-sm">Guarda los metadatos de las imágenes capturadas en IndexedDB para comprobar duplicados y gestionar la cola rápidamente.</p>
+                                <h4 class="font-bold text-white mb-1">Límite de 1.000 imágenes por sesión</h4>
+                                <p class="text-slate-400 text-sm">Guarda hasta 1.000 imágenes capturadas por sesión. Al llegar al límite, la captura se detiene y te pide que descargues y limpies la lista.</p>
                             </div>
                         </div>
 
@@ -463,46 +471,20 @@
                         <div class="mb-4 p-3 bg-slate-800/50 rounded-lg flex items-center justify-between">
                             <div class="flex items-center gap-2">
                                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                                <span class="text-sm font-bold text-emerald-400">Monitoreando</span>
+                                <span class="text-sm font-bold text-emerald-400">Activar</span>
                             </div>
-                            <span class="text-sm text-slate-400">47 imágenes capturadas</span>
+                            <span class="text-sm text-slate-400">Capturados: 47</span>
                         </div>
 
                         <!-- Captured Items List -->
-                        <div class="mb-4">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i data-lucide="images" class="w-4 h-4 text-cyan-400"></i>
-                                <span class="text-sm font-bold text-white">Cola de captura</span>
-                                <span class="ml-auto text-xs text-slate-500">47 elementos</span>
+                        <div class="mb-4 space-y-2">
+                            <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                <i data-lucide="folder" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+                                <p class="text-sm text-white">Se guarda en grok_downloads/stream/</p>
                             </div>
-                            <div class="space-y-2">
-                                <!-- Item 1 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-600/40 to-blue-600/40 rounded-lg"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_001.jpg</p>
-                                        <p class="text-xs text-slate-500">1024 x 1024 · 2.4 MB</p>
-                                    </div>
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                </div>
-                                <!-- Item 2 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-600/40 to-pink-600/40 rounded-lg"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_002.jpg</p>
-                                        <p class="text-xs text-slate-500">1024 x 1024 · 1.8 MB</p>
-                                    </div>
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                </div>
-                                <!-- Item 3 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg border border-cyan-500/30">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-600/40 to-cyan-600/40 rounded-lg animate-pulse"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_003.jpg</p>
-                                        <p class="text-xs text-cyan-400">Capturando...</p>
-                                    </div>
-                                    <i data-lucide="loader" class="w-4 h-4 text-cyan-400 flex-shrink-0 animate-spin"></i>
-                                </div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+                                <p class="text-sm text-slate-300">Descarga antes de recargar o cerrar la pestaña</p>
                             </div>
                         </div>
 
@@ -510,11 +492,11 @@
                         <div class="grid grid-cols-2 gap-2">
                             <button class="bg-cyan-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="download" class="w-4 h-4"></i>
-                                Descargar todo (47)
+                                Descargar capturados
                             </button>
                             <button class="bg-slate-700 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                Vaciar cola
+                                Limpiar capturados
                             </button>
                         </div>
                     </div>
@@ -576,7 +558,7 @@
                             </td>
                             <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row3_manual">Es fácil perderse contenido nuevo</td>
                             <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
-                                <span class="text-cyan-300" data-i18n="stream_compare_row3_stream">Lo captura todo en tiempo real</span>
+                                <span class="text-cyan-300" data-i18n="stream_compare_row3_stream">Captura las imágenes generadas (de unos 120 KB o más) a medida que aparecen</span>
                             </td>
                         </tr>
                         <tr class="border-b border-slate-800/50">
@@ -588,7 +570,7 @@
                             </td>
                             <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row4_manual">Alto: vigilancia constante</td>
                             <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
-                                <span class="text-cyan-300" data-i18n="stream_compare_row4_stream">Cero: navega con normalidad y captura en segundo plano</span>
+                                <span class="text-cyan-300" data-i18n="stream_compare_row4_stream">Bajo: creas como siempre mientras captura en esa pestaña</span>
                             </td>
                         </tr>
                         <tr>
@@ -611,7 +593,7 @@
             <div class="mt-12 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="check-circle" class="text-cyan-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="stream_compare_summary">Stream Capture elimina el tedioso ciclo de clic y guardar. Navega por Grok con normalidad y deja que la extensión recopile cada imagen automáticamente.</p>
+                    <p class="text-slate-300 text-sm" data-i18n="stream_compare_summary">Stream Capture elimina el ciclo de hacer clic y guardar. Crea en Grok Imagine como siempre y deja que la extensión recoja las imágenes generadas en esa pestaña.</p>
                 </div>
             </div>
         </div>
@@ -626,32 +608,32 @@
             </div>
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Stream Capture funciona en todas las páginas de Grok?</h3>
-                    <p class="text-slate-400">Sí. Stream Capture monitorea cualquier página de Grok donde se generen imágenes, incluido el feed principal, las páginas de publicaciones individuales y los resultados de búsqueda. Usa la observación del DOM, así que funciona en cualquier lugar donde Grok renderice imágenes nuevas.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Qué captura Stream Capture y dónde funciona?</h3>
+                    <p class="text-slate-400">Vigila la pestaña de grok.com en la que lo activas y recoge las imágenes generadas que Grok envía a la página mientras creas en Imagine. Ignora las imágenes pequeñas, como miniaturas e iconos (menos de unos 120 KB), y solo captura imágenes, no videos.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Cuántas imágenes se pueden capturar en una sola sesión?</h3>
-                    <p class="text-slate-400">No hay un límite estricto. Stream Capture puede poner en cola cientos de imágenes en una sola sesión de monitoreo. La cola se guarda en IndexedDB, así que persiste aunque cambies de pestaña o cierres brevemente el panel de la extensión.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Cuántas imágenes puede guardar?</h3>
+                    <p class="text-slate-400">Hasta 1.000 imágenes por sesión. Al llegar a 1.000 se detiene y te pide que descargues y limpies las imágenes capturadas antes de seguir.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Stream Capture ralentiza mi navegador?</h3>
-                    <p class="text-slate-400">No. Stream Capture usa la API nativa MutationObserver de Chrome, que es muy eficiente. El observador solo se activa cuando hay cambios en el DOM, así que el uso de CPU es casi nulo mientras no estás generando imágenes. Un service worker en segundo plano gestiona la cola sin bloquear el hilo principal.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Cómo guardo las imágenes capturadas?</h3>
+                    <p class="text-slate-400">Haz clic en Descargar capturados en el popup. Los archivos van a grok_downloads/stream dentro de tu carpeta de descargas (puedes cambiar la ruta en Configuración) y se llaman grok_stream_ seguido de la hora de captura. Limpiar capturados vacía la lista.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Puedo pausar y reanudar el monitoreo?</h3>
-                    <p class="text-slate-400">Sí. Haz clic en el botón "Stop Monitoring" del panel de la extensión para pausar la captura cuando quieras. Las imágenes ya capturadas siguen en la cola. Haz clic de nuevo en "Start Stream Capture" para reanudar: las imágenes nuevas se añaden a la misma cola.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Se conservan las imágenes capturadas si recargo o cierro la pestaña?</h3>
+                    <p class="text-slate-400">No. Las imágenes capturadas se guardan en la memoria de esa pestaña de grok.com hasta que las descargas, así que descárgalas antes de recargar o cerrar la pestaña.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Stream Capture elimina automáticamente las imágenes duplicadas?</h3>
-                    <p class="text-slate-400">Sí. Stream Capture usa comparación de hashes para detectar y omitir las imágenes que ya están en tu colección o en la cola actual. Así evita descargar la misma imagen dos veces cuando vuelves a subir o revisas de nuevo una publicación.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Puedo pausar y reanudar la captura?</h3>
+                    <p class="text-slate-400">Sí. Desactiva el interruptor Activar para dejar de vigilar imágenes nuevas; lo que ya capturaste sigue en la lista. Vuelve a activarlo para seguir añadiendo a la misma lista.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Qué formatos de imagen admite Stream Capture?</h3>
-                    <p class="text-slate-400">Stream Capture descarga las imágenes en su formato original tal como las sirve Grok, normalmente JPEG y PNG. Se conservan la resolución y la calidad originales. No se aplica recodificación ni compresión durante la descarga.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Captura la misma imagen dos veces?</h3>
+                    <p class="text-slate-400">No. Cada imagen nueva se compara con las ya capturadas en la sesión, así que una imagen que vuelve a aparecer no se añade otra vez.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">¿Stream Capture está disponible en la versión gratuita?</h3>
-                    <p class="text-slate-400">Stream Capture es una función exclusiva de PRO. La versión gratuita de GrokMediaDownloader permite la descarga manual en lote de las imágenes visibles. Pasarte a PRO ($4.99 de por vida) desbloquea Stream Capture, Video Gen Queue, Story Mode y Project Download.</p>
+                    <p class="text-slate-400">No, Stream Capture es una función PRO. La versión gratuita descarga tus imágenes en lote desde Favoritos, una etiqueta o los últimos 7 días de tu biblioteca. Pasarte a PRO ($4.99 en un solo pago, licencia vitalicia) desbloquea Stream Capture junto con la descarga de videos, la exportación de Story Mode, Project Download y Video Gen Queue sin límite.</p>
                 </div>
             </div>
         </div>

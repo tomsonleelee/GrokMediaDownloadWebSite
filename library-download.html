@@ -19,9 +19,9 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whole Library Download | Download All Grok Media by Conversation - GrokMediaDownloader</title>
-    <meta name="description" content="Download your entire Grok Imagine library — not just favorites. Organized into conversation folders with real prompt filenames, 1080p support, and independent download history.">
-    <meta name="keywords" content="download all grok media, grok library download, bulk download grok images, grok conversation folders, 1080p grok video, grok assets API, Chrome extension">
+    <title>How to Download All Your Grok Imagine Favorites at Once | Whole Library Download</title>
+    <meta name="description" content="Step-by-step guide: download all your Grok Imagine favorites, images and videos at once with Grok Media Downloader. Whole Library Download by conversation, Free vs PRO, troubleshooting.">
+    <meta name="keywords" content="download all grok imagine favorites, download all grok imagine images and videos, grok library download, bulk download grok images, grok conversation folders, 1080p grok video, Chrome extension">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
 
@@ -38,10 +38,10 @@
     <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/library-download.html">
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:url" content="https://grokmedia.kario-studio.com/library-download.html">
-    <meta property="og:title" content="Whole Library Download | Every Grok Image & Video, Organized">
-    <meta property="og:description" content="Download your complete Grok Imagine library by conversation — no favorite or tag filter required. With 1080p support and prompt-based filenames.">
+    <meta property="og:title" content="How to Download All Your Grok Imagine Favorites at Once">
+    <meta property="og:description" content="Download every Grok Imagine image and video in a few clicks, organized into one folder per conversation. Step-by-step guide with screenshots.">
     <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -55,9 +55,28 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Whole Library Download | GrokMediaDownloader">
-    <meta name="twitter:description" content="Download every generated image and video from your Grok library, organized into conversation folders. 1080p supported.">
+    <meta name="twitter:title" content="How to Download All Your Grok Imagine Favorites at Once">
+    <meta name="twitter:description" content="Whole Library Download, step by step: every Grok Imagine image and video, organized by conversation.">
     <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
+
+    <!-- Schema.org - TechArticle -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "How to Download All Your Grok Imagine Favorites at Once",
+      "alternativeHeadline": "Whole Library Download, step by step",
+      "description": "Step-by-step guide to downloading all your Grok Imagine favorites, images and videos at once with the Grok Media Downloader Chrome extension.",
+      "image": "https://grokmedia.kario-studio.com/assets/og-library-download.jpg",
+      "inLanguage": "en",
+      "datePublished": "2026-07-29",
+      "dateModified": "2026-11-28",
+      "mainEntityOfPage": "https://grokmedia.kario-studio.com/library-download.html",
+      "author": { "@type": "Organization", "name": "Kario Studio", "url": "https://www.kario-studio.com" },
+      "publisher": { "@type": "Organization", "name": "Kario Studio", "url": "https://www.kario-studio.com" },
+      "about": { "@type": "SoftwareApplication", "name": "Grok Media Downloader", "applicationCategory": "BrowserApplication", "operatingSystem": "Chrome" }
+    }
+    </script>
 
     <!-- Schema.org - BreadcrumbList -->
     <script type="application/ld+json">
@@ -74,14 +93,14 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Whole Library Download",
+          "name": "How to Download All Your Grok Imagine Favorites at Once",
           "item": "https://grokmedia.kario-studio.com/library-download.html"
         }
       ]
     }
     </script>
 
-    <!-- Schema.org - FAQPage -->
+    <!-- Schema.org - FAQPage (generated from the visible Troubleshooting and FAQ entries) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -89,66 +108,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is Whole Library Download?",
+          "name": "Generate List and Start Download are greyed out",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Whole Library Download is a download source introduced in GrokMediaDownloader v2.5 that fetches every generated image and video in your Grok Imagine library, not only the items you marked as favorites or filed under a tag. In the extension popup it appears in the Download Source selector as \"All Generated Media (by Conversation)\", alongside the existing Favorite and Tag sources. Because it reads your complete asset list rather than a curated subset, it is the right choice when you want a full local archive of everything you have generated. Files are grouped into one folder per conversation, so the images that started a thread and the videos generated from them end up together instead of scattered across a flat download directory."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How is Whole Library Download different from Favorite and Tag downloads?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The three sources answer different needs and are fully independent of one another. Favorite downloads only the items you have liked in Grok, which keeps the set small and curated. Tag downloads everything filed under a specific Grok tag or folder, and organizes output under tags/{tagName}/. Whole Library ignores both filters and covers your entire generated library, organizing output by conversation instead. Critically, each source keeps its own separate download history, so downloading your whole library never marks your favorites as already downloaded, and vice versa. You can run all three over time without one polluting the deduplication records of another, which was a common source of confusion before v2.5."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How are folders and filenames decided?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Each conversation becomes one folder, named using the pattern yyyymmdd_prompt_shortID. When a conversation has no title, the extension falls back to that conversation's prompt rather than labelling the folder \"untitled\", which keeps folders meaningful when you browse them months later. Since September Grok no longer sends prompts with the media list, so from v2.5.6 the prompt is recovered from the conversation that generated the item: a video uses its own animation prompt, or borrows the source image's when it has none. A persistent prompt cache stores what it recovers, so a whole-library regenerate drops from minutes to seconds. Prompts are fetched only when your filename or metadata settings actually use them, and after you change one of those settings the popup asks you to regenerate the list. If you prefer machine-style names, the Grok Native filename mode produces grok_image_YYYYMMDD_id. metadata.json also records userId, and video filenames match the generated list, carrying the same short-id suffix."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why did my extension stop finding newly generated Grok media?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "In July 2026 Grok migrated to a new conversation-and-asset media backend. The older endpoints that previous extension versions relied on no longer back the Saved and media library views, so versions before v2.5.0 cannot see images and videos created after that migration. GrokMediaDownloader v2.5.0 is a full adaptation to the new backend and restores detection of newly generated media. After updating, open chrome://extensions, reload the extension, and refresh your Grok tab. You should also regenerate your download list once, so the merged tag results and the prompts v2.5.6 recovers from the generating conversation are picked up; prompt-based filenames and the conversation folder rules are written during the Generate List step and are not applied retroactively to a list built by an older version."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I filter a whole-library download by date?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. The Whole Library source supports the same date filtering as other sources, covering both a recent-hours window and an explicit date range. The scan walks your library newest-first and stops early once it passes the end of your selected window, so filtering by date does not force a scan of your entire library before results appear. This matters for large accounts: combined with adaptive throttling and 429 rate-limit backoff, libraries of 8,000 or more assets can be scanned end to end, but a narrow date filter finishes far sooner. The Generate List button reports progress through scanning, video quality resolution, and folder preparation so you can see which stage is running."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What does 1080p support add in v2.5?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Version 2.5 recognizes 1080p as a distinct quality tier throughout the extension. Downloads automatically select the highest available quality, preferring 1080p over HD over the original file. Scan statistics break out how many videos sit at SD, HD/720p, and 1080p rather than collapsing everything into SD and HD. The upgrade feature can now raise videos one tier at a time, from SD to HD and from 720p or HD to 1080p. Upgrading to 1080p requires a paid Grok plan, specifically SuperGrok Heavy, so it is behind an explicit opt-in checkbox that is off by default. With the box unchecked the extension sends no 1080p requests at all."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why did repeated upgrade scans previously return different results?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Grok's server returns the HD media URL for freshly generated videos inconsistently — querying the same video twice within seconds could return the field once and omit it the next time, even though the resolution field stayed stable. That made the same video look like SD on one scan and HD on another, so running \"upgrade the last N hours\" repeatedly produced a different result every time. Version 2.5 adds an upgrade-only quality memory that records the highest quality ever resolved for each video and never downgrades it when a later query comes back incomplete. Records expire after 30 days, are capped in count, and are cleared automatically if a remembered URL turns out to be dead."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Whole Library Download available in the free version?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes — since v2.5.1 the download source selector is free for everyone, because nobody should be stuck on a source that cannot see their own media. Free users can select \"📦 All Generated Media (by Conversation)\" and download everything from the last 7 days; the extension states this window up front rather than silently truncating your results. GrokMediaDownloader PRO, a one-time $4.99 purchase with a lifetime licence, removes the time limit so you can archive your complete library, and unlocks date filtering (a specific range or a recent-hours window). PRO also covers Stream Capture, Story Mode Helper, unlimited Video Gen Queue, Project-Based Download, HD and 1080p upgrade, and data export and import. All processing happens locally in your browser — no data is collected and nothing is uploaded."
+            "text": "First check that the active tab is a grok.com page; on any other site the popup disables both buttons and offers a Go to Grok Library → link. If you are on grok.com and the buttons are still grey, your extension is older than 2.6.3. On 12 and 13 November 2026 Grok folded Imagine into the main Grok app, and older versions no longer recognised the page. Chrome updates extensions automatically within a few hours; to update now, open chrome://extensions, turn on Developer mode and click Update. Full walkthrough: Grok download button missing after update."
           }
         },
         {
@@ -156,7 +119,31 @@
           "name": "Generate List finds nothing, or misses my newest images",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Check the Download Source selector. If it still says Favorite, switch to All Generated Media (by Conversation). Since Grok's July 2026 change, new generations are no longer added to Favorites, so a Favorite scan can legitimately come back empty. The whole-library source is free for everyone and has been the default since v2.5.1. Then click Generate List again."
+            "text": "Check the Download Source selector. If it still says Favorite, switch to All Generated Media (by Conversation). Since Grok's July 2026 change, new generations are no longer added to Favorites, so a Favorite scan can legitimately come back empty. The whole-library source is free for everyone (images from the last 7 days; PRO covers videos and the full library) and has been the default since v2.5.1. Then click Generate List again. More background in Grok favorites not loading?"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Only images were downloaded, no videos",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That is how the free version works: it downloads images only. Video downloads, shown as 🎬 Videos (Pro) under 🎬 Media Types, need a PRO license. After you activate PRO in the popup's License section, tick Videos, run Generate List again and click Start Download; your download history skips the images you already have. See pricing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "The download paused by itself",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That is a planned pause, not an error. The extension pauses after every 250 videos, waits 3 minutes by default and then resumes by itself; the Download Summary warns about this before a run with more than 250 videos. You can set the wait from 1 to 60 minutes under ⚙️ Settings → ⏱️ Rate Limit Cooldown. You don't need to click anything; leave the browser and the grok.com tab open."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Downloads start failing after thousands of files",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On very long runs Grok can start refusing downloads partway through, for example with HTTP 403 errors after thousands of videos. Reload the grok.com tab, open the popup and click Start again. Your download history skips everything that was already saved, so only the missing files are fetched."
           }
         },
         {
@@ -164,7 +151,7 @@
           "name": "HD Upgrade says every video is already upgraded",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Same cause as above: the upgrade scan reads the list of the selected source, and the Favorite list is incomplete. Set the source to the whole library, regenerate the list, and run the upgrade scan again. Since v2.5 the scan converges: repeated runs return the same result, and 1080p is tracked as its own tier so a 720p file is never mistaken for the top quality."
+            "text": "Same cause as an empty list: the upgrade scan reads the list of the selected source, and the Favorite list is incomplete. Set the Upgrade Source to 🌐 Whole Library, regenerate the list, and run the upgrade scan again. Since v2.5 the scan converges: repeated runs return the same result, and 1080p is tracked as its own tier so a 720p file is never mistaken for the top quality. HD Upgrade is a PRO feature."
           }
         },
         {
@@ -188,12 +175,108 @@
           "name": "I lost my files and the extension says everything is already downloaded",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Each source keeps its own download history. For the whole-library source, open the popup, expand Clear Actions and click Clear Conversation History; confirm the dialog. The button \"Reset Download History\" applies to the Favorite source only. Clearing a history does not delete anything on Grok or on disk; it only lets the next run download those items again."
+            "text": "Each source keeps its own download history. For the whole-library source, open the popup, expand Clear Actions and click Clear Conversation History; confirm the dialog. The button \"Reset Download History\" applies to the Favorite source only, and the Tag source has its own \"Clear Tag History\" button. Clearing a history does not delete anything on Grok or on disk; it only lets the next run download those items again."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download all my Grok Imagine favorites at once?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Open grok.com/library, click the Grok Media Downloader icon, choose 🌟 Favorite as the Download Source, then click 1. Generate List and 2. Start Download. Because Grok's Saved list stopped receiving new media on many accounts in July 2026, most people get a more complete result with 📦 All Generated Media (by Conversation), which downloads your whole library whether or not you saved an item. The free version downloads images, and for the whole-library source it covers the last 7 days; PRO adds videos and removes the time limit."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Whole Library Download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Whole Library Download is a download source introduced in GrokMediaDownloader v2.5 that fetches every generated image and video in your Grok Imagine library, not only the items you marked as favorites or filed under a tag. In the extension popup it appears in the Download Source selector as \"All Generated Media (by Conversation)\", alongside the existing Favorite and Tag sources. Because it reads your complete asset list rather than a curated subset, it is the right choice when you want a full local archive of everything you have generated. Files are grouped into one folder per conversation, so the images that started a thread and the videos generated from them end up together instead of scattered across a flat download directory."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Whole Library Download different from Favorite and Tag downloads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The three sources answer different needs and are fully independent of one another. Favorite downloads only the items you have saved in Grok, which keeps the set small and curated. Tag downloads everything filed under a specific Grok tag or folder, and organizes output under tags/{tagName}/. Whole Library ignores both filters and covers your entire generated library, organizing output by conversation instead. Each source keeps its own separate download history, so downloading your whole library never marks your favorites as already downloaded, and vice versa. You can run all three over time without one polluting the deduplication records of another, which was a common source of confusion before v2.5."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the free version download videos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The free version downloads images from every source, and from the whole-library source it covers the last 7 days. Video downloads, the full library without a time limit and the date filter are part of PRO, a one-time $4.99 purchase. Generate List, the three sources, filename templates, the .json metadata file and download history are free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does the extension save the files?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Chrome's Downloads folder, inside grok_downloads. The whole-library source writes to grok_downloads/conversations with one folder per conversation; Favorite downloads go to images and videos (or projects in Group by Project mode), and Tag downloads to tags. You can change every path under Settings. Everything runs locally in your browser, and files go straight from Grok to your disk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are folders and filenames decided?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each conversation becomes one folder, named using the pattern yyyymmdd_prompt_shortID. When a conversation has no title, the extension falls back to that conversation's prompt rather than labelling the folder \"untitled\", which keeps folders meaningful when you browse them months later. Since September Grok no longer sends prompts with the media list, so from v2.5.6 the prompt is recovered from the conversation that generated the item: a video uses its own animation prompt, or borrows the source image's when it has none. A persistent prompt cache stores what it recovers, so a whole-library regenerate drops from minutes to seconds. Prompts are fetched only when your filename or metadata settings actually use them, and after you change one of those settings the popup asks you to regenerate the list. If you prefer machine-style names, the Grok Native filename mode produces grok_image_YYYYMMDD_id. metadata.json also records userId, and video filenames match the generated list, carrying the same short-id suffix."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why did my extension stop finding newly generated Grok media?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In July 2026 Grok migrated to a new conversation-and-asset media backend. The older endpoints that previous extension versions relied on no longer back the Saved and media library views, so versions before v2.5.0 cannot see images and videos created after that migration. GrokMediaDownloader v2.5.0 is a full adaptation to the new backend and restores detection of newly generated media. After updating, open chrome://extensions, reload the extension, and refresh your Grok tab. You should also regenerate your download list once, so the merged tag results and the prompts v2.5.6 recovers from the generating conversation are picked up; prompt-based filenames and the conversation folder rules are written during the Generate List step and are not applied retroactively to a list built by an older version."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I filter a whole-library download by date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with PRO. The Whole Library source supports the same date filtering as the Favorite source, covering both a recent-hours window and an explicit date range; the Tag source has no date filter. The scan walks your library newest-first and stops early once it passes the end of your selected window, so filtering by date does not force a scan of your entire library before results appear. This matters for large accounts: combined with adaptive throttling and 429 rate-limit backoff, libraries of 8,000 or more assets can be scanned end to end, but a narrow date filter finishes far sooner. The Generate List button reports progress through scanning, video quality resolution, and folder preparation so you can see which stage is running. Without PRO, the whole-library source covers the last 7 days."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does 1080p support add in v2.5?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Version 2.5 recognizes 1080p as a distinct quality tier throughout the extension. Downloads automatically select the highest available quality, preferring 1080p over HD over the original file. Scan statistics break out how many videos sit at SD, HD/720p, and 1080p rather than collapsing everything into SD and HD. The HD Upgrade feature (PRO) can raise videos one tier at a time, from SD to HD and from 720p or HD to 1080p. Upgrading to 1080p requires a paid Grok plan, specifically SuperGrok Heavy, so it is behind an explicit opt-in checkbox that is off by default. With the box unchecked the extension sends no 1080p requests at all."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why did repeated upgrade scans previously return different results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grok's server returns the HD media URL for freshly generated videos inconsistently: querying the same video twice within seconds could return the field once and omit it the next time, even though the resolution field stayed stable. That made the same video look like SD on one scan and HD on another, so running \"upgrade the last N hours\" repeatedly produced a different result every time. Version 2.5 adds an upgrade-only quality memory that records the highest quality ever resolved for each video and never downgrades it when a later query comes back incomplete. Records expire after 30 days, are capped in count, and are cleared automatically if a remembered URL turns out to be dead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Whole Library Download available in the free version?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for images from the last 7 days. Since v2.5.1 the download source selector is free for everyone, because nobody should be stuck on a source that cannot see their own media. Free users can select \"📦 All Generated Media (by Conversation)\" and download the images from the last 7 days; the extension states this window up front rather than silently truncating your results. GrokMediaDownloader PRO, a one-time $4.99 purchase with a lifetime licence, adds video downloads, removes the time limit so you can archive your complete library, and unlocks date filtering (a specific range or a recent-hours window). PRO also covers Stream Capture, Story Mode export, unlimited Video Gen Queue, Project-Based Download, HD and 1080p upgrade, and history export and import. Everything runs locally in your browser and files go straight from Grok to your disk; the only outside connection is the license check with Kario Studio's license server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "If I run it again, will it download the same files twice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Every source keeps a download history, and Generate List leaves out what is already recorded there, so a second run only fetches new items. This also means you can stop a long download and continue later without starting over. If you want to download everything again, clear that source's history first."
           }
         }
       ]
     }
-  </script>
+    </script>
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
@@ -253,42 +336,64 @@
     <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/" class="text-sm text-slate-300 hover:text-white">Home</a><a href="/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/pricing.html" class="text-sm text-slate-300 hover:text-white">Pricing</a><a href="/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
 
     <main id="main-content">
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+    <!-- Hero + short answer -->
+    <section class="relative pt-32 pb-16 lg:pt-44 lg:pb-20 overflow-hidden">
         <div class="absolute inset-0 hero-glow"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-4xl mx-auto">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-6">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span data-i18n="library_badge">Since v2.5</span>
+                    <span>Step-by-step guide · Updated November 2026</span>
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                    <span class="gradient-text" data-i18n="library_title">Whole Library Download</span>
+                    <span class="gradient-text">How to Download All Your Grok Imagine Favorites at Once</span>
+                    <span class="block text-xl md:text-2xl font-bold text-emerald-300 mt-4">Whole Library Download, step by step</span>
                 </h1>
 
-                <p class="text-xl md:text-2xl text-emerald-300 mb-4" data-i18n="library_subtitle">Every Generated Image &amp; Video — Organized by Conversation</p>
-
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="library_desc">Favorites only capture what you remembered to like. Whole Library Download archives your complete Grok Imagine library — every image, every video — grouped into one folder per conversation, named with the prompt that actually created them.</p>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=hero&amp;utm_term=en" target="_blank" rel="noopener" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-                        <span data-i18n="hero_cta_chrome">Add to Chrome</span>
-                    </a>
-
-                    <button onclick="openCheckout()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
-                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
-                        <span data-i18n="price_pro_button">$4.99 PRO Lifetime</span>
-                    </button>
-                </div>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto">Every image and every video you made in Grok Imagine, saved to your computer in one run and grouped into one folder per conversation, named with the prompt that created them.</p>
             </div>
+
+            <!-- Short answer -->
+            <div class="max-w-3xl mx-auto rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 md:p-8 mb-10">
+                <h2 class="text-sm font-bold uppercase tracking-wide text-emerald-300 mb-3">Short answer</h2>
+                <p class="text-slate-200 leading-relaxed">Install Grok Media Downloader, open <strong class="text-white">grok.com/library</strong> and click the extension icon. Leave the Download Source on <strong class="text-white">📦 All Generated Media (by Conversation)</strong> to get everything, or pick <strong class="text-white">🌟 Favorite</strong> for only the items you saved. Click <strong class="text-white">1. Generate List</strong> and click OK in the Download Summary that follows (or click <strong class="text-white">2. Start Download</strong> later). The files land in your Downloads folder under <span class="font-mono text-sm text-emerald-300">grok_downloads/</span>, one folder per conversation.</p>
+                <p class="text-slate-400 text-sm leading-relaxed mt-3">The free version downloads images from the last 7 days. <a href="/pricing.html" class="text-emerald-300 underline hover:text-white">PRO</a> adds videos and your full library.</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=hero&amp;utm_term=en" target="_blank" rel="noopener" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>Add to Chrome</span>
+                </a>
+
+                <button onclick="openCheckout()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                    <span>$4.99 PRO Lifetime</span>
+                </button>
+            </div>
+
+            <!-- On this page -->
+            <nav aria-label="On this page" class="max-w-3xl mx-auto mt-10 text-sm">
+                <p class="text-slate-500 font-semibold mb-2">On this page</p>
+                <ul class="flex flex-wrap gap-x-5 gap-y-2">
+                    <li><a href="#before-you-start" class="text-slate-300 hover:text-white underline underline-offset-2">Before you start</a></li>
+                    <li><a href="#steps" class="text-slate-300 hover:text-white underline underline-offset-2">Steps</a></li>
+                    <li><a href="#free-vs-pro" class="text-slate-300 hover:text-white underline underline-offset-2">Free vs PRO</a></li>
+                    <li><a href="#sources" class="text-slate-300 hover:text-white underline underline-offset-2">Three sources</a></li>
+                    <li><a href="#files" class="text-slate-300 hover:text-white underline underline-offset-2">Folders and filenames</a></li>
+                    <li><a href="#video-quality" class="text-slate-300 hover:text-white underline underline-offset-2">Video quality</a></li>
+                    <li><a href="#troubleshooting" class="text-slate-300 hover:text-white underline underline-offset-2">Troubleshooting</a></li>
+                    <li><a href="#faq" class="text-slate-300 hover:text-white underline underline-offset-2">FAQ</a></li>
+                    <li><a href="#related-guides" class="text-slate-300 hover:text-white underline underline-offset-2">Related guides</a></li>
+                </ul>
+            </nav>
         </div>
     </section>
 
-    <!-- Grok API Migration Notice — unique to Library Download -->
-    <section class="py-16 bg-slate-900/50 border-t border-slate-800">
+    <!-- Before you start: the July 2026 backend change -->
+    <section id="before-you-start" class="py-16 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6 md:p-8">
                 <div class="flex flex-col sm:flex-row gap-5">
@@ -296,20 +401,21 @@
                         <i data-lucide="alert-triangle" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <div>
-                        <h2 class="text-xl md:text-2xl font-bold text-white mb-3" data-i18n="library_notice_title">Grok changed its media backend in July 2026</h2>
-                        <p class="text-slate-300 leading-relaxed mb-4" data-i18n="library_notice_desc">Grok migrated to a new conversation-and-asset model. The endpoints that older extension versions depended on no longer back the Saved and media library views, which means <strong class="text-white">versions before v2.5.0 cannot detect newly generated images and videos</strong>. Version 2.5.0 is a complete adaptation to the new backend — and Whole Library Download is what that new API made possible.</p>
+                        <h2 class="text-xl md:text-2xl font-bold text-white mb-3">Before you start: Grok changed its media backend in July 2026</h2>
+                        <p class="text-slate-300 leading-relaxed mb-4">Grok migrated to a new conversation-and-asset model. Since then the Favorites list, which is Grok's Saved page, no longer receives newly generated media on many accounts, so a favorites-only download can miss your recent work. Most people who want to download "all their favorites" really want everything they made. That is what the <strong class="text-white">📦 All Generated Media (by Conversation)</strong> source reads: your whole library, saved or not. It has been the default source since v2.5.1.</p>
+                        <p class="text-slate-300 leading-relaxed mb-4">The endpoints that older extension versions depended on no longer back the Saved and media library views, which means <strong class="text-white">versions before v2.5.0 cannot detect newly generated images and videos</strong>. Version 2.5.0 is a complete adaptation to the new backend, and Whole Library Download is what that new API made possible. On 12 and 13 November 2026 Grok also folded Imagine into the main Grok app, and versions before 2.6.3 greyed out their buttons as a result. Use version 2.6.3 or newer; <a href="/grok-download-button-missing.html" class="text-amber-300 underline hover:text-white">here is how to fix the greyed-out buttons</a>.</p>
                         <div class="grid sm:grid-cols-3 gap-3 text-sm">
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">1. Update</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_1">Install the latest version from the Chrome Web Store</p>
+                                <p class="text-slate-400">Install or update from the Chrome Web Store: version 2.6.3 or newer</p>
                             </div>
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">2. Reload</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_2">Reload the extension in chrome://extensions, then refresh your Grok tab</p>
+                                <p class="text-slate-400">Reload the extension in chrome://extensions, then refresh your Grok tab</p>
                             </div>
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">3. Regenerate</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_3">Generate your download list once more so the new naming rules, merged tags, and prompts recovered from the generating conversation apply</p>
+                                <p class="text-slate-400">Generate your download list once more so the new naming rules, merged tags, and prompts recovered from the generating conversation apply</p>
                             </div>
                         </div>
                     </div>
@@ -318,61 +424,201 @@
         </div>
     </section>
 
-    <!-- Core Features -->
-    <section class="py-24 bg-slate-950 border-t border-slate-800">
+    <!-- Steps -->
+    <section id="steps" class="py-24 bg-slate-950 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_core_title">Core Features</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_core_desc">A download source built for people who want the whole archive, not a curated slice of it.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Step by step: download your whole Grok Imagine library</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Once the extension is installed, the download itself takes two clicks. The screenshots show the English popup; the extension uses the same layout in every language.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Feature 1 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
-                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+            <ol class="space-y-8 max-w-3xl mx-auto">
+                <!-- Step 1 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">1</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Install Grok Media Downloader and pin it</h3>
+                        <p class="text-slate-400 leading-relaxed">Open the <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=steps&amp;utm_term=en" target="_blank" rel="noopener" class="text-emerald-300 underline hover:text-white">Chrome Web Store page</a> and click <strong class="text-slate-200">Add to Chrome</strong>. Then click the puzzle-piece icon in the Chrome toolbar and pin Grok Media Downloader so its icon stays visible. If you already have it, open chrome://extensions and check that the version is 2.6.3 or newer. Chrome updates extensions on its own within a few hours; to update right away, turn on Developer mode on that page and click Update.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_1_title">Complete Library Scan</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_1_desc">Reads your full asset list instead of the favorites subset. Nothing you generated is left behind because you forgot to like it.</p>
-                </div>
+                </li>
 
-                <!-- Feature 2 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all">
-                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="messages-square" class="text-teal-400 w-6 h-6"></i>
+                <!-- Step 2 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">2</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Open grok.com/library</h3>
+                        <p class="text-slate-400 leading-relaxed">Sign in to Grok and open <a href="https://grok.com/library" target="_blank" rel="noopener" class="text-emerald-300 underline hover:text-white">grok.com/library</a>. Since version 2.6.3 the extension works on any grok.com page, and the Library is a good place to start. If your account still has the Imagine Saved page (grok.com/imagine/saved), that works too. On a tab that is not grok.com, the popup disables its buttons and shows "Please open grok.com (Library or Imagine Saved page) and try again." with a <strong class="text-slate-200">Go to Grok Library →</strong> link.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_2_title">Conversation Folders</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_2_desc">One folder per conversation, so a source image and every video generated from it land together instead of scattered across a flat directory.</p>
-                </div>
+                </li>
 
-                <!-- Feature 3 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all">
-                    <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="git-branch" class="text-cyan-400 w-6 h-6"></i>
+                <!-- Step 3 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">3</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Click the extension icon to open the popup</h3>
+                        <p class="text-slate-400 leading-relaxed">From top to bottom the popup shows the status panel, the media types to download, the <strong class="text-slate-200">🎯 Download Source</strong> selector and the two buttons that do the work: <strong class="text-slate-200">1. Generate List</strong> and <strong class="text-slate-200">2. Start Download</strong>. Under <strong class="text-slate-200">🎬 Media Types</strong>, tick <strong class="text-slate-200">🖼️ Images</strong>. The <strong class="text-slate-200">🎬 Videos (Pro)</strong> box needs a PRO license; the free version downloads images only.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_3_title">Independent History</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_3_desc">Whole-library downloads keep their own deduplication record. Archiving everything never marks your favorites as already downloaded.</p>
-                </div>
+                </li>
 
-                <!-- Feature 4 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
-                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="calendar-clock" class="text-emerald-400 w-6 h-6"></i>
+                <!-- Step 4 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">4</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Choose what to download</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">Pick one of the three sources in the Download Source selector:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-400 leading-relaxed">
+                            <li><strong class="text-slate-200">📦 All Generated Media (by Conversation)</strong> is your whole library, one folder per conversation. It is the default and the right choice for a full backup. In the free version it covers the last 7 days, and the popup says so under the selector. PRO removes the limit.</li>
+                            <li><strong class="text-slate-200">🌟 Favorite</strong> is only what you saved in Grok. Since July 2026 this list can miss newly generated media, and the popup shows a warning when you pick it.</li>
+                            <li><strong class="text-slate-200">🏷️ Tag</strong> is one Grok tag, also called a collection. Pick the tag from the list that appears.</li>
+                        </ul>
+                        <p class="text-slate-400 leading-relaxed mt-3">With PRO you can also narrow the Favorite or All Generated Media scan with the Date Filter, either a date range or the last N hours. The Tag source has no date filter.</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 336px">
+                            <img src="/assets/guides/en/popup-sources.jpg" alt="Download Source selector with Favorite, Tag and All Generated Media (by Conversation), and the note that the free version scans the last 7 days" width="336" height="539" loading="lazy" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">The three sources. The note below them explains the free 7-day window.</figcaption>
+                        </figure>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_4_title">Early-Stop Date Filter</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_4_desc">Scans newest-first and stops as soon as it passes your window. Filtering by date doesn't force a walk through your entire library.</p>
-                </div>
-            </div>
+                </li>
+
+                <!-- Step 5 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">5</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Click 1. Generate List</h3>
+                        <p class="text-slate-400 leading-relaxed">The extension scans the source newest-first. For the whole library it also checks which quality tiers each video has and prepares the conversation folders, and the button shows which stage is running. When the scan finishes, a <strong class="text-slate-200">📊 Download Summary</strong> dialog lists the images and videos to download, with videos broken out by 1080p, HD, 720p and SD, and how many are already done. It ends with "Start download?": OK starts the download right away; Cancel closes the dialog, shows the counts in the status panel and leaves <strong class="text-slate-200">2. Start Download</strong> enabled. Anything already in your download history is not counted again. If you later change a filename or metadata setting that needs prompts, the popup asks you to regenerate the list.</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 336px">
+                            <img src="/assets/guides/en/popup-list-ready.jpg" alt="Popup after Generate List: counts of images and videos to download, with the Start Download button enabled" width="336" height="828" loading="lazy" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">After Cancel: the counts in the status panel, with 2. Start Download ready.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+
+                <!-- Step 6 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">6</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Start the download</h3>
+                        <p class="text-slate-400 leading-relaxed">Click OK in the Download Summary. If you cancelled it, click <strong class="text-slate-200">2. Start Download</strong> and the same summary appears again. When more than 250 videos are queued, the summary also says that the extension will pause after every 250 videos. The progress bar shows how many files are finished and roughly how long is left. Keep the browser and the grok.com tab open while it runs. To pause, click <strong class="text-slate-200">⏹ Stop Download</strong>; the button then reads <strong class="text-slate-200">▶ Continue Download</strong> and picks up where it stopped. The pause after every 250 videos lasts 3 minutes by default; you can set it from 1 to 60 minutes under <strong class="text-slate-200">⚙️ Settings</strong> → <strong class="text-slate-200">⏱️ Rate Limit Cooldown</strong>. After the pause the download resumes by itself.</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 336px">
+                            <img src="/assets/guides/en/popup-downloading.jpg" alt="Download in progress: progress bar with the estimated time left and the Stop Download button" width="336" height="719" loading="lazy" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Downloading: progress, time left, and Stop.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+
+                <!-- Step 7 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">7</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Find your files</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">Files go to Chrome's Downloads folder, inside a <span class="font-mono text-sm text-slate-300">grok_downloads</span> folder with these sub-folders:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-400 leading-relaxed">
+                            <li><span class="font-mono text-sm text-emerald-300">conversations/</span> for All Generated Media, one folder per conversation</li>
+                            <li><span class="font-mono text-sm text-emerald-300">images/</span> and <span class="font-mono text-sm text-emerald-300">videos/</span> for Favorite downloads in Standard mode</li>
+                            <li><span class="font-mono text-sm text-emerald-300">projects/</span> for Favorite downloads in Group by Project mode</li>
+                            <li><span class="font-mono text-sm text-emerald-300">tags/</span> for Tag downloads, one folder per tag</li>
+                            <li><span class="font-mono text-sm text-emerald-300">stream/</span> for Stream Capture (PRO)</li>
+                        </ul>
+                        <p class="text-slate-400 leading-relaxed mt-3">You can change each path under <strong class="text-slate-200">⚙️ Settings</strong>. Paths are relative to Chrome's download folder.</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <a href="/assets/guides/download-folders.jpg" target="_blank" rel="noopener" class="block"><img src="/assets/guides/download-folders.jpg" alt="Example grok_downloads folder with Prompt Based filenames: conversations/ with one folder per conversation, plus images/, videos/, tags/ and projects/ folders, a .json sidecar next to an image and a project's metadata.json" width="1280" height="1130" loading="lazy" class="w-full h-auto"></a>
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Example grok_downloads folder with Prompt Based filenames: conversations/, images/, videos/, tags/ and projects/, plus a .json sidecar and a project's metadata.json. Open the image to view it full size.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+
+                <!-- Step 8 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">8</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Run it again whenever you have new work</h3>
+                        <p class="text-slate-400 leading-relaxed">Each source keeps its own download history, so the next Generate List shows only what is new and nothing is downloaded twice. Archiving the whole library never marks your favorites as already downloaded, and the other way round. If you deleted files and want them again, see <a href="#troubleshooting" class="text-emerald-300 underline hover:text-white">"I lost my files"</a> below.</p>
+                    </div>
+                </li>
+            </ol>
         </div>
     </section>
 
-    <!-- Three Download Sources — unique differentiator -->
-    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+    <!-- Free vs PRO for this job -->
+    <section id="free-vs-pro" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Free vs PRO for this job</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">You can try the whole workflow for free. PRO is what you need for videos and for libraries older than a week.</p>
+            </div>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full border-collapse text-sm">
+                    <thead>
+                        <tr class="border-b border-slate-700">
+                            <th class="text-left py-3 px-4 text-slate-400 font-semibold"></th>
+                            <th class="text-center py-3 px-4 text-white font-bold">Free</th>
+                            <th class="text-center py-3 px-4 bg-emerald-500/10 text-emerald-300 font-bold">PRO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Generate List with all three sources</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Image downloads</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Video downloads</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">All Generated Media (whole library)</td>
+                            <td class="py-3 px-4 text-center text-slate-400">Last 7 days</td>
+                            <td class="py-3 px-4 text-center text-emerald-300 font-semibold bg-emerald-500/5">Full library</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Date filter (date range, last N hours)</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Group by Project folders</td>
+                            <td class="py-3 px-4 text-center text-slate-500">Standard mode (project folders need videos)</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Filename templates, prompt filenames, .json file</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Download history (no duplicates)</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">HD Upgrade to 720p (1080p needs SuperGrok Heavy)</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-slate-300">Import / export download history</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed mt-6 text-center">PRO is a one-time $4.99 purchase: a lifetime license with a 7-day money-back guarantee. Free users get updates too. <a href="/pricing.html" class="text-emerald-300 underline hover:text-white">See pricing and what else PRO includes</a>.</p>
+        </div>
+    </section>
+
+    <!-- Three Download Sources -->
+    <section id="sources" class="py-24 bg-slate-950 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4" data-i18n="library_sources_badge">Download Source Selector</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_sources_title">Three Sources, Three Jobs</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_sources_subtitle">The download source is separate from the date filter. Pick where media comes from, then filter it — the two no longer fight each other.</p>
+                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4">Download Source Selector</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Three sources, three jobs</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">The download source is separate from the date filter. Pick where media comes from, then filter it if you have PRO; the two no longer fight each other.</p>
             </div>
 
             <div class="overflow-x-auto -mx-4 px-4">
@@ -380,47 +626,53 @@
                     <thead>
                         <tr class="border-b border-slate-700">
                             <th class="text-left py-4 px-6 text-slate-400 font-semibold text-sm"></th>
-                            <th class="text-center py-4 px-6 text-white font-bold">⭐ Favorite</th>
+                            <th class="text-center py-4 px-6 text-white font-bold">🌟 Favorite</th>
                             <th class="text-center py-4 px-6 text-white font-bold">🏷️ Tag</th>
                             <th class="text-center py-4 px-6 bg-emerald-500/10 rounded-t-xl">
-                                <span class="text-emerald-300 font-bold">📦 All Media</span>
-                                <span class="block text-[10px] text-emerald-400/70 font-semibold uppercase tracking-wide mt-0.5">Since v2.5</span>
+                                <span class="text-emerald-300 font-bold">📦 All Generated Media</span>
+                                <span class="block text-[10px] text-emerald-400/70 font-semibold uppercase tracking-wide mt-0.5">Default since v2.5.1</span>
                             </th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_1">What it covers</td>
-                            <td class="py-4 px-6 text-center text-slate-400">Items you liked</td>
-                            <td class="py-4 px-6 text-center text-slate-400">One Grok tag/folder</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">What it covers</td>
+                            <td class="py-4 px-6 text-center text-slate-400">Items you saved in Grok</td>
+                            <td class="py-4 px-6 text-center text-slate-400">One Grok tag (collection)</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">Your entire library</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2">Folder layout</td>
-                            <td class="py-4 px-6 text-center text-slate-400">Flat / by date</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">Folder layout</td>
+                            <td class="py-4 px-6 text-center text-slate-400 font-mono text-xs">images/, videos/ or projects/</td>
                             <td class="py-4 px-6 text-center text-slate-400 font-mono text-xs">tags/{tagName}/</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-mono text-xs bg-emerald-500/5">yyyymmdd_prompt_id/</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2b">Video prompt filenames</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">Video prompt filenames</td>
                             <td class="py-4 px-6 text-center text-slate-500">—</td>
                             <td class="py-4 px-6 text-center text-emerald-400">✓ since v2.5.6</td>
                             <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_3">Download history</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">Download history</td>
                             <td class="py-4 px-6 text-center text-slate-400">Own record</td>
                             <td class="py-4 px-6 text-center text-slate-400">Own record</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">Own record</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_4">Date filter</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">Free version</td>
+                            <td class="py-4 px-6 text-center text-slate-400">Images</td>
+                            <td class="py-4 px-6 text-center text-slate-400">Images</td>
+                            <td class="py-4 px-6 text-center text-slate-400 bg-emerald-500/5">Images, last 7 days</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-6 text-slate-300 font-medium">Date filter (PRO)</td>
                             <td class="py-4 px-6 text-center text-emerald-400">✓</td>
-                            <td class="py-4 px-6 text-center text-emerald-400">✓</td>
+                            <td class="py-4 px-6 text-center text-slate-500">—</td>
                             <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓ with early stop</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_5">Best for</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">Suited to</td>
                             <td class="py-4 px-6 text-center text-slate-400">Curated picks</td>
                             <td class="py-4 px-6 text-center text-slate-400">One project theme</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">Full local archive</td>
@@ -429,226 +681,127 @@
                 </table>
             </div>
 
-            <p class="text-center text-slate-500 text-sm mt-6" data-i18n="library_sources_note">⚠️ Whole-library downloads can be large. Favorites and tags stay curated — the new source is for when you deliberately want everything.</p>
+            <p class="text-center text-slate-500 text-sm mt-6">⚠️ Whole-library downloads can be large. Favorites and tags stay curated; the whole-library source is for when you deliberately want everything.</p>
         </div>
     </section>
 
-    <!-- How it Works -->
-    <section class="py-24 bg-slate-950 border-t border-slate-800">
+    <!-- Folders and filenames -->
+    <section id="files" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_step_title">How Whole Library Download Works</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_step_desc">Four steps, with visible progress at every stage.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">How folders and filenames are decided</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">A whole-library archive is only useful if you can find things in it a year from now.</p>
             </div>
 
-            <div class="space-y-8 max-w-3xl mx-auto">
-                <!-- Step 1 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">1</div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Complete library scan</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Reads your full asset list instead of the favorites subset. Nothing you generated is left behind because you forgot to save it.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all">
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="messages-square" class="text-teal-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Conversation folders</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">One folder per conversation, so a source image and every video generated from it land together instead of scattered across a flat directory.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="text-cursor-input" class="text-cyan-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Real prompt filenames</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Images use their own generation prompt; a video uses its own animation prompt, or borrows the source image's when it has none.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="git-branch" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Independent history</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Whole-library downloads keep their own deduplication record. Archiving everything never marks your favorites as already downloaded.</p>
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4 text-slate-400 leading-relaxed">
+                <p>Each conversation folder is named <span class="font-mono text-sm text-emerald-300">yyyymmdd_prompt_shortID</span>. When a conversation has no title, the extension uses its prompt instead of labelling the folder "untitled".</p>
+                <p>For the files inside, open <strong class="text-slate-200">⚙️ Settings</strong> and choose a <strong class="text-slate-200">📝 Filename Format</strong>: <strong class="text-slate-200">Grok Native</strong> gives <span class="font-mono text-sm text-slate-300">grok_image_YYYYMMDD_id.jpg</span>, <strong class="text-slate-200">Prompt Based</strong> gives <span class="font-mono text-sm text-slate-300">img_YYYYMMDDHHmmss_prompt.jpg</span>, and <strong class="text-slate-200">Custom Template</strong> lets you combine the tokens <span class="font-mono text-sm text-slate-300">{date} {time} {datetime} {id} {shortid} {prompt} {quality}</span>. Turn on <strong class="text-slate-200">📋 Save Metadata</strong> to write a .json file with the prompt, resolution and other details next to each image and video. All of this is free.</p>
+                <p>Grok stopped sending prompts with the media list in September 2026. Since v2.5.6 the extension recovers each prompt from the conversation that generated the item and keeps it in a persistent cache, so a later whole-library regenerate takes seconds instead of minutes. Prompts are fetched only when your filename or metadata settings use them. Assets you uploaded yourself, or that carry no generation info, have no prompt or conversation on the server; those are filed under their asset ID. More in <a href="/save-grok-imagine-prompts.html" class="text-emerald-300 underline hover:text-white">Save Grok Imagine videos with their prompts</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Large libraries -->
+    <section id="large-libraries" class="py-24 bg-slate-950 border-t border-slate-800 scroll-mt-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Large libraries</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-center mb-12">A whole-library scan has to read every asset you have. These are the parts that keep it going on big accounts.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="gauge" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_1_title">Pick Your Source</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_1_desc">Open the extension on your Grok Imagine page and choose "All Generated Media (by Conversation)" in the Download Source selector. Optionally set a recent-hours window or a date range.</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/resized/feat-generate-list_640x400.jpg" srcset="/assets/resized/feat-generate-list_640x400.jpg 640w, /assets/resized/feat-generate-list_1280x800.jpg 1280w" sizes="(min-width: 768px) 640px, 100vw" alt="GrokMediaDownloader popup: media type checkboxes, the PRO date filter and the &quot;1. Generate List&quot; and &quot;2. Start Download&quot; buttons" loading="lazy" width="1280" height="800" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">Popup screenshot: media types, date filter, then Generate List and Start Download.</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">Adaptive throttling and 429 backoff</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">During Generate List, requests that Grok answers with HTTP 429 or a 5xx server error are retried, and the scan slows down automatically. Libraries of 8,000+ assets can be scanned end to end without breaking off midway.</p>
                     </div>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">2</div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="zap" class="text-teal-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_2_title">Generate the List</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_2_desc">The extension scans your library newest-first, resolves each video's quality tier, and prepares conversation folders. Progress is reported at each stage — scanning, resolving quality N/M, preparing folders N/M.</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/explainer/still-sources.jpg" alt="Illustration of the three download sources: whole library by conversation, tags and collections, and liked posts" loading="lazy" width="1280" height="720" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">The three sources: Whole Library (by conversation), Tags &amp; Collections, Liked. Illustration from the product explainer.</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">Concurrent quality checks</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Video quality is resolved with bounded concurrency and a live counter, cutting a step that used to take several minutes down to roughly one.</p>
                     </div>
                 </div>
-
-                <!-- Step 3 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">3</div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="layers" class="text-cyan-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_3_title">Review the Summary</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_3_desc">A summary shows how many images and videos will be downloaded versus already done, with videos broken out by 1080p, HD, 720p and SD so you know exactly what you're about to fetch.</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/explainer/still-scan.jpg" alt="Illustration of a library scan counter passing 15,000 items with flat memory use" loading="lazy" width="1280" height="720" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">The scan streams page by page, so a 15,000-item library finishes without the browser running out of memory. Illustration.</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">Batched conversation titles</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Titles are fetched in batches for only the conversations actually needed, instead of paging through your whole conversation list.</p>
                     </div>
                 </div>
-
-                <!-- Step 4 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">4</div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="calendar-clock" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_4_title">Download &amp; Archive</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_4_desc">Files download into per-conversation folders with prompt-based names. Interrupted downloads are tracked so a retry fetches only what's missing, never re-downloading what completed.</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/explainer/still-folders.jpg" alt="Illustration of the naming template: folders per conversation or tag, filenames from date, time, prompt, ID and seed" loading="lazy" width="1280" height="720" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">Folders per conversation or tag; filenames built from date, time, prompt, ID and seed. Illustration.</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">Early-stop date filter (PRO)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">The scan runs newest-first and stops as soon as it passes your date window, so a narrow filter does not walk through your entire library.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technical Details -->
-    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left: Technical Info -->
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="library_tech_title">Technical Highlights</h2>
-
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="gauge" class="text-emerald-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_1_title">Adaptive Throttling &amp; 429 Backoff</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_1_desc">Scan rate adjusts to server response, with rate-limit backoff. Libraries of 8,000+ assets can be scanned end to end without breaking off midway.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="zap" class="text-teal-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_2_title">Concurrent Quality Resolution</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_2_desc">Video quality is resolved with bounded concurrency and a live counter, cutting a step that used to take several minutes down to roughly one.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="text-cursor-input" class="text-cyan-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_3_title">Real Prompt Filenames</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_3_desc">Images use their own generation prompt; a video uses its own animation prompt, or borrows the source image’s when it has none — recovered from the generating conversation since Grok’s September change removed prompts from the media list.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="layers" class="text-emerald-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_4_title">Batched Conversation Titles</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_4_desc">Titles are fetched in batches for only the conversations actually needed, instead of paging through your whole conversation list.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Mockup -->
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full"></div>
-                    <div class="relative bg-slate-900 rounded-2xl border border-emerald-500/30 p-6 shadow-2xl">
-                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-slate-800">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                            <span class="ml-2 text-slate-500 text-sm">Grok Media Downloader</span>
-                        </div>
-
-                        <!-- Download Source Selector -->
-                        <div class="mb-4">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">🎯 Download Source</div>
-                            <div class="space-y-1.5">
-                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-sm text-slate-400">
-                                    <span class="w-3 h-3 rounded-full border border-slate-600"></span>
-                                    <span>⭐ Favorite</span>
-                                </div>
-                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-sm text-slate-400">
-                                    <span class="w-3 h-3 rounded-full border border-slate-600"></span>
-                                    <span>🏷️ Tag</span>
-                                </div>
-                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/40 text-sm text-white font-semibold">
-                                    <span class="w-3 h-3 rounded-full bg-emerald-500 border border-emerald-400"></span>
-                                    <span>📦 All Generated Media</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Scan Results -->
-                        <div class="mb-4 p-4 bg-slate-800/50 rounded-lg space-y-2">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">Scan Results</div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">🖼️ Images</span>
-                                <span class="text-white font-bold">1,284</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">💎 1080p Videos</span>
-                                <span class="text-white font-bold">37</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">✨ HD / 720p Videos</span>
-                                <span class="text-white font-bold">312</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">🎬 SD Videos</span>
-                                <span class="text-white font-bold">148</span>
-                            </div>
-                            <div class="border-t border-slate-700 pt-2 mt-2 flex items-center justify-between text-sm">
-                                <span class="text-slate-300">💬 Conversations</span>
-                                <span class="text-emerald-300 font-bold">216 folders</span>
-                            </div>
-                        </div>
-
-                        <!-- Folder Preview -->
-                        <div class="mb-4 p-3 bg-slate-800/50 rounded-lg">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">Folder Preview</div>
-                            <div class="text-sm font-mono space-y-1">
-                                <div class="text-emerald-300">📁 20260726_neon-city-rain_a3f9/</div>
-                                <div class="text-slate-400 pl-4">🖼️ neon-city-rain_01.jpg</div>
-                                <div class="text-slate-400 pl-4">🎬 neon-city-rain_01_1080p.mp4</div>
-                                <div class="text-emerald-300">📁 20260725_desert-sunrise_7b21/</div>
-                            </div>
-                        </div>
-
-                        <!-- Action Button -->
-                        <button class="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg text-sm flex items-center justify-center gap-2">
-                            <i data-lucide="download" class="w-4 h-4"></i>
-                            Start Download (1,781 files)
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 1080p Quality Tiers — unique to Library Download -->
-    <section class="py-24 bg-slate-950 border-t border-slate-800">
+    <!-- Video quality tiers -->
+    <section id="video-quality" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4" data-i18n="library_quality_badge">1080p support</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_quality_title">1080p Is Now Its Own Tier</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_quality_subtitle">Downloads take the best available quality, statistics break out every tier, and upgrades move one step at a time.</p>
+                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4">1080p support</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Video quality: SD, HD/720p and 1080p</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Downloads always take the highest quality Grok has for each video. HD Upgrade, a PRO feature, asks Grok to make a higher-quality version first.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
                 <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 text-center">
                     <div class="text-4xl mb-3">📦</div>
                     <h3 class="text-lg font-bold text-white mb-2">SD</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="library_quality_sd">Baseline output. Upgradeable to HD without a paid Grok plan.</p>
+                    <p class="text-slate-400 text-sm">Baseline output. HD Upgrade can raise it to HD/720p; this step does not need SuperGrok Heavy.</p>
                 </div>
                 <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 text-center">
                     <div class="text-4xl mb-3">🎥</div>
                     <h3 class="text-lg font-bold text-white mb-2">HD / 720p</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="library_quality_hd">The standard upgrade target. Reachable from SD in one step.</p>
+                    <p class="text-slate-400 text-sm">The standard upgrade target, one step up from SD.</p>
                 </div>
                 <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 rounded-2xl border border-emerald-500/40 p-6 text-center">
                     <div class="text-4xl mb-3">💎</div>
                     <h3 class="text-lg font-bold text-white mb-2">1080p</h3>
-                    <p class="text-slate-300 text-sm" data-i18n="library_quality_1080">Highest tier. Requires SuperGrok Heavy and an explicit opt-in.</p>
+                    <p class="text-slate-300 text-sm">Highest tier. Requires SuperGrok Heavy on your Grok account and an explicit opt-in.</p>
                 </div>
             </div>
 
@@ -656,128 +809,189 @@
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-                        <span data-i18n="library_quality_p1_title">Opt-in, never surprise-billed</span>
+                        <span>Opt-in, never surprise-billed</span>
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p1_desc">1080p upgrades need a paid plan, so the checkbox is off by default. With it unchecked the extension sends no 1080p requests at all and only performs SD to HD upgrades — but the confirmation dialog still tells you how many videos <em>could</em> go to 1080p, so they never silently disappear. If your account turns out to lack the entitlement, the extension detects it once and stops issuing further 1080p requests instead of spinning.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">1080p upgrades need SuperGrok Heavy, so the "Upgrade HD/720p to 1080p" checkbox is off by default. With it unchecked the extension sends no 1080p requests at all and only performs SD to HD upgrades, but the confirmation dialog still tells you how many videos <em>could</em> go to 1080p, so they never silently disappear. If your account turns out to lack the entitlement, the extension detects it once and stops issuing further 1080p requests instead of spinning.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="history" class="w-4 h-4 text-emerald-400"></i>
-                        <span data-i18n="library_quality_p2_title">Upgrade scans that finally converge</span>
+                        <span>Upgrade scans that converge</span>
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p2_desc">Grok returns the HD media URL for freshly generated videos inconsistently, which made the same video read as SD on one scan and HD on the next — so repeating "upgrade the last N hours" gave a different answer every time. v2.5 remembers the highest quality ever resolved per video and never downgrades on an incomplete read. Records expire after 30 days, are capped in count, and self-clear if a remembered URL turns out to be dead. Videos that couldn't be checked at all due to rate limiting are excluded and reported rather than mistaken for SD.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Grok returns the HD media URL for freshly generated videos inconsistently, which made the same video read as SD on one scan and HD on the next, so repeating "upgrade the last N hours" gave a different answer every time. Since v2.5 the extension remembers the highest quality ever resolved per video and never downgrades on an incomplete read. Records expire after 30 days, are capped in count, and self-clear if a remembered URL turns out to be dead. Videos that couldn't be checked at all because of rate limiting are excluded and reported rather than mistaken for SD.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="target" class="w-4 h-4 text-emerald-400"></i>
-                        <span data-i18n="library_quality_p3_title">Upgrade the whole library, not just favorites</span>
+                        <span>Upgrade the whole library, not just favorites</span>
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p3_desc">The upgrade feature gained its own source selector — Favorite or Whole Library — so you're no longer limited to upgrading videos you remembered to like. The confirmation dialog breaks down your library by SD, HD/720p and 1080p and states exactly how many will be upgraded in this run. A whole-library scan can be stopped partway if it's taking longer than you want.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">HD Upgrade has its own Upgrade Source selector, Favorite or 🌐 Whole Library, so you're not limited to upgrading videos you remembered to save. The confirmation dialog breaks your library down by SD, HD/720p and 1080p and states how many will be upgraded in this run, at roughly 8 seconds per video. A whole-library scan can be stopped partway. After upgrading, run Generate List and Start Download again to fetch the better versions. The full walkthrough is in <a href="/download-grok-videos-hd.html" class="text-emerald-300 underline hover:text-white">Download Grok videos in HD</a>.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <!-- Troubleshooting -->
-    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+    <section id="troubleshooting" class="py-20 bg-slate-950 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Troubleshooting</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">The five problems we hear about most, with the fix that resolved them in practice. All of them trace back to Grok's 2026 backend changes rather than to a broken setting.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto">The problems we hear about most, with the fix that resolved them in practice. Most trace back to Grok's 2026 changes rather than to a broken setting.</p>
             </div>
             <div class="space-y-4">
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Generate List finds nothing, or misses my newest images<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Check the <strong class="text-slate-200">Download Source</strong> selector. If it still says Favorite, switch to <strong class="text-slate-200">All Generated Media (by Conversation)</strong>. Since Grok's July 2026 change, new generations are no longer added to Favorites, so a Favorite scan can legitimately come back empty. The whole-library source is free for everyone and has been the default since v2.5.1. Then click Generate List again.</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Generate List and Start Download are greyed out</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">First check that the active tab is a grok.com page; on any other site the popup disables both buttons and offers a <strong class="text-slate-200">Go to Grok Library →</strong> link. If you are on grok.com and the buttons are still grey, your extension is older than 2.6.3. On 12 and 13 November 2026 Grok folded Imagine into the main Grok app, and older versions no longer recognised the page. Chrome updates extensions automatically within a few hours; to update now, open chrome://extensions, turn on Developer mode and click Update. Full walkthrough: <a href="/grok-download-button-missing.html" class="text-emerald-300 underline hover:text-white">Grok download button missing after update</a>.</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">HD Upgrade says every video is already upgraded<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Same cause as above: the upgrade scan reads the list of the selected source, and the Favorite list is incomplete. Set the source to the whole library, regenerate the list, and run the upgrade scan again. Since v2.5 the scan converges: repeated runs return the same result, and 1080p is tracked as its own tier so a 720p file is never mistaken for the top quality.</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Generate List finds nothing, or misses my newest images</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Check the <strong class="text-slate-200">Download Source</strong> selector. If it still says Favorite, switch to <strong class="text-slate-200">All Generated Media (by Conversation)</strong>. Since Grok's July 2026 change, new generations are no longer added to Favorites, so a Favorite scan can legitimately come back empty. The whole-library source is free for everyone (images from the last 7 days; PRO covers videos and the full library) and has been the default since v2.5.1. Then click Generate List again. More background in <a href="/grok-favorites-not-loading.html" class="text-emerald-300 underline hover:text-white">Grok favorites not loading? Back up your library</a>.</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Filenames, folder names or metadata.json have no prompt in them<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok stopped sending the prompt with the media list in September 2026. Update to v2.5.6 or newer, which recovers each prompt from the conversation that generated the item, then <strong class="text-slate-200">regenerate the list once</strong>: names are decided during the Generate List step, so a list made by an older version keeps the old names. In Settings, choose the "Prompt Based" filename mode if you want prompts in filenames. A persistent cache keeps recovered prompts, so later regenerates take seconds.</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Only images were downloaded, no videos</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">That is how the free version works: it downloads images only. Video downloads, shown as <strong class="text-slate-200">🎬 Videos (Pro)</strong> under 🎬 Media Types, need a PRO license. After you activate PRO in the popup's License section, tick Videos, run Generate List again and click Start Download; your download history skips the images you already have. See <a href="/pricing.html" class="text-emerald-300 underline hover:text-white">pricing</a>.</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">A tag I created in Grok is missing, or a tag downloads only one file<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok runs two tag systems side by side since its August 2026 migration, and each is missing items the other has. Versions 2.5.2 to 2.5.4 read only the new one. Update to v2.5.6 or newer: it reads both and merges them, so tag lists and tag contents are the union of the two. After updating, regenerate the list for the tag.</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>The download paused by itself</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">That is a planned pause, not an error. The extension pauses after every 250 videos, waits 3 minutes by default and then resumes by itself; the Download Summary warns about this before a run with more than 250 videos. You can set the wait from 1 to 60 minutes under <strong class="text-slate-200">⚙️ Settings</strong> → <strong class="text-slate-200">⏱️ Rate Limit Cooldown</strong>. You don't need to click anything; leave the browser and the grok.com tab open.</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">I lost my files and the extension says everything is already downloaded<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Each source keeps its own download history. For the whole-library source, open the popup, expand <strong class="text-slate-200">Clear Actions</strong> and click <strong class="text-slate-200">Clear Conversation History</strong>; confirm the dialog. The button "Reset Download History" applies to the Favorite source only. Clearing a history does not delete anything on Grok or on disk; it only lets the next run download those items again.</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Downloads start failing after thousands of files</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">On very long runs Grok can start refusing downloads partway through, for example with HTTP 403 errors after thousands of videos. Reload the grok.com tab, open the popup and click Start again. Your download history skips everything that was already saved, so only the missing files are fetched.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>HD Upgrade says every video is already upgraded</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Same cause as an empty list: the upgrade scan reads the list of the selected source, and the Favorite list is incomplete. Set the Upgrade Source to 🌐 Whole Library, regenerate the list, and run the upgrade scan again. Since v2.5 the scan converges: repeated runs return the same result, and 1080p is tracked as its own tier so a 720p file is never mistaken for the top quality. HD Upgrade is a PRO feature.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Filenames, folder names or metadata.json have no prompt in them</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok stopped sending the prompt with the media list in September 2026. Update to v2.5.6 or newer, which recovers each prompt from the conversation that generated the item, then <strong class="text-slate-200">regenerate the list once</strong>: names are decided during the Generate List step, so a list made by an older version keeps the old names. In Settings, choose the "Prompt Based" filename mode if you want prompts in filenames. A persistent cache keeps recovered prompts, so later regenerates take seconds.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>A tag I created in Grok is missing, or a tag downloads only one file</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok runs two tag systems side by side since its August 2026 migration, and each is missing items the other has. Versions 2.5.2 to 2.5.4 read only the new one. Update to v2.5.6 or newer: it reads both and merges them, so tag lists and tag contents are the union of the two. After updating, regenerate the list for the tag.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>I lost my files and the extension says everything is already downloaded</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Each source keeps its own download history. For the whole-library source, open the popup, expand <strong class="text-slate-200">Clear Actions</strong> and click <strong class="text-slate-200">Clear Conversation History</strong>; confirm the dialog. The button "Reset Download History" applies to the Favorite source only, and the Tag source has its own "Clear Tag History" button. Clearing a history does not delete anything on Grok or on disk; it only lets the next run download those items again.</div>
                 </details>
             </div>
             <p class="text-center text-slate-500 text-sm mt-8">Still stuck? The <a href="/faq.html" class="underline hover:text-slate-300">FAQ</a> covers more cases, and the Contact Support button in the footer reaches a human.</p>
         </div>
     </section>
 
-    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-                <p class="text-slate-400">Everything you need to know about Whole Library Download</p>
+                <p class="text-slate-400">Downloading your whole Grok Imagine library</p>
             </div>
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">What is Whole Library Download?</h3>
-                    <p class="text-slate-400 leading-relaxed">Whole Library Download is a download source introduced in GrokMediaDownloader v2.5 that fetches every generated image and video in your Grok Imagine library, not only the items you marked as favorites or filed under a tag. In the extension popup it appears in the Download Source selector as "All Generated Media (by Conversation)", alongside the existing Favorite and Tag sources. Because it reads your complete asset list rather than a curated subset, it is the right choice when you want a full local archive of everything you have generated. Files are grouped into one folder per conversation, so the images that started a thread and the videos generated from them end up together instead of scattered across a flat download directory.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">Can I download all my Grok Imagine favorites at once?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Yes. Open grok.com/library, click the Grok Media Downloader icon, choose 🌟 Favorite as the Download Source, then click 1. Generate List and 2. Start Download. Because Grok's Saved list stopped receiving new media on many accounts in July 2026, most people get a more complete result with 📦 All Generated Media (by Conversation), which downloads your whole library whether or not you saved an item. The free version downloads images, and for the whole-library source it covers the last 7 days; PRO adds videos and removes the time limit.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">How is Whole Library Download different from Favorite and Tag downloads?</h3>
-                    <p class="text-slate-400 leading-relaxed">The three sources answer different needs and are fully independent of one another. Favorite downloads only the items you have liked in Grok, which keeps the set small and curated. Tag downloads everything filed under a specific Grok tag or folder, and organizes output under tags/{tagName}/. Whole Library ignores both filters and covers your entire generated library, organizing output by conversation instead. Critically, each source keeps its own separate download history, so downloading your whole library never marks your favorites as already downloaded, and vice versa. You can run all three over time without one polluting the deduplication records of another, which was a common source of confusion before v2.5.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">What is Whole Library Download?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Whole Library Download is a download source introduced in GrokMediaDownloader v2.5 that fetches every generated image and video in your Grok Imagine library, not only the items you marked as favorites or filed under a tag. In the extension popup it appears in the Download Source selector as "All Generated Media (by Conversation)", alongside the existing Favorite and Tag sources. Because it reads your complete asset list rather than a curated subset, it is the right choice when you want a full local archive of everything you have generated. Files are grouped into one folder per conversation, so the images that started a thread and the videos generated from them end up together instead of scattered across a flat download directory.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">How are folders and filenames decided?</h3>
-                    <p class="text-slate-400 leading-relaxed">Each conversation becomes one folder, named using the pattern yyyymmdd_prompt_shortID. When a conversation has no title, the extension falls back to that conversation's prompt rather than labelling the folder "untitled", which keeps folders meaningful when you browse them months later. Since September Grok no longer sends prompts with the media list, so from v2.5.6 the prompt is recovered from the conversation that generated the item: a video uses its own animation prompt, or borrows the source image's when it has none. A persistent prompt cache stores what it recovers, so a whole-library regenerate drops from minutes to seconds. Prompts are fetched only when your filename or metadata settings actually use them, and after you change one of those settings the popup asks you to regenerate the list. If you prefer machine-style names, the Grok Native filename mode produces grok_image_YYYYMMDD_id. metadata.json also records userId, and video filenames match the generated list, carrying the same short-id suffix.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">How is Whole Library Download different from Favorite and Tag downloads?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">The three sources answer different needs and are fully independent of one another. Favorite downloads only the items you have saved in Grok, which keeps the set small and curated. Tag downloads everything filed under a specific Grok tag or folder, and organizes output under tags/{tagName}/. Whole Library ignores both filters and covers your entire generated library, organizing output by conversation instead. Each source keeps its own separate download history, so downloading your whole library never marks your favorites as already downloaded, and vice versa. You can run all three over time without one polluting the deduplication records of another, which was a common source of confusion before v2.5.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Why did my extension stop finding newly generated Grok media?</h3>
-                    <p class="text-slate-400 leading-relaxed">In July 2026 Grok migrated to a new conversation-and-asset media backend. The older endpoints that previous extension versions relied on no longer back the Saved and media library views, so versions before v2.5.0 cannot see images and videos created after that migration. GrokMediaDownloader v2.5.0 is a full adaptation to the new backend and restores detection of newly generated media. After updating, open chrome://extensions, reload the extension, and refresh your Grok tab. You should also regenerate your download list once, so the merged tag results and the prompts v2.5.6 recovers from the generating conversation are picked up; prompt-based filenames and the conversation folder rules are written during the Generate List step and are not applied retroactively to a list built by an older version.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">Does the free version download videos?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">No. The free version downloads images from every source, and from the whole-library source it covers the last 7 days. Video downloads, the full library without a time limit and the date filter are part of PRO, a one-time $4.99 purchase. Generate List, the three sources, filename templates, the .json metadata file and download history are free.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Can I filter a whole-library download by date?</h3>
-                    <p class="text-slate-400 leading-relaxed">Yes. The Whole Library source supports the same date filtering as other sources, covering both a recent-hours window and an explicit date range. The scan walks your library newest-first and stops early once it passes the end of your selected window, so filtering by date does not force a scan of your entire library before results appear. This matters for large accounts: combined with adaptive throttling and 429 rate-limit backoff, libraries of 8,000 or more assets can be scanned end to end, but a narrow date filter finishes far sooner. The Generate List button reports progress through scanning, video quality resolution, and folder preparation so you can see which stage is running.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">Where does the extension save the files?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">In Chrome's Downloads folder, inside grok_downloads. The whole-library source writes to grok_downloads/conversations with one folder per conversation; Favorite downloads go to images and videos (or projects in Group by Project mode), and Tag downloads to tags. You can change every path under Settings. Everything runs locally in your browser, and files go straight from Grok to your disk.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">What does 1080p support add in v2.5?</h3>
-                    <p class="text-slate-400 leading-relaxed">Version 2.5 recognizes 1080p as a distinct quality tier throughout the extension. Downloads automatically select the highest available quality, preferring 1080p over HD over the original file. Scan statistics break out how many videos sit at SD, HD/720p, and 1080p rather than collapsing everything into SD and HD. The upgrade feature can now raise videos one tier at a time, from SD to HD and from 720p or HD to 1080p. Upgrading to 1080p requires a paid Grok plan, specifically SuperGrok Heavy, so it is behind an explicit opt-in checkbox that is off by default. With the box unchecked the extension sends no 1080p requests at all.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">How are folders and filenames decided?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Each conversation becomes one folder, named using the pattern yyyymmdd_prompt_shortID. When a conversation has no title, the extension falls back to that conversation's prompt rather than labelling the folder "untitled", which keeps folders meaningful when you browse them months later. Since September Grok no longer sends prompts with the media list, so from v2.5.6 the prompt is recovered from the conversation that generated the item: a video uses its own animation prompt, or borrows the source image's when it has none. A persistent prompt cache stores what it recovers, so a whole-library regenerate drops from minutes to seconds. Prompts are fetched only when your filename or metadata settings actually use them, and after you change one of those settings the popup asks you to regenerate the list. If you prefer machine-style names, the Grok Native filename mode produces grok_image_YYYYMMDD_id. metadata.json also records userId, and video filenames match the generated list, carrying the same short-id suffix.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Why did repeated upgrade scans previously return different results?</h3>
-                    <p class="text-slate-400 leading-relaxed">Grok's server returns the HD media URL for freshly generated videos inconsistently — querying the same video twice within seconds could return the field once and omit it the next time, even though the resolution field stayed stable. That made the same video look like SD on one scan and HD on another, so running "upgrade the last N hours" repeatedly produced a different result every time. Version 2.5 adds an upgrade-only quality memory that records the highest quality ever resolved for each video and never downgrades it when a later query comes back incomplete. Records expire after 30 days, are capped in count, and are cleared automatically if a remembered URL turns out to be dead.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">Why did my extension stop finding newly generated Grok media?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">In July 2026 Grok migrated to a new conversation-and-asset media backend. The older endpoints that previous extension versions relied on no longer back the Saved and media library views, so versions before v2.5.0 cannot see images and videos created after that migration. GrokMediaDownloader v2.5.0 is a full adaptation to the new backend and restores detection of newly generated media. After updating, open chrome://extensions, reload the extension, and refresh your Grok tab. You should also regenerate your download list once, so the merged tag results and the prompts v2.5.6 recovers from the generating conversation are picked up; prompt-based filenames and the conversation folder rules are written during the Generate List step and are not applied retroactively to a list built by an older version.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Is Whole Library Download available in the free version?</h3>
-                    <p class="text-slate-400 leading-relaxed">Yes — since v2.5.1 the download source selector is free for everyone, because nobody should be stuck on a source that cannot see their own media. Free users can select "📦 All Generated Media (by Conversation)" and download everything from the last 7 days; the extension states this window up front rather than silently truncating your results. GrokMediaDownloader PRO, a one-time $4.99 purchase with a lifetime licence, removes the time limit so you can archive your complete library, and unlocks date filtering (a specific range or a recent-hours window). PRO also covers Stream Capture, Story Mode Helper, unlimited Video Gen Queue, Project-Based Download, HD and 1080p upgrade, and data export and import. All processing happens locally in your browser — no data is collected and nothing is uploaded.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">Can I filter a whole-library download by date?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Yes, with PRO. The Whole Library source supports the same date filtering as the Favorite source, covering both a recent-hours window and an explicit date range; the Tag source has no date filter. The scan walks your library newest-first and stops early once it passes the end of your selected window, so filtering by date does not force a scan of your entire library before results appear. This matters for large accounts: combined with adaptive throttling and 429 rate-limit backoff, libraries of 8,000 or more assets can be scanned end to end, but a narrow date filter finishes far sooner. The Generate List button reports progress through scanning, video quality resolution, and folder preparation so you can see which stage is running. Without PRO, the whole-library source covers the last 7 days.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">What does 1080p support add in v2.5?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Version 2.5 recognizes 1080p as a distinct quality tier throughout the extension. Downloads automatically select the highest available quality, preferring 1080p over HD over the original file. Scan statistics break out how many videos sit at SD, HD/720p, and 1080p rather than collapsing everything into SD and HD. The HD Upgrade feature (PRO) can raise videos one tier at a time, from SD to HD and from 720p or HD to 1080p. Upgrading to 1080p requires a paid Grok plan, specifically SuperGrok Heavy, so it is behind an explicit opt-in checkbox that is off by default. With the box unchecked the extension sends no 1080p requests at all.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">Why did repeated upgrade scans previously return different results?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Grok's server returns the HD media URL for freshly generated videos inconsistently: querying the same video twice within seconds could return the field once and omit it the next time, even though the resolution field stayed stable. That made the same video look like SD on one scan and HD on another, so running "upgrade the last N hours" repeatedly produced a different result every time. Version 2.5 adds an upgrade-only quality memory that records the highest quality ever resolved for each video and never downgrades it when a later query comes back incomplete. Records expire after 30 days, are capped in count, and are cleared automatically if a remembered URL turns out to be dead.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">Is Whole Library Download available in the free version?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Yes, for images from the last 7 days. Since v2.5.1 the download source selector is free for everyone, because nobody should be stuck on a source that cannot see their own media. Free users can select "📦 All Generated Media (by Conversation)" and download the images from the last 7 days; the extension states this window up front rather than silently truncating your results. GrokMediaDownloader PRO, a one-time $4.99 purchase with a lifetime licence, adds video downloads, removes the time limit so you can archive your complete library, and unlocks date filtering (a specific range or a recent-hours window). PRO also covers Stream Capture, Story Mode export, unlimited Video Gen Queue, Project-Based Download, HD and 1080p upgrade, and history export and import. Everything runs locally in your browser and files go straight from Grok to your disk; the only outside connection is the license check with Kario Studio's license server.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">If I run it again, will it download the same files twice?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">No. Every source keeps a download history, and Generate List leaves out what is already recorded there, so a second run only fetches new items. This also means you can stop a long download and continue later without starting over. If you want to download everything again, clear that source's history first.</p>
                 </div>
             </div>
 
-            <p class="text-center text-slate-500 text-sm mt-8" data-i18n="library_faq_limit">Known limitation: assets you uploaded yourself, or that carry no generation info, have no prompt or conversation on the server. Those are filed under their asset ID.</p>
+            <p class="text-center text-slate-500 text-sm mt-8">Known limitation: assets you uploaded yourself, or that carry no generation info, have no prompt or conversation on the server. Those are filed under their asset ID.</p>
+        </div>
+    </section>
+
+    <!-- Related guides -->
+    <section id="related-guides" class="py-20 bg-slate-950 border-t border-slate-800 scroll-mt-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Related guides</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="/grok-favorites-not-loading.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">Grok favorites not loading? Back up your library</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Why new images and videos stopped showing up in Saved, and how to save your work anyway.</p>
+                </a>
+                <a href="/save-grok-imagine-prompts.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">Save Grok Imagine videos with their prompts</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Put each prompt in the filename or in a .json file next to the image or video.</p>
+                </a>
+                <a href="/download-grok-videos-hd.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">Download Grok videos in HD</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">See which videos are SD, HD/720p or 1080p, upgrade them, and download the better version.</p>
+                </a>
+                <a href="/grok-download-button-missing.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">Grok download button missing after update</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Fix greyed-out Generate List and Start buttons after Grok's November 2026 change.</p>
+                </a>
+                <a href="/faq.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">FAQ</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Short answers about sources, filenames, licenses and refunds.</p>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="library_cta_title">Archive Your Entire Grok Library</h2>
-            <p class="text-slate-400 mb-8" data-i18n="library_cta_desc">Free for the last 7 days — PRO unlocks your complete library</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Archive your entire Grok library</h2>
+            <p class="text-slate-400 mb-8">Free: images from the last 7 days. PRO adds videos and your complete library.</p>
 
             <div class="inline-flex flex-col sm:flex-row gap-4">
                 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=bottom_cta&amp;utm_term=en" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-                    <span data-i18n="hero_cta_chrome">Add to Chrome</span>
+                    <span>Add to Chrome</span>
                 </a>
 
                 <a href="/pricing.html" class="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
                     <i data-lucide="zap" class="w-5 h-5"></i>
-                    <span data-i18n="price_pro_button">$4.99 PRO Lifetime</span>
+                    <span>$4.99 PRO Lifetime</span>
                 </a>
             </div>
 
-            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">✨ Includes all future updates</p>
+            <p class="text-slate-500 text-sm mt-6">✨ Includes all future updates</p>
             <div class="mt-8 pt-6 border-t border-slate-800">
-                <p class="text-slate-400 text-sm font-semibold mb-3" data-i18n="explore_more">Explore More Features</p>
+                <p class="text-slate-400 text-sm font-semibold mb-3">Explore More Features</p>
                 <div class="flex flex-wrap justify-center gap-3">
                     <a href="/project-download.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Project Download</a>
                     <a href="/story-mode.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Story Mode</a>
@@ -786,11 +1000,11 @@
                 </div>
             </div>
             <div class="flex justify-center gap-3 mt-6">
-                <a href="https://twitter.com/intent/tweet?text=Download%20your%20entire%20Grok%20library%2C%20organized%20by%20conversation&url=https://grokmedia.kario-studio.com/library-download.html?utm_source=twitter&utm_medium=social&utm_campaign=share" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                <a href="https://twitter.com/intent/tweet?text=How%20to%20download%20all%20your%20Grok%20Imagine%20favorites%20at%20once&url=https://grokmedia.kario-studio.com/library-download.html?utm_source=twitter&utm_medium=social&utm_campaign=share" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     <span>Share on X</span>
                 </a>
-                <a href="https://www.reddit.com/submit?url=https://grokmedia.kario-studio.com/library-download.html?utm_source=reddit&utm_medium=social&utm_campaign=share&title=Whole%20Library%20Download%20-%20Every%20Grok%20Image%20and%20Video%2C%20Organized" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                <a href="https://www.reddit.com/submit?url=https://grokmedia.kario-studio.com/library-download.html?utm_source=reddit&utm_medium=social&utm_campaign=share&title=How%20to%20download%20all%20your%20Grok%20Imagine%20favorites%20at%20once" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
                     <span>Share on Reddit</span>
                 </a>

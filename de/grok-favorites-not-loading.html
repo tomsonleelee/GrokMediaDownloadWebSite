@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // GA4: never load or send from local dev/test hosts (localhost, 127.0.0.1). Production only.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            window['ga-disable-G-6YPN8563C6'] = true;
+        } else {
+            var gtagScript = document.createElement('script'); gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6';
+            document.head.appendChild(gtagScript);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok-Favoriten laden nicht? Bibliothek sichern - GrokMediaDownloader</title>
+    <meta name="description" content="Seit Groks Backend-Umstellung im Juli 2026 landen neue Bilder und Videos nicht mehr in den Favoriten. Erfahre, warum, was weiterhin funktioniert und wie du deine gesamte Grok-Bibliothek sicherst.">
+    <meta name="keywords" content="grok favoriten laden nicht, grok favoriten fehlen, grok favoriten werden nicht angezeigt, grok saved zeigt neue bilder nicht, grok bibliothek sichern, grok bibliothek herunterladen, grok imagine favoriten, grok library download">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/de/grok-favorites-not-loading.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/grok-favorites-not-loading.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/grok-favorites-not-loading.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/de/grok-favorites-not-loading.html">
+    <meta property="og:title" content="Grok-Favoriten laden nicht? So sicherst du deine Bibliothek">
+    <meta property="og:description" content="Warum neue Grok-Medien seit Juli 2026 in den Favoriten fehlen und wie du deine gesamte Bibliothek mit „Alle generierten Medien“ sicherst.">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="es_ES">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grok-Favoriten laden nicht? So sicherst du deine Bibliothek">
+    <meta name="twitter:description" content="Warum neue Grok-Medien seit Juli 2026 in den Favoriten fehlen und wie du deine gesamte Bibliothek mit „Alle generierten Medien“ sicherst.">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
+
+    <!-- Schema.org - Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Grok-Favoriten laden nicht? So sicherst du deine Bibliothek",
+      "description": "Seit Groks Backend-Umstellung im Juli 2026 landen neue Bilder und Videos nicht mehr in den Favoriten. Erfahre, warum, was weiterhin funktioniert und wie du deine gesamte Grok-Bibliothek sicherst.",
+      "inLanguage": "de",
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28",
+      "author": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "url": "https://www.kario-studio.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://grokmedia.kario-studio.com/assets/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://grokmedia.kario-studio.com/de/grok-favorites-not-loading.html"
+      },
+      "image": "https://grokmedia.kario-studio.com/assets/og-library-download.jpg"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://grokmedia.kario-studio.com/de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grok-Favoriten laden nicht",
+          "item": "https://grokmedia.kario-studio.com/de/grok-favorites-not-loading.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Sind meine Grok-Medien weg, wenn sie nicht in den Favoriten sind?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Meist nicht. Seit Juli 2026 werden neu generierte Medien bei vielen Konten nicht mehr zur alten Favoritenliste hinzugefügt, sie sind aber weiterhin in deiner Grok-Bibliothek gespeichert. Die Quelle 📦 Alle generierten Medien liest die Bibliothek aus und findet deshalb auch neue Inhalte, die ein Favoriten-Scan übersieht. Fehlt etwas auch in Groks Library (grok.com/library), schau in Groks eigener Hilfe nach."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich meine Grok-Bibliothek kostenlos sichern?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, mit Einschränkungen. Die kostenlose Version lädt mit der Quelle 📦 Alle generierten Medien die Bilder der letzten 7 Tage herunter. PRO, ein einmaliger Kauf für $4.99, ergänzt Videos, deine gesamte Bibliothek ohne Zeitlimit und Datumsfilter. Details findest du auf der Preisseite."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo werden die heruntergeladenen Dateien gespeichert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Im Download-Ordner von Chrome. Die Quelle für die gesamte Bibliothek nutzt grok_downloads/conversations, mit einem Ordner pro Unterhaltung. Die Quelle Favoriten nutzt grok_downloads/images und grok_downloads/videos, die Quelle Tag nutzt grok_downloads/tags. Diese Pfade kannst du unter ⚙️ Einstellungen ändern."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Lädt eine erneute Sicherung Duplikate herunter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nicht innerhalb derselben Quelle. Jede Quelle führt einen Download-Verlauf, und bereits gespeicherte Dateien werden übersprungen, sodass der nächste Durchlauf nur neue Medien herunterlädt. Die Verläufe sind allerdings getrennt: Eine Datei, die du über 🌟 Favoriten gespeichert hast, kann über 📦 Alle generierten Medien erneut heruntergeladen werden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sollte ich die Quelle Favoriten noch verwenden?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nutze sie, wenn du genau die Auswahl möchtest, die die alte Favoritenliste enthält. Für alles, was seit Juli 2026 generiert wurde, oder für eine vollständige Sicherung verwende 📦 Alle generierten Medien (nach Unterhaltung)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Lädt die Erweiterung meine Medien irgendwo hoch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Alles läuft lokal in deinem Browser, und die Dateien gehen direkt von Grok auf deine Festplatte. Die einzige externe Verbindung ist die Prüfung der PRO-Lizenz, die mit dem Lizenzserver von Kario Studio kommuniziert."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css?v=20261119">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        @media (min-width: 768px) {
+            .guide-side { display: flex; gap: 1.5rem; align-items: flex-start; }
+            .guide-side > figure { margin-top: 0.25rem; flex-shrink: 0; width: 338px; }
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Zum Hauptinhalt springen</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/de/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/de/" class="text-sm text-slate-300 hover:text-white">Startseite</a><a href="/de/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/de/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/de/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/de/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/de/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/de/pricing.html" class="text-sm text-slate-300 hover:text-white">Preise</a><a href="/de/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+    <section class="relative pt-32 pb-12 lg:pt-40 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <nav aria-label="Navigationspfad" class="text-sm text-slate-500 mb-6">
+                <a href="/de/" class="hover:text-white">Startseite</a>
+                <span aria-hidden="true" class="px-2">/</span>
+                <span class="text-slate-300">Grok-Favoriten laden nicht</span>
+            </nav>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>Anleitung zur Fehlerbehebung · Aktualisiert am 28. November 2026</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white">Grok-Favoriten laden nicht? So sicherst du deine Bibliothek</h1>
+            <p class="text-lg text-slate-300 leading-relaxed mb-8">Deine Grok-Favoriten sind leer, enden bei älteren Einträgen oder zeigen nie, was du diese Woche erstellt hast? Meist liegt das nicht an deinem Browser. Grok hat im Juli 2026 geändert, wie es Medien speichert, und bei vielen Konten landet neu Erstelltes nicht mehr in der alten Favoritenliste. Diese Anleitung erklärt, was sich geändert hat, was weiterhin funktioniert und wie du eine vollständige Kopie deiner Grok-Bibliothek auf deiner eigenen Festplatte aufbewahrst.</p>
+
+            <!-- Short answer -->
+            <div class="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 md:p-8 mb-8">
+                <p class="text-emerald-300 text-sm font-semibold uppercase tracking-wide mb-3">Kurzantwort</p>
+                <p class="text-slate-200 leading-relaxed mb-3">Seit Groks Umstellung des Medien-Backends im Juli 2026 werden neu generierte Bilder und Videos bei vielen Konten nicht mehr zur alten Favoritenliste hinzugefügt. Alles, was diese Liste ausliest, übersieht, was du zuletzt erstellt hast. Die Medien selbst liegen weiterhin in deiner Grok-Bibliothek.</p><p class="text-slate-200 leading-relaxed mb-3">Zum Sichern öffnest du <a class="text-emerald-400 underline hover:text-white" href="https://grok.com/library" target="_blank" rel="noopener">grok.com/library</a>, klickst auf das Symbol von Grok Media Downloader, wählst <strong class="text-white font-semibold">📦 Alle generierten Medien (nach Unterhaltung)</strong> als Download-Quelle und klickst dann auf <strong class="text-white font-semibold">1. Liste erstellen</strong> und <strong class="text-white font-semibold">2. Download starten</strong>. Die kostenlose Version speichert Bilder der letzten 7 Tage. PRO ergänzt Videos, deine gesamte Bibliothek und Datumsfilter.</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=grok-favorites-not-loading&amp;utm_content=hero&amp;utm_term=de" target="_blank" rel="noopener" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>Zu Chrome hinzufügen</span>
+                </a>
+                <a href="/de/pricing.html" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                    <span>PRO-Preise ansehen</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide body -->
+    <div class="pb-8">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="what-changed" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">Was sich im Juli 2026 geändert hat</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">Im Juli 2026 hat Grok seine Medien auf ein neues Backend umgestellt, das auf Unterhaltungen und Assets aufbaut. Jedes Bild und jedes Video, das du generierst, gehört jetzt zu einer Unterhaltung und wird als Asset in deiner Bibliothek gespeichert. Seit dieser Änderung erhält die ältere Favoritenliste, die auf Groks Seiten als Saved erscheint, bei vielen Konten keine neu generierten Medien mehr.</p><p class="text-slate-300 leading-relaxed mb-4">Die Auswirkung wird leicht falsch gedeutet. Die Liste zeigt eventuell noch ältere Einträge und wirkt deshalb nicht defekt. Es fehlt einfach, was du in letzter Zeit generiert hast. Jedes Tool, das sich auf diese Liste stützt, hat dieselbe Lücke, auch ältere Versionen von Browser-Erweiterungen und die Quelle <strong class="text-white font-semibold">🌟 Favoriten</strong> in Grok Media Downloader.</p><p class="text-slate-300 leading-relaxed mb-4">Grok Media Downloader wurde in Version 2.5.0 an das neue Backend angepasst. Seit Version 2.5.1 ist die Quelle <strong class="text-white font-semibold">📦 Alle generierten Medien (nach Unterhaltung)</strong>, die deine gesamte Bibliothek statt der Favoritenliste ausliest, voreingestellt und für alle kostenlos. Unter der Quelle Favoriten zeigt das Popup jetzt einen Hinweis: <em class="not-italic text-slate-200">„⚠️ Seit Groks Änderung im Juli 2026 werden neu generierte Medien nicht mehr zu Favoriten hinzugefügt — die neuesten Elemente fehlen hier möglicherweise.“</em></p>
+        </section>
+        <aside class="mt-10 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6">
+            <div class="flex gap-4 items-start">
+                <i data-lucide="wifi-off" class="w-6 h-6 text-amber-400 flex-shrink-0 mt-1"></i>
+                <div>
+                    <p class="font-semibold text-white mb-2">Groks eigene Seite lädt gar nicht?</p>
+                    <p class="text-slate-300 leading-relaxed">Eine leere Seite, eine Fehlermeldung oder ein endlos drehendes Ladesymbol auf grok.com ist ein Problem auf Groks Seite oder mit deiner Verbindung, und keine Erweiterung kann das beheben. Schau in Groks eigener Hilfe nach oder versuch es später erneut. Die folgenden Schritte helfen dir, deine Medien herunterzuladen, sobald grok.com wieder normal lädt.</p>
+                </div>
+            </div>
+        </aside>
+        <section id="what-still-works" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">Was weiterhin funktioniert</h2>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4"><li><strong class="text-white font-semibold">Deine Bibliothek.</strong> Medien, die nach der Änderung generiert wurden, sind weiterhin in deiner Grok-Bibliothek gespeichert. Die Quelle 📦 Alle generierten Medien liest diese Bibliothek direkt aus und findet deshalb auch die neuen Inhalte, die ein Favoriten-Scan übersieht, gruppiert nach der Unterhaltung, aus der sie stammen.</li><li><strong class="text-white font-semibold">Deine älteren Favoriten.</strong> Die Quelle 🌟 Favoriten lädt weiterhin alles herunter, was die alte Liste enthält. Nutze sie, wenn du genau diese kuratierte Auswahl möchtest und nichts anderes.</li><li><strong class="text-white font-semibold">Tags.</strong> Wenn du deine Inhalte mit Grok-Tags ordnest, lädt die Quelle 🏷️ Tag alles aus einem Tag herunter.</li><li><strong class="text-white font-semibold">Download-Verlauf.</strong> Jede Quelle führt einen eigenen Verlauf darüber, was du bereits gespeichert hast. Wenn du dieselbe Sicherung erneut ausführst, werden daher nur neue Dateien geladen.</li></ul><p class="text-slate-300 leading-relaxed mb-4">Kurz gesagt: Die Favoritenliste zeigt deine Inhalte nur noch unvollständig, die Bibliothek dagegen ist weiterhin vollständig. Eine Sicherung, die die Bibliothek ausliest, hängt überhaupt nicht von dieser Liste ab.</p>
+        </section>
+        <section id="november-2026" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">November 2026: Imagine ist in Groks Library umgezogen</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">Am 12.–13. November 2026 folgte eine zweite Änderung. Grok hat Imagine in die Haupt-App integriert, und in der Seitenleiste steht jetzt Library. Bei manchen Konten sind der Imagine-Tab und die <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">/imagine</code>-Seiten verschwunden; diese Adressen leiten jetzt zu Library oder zur Startseite weiter. Wenn du deine Favoriten bisher über den Imagine-Tab geöffnet hast, such in der Seitenleiste nach Library oder geh direkt zu <a class="text-emerald-400 underline hover:text-white" href="https://grok.com/library" target="_blank" rel="noopener">grok.com/library</a>.</p><p class="text-slate-300 leading-relaxed mb-4">Versionen der Erweiterung vor 2.6.3 haben ihre Schaltflächen nur auf <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">/imagine</code>-Seiten aktiviert. Nach dieser Änderung konnten <strong class="text-white font-semibold">1. Liste erstellen</strong> und <strong class="text-white font-semibold">2. Download starten</strong> deshalb ausgegraut bleiben. Version 2.6.3 funktioniert auf jeder grok.com-Seite, empfohlen ist grok.com/library. Wenn deine Schaltflächen ausgegraut sind, folge zuerst der Anleitung <a class="text-emerald-400 underline hover:text-white" href="/de/grok-download-button-missing.html">Grok-Download-Button fehlt nach dem Update</a> und komm dann hierher zurück.</p>
+        </section>
+        <section id="back-up" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">So sicherst du deine gesamte Grok-Bibliothek</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">Die folgenden Schritte nutzen die Quelle 📦 Alle generierten Medien (nach Unterhaltung). Diese Quelle liest deine Bibliothek statt der Favoritenliste aus, legt die Dateien in einem Ordner pro Unterhaltung ab und überspringt alles, was du bereits heruntergeladen hast. Der erste Durchlauf kann bei einer großen Bibliothek eine Weile dauern. Starte ihn daher, wenn du den Tab geöffnet lassen kannst.</p>
+            <ol class="space-y-8 mt-8">
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">1</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">Grok Media Downloader installieren oder aktualisieren</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">Füge Grok Media Downloader aus dem <a target="_blank" rel="noopener" class="text-emerald-400 underline hover:text-white" href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=grok-favorites-not-loading&amp;utm_content=steps&amp;utm_term=de">Chrome Web Store</a> hinzu und pinne die Erweiterung an die Symbolleiste an, damit das Symbol sichtbar bleibt. Wenn du sie bereits hast, prüfe, ob Version 2.6.3 oder neuer installiert ist: Öffne <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">chrome://extensions</code> und lies die Versionsnummer auf der Karte der Erweiterung ab.</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">2</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">grok.com öffnen und anmelden</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">Öffne <a class="text-emerald-400 underline hover:text-white" href="https://grok.com/library" target="_blank" rel="noopener">grok.com/library</a> und stell sicher, dass du mit dem Konto angemeldet bist, das du sichern möchtest. Seit Version 2.6.3 funktioniert jede grok.com-Seite, und bei Konten, die grok.com/imagine/saved noch haben, funktioniert auch diese Seite. Lass diesen Tab aktiv, wenn du auf das Symbol der Erweiterung klickst.</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">3</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">📦 Alle generierten Medien als Download-Quelle wählen</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">Klicke auf das Symbol der Erweiterung, um das Popup zu öffnen. Wähle im Abschnitt <strong class="text-white font-semibold">📥 Download-Quelle &amp; Filter</strong> unter <strong class="text-white font-semibold">🎯 Download-Quelle</strong> die Option <strong class="text-white font-semibold">📦 Alle generierten Medien (nach Unterhaltung)</strong>. In aktuellen Versionen ist sie voreingestellt; prüf es trotzdem, falls du früher die Quelle gewechselt hast. In der kostenlosen Version erscheint darunter ein Hinweis: <em class="not-italic text-slate-200">„ℹ️ Die kostenlose Version scannt nur die letzten 7 Tage. Mit Pro erhalten Sie Ihre gesamte Mediathek und Datumsfilter.“</em></p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 338px;">
+                            <img src="/assets/guides/de/popup-sources.jpg" alt="Popup von Grok Media Downloader mit der Auswahl der Download-Quelle (Favoriten, Tag und Alle generierten Medien nach Unterhaltung) und dem Hinweis der kostenlosen Version zu den letzten 7 Tagen" loading="lazy" width="336" height="565" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Die Auswahl der Download-Quelle. 📦 Alle generierten Medien liest deine gesamte Bibliothek statt der Favoritenliste aus.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">4</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">Medientypen und mit PRO einen Datumsbereich wählen</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">Lass unter <strong class="text-white font-semibold">🎬 Medientypen</strong> die Option <strong class="text-white font-semibold">Bilder</strong> aktiviert. <strong class="text-white font-semibold">Videos (Pro)</strong> ist in der kostenlosen Version gesperrt. Mit PRO kannst du einen Durchlauf außerdem auf einen <strong class="text-white font-semibold">Datumsbereich</strong> oder die letzten Stunden beschränken oder den Filter auf <strong class="text-white font-semibold">Alle herunterladen</strong> lassen, um alles zu archivieren. Kostenlose Durchläufe umfassen immer die letzten 7 Tage.</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">5</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">Auf 1. Liste erstellen klicken</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">Die Erweiterung durchsucht deine Bibliothek, die neuesten Einträge zuerst, und zählt, was sie findet. Währenddessen zeigt das Popup, wie viele Einträge bisher gefunden wurden. Am Ende öffnet sich der Dialog <strong class="text-white font-semibold">📊 Download-Zusammenfassung</strong>. Er zeigt, wie viele Bilder und Videos noch heruntergeladen werden müssen (Videos aufgeschlüsselt nach 1080p, HD, 720p und SD), und fragt <em class="not-italic text-slate-200">„Download starten?“</em>. Klicke auf OK, um sofort zu starten. Möchtest du die Liste erst ansehen, klicke auf Abbrechen: Die Zahlen bleiben im Popup stehen, und <strong class="text-white font-semibold">2. Download starten</strong> bleibt aktiv.</p><p class="text-slate-300 leading-relaxed mb-4">Wird der Scan vorzeitig abgebrochen, meldet das Popup <em class="not-italic text-slate-200">„Scan unterbrochen — Teilliste gespeichert“</em>. Warte ein paar Minuten und klicke erneut auf <strong class="text-white font-semibold">1. Liste erstellen</strong>.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 338px;">
+                            <img src="/assets/guides/de/popup-list-ready.jpg" alt="Popup nach „Liste erstellen“ mit der Anzahl der noch herunterzuladenden Bilder und Videos und der aktivierten Schaltfläche „Download starten“" loading="lazy" width="336" height="822" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Nach dem Scan: was noch herunterzuladen ist; „2. Download starten“ ist bereit.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">6</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">Den Download starten</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">Hast du in der Zusammenfassung auf OK geklickt, läuft der Download bereits; sonst klicke auf <strong class="text-white font-semibold">2. Download starten</strong>. Die Dateien werden nacheinander heruntergeladen. Ein Fortschrittsbalken mit geschätzter Restzeit zeigt, wie weit der Durchlauf ist, und <strong class="text-white font-semibold">⏹ Download stoppen</strong> hält ihn an. Lass den grok.com-Tab geöffnet, bis der Durchlauf abgeschlossen ist. Um später weiterzumachen, klicke erneut auf <strong class="text-white font-semibold">2. Download starten</strong>; bereits gespeicherte Dateien werden übersprungen. Bei mehr als 250 Videos sind Pausen eingeplant: Nach jeweils 250 Videos wartet die Erweiterung (standardmäßig drei Minuten) und setzt den Download dann selbstständig fort. Die Download-Zusammenfassung weist dich vorher darauf hin, und unter <strong class="text-white font-semibold">⏱️ Ratenlimit-Abkühlung</strong> in den <strong class="text-white font-semibold">⚙️ Einstellungen</strong> kannst du die Pause auf 1 bis 60 Minuten einstellen.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 338px;">
+                            <img src="/assets/guides/de/popup-downloading.jpg" alt="Popup während eines Downloads mit Fortschrittsbalken, geschätzter Restzeit und der Schaltfläche „Download stoppen“" loading="lazy" width="336" height="718" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Ein laufender Download: Fortschrittsbalken, Restzeit und ⏹ Download stoppen.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">7</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">Dateien finden</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">Die Dateien landen im Download-Ordner von Chrome. Die Quelle für die gesamte Bibliothek speichert sie unter <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">grok_downloads/conversations</code>, mit einem Ordner pro Unterhaltung, sodass ein Bild und die daraus erstellten Videos zusammenbleiben. Die Ordnernamen kannst du unter <strong class="text-white font-semibold">⚙️ Einstellungen</strong> ändern.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <a href="/assets/guides/download-folders.jpg" target="_blank" rel="noopener" class="block"><img src="/assets/guides/download-folders.jpg" alt="Beispiel für einen grok_downloads-Ordner mit Prompt-basierten Dateinamen: conversations/ mit einem Ordner pro Unterhaltung, dazu die Ordner images/, videos/, tags/ und projects/, eine .json-Datei neben einem Bild und die metadata.json eines Projekts" width="1280" height="1130" loading="lazy" class="w-full h-auto"></a>
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Beispiel für einen grok_downloads-Ordner mit Prompt-basierten Dateinamen: conversations/, images/, videos/, tags/ und projects/, dazu eine .json-Datei und die metadata.json eines Projekts. Öffne das Bild, um es in voller Größe zu sehen.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">8</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">Die Sicherung von Zeit zu Zeit wiederholen</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">Klicke erneut auf <strong class="text-white font-semibold">1. Liste erstellen</strong> und <strong class="text-white font-semibold">2. Download starten</strong>, wann immer du die Sicherung auf den neuesten Stand bringen möchtest. Es werden nur neue Dateien heruntergeladen. In der kostenlosen Version hältst du mit einem Durchlauf pro Woche mit dem 7-Tage-Fenster für Bilder Schritt.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <section id="free-vs-pro" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">Kostenlos und PRO für Bibliothekssicherungen</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">Alles, was du zur Wahl der passenden Quelle brauchst, ist kostenlos. Die Grenzen betreffen, wie weit die Quelle für die gesamte Bibliothek zurückreicht, und Videos.</p>
+            <div class="overflow-x-auto -mx-4 px-4 mb-6">
+                <table class="w-full border-collapse text-sm" style="hyphens: auto; -webkit-hyphens: auto;">
+                    <thead><tr class="border-b border-slate-700"><th class="py-3 px-4 text-left text-white font-bold"></th><th class="py-3 px-4 text-center text-white font-bold">Kostenlos</th><th class="py-3 px-4 text-center text-white font-bold">PRO</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">Auswahl der Download-Quelle: Favoriten, Tag, Alle generierten Medien</td><td class="py-3 px-4 text-center text-slate-400">✓</td><td class="py-3 px-4 text-center text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">📦 Alle generierten Medien (gesamte Bibliothek)</td><td class="py-3 px-4 text-center text-slate-400">Letzte 7 Tage</td><td class="py-3 px-4 text-center text-slate-400">Gesamte Bibliothek</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">Bilder-Downloads</td><td class="py-3 px-4 text-center text-slate-400">✓</td><td class="py-3 px-4 text-center text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">Video-Downloads</td><td class="py-3 px-4 text-center text-slate-400">—</td><td class="py-3 px-4 text-center text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">Filter für Datumsbereich und letzte Stunden</td><td class="py-3 px-4 text-center text-slate-400">—</td><td class="py-3 px-4 text-center text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">Download-Verlauf, Dateinamensvorlagen, begleitende .json-Dateien</td><td class="py-3 px-4 text-center text-slate-400">✓</td><td class="py-3 px-4 text-center text-slate-400">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-300 leading-relaxed mb-4">PRO ist ein einmaliger Kauf für $4.99 mit Lizenz auf Lebenszeit und 7-tägiger Geld-zurück-Garantie. Details findest du auf der <a class="text-emerald-400 underline hover:text-white" href="/de/pricing.html">Preisseite</a>.</p>
+        </section>
+
+        <section id="troubleshooting" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">Fehlerbehebung</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">Die meisten Probleme nach Groks Änderungen im Jahr 2026 liegen an der gewählten Quelle, am 7-Tage-Fenster der kostenlosen Version oder am aktiven Tab. Fang am besten hier an.</p>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">„1. Liste erstellen“ findet nichts<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">Prüfe drei Dinge. Erstens die Download-Quelle: Steht dort 🌟 Favoriten, wechsle zu 📦 Alle generierten Medien (nach Unterhaltung). Zweitens den Zeitraum: Die kostenlose Version berücksichtigt nur die letzten 7 Tage, die Liste bleibt also leer, wenn du in dieser Zeit nichts generiert hast. Drittens den Download-Verlauf: Die Liste zählt nur Dateien, die noch heruntergeladen werden müssen. Nach einem vollständigen Durchlauf gibt es daher womöglich nichts mehr zu tun.</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Meine neuesten Bilder fehlen in der Liste<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">Die Liste ist eine Momentaufnahme von dem Zeitpunkt, an dem du auf „1. Liste erstellen“ klickst. Achte darauf, dass die Quelle 📦 Alle generierten Medien ist und nicht 🌟 Favoriten, und erstelle die Liste erneut, damit alles enthalten ist, was seit dem letzten Scan entstanden ist.</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">„1. Liste erstellen“ und „2. Download starten“ sind ausgegraut<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">Entweder ist der aktive Tab keine grok.com-Seite, oder deine Erweiterung ist älter als 2.6.3 und funktioniert nicht auf grok.com/library. Siehe <a class="text-emerald-400 underline hover:text-white" href="/de/grok-download-button-missing.html">Grok-Download-Button fehlt nach dem Update</a>.</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Videos werden nicht heruntergeladen<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">Die kostenlose Version lädt nur Bilder herunter, deshalb ist „Videos (Pro)“ gesperrt. Mit PRO setzt du das Häkchen und klickst vor dem Start erneut auf „1. Liste erstellen“.</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Downloads schlagen nach einem langen Durchlauf fehl<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">Bei sehr langen Durchläufen kann Grok anfangen, Downloads abzulehnen, zum Beispiel mit HTTP-403-Fehlern nach Tausenden von Videos. Lade den grok.com-Tab neu, öffne das Popup und klicke erneut auf „2. Download starten“. Bereits gespeicherte Dateien werden übersprungen.</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Das Popup meldet „Erstellung fehlgeschlagen“<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">Stell sicher, dass du auf grok.com angemeldet bist, lade den Tab neu und versuch es erneut.</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Ich habe die Dateien gelöscht, aber die Erweiterung meldet, dass schon alles heruntergeladen ist<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">Jede Quelle führt ihren eigenen Download-Verlauf. Für die Quelle der gesamten Bibliothek öffnest du den Bereich „🧹 Löschen“ und klickst auf „Unterhaltungsverlauf löschen“. Dadurch wird nur der Verlauf der Erweiterung zurückgesetzt; weder bei Grok noch auf deiner Festplatte wird etwas gelöscht.</p></div>
+                </details>
+            </div>
+        </section>
+
+        <section id="faq" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">Häufig gestellte Fragen</h2>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Sind meine Grok-Medien weg, wenn sie nicht in den Favoriten sind?</h3>
+                    <p class="text-slate-400 leading-relaxed">Meist nicht. Seit Juli 2026 werden neu generierte Medien bei vielen Konten nicht mehr zur alten Favoritenliste hinzugefügt, sie sind aber weiterhin in deiner Grok-Bibliothek gespeichert. Die Quelle 📦 Alle generierten Medien liest die Bibliothek aus und findet deshalb auch neue Inhalte, die ein Favoriten-Scan übersieht. Fehlt etwas auch in Groks Library (grok.com/library), schau in Groks eigener Hilfe nach.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Kann ich meine Grok-Bibliothek kostenlos sichern?</h3>
+                    <p class="text-slate-400 leading-relaxed">Ja, mit Einschränkungen. Die kostenlose Version lädt mit der Quelle 📦 Alle generierten Medien die Bilder der letzten 7 Tage herunter. PRO, ein einmaliger Kauf für $4.99, ergänzt Videos, deine gesamte Bibliothek ohne Zeitlimit und Datumsfilter. Details findest du auf der <a class="text-emerald-400 underline hover:text-white" href="/de/pricing.html">Preisseite</a>.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Wo werden die heruntergeladenen Dateien gespeichert?</h3>
+                    <p class="text-slate-400 leading-relaxed">Im Download-Ordner von Chrome. Die Quelle für die gesamte Bibliothek nutzt grok_downloads/conversations, mit einem Ordner pro Unterhaltung. Die Quelle Favoriten nutzt grok_downloads/images und grok_downloads/videos, die Quelle Tag nutzt grok_downloads/tags. Diese Pfade kannst du unter ⚙️ Einstellungen ändern.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Lädt eine erneute Sicherung Duplikate herunter?</h3>
+                    <p class="text-slate-400 leading-relaxed">Nicht innerhalb derselben Quelle. Jede Quelle führt einen Download-Verlauf, und bereits gespeicherte Dateien werden übersprungen, sodass der nächste Durchlauf nur neue Medien herunterlädt. Die Verläufe sind allerdings getrennt: Eine Datei, die du über 🌟 Favoriten gespeichert hast, kann über 📦 Alle generierten Medien erneut heruntergeladen werden.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Sollte ich die Quelle Favoriten noch verwenden?</h3>
+                    <p class="text-slate-400 leading-relaxed">Nutze sie, wenn du genau die Auswahl möchtest, die die alte Favoritenliste enthält. Für alles, was seit Juli 2026 generiert wurde, oder für eine vollständige Sicherung verwende 📦 Alle generierten Medien (nach Unterhaltung).</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Lädt die Erweiterung meine Medien irgendwo hoch?</h3>
+                    <p class="text-slate-400 leading-relaxed">Nein. Alles läuft lokal in deinem Browser, und die Dateien gehen direkt von Grok auf deine Festplatte. Die einzige externe Verbindung ist die Prüfung der PRO-Lizenz, die mit dem Lizenzserver von Kario Studio kommuniziert.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="related" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">Weitere Anleitungen</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <a href="/de/library-download.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">So lädst du alle Grok-Imagine-Favoriten auf einmal herunter</span>
+                    <span class="block text-sm text-slate-400">Eine Liste erstellen und dann alle Bilder und Videos in einem Durchgang herunterladen.</span>
+                </a>
+                <a href="/de/save-grok-imagine-prompts.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">Grok-Imagine-Videos mit ihren Prompts speichern</span>
+                    <span class="block text-sm text-slate-400">Den Prompt in den Dateinamen übernehmen oder in einer .json-Datei neben jedem Video ablegen.</span>
+                </a>
+                <a href="/de/download-grok-videos-hd.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">Grok-Videos in HD herunterladen</span>
+                    <span class="block text-sm text-slate-400">Videos auf 720p hochstufen, mit SuperGrok Heavy auf 1080p, und dann in bester Qualität herunterladen.</span>
+                </a>
+                <a href="/de/grok-download-button-missing.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">Grok-Download-Button fehlt nach dem Update</span>
+                    <span class="block text-sm text-slate-400">Ausgegraute Schaltflächen „1. Liste erstellen“ und „2. Download starten“ nach Groks Änderung im November 2026 beheben.</span>
+                </a>
+                <a href="/de/faq.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">FAQ</span>
+                    <span class="block text-sm text-slate-400">Kurze Antworten zur Erweiterung, zu PRO und zu Groks jüngsten Änderungen.</span>
+                </a>
+            </div>
+        </section>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="mt-16 py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Behalte eine eigene Kopie deiner Grok-Bibliothek</h2>
+            <p class="text-slate-400 mb-8">Kostenlos: Bilder der letzten 7 Tage. PRO: deine gesamte Bibliothek, Videos und Datumsfilter für einmalig $4.99.</p>
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=grok-favorites-not-loading&amp;utm_content=bottom_cta&amp;utm_term=de" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>Zu Chrome hinzufügen</span>
+                </a>
+                <a href="/de/pricing.html" class="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span>$4.99 PRO auf Lebenszeit</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-sm mt-6">Einmalzahlung. Auch Nutzer der kostenlosen Version erhalten Updates.</p>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/de/privacy.html" class="hover:text-white">Datenschutzerklärung</a> · <a href="/de/terms.html" class="hover:text-white">Nutzungsbedingungen</a> · <a href="/manager/" class="hover:text-white">Grok Media Manager</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot;<a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a><nav class="mt-3" aria-label="Sprachen"><a href="/grok-favorites-not-loading.html" hreflang="en" class="hover:text-white">English</a> · <a href="/zh-TW/grok-favorites-not-loading.html" hreflang="zh-TW" class="hover:text-white">繁體中文</a> · <a href="/ja/grok-favorites-not-loading.html" hreflang="ja" class="hover:text-white">日本語</a> · <a href="/ko/grok-favorites-not-loading.html" hreflang="ko" class="hover:text-white">한국어</a> · <a href="/es/grok-favorites-not-loading.html" hreflang="es" class="hover:text-white">Español</a> · <a href="/de/grok-favorites-not-loading.html" hreflang="de" class="hover:text-white text-slate-300">Deutsch</a></nav></div></footer></div>
+
+    <!-- Scripts -->
+    <script src="/js/i18n.js?v=20261119"></script>
+    <script src="/js/components.js?v=20261119"></script>
+</body>
+
+</html>

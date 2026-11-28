@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Gen Queue | Automated Video Generation Queue - GrokMediaDownloader</title>
-    <meta name="description" content="Automate Grok video generation with Video Gen Queue. Batch scheduling, 4 generation modes, auto-retry, rate limit detection. PRO feature for GrokMediaDownloader.">
+    <meta name="description" content="Automate Grok video generation with Video Gen Queue. Batch scheduling, 4 generation modes, auto-retry, rate limit detection. Free: 50 uses; PRO: unlimited.">
     <meta name="keywords" content="Video Gen Queue, automated video generation, batch queue, Grok AI video, Chrome extension, auto retry, rate limit detection">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -92,31 +92,47 @@
           "name": "What is Video Gen Queue and how does it work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Video Gen Queue is a PRO feature that automatically tracks every video Grok generates during your session. As Grok processes your video generation requests, the extension queues each completed video for one-click batch download — so you never have to manually save videos one by one."
+            "text": "Video Gen Queue automates Grok video generation from the extension's side panel. You add image posts to the queue, choose a mode (Custom, Normal, Fun or Spicy) and how many successful videos you want per post, and the extension opens each post on grok.com, fills in the prompt and submits it. Moderated or failed attempts are retried up to your retry limit, then the queue moves on to the next post. The free version includes 50 uses; PRO makes it unlimited."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I download multiple Grok videos at once?",
+          "name": "How do I add posts to the queue?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. That is the primary purpose of Video Gen Queue. Once videos are queued, click Download All to save every video to your local drive in a single operation."
+            "text": "Click 🎯 Queue in the popup to open the panel. On a Grok post page, click the floating 🎯 button to set the prompt and options and add that post; in the panel you can also paste a post ID or URL under Add Item. Batch Add Recent adds image posts from your Grok Favorites created in the last 1 to 72 hours, with one shared prompt. Since Grok's July 2026 change, newer images may not be in Favorites."
           }
         },
         {
           "@type": "Question",
-          "name": "What video formats are downloaded?",
+          "name": "Which settings can I choose for each item?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Videos are downloaded in their original format as provided by Grok — typically MP4. The extension downloads the source file directly, preserving the original resolution, frame rate, and quality without any re-encoding."
+            "text": "Mode (Custom, Normal, Fun or Spicy), the prompt (Custom needs one; the other modes work without it), target success count, maximum retries, duration (6 s or 10 s) and resolution (480p or 720p). The 10 s and 720p options need SuperGrok; if your account isn't eligible, Grok may reject or flag the request."
           }
         },
         {
           "@type": "Question",
-          "name": "Will the queue be lost if I close the extension panel?",
+          "name": "Can I see how each item is doing?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. The Video Gen Queue is persisted in IndexedDB, which survives tab switches and extension panel closures. Your queued videos remain available until you clear the queue manually or download them."
+            "text": "Yes. Each item shows whether it is pending, active, completed or failed, with its success and failure counts against the target. Prompt Stats record how often each prompt succeeds or is moderated, so you can see which prompts work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if Grok rate-limits me or a generation hangs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If Grok answers with a rate-limit error (HTTP 429), the queue stops and shows a message; wait a while, then click Start again. If no result arrives within the generation timeout (180 seconds by default, adjustable from 30 to 600 in Settings), that attempt is marked as an error and the queue continues with the next item."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the queue be lost if I close the side panel or reload the page?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Queue items and prompt stats are stored in your browser's IndexedDB, so they survive closing the panel or reloading grok.com, and processing picks up again after a reload. Keep the browser open and leave the Grok tab on the post pages while the queue runs."
           }
         },
         {
@@ -124,7 +140,7 @@
           "name": "Is Video Gen Queue available in the free version?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Video Gen Queue is a PRO-exclusive feature. Upgrade to PRO for $4.99 (lifetime license) to unlock Video Gen Queue along with Stream Capture, Story Mode, and Project Download."
+            "text": "Yes, with a limit. The free version includes 50 uses, and one use is one video that Grok generates successfully through the queue; moderated or failed attempts don't count. PRO ($4.99 one-time, lifetime license) makes it unlimited and also unlocks video downloads, Stream Capture, Story Mode export and Project Download."
           }
         }
       ]
@@ -206,7 +222,7 @@
 
                 <p class="text-xl md:text-2xl text-pink-300 mb-4" data-i18n="queue_subtitle">Automated Video Generation Queue</p>
 
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="queue_page_desc">New Side Panel interface for batch video generation. Supports 4 generation modes, auto-retry on failure, and smart rate limit detection for fully automated video generation.</p>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="queue_page_desc">Side panel for batch video generation. Supports 4 generation modes, automatic retries up to a limit you set, and rate-limit detection that stops the queue when Grok asks you to slow down.</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=video-gen-queue&amp;utm_content=hero&amp;utm_term=en" target="_blank" rel="noopener" class="px-8 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
@@ -296,7 +312,7 @@
                         <span class="text-2xl">🔄</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_1_title">Auto Retry</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_1_desc">Failed generations automatically re-queue, ensuring every task completes successfully.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_1_desc">Moderated or failed attempts are retried automatically, up to the retry limit you set for each item.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -305,7 +321,7 @@
                         <span class="text-2xl">📋</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_2_title">Batch Add to Queue</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_2_desc">Select multiple items from favorites and batch add them to the generation queue with one click.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_2_desc">Batch Add Recent adds image posts from your Grok Favorites created in the last 1 to 72 hours, with one shared prompt.</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -323,7 +339,7 @@
                         <span class="text-2xl">🛡️</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_4_title">Rate Limit Detection</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_4_desc">Smart detection of Grok API rate limits, auto-pause and resume after cooldown.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_4_desc">Detects Grok's rate-limit response (HTTP 429) and stops the queue, so you can wait and start it again.</p>
                 </div>
             </div>
         </div>
@@ -358,7 +374,7 @@
                             <i data-lucide="list-plus" class="text-rose-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_2_title">Add to Queue</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="queue_step_2_desc">Click the floating 🎯 button or use batch add to select a time range (1h~72h) and add recent Posts with one click.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_2_desc">Click the floating 🎯 button on a post, or use Batch Add Recent to add image posts from your Favorites created in the last 1 to 72 hours.</p>
                     </div>
                 </div>
 
@@ -394,7 +410,7 @@
                             <i data-lucide="check-circle" class="text-emerald-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_5_title">Collect Results</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="queue_step_5_desc">Successfully generated videos automatically appear in your Grok favorites, ready for download anytime.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_5_desc">Each item stops when it reaches its target or its retry limit, and the panel shows its success and failure counts. Download the new videos with the popup (video downloads need PRO).</p>
                     </div>
                 </div>
             </div>
@@ -436,7 +452,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1" data-i18n="queue_tech_3_title">Fetch Interceptor</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_3_desc">MAIN world interception of generation results with 90-second timeout fallback, ensuring accurate tracking of every generation.</p>
+                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_3_desc">Reads generation results by intercepting Grok's responses in the page, with a timeout (180 s by default, adjustable from 30 to 600 s) so one stuck attempt doesn't stall the queue.</p>
                             </div>
                         </div>
 
@@ -537,7 +553,7 @@
                         <i data-lucide="play" class="text-blue-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_normal_title">Normal</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_normal_desc">Standard video generation using the original image prompt. The safest and most predictable option for consistent results.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_normal_desc">Grok's Normal preset. No prompt needed.</p>
                 </div>
 
                 <!-- Fun Mode -->
@@ -546,7 +562,7 @@
                         <i data-lucide="party-popper" class="text-amber-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_fun_title">Fun</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_fun_desc">Adds playful, animated style to the generation. Great for whimsical and cartoon-like video effects.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_fun_desc">Grok's Fun preset. No prompt needed.</p>
                 </div>
 
                 <!-- Spicy Mode -->
@@ -555,7 +571,7 @@
                         <i data-lucide="flame" class="text-rose-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_spicy_title">Spicy</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_spicy_desc">Pushes creative boundaries with bolder artistic interpretation. Expect more dramatic motion and visual surprises.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_spicy_desc">Grok's Spicy preset. No prompt needed; the panel warns that Grok may flag these requests.</p>
                 </div>
             </div>
 
@@ -563,7 +579,7 @@
             <div class="mt-12 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-pink-500/10 border border-pink-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="info" class="text-pink-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="queue_modes_note">Each queue item can use a different mode. Auto-retry handles moderation rejections automatically, so the queue keeps running without interruption.</p>
+                    <p class="text-slate-300 text-sm" data-i18n="queue_modes_note">Each queue item can use a different mode. Moderated attempts are retried up to each item's retry limit, then the queue moves on to the next item.</p>
                 </div>
             </div>
         </div>
@@ -579,31 +595,31 @@
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">What is Video Gen Queue and how does it work?</h3>
-                    <p class="text-slate-400">Video Gen Queue is a PRO feature that automatically tracks every video Grok generates during your session. As Grok processes your video generation requests, the extension queues each completed video for one-click batch download — so you never have to manually save videos one by one.</p>
+                    <p class="text-slate-400">Video Gen Queue automates Grok video generation from the extension's side panel. You add image posts to the queue, choose a mode (Custom, Normal, Fun or Spicy) and how many successful videos you want per post, and the extension opens each post on grok.com, fills in the prompt and submits it. Moderated or failed attempts are retried up to your retry limit, then the queue moves on to the next post. The free version includes 50 uses; PRO makes it unlimited.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Can I download multiple Grok videos at once?</h3>
-                    <p class="text-slate-400">Yes. That is the primary purpose of Video Gen Queue. Once videos are queued, click "Download All" to save every video to your local drive in a single operation. You can also selectively remove videos from the queue before downloading.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">How do I add posts to the queue?</h3>
+                    <p class="text-slate-400">Click 🎯 Queue in the popup to open the panel. On a Grok post page, click the floating 🎯 button to set the prompt and options and add that post; in the panel you can also paste a post ID or URL under Add Item. Batch Add Recent adds image posts from your Grok Favorites created in the last 1 to 72 hours, with one shared prompt. Since Grok's July 2026 change, newer images may not be in Favorites.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Does Video Gen Queue work with all types of Grok video generation?</h3>
-                    <p class="text-slate-400">Video Gen Queue supports all video content generated by Grok's AI video generation feature. It detects video URLs as they are rendered on the page and adds them to the queue automatically, regardless of length or resolution.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Which settings can I choose for each item?</h3>
+                    <p class="text-slate-400">Mode (Custom, Normal, Fun or Spicy), the prompt (Custom needs one; the other modes work without it), target success count, maximum retries, duration (6 s or 10 s) and resolution (480p or 720p). The 10 s and 720p options need SuperGrok; if your account isn't eligible, Grok may reject or flag the request.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">What video formats are downloaded?</h3>
-                    <p class="text-slate-400">Videos are downloaded in their original format as provided by Grok — typically MP4. The extension downloads the source file directly, preserving the original resolution, frame rate, and quality without any re-encoding.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Can I see how each item is doing?</h3>
+                    <p class="text-slate-400">Yes. Each item shows whether it is pending, active, completed or failed, with its success and failure counts against the target. Prompt Stats record how often each prompt succeeds or is moderated, so you can see which prompts work.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Will the queue be lost if I close the extension panel?</h3>
-                    <p class="text-slate-400">No. The Video Gen Queue is persisted in IndexedDB, which survives tab switches and extension panel closures. Your queued videos remain available until you clear the queue manually or download them.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">What happens if Grok rate-limits me or a generation hangs?</h3>
+                    <p class="text-slate-400">If Grok answers with a rate-limit error (HTTP 429), the queue stops and shows a message; wait a while, then click Start again. If no result arrives within the generation timeout (180 seconds by default, adjustable from 30 to 600 in Settings), that attempt is marked as an error and the queue continues with the next item.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Can I see the status of each video in the queue?</h3>
-                    <p class="text-slate-400">Yes. The queue panel shows each video with its status: queued, downloading, or completed. You can see file sizes and preview thumbnails where available, making it easy to identify and manage your video collection.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Will the queue be lost if I close the side panel or reload the page?</h3>
+                    <p class="text-slate-400">No. Queue items and prompt stats are stored in your browser's IndexedDB, so they survive closing the panel or reloading grok.com, and processing picks up again after a reload. Keep the browser open and leave the Grok tab on the post pages while the queue runs.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Is Video Gen Queue available in the free version?</h3>
-                    <p class="text-slate-400">Video Gen Queue is a PRO-exclusive feature. Upgrade to PRO for $4.99 (lifetime license) to unlock Video Gen Queue along with Stream Capture, Story Mode, and Project Download.</p>
+                    <p class="text-slate-400">Yes, with a limit. The free version includes 50 uses, and one use is one video that Grok generates successfully through the queue; moderated or failed attempts don't count. PRO ($4.99 one-time, lifetime license) makes it unlimited and also unlocks video downloads, Stream Capture, Story Mode export and Project Download.</p>
                 </div>
             </div>
         </div>

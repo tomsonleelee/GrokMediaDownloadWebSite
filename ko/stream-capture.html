@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>스트림 캡처 | 실시간 Grok 이미지 자동 캡처 - GrokMediaDownloader PRO</title>
-    <meta name="description" content="스트림 캡처는 Grok AI를 실시간으로 모니터링하여 생성된 이미지를 자동으로 캡처합니다. DOM 옵저버 기술로 스크롤하면서 새 이미지를 감지하고, 원클릭 일괄 다운로드를 지원합니다. GrokMediaDownloader PRO 기능.">
+    <meta name="description" content="스트림 캡처는 grok.com 탭을 지켜보며 그 탭에서 Grok이 생성한 이미지를 모아 한 번에 다운로드합니다. GrokMediaDownloader PRO 기능.">
     <meta name="keywords" content="스트림 캡처, grok 이미지 캡처, 실시간 이미지 다운로드, DOM 옵저버, 일괄 이미지 다운로드, grok AI 이미지, 자동 캡처, 크롬 확장 프로그램">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -89,42 +89,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "스트림 캡처는 모든 Grok 페이지에서 작동하나요?",
+          "name": "스트림 캡처는 무엇을 캡처하고 어디서 작동하나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "네. 스트림 캡처는 메인 피드, 개별 게시물 페이지, 검색 결과 등 Grok이 이미지를 생성하는 모든 페이지를 모니터링합니다. DOM 관찰 기술을 사용하므로 Grok이 새 이미지를 렌더링하는 곳이라면 어디서나 작동합니다."
+            "text": "기능을 켠 grok.com 탭을 지켜보며, Imagine에서 만드는 동안 Grok이 페이지로 보내는 생성 이미지를 모읍니다. 썸네일이나 아이콘 같은 작은 이미지(약 120KB 미만)는 무시하며, 이미지만 캡처하고 동영상은 캡처하지 않습니다."
           }
         },
         {
           "@type": "Question",
-          "name": "한 세션에서 몇 장의 이미지를 캡처할 수 있나요?",
+          "name": "최대 몇 장까지 캡처할 수 있나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "제한이 없습니다. 스트림 캡처는 단일 모니터링 세션에서 수백 장의 이미지를 대기열에 추가할 수 있습니다. 대기열은 IndexedDB에 저장되므로 탭을 전환하거나 확장 프로그램 패널을 닫아도 유지됩니다."
+            "text": "한 세션에 최대 1,000장입니다. 1,000장에 도달하면 멈추고, 계속하기 전에 캡처한 이미지를 다운로드하고 지우라고 안내합니다."
           }
         },
         {
           "@type": "Question",
-          "name": "스트림 캡처가 브라우저를 느리게 만드나요?",
+          "name": "캡처한 이미지는 어떻게 저장하나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "아니요. Chrome의 네이티브 MutationObserver API를 사용하여 매우 효율적입니다. 관찰자는 DOM이 변경될 때만 실행되므로 이미지를 생성하지 않을 때는 CPU 사용률이 거의 0에 가깝습니다."
+            "text": "팝업에서 '캡처된 항목 다운로드'를 누르세요. 파일은 다운로드 폴더의 grok_downloads/stream에 저장되며(경로는 설정에서 변경 가능), 파일 이름은 grok_stream_ 뒤에 캡처 시각이 붙습니다. '캡처 삭제'는 목록을 비웁니다."
           }
         },
         {
           "@type": "Question",
-          "name": "모니터링을 일시 중지하고 재개할 수 있나요?",
+          "name": "탭을 새로고침하거나 닫으면 캡처한 이미지가 남아 있나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "네. 확장 프로그램 패널에서 \"모니터링 중지\" 버튼을 클릭하면 언제든지 일시 중지할 수 있습니다. 이미 캡처된 이미지는 대기열에 남아 있습니다. \"스트림 캡처 시작\"을 다시 클릭하면 재개되며, 새 이미지가 같은 대기열에 추가됩니다."
+            "text": "남지 않습니다. 캡처한 이미지는 다운로드할 때까지 해당 grok.com 탭의 메모리에만 보관되므로, 새로고침하거나 탭을 닫기 전에 먼저 다운로드하세요."
           }
         },
         {
           "@type": "Question",
-          "name": "스트림 캡처는 중복 이미지를 자동으로 제거하나요?",
+          "name": "캡처를 일시 중지했다가 다시 시작할 수 있나요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "네. 스트림 캡처는 해시 비교를 사용하여 이미 컬렉션이나 현재 대기열에 있는 이미지를 감지하고 건너뜁니다. 위로 스크롤하거나 게시물을 다시 방문할 때 같은 이미지를 두 번 다운로드하는 것을 방지합니다."
+            "text": "네. '활성화' 스위치를 끄면 새 이미지 감시가 멈추고, 이미 캡처한 이미지는 목록에 남습니다. 다시 켜면 같은 목록에 계속 추가됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "같은 이미지가 두 번 캡처되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "아니요. 새 이미지는 이번 세션에서 이미 캡처한 이미지와 비교되므로, 다시 나타난 이미지가 중복으로 추가되지 않습니다."
           }
         },
         {
@@ -132,7 +140,7 @@
           "name": "스트림 캡처는 무료인가요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "스트림 캡처는 PRO 전용 기능입니다. 무료 버전은 표시된 이미지의 수동 일괄 다운로드를 지원합니다. PRO($4.99 평생 라이선스)로 업그레이드하면 스트림 캡처, Video Gen Queue, 스토리 모드, 프로젝트 다운로드를 사용할 수 있습니다."
+            "text": "아니요, 스트림 캡처는 PRO 기능입니다. 무료 버전은 즐겨찾기, 태그 또는 라이브러리의 최근 7일 분량에서 이미지를 일괄 다운로드합니다. PRO($4.99 일회성 결제, 평생 라이선스)로 업그레이드하면 스트림 캡처와 함께 동영상 다운로드, 스토리 모드 내보내기, 프로젝트 다운로드, 무제한 Video Gen Queue를 사용할 수 있습니다."
           }
         }
       ]
@@ -214,7 +222,7 @@
 
                 <p class="text-xl md:text-2xl text-cyan-300 mb-4" data-i18n="stream_subtitle">실시간 Grok 이미지 자동 캡처</p>
 
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_desc">브라우징하면서 Grok AI를 모니터링하세요. 스트림 캡처는 DOM 옵저버 기술을 사용하여 실시간으로 새로 생성된 이미지를 자동 감지하고 큐에 추가합니다. 영감을 놓치지 마세요 — 원클릭으로 모든 이미지를 일괄 다운로드하세요.</p>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_desc">grok.com 탭에서 켜면 스트림 캡처가 DOM 관찰자로 그 탭에서 Grok이 생성한 이미지를 실시간으로 모읍니다. 탭을 새로고침하거나 닫기 전에 클릭 한 번으로 모두 다운로드하세요.</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=stream-capture&amp;utm_content=hero&amp;utm_term=ko" target="_blank" rel="noopener" class="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
@@ -236,7 +244,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="stream_video_title">스트림 캡처 실제 동작 보기</h2>
-                <p class="text-slate-400" data-i18n="stream_video_desc">모니터링 시작 → Grok 탐색 → 이미지 자동 캡처 → 일괄 다운로드</p>
+                <p class="text-slate-400" data-i18n="stream_video_desc">활성화 → Imagine에서 생성 → 이미지 자동 캡처 → 캡처된 항목 다운로드</p>
             </div>
 
             <!-- Video Container -->
@@ -312,8 +320,8 @@
                     <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="layers" class="text-blue-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_2_title">자동 큐 시스템</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_2_desc">감지된 모든 이미지가 자동으로 다운로드 큐에 추가됩니다. 계속 스크롤하기만 하세요 — 나머지는 스트림 캡처가 처리합니다.</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_2_title">자동 캡처 목록</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_2_desc">약 120KB 이상인 생성 이미지가 캡처 목록에 추가되고, 썸네일과 아이콘은 건너뜁니다. 팝업에 개수가 표시되며 한 세션에 최대 1,000장입니다.</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -330,8 +338,8 @@
                     <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="filter" class="text-pink-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_4_title">스마트 중복 제거</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_4_desc">해시 비교를 사용하여 컬렉션에 이미 있는 중복 이미지를 자동으로 필터링합니다.</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_4_title">세션 내 중복 없음</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_4_desc">이번 세션의 캡처 목록에 이미 있는 이미지는 다시 추가되지 않습니다.</p>
                 </div>
             </div>
         </div>
@@ -342,7 +350,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_step_title">스트림 캡처 작동 방식</h2>
-                <p class="text-slate-400">간단한 4단계로 모든 Grok 이미지를 자동 캡처하세요</p>
+                <p class="text-slate-400">생성한 이미지를 캡처하는 4단계</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -353,8 +361,8 @@
                         <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="play-circle" class="text-cyan-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_1_title">모니터링 시작</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_1_desc">확장 프로그램을 열고 '스트림 캡처 시작'을 클릭하여 Grok 페이지의 실시간 모니터링을 시작하세요.</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_1_title">켜기</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_1_desc">grok.com 탭에서 팝업을 열고 '🌊 스트림 캡처' 섹션의 '활성화'를 켭니다.</p>
                     </div>
                 </div>
 
@@ -365,8 +373,8 @@
                         <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="scroll" class="text-blue-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_2_title">탐색 & 스크롤</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_2_desc">평소처럼 Grok을 탐색하세요. 페이지에 나타나는 모든 새 이미지가 자동으로 감지되어 큐에 추가됩니다.</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_2_title">Imagine에서 생성</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_2_desc">평소처럼 Grok Imagine에서 이미지를 생성하세요. Grok이 페이지에 넣는 새 이미지가 자동으로 캡처됩니다.</p>
                     </div>
                 </div>
 
@@ -377,8 +385,8 @@
                         <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="check-square" class="text-emerald-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_3_title">캡처 항목 확인</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_3_desc">캡처 큐를 확인하여 자동 캡처된 모든 이미지를 확인하세요. 원하지 않는 항목은 제거할 수 있습니다.</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_3_title">개수 확인</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_3_desc">팝업에 캡처한 이미지 수가 표시됩니다. 처음부터 다시 하려면 '캡처 삭제'로 목록을 비우세요.</p>
                     </div>
                 </div>
 
@@ -390,7 +398,7 @@
                             <i data-lucide="download" class="text-pink-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_4_title">일괄 다운로드</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_4_desc">'모두 다운로드'를 클릭하여 캡처된 모든 이미지를 한 번에 로컬 드라이브에 저장하세요.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_4_desc">'캡처된 항목 다운로드'를 누르면 캡처한 이미지를 모두 grok_downloads/stream에 한 번에 저장합니다. 탭을 새로고침하거나 닫기 전에 다운로드하세요.</p>
                     </div>
                 </div>
             </div>
@@ -421,8 +429,8 @@
                                 <i data-lucide="cpu" class="text-pink-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">백그라운드 서비스 워커</h4>
-                                <p class="text-slate-400 text-sm">Chrome의 서비스 워커에서 실행되어 탭을 전환해도 지속적인 모니터링이 가능합니다.</p>
+                                <h4 class="font-bold text-white mb-1">grok.com 탭 안에서 실행</h4>
+                                <p class="text-slate-400 text-sm">캡처는 기능을 켠 grok.com 탭 안에서 이루어지고, 캡처한 이미지는 그 탭의 메모리에 보관됩니다. 새로고침하거나 탭을 닫으면 사라지므로 먼저 다운로드하세요.</p>
                             </div>
                         </div>
 
@@ -431,8 +439,8 @@
                                 <i data-lucide="database" class="text-blue-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">IndexedDB 캐시</h4>
-                                <p class="text-slate-400 text-sm">캡처된 이미지 메타데이터를 IndexedDB에 저장하여 빠른 중복 확인 및 큐 관리를 지원합니다.</p>
+                                <h4 class="font-bold text-white mb-1">세션당 최대 1,000장</h4>
+                                <p class="text-slate-400 text-sm">한 세션에 최대 1,000장까지 보관합니다. 한도에 도달하면 캡처가 멈추고, 다운로드한 뒤 목록을 비우라고 안내합니다.</p>
                             </div>
                         </div>
 
@@ -463,46 +471,20 @@
                         <div class="mb-4 p-3 bg-slate-800/50 rounded-lg flex items-center justify-between">
                             <div class="flex items-center gap-2">
                                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                                <span class="text-sm font-bold text-emerald-400">모니터링 중</span>
+                                <span class="text-sm font-bold text-emerald-400">활성화</span>
                             </div>
-                            <span class="text-sm text-slate-400">47개 이미지 캡처됨</span>
+                            <span class="text-sm text-slate-400">캡처됨: 47</span>
                         </div>
 
                         <!-- Captured Items List -->
-                        <div class="mb-4">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i data-lucide="images" class="w-4 h-4 text-cyan-400"></i>
-                                <span class="text-sm font-bold text-white">캡처 큐</span>
-                                <span class="ml-auto text-xs text-slate-500">47개 항목</span>
+                        <div class="mb-4 space-y-2">
+                            <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                <i data-lucide="folder" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+                                <p class="text-sm text-white">저장 위치: grok_downloads/stream/</p>
                             </div>
-                            <div class="space-y-2">
-                                <!-- Item 1 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-600/40 to-blue-600/40 rounded-lg"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_001.jpg</p>
-                                        <p class="text-xs text-slate-500">1024 x 1024 · 2.4 MB</p>
-                                    </div>
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                </div>
-                                <!-- Item 2 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-600/40 to-pink-600/40 rounded-lg"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_002.jpg</p>
-                                        <p class="text-xs text-slate-500">1024 x 1024 · 1.8 MB</p>
-                                    </div>
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                </div>
-                                <!-- Item 3 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg border border-cyan-500/30">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-600/40 to-cyan-600/40 rounded-lg animate-pulse"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_003.jpg</p>
-                                        <p class="text-xs text-cyan-400">캡처 중...</p>
-                                    </div>
-                                    <i data-lucide="loader" class="w-4 h-4 text-cyan-400 flex-shrink-0 animate-spin"></i>
-                                </div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+                                <p class="text-sm text-slate-300">새로고침하거나 탭을 닫기 전에 다운로드</p>
                             </div>
                         </div>
 
@@ -510,11 +492,11 @@
                         <div class="grid grid-cols-2 gap-2">
                             <button class="bg-cyan-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="download" class="w-4 h-4"></i>
-                                모두 다운로드 (47)
+                                캡처된 항목 다운로드
                             </button>
                             <button class="bg-slate-700 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                큐 비우기
+                                캡처 삭제
                             </button>
                         </div>
                     </div>
@@ -576,7 +558,7 @@
                             </td>
                             <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row3_manual">새 콘텐츠를 놓치기 쉬움</td>
                             <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
-                                <span class="text-cyan-300" data-i18n="stream_compare_row3_stream">실시간으로 모든 것을 캡처</span>
+                                <span class="text-cyan-300" data-i18n="stream_compare_row3_stream">표시되는 생성 이미지(약 120KB 이상)를 캡처</span>
                             </td>
                         </tr>
                         <tr class="border-b border-slate-800/50">
@@ -588,7 +570,7 @@
                             </td>
                             <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row4_manual">높음 — 지속적인 모니터링 필요</td>
                             <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
-                                <span class="text-cyan-300" data-i18n="stream_compare_row4_stream">제로 — 정상적으로 브라우징, 백그라운드에서 자동 캡처</span>
+                                <span class="text-cyan-300" data-i18n="stream_compare_row4_stream">낮음 — 평소처럼 생성하면 그 탭에서 캡처</span>
                             </td>
                         </tr>
                         <tr>
@@ -611,7 +593,7 @@
             <div class="mt-12 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="check-circle" class="text-cyan-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="stream_compare_summary">스트림 캡처는 번거로운 클릭-저장 반복을 제거합니다. Grok을 정상적으로 브라우징하기만 하면 확장 프로그램이 모든 이미지를 자동으로 수집합니다.</p>
+                    <p class="text-slate-300 text-sm" data-i18n="stream_compare_summary">스트림 캡처로 하나씩 클릭해 저장하는 수고를 덜 수 있습니다. 평소처럼 Grok Imagine에서 만들면 확장 프로그램이 그 탭에서 생성된 이미지를 모읍니다.</p>
                 </div>
             </div>
         </div>
@@ -626,32 +608,32 @@
             </div>
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">스트림 캡처는 모든 Grok 페이지에서 작동하나요?</h3>
-                    <p class="text-slate-400">네. 스트림 캡처는 메인 피드, 개별 게시물 페이지, 검색 결과 등 Grok이 이미지를 생성하는 모든 페이지를 모니터링합니다. DOM 관찰 기술을 사용하므로 Grok이 새 이미지를 렌더링하는 곳이라면 어디서나 작동합니다.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">스트림 캡처는 무엇을 캡처하고 어디서 작동하나요?</h3>
+                    <p class="text-slate-400">기능을 켠 grok.com 탭을 지켜보며, Imagine에서 만드는 동안 Grok이 페이지로 보내는 생성 이미지를 모읍니다. 썸네일이나 아이콘 같은 작은 이미지(약 120KB 미만)는 무시하며, 이미지만 캡처하고 동영상은 캡처하지 않습니다.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">한 세션에서 몇 장의 이미지를 캡처할 수 있나요?</h3>
-                    <p class="text-slate-400">제한이 없습니다. 스트림 캡처는 단일 모니터링 세션에서 수백 장의 이미지를 대기열에 추가할 수 있습니다. 대기열은 IndexedDB에 저장되므로 탭을 전환하거나 확장 프로그램 패널을 닫아도 유지됩니다.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">최대 몇 장까지 캡처할 수 있나요?</h3>
+                    <p class="text-slate-400">한 세션에 최대 1,000장입니다. 1,000장에 도달하면 멈추고, 계속하기 전에 캡처한 이미지를 다운로드하고 지우라고 안내합니다.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">스트림 캡처가 브라우저를 느리게 만드나요?</h3>
-                    <p class="text-slate-400">아니요. Chrome의 네이티브 MutationObserver API를 사용하여 매우 효율적입니다. 관찰자는 DOM이 변경될 때만 실행되므로 이미지를 생성하지 않을 때는 CPU 사용률이 거의 0에 가깝습니다. 백그라운드 서비스 워커가 대기열 관리를 처리하여 메인 스레드를 차단하지 않습니다.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">캡처한 이미지는 어떻게 저장하나요?</h3>
+                    <p class="text-slate-400">팝업에서 '캡처된 항목 다운로드'를 누르세요. 파일은 다운로드 폴더의 grok_downloads/stream에 저장되며(경로는 설정에서 변경 가능), 파일 이름은 grok_stream_ 뒤에 캡처 시각이 붙습니다. '캡처 삭제'는 목록을 비웁니다.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">모니터링을 일시 중지하고 재개할 수 있나요?</h3>
-                    <p class="text-slate-400">네. 확장 프로그램 패널에서 "모니터링 중지" 버튼을 클릭하면 언제든지 일시 중지할 수 있습니다. 이미 캡처된 이미지는 대기열에 남아 있습니다. "스트림 캡처 시작"을 다시 클릭하면 재개되며, 새 이미지가 같은 대기열에 추가됩니다.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">탭을 새로고침하거나 닫으면 캡처한 이미지가 남아 있나요?</h3>
+                    <p class="text-slate-400">남지 않습니다. 캡처한 이미지는 다운로드할 때까지 해당 grok.com 탭의 메모리에만 보관되므로, 새로고침하거나 탭을 닫기 전에 먼저 다운로드하세요.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">스트림 캡처는 중복 이미지를 자동으로 제거하나요?</h3>
-                    <p class="text-slate-400">네. 스트림 캡처는 해시 비교를 사용하여 이미 컬렉션이나 현재 대기열에 있는 이미지를 감지하고 건너뜁니다. 위로 스크롤하거나 게시물을 다시 방문할 때 같은 이미지를 두 번 다운로드하는 것을 방지합니다.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">캡처를 일시 중지했다가 다시 시작할 수 있나요?</h3>
+                    <p class="text-slate-400">네. '활성화' 스위치를 끄면 새 이미지 감시가 멈추고, 이미 캡처한 이미지는 목록에 남습니다. 다시 켜면 같은 목록에 계속 추가됩니다.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">스트림 캡처는 어떤 이미지 형식을 지원하나요?</h3>
-                    <p class="text-slate-400">Grok이 제공하는 원본 형식(일반적으로 JPEG 및 PNG)으로 이미지를 다운로드합니다. 다운로드 과정에서 재인코딩이나 압축이 적용되지 않아 원본 해상도와 품질이 유지됩니다.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">같은 이미지가 두 번 캡처되나요?</h3>
+                    <p class="text-slate-400">아니요. 새 이미지는 이번 세션에서 이미 캡처한 이미지와 비교되므로, 다시 나타난 이미지가 중복으로 추가되지 않습니다.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">스트림 캡처는 무료인가요?</h3>
-                    <p class="text-slate-400">스트림 캡처는 PRO 전용 기능입니다. 무료 버전은 표시된 이미지의 수동 일괄 다운로드를 지원합니다. PRO($4.99 평생 라이선스)로 업그레이드하면 스트림 캡처, Video Gen Queue, 스토리 모드, 프로젝트 다운로드를 사용할 수 있습니다.</p>
+                    <p class="text-slate-400">아니요, 스트림 캡처는 PRO 기능입니다. 무료 버전은 즐겨찾기, 태그 또는 라이브러리의 최근 7일 분량에서 이미지를 일괄 다운로드합니다. PRO($4.99 일회성 결제, 평생 라이선스)로 업그레이드하면 스트림 캡처와 함께 동영상 다운로드, 스토리 모드 내보내기, 프로젝트 다운로드, 무제한 Video Gen Queue를 사용할 수 있습니다.</p>
                 </div>
             </div>
         </div>

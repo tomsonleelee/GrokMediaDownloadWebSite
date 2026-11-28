@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrokMediaDownloader - Grok AI 미디어 관리 확장 프로그램</title>
-    <meta name="description" content="Grok AI 이미지와 비디오를 일괄 다운로드 및 관리. 전체 라이브러리 다운로드(대화별), 1080p 업그레이드, Video Gen Queue, Story Mode 지원. 무료 Chrome 확장 프로그램, PRO $4.99.">
+    <meta name="description" content="Grok AI 이미지와 비디오를 일괄 다운로드 및 관리. 전체 라이브러리 다운로드(대화별), HD(720p) / 1080p 업그레이드, Video Gen Queue, Story Mode 지원. 무료 Chrome 확장 프로그램, PRO $4.99.">
     <meta name="keywords" content="Grok downloader, 전체 라이브러리 다운로드, Grok 미디어 전체 저장, 1080p Grok 동영상, 대화별 폴더, Story Mode Helper, Video Studio, Grok 다운로더, Chrome 확장 프로그램, 일괄 다운로드, Stream Capture, HD Upgrade">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Kario Studio">
@@ -72,7 +72,7 @@
         "Grok 미디어 다운로더",
         "Story Mode Helper"
       ],
-      "description": "The best Chrome extension for Grok AI media management: Whole Library Download by conversation, 1080p video upgrade, Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
+      "description": "Chrome extension for Grok AI media management: Whole Library Download by conversation, batch downloading, HD (720p) / 1080p video upgrade, Story Mode Helper video studio and Stream Capture.",
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
@@ -128,7 +128,7 @@
       "@type": "WebSite",
       "name": "GrokMediaDownloader",
       "url": "https://grokmedia.kario-studio.com",
-      "description": "Official website for GrokMediaDownloader - the best Grok AI media management Chrome extension with Story Mode Helper video studio.",
+      "description": "Official website for GrokMediaDownloader, a Chrome extension for Grok AI media management with the Story Mode Helper video studio.",
       "inLanguage": ["en", "zh-TW", "ja", "ko", "es", "de"],
       "publisher": {
         "@type": "Organization",
@@ -335,7 +335,7 @@
                         <span class="text-pink-500" data-i18n="hero_title_2">클릭 한 번으로 백업</span>
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Grok에는 일괄 다운로드 기능이 없습니다. 수백 개의 생성 이미지와 동영상을 하나씩 저장하고, 지난달에 만든 작품을 찾고, 1080p 버전을 챙기는 일은 금방 한계에 부딪힙니다. GrokMediaDownloader는 Grok 라이브러리 전체를 스캔해 모든 미디어를 대화 이름으로 된 폴더에 프롬프트 기반 파일명으로 다운로드하고, 동영상을 1080p로 업그레이드합니다. 모든 작업은 브라우저 안에서만 이루어지며, 어떤 데이터도 외부로 업로드되지 않습니다.</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Grok에는 일괄 다운로드 기능이 없습니다. 수백 개의 생성 이미지와 동영상을 하나씩 저장하고, 지난달에 만든 작품을 찾고, HD 버전을 챙기는 일은 금방 한계에 부딪힙니다. GrokMediaDownloader는 Grok 라이브러리 전체를 스캔해 모든 미디어를 대화 이름으로 된 폴더에 프롬프트 기반 파일명으로 다운로드하고, 동영상을 HD(720p, SuperGrok Heavy라면 1080p)로 업그레이드합니다. 모든 작업은 브라우저 안에서만 이루어지며, 어떤 데이터도 외부로 업로드되지 않습니다.</p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
@@ -363,7 +363,7 @@
                         <span class="feature-tag"><span>📥</span> <span data-i18n="hero_tag_1">일괄 다운로드</span></span>
                         <span class="feature-tag"><span>🎯</span> <span data-i18n="hero_tag_2">Video Gen Queue</span></span>
                         <span class="feature-tag"><span>📦</span> <span data-i18n="hero_tag_3">전체 라이브러리</span></span>
-                        <span class="feature-tag"><span>💎</span> <span data-i18n="hero_tag_4">1080p 업그레이드</span></span>
+                        <span class="feature-tag"><span>💎</span> <span data-i18n="hero_tag_4">HD / 1080p 업그레이드</span></span>
                         <span class="feature-tag"><span>📂</span> <span data-i18n="hero_tag_5">프로젝트 폴더</span></span>
                         <span class="feature-tag"><span>🌊</span> <span data-i18n="hero_tag_6">Stream Capture</span></span>
                     </div>
@@ -506,15 +506,15 @@
                     <tbody class="divide-y divide-slate-800 text-slate-300">
                         <tr><td class="py-4 px-4 md:px-6">Grok 페이지에 더 이상 표시되지 않는 미디어까지 찾기 (2026년 7월 이후 백엔드)</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 전체 라이브러리 스캔</td></tr>
                         <tr><td class="py-4 px-4 md:px-6">수천 개 항목을 메모리 부족 없이 한 번에 다운로드</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">화면에 로드된 항목만</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 15,000개 이상 테스트 완료</td></tr>
-                        <tr><td class="py-4 px-4 md:px-6">대화 또는 태그별 폴더, 날짜·프롬프트·ID·시드 기반 파일명</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">파일마다 직접 이름 변경</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">무작위 파일명</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 템플릿</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">대화 또는 태그별 폴더, 날짜·프롬프트·ID·화질 기반 파일명</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">파일마다 직접 이름 변경</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">무작위 파일명</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 템플릿</td></tr>
                         <tr><td class="py-4 px-4 md:px-6">이미 다운로드한 항목은 건너뛰고, 새로고침 후에도 이어서 진행</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 소스별 기록</td></tr>
-                        <tr><td class="py-4 px-4 md:px-6">미리보기가 아닌 1080p 동영상 받기</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">수동으로 하나씩</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">미리보기 화질</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ HD / 1080p 일괄 업그레이드 <span class="ml-1 inline-block align-middle text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-500/20 text-pink-300">PRO</span></td></tr>
-                        <tr><td class="py-4 px-4 md:px-6">동영상 생성 대기열 관리 및 클립을 하나의 스토리로 병합</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Video Gen Queue, Story Mode</td></tr>
-                        <tr><td class="py-4 px-4 md:px-6">미디어를 비공개로 유지</td><td class="py-4 px-4 md:px-6 text-center text-slate-400">예</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">확장 프로그램마다 다름</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 100% 브라우저 내 처리, 서버 없음</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">미리보기가 아닌 HD 동영상 받기(720p, SuperGrok Heavy라면 1080p)</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">수동으로 하나씩</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">미리보기 화질</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ HD / 1080p 일괄 업그레이드 <span class="ml-1 inline-block align-middle text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-500/20 text-pink-300">PRO</span></td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">동영상 생성 대기열 관리 및 클립을 하나의 스토리로 병합</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Video Gen Queue(무료 50회), Story Mode(내보내기는 PRO)</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">미디어를 비공개로 유지</td><td class="py-4 px-4 md:px-6 text-center text-slate-400">예</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">확장 프로그램마다 다름</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 다운로드는 브라우저에서 실행되고 파일은 Grok에서 바로 디스크로 저장됩니다. Grok 외의 서버 통신은 라이선스 확인뿐이며, 미디어나 브라우징 데이터는 기기 밖으로 나가지 않습니다</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p class="text-center text-slate-500 text-xs mt-4">2026년 10월 기준 Grok 미디어 API의 동작을 바탕으로 작성되었습니다. 무료 버전에는 전체 라이브러리 스캔, 최근 7일분 다운로드, 이미지 일괄 다운로드, 폴더 정리가 포함됩니다. PRO 기능 목록은 <a href="/ko/pricing.html" class="underline hover:text-slate-300">가격</a> 페이지를 확인하세요.</p>
+            <p class="text-center text-slate-500 text-xs mt-4">2026년 10월 기준 Grok 미디어 API의 동작을 바탕으로 작성되었습니다. 무료 버전에는 최근 7일분 전체 라이브러리 스캔, 이미지 일괄 다운로드, 폴더 정리, 파일명 템플릿이 포함됩니다. 동영상 다운로드, 전체 라이브러리, HD 업그레이드는 PRO가 필요합니다. 전체 목록은 <a href="/ko/pricing.html" class="underline hover:text-slate-300">가격</a> 페이지를 확인하세요.</p>
         </div>
     </section>
 
@@ -527,7 +527,7 @@
                     </div>
                     <div>
                         <h2 class="text-lg md:text-xl font-bold text-white mb-2" data-i18n="legacy_notice_title">새로 생성한 미디어가 보이지 않나요?</h2>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-3" data-i18n="legacy_notice_body">Grok의 2026년 7월 백엔드 변경 이후 새로 생성된 이미지와 동영상은 더 이상 즐겨찾기에 추가되지 않습니다. 그래서 "즐겨찾기" 소스를 검색하면 비어 보이거나, HD 업그레이드가 "모두 업그레이드됨"이라고 보고할 수 있습니다. 다운로드 소스를 <strong class="text-white">📦 모든 생성 미디어(대화별)</strong>로 바꾸세요. Grok의 Saved 페이지가 현재 읽는 소스가 바로 이것입니다. v2.5.1부터 기본값이며 모두에게 무료입니다.</p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-3" data-i18n="legacy_notice_body">Grok의 2026년 7월 백엔드 변경 이후 새로 생성된 이미지와 동영상은 더 이상 즐겨찾기에 추가되지 않습니다. 그래서 "즐겨찾기" 소스를 검색하면 비어 보이거나, HD 업그레이드가 "모두 업그레이드됨"이라고 보고할 수 있습니다. 다운로드 소스를 <strong class="text-white">📦 모든 생성 미디어(대화별)</strong>로 바꾸세요. Grok의 Saved 페이지가 현재 읽는 소스가 바로 이것입니다. v2.5.1부터 기본값이며, 최근 7일분은 모두에게 무료입니다(PRO는 전체 라이브러리).</p>
                         <a href="/ko/library-download.html" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
                             <span data-i18n="legacy_notice_cta">전체 라이브러리 다운로드 알아보기</span>
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
@@ -756,9 +756,9 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">
                     <span data-i18n="feat_title_1">파워 유저를 위한</span><br>
-                    <span class="text-pink-500" data-i18n="feat_title_2">PRO급 기능</span>
+                    <span class="text-pink-500" data-i18n="feat_title_2">무료 및 PRO 기능</span>
                 </h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="feat_desc">실제 사용자 피드백을 기반으로 최강의 Grok 미디어 관리 시스템을 구축했습니다.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="feat_desc">실제 사용자 피드백을 바탕으로 Grok 미디어의 다운로드, 업그레이드, 정리를 위한 기능을 만들었습니다.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -788,8 +788,8 @@
                     <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors">
                         <i data-lucide="calendar-clock" class="text-purple-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_2_title">날짜 및 이력 필터 (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_2_desc">오늘 작품만 원하시나요? Date Filter로 범위를 지정하세요. 이력도 자동 대조하여 중복 다운로드를 방지.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_2_title">날짜 필터 (PRO) 및 다운로드 이력</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_2_desc">오늘 작품만 원하시나요? Date Filter(PRO)로 범위를 지정하세요. 무료인 다운로드 이력이 자동 대조하여 중복 다운로드를 방지.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Date Range</span>
                         <span class="mini-tag">History</span>
@@ -872,8 +872,8 @@
                     <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors">
                         <i data-lucide="clapperboard" class="text-purple-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_7_title">Story Mode Helper (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_7_desc">새로운 동영상 스튜디오! Storyboard 관리, 프레임 추출, Grok 전송, 로컬 FFmpeg 병합.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_7_title">Story Mode Helper (내보내기는 PRO)</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_7_desc">새로운 동영상 스튜디오! Storyboard 관리, 프레임 추출, Grok 전송, 로컬 FFmpeg 병합. 클립 배열은 무료이며, 합친 동영상을 내보내려면 PRO가 필요합니다.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Merge</span>
                         <span class="mini-tag">Storyboard</span>
@@ -893,7 +893,7 @@
                     <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-pink-500/30 transition-colors">
                         <i data-lucide="list-video" class="text-pink-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_8_title">Video Gen Queue (PRO)</h3>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_8_title">Video Gen Queue (무료 50회)</h3>
                     <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_8_desc">자동 동영상 생성 큐! 일괄 추가, 4가지 생성 모드, 자동 재시도, 속도 제한 감지. 무료 50회, PRO 무제한.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Auto Retry</span>
@@ -935,7 +935,7 @@
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">태그별 다운로드</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">태그로 미디어를 다운로드하세요. Grok의 태그 이전은 이전 저장소와 새 저장소 양쪽에 내용을 남겼기 때문에, v2.5.6은 두 저장소를 모두 읽어 병합합니다. 태그 목록과 태그 내용이 둘의 합집합이 되어 이전 태그의 전체 내용과 이전 시스템에만 있는 태그까지 포함됩니다. 태그 다운로드도 프롬프트 기반 파일명을 지원하며 파일은 tags/{tagName}/ 아래에 저장됩니다.</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">태그로 미디어를 다운로드하세요. Grok의 태그 이전은 이전 저장소와 새 저장소 양쪽에 내용을 남겼기 때문에, v2.5.6은 두 저장소를 모두 읽어 병합합니다. 태그 목록과 태그 내용이 둘의 합집합이 되어 이전 태그의 전체 내용과 이전 시스템에만 있는 태그까지 포함됩니다. 태그 다운로드도 프롬프트 기반 파일명을 지원하며 파일은 tags/{tagName}/ 아래에 저장됩니다. 이미지는 무료이며, 태그 안의 동영상은 PRO가 필요합니다.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">태그 폴더</span>
                         <span class="mini-tag">독립 기록</span>
@@ -962,7 +962,7 @@
                         <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">전체 라이브러리 다운로드</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">즐겨찾기뿐 아니라 모든 생성 이미지와 동영상을 다운로드하세요. 파일은 대화별 폴더로 묶이고 실제로 그것을 만들어낸 프롬프트로 이름이 지정되며, 자체 독립 다운로드 기록을 가집니다. 무료는 최근 7일, PRO는 제한이 없습니다.</p>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">즐겨찾기뿐 아니라 모든 생성 이미지와 동영상을 다운로드하세요. 파일은 대화별 폴더로 묶이고 실제로 그것을 만들어낸 프롬프트로 이름이 지정되며, 자체 독립 다운로드 기록을 가집니다. 무료는 최근 7일분 이미지, PRO는 동영상까지 제한 없이 받을 수 있습니다.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">대화별 정리</span>
                         <span class="mini-tag">프롬프트 파일명</span>
@@ -981,7 +981,7 @@
                         <i data-lucide="gem" class="text-teal-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_13_title">1080p 동영상 업그레이드 (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_13_desc">1080p가 이제 독립된 품질 계층입니다. 다운로드는 사용 가능한 최고 품질을 선택하고, 업그레이드는 한 번에 한 단계씩 진행됩니다: SD → HD, 그다음 720p/HD → 1080p. 1080p는 SuperGrok Heavy와 명시적 선택이 필요합니다.</p>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_13_desc">1080p가 이제 독립된 품질 계층입니다. 다운로드는 사용 가능한 가장 높은 품질을 선택하고, 업그레이드는 한 번에 한 단계씩 진행됩니다: SD → HD, 그다음 720p/HD → 1080p. 1080p는 SuperGrok Heavy와 명시적 선택이 필요합니다.</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">3단계 품질</span>
                         <span class="mini-tag">명시적 선택</span>
@@ -1170,7 +1170,7 @@
                         <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
                         <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
                     </div>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4" data-i18n="testimonial_3_body">"Grok 사용자에게 최고의 도구입니다. 일괄 다운로드와 HD 업그레이드 기능 덕분에 매주 몇 시간씩 절약하고 있습니다."</p>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4" data-i18n="testimonial_3_body">"이 확장 프로그램은 판도를 바꿨고, Grok 사용자에게 단연 최고의 도구입니다. 일괄 다운로드와 HD 업그레이드 기능 덕분에 매주 몇 시간씩 절약하고 있습니다."</p>
                     <div class="flex items-center gap-2">
                         <div class="w-8 h-8 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center text-white text-xs font-bold">L</div>
                         <div>

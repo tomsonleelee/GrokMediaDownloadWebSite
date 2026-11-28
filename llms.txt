@@ -1,26 +1,38 @@
 # GrokMediaDownloader
 
-> GrokMediaDownloader is a Chrome extension for Grok AI media management. Batch download images and videos, archive your entire Grok library organized by conversation, automate video generation with Video Gen Queue, create video stories with Story Mode, capture live streams in real-time, and organize everything into project folders — all processed locally in your browser with zero data collection. Published by Kario Studio. One-time $4.99 PRO lifetime license. Current version: 2.5.6.
+> GrokMediaDownloader is a Chrome extension for downloading and managing Grok Imagine media. Batch download images and videos, back up your whole Grok library organized by conversation, upscale videos to HD, automate video generation with Video Gen Queue, merge clips with Story Mode, and capture images as Grok generates them with Stream Capture. Everything runs locally in your browser: media goes straight from Grok to your disk, and the only call to a non-Grok server is the license check. Published by Kario Studio. PRO is a one-time $4.99 lifetime license. Current version: 2.6.3.
+
+## Free vs PRO
+- **Free**: Generate List, all three download sources (Favorites, Tag, All Generated Media), image downloads, the whole-library source for the last 7 days, filename templates, prompt-based filenames, .json sidecar files, download history (no duplicates), updates, and 50 Video Gen Queue uses.
+- **PRO** ($4.99 one-time, lifetime, 7-day money-back): video downloads, the full library with no time cap, date filters (date range / last N hours), HD Upgrade (720p; optional 1080p needs a SuperGrok Heavy Grok subscription), Delete Old, import/export of download history, Stream Capture, Story Mode export, and unlimited Video Gen Queue.
 
 ## Key Features
-- **Whole Library Download** (since v2.5): Download every generated image and video in your Grok Imagine library, not just favorites. Files are grouped into one folder per conversation (named `yyyymmdd_prompt_shortID`) with filenames taken from the real generation prompt; video filenames match the generated list, carrying the same short-id suffix, and the per-folder `metadata.json` also records `userId`. Keeps its own download history separate from favorite and tag downloads. Free users can use this source for the last 7 days; PRO removes the time limit and adds date filtering
-- **Three Download Sources**: Favorite (liked items), Tag (one Grok tag/folder, output under `tags/{tagName}/`), and All Generated Media by Conversation. Each source has independent deduplication records. Since v2.5.1 the source selector is free for all users and defaults to the whole library
-- **1080p Support** (since v2.5): 1080p is a distinct quality tier alongside SD and HD/720p. Downloads take the highest available quality; upgrades move one tier at a time (SD→HD, 720p/HD→1080p). 1080p upgrade requires a SuperGrok Heavy plan and an explicit opt-in that is off by default
-- **Batch Download**: Scan and download all Grok AI images and videos at once with smart filtering by date, type, and resolution
-- **Video Gen Queue**: Automate video generation by queuing multiple image posts — the extension auto-generates videos in the background
-- **Story Mode**: Merge multiple Grok video clips into a single MP4 using in-browser WebAssembly FFmpeg — no server upload needed
-- **Stream Capture**: Real-time DOM observer detects and queues newly generated images as you browse Grok AI
-- **Project Download**: Group source images and resulting videos into organized project folders for bulk export
-- **HD Upgrade**: Scan favorites or your whole library for videos below the top quality tier and send upgrade requests via the Grok API
-- **Tag Download** (rebuilt in v2.5.2, completed in v2.5.6): Grok's August tag migration left content stranded in both its old and its new tag store, so tag lists and tag contents are now the union of the two — newly created tags, the full contents of old tags, and tags that exist only in the old system all download again. v2.5.3 and v2.5.4 added tag list/content pagination fixes and full scan diagnostics so accounts with many tags also see the older ones. Tag downloads support prompt-based filenames, where videos use their own animation prompt, or the source image's
-- **Licensing (v2.6.0)**: PRO lifetime licenses are sold through Stripe Checkout; keys start with GMD- and are accepted by extension 2.6.0 or newer. Each key covers three devices, a reinstall on the same computer does not use an extra slot, and uninstalling frees the slot. Keys bought through Lemon Squeezy before the switch keep working with the device limit they were sold with.
+- **Whole Library Download** (since v2.5): Download every generated image and video in your Grok Imagine library, not just favorites. Files are grouped into one folder per conversation (named `yyyymmdd_prompt_shortID`) with filenames taken from the real generation prompt, and the source keeps its own download history. Free: images from the last 7 days. PRO: videos, the full library and date filters
+- **Three Download Sources**: Favorites (Grok "Saved"), Tag (one Grok tag, saved under `tags/{tagName}/`), and All Generated Media by Conversation (the default since v2.5.1). Each source has its own download history. All three are free for images; videos need PRO
+- **Batch Download**: 1. Generate List scans and shows what still needs downloading, 2. Start Download saves it all, with a progress bar, ETA and Stop. Download history skips files that are already saved
+- **Filenames and metadata**: Grok Native, Prompt Based or Custom Template (`{date} {time} {datetime} {id} {shortid} {prompt} {quality}`), plus an optional .json sidecar with the prompt, resolution and more next to each file
+- **HD Upgrade** (PRO): Scans favorites or the whole library, previews how many videos are SD, HD/720p and 1080p, and asks Grok to upscale them to HD (720p), about 8 seconds per video. 1080p is an opt-in tier that also requires a SuperGrok Heavy Grok subscription. Downloads always take the highest available quality
+- **Project Download**: With the Favorites source, groups a source image and the videos generated from it into one folder with a `metadata.json`. Most useful with video downloads (PRO)
+- **Video Gen Queue**: Queue image posts and let the extension generate their videos in the background. 50 free uses, unlimited with PRO
+- **Story Mode**: Arrange clips in the side panel and merge them into one MP4 with in-browser WebAssembly FFmpeg. Exporting the merged video requires PRO
+- **Stream Capture** (PRO): Captures images as Grok generates them while you browse
+- **Delete Old** (PRO): Permanently deletes library items created in a chosen date range
+- **Licensing** (v2.6.0+): PRO lifetime licenses are sold through Stripe Checkout; keys start with GMD- and are accepted by extension 2.6.0 or newer. Each key covers three devices, a reinstall on the same computer does not use an extra slot, and uninstalling frees the slot. Keys bought through Lemon Squeezy before the switch keep working with the device limit they were sold with
 
 ## Compatibility Note
-In July 2026 Grok migrated to a new conversation-and-asset media backend. Extension versions before 2.5.0 cannot detect images and videos generated after that migration, and the legacy Favorite source no longer receives newly generated media at all — a Favorite scan can come back empty and HD upgrade can wrongly report that every video is already upgraded. Version 2.5.1 makes the whole library the default source for both downloading and upgrading. Grok also rebuilt tags as collections, but that migration is incomplete in both directions — content is stranded in the old tag store as well as the new one, and each side holds tags the other lacks; version 2.5.2 read only the new store, while version 2.5.6 reads both and merges them, so every tag and its full contents are listed again. Since September 2026 Grok no longer returns prompts with the media list, so versions before 2.5.6 write filenames, folder names and metadata without the real prompt; 2.5.6 recovers each prompt from the conversation that generated the media (videos use their own animation prompt, or the source image's), caches it persistently so a whole-library regenerate drops from minutes to seconds, and fetches prompts only when the filename or metadata settings require them. After updating, reload the extension at chrome://extensions, refresh the Grok tab, and regenerate the download list once so the new naming rules apply.
+In July 2026 Grok moved to a new media backend. Versions before 2.5.0 cannot detect media generated after that change, and the Favorites (Saved) list stopped receiving new generations for many accounts, so a Favorites scan can come back empty; the All Generated Media source reads the whole library instead. Since September 2026 Grok no longer returns prompts with the media list; 2.5.6 and newer recover each prompt from its conversation. On 12–13 November 2026 Grok folded Imagine into the main Grok app, and versions before 2.6.3 grey out Generate List and Start Download as a result. Use 2.6.3 or newer on any grok.com page (recommended: grok.com/library). Chrome updates extensions automatically; to force it, open chrome://extensions, turn on Developer mode and click Update.
+
+## Guides
+Each guide is also available in Traditional Chinese, Japanese, Korean, Spanish and German under /zh-TW/, /ja/, /ko/, /es/ and /de/.
+- How to Download All Your Grok Imagine Favorites at Once: https://grokmedia.kario-studio.com/library-download.html — back up every image and video in your library, one folder per conversation, step by step
+- Grok favorites not loading? Back up your library: https://grokmedia.kario-studio.com/grok-favorites-not-loading.html — why new generations no longer appear in Saved, and how to back up everything anyway
+- Save Grok Imagine videos with their prompts: https://grokmedia.kario-studio.com/save-grok-imagine-prompts.html — put each prompt in the filename or in a .json file next to the file
+- Download Grok videos in HD: https://grokmedia.kario-studio.com/download-grok-videos-hd.html — check which videos are SD, HD/720p or 1080p, upscale them and download the better version
+- Grok download button missing after update: https://grokmedia.kario-studio.com/grok-download-button-missing.html — fix greyed-out Generate List and Start Download buttons after Grok's November 2026 change
 
 ## Pages
 - Homepage: https://grokmedia.kario-studio.com/
-- Whole Library Download: https://grokmedia.kario-studio.com/library-download.html
+- How to Download All Your Grok Imagine Favorites at Once (Whole Library Download): https://grokmedia.kario-studio.com/library-download.html
 - FAQ: https://grokmedia.kario-studio.com/faq.html
 - Stream Capture: https://grokmedia.kario-studio.com/stream-capture.html
 - Story Mode: https://grokmedia.kario-studio.com/story-mode.html
@@ -35,11 +47,12 @@ In July 2026 Grok migrated to a new conversation-and-asset media backend. Extens
 - GitHub: https://github.com/tomsonlee150/GrokMediaDownloader
 
 ## Stats
-- 5,000+ users
-- 4.1/5 rating (27 ratings) on Chrome Web Store
+- About 5,000 users on the Chrome Web Store (November 2026)
+- 4.1/5 average from 27 ratings on the Chrome Web Store
 - Available in 6 languages: English, Traditional Chinese, Japanese, Korean, Spanish, German
 
 ## Technical
-- 100% client-side processing (WebAssembly FFmpeg, IndexedDB, Chrome Side Panel API)
-- No data collection, no server uploads
-- Works with Grok AI (grok.com / x.ai)
+- Client-side processing (WebAssembly FFmpeg, IndexedDB, Chrome Side Panel API)
+- Media never leaves your browser: files go straight from Grok to your disk, with no uploads to our servers
+- The only call to a non-Grok server is the license check (Kario Studio's license server)
+- Works on any grok.com page since 2.6.3

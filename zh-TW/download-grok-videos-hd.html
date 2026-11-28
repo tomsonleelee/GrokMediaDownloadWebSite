@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // GA4: never load or send from local dev/test hosts (localhost, 127.0.0.1). Production only.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            window['ga-disable-G-6YPN8563C6'] = true;
+        } else {
+            var gtagScript = document.createElement('script'); gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6';
+            document.head.appendChild(gtagScript);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下載 HD 高畫質的 Grok 影片（720p 與 1080p）| GrokMediaDownloader</title>
+    <meta name="description" content="把 Grok Imagine 影片升級為 HD 720p 或 1080p，再批次下載每支影片可取得的最高畫質。HD 升級逐步教學，含所需時間與速率限制說明。">
+    <meta name="keywords" content="下載 Grok 影片 HD, Grok 影片 1080p, Grok Imagine HD 升級, Grok 720p 影片下載, Grok 高畫質, SuperGrok Heavy 1080p, GrokMediaDownloader">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/zh-TW/download-grok-videos-hd.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/download-grok-videos-hd.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/zh-TW/download-grok-videos-hd.html">
+    <meta property="og:title" content="下載 HD 高畫質的 Grok 影片（720p 與 1080p）">
+    <meta property="og:description" content="把 Grok Imagine 影片升級為 HD 720p 或 1080p，再批次下載每支影片可取得的最高畫質。HD 升級逐步教學，含所需時間與速率限制說明。">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="下載 HD 高畫質的 Grok 影片（720p 與 1080p）">
+    <meta name="twitter:description" content="把 Grok Imagine 影片升級為 HD 720p 或 1080p，再批次下載每支影片可取得的最高畫質。HD 升級逐步教學，含所需時間與速率限制說明。">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "下載 HD 高畫質的 Grok 影片",
+      "description": "把 Grok Imagine 影片升級為 HD 720p 或 1080p，再批次下載每支影片可取得的最高畫質。HD 升級逐步教學，含所需時間與速率限制說明。",
+      "inLanguage": "zh-TW",
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28",
+      "author": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "url": "https://www.kario-studio.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://grokmedia.kario-studio.com/assets/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://grokmedia.kario-studio.com/zh-TW/download-grok-videos-hd.html"
+      },
+      "image": "https://grokmedia.kario-studio.com/assets/og-image.jpg"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://grokmedia.kario-studio.com/zh-TW/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "下載 HD 高畫質的 Grok 影片",
+          "item": "https://grokmedia.kario-studio.com/zh-TW/download-grok-videos-hd.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Grok 影片的 HD 是多少解析度？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HD 指的是 720p。擴充功能把 1080p 視為另一個更高的等級。Grok 原本就以 720p 生成的影片已算 HD，不會再升級一次。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "下載 HD 的 Grok 影片需要 SuperGrok Heavy 嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "只有 1080p 需要。HD（720p）升級不需要。升級到 1080p 時，你的 Grok 帳號必須訂閱 SuperGrok Heavy；沒有的話 Grok 會拒絕請求，擴充功能會略過那些影片。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HD 升級要花多久？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "每支影片約 8 秒，100 支大約 13 分鐘。整庫掃描會先檢查每支影片的畫質，所以在開始升級前還要多花一些時間。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HD 升級是免費的嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不是。HD 升級和影片下載屬於 PRO，一次性購買 $4.99，終身免費更新。免費版可以下載圖片。PRO 的完整內容請見價格頁。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "升級會刪除或取代原始影片嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "擴充功能只會請 Grok 產生更高解析度的版本，從不刪除任何東西。關閉 ✨ HD 優先 後，可以同時下載原始檔和 HD 版本。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "可以只升級最近的影片嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。在 ✨ HD 升級 勾選「僅升級最近 … 小時內的視頻」並輸入 1 到 240 小時，範圍外的影片會維持原狀。"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css?v=20261119">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(219, 39, 119, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">跳至主要內容</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/zh-TW/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/zh-TW/" class="text-sm text-slate-300 hover:text-white">首頁</a><a href="/zh-TW/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">整庫下載</a><a href="/zh-TW/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">故事模式</a><a href="/zh-TW/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">影片生成佇列</a><a href="/zh-TW/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">串流擷取</a><a href="/zh-TW/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">專案下載</a><a href="/zh-TW/pricing.html" class="text-sm text-slate-300 hover:text-white">價格方案</a><a href="/zh-TW/faq.html" class="text-sm text-slate-300 hover:text-white">常見問題</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+    <section class="relative pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+                <span>教學指南</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight"><span class="gradient-text">下載 HD 高畫質的 Grok 影片</span></h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto">一次掃描就請 Grok 產生影片的 HD 版本，再替每支影片下載可取得的最高畫質。</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=download-grok-videos-hd&amp;utm_content=hero&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>加到 Chrome</span>
+                </a>
+                <a href="/zh-TW/pricing.html" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                    <span>查看 PRO 價格</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-xs mt-6">2026 年 11 月 28 日更新 · 依擴充功能 2.6.3 版撰寫</p>
+        </div>
+    </section>
+
+    <!-- Short answer -->
+    <section class="pb-16 bg-slate-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-pink-500/30 bg-pink-500/5 p-6 md:p-8">
+                <h2 class="text-sm font-semibold uppercase tracking-wide text-pink-300 mb-3">快速解答</h2>
+                <p class="text-slate-200 text-lg leading-relaxed">Grok 影片最多有三種畫質：SD、HD（720p）和 1080p。使用 GrokMediaDownloader <a href="/zh-TW/pricing.html" class="underline hover:text-pink-300">PRO</a>，在彈出視窗打開 <strong>✨ HD 升級</strong>，選擇 <strong>🌐 整庫</strong> 或 <strong>🌟 收藏</strong>，按 <strong>🚀 升級畫質</strong>，確認各畫質的預覽數量即可。每支影片約需 8 秒。1080p 需要另外勾選，而且你的 Grok 帳號必須訂閱 SuperGrok Heavy。升級後再按 <strong>1. 生成下載列表</strong> 和 <strong>2. 開始下載</strong>，就會替每支影片存下可取得的最高畫質。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Grok 的 SD、HD-720p 與 1080p</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">擴充功能會把每支影片歸入三種畫質之一。每次升級只會讓影片往上提升一級。</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="tv" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">SD</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">標準畫質檔案。在 Grok 有更高解析度的版本之前，影片都算 SD。</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="monitor" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">HD / 720p</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">720p 版本。影片可以透過 HD 升級取得；Grok 原本就以 720p 生成的影片已算 HD，不會再升級一次。</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="sparkles" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">1080p</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Full HD，最高的一級。升級到 1080p 需要你的 Grok 帳號訂閱 SuperGrok Heavy；沒有的話，Grok 會拒絕這個請求。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">開始之前</h2>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4">
+                <li>GrokMediaDownloader 2.6.3 或更新版本。Chrome 會自動更新擴充功能；想立即更新，可開啟 chrome://extensions，打開「開發人員模式」後按「更新」。</li>
+                <li>PRO 授權。HD 升級和影片下載都是 PRO 功能，一次性購買 $4.99（<a href="/zh-TW/pricing.html" class="underline hover:text-pink-300">價格</a>）。把 GMD-… 授權碼貼到彈出視窗的 <strong>🔑 授權</strong>；這種授權碼需要 2.6.0 以上版本。</li>
+                <li>在同一個 Chrome 設定檔中開啟 Grok，停在 Library（媒體庫）頁面 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok.com/library</code> 或任何 grok.com 頁面。</li>
+                <li>只有 1080p 才需要：該 Grok 帳號訂閱 SuperGrok Heavy。</li>
+            </ul>
+            <p class="text-slate-300 leading-relaxed mb-4">如果你還沒有 PRO，本教學最後一節列出免費版能做的事。你可以先從 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=download-grok-videos-hd&amp;utm_content=steps&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="underline hover:text-pink-300">Chrome 線上應用程式商店</a> 安裝擴充功能，用圖片試試看。</p>
+        </div>
+    </section>
+
+    <section id="steps" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">操作步驟</h2>
+            <ol class="space-y-8">
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">1</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 1: </span>打開 HD 升級區塊</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">在 grok.com 分頁點擊擴充功能圖示，展開 <strong>✨ HD 升級</strong>。沒有 PRO 時，這個區塊會顯示 🔒 Pro 功能 的鎖定畫面。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/zh-TW/popup-hd-upgrade.jpg" alt="彈出視窗的 HD 升級區塊：升級來源（收藏或整庫）、時間篩選、附 SuperGrok Heavy 提示的「將 HD/720p 升級至 1080p」選項，以及升級畫質按鈕" width="336" height="400" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">✨ HD 升級：來源、時間範圍、1080p 選項與 🚀 升級畫質。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">2</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 2: </span>選擇掃描範圍</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">在 <strong>🎯 升級來源</strong> 保留 <strong>🌐 整庫</strong>（預設），或選 <strong>🌟 收藏</strong>。Grok 在 2026 年 7 月改版後，許多帳號新生成的影片不會出現在收藏裡，所以掃描收藏時，可能會把它根本看不到的影片判定為「已升級」。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">整庫掃描會逐一檢查每支影片的畫質，媒體庫很大時要花不少時間。勾選 <strong>僅升級最近 … 小時內的視頻</strong> 並輸入 1 到 240 之間的數字，就能只處理最近的影片。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">3</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 3: </span>決定是否升級到 1080p</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3"><strong>將 HD/720p 升級至 1080p</strong> 預設是關閉的。只有你的 Grok 帳號訂閱了 SuperGrok Heavy 才勾選，選項下方的提示也是這麼寫的。不勾選時，擴充功能完全不會送出 1080p 請求。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">如果在執行過程中 Grok 拒絕 1080p，擴充功能會在這一輪剩下的時間停止請求 1080p，繼續完成 HD 升級，並告訴你略過了幾支影片。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">升級一次只升一級：SD 升到 HD，HD/720p 升到 1080p。所以 SD 影片要跑兩輪才會到 1080p：第一輪變成 HD，第二輪勾選 1080p 選項後才變成 1080p。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">4</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 4: </span>掃描並確認預覽</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">按 <strong>🚀 升級畫質</strong>。掃描整庫時，按鈕會顯示 <strong>⚙️ 解析影片畫質</strong> 和進度，逐一檢查每支影片。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">接著會出現 <strong>📊 掃描結果</strong> 對話框，列出影片總數、SD、HD/720p 和 1080p 各有幾支，以及這次會升級幾支。按「確定」開始，按「取消」則不執行。如果每支影片都已是可取得的最高畫質，擴充功能會直接告訴你，不會送出任何請求。下方範例沒有勾選 1080p 選項，所以最後一行會提示還有幾支影片可以升到 1080p。</p>
+                        <figure class="mt-4 mb-2">
+                            <div class="max-w-sm mx-auto rounded-lg bg-white text-slate-800 shadow-lg p-4 font-mono text-xs leading-relaxed" style="white-space:pre-wrap" role="note">📊 掃描結果
+
+總影片數：336
+    ├ 📦 SD：196
+    ├ 🎥 HD/720p：126
+    └ 💎 1080p：14
+
+本次將升級：196
+是否開始升級？
+
+ℹ️ 另有 126 支可升級至 1080p——請勾選「將 HD/720p 升級至 1080p」(需 SuperGrok Heavy)。</div>
+                            <figcaption class="mt-2 text-center text-xs text-slate-500">擴充功能實際顯示的對話框內容（數字為範例）。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">5</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 5: </span>等待升級完成</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">每支影片約需 8 秒，所以 100 支大約要 13 分鐘。執行時按鈕會顯示 <strong>⏹ 升級中 (x/y)，中斷升級?</strong>，點一下即可取消。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">請讓 grok.com 分頁保持開啟直到完成。如果關掉了彈出視窗，重新打開就能看到進度。完成後彈出視窗會顯示 <strong>✅ 升級完成！成功：x/y</strong>。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">6</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 6: </span>生成下載列表</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">Grok 是在自己的伺服器上完成升級，所以請求被接受後，影片可能還會暫時顯示原本的畫質。請稍等幾分鐘，然後在 <strong>📥 下載來源與篩選</strong> 選擇相同的來源，確認已勾選 <strong>🎬 視頻 (Pro)</strong>，再按 <strong>1. 生成下載列表</strong>。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">掃描結束後會跳出 <strong>📊 下載摘要</strong> 對話框，依畫質（1080p、HD、720p、SD）列出要下載的影片數，並詢問「確定開始下載？」。按「確定」立即開始；按「取消」則保留 <strong>2. 開始下載</strong> 讓你稍後再按。之後狀態面板會分別列出 SD、720p、HD 和 1080p 影片的總數、已下載數量與尚待下載數量。</p>
+                        <figure class="mt-4 mb-2">
+                            <div class="max-w-sm mx-auto rounded-lg bg-white text-slate-800 shadow-lg p-4 font-mono text-xs leading-relaxed" style="white-space:pre-wrap" role="note">📊 下載摘要
+
+🖼️ 圖片：1248 待下載（0 已完成）
+🎬 影片：336 待下載（0 已完成）
+    ├ 💎 1080p：14
+    ├ ✨ HD：88
+    ├ 🎥 720p：52
+    └ 📦 SD：196
+
+過程中請勿關閉瀏覽器。
+確定開始下載？
+
+⚠️ 超過 250 部影片待下載，每 250 部會自動暫停並在 3 分鐘後自動恢復。</div>
+                            <figcaption class="mt-2 text-center text-xs text-slate-500">擴充功能實際顯示的對話框內容（數字為範例）。</figcaption>
+                        </figure>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/zh-TW/popup-list-ready.jpg" alt="生成下載列表後的彈出視窗：各畫質的影片數量，開始下載按鈕已可點擊" width="336" height="820" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">按下 1. 生成下載列表後：各畫質數量與尚待下載的數量。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">7</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 7: </span>下載最高畫質</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">在 ⚙️ 設定 保持 <strong>✨ HD 優先</strong> 開啟（預設即開啟）。這樣每支影片只會存一個檔案，依序優先選 1080p、HD，最後才是原始檔。關閉 HD 優先時，會同時存下原始檔和 HD 版本。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">如果在摘要中按了「取消」，請按 <strong>2. 開始下載</strong>。進度條會顯示預估剩餘時間，<strong>⏹ 中斷下載</strong> 和 <strong>▶ 繼續下載</strong> 可以暫停與繼續。影片會存到 Chrome 下載資料夾的 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok_downloads/</code> 底下。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/zh-TW/popup-downloading.jpg" alt="下載中的彈出視窗：含預估剩餘時間的進度條和中斷下載按鈕" width="336" height="725" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">下載中：進度條、剩餘時間與 ⏹ 中斷下載。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">所需時間與速率限制</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">Grok 會限制同一個帳號在短時間內能送出的請求數量。擴充功能的做法是放慢速度，而不是直接失敗：</p>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4">
+                <li>HD 升級每支影片送出一個請求，約需 8 秒。每 100 支影片大約抓 13 分鐘。</li>
+                <li>如果 Grok 回應請求過多，擴充功能會多等幾秒，把那支影片記為失敗後繼續。之後再跑一次升級即可：已升級的影片會從清單中消失，只會送出剩下的。</li>
+                <li>整庫掃描時，因速率限制而無法確認畫質的影片會直接略過，不會用猜的。📊 掃描結果 對話框會告訴你略過了幾支。</li>
+                <li>下載時，擴充功能每下載 250 支影片會暫停一次，以免超過 Grok 的限制（預設 3 分鐘，可在 ⚙️ 設定 調整），之後自動繼續。影片超過 250 支時，下載摘要會事先提醒。</li>
+                <li>下載量非常大時，Grok 可能開始拒絕下載，例如在數千支影片後出現 HTTP 403。重新整理 grok.com 分頁，再按一次 <strong>2. 開始下載</strong> 即可；下載紀錄會略過已存好的檔案。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">先升級，再下載</h2>
+            <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><i data-lucide="alert-triangle" class="text-amber-400 w-5 h-5"></i></div>
+                    <div class="space-y-3">
+                        <p class="text-slate-300 leading-relaxed">對於已經下載過的檔案，順序很重要。升級前已用 SD 存下的影片，下一次執行時會以 HD 再下載一次，存在 SD 檔旁邊。</p>
+                        <p class="text-slate-300 leading-relaxed">HD 和 1080p 共用同一筆下載紀錄。已經下載過 720p 的影片，升級到 1080p 後<strong>不會</strong>再下載。請先完成 1080p 升級再下載，或在 <strong>🧹 清除操作</strong> 清除該來源的紀錄，重新下載該來源的所有檔案。清除紀錄不會刪除 Grok 上或電腦裡的任何東西；同名檔案已存在時，新檔會加上編號另存，不會覆蓋舊檔。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">沒有 PRO 能做什麼</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">免費版適合下載圖片。凡是跟影片畫質或影片檔案有關的功能，都需要 PRO。</p>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[640px] border-collapse text-sm">
+                    <thead><tr class="border-b border-slate-700"><th class="text-left py-3 px-4 text-slate-300 font-semibold"></th><th class="text-left py-3 px-4 text-slate-300 font-semibold">免費版</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">PRO</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">1. 生成下載列表</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">下載圖片</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">下載影片</td><td class="py-3 px-4 text-slate-400">✗（🎬 視頻 已鎖定）</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">✨ HD 升級至 HD/720p</td><td class="py-3 px-4 text-slate-400">✗</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">升級至 1080p</td><td class="py-3 px-4 text-slate-400">✗</td><td class="py-3 px-4 text-slate-400">✓（需 SuperGrok Heavy）</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">📦 所有生成媒體（整個媒體庫）</td><td class="py-3 px-4 text-slate-400">最近 7 天</td><td class="py-3 px-4 text-slate-400">完整媒體庫</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">日期篩選</td><td class="py-3 px-4 text-slate-400">✗</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-4">PRO 為一次性購買 $4.99，終身免費更新，並提供 7 天退款保證。<a href="/zh-TW/pricing.html" class="underline hover:text-pink-300">查看價格</a>。</p>
+        </div>
+    </section>
+
+    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">疑難排解</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">HD 升級和 HD 下載最常出現的狀況，以及處理方式。</p>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">HD 升級說所有影片都已是最高畫質<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">檢查 <strong>🎯 升級來源</strong>。如果是收藏，請改成 <strong>🌐 整庫</strong>，因為收藏清單可能漏掉 Grok 2026 年 7 月改版後生成的影片。如果沒勾 1080p 選項而影片都已是 HD，訊息也會告訴你還有幾支可以升到 1080p。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">「1080p 升級需要付費方案 — 已略過 N 個影片」<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok 拒絕替你的帳號升級 1080p，沒有訂閱 SuperGrok Heavy 時就會這樣。取消勾選 <strong>將 HD/720p 升級至 1080p</strong> 即可，HD（720p）升級不受影響。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">掃描花很久<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">選 🌐 整庫 時，擴充功能要先檢查完每支影片才能顯示預覽。勾選 <strong>僅升級最近 … 小時內的視頻</strong> 縮小掃描範圍，之後再逐步放寬時間。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">升級後生成列表仍顯示 SD<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">給 Grok 幾分鐘完成處理，再按一次 <strong>1. 生成下載列表</strong>。如果有請求因速率限制失敗，再跑一次 <strong>🚀 升級畫質</strong>；只有仍未達目標畫質的影片會被送出。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">升級到 1080p 了，開始下載卻跳過這支影片<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">這支影片之前已下載過 720p，而 HD 和 1080p 共用同一筆下載紀錄。請在 <strong>🧹 清除操作</strong> 清除該來源的紀錄後重新開始。下次請在第一次下載前先完成 1080p 升級。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">升級畫質按鈕或「視頻」核取方塊被鎖住<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">兩者都是 PRO 功能。請在 <strong>🔑 授權</strong> 啟用授權碼（格式 GMD-XXXX-XXXX-XXXX-XXXX，需要 2.6.0 以上版本），或查看<a href="/zh-TW/pricing.html" class="underline hover:text-pink-300">價格</a>。</div>
+                </details>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-8">還是卡住了？<a href="/zh-TW/faq.html" class="underline hover:text-slate-300">常見問題</a>有更多情況說明，也可以透過<a href="/support.html" class="underline hover:text-slate-300">聯絡支援</a>找到真人協助。</p>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">常見問題</h2>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Grok 影片的 HD 是多少解析度？</h3>
+                    <p class="text-slate-400 leading-relaxed">HD 指的是 720p。擴充功能把 1080p 視為另一個更高的等級。Grok 原本就以 720p 生成的影片已算 HD，不會再升級一次。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">下載 HD 的 Grok 影片需要 SuperGrok Heavy 嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">只有 1080p 需要。HD（720p）升級不需要。升級到 1080p 時，你的 Grok 帳號必須訂閱 SuperGrok Heavy；沒有的話 Grok 會拒絕請求，擴充功能會略過那些影片。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">HD 升級要花多久？</h3>
+                    <p class="text-slate-400 leading-relaxed">每支影片約 8 秒，100 支大約 13 分鐘。整庫掃描會先檢查每支影片的畫質，所以在開始升級前還要多花一些時間。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">HD 升級是免費的嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">不是。HD 升級和影片下載屬於 PRO，一次性購買 $4.99，終身免費更新。免費版可以下載圖片。PRO 的完整內容請見<a href="/zh-TW/pricing.html" class="underline hover:text-pink-300">價格頁</a>。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">升級會刪除或取代原始影片嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">擴充功能只會請 Grok 產生更高解析度的版本，從不刪除任何東西。關閉 ✨ HD 優先 後，可以同時下載原始檔和 HD 版本。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">可以只升級最近的影片嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">可以。在 ✨ HD 升級 勾選「僅升級最近 … 小時內的視頻」並輸入 1 到 240 小時，範圍外的影片會維持原狀。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="related" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">相關教學</h2>
+            <ul class="grid sm:grid-cols-2 gap-4">
+                <li><a href="/zh-TW/library-download.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>如何一次下載所有 Grok Imagine 收藏</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/zh-TW/grok-favorites-not-loading.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok 收藏不顯示？備份你的媒體庫</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/zh-TW/save-grok-imagine-prompts.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>下載 Grok Imagine 影片並保留提示詞</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/zh-TW/grok-download-button-missing.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok 更新後下載按鈕不見了</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/zh-TW/faq.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>常見問題：關於擴充功能的常見疑問</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">取得 Grok 影片的 HD 版本</h2>
+            <p class="text-slate-400 mb-8">免費安裝。PRO 一次性 $4.99，增加 HD 升級、影片下載與完整媒體庫。</p>
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=download-grok-videos-hd&amp;utm_content=bottom_cta&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>加到 Chrome</span>
+                </a>
+                <a href="/zh-TW/pricing.html" class="px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span>查看 PRO 價格</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-sm mt-6">✨ 包含所有未來更新</p>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/zh-TW/privacy.html" class="hover:text-white">隱私權政策</a> · <a href="/zh-TW/terms.html" class="hover:text-white">服務條款</a> · <a href="/manager/" class="hover:text-white">Grok Media Manager</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> <nav class="mt-3" aria-label="語言"><a href="/download-grok-videos-hd.html" hreflang="en" class="hover:text-white">English</a> · <a href="/zh-TW/download-grok-videos-hd.html" hreflang="zh-TW" class="hover:text-white text-slate-300">繁體中文</a> · <a href="/ja/download-grok-videos-hd.html" hreflang="ja" class="hover:text-white">日本語</a> · <a href="/ko/download-grok-videos-hd.html" hreflang="ko" class="hover:text-white">한국어</a> · <a href="/es/download-grok-videos-hd.html" hreflang="es" class="hover:text-white">Español</a> · <a href="/de/download-grok-videos-hd.html" hreflang="de" class="hover:text-white">Deutsch</a></nav></div></footer></div>
+
+    <!-- Scripts -->
+    <script src="/js/i18n.js?v=20261119"></script>
+    <script src="/js/components.js?v=20261119"></script>
+</body>
+
+</html>

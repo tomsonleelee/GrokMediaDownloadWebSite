@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // GA4: never load or send from local dev/test hosts (localhost, 127.0.0.1). Production only.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            window['ga-disable-G-6YPN8563C6'] = true;
+        } else {
+            var gtagScript = document.createElement('script'); gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6';
+            document.head.appendChild(gtagScript);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok 更新後下載按鈕不見了 - GrokMediaDownloader</title>
+    <meta name="description" content="Grok 在 2026 年 11 月 12–13 日把 Imagine 併入主應用程式後，舊版 Grok Media Downloader 的「生成下載列表」和「開始下載」會變灰。更新到 2.6.3 或更新版本即可解決。">
+    <meta name="keywords" content="Grok 下載按鈕不見, Grok 下載按鈕 灰色, Grok Imagine 不見了, Grok Library, Grok Media Downloader 不能用, Grok 擴充功能 按鈕無法點, Grok 2026 年 11 月 更新">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/zh-TW/grok-download-button-missing.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/grok-download-button-missing.html">
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/grok-download-button-missing.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/grok-download-button-missing.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/grok-download-button-missing.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/grok-download-button-missing.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/grok-download-button-missing.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/grok-download-button-missing.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/zh-TW/grok-download-button-missing.html">
+    <meta property="og:title" content="Grok 更新後下載按鈕不見了">
+    <meta property="og:description" content="Grok 2026 年 11 月改版後「生成下載列表」和「開始下載」變灰？把 Grok Media Downloader 更新到 2.6.3 或更新版本，並在 grok.com/library 上使用。">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grok 更新後下載按鈕不見了">
+    <meta name="twitter:description" content="Grok 2026 年 11 月改版後「生成下載列表」和「開始下載」變灰？把 Grok Media Downloader 更新到 2.6.3 或更新版本，並在 grok.com/library 上使用。">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Grok 更新後下載按鈕不見了",
+      "description": "Grok 在 2026 年 11 月 12–13 日把 Imagine 併入主應用程式後，舊版 Grok Media Downloader 的「生成下載列表」和「開始下載」會變灰。更新到 2.6.3 或更新版本即可解決。",
+      "inLanguage": "zh-TW",
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28",
+      "author": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "url": "https://www.kario-studio.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://grokmedia.kario-studio.com/assets/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://grokmedia.kario-studio.com/zh-TW/grok-download-button-missing.html"
+      },
+      "image": "https://grokmedia.kario-studio.com/assets/og-image.jpg"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://grokmedia.kario-studio.com/zh-TW/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grok 下載按鈕不見了",
+          "item": "https://grokmedia.kario-studio.com/zh-TW/grok-download-button-missing.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "為什麼 Grok 更新後下載按鈕不見了？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026 年 11 月 12–13 日，Grok 把 Imagine 併入主要應用程式，部分帳號的 /imagine 頁面會轉址到 Library 或首頁。2.6.3 之前的 Grok Media Downloader 只會在 /imagine 頁面上啟用 1. 生成下載列表 和 2. 開始下載，所以它們一直是灰色的。2.6.3 版可以在任何 grok.com 頁面使用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "哪個版本修好了這個問題？要付費嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026 年 11 月 23 日發布的 2.6.3 版，以及之後的所有版本。所有使用者都能免費更新，免費版和 PRO 都一樣。Chrome 會自動安裝，你也可以在 chrome://extensions 打開開發人員模式後點更新，手動強制更新。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "應該在哪個 Grok 頁面使用擴充功能？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "建議使用 grok.com/library。從 2.6.3 起任何 grok.com 頁面都可以，仍保有該頁面的帳號也能繼續用 grok.com/imagine/saved。點擴充功能圖示時，請讓 Grok 分頁保持在作用中。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我的帳號還有 Imagine 分頁，需要更新嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "需要，值得更新。Grok 是一個帳號一個帳號地切換，轉址隨時可能輪到你的帳號。2.6.3 版在 Imagine 頁面和 Library 上都能使用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "更新會刪掉我的設定、下載紀錄或授權嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。Chrome 是直接更新擴充功能，你的設定、下載紀錄和已啟用的 PRO 授權都會保持原樣。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "這篇指南有涵蓋 Grok 自己的下載按鈕嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "沒有。這篇談的是 Grok Media Downloader 擴充功能。Grok 本身的介面不在我們的控制範圍內，也會隨時間改變；關於它內建的下載選項，請查看 Grok 官方說明。"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css?v=20261119">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        @media (min-width: 768px) {
+            .guide-side { display: flex; gap: 1.5rem; align-items: flex-start; }
+            .guide-side > figure { margin-top: 0.25rem; flex-shrink: 0; width: 338px; }
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">跳至主要內容</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/zh-TW/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/zh-TW/" class="text-sm text-slate-300 hover:text-white">首頁</a><a href="/zh-TW/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">整庫下載</a><a href="/zh-TW/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">故事模式</a><a href="/zh-TW/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">影片生成佇列</a><a href="/zh-TW/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">串流擷取</a><a href="/zh-TW/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">專案下載</a><a href="/zh-TW/pricing.html" class="text-sm text-slate-300 hover:text-white">價格方案</a><a href="/zh-TW/faq.html" class="text-sm text-slate-300 hover:text-white">常見問題</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+    <section class="relative pt-32 pb-12 lg:pt-40 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <nav aria-label="導覽路徑" class="text-sm text-slate-500 mb-6">
+                <a href="/zh-TW/" class="hover:text-white">首頁</a>
+                <span aria-hidden="true" class="px-2">/</span>
+                <span class="text-slate-300">Grok 下載按鈕不見了</span>
+            </nav>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>疑難排解指南 · 2026 年 11 月 28 日更新</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white">Grok 更新後下載按鈕不見了</h1>
+            <p class="text-lg text-slate-300 leading-relaxed mb-8">Grok 11 月改版後打開網頁，發現下載按鈕不見了或變成灰色？如果你用的是 Grok Media Downloader，通常只要更新一次擴充功能就能解決。這篇指南說明 Grok 改了什麼、2.6.3 之前的版本為什麼失效，以及如何更新並重新開始下載。</p>
+
+            <!-- Short answer -->
+            <div class="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 md:p-8 mb-8">
+                <p class="text-emerald-300 text-sm font-semibold uppercase tracking-wide mb-3">簡答</p>
+                <p class="text-slate-200 leading-relaxed mb-3">2026 年 11 月 12–13 日，Grok 把 Imagine 併入主要應用程式，部分帳號的 <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">/imagine</code> 頁面現在會轉址到 Library 或首頁。2.6.3 之前的 Grok Media Downloader 只會在 <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">/imagine</code> 頁面上啟用 <strong class="text-white font-semibold">1. 生成下載列表</strong> 和 <strong class="text-white font-semibold">2. 開始下載</strong>，所以按鈕一直是灰色的。</p><p class="text-slate-200 leading-relaxed mb-3">請更新到 2.6.3 或更新的版本。Chrome 會在幾小時內自動更新；想馬上更新，請開啟 <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">chrome://extensions</code>，打開 <strong class="text-white font-semibold">開發人員模式</strong> 再點 <strong class="text-white font-semibold">更新</strong>。接著開啟 <a class="text-emerald-400 underline hover:text-white" href="https://grok.com/library" target="_blank" rel="noopener">grok.com/library</a>，重新整理分頁，就能像以前一樣使用擴充功能。</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=grok-download-button-missing&amp;utm_content=hero&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>加到 Chrome</span>
+                </a>
+                <a href="/zh-TW/changelog.html#v2-6-3" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="list-checks" class="w-5 h-5 text-emerald-400"></i>
+                    <span>2.6.3 更新內容</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide body -->
+    <div class="pb-8">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <aside class="mt-10 rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6">
+            <div class="flex gap-4 items-start">
+                <i data-lucide="info" class="w-6 h-6 text-amber-400 flex-shrink-0 mt-1"></i>
+                <div>
+                    <p class="font-semibold text-white mb-2">這篇指南說的是哪個下載按鈕</p>
+                    <p class="text-slate-300 leading-relaxed">這篇指南談的是 Grok Media Downloader 瀏覽器擴充功能裡的按鈕。Grok 本身的介面，包括 Grok 內建的任何下載選項，都不在我們的控制範圍內，隨時可能改變。關於這些，請查看 Grok 官方說明。</p>
+                </div>
+            </div>
+        </aside>
+        <section id="what-changed" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">Grok 在 2026 年 11 月改了什麼</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">2026 年 11 月 12 日和 13 日，Grok 把 Imagine 併入主要的 Grok 應用程式。側邊欄現在顯示 Library，你生成的圖片和影片都列在那裡。部分帳號的 Imagine 分頁消失了，<code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">/imagine</code> 頁面（包括 grok.com/imagine/saved）會轉址到 Library 或首頁。其他帳號仍保有 Imagine 分頁，因為 Grok 是一個帳號一個帳號地切換。因此同一天裡，兩個人看到的版面可能不一樣。</p><p class="text-slate-300 leading-relaxed mb-4">對一個以 Imagine 頁面為基礎打造的擴充功能來說，轉址比新外觀影響更大。下一節說明原因。</p>
+        </section>
+        <section id="why-grey" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">擴充功能的按鈕為什麼變灰</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">2.6.3 之前的 Grok Media Downloader 會檢查作用中分頁的網址，只在 grok.com/imagine 頁面上啟用主要按鈕。Grok 開始轉址這些頁面後，使用者能打開的每個頁面都無法通過這項檢查。彈出視窗於是讓 <strong class="text-white font-semibold">1. 生成下載列表</strong> 和 <strong class="text-white font-semibold">2. 開始下載</strong> 一直維持灰色，並顯示這則訊息：</p><blockquote class="rounded-xl border border-amber-500/30 bg-amber-500/5 px-5 py-4 text-slate-200 mb-4">「請在 Grok Imagine 收藏夾頁面使用此功能。」</blockquote><p class="text-slate-300 leading-relaxed mb-4">訊息下方的連結 <strong class="text-white font-semibold">前往收藏夾 →</strong> 會打開 grok.com/imagine/saved，結果又被轉址。在舊版裡沒有其他路可走，看起來就像下載按鈕隨著 Grok 的更新消失了。</p><p class="text-slate-300 leading-relaxed mb-4">2026 年 11 月 23 日發布的 2.6.3 版移除了這項限制。擴充功能現在可以在任何 grok.com 頁面使用，建議使用 grok.com/library。目前開著哪個 Grok 頁面，不會影響下載的內容，因為擴充功能是直接讀取你的媒體庫，而不是你眼前的頁面。</p>
+        </section>
+        <section id="versions" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">各版本可使用按鈕的頁面</h2>
+            
+            <div class="overflow-x-auto -mx-4 px-4 mb-6">
+                <table class="w-full border-collapse text-sm" style="hyphens: auto; -webkit-hyphens: auto;">
+                    <thead><tr class="border-b border-slate-700"><th class="py-3 px-4 text-left text-white font-bold">擴充功能版本</th><th class="py-3 px-4 text-center text-white font-bold">按鈕可用的頁面</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">2.6.3 之前</td><td class="py-3 px-4 text-center text-slate-400">僅限 grok.com/imagine 頁面</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-slate-300">2.6.3 及更新版本</td><td class="py-3 px-4 text-center text-slate-400">任何 grok.com 頁面；建議使用 grok.com/library</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-300 leading-relaxed mb-4">所有人都能免費更新，免費版和 PRO 都一樣。</p>
+        </section>
+        <section id="fix" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">如何修復</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">整個修復只要幾分鐘。不需要移除擴充功能，你的設定、下載紀錄和 PRO 授權都會保留。</p>
+            <ol class="space-y-8 mt-8">
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">1</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">確認擴充功能版本</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">在網址列輸入 <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">chrome://extensions</code> 並按 Enter。找到 Grok Media Downloader，查看卡片上的版本號碼。如果是 2.6.3 或更高，代表你已經有修正版，請直接跳到第 4 步。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">2</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">更新擴充功能</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">Chrome 會自動更新擴充功能，通常在新版本發布後幾小時內完成。想立刻更新，請用 <code class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-200 text-sm font-mono">chrome://extensions</code> 右上角的開關打開 <strong class="text-white font-semibold">開發人員模式</strong>，然後點頁面上方出現的 <strong class="text-white font-semibold">更新</strong> 按鈕。Chrome 會檢查所有擴充功能，並安裝尚未套用的更新。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">3</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">確認新版本</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">確認卡片上的版本已經是 2.6.3 或更新。之後可以再把開發人員模式關掉，它只是為了使用「更新」按鈕。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">4</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">開啟 grok.com/library 並重新整理</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">前往 <a class="text-emerald-400 underline hover:text-white" href="https://grok.com/library" target="_blank" rel="noopener">grok.com/library</a> 或任何其他 grok.com 頁面，重新整理分頁，讓更新後的擴充功能連上它。請確認你已登入。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">5</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">打開彈出視窗，確認按鈕</h3>
+                        <div class="guide-side"><div class="min-w-0 flex-1"><p class="text-slate-300 leading-relaxed mb-4">點 Grok Media Downloader 的圖示。彈出視窗由上到下依序是：</p><ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4"><li><strong class="text-white font-semibold">📊 狀態</strong>：圖片和各畫質影片的數量，掃描後才會填入。</li><li><strong class="text-white font-semibold">🎬 媒體類型</strong>：圖片；影片需要 PRO。</li><li><strong class="text-white font-semibold">📥 下載來源與篩選</strong>：列表的來源，以及 PRO 的日期篩選。</li><li><strong class="text-white font-semibold">1. 生成下載列表</strong>：在任何 grok.com 頁面上都能點了。</li><li><strong class="text-white font-semibold">2. 開始下載</strong>：產生出有待下載檔案的列表後啟用。</li></ul></div>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 338px;">
+                            <img src="/assets/guides/zh-TW/popup-overview.jpg" alt="在 grok.com 上的 Grok Media Downloader 彈出視窗，包含狀態區、下載來源選擇器，以及 1. 生成下載列表 和 2. 開始下載 按鈕" loading="lazy" width="336" height="1158" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">2.6.3 或更新版本在 grok.com 頁面上（圖中為已解鎖 PRO 的畫面）：按鈕又可以用了。</figcaption>
+                        </figure></div>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold" aria-hidden="true">6</div>
+                    <div class="min-w-0 flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white">照常下載</h3>
+                        <p class="text-slate-300 leading-relaxed mb-4">選擇下載來源，點 <strong class="text-white font-semibold">1. 生成下載列表</strong>。掃描完成後，<strong class="text-white font-semibold">📊 下載摘要</strong> 對話框會詢問<em class="not-italic text-slate-200">「確定開始下載？」</em>：按「確定」立即開始，或按「取消」，準備好後再點 <strong class="text-white font-semibold">2. 開始下載</strong>。用舊版下載過的檔案會被略過。如果列表裡少了最近的作品，請改用 <strong class="text-white font-semibold">📦 所有生成媒體（依對話）</strong>，不要用 <strong class="text-white font-semibold">🌟 收藏</strong>，原因請見<a class="text-emerald-400 underline hover:text-white" href="/zh-TW/grok-favorites-not-loading.html">Grok 收藏不顯示？備份你的媒體庫</a>。如果這台電腦還沒安裝擴充功能，也可以從 <a target="_blank" rel="noopener" class="text-emerald-400 underline hover:text-white" href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=grok-download-button-missing&amp;utm_content=steps&amp;utm_term=zh-TW">Chrome 線上應用程式商店</a>取得。</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+        <section id="wrong-tab" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">2.6.3 及更新版本的「請先開啟 grok.com」訊息</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">2.6.3 版只在一種情況下仍會讓按鈕變灰：作用中的分頁不是 grok.com 頁面，例如你在新聞網站或空白的新分頁上打開彈出視窗。這時它會顯示：</p><blockquote class="rounded-xl border border-amber-500/30 bg-amber-500/5 px-5 py-4 text-slate-200 mb-4">「請先開啟 grok.com（程式庫或 Imagine 已儲存頁面）再試一次。」</blockquote><p class="text-slate-300 leading-relaxed mb-4">訊息裡的「程式庫」是擴充功能的用詞，指的就是 Grok 側邊欄的 Library 頁面（grok.com/library）。點訊息下方的 <strong class="text-white font-semibold">前往 Grok 程式庫 →</strong>，或切換到 grok.com 分頁，再重新打開彈出視窗。擴充功能永遠以目前視窗中作用中的分頁為準，所以如果你開了好幾個視窗，請在顯示 Grok 的那個視窗裡點圖示。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 338px;">
+                            <img src="/assets/guides/zh-TW/popup-wrong-page.jpg" alt="在非 Grok 分頁上的 Grok Media Downloader 彈出視窗：要求開啟 grok.com 的訊息、前往 Grok 程式庫連結，以及無法點選的按鈕" loading="lazy" width="336" height="456" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">在不是 grok.com 的分頁上，彈出視窗會請你開啟 Grok，並提供前往 Library 的連結。</figcaption>
+                        </figure>
+        </section>
+
+        <section id="troubleshooting" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">疑難排解</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">如果更新後按鈕還是不能用，通常是下面其中一種情況。</p>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">更新後按鈕還是灰色的<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">確認作用中的分頁真的是 grok.com 頁面，重新整理該分頁，再打開彈出視窗。如果彈出視窗顯示「請先開啟 grok.com」的訊息，代表你在別的分頁或視窗上。如果 chrome://extensions 上的版本仍低於 2.6.3，表示更新還沒送達。</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">點了更新還是沒有裝上 2.6.3<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">Chrome 有時需要一段時間才會取得新版本。等幾個小時後再點一次更新。最後的手段是移除擴充功能，再從 Chrome 線上應用程式商店重新安裝。移除會清除擴充功能在本機的下載紀錄，所以下次執行時會重新下載檔案；PRO 使用者請準備好授權碼，以備需要重新啟用。</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">只有 2. 開始下載 是灰色的<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">在產生列表之前，這是正常的。請先點 1. 生成下載列表。如果你在生成列表後改了篩選條件，或改用需要提示詞的檔名設定，彈出視窗會請你重新生成列表，在那之前「開始下載」都會維持灰色。掃描進行中時，兩個按鈕也都會停用。</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">彈出視窗顯示「生成失敗」<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">請確認已登入 grok.com，重新整理分頁後再試一次。</p></div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">在 Grok 裡找不到 Imagine 或已儲存的作品<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><p class="text-slate-400 leading-relaxed mb-3">已經套用 11 月改版的帳號，作品會在 Grok 側邊欄的 Library 裡，也就是 grok.com/library。Grok 自己的頁面放在哪裡由 Grok 決定，如果在那裡也找不到，請查看 Grok 官方說明。</p></div>
+                </details>
+            </div>
+        </section>
+
+        <section id="faq" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">常見問題</h2>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">為什麼 Grok 更新後下載按鈕不見了？</h3>
+                    <p class="text-slate-400 leading-relaxed">2026 年 11 月 12–13 日，Grok 把 Imagine 併入主要應用程式，部分帳號的 /imagine 頁面會轉址到 Library 或首頁。2.6.3 之前的 Grok Media Downloader 只會在 /imagine 頁面上啟用 1. 生成下載列表 和 2. 開始下載，所以它們一直是灰色的。2.6.3 版可以在任何 grok.com 頁面使用。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">哪個版本修好了這個問題？要付費嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">2026 年 11 月 23 日發布的 2.6.3 版，以及之後的所有版本。所有使用者都能免費更新，免費版和 PRO 都一樣。Chrome 會自動安裝，你也可以在 chrome://extensions 打開開發人員模式後點更新，手動強制更新。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">應該在哪個 Grok 頁面使用擴充功能？</h3>
+                    <p class="text-slate-400 leading-relaxed">建議使用 grok.com/library。從 2.6.3 起任何 grok.com 頁面都可以，仍保有該頁面的帳號也能繼續用 grok.com/imagine/saved。點擴充功能圖示時，請讓 Grok 分頁保持在作用中。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">我的帳號還有 Imagine 分頁，需要更新嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">需要，值得更新。Grok 是一個帳號一個帳號地切換，轉址隨時可能輪到你的帳號。2.6.3 版在 Imagine 頁面和 Library 上都能使用。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">更新會刪掉我的設定、下載紀錄或授權嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">不會。Chrome 是直接更新擴充功能，你的設定、下載紀錄和已啟用的 PRO 授權都會保持原樣。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">這篇指南有涵蓋 Grok 自己的下載按鈕嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">沒有。這篇談的是 Grok Media Downloader 擴充功能。Grok 本身的介面不在我們的控制範圍內，也會隨時間改變；關於它內建的下載選項，請查看 Grok 官方說明。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="related" class="mt-16 scroll-mt-24">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-5">相關指南</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <a href="/zh-TW/library-download.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">如何一次下載所有 Grok Imagine 收藏</span>
+                    <span class="block text-sm text-slate-400">生成一次列表，就能一口氣下載所有圖片和影片。</span>
+                </a>
+                <a href="/zh-TW/grok-favorites-not-loading.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">Grok 收藏不顯示？備份你的媒體庫</span>
+                    <span class="block text-sm text-slate-400">為什麼新作品不在收藏裡，以及如何保存整個媒體庫。</span>
+                </a>
+                <a href="/zh-TW/save-grok-imagine-prompts.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">下載 Grok Imagine 影片並保留提示詞</span>
+                    <span class="block text-sm text-slate-400">把提示詞寫進檔名，或存成每支影片旁的 .json 檔。</span>
+                </a>
+                <a href="/zh-TW/download-grok-videos-hd.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">下載 HD 高畫質的 Grok 影片</span>
+                    <span class="block text-sm text-slate-400">把影片升級到 720p，或在 SuperGrok Heavy 方案下升級到 1080p，再下載可取得的最高畫質。</span>
+                </a>
+                <a href="/zh-TW/faq.html" class="block bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-emerald-500/50 transition-all">
+                    <span class="block font-semibold text-white mb-1">常見問題</span>
+                    <span class="block text-sm text-slate-400">關於擴充功能、PRO 和 Grok 近期改版的簡短解答。</span>
+                </a>
+            </div>
+        </section>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="mt-16 py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">取得 Grok Media Downloader 2.6.3 或更新版本</h2>
+            <p class="text-slate-400 mb-8">可在 grok.com/library 及任何 grok.com 頁面使用。免費安裝；PRO 一次付費 $4.99，另外支援影片、完整媒體庫等功能。</p>
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=grok-download-button-missing&amp;utm_content=bottom_cta&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>加到 Chrome</span>
+                </a>
+                <a href="/zh-TW/pricing.html" class="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span>$4.99 PRO 終身授權</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-sm mt-6">一次付費。免費版使用者同樣會收到更新。</p>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/zh-TW/privacy.html" class="hover:text-white">隱私權政策</a> · <a href="/zh-TW/terms.html" class="hover:text-white">服務條款</a> · <a href="/manager/" class="hover:text-white">Grok Media Manager</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> <nav class="mt-3" aria-label="語言"><a href="/grok-download-button-missing.html" hreflang="en" class="hover:text-white">English</a> · <a href="/zh-TW/grok-download-button-missing.html" hreflang="zh-TW" class="hover:text-white text-slate-300">繁體中文</a> · <a href="/ja/grok-download-button-missing.html" hreflang="ja" class="hover:text-white">日本語</a> · <a href="/ko/grok-download-button-missing.html" hreflang="ko" class="hover:text-white">한국어</a> · <a href="/es/grok-download-button-missing.html" hreflang="es" class="hover:text-white">Español</a> · <a href="/de/grok-download-button-missing.html" hreflang="de" class="hover:text-white">Deutsch</a></nav></div></footer></div>
+
+    <!-- Scripts -->
+    <script src="/js/i18n.js?v=20261119"></script>
+    <script src="/js/components.js?v=20261119"></script>
+</body>
+
+</html>

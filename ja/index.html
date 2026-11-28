@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grok 画像・動画 一括ダウンロード | GrokMediaDownloader - Chrome拡張機能</title>
-    <meta name="description" content="Grok AIの画像と動画を一括ダウンロード・管理。ライブラリ全体ダウンロード（会話別）、1080pアップグレード、Video Gen Queue、Story Modeに対応。無料Chrome拡張機能、PRO $4.99。">
+    <meta name="description" content="Grok AIの画像と動画を一括ダウンロード・管理。ライブラリ全体ダウンロード（会話別）、HD（720p）/ 1080pアップグレード、Video Gen Queue、Story Modeに対応。無料Chrome拡張機能、PRO $4.99。">
     <meta name="keywords" content="Grok downloader, ライブラリ全体ダウンロード, Grokメディア一括保存, 1080p Grok動画, 会話別フォルダ, Story Mode Helper, Video Studio, Grok ダウンローダー, Chrome 拡張機能, 一括ダウンロード, Stream Capture, HD Upgrade">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="author" content="Kario Studio">
@@ -72,7 +72,7 @@
         "Grok 圖片下載器",
         "Story Mode Helper"
       ],
-      "description": "The best Chrome extension for Grok AI media management: Whole Library Download by conversation, 1080p video upgrade, Story Mode Helper video studio, batch downloading, Stream Capture, and HD upgrade.",
+      "description": "Chrome extension for Grok AI media management: Whole Library Download by conversation, batch downloading, HD (720p) / 1080p video upgrade, Story Mode Helper video studio and Stream Capture.",
       "operatingSystem": "Chrome",
       "applicationCategory": "UtilitiesApplication",
       "applicationSubCategory": "Browser Extension",
@@ -128,7 +128,7 @@
       "@type": "WebSite",
       "name": "GrokMediaDownloader",
       "url": "https://grokmedia.kario-studio.com",
-      "description": "Official website for GrokMediaDownloader - the best Grok AI media management Chrome extension with Story Mode Helper video studio.",
+      "description": "Official website for GrokMediaDownloader, a Chrome extension for Grok AI media management with the Story Mode Helper video studio.",
       "inLanguage": ["en", "zh-TW", "ja", "ko", "es", "de"],
       "publisher": {
         "@type": "Organization",
@@ -335,7 +335,7 @@
                         <span class="text-pink-500" data-i18n="hero_title_2">ワンクリックでバックアップ</span>
                     </h1>
 
-                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Grokには一括ダウンロード機能がありません。数百件の生成画像や動画を1件ずつ保存し、先月作ったものを探し出し、1080p版を手元に残す——手作業では追いつきません。GrokMediaDownloaderはGrokのライブラリ全体をスキャンし、会話名のフォルダとプロンプトに基づくファイル名ですべてをダウンロード、動画は1080pにアップグレードします。処理はすべてブラウザ内で完結し、どこにもアップロードされません。</p>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed" data-i18n="hero_desc">Grokには一括ダウンロード機能がありません。数百件の生成画像や動画を1件ずつ保存し、先月作ったものを探し出し、HD版を手元に残す——手作業では追いつきません。GrokMediaDownloaderはGrokのライブラリ全体をスキャンし、会話名のフォルダとプロンプトに基づくファイル名ですべてをダウンロード、動画はHD（720p、SuperGrok Heavyなら1080p）にアップグレードします。処理はすべてブラウザ内で完結し、どこにもアップロードされません。</p>
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-6">
@@ -363,7 +363,7 @@
                         <span class="feature-tag"><span>📥</span> <span data-i18n="hero_tag_1">一括ダウンロード</span></span>
                         <span class="feature-tag"><span>🎯</span> <span data-i18n="hero_tag_2">Video Gen Queue</span></span>
                         <span class="feature-tag"><span>📦</span> <span data-i18n="hero_tag_3">ライブラリ全体</span></span>
-                        <span class="feature-tag"><span>💎</span> <span data-i18n="hero_tag_4">1080pアップグレード</span></span>
+                        <span class="feature-tag"><span>💎</span> <span data-i18n="hero_tag_4">HD / 1080pアップグレード</span></span>
                         <span class="feature-tag"><span>📂</span> <span data-i18n="hero_tag_5">プロジェクトフォルダ</span></span>
                         <span class="feature-tag"><span>🌊</span> <span data-i18n="hero_tag_6">Stream Capture</span></span>
                     </div>
@@ -506,15 +506,15 @@
                     <tbody class="divide-y divide-slate-800 text-slate-300">
                         <tr><td class="py-4 px-4 md:px-6">Grokのページに表示されなくなったメディアも見つける（2026年7月以降のバックエンド）</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ ライブラリ全体スキャン</td></tr>
                         <tr><td class="py-4 px-4 md:px-6">数千件を1回でダウンロードしてもメモリ切れしない</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">画面に読み込まれた分のみ</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 15,000件超で検証済み</td></tr>
-                        <tr><td class="py-4 px-4 md:px-6">会話・タグ別フォルダ、日付・プロンプト・ID・シード値からファイル名を生成</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">すべて手動でリネーム</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">ランダムなファイル名</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ テンプレート</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">会話・タグ別フォルダ、日付・プロンプト・ID・画質からファイル名を生成</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">すべて手動でリネーム</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">ランダムなファイル名</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ テンプレート</td></tr>
                         <tr><td class="py-4 px-4 md:px-6">ダウンロード済みはスキップ、再読み込み後も再開</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ ソースごとの履歴</td></tr>
-                        <tr><td class="py-4 px-4 md:px-6">プレビューではなく1080p版の動画を取得</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">1件ずつ手作業</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">プレビュー画質</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ HD / 1080p一括アップグレード <span class="ml-1 inline-block align-middle text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-500/20 text-pink-300">PRO</span></td></tr>
-                        <tr><td class="py-4 px-4 md:px-6">動画生成をキューに入れ、クリップを1本のストーリーに結合</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Video Gen Queue、Story Mode</td></tr>
-                        <tr><td class="py-4 px-4 md:px-6">メディアをプライベートに保つ</td><td class="py-4 px-4 md:px-6 text-center text-slate-400">はい</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">拡張機能による</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ 100%ブラウザ内、サーバーなし</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">プレビューではなくHD版（720p、SuperGrok Heavyなら1080p）の動画を取得</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">1件ずつ手作業</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">プレビュー画質</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ HD / 1080p一括アップグレード <span class="ml-1 inline-block align-middle text-[10px] font-bold px-1.5 py-0.5 rounded bg-pink-500/20 text-pink-300">PRO</span></td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">動画生成をキューに入れ、クリップを1本のストーリーに結合</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">—</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ Video Gen Queue（無料は50回）、Story Mode（書き出しはPRO）</td></tr>
+                        <tr><td class="py-4 px-4 md:px-6">メディアをプライベートに保つ</td><td class="py-4 px-4 md:px-6 text-center text-slate-400">はい</td><td class="py-4 px-4 md:px-6 text-center text-slate-500">拡張機能による</td><td class="py-4 px-4 md:px-6 text-center text-green-400">✓ ダウンロードはブラウザ内で行われ、ファイルは Grok から直接ディスクへ保存。Grok 以外のサーバー通信はライセンス確認のみ（メディアや閲覧データは端末の外に出ません）</td></tr>
                     </tbody>
                 </table>
             </div>
-            <p class="text-center text-slate-500 text-xs mt-4">2026年10月時点のGrokメディアAPIの挙動に基づきます。無料版でもライブラリ全体スキャン、直近7日分のダウンロード、画像の一括ダウンロード、フォルダ分けが使えます。PRO機能の一覧は<a href="/ja/pricing.html" class="underline hover:text-slate-300">料金</a>をご覧ください。</p>
+            <p class="text-center text-slate-500 text-xs mt-4">2026年10月時点のGrokメディアAPIの挙動に基づきます。無料版でも直近7日分のライブラリ全体スキャン、画像の一括ダウンロード、フォルダ分け、ファイル名テンプレートが使えます。動画のダウンロード、ライブラリ全体、HDアップグレードにはPROが必要です。全機能の一覧は<a href="/ja/pricing.html" class="underline hover:text-slate-300">料金</a>をご覧ください。</p>
         </div>
     </section>
 
@@ -527,7 +527,7 @@
                     </div>
                     <div>
                         <h2 class="text-lg md:text-xl font-bold text-white mb-2" data-i18n="legacy_notice_title">新しく生成したメディアが見つかりませんか？</h2>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-3" data-i18n="legacy_notice_body">Grok の 2026 年 7 月のバックエンド変更以降、新しく生成された画像と動画はお気に入りに追加されなくなりました。そのため「お気に入り」をスキャンしても空に見えたり、HD アップグレードが「すべてアップグレード済み」と報告したりします。ダウンロード元を <strong class="text-white">📦 すべての生成メディア（会話別）</strong> に切り替えてください。Grok 自身の Saved ページが現在読み取っているのがこの元です。v2.5.1 以降は既定値で、どなたでも無料で使えます。</p>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-3" data-i18n="legacy_notice_body">Grok の 2026 年 7 月のバックエンド変更以降、新しく生成された画像と動画はお気に入りに追加されなくなりました。そのため「お気に入り」をスキャンしても空に見えたり、HD アップグレードが「すべてアップグレード済み」と報告したりします。ダウンロード元を <strong class="text-white">📦 すべての生成メディア（会話別）</strong> に切り替えてください。Grok 自身の Saved ページが現在読み取っているのがこの元です。v2.5.1 以降は既定値で、直近 7 日分はどなたでも無料で使えます（PRO ではライブラリ全体）。</p>
                         <a href="/ja/library-download.html" class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-300 hover:text-emerald-200 transition-colors">
                             <span data-i18n="legacy_notice_cta">ライブラリ全体ダウンロードの仕組み</span>
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
@@ -767,9 +767,9 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">
                     <span data-i18n="feat_title_1">パワーユーザーのために</span><br>
-                    <span class="text-pink-500" data-i18n="feat_title_2">PRO級の機能</span>
+                    <span class="text-pink-500" data-i18n="feat_title_2">無料＆PRO機能</span>
                 </h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="feat_desc">実際のユーザーフィードバックに基づき、最強のGrokメディア管理システムを構築しました。</p>
+                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="feat_desc">実際のユーザーフィードバックをもとに、Grokメディアのダウンロード・アップグレード・整理のための機能を作りました。</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -799,8 +799,8 @@
                     <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors">
                         <i data-lucide="calendar-clock" class="text-purple-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_2_title">日付＆履歴フィルター (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_2_desc">今日の作品だけ欲しい？Date Filterで範囲を指定。履歴も自動照合し重複ダウンロードを防止。</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_2_title">日付フィルター (PRO)＆ダウンロード履歴</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_2_desc">今日の作品だけ欲しい？Date Filter（PRO）で範囲を指定。無料のダウンロード履歴が自動照合し、重複ダウンロードを防止。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Date Range</span>
                         <span class="mini-tag">History</span>
@@ -883,8 +883,8 @@
                     <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-colors">
                         <i data-lucide="clapperboard" class="text-purple-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_7_title">Story Mode Helper (PRO)</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_7_desc">新しい動画スタジオ！Storyboard管理、フレーム抽出、Grokへの送信、ローカルFFmpegマージ。</p>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_7_title">Story Mode Helper（書き出しはPRO）</h3>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_7_desc">新しい動画スタジオ！Storyboard管理、フレーム抽出、Grokへの送信、ローカルFFmpegマージ。クリップの並べ替えは無料、結合した動画の書き出しにはPROが必要です。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Merge</span>
                         <span class="mini-tag">Storyboard</span>
@@ -904,7 +904,7 @@
                     <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-pink-500/30 transition-colors">
                         <i data-lucide="list-video" class="text-pink-400 w-6 h-6"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_8_title">Video Gen Queue (PRO)</h3>
+                    <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_8_title">Video Gen Queue（無料は50回）</h3>
                     <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_8_desc">自動動画生成キュー！バッチ追加、4つの生成モード、自動リトライ、レート制限検出。無料版50回、PRO無制限。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">Auto Retry</span>
@@ -946,7 +946,7 @@
                         <i data-lucide="tag" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_10_title">タグ別ダウンロード</h3>
-                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">タグでメディアをダウンロード。Grok のタグ移行は新旧どちらのストアにも内容を残したため、v2.5.6 は両方を読み取って統合します。タグ一覧もタグの内容も両者の和集合となり、旧タグの完全な内容も、旧システムにしかないタグも含まれます。タグダウンロードもプロンプト名に対応。ファイルは tags/{tagName}/ に保存されます。</p>
+                    <p class="text-slate-400 leading-relaxed flex-grow" data-i18n="feat_10_desc">タグでメディアをダウンロード。Grok のタグ移行は新旧どちらのストアにも内容を残したため、v2.5.6 は両方を読み取って統合します。タグ一覧もタグの内容も両者の和集合となり、旧タグの完全な内容も、旧システムにしかないタグも含まれます。タグダウンロードもプロンプト名に対応。ファイルは tags/{tagName}/ に保存されます。画像は無料、タグ内の動画にはPROが必要です。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">タグフォルダ</span>
                         <span class="mini-tag">独立履歴</span>
@@ -973,7 +973,7 @@
                         <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_12_title">ライブラリ全体ダウンロード</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">お気に入りだけでなく、すべての生成画像と動画をダウンロード。ファイルは会話ごとのフォルダにまとめられ、実際にそれを生み出したプロンプトで名付けられ、独立したダウンロード履歴を持ちます。無料版は直近 7 日間、PRO で制限解除。</p>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_12_desc">お気に入りだけでなく、すべての生成画像と動画をダウンロード。ファイルは会話ごとのフォルダにまとめられ、実際にそれを生み出したプロンプトで名付けられ、独立したダウンロード履歴を持ちます。無料版は直近 7 日間の画像、PRO では動画も含めて制限解除。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">会話別に整理</span>
                         <span class="mini-tag">プロンプト名</span>
@@ -992,7 +992,7 @@
                         <i data-lucide="gem" class="text-teal-400 w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-white" data-i18n="feat_13_title">1080p 動画アップグレード (PRO)</h3>
-                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_13_desc">1080pが独立した品質階層になりました。ダウンロードは最高品質を自動選択し、アップグレードは一度に1段階ずつ：SD → HD、そして720p/HD → 1080p。1080pにはSuperGrok Heavyと明示的なオプトインが必要です。</p>
+                    <p class="text-slate-300 leading-relaxed flex-grow" data-i18n="feat_13_desc">1080pが独立した品質階層になりました。ダウンロードは利用できる最も高い画質を自動選択し、アップグレードは一度に1段階ずつ：SD → HD、そして720p/HD → 1080p。1080pにはSuperGrok Heavyと明示的なオプトインが必要です。</p>
                     <div class="flex flex-wrap gap-1.5 mt-3">
                         <span class="mini-tag">3つの品質階層</span>
                         <span class="mini-tag">明示的な選択制</span>
@@ -1187,7 +1187,7 @@
                         <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
                         <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
                     </div>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-4" data-i18n="testimonial_3_body">「Grokユーザーにとって最高のツールです。一括ダウンロードとHDアップグレード機能で毎週何時間も節約できます。」</p>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4" data-i18n="testimonial_3_body">「この拡張機能は革命的で、Grokユーザーにとって間違いなく最高のツールです。一括ダウンロードとHDアップグレード機能で毎週何時間も節約できます。」</p>
                     <div class="flex items-center gap-2">
                         <div class="w-8 h-8 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center text-white text-xs font-bold">L</div>
                         <div>

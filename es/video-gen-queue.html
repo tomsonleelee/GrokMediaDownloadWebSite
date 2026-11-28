@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Gen Queue | Cola automatizada de generación de video - GrokMediaDownloader</title>
-    <meta name="description" content="Automatiza la generación de videos en Grok con Video Gen Queue. Programación por lotes, 4 modos de generación, reintento automático y detección del límite de velocidad. Función PRO de GrokMediaDownloader.">
+    <meta name="description" content="Automatiza la generación de videos en Grok con Video Gen Queue. Programación por lotes, 4 modos de generación, reintento automático y detección del límite de velocidad. Gratis: 50 usos; PRO: ilimitado.">
     <meta name="keywords" content="Video Gen Queue, generación automática de video, cola por lotes, video Grok AI, extensión de Chrome, reintento automático, detección del límite de velocidad">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -92,31 +92,47 @@
           "name": "¿Qué es Video Gen Queue y cómo funciona?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Video Gen Queue es una función PRO que registra automáticamente cada video que Grok genera durante tu sesión. A medida que Grok procesa tus solicitudes de generación, la extensión pone en cola cada video terminado para descargarlo en lote con un clic, así nunca tendrás que guardar los videos uno por uno."
+            "text": "Video Gen Queue automatiza la generación de videos de Grok desde el panel lateral de la extensión. Añades publicaciones de imagen a la cola, eliges un modo (Custom, Normal, Fun o Spicy) y cuántos videos correctos quieres por publicación, y la extensión abre cada publicación en grok.com, escribe el prompt y lo envía. Los intentos moderados o fallidos se reintentan hasta tu límite de reintentos y luego la cola pasa a la siguiente publicación. La versión gratuita incluye 50 usos; PRO no tiene límite."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo descargar varios videos de Grok a la vez?",
+          "name": "¿Cómo añado publicaciones a la cola?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. Ese es el propósito principal de Video Gen Queue. Una vez que los videos están en cola, haz clic en Download All para guardar todos los videos en tu disco local en una sola operación."
+            "text": "Haz clic en 🎯 Queue en el popup para abrir el panel. En una publicación de Grok, pulsa el botón flotante 🎯 para elegir el prompt y las opciones y añadirla; en el panel también puedes pegar un ID o una URL de publicación en Agregar elemento. Agregar publicaciones recientes añade de una vez las publicaciones de imagen de tus Favoritos de Grok creadas en las últimas 1 a 72 horas, con un mismo prompt. Desde el cambio de Grok de julio de 2026, es posible que las imágenes más nuevas no estén en Favoritos."
           }
         },
         {
           "@type": "Question",
-          "name": "¿En qué formato se descargan los videos?",
+          "name": "¿Qué ajustes puedo elegir para cada elemento?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Los videos se descargan en su formato original tal como los entrega Grok, normalmente MP4. La extensión descarga directamente el archivo de origen y conserva la resolución, la velocidad de fotogramas y la calidad originales sin recodificar."
+            "text": "El modo (Custom, Normal, Fun o Spicy), el prompt (Custom lo necesita; los demás modos funcionan sin él), el objetivo de éxito, el máximo de reintentos, la duración (6 s o 10 s) y la resolución (480p o 720p). Las opciones de 10 s y 720p requieren SuperGrok; si tu cuenta no cumple los requisitos, Grok puede rechazar o marcar la solicitud."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Se pierde la cola si cierro el panel de la extensión?",
+          "name": "¿Puedo ver cómo va cada elemento?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Video Gen Queue se guarda en IndexedDB, que sobrevive a los cambios de pestaña y al cierre del panel de la extensión. Tus videos en cola siguen disponibles hasta que vacíes la cola manualmente o los descargues."
+            "text": "Sí. Cada elemento muestra si está pendiente, activo, completado o fallido, con sus éxitos y fallos frente al objetivo. Las estadísticas de prompts registran cuántas veces cada prompt tiene éxito o es moderado, para que sepas cuáles funcionan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si Grok limita mis solicitudes o una generación se queda colgada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Si Grok responde con un error de límite de solicitudes (HTTP 429), la cola se detiene y muestra un aviso; espera un rato y vuelve a pulsar Iniciar. Si no llega ningún resultado dentro del tiempo de espera de generación (180 segundos por defecto, ajustable de 30 a 600 en Configuración), ese intento se marca como error y la cola continúa con el siguiente elemento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se pierde la cola si cierro el panel lateral o recargo la página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Los elementos de la cola y las estadísticas de prompts se guardan en el IndexedDB de tu navegador, así que se conservan al cerrar el panel o recargar grok.com, y el proceso se reanuda tras la recarga. Mientras la cola trabaja, deja el navegador abierto y la pestaña de Grok en las páginas de publicación."
           }
         },
         {
@@ -124,7 +140,7 @@
           "name": "¿Video Gen Queue está disponible en la versión gratuita?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Video Gen Queue es una función exclusiva de PRO. Pásate a PRO por $4.99 (licencia vitalicia) para desbloquear Video Gen Queue junto con Stream Capture, Story Mode y Project Download."
+            "text": "Sí, con un límite. La versión gratuita incluye 50 usos, y un uso es un video que Grok genera correctamente a través de la cola; los intentos moderados o fallidos no cuentan. PRO ($4.99 en un solo pago, licencia vitalicia) lo hace ilimitado y además desbloquea la descarga de videos, Stream Capture, la exportación de Story Mode y Project Download."
           }
         }
       ]
@@ -206,7 +222,7 @@
 
                 <p class="text-xl md:text-2xl text-pink-300 mb-4" data-i18n="queue_subtitle">Cola automatizada de generación de video</p>
 
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="queue_page_desc">Nueva interfaz en el panel lateral para generar videos en lote. Admite 4 modos de generación, reintento automático en caso de fallo y detección inteligente del límite de velocidad para una generación de video totalmente automatizada.</p>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="queue_page_desc">Panel lateral para generar videos por lotes. Admite 4 modos de generación, reintentos automáticos hasta el límite que fijes y detección del límite de solicitudes, que detiene la cola cuando Grok pide ir más despacio.</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=video-gen-queue&amp;utm_content=hero&amp;utm_term=es" target="_blank" rel="noopener" class="px-8 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
@@ -296,7 +312,7 @@
                         <span class="text-2xl">🔄</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_1_title">Reintento automático</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_1_desc">Las generaciones fallidas vuelven a la cola automáticamente para que cada tarea se complete con éxito.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_1_desc">Los intentos moderados o fallidos se reintentan automáticamente, hasta el límite de reintentos que fijes para cada elemento.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -305,7 +321,7 @@
                         <span class="text-2xl">📋</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_2_title">Añadir a la cola en lote</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_2_desc">Selecciona varios elementos de tus favoritos y añádelos a la cola de generación en lote con un clic.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_2_desc">Agregar publicaciones recientes añade de una vez las publicaciones de imagen de tus Favoritos de Grok creadas en las últimas 1 a 72 horas, con un mismo prompt.</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -323,7 +339,7 @@
                         <span class="text-2xl">🛡️</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_4_title">Detección del límite de velocidad</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_4_desc">Detección inteligente de los límites de velocidad de la API de Grok, con pausa automática y reanudación tras el periodo de espera.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_4_desc">Detecta la respuesta de límite de solicitudes de Grok (HTTP 429) y detiene la cola, para que esperes y la vuelvas a iniciar.</p>
                 </div>
             </div>
         </div>
@@ -358,7 +374,7 @@
                             <i data-lucide="list-plus" class="text-rose-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_2_title">Añade a la cola</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="queue_step_2_desc">Haz clic en el botón flotante 🎯 o usa la adición en lote para elegir un rango de tiempo (1h~72h) y añadir los Posts recientes con un clic.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_2_desc">Pulsa el botón flotante 🎯 en una publicación o usa Agregar publicaciones recientes para añadir publicaciones de imagen de tus Favoritos creadas en las últimas 1 a 72 horas.</p>
                     </div>
                 </div>
 
@@ -394,7 +410,7 @@
                             <i data-lucide="check-circle" class="text-emerald-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_5_title">Recoge los resultados</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="queue_step_5_desc">Los videos generados con éxito aparecen automáticamente en tus favoritos de Grok, listos para descargar cuando quieras.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_5_desc">Cada elemento se detiene al alcanzar su objetivo o su límite de reintentos, y el panel muestra sus éxitos y fallos. Descarga los videos nuevos con el popup (la descarga de videos requiere PRO).</p>
                     </div>
                 </div>
             </div>
@@ -436,7 +452,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1" data-i18n="queue_tech_3_title">Interceptor de Fetch</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_3_desc">Intercepción en el MAIN world de los resultados de generación, con respaldo por tiempo de espera de 90 segundos, para registrar con precisión cada generación.</p>
+                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_3_desc">Lee los resultados de generación interceptando las respuestas de Grok en la página, con un tiempo de espera (180 s por defecto, ajustable de 30 a 600 s) para que un intento atascado no detenga la cola.</p>
                             </div>
                         </div>
 
@@ -537,7 +553,7 @@
                         <i data-lucide="play" class="text-blue-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_normal_title">Normal</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_normal_desc">Generación de video estándar con el prompt original de la imagen. La opción más segura y predecible para resultados consistentes.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_normal_desc">El modo predefinido Normal de Grok. No necesita prompt.</p>
                 </div>
 
                 <!-- Fun Mode -->
@@ -546,7 +562,7 @@
                         <i data-lucide="party-popper" class="text-amber-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_fun_title">Fun</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_fun_desc">Añade un estilo lúdico y animado a la generación. Ideal para efectos de video caprichosos y de estilo caricatura.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_fun_desc">El modo predefinido Fun de Grok. No necesita prompt.</p>
                 </div>
 
                 <!-- Spicy Mode -->
@@ -555,7 +571,7 @@
                         <i data-lucide="flame" class="text-rose-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_spicy_title">Spicy</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_spicy_desc">Lleva los límites creativos más allá con una interpretación artística más audaz. Espera movimientos más dramáticos y sorpresas visuales.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_spicy_desc">El modo predefinido Spicy de Grok. No necesita prompt; el panel avisa de que Grok puede marcar estas solicitudes.</p>
                 </div>
             </div>
 
@@ -563,7 +579,7 @@
             <div class="mt-12 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-pink-500/10 border border-pink-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="info" class="text-pink-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="queue_modes_note">Cada elemento de la cola puede usar un modo distinto. El reintento automático gestiona los rechazos de moderación por sí solo, así que la cola sigue funcionando sin interrupciones.</p>
+                    <p class="text-slate-300 text-sm" data-i18n="queue_modes_note">Cada elemento de la cola puede usar un modo distinto. Los intentos moderados se reintentan hasta el límite de reintentos de cada elemento y luego la cola pasa al siguiente.</p>
                 </div>
             </div>
         </div>
@@ -579,31 +595,31 @@
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">¿Qué es Video Gen Queue y cómo funciona?</h3>
-                    <p class="text-slate-400">Video Gen Queue es una función PRO que registra automáticamente cada video que Grok genera durante tu sesión. A medida que Grok procesa tus solicitudes de generación, la extensión pone en cola cada video terminado para descargarlo en lote con un clic, así nunca tendrás que guardar los videos uno por uno.</p>
+                    <p class="text-slate-400">Video Gen Queue automatiza la generación de videos de Grok desde el panel lateral de la extensión. Añades publicaciones de imagen a la cola, eliges un modo (Custom, Normal, Fun o Spicy) y cuántos videos correctos quieres por publicación, y la extensión abre cada publicación en grok.com, escribe el prompt y lo envía. Los intentos moderados o fallidos se reintentan hasta tu límite de reintentos y luego la cola pasa a la siguiente publicación. La versión gratuita incluye 50 usos; PRO no tiene límite.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Puedo descargar varios videos de Grok a la vez?</h3>
-                    <p class="text-slate-400">Sí. Ese es el propósito principal de Video Gen Queue. Una vez que los videos están en cola, haz clic en "Download All" para guardar todos los videos en tu disco local en una sola operación. También puedes quitar videos de la cola de forma selectiva antes de descargar.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Cómo añado publicaciones a la cola?</h3>
+                    <p class="text-slate-400">Haz clic en 🎯 Queue en el popup para abrir el panel. En una publicación de Grok, pulsa el botón flotante 🎯 para elegir el prompt y las opciones y añadirla; en el panel también puedes pegar un ID o una URL de publicación en Agregar elemento. Agregar publicaciones recientes añade de una vez las publicaciones de imagen de tus Favoritos de Grok creadas en las últimas 1 a 72 horas, con un mismo prompt. Desde el cambio de Grok de julio de 2026, es posible que las imágenes más nuevas no estén en Favoritos.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Video Gen Queue funciona con todos los tipos de generación de video de Grok?</h3>
-                    <p class="text-slate-400">Video Gen Queue admite todo el contenido de video generado por la función de generación de video con IA de Grok. Detecta las URL de los videos a medida que se renderizan en la página y los añade a la cola automáticamente, sin importar su duración o resolución.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Qué ajustes puedo elegir para cada elemento?</h3>
+                    <p class="text-slate-400">El modo (Custom, Normal, Fun o Spicy), el prompt (Custom lo necesita; los demás modos funcionan sin él), el objetivo de éxito, el máximo de reintentos, la duración (6 s o 10 s) y la resolución (480p o 720p). Las opciones de 10 s y 720p requieren SuperGrok; si tu cuenta no cumple los requisitos, Grok puede rechazar o marcar la solicitud.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿En qué formato se descargan los videos?</h3>
-                    <p class="text-slate-400">Los videos se descargan en su formato original tal como los entrega Grok, normalmente MP4. La extensión descarga directamente el archivo de origen y conserva la resolución, la velocidad de fotogramas y la calidad originales sin recodificar.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Puedo ver cómo va cada elemento?</h3>
+                    <p class="text-slate-400">Sí. Cada elemento muestra si está pendiente, activo, completado o fallido, con sus éxitos y fallos frente al objetivo. Las estadísticas de prompts registran cuántas veces cada prompt tiene éxito o es moderado, para que sepas cuáles funcionan.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Se pierde la cola si cierro el panel de la extensión?</h3>
-                    <p class="text-slate-400">No. Video Gen Queue se guarda en IndexedDB, que sobrevive a los cambios de pestaña y al cierre del panel de la extensión. Tus videos en cola siguen disponibles hasta que vacíes la cola manualmente o los descargues.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Qué pasa si Grok limita mis solicitudes o una generación se queda colgada?</h3>
+                    <p class="text-slate-400">Si Grok responde con un error de límite de solicitudes (HTTP 429), la cola se detiene y muestra un aviso; espera un rato y vuelve a pulsar Iniciar. Si no llega ningún resultado dentro del tiempo de espera de generación (180 segundos por defecto, ajustable de 30 a 600 en Configuración), ese intento se marca como error y la cola continúa con el siguiente elemento.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Puedo ver el estado de cada video en la cola?</h3>
-                    <p class="text-slate-400">Sí. El panel de la cola muestra cada video con su estado: en cola, descargando o completado. Puedes ver el tamaño de los archivos y miniaturas de vista previa cuando están disponibles, lo que facilita identificar y gestionar tu colección de videos.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">¿Se pierde la cola si cierro el panel lateral o recargo la página?</h3>
+                    <p class="text-slate-400">No. Los elementos de la cola y las estadísticas de prompts se guardan en el IndexedDB de tu navegador, así que se conservan al cerrar el panel o recargar grok.com, y el proceso se reanuda tras la recarga. Mientras la cola trabaja, deja el navegador abierto y la pestaña de Grok en las páginas de publicación.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">¿Video Gen Queue está disponible en la versión gratuita?</h3>
-                    <p class="text-slate-400">Video Gen Queue es una función exclusiva de PRO. Pásate a PRO por $4.99 (licencia vitalicia) para desbloquear Video Gen Queue junto con Stream Capture, Story Mode y Project Download.</p>
+                    <p class="text-slate-400">Sí, con un límite. La versión gratuita incluye 50 usos, y un uso es un video que Grok genera correctamente a través de la cola; los intentos moderados o fallidos no cuentan. PRO ($4.99 en un solo pago, licencia vitalicia) lo hace ilimitado y además desbloquea la descarga de videos, Stream Capture, la exportación de Story Mode y Project Download.</p>
                 </div>
             </div>
         </div>

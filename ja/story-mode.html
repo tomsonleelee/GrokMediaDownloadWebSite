@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grok 動画 結合・編集ツール | Story Mode Helper - GrokMediaDownloader</title>
-    <meta name="description" content="Grok AIクリップからビデオストーリーを作成。ビジュアルストーリーボード、フレーム抽出、Grok送信による続編生成、ローカルFFmpegマージ。PRO機能。">
+    <meta name="description" content="Grok AIクリップからビデオストーリーを作成。ビジュアルストーリーボード、フレーム抽出、Grok送信による続編生成、ローカルFFmpegマージ。並べ替えは無料、書き出しはPRO機能。">
     <meta name="keywords" content="Story Mode Helper, Video Studio, Storyboard, フレーム抽出, Frame Extraction, Send Frame to Grok, FFmpeg, 動画結合, Grok AI video, Chrome 拡張機能">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -92,31 +92,47 @@
           "name": "GrokMediaDownloader のストーリーモードとは何ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ストーリーモードでは、ダウンロードした Grok AI 画像をスクロール可能なビジュアルストーリーやスライドショーにまとめることができます。意味のある順序で並べ、全体の流れをプレビューし、ストーリー全体を1つのファイルとして共有・エクスポートできます。"
+            "text": "ストーリーモード（Story Mode Helper）は、拡張機能のサイドパネルで使うビデオスタジオです。Grok の動画をストーリーボードに追加して並べ替え、任意のクリップからフレームを選んで Grok に送り、次のクリップを生成します。最後に FFmpeg ですべてのクリップをローカルで1本の動画に結合します。クリップの並べ替えは無料、結合した動画の書き出しには PRO が必要です。"
           }
         },
         {
           "@type": "Question",
-          "name": "Grok 画像からストーリーを作成するにはどうすればいいですか？",
+          "name": "ストーリーボードに動画を追加するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "拡張機能のストーリーモードパネルを開き、コレクションから画像を選択し、ドラッグ＆ドロップで順番を並べ替え、「ストーリーを作成」をクリックします。ストーリーはすぐに生成され、プレビューやエクスポートの準備が整います。"
+            "text": "ポップアップの 🛠️ Story Mode をクリックしてサイドパネルを開きます。パソコン内の動画ファイルをドロップするか、Grok の投稿から動画をドラッグします。Grok のお気に入りページでは、動画の Add to Story Mode ボタンを使ってください。最初の動画が Master Video になり、書き出す動画の解像度とフレームレートを決めます。"
           }
         },
         {
           "@type": "Question",
-          "name": "ストーリー内の画像の順番をカスタマイズできますか？",
+          "name": "クリップの順番は変更できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい。ストーリーモードにはドラッグ＆ドロップの並べ替えインターフェースが含まれています。ストーリーを完成させる前に画像を自由に並べ替えることができます。設定した順序はエクスポートされた出力に保持されます。"
+            "text": "はい。ストーリーボード上でクリップをドラッグすると並べ替えられ、クリックするとプレビューでき、不要なクリップは削除できます。「すべてクリア」でストーリーボードを空にできます。"
           }
         },
         {
           "@type": "Question",
-          "name": "ストーリーモードはどのエクスポート形式に対応していますか？",
+          "name": "Grok でクリップの続きを生成するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ストーリーモードは順序付き画像の ZIP アーカイブ、またはどのブラウザでも開けるスタンドアロンの HTML スライドショーファイルとしてエクスポートできます。"
+            "text": "クリップを選び、「フレームセレクター」でフレームを選びます（初期状態は最後のフレーム）。モードを選び、必要ならプロンプトを入力して「フレームを送信して動画生成」をクリックすると、そのフレームがアップロードされた状態で Grok が開き、次のクリップを生成できます。使ったフレームはロックされ、最後のフレームでない場合は書き出し時にその位置でクリップがカットされ、次のクリップと自然につながります。「フレームをダウンロード」でフレームを PNG で保存できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "「最終動画をエクスポート」では何が作られますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ストーリーボードの順番どおりにクリップを1本の MP4 に結合し、動画のダウンロードフォルダーに保存します。Master Video と解像度が異なるクリップは合わせて拡大縮小され（事前に警告が出ます）、音声のないクリップには無音トラックが追加されます。「音声トラックを含める」で音声を残すかどうかを選べます。結合はブラウザ内の FFmpeg でローカルに行われ、何もアップロードされません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "サイドパネルを閉じてもストーリーボードは残りますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "残ります。動画、抽出したフレーム、クリップの順番はブラウザの IndexedDB に保存されるため、パネルを開き直してもストーリーボードはそのままです。パネルには使用中のストレージ容量が表示され、「新規プロジェクト」または「すべてクリア」で保存された動画が削除されます。"
           }
         },
         {
@@ -124,7 +140,7 @@
           "name": "ストーリーモードは無料ですか、PRO 機能ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ストーリーモードは PRO 限定機能です。$4.99（永続ライセンス）で GrokMediaDownloader PRO にアップグレードすると、ストーリーモードに加えてストリームキャプチャー、Video Gen Queue、プロジェクトダウンロードも利用できます。"
+            "text": "両方です。無料版でもクリップをストーリーボードに追加して並べ替えられます。結合した動画の書き出しには PRO（$4.99 の買い切り永続ライセンス）が必要で、PRO では動画のダウンロード、ストリームキャプチャー、プロジェクトダウンロード、無制限の Video Gen Queue も使えます。"
           }
         }
       ]
@@ -197,7 +213,7 @@
             <div class="text-center max-w-4xl mx-auto">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wide mb-6">
                     <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
-                    <span data-i18n="story_badge">PRO機能</span>
+                    <span data-i18n="story_badge">書き出しはPRO</span>
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -281,7 +297,7 @@
                         <i data-lucide="layout-grid" class="text-purple-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_1_title">ビジュアルStoryboard</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="story_feat_1_desc">ドラッグ＆ドロップで動画セグメントを直感的に管理。Grokのお気に入りからワンクリックで追加可能。</p>
+                    <p class="text-slate-400 text-sm" data-i18n="story_feat_1_desc">動画セグメントをドラッグ＆ドロップで直感的に並べられます。ローカルの動画をドロップするか Grok の投稿からドラッグでき、Grok のお気に入りページではパネルを開いている間、動画に Add to Story Mode ボタンが表示されます。</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -319,7 +335,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="story_step_title">Story Modeの使い方</h2>
-                <p class="text-slate-400">四個簡單步驟，打造專業影片故事</p>
+                <p class="text-slate-400">4つのステップで動画ストーリーを作成</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -331,7 +347,7 @@
                             <i data-lucide="plus-circle" class="text-purple-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_1_title">動画をスタジオに追加</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_1_desc">Grokのお気に入りページで「Add to Studio」をクリック、またはサイドパネルにローカル動画をドラッグ＆ドロップ。</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_1_desc">ローカルの動画をサイドパネルにドロップするか、Grok の投稿から動画をドラッグします。Grok のお気に入りページでは、動画の Add to Story Mode をクリックします。</p>
                     </div>
                 </div>
 
@@ -355,7 +371,7 @@
                             <i data-lucide="wand-2" class="text-blue-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_3_title">続編を生成</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_3_desc">セグメントを選択し、フィルムストリップで任意のフレームを選択。プロンプトを入力してGrokに送信。Frame Lockでシームレスな続編を実現。</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_3_desc">セグメントを選び、フィルムストリップで任意のフレームを選んでプロンプトを入力し、Grok に送信します。Frame Lock がそのフレームを書き出し時のカット位置として記録します。</p>
                     </div>
                 </div>
 
@@ -367,7 +383,7 @@
                             <i data-lucide="download" class="text-emerald-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_4_title">マージ＆エクスポート</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_4_desc">すべてのセグメントが準備できたら、エクスポートをクリック。FFmpegがローカルで動画をマージしてダウンロード。</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_4_desc">すべてのセグメントがそろったら「最終動画をエクスポート」（PRO）をクリックします。FFmpeg がクリップをローカルで結合し、MP4 としてダウンロードできます。</p>
                     </div>
                 </div>
             </div>
@@ -380,7 +396,7 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Left: Technical Info -->
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6">技術亮點</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">技術的な特長</h2>
 
                     <div class="space-y-6">
                         <div class="flex gap-4">
@@ -388,8 +404,8 @@
                                 <i data-lucide="hard-drive" class="text-purple-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">IndexedDB 大容量儲存</h4>
-                                <p class="text-slate-400 text-sm">突破 Chrome Storage 10MB 限制，使用 IndexedDB 儲存大型影片 Blob 資料。</p>
+                                <h4 class="font-bold text-white mb-1">IndexedDB による大容量保存</h4>
+                                <p class="text-slate-400 text-sm">Chrome Storage の10MB制限を超えて、大きな動画の Blob データを IndexedDB に保存します。</p>
                             </div>
                         </div>
 
@@ -399,7 +415,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1">WebAssembly FFmpeg</h4>
-                                <p class="text-slate-400 text-sm">使用 FFmpeg.js (WASM) 在瀏覽器內執行專業級影片處理，無需伺服器。</p>
+                                <p class="text-slate-400 text-sm">FFmpeg.js（WASM）でプロ品質の動画処理をブラウザ内で実行します。サーバーは不要です。</p>
                             </div>
                         </div>
 
@@ -409,7 +425,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1">Chrome Side Panel API</h4>
-                                <p class="text-slate-400 text-sm">採用 Chrome 最新 Side Panel API，提供常駐式工作區，不干擾主頁面瀏覽。</p>
+                                <p class="text-slate-400 text-sm">Chrome の Side Panel API で常に開いておける作業スペースを用意し、メインページの閲覧を妨げません。</p>
                             </div>
                         </div>
 
@@ -418,8 +434,8 @@
                                 <i data-lucide="shield" class="text-emerald-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">完全本地處理</h4>
-                                <p class="text-slate-400 text-sm">所有影片資料在本地處理，絕不上傳至任何伺服器，確保您的創作隱私。</p>
+                                <h4 class="font-bold text-white mb-1">完全ローカル処理</h4>
+                                <p class="text-slate-400 text-sm">動画データはすべてローカルで処理され、どのサーバーにもアップロードされないため、作品のプライバシーが守られます。</p>
                             </div>
                         </div>
                     </div>
@@ -490,11 +506,11 @@
                         <div class="grid grid-cols-2 gap-2">
                             <button class="bg-purple-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="send" class="w-4 h-4"></i>
-                                Send to Grok
+                                フレームを送信して動画生成
                             </button>
                             <button class="bg-emerald-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="download" class="w-4 h-4"></i>
-                                Merge & Export
+                                最終動画をエクスポート
                             </button>
                         </div>
                     </div>
@@ -561,7 +577,7 @@
                     </div>
                     <div class="md:w-1/2 md:pl-12">
                         <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step4_title">4. フレームをGrokに送信</h3>
-                        <p class="text-slate-400" data-i18n="story_wf_step4_desc">「Send to Grok」をクリックすると、抽出されたフレームがアップロードされた状態でGrok Imagineが開きます。すぐにプロンプトを入力できます。</p>
+                        <p class="text-slate-400" data-i18n="story_wf_step4_desc">「フレームを送信して動画生成」をクリックすると、抽出したフレームがアップロードされた状態で Grok Imagine が開くので、すぐにプロンプトを書けます。</p>
                     </div>
                 </div>
 
@@ -569,7 +585,7 @@
                 <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
                     <div class="md:w-1/2 md:text-right md:pr-12">
                         <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step5_title">5. 続編を生成</h3>
-                        <p class="text-slate-400" data-i18n="story_wf_step5_desc">次に起こることを説明するプロンプトを入力。Grokが前のクリップの最終フレームからシームレスに続く新しいビデオを生成します。</p>
+                        <p class="text-slate-400" data-i18n="story_wf_step5_desc">次に起こることをプロンプトに書きます。Grok はそのフレームから始まる新しい動画を生成するので、前のクリップの終わりから続きます。</p>
                     </div>
                     <div class="hidden md:flex w-12 h-12 bg-amber-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-amber-500/50">
                         <i data-lucide="sparkles" class="text-amber-400 w-5 h-5"></i>
@@ -594,7 +610,7 @@
             <div class="mt-16 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-purple-500/10 border border-purple-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="infinity" class="text-purple-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="story_wf_loop_note">この反復ループで任意の長さのビデオストーリーを構築できます — 5、10、50以上のクリップを1つの連続した物語に連鎖させ、ワンクリックで統合。</p>
+                    <p class="text-slate-300 text-sm" data-i18n="story_wf_loop_note">このループでクリップを次々につなげて1本のストーリーにし、最後に「最終動画をエクスポート」（PRO）でまとめて結合できます。</p>
                 </div>
             </div>
         </div>
@@ -610,31 +626,31 @@
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">GrokMediaDownloader のストーリーモードとは何ですか？</h3>
-                    <p class="text-slate-400">ストーリーモードでは、ダウンロードした Grok AI 画像をスクロール可能なビジュアルストーリーやスライドショーにまとめることができます。単なる画像フォルダではなく、意味のある順序で並べ、全体の流れをプレビューし、ストーリー全体を1つのファイルとして共有・エクスポートできます。Grok で画像シリーズやビジュアルナラティブを制作するクリエイターに最適です。</p>
+                    <p class="text-slate-400">ストーリーモード（Story Mode Helper）は、拡張機能のサイドパネルで使うビデオスタジオです。Grok の動画をストーリーボードに追加して並べ替え、任意のクリップからフレームを選んで Grok に送り、次のクリップを生成します。最後に FFmpeg ですべてのクリップをローカルで1本の動画に結合します。クリップの並べ替えは無料、結合した動画の書き出しには PRO が必要です。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Grok 画像からストーリーを作成するにはどうすればいいですか？</h3>
-                    <p class="text-slate-400">拡張機能のストーリーモードパネルを開き、コレクションから画像を選択し、ドラッグ＆ドロップで順番を並べ替え、「ストーリーを作成」をクリックします。ストーリーはすぐに生成され、プレビューやエクスポートの準備が整います。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">ストーリーボードに動画を追加するには？</h3>
+                    <p class="text-slate-400">ポップアップの 🛠️ Story Mode をクリックしてサイドパネルを開きます。パソコン内の動画ファイルをドロップするか、Grok の投稿から動画をドラッグします。Grok のお気に入りページでは、動画の Add to Story Mode ボタンを使ってください。最初の動画が Master Video になり、書き出す動画の解像度とフレームレートを決めます。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">ストーリー内の画像の順番をカスタマイズできますか？</h3>
-                    <p class="text-slate-400">はい。ストーリーモードにはドラッグ＆ドロップの並べ替えインターフェースが含まれています。ストーリーを完成させる前に画像を自由に並べ替えることができます。設定した順序はエクスポートされた出力に保持されます。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">クリップの順番は変更できますか？</h3>
+                    <p class="text-slate-400">はい。ストーリーボード上でクリップをドラッグすると並べ替えられ、クリックするとプレビューでき、不要なクリップは削除できます。「すべてクリア」でストーリーボードを空にできます。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">1つのストーリーに何枚の画像を含めることができますか？</h3>
-                    <p class="text-slate-400">ストーリーモードは1ストーリーあたり数百枚の画像をサポートします。最良のパフォーマンスのため、100枚以内に抑えることをお勧めしますが、拡張機能自体には厳密な技術的上限はありません。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Grok でクリップの続きを生成するには？</h3>
+                    <p class="text-slate-400">クリップを選び、「フレームセレクター」でフレームを選びます（初期状態は最後のフレーム）。モードを選び、必要ならプロンプトを入力して「フレームを送信して動画生成」をクリックすると、そのフレームがアップロードされた状態で Grok が開き、次のクリップを生成できます。使ったフレームはロックされ、最後のフレームでない場合は書き出し時にその位置でクリップがカットされ、次のクリップと自然につながります。「フレームをダウンロード」でフレームを PNG で保存できます。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">ストーリーモードはどのエクスポート形式に対応していますか？</h3>
-                    <p class="text-slate-400">ストーリーモードは順序付き画像の ZIP アーカイブ、またはどのブラウザでも開けるスタンドアロンの HTML スライドショーファイルとしてエクスポートできます。将来の PRO アップデートでより多くのエクスポート形式が追加される予定です。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">「最終動画をエクスポート」では何が作られますか？</h3>
+                    <p class="text-slate-400">ストーリーボードの順番どおりにクリップを1本の MP4 に結合し、動画のダウンロードフォルダーに保存します。Master Video と解像度が異なるクリップは合わせて拡大縮小され（事前に警告が出ます）、音声のないクリップには無音トラックが追加されます。「音声トラックを含める」で音声を残すかどうかを選べます。結合はブラウザ内の FFmpeg でローカルに行われ、何もアップロードされません。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">ストーリー内の画像にキャプションやタイトルを追加できますか？</h3>
-                    <p class="text-slate-400">はい。ストーリーモードでは各画像にテキストキャプションを追加できます。キャプションはストーリービューの画像下に表示され、エクスポートされた HTML スライドショーにも含まれます。各フレームにコンテキストやナレーションを追加するのに便利です。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">サイドパネルを閉じてもストーリーボードは残りますか？</h3>
+                    <p class="text-slate-400">残ります。動画、抽出したフレーム、クリップの順番はブラウザの IndexedDB に保存されるため、パネルを開き直してもストーリーボードはそのままです。パネルには使用中のストレージ容量が表示され、「新規プロジェクト」または「すべてクリア」で保存された動画が削除されます。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">ストーリーモードは無料ですか、PRO 機能ですか？</h3>
-                    <p class="text-slate-400">ストーリーモードは PRO 限定機能です。$4.99（永続ライセンス）で GrokMediaDownloader PRO にアップグレードすると、ストーリーモードに加えてストリームキャプチャー、Video Gen Queue、プロジェクトダウンロードも利用できます。</p>
+                    <p class="text-slate-400">両方です。無料版でもクリップをストーリーボードに追加して並べ替えられます。結合した動画の書き出しには PRO（$4.99 の買い切り永続ライセンス）が必要で、PRO では動画のダウンロード、ストリームキャプチャー、プロジェクトダウンロード、無制限の Video Gen Queue も使えます。</p>
                 </div>
             </div>
         </div>
@@ -643,8 +659,8 @@
     <!-- CTA Section -->
     <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">開始創作您的影片故事</h2>
-            <p class="text-slate-400 mb-8">Story Mode Helper 是 PRO 版專屬功能</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">動画ストーリーづくりを始めましょう</h2>
+            <p class="text-slate-400 mb-8">クリップの並べ替えは無料、結合した動画の書き出しには PRO が必要です</p>
 
             <div class="inline-flex flex-col sm:flex-row gap-4">
                 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=story-mode&amp;utm_content=bottom_cta&amp;utm_term=ja" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">

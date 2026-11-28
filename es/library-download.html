@@ -19,9 +19,9 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whole Library Download | Descarga todos tus medios de Grok por conversación - GrokMediaDownloader</title>
-    <meta name="description" content="Descarga toda tu biblioteca de Grok Imagine, no solo los favoritos. Organizada en carpetas por conversación con nombres de archivo según el prompt real, compatibilidad con 1080p e historial de descargas independiente. Novedad de la v2.5.">
-    <meta name="keywords" content="descargar todos los medios de grok, descarga de biblioteca grok, descargar imágenes de grok en lote, carpetas por conversación grok, video grok 1080p, API de assets de grok, extensión de Chrome">
+    <title>Cómo descargar todos tus favoritos de Grok Imagine de una vez | Whole Library Download</title>
+    <meta name="description" content="Guía paso a paso: descarga de una vez todos tus favoritos de Grok Imagine, imágenes y videos, con Grok Media Downloader. Whole Library Download por conversación, gratis vs PRO y solución de problemas.">
+    <meta name="keywords" content="descargar todos los favoritos de grok imagine, descargar todas las imágenes y videos de grok imagine, descargar biblioteca de grok, descargar imágenes de grok en lote, carpetas por conversación grok, video grok 1080p, extensión de Chrome">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
 
@@ -38,10 +38,10 @@
     <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/library-download.html">
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:url" content="https://grokmedia.kario-studio.com/es/library-download.html">
-    <meta property="og:title" content="Whole Library Download | Cada imagen y video de Grok, organizado">
-    <meta property="og:description" content="Descarga toda tu biblioteca de Grok Imagine por conversación, sin necesidad de filtrar por favoritos o etiquetas. Con compatibilidad con 1080p y nombres de archivo basados en el prompt.">
+    <meta property="og:title" content="Cómo descargar todos tus favoritos de Grok Imagine de una vez">
+    <meta property="og:description" content="Descarga cada imagen y cada video de Grok Imagine en pocos clics, organizados en una carpeta por conversación. Guía paso a paso con capturas de pantalla.">
     <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -55,9 +55,28 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Whole Library Download | GrokMediaDownloader">
-    <meta name="twitter:description" content="Descarga cada imagen y video generado de tu biblioteca de Grok, organizado en carpetas por conversación. Compatible con 1080p.">
+    <meta name="twitter:title" content="Cómo descargar todos tus favoritos de Grok Imagine de una vez">
+    <meta name="twitter:description" content="Whole Library Download, paso a paso: cada imagen y cada video de Grok Imagine, organizados por conversación.">
     <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
+
+    <!-- Schema.org - TechArticle -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Cómo descargar todos tus favoritos de Grok Imagine de una vez",
+      "alternativeHeadline": "Whole Library Download, paso a paso",
+      "description": "Guía paso a paso para descargar de una vez todos tus favoritos de Grok Imagine, imágenes y videos, con la extensión de Chrome Grok Media Downloader.",
+      "image": "https://grokmedia.kario-studio.com/assets/og-library-download.jpg",
+      "inLanguage": "es",
+      "datePublished": "2026-07-29",
+      "dateModified": "2026-11-28",
+      "mainEntityOfPage": "https://grokmedia.kario-studio.com/es/library-download.html",
+      "author": { "@type": "Organization", "name": "Kario Studio", "url": "https://www.kario-studio.com" },
+      "publisher": { "@type": "Organization", "name": "Kario Studio", "url": "https://www.kario-studio.com" },
+      "about": { "@type": "SoftwareApplication", "name": "Grok Media Downloader", "applicationCategory": "BrowserApplication", "operatingSystem": "Chrome" }
+    }
+    </script>
 
     <!-- Schema.org - BreadcrumbList -->
     <script type="application/ld+json">
@@ -74,14 +93,14 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Whole Library Download",
+          "name": "Cómo descargar todos tus favoritos de Grok Imagine de una vez",
           "item": "https://grokmedia.kario-studio.com/es/library-download.html"
         }
       ]
     }
     </script>
 
-    <!-- Schema.org - FAQPage -->
+    <!-- Schema.org - FAQPage (generated from the visible Troubleshooting and FAQ entries) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -89,82 +108,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "¿Qué es Whole Library Download?",
+          "name": "Generar lista e Iniciar descarga aparecen en gris",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Whole Library Download (descarga de toda la biblioteca) es un origen de descarga introducido en GrokMediaDownloader v2.5 que obtiene cada imagen y video generado de tu biblioteca de Grok Imagine, no solo los elementos que marcaste como favoritos o guardaste en una etiqueta. En el popup de la extensión aparece en el selector Download Source como \"All Generated Media (by Conversation)\", junto a los orígenes Favorite y Tag ya existentes. Como lee tu lista completa de assets en lugar de un subconjunto seleccionado, es la opción adecuada cuando quieres un archivo local completo de todo lo que has generado. Los archivos se agrupan en una carpeta por conversación, de modo que las imágenes que iniciaron un hilo y los videos generados a partir de ellas quedan juntos en lugar de dispersos en un directorio de descargas plano."
+            "text": "Primero comprueba que la pestaña activa sea una página de grok.com; en cualquier otro sitio el popup desactiva ambos botones y ofrece el enlace Ir a la Biblioteca de Grok →. Si estás en grok.com y los botones siguen en gris, tu extensión es anterior a la 2.6.3. El 12 y 13 de noviembre de 2026 Grok integró Imagine en la aplicación principal de Grok, y las versiones antiguas dejaron de reconocer la página. Chrome actualiza las extensiones automáticamente en unas horas; para actualizar ya, abre chrome://extensions, activa el Modo de desarrollador y haz clic en Actualizar. Guía completa: El botón de descarga de Grok no aparece tras la actualización."
           }
         },
         {
           "@type": "Question",
-          "name": "¿En qué se diferencia Whole Library Download de las descargas por Favoritos y por Etiqueta?",
+          "name": "Generar lista no encuentra nada o no muestra mis imágenes más recientes",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Los tres orígenes responden a necesidades distintas y son totalmente independientes entre sí. Favorite descarga solo los elementos que marcaste con «me gusta» en Grok, lo que mantiene el conjunto pequeño y seleccionado. Tag descarga todo lo guardado en una etiqueta o carpeta concreta de Grok y organiza el resultado en tags/{tagName}/. Whole Library ignora ambos filtros, cubre toda tu biblioteca generada y organiza el resultado por conversación. Lo más importante: cada origen mantiene su propio historial de descargas, así que descargar toda tu biblioteca nunca marca tus favoritos como ya descargados, y viceversa. Puedes usar los tres con el tiempo sin que uno contamine los registros de deduplicación de otro, algo que causaba confusión con frecuencia antes de la v2.5."
+            "text": "Revisa el selector Fuente de descarga. Si todavía indica Favoritos, cambia a Todos los medios generados (por conversación). Desde el cambio de Grok de julio de 2026, las nuevas generaciones ya no se añaden a Favoritos, así que un escaneo de Favoritos puede volver vacío con toda razón. La fuente de toda la biblioteca es gratis para todos (imágenes de los últimos 7 días; PRO cubre los videos y la biblioteca completa) y es la predeterminada desde la v2.5.1. Después, haz clic de nuevo en Generar lista. Más contexto en ¿Los favoritos de Grok no cargan?"
           }
         },
         {
           "@type": "Question",
-          "name": "¿Cómo se deciden las carpetas y los nombres de archivo?",
+          "name": "Solo se descargaron imágenes, ningún video",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cada conversación se convierte en una carpeta, nombrada con el patrón yyyymmdd_prompt_shortID. Cuando una conversación no tiene título, la extensión usa el prompt de esa conversación en lugar de llamar a la carpeta \"untitled\", lo que mantiene las carpetas comprensibles cuando las revisas meses después. Desde septiembre Grok ya no envía los prompts con la lista de medios, así que a partir de la v2.5.6 el prompt se recupera de la conversación que generó el elemento: un video usa su propio prompt de animación o, si no tiene, toma el de la imagen de origen. Una caché persistente de prompts guarda lo que recupera, de modo que regenerar toda la biblioteca pasa de minutos a segundos. Los prompts solo se obtienen cuando tu configuración de nombres de archivo o metadatos realmente los usa, y tras cambiar alguno de esos ajustes el popup te pide regenerar la lista. Si prefieres nombres de estilo técnico, el modo de nombre Grok Native produce grok_image_YYYYMMDD_id. metadata.json también registra el userId, y los nombres de archivo de los videos coinciden con la lista generada, con el mismo sufijo de ID corto."
+            "text": "Así funciona la versión gratuita: solo descarga imágenes. La descarga de videos, que aparece como Videos (Pro) en 🎬 Tipos de medios, requiere una licencia PRO. Cuando actives PRO en la sección Licencia del popup, marca Videos, vuelve a ejecutar Generar lista y haz clic en Iniciar descarga; tu historial de descargas omite las imágenes que ya tienes. Consulta los precios."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Por qué mi extensión dejó de encontrar los medios recién generados en Grok?",
+          "name": "La descarga se pausó sola",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "En julio de 2026 Grok migró a un nuevo backend de medios basado en conversaciones y assets. Los endpoints antiguos de los que dependían las versiones anteriores de la extensión ya no respaldan las vistas Saved y de la biblioteca de medios, por lo que las versiones anteriores a la v2.5.0 no pueden ver las imágenes y videos creados después de esa migración. GrokMediaDownloader v2.5.0 es una adaptación completa al nuevo backend y restablece la detección de los medios recién generados. Después de actualizar, abre chrome://extensions, recarga la extensión y actualiza tu pestaña de Grok. También conviene regenerar tu lista de descargas una vez, para que se apliquen los resultados de etiquetas combinados y los prompts que la v2.5.6 recupera de la conversación generadora; los nombres de archivo basados en el prompt y las reglas de carpetas por conversación se escriben durante el paso Generate List y no se aplican retroactivamente a una lista creada con una versión anterior."
+            "text": "Es una pausa programada, no un error. La extensión se detiene cada 250 videos, espera 3 minutos por defecto y luego continúa sola; el resumen de descarga lo avisa antes de una tanda de más de 250 videos. Puedes ajustar la espera entre 1 y 60 minutos en ⚙️ Configuración → ⏱️ Enfriamiento de límite. No tienes que hacer clic en nada; deja abiertos el navegador y la pestaña de grok.com."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Puedo filtrar por fecha una descarga de toda la biblioteca?",
+          "name": "Las descargas empiezan a fallar después de miles de archivos",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Sí. El origen Whole Library admite el mismo filtrado por fecha que los demás orígenes, tanto una ventana de horas recientes como un rango de fechas explícito. El escaneo recorre tu biblioteca de lo más reciente a lo más antiguo y se detiene en cuanto supera el final de la ventana seleccionada, así que filtrar por fecha no obliga a escanear toda la biblioteca antes de mostrar resultados. Esto importa en cuentas grandes: con limitación adaptativa y espera ante el límite de velocidad 429, se pueden escanear por completo bibliotecas de 8,000 assets o más, pero un filtro de fechas estrecho termina mucho antes. El botón Generate List muestra el progreso del escaneo, la resolución de calidad de video y la preparación de carpetas para que veas qué etapa está en curso."
+            "text": "En ejecuciones muy largas, Grok puede empezar a rechazar descargas a mitad de camino, por ejemplo con errores HTTP 403 después de miles de videos. Recarga la pestaña de grok.com, abre el popup y vuelve a hacer clic en Iniciar descarga. Tu historial de descargas omite todo lo que ya se guardó, así que solo se obtienen los archivos que faltan."
           }
         },
         {
           "@type": "Question",
-          "name": "¿Qué aporta la compatibilidad con 1080p en la v2.5?",
+          "name": "La Mejora HD dice que todos los videos ya están mejorados",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "La versión 2.5 reconoce 1080p como un nivel de calidad distinto en toda la extensión. Las descargas seleccionan automáticamente la mayor calidad disponible, priorizando 1080p sobre HD y HD sobre el archivo original. Las estadísticas del escaneo muestran cuántos videos están en SD, HD/720p y 1080p en lugar de agruparlo todo en SD y HD. La función de mejora ahora puede subir los videos un nivel a la vez, de SD a HD y de 720p o HD a 1080p. Mejorar a 1080p requiere un plan de pago de Grok, concretamente SuperGrok Heavy, por lo que está tras una casilla de activación explícita desactivada por defecto. Con la casilla desmarcada, la extensión no envía ninguna solicitud de 1080p."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Por qué antes los escaneos de mejora repetidos daban resultados distintos?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "El servidor de Grok devuelve de forma inconsistente la URL del medio HD de los videos recién generados: consultar el mismo video dos veces en pocos segundos podía devolver el campo una vez y omitirlo la siguiente, aunque el campo de resolución se mantuviera estable. Eso hacía que el mismo video pareciera SD en un escaneo y HD en otro, por lo que ejecutar \"mejorar las últimas N horas\" repetidamente daba un resultado distinto cada vez. La versión 2.5 añade una memoria de calidad exclusiva para mejoras que registra la calidad más alta obtenida para cada video y nunca la rebaja cuando una consulta posterior llega incompleta. Los registros caducan a los 30 días, tienen un número máximo y se borran automáticamente si una URL recordada deja de funcionar."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Whole Library Download está disponible en la versión gratuita?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí. Desde la v2.5.1 el selector de origen de descarga es gratis para todos, porque nadie debería quedarse atascado en un origen que no puede ver sus propios medios. Los usuarios gratuitos pueden seleccionar \"📦 All Generated Media (by Conversation)\" y descargar todo lo de los últimos 7 días; la extensión indica esta ventana desde el principio en lugar de recortar tus resultados en silencio. GrokMediaDownloader PRO, una compra única de $4.99 con licencia vitalicia, elimina el límite de tiempo para que puedas archivar toda tu biblioteca y desbloquea el filtrado por fecha (un rango concreto o una ventana de horas recientes). PRO también incluye Stream Capture, Story Mode Helper, Video Gen Queue ilimitado, Project-Based Download, mejora a HD y 1080p, y exportación e importación de datos. Todo el procesamiento ocurre localmente en tu navegador: no se recopilan datos y no se sube nada."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Generate List no encuentra nada o no muestra mis imágenes más recientes",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Revisa el selector Download Source. Si todavía indica Favorite, cambia a All Generated Media (by Conversation). Desde el cambio de Grok de julio de 2026, las nuevas generaciones ya no se añaden a Favoritos, así que un escaneo de Favorite puede volver vacío con toda razón. El origen de toda la biblioteca es gratis para todos y es el predeterminado desde la v2.5.1. Después, haz clic de nuevo en Generate List."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "HD Upgrade dice que todos los videos ya están mejorados",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La causa es la misma: el escaneo de mejora lee la lista del origen seleccionado, y la lista de Favorite está incompleta. Cambia el origen a toda la biblioteca, vuelve a generar la lista y ejecuta de nuevo el escaneo de mejora. Desde la v2.5 el escaneo converge: las ejecuciones repetidas devuelven el mismo resultado, y 1080p se registra como nivel propio, así que un archivo de 720p nunca se confunde con la calidad máxima."
+            "text": "La causa es la misma que la de una lista vacía: el escaneo de mejora lee la lista de la fuente seleccionada, y la lista de Favoritos está incompleta. Pon la Fuente de mejora en 🌐 Biblioteca completa, vuelve a generar la lista y ejecuta de nuevo el escaneo de mejora. Desde la v2.5 el escaneo converge: las ejecuciones repetidas devuelven el mismo resultado, y 1080p se registra como nivel propio, así que un archivo de 720p nunca se confunde con la calidad máxima. La Mejora HD es una función PRO."
           }
         },
         {
@@ -172,7 +159,7 @@
           "name": "Los nombres de archivo, los nombres de carpeta o metadata.json no incluyen el prompt",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Grok dejó de enviar el prompt junto con la lista de medios en septiembre de 2026. Actualiza a la v2.5.6 o posterior, que recupera cada prompt de la conversación que generó el elemento, y luego vuelve a generar la lista una vez: los nombres se deciden durante el paso Generate List, así que una lista creada con una versión anterior conserva los nombres antiguos. En Settings, elige el modo de nombre de archivo \"Prompt Based\" si quieres prompts en los nombres de archivo. Una caché persistente guarda los prompts recuperados, así que las regeneraciones posteriores tardan segundos."
+            "text": "Grok dejó de enviar el prompt junto con la lista de medios en septiembre de 2026. Actualiza a la v2.5.6 o posterior, que recupera cada prompt de la conversación que generó el elemento, y luego vuelve a generar la lista una vez: los nombres se deciden durante el paso Generar lista, así que una lista creada con una versión anterior conserva los nombres antiguos. En Configuración, elige el formato de nombre de archivo «Basado en prompt» si quieres prompts en los nombres de archivo. Una caché persistente guarda los prompts recuperados, así que las regeneraciones posteriores tardan segundos."
           }
         },
         {
@@ -188,12 +175,108 @@
           "name": "Perdí mis archivos y la extensión dice que ya está todo descargado",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Cada origen guarda su propio historial de descargas. Para el origen de toda la biblioteca, abre el popup, despliega Clear Actions y haz clic en Clear Conversation History; confirma el diálogo. El botón \"Reset Download History\" solo se aplica al origen Favorite. Borrar un historial no elimina nada en Grok ni en el disco; solo permite que la siguiente ejecución vuelva a descargar esos elementos."
+            "text": "Cada fuente guarda su propio historial de descargas. Para la fuente de toda la biblioteca, abre el popup, despliega 🧹 Limpiar y haz clic en Borrar historial de conversaciones; confirma el diálogo. El botón «Restablecer historial de descargas» solo se aplica a la fuente Favoritos, y la fuente Etiqueta tiene su propio botón «Borrar historial de etiquetas». Borrar un historial no elimina nada en Grok ni en el disco; solo permite que la siguiente ejecución vuelva a descargar esos elementos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo descargar todos mis favoritos de Grok Imagine de una vez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Abre grok.com/library, haz clic en el icono de Grok Media Downloader, elige 🌟 Favoritos como Fuente de descarga y haz clic en 1. Generar lista y 2. Iniciar descarga. Como en julio de 2026 la lista Guardados de Grok dejó de recibir medios nuevos en muchas cuentas, la mayoría de la gente obtiene un resultado más completo con 📦 Todos los medios generados (por conversación), que descarga toda tu biblioteca, hayas guardado o no cada elemento. La versión gratuita descarga imágenes y, con la fuente de toda la biblioteca, abarca los últimos 7 días; PRO añade los videos y elimina el límite de tiempo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es Whole Library Download?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Whole Library Download (descarga de toda la biblioteca) es una fuente de descarga introducida en GrokMediaDownloader v2.5 que obtiene cada imagen y video generado de tu biblioteca de Grok Imagine, no solo los elementos que marcaste como favoritos o guardaste en una etiqueta. En el popup de la extensión aparece en el selector Fuente de descarga como «Todos los medios generados (por conversación)», junto a las fuentes Favoritos y Etiqueta. Como lee tu lista completa de assets en lugar de un subconjunto seleccionado, es la opción adecuada cuando quieres un archivo local completo de todo lo que has generado. Los archivos se agrupan en una carpeta por conversación, de modo que las imágenes que iniciaron un hilo y los videos generados a partir de ellas quedan juntos en lugar de dispersos en un directorio de descargas plano."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En qué se diferencia Whole Library Download de las descargas por Favoritos y por Etiqueta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las tres fuentes responden a necesidades distintas y son totalmente independientes entre sí. Favoritos descarga solo los elementos que guardaste en Grok, lo que mantiene el conjunto pequeño y seleccionado. Etiqueta descarga todo lo archivado en una etiqueta o carpeta concreta de Grok y organiza el resultado en tags/{tagName}/. Whole Library ignora ambos filtros, cubre toda tu biblioteca generada y organiza el resultado por conversación. Cada fuente mantiene su propio historial de descargas, así que descargar toda tu biblioteca nunca marca tus favoritos como ya descargados, y viceversa. Puedes usar las tres con el tiempo sin que una contamine los registros de deduplicación de otra, algo que causaba confusión con frecuencia antes de la v2.5."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿La versión gratuita descarga videos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. La versión gratuita descarga imágenes de todas las fuentes y, con la fuente de toda la biblioteca, abarca los últimos 7 días. La descarga de videos, la biblioteca completa sin límite de tiempo y el filtro de fecha forman parte de PRO, un pago único de $4.99. Generar lista, las tres fuentes, las plantillas de nombre de archivo, el archivo de metadatos .json y el historial de descargas son gratis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde guarda los archivos la extensión?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En la carpeta de descargas de Chrome, dentro de grok_downloads. La fuente de toda la biblioteca guarda en grok_downloads/conversations, con una carpeta por conversación; las descargas de Favoritos van a images y videos (o a projects en el modo Por proyecto), y las de Etiqueta a tags. Puedes cambiar todas las rutas en Configuración. Todo se ejecuta localmente en tu navegador, y los archivos van directamente de Grok a tu disco."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se deciden las carpetas y los nombres de archivo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cada conversación se convierte en una carpeta, nombrada con el patrón yyyymmdd_prompt_shortID. Cuando una conversación no tiene título, la extensión usa el prompt de esa conversación en lugar de llamar a la carpeta «untitled», lo que mantiene las carpetas comprensibles cuando las revisas meses después. Desde septiembre Grok ya no envía los prompts con la lista de medios, así que a partir de la v2.5.6 el prompt se recupera de la conversación que generó el elemento: un video usa su propio prompt de animación o, si no tiene, toma el de la imagen de origen. Una caché persistente de prompts guarda lo que recupera, de modo que regenerar toda la biblioteca pasa de minutos a segundos. Los prompts solo se obtienen cuando tu configuración de nombres de archivo o de metadatos realmente los usa, y tras cambiar alguno de esos ajustes el popup te pide que vuelvas a generar la lista. Si prefieres nombres de estilo técnico, el formato Grok Nativo produce grok_image_YYYYMMDD_id. metadata.json también registra el userId, y los nombres de archivo de los videos coinciden con la lista generada, con el mismo sufijo de ID corto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué mi extensión dejó de encontrar los medios recién generados en Grok?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En julio de 2026 Grok migró a un nuevo backend de medios basado en conversaciones y assets. Los endpoints antiguos de los que dependían las versiones anteriores de la extensión ya no respaldan las vistas Guardados y de la biblioteca de medios, por lo que las versiones anteriores a la v2.5.0 no pueden ver las imágenes y videos creados después de esa migración. GrokMediaDownloader v2.5.0 es una adaptación completa al nuevo backend y restablece la detección de los medios recién generados. Después de actualizar, abre chrome://extensions, recarga la extensión y actualiza tu pestaña de Grok. También conviene volver a generar tu lista de descargas una vez, para que se apliquen los resultados de etiquetas combinados y los prompts que la v2.5.6 recupera de la conversación generadora; los nombres de archivo basados en el prompt y las reglas de carpetas por conversación se escriben durante el paso Generar lista y no se aplican retroactivamente a una lista creada con una versión anterior."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo filtrar por fecha una descarga de toda la biblioteca?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, con PRO. La fuente de toda la biblioteca admite el mismo filtrado por fecha que la fuente Favoritos, tanto una ventana de horas recientes como un rango de fechas explícito; la fuente Etiqueta no tiene filtro por fecha. El escaneo recorre tu biblioteca de lo más reciente a lo más antiguo y se detiene en cuanto supera el final de la ventana seleccionada, así que filtrar por fecha no obliga a escanear toda la biblioteca antes de mostrar resultados. Esto importa en cuentas grandes: con limitación adaptativa y espera ante el límite de velocidad 429, se pueden escanear por completo bibliotecas de 8,000 assets o más, pero un filtro de fechas estrecho termina mucho antes. El botón Generar lista muestra el progreso del escaneo, la resolución de calidad de video y la preparación de carpetas para que veas qué etapa está en curso. Sin PRO, la fuente de toda la biblioteca abarca los últimos 7 días."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué aporta la compatibilidad con 1080p en la v2.5?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La versión 2.5 reconoce 1080p como un nivel de calidad distinto en toda la extensión. Las descargas seleccionan automáticamente la mayor calidad disponible, priorizando 1080p sobre HD y HD sobre el archivo original. Las estadísticas del escaneo muestran cuántos videos están en SD, HD/720p y 1080p en lugar de agruparlo todo en SD y HD. La Mejora HD (PRO) puede subir los videos un nivel a la vez, de SD a HD y de 720p o HD a 1080p. Mejorar a 1080p requiere un plan de pago de Grok, concretamente SuperGrok Heavy, por lo que está tras una casilla de activación explícita desactivada por defecto. Con la casilla desmarcada, la extensión no envía ninguna solicitud de 1080p."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué antes los escaneos de mejora repetidos daban resultados distintos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El servidor de Grok devuelve de forma inconsistente la URL del medio HD de los videos recién generados: consultar el mismo video dos veces en pocos segundos podía devolver el campo una vez y omitirlo la siguiente, aunque el campo de resolución se mantuviera estable. Eso hacía que el mismo video pareciera SD en un escaneo y HD en otro, por lo que ejecutar «mejorar las últimas N horas» repetidamente daba un resultado distinto cada vez. La versión 2.5 añade una memoria de calidad exclusiva para mejoras que registra la calidad más alta obtenida para cada video y nunca la rebaja cuando una consulta posterior llega incompleta. Los registros caducan a los 30 días, tienen un número máximo y se borran automáticamente si una URL recordada deja de funcionar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Whole Library Download está disponible en la versión gratuita?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, para las imágenes de los últimos 7 días. Desde la v2.5.1 el selector de fuente de descarga es gratis para todos, porque nadie debería quedarse atascado en una fuente que no puede ver sus propios medios. Los usuarios de la versión gratuita pueden seleccionar «📦 Todos los medios generados (por conversación)» y descargar las imágenes de los últimos 7 días; la extensión indica esta ventana desde el principio en lugar de recortar tus resultados en silencio. GrokMediaDownloader PRO, un pago único de $4.99 con licencia vitalicia, añade la descarga de videos, elimina el límite de tiempo para que puedas archivar toda tu biblioteca y desbloquea el filtrado por fecha (un rango concreto o una ventana de horas recientes). PRO también incluye Stream Capture, la exportación de Story Mode, Video Gen Queue sin límite, Project-Based Download, la mejora a HD y 1080p, y la exportación e importación del historial. Todo se ejecuta localmente en tu navegador y los archivos van directamente de Grok a tu disco; la única conexión externa es la comprobación de la licencia con el servidor de licencias de Kario Studio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Si lo vuelvo a ejecutar, ¿descargará los mismos archivos dos veces?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Cada fuente guarda un historial de descargas, y Generar lista deja fuera lo que ya está registrado ahí, así que una segunda ejecución solo obtiene los elementos nuevos. Esto también significa que puedes detener una descarga larga y continuarla más tarde sin empezar de cero. Si quieres volver a descargarlo todo, borra antes el historial de esa fuente."
           }
         }
       ]
     }
-  </script>
+    </script>
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
@@ -253,42 +336,64 @@
     <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/es/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/es/" class="text-sm text-slate-300 hover:text-white">Inicio</a><a href="/es/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/es/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/es/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/es/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/es/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/es/pricing.html" class="text-sm text-slate-300 hover:text-white">Precios</a><a href="/es/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
 
     <main id="main-content">
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+    <!-- Hero + short answer -->
+    <section class="relative pt-32 pb-16 lg:pt-44 lg:pb-20 overflow-hidden">
         <div class="absolute inset-0 hero-glow"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-4xl mx-auto">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-6">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span data-i18n="library_badge">Desde la v2.5</span>
+                    <span>Guía paso a paso · Actualizada en noviembre de 2026</span>
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                    <span class="gradient-text" data-i18n="library_title">Whole Library Download</span>
+                    <span class="gradient-text">Cómo descargar todos tus favoritos de Grok Imagine de una vez</span>
+                    <span class="block text-xl md:text-2xl font-bold text-emerald-300 mt-4">Whole Library Download, paso a paso</span>
                 </h1>
 
-                <p class="text-xl md:text-2xl text-emerald-300 mb-4" data-i18n="library_subtitle">Cada imagen y video generado, organizado por conversación</p>
-
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="library_desc">Los favoritos solo guardan lo que te acordaste de marcar. Whole Library Download archiva toda tu biblioteca de Grok Imagine, cada imagen y cada video, agrupada en una carpeta por conversación y nombrada con el prompt que realmente la creó.</p>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=hero&amp;utm_term=es" target="_blank" rel="noopener" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-                        <span data-i18n="hero_cta_chrome">Añadir a Chrome</span>
-                    </a>
-
-                    <button onclick="openCheckout()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
-                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
-                        <span data-i18n="price_pro_button">$4.99 PRO de por vida</span>
-                    </button>
-                </div>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto">Cada imagen y cada video que creaste en Grok Imagine, guardados en tu computadora de una sola vez, agrupados en una carpeta por conversación y con el nombre del prompt que los generó.</p>
             </div>
+
+            <!-- Short answer -->
+            <div class="max-w-3xl mx-auto rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 md:p-8 mb-10">
+                <h2 class="text-sm font-bold uppercase tracking-wide text-emerald-300 mb-3">Respuesta rápida</h2>
+                <p class="text-slate-200 leading-relaxed">Instala Grok Media Downloader, abre <strong class="text-white">grok.com/library</strong> y haz clic en el icono de la extensión. Deja la Fuente de descarga en <strong class="text-white">📦 Todos los medios generados (por conversación)</strong> para obtenerlo todo, o elige <strong class="text-white">🌟 Favoritos</strong> si solo quieres lo que guardaste. Haz clic en <strong class="text-white">1. Generar lista</strong> y pulsa Aceptar en el resumen de descarga que aparece a continuación (o haz clic más tarde en <strong class="text-white">2. Iniciar descarga</strong>). Los archivos se guardan en tu carpeta de descargas, dentro de <span class="font-mono text-sm text-emerald-300">grok_downloads/</span>, en una carpeta por conversación.</p>
+                <p class="text-slate-400 text-sm leading-relaxed mt-3">La versión gratuita descarga las imágenes de los últimos 7 días. <a href="/es/pricing.html" class="text-emerald-300 underline hover:text-white">PRO</a> añade los videos y toda tu biblioteca.</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=hero&amp;utm_term=es" target="_blank" rel="noopener" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>Añadir a Chrome</span>
+                </a>
+
+                <button onclick="openCheckout()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                    <span>$4.99 PRO de por vida</span>
+                </button>
+            </div>
+
+            <!-- On this page -->
+            <nav aria-label="En esta página" class="max-w-3xl mx-auto mt-10 text-sm">
+                <p class="text-slate-500 font-semibold mb-2">En esta página</p>
+                <ul class="flex flex-wrap gap-x-5 gap-y-2">
+                    <li><a href="#before-you-start" class="text-slate-300 hover:text-white underline underline-offset-2">Antes de empezar</a></li>
+                    <li><a href="#steps" class="text-slate-300 hover:text-white underline underline-offset-2">Pasos</a></li>
+                    <li><a href="#free-vs-pro" class="text-slate-300 hover:text-white underline underline-offset-2">Gratis vs PRO</a></li>
+                    <li><a href="#sources" class="text-slate-300 hover:text-white underline underline-offset-2">Tres fuentes</a></li>
+                    <li><a href="#files" class="text-slate-300 hover:text-white underline underline-offset-2">Carpetas y nombres de archivo</a></li>
+                    <li><a href="#video-quality" class="text-slate-300 hover:text-white underline underline-offset-2">Calidad de video</a></li>
+                    <li><a href="#troubleshooting" class="text-slate-300 hover:text-white underline underline-offset-2">Solución de problemas</a></li>
+                    <li><a href="#faq" class="text-slate-300 hover:text-white underline underline-offset-2">Preguntas frecuentes</a></li>
+                    <li><a href="#related-guides" class="text-slate-300 hover:text-white underline underline-offset-2">Guías relacionadas</a></li>
+                </ul>
+            </nav>
         </div>
     </section>
 
-    <!-- Grok API Migration Notice — unique to Library Download -->
-    <section class="py-16 bg-slate-900/50 border-t border-slate-800">
+    <!-- Before you start: the July 2026 backend change -->
+    <section id="before-you-start" class="py-16 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6 md:p-8">
                 <div class="flex flex-col sm:flex-row gap-5">
@@ -296,20 +401,21 @@
                         <i data-lucide="alert-triangle" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <div>
-                        <h2 class="text-xl md:text-2xl font-bold text-white mb-3" data-i18n="library_notice_title">Grok cambió su backend de medios en julio de 2026</h2>
-                        <p class="text-slate-300 leading-relaxed mb-4" data-i18n="library_notice_desc">Grok migró a un nuevo modelo basado en conversaciones y assets. Los endpoints de los que dependían las versiones antiguas de la extensión ya no respaldan las vistas Saved y de la biblioteca de medios, lo que significa que <strong class="text-white">las versiones anteriores a la v2.5.0 no pueden detectar las imágenes y videos recién generados</strong>. La versión 2.5.0 es una adaptación completa al nuevo backend, y Whole Library Download es lo que esa nueva API hizo posible.</p>
+                        <h2 class="text-xl md:text-2xl font-bold text-white mb-3">Antes de empezar: Grok cambió su backend de medios en julio de 2026</h2>
+                        <p class="text-slate-300 leading-relaxed mb-4">Grok migró a un nuevo modelo basado en conversaciones y assets. Desde entonces, en muchas cuentas la lista de Favoritos, es decir, la página Guardados (Saved) de Grok, ya no recibe los medios recién generados, así que una descarga limitada a los favoritos puede dejar fuera tu trabajo más reciente. La mayoría de quienes quieren descargar «todos sus favoritos» en realidad quieren todo lo que han creado. Eso es justo lo que lee la fuente <strong class="text-white">📦 Todos los medios generados (por conversación)</strong>: toda tu biblioteca, la hayas guardado o no. Es la fuente predeterminada desde la v2.5.1.</p>
+                        <p class="text-slate-300 leading-relaxed mb-4">Los endpoints de los que dependían las versiones antiguas de la extensión ya no respaldan las vistas Guardados y de la biblioteca de medios, lo que significa que <strong class="text-white">las versiones anteriores a la v2.5.0 no pueden detectar las imágenes y videos recién generados</strong>. La versión 2.5.0 es una adaptación completa al nuevo backend, y Whole Library Download es lo que esa nueva API hizo posible. Además, el 12 y 13 de noviembre de 2026 Grok integró Imagine en la aplicación principal de Grok, y por eso las versiones anteriores a la 2.6.3 dejaron sus botones en gris. Usa la versión 2.6.3 o posterior; <a href="/es/grok-download-button-missing.html" class="text-amber-300 underline hover:text-white">aquí se explica cómo arreglar los botones en gris</a>.</p>
                         <div class="grid sm:grid-cols-3 gap-3 text-sm">
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">1. Actualiza</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_1">Instala la última versión desde Chrome Web Store</p>
+                                <p class="text-slate-400">Instala o actualiza desde Chrome Web Store: versión 2.6.3 o posterior</p>
                             </div>
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">2. Recarga</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_2">Recarga la extensión en chrome://extensions y luego actualiza tu pestaña de Grok</p>
+                                <p class="text-slate-400">Recarga la extensión en chrome://extensions y luego actualiza tu pestaña de Grok</p>
                             </div>
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">3. Regenera</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_3">Genera tu lista de descargas una vez más para que se apliquen las nuevas reglas de nombres, las etiquetas combinadas y los prompts recuperados de la conversación generadora</p>
+                                <p class="text-slate-400">Genera tu lista de descargas una vez más para que se apliquen las nuevas reglas de nombres, las etiquetas combinadas y los prompts recuperados de la conversación generadora</p>
                             </div>
                         </div>
                     </div>
@@ -318,61 +424,201 @@
         </div>
     </section>
 
-    <!-- Core Features -->
-    <section class="py-24 bg-slate-950 border-t border-slate-800">
+    <!-- Steps -->
+    <section id="steps" class="py-24 bg-slate-950 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_core_title">Funciones principales</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_core_desc">Un origen de descarga pensado para quienes quieren el archivo completo, no una selección.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Paso a paso: descarga toda tu biblioteca de Grok Imagine</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Con la extensión instalada, la descarga en sí se hace con dos clics. Las capturas muestran el popup en español; la extensión tiene el mismo diseño en todos los idiomas.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Feature 1 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
-                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+            <ol class="space-y-8 max-w-3xl mx-auto">
+                <!-- Step 1 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">1</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Instala Grok Media Downloader y fíjalo</h3>
+                        <p class="text-slate-400 leading-relaxed">Abre la <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=steps&amp;utm_term=es" target="_blank" rel="noopener" class="text-emerald-300 underline hover:text-white">página de Chrome Web Store</a> y haz clic en <strong class="text-slate-200">Añadir a Chrome</strong>. Después haz clic en el icono de la pieza de rompecabezas de la barra de herramientas de Chrome y fija Grok Media Downloader para que su icono quede siempre a la vista. Si ya la tienes, abre chrome://extensions y comprueba que la versión sea la 2.6.3 o posterior. Chrome actualiza las extensiones por sí solo en unas horas; para actualizar ya, activa el Modo de desarrollador en esa página y haz clic en Actualizar.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_1_title">Escaneo completo de la biblioteca</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_1_desc">Lee tu lista completa de assets en lugar del subconjunto de favoritos. No se queda atrás nada de lo que generaste por olvidarte de darle «me gusta».</p>
-                </div>
+                </li>
 
-                <!-- Feature 2 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all">
-                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="messages-square" class="text-teal-400 w-6 h-6"></i>
+                <!-- Step 2 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">2</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Abre grok.com/library</h3>
+                        <p class="text-slate-400 leading-relaxed">Inicia sesión en Grok y abre <a href="https://grok.com/library" target="_blank" rel="noopener" class="text-emerald-300 underline hover:text-white">grok.com/library</a>. Desde la versión 2.6.3 la extensión funciona en cualquier página de grok.com, y la Biblioteca es un buen punto de partida. Si tu cuenta todavía tiene la página Guardados de Imagine (grok.com/imagine/saved), también sirve. En una pestaña que no sea de grok.com, el popup desactiva sus botones y muestra «Abre grok.com (Biblioteca o la página Guardados de Imagine) e inténtalo de nuevo.» con el enlace <strong class="text-slate-200">Ir a la Biblioteca de Grok →</strong>.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_2_title">Carpetas por conversación</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_2_desc">Una carpeta por conversación, para que una imagen de origen y cada video generado a partir de ella queden juntos en lugar de dispersos en un directorio plano.</p>
-                </div>
+                </li>
 
-                <!-- Feature 3 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all">
-                    <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="git-branch" class="text-cyan-400 w-6 h-6"></i>
+                <!-- Step 3 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">3</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Haz clic en el icono de la extensión para abrir el popup</h3>
+                        <p class="text-slate-400 leading-relaxed">De arriba abajo, el popup muestra el panel de estado, los tipos de medios que se van a descargar, el selector <strong class="text-slate-200">🎯 Fuente de descarga</strong> y los dos botones que hacen el trabajo: <strong class="text-slate-200">1. Generar lista</strong> y <strong class="text-slate-200">2. Iniciar descarga</strong>. En la sección 🎬 Tipos de medios, marca <strong class="text-slate-200">Imágenes</strong>. La casilla <strong class="text-slate-200">Videos (Pro)</strong> necesita una licencia PRO; la versión gratuita solo descarga imágenes.</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_3_title">Historial independiente</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_3_desc">Las descargas de toda la biblioteca mantienen su propio registro de deduplicación. Archivarlo todo nunca marca tus favoritos como ya descargados.</p>
-                </div>
+                </li>
 
-                <!-- Feature 4 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
-                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="calendar-clock" class="text-emerald-400 w-6 h-6"></i>
+                <!-- Step 4 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">4</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Elige qué descargar</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">Elige una de las tres fuentes del selector Fuente de descarga:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-400 leading-relaxed">
+                            <li><strong class="text-slate-200">📦 Todos los medios generados (por conversación)</strong> es toda tu biblioteca, con una carpeta por conversación. Es la opción predeterminada y la adecuada para una copia de seguridad completa. En la versión gratuita abarca los últimos 7 días, y el popup lo indica debajo del selector. PRO elimina el límite.</li>
+                            <li><strong class="text-slate-200">🌟 Favoritos</strong> es solo lo que guardaste en Grok. Desde julio de 2026 esta lista puede no incluir los medios recién generados, y el popup muestra un aviso cuando la eliges.</li>
+                            <li><strong class="text-slate-200">🏷️ Etiqueta</strong> es una sola etiqueta de Grok, también llamada colección. Elige la etiqueta en la lista que aparece.</li>
+                        </ul>
+                        <p class="text-slate-400 leading-relaxed mt-3">Con PRO también puedes acotar el escaneo de Favoritos o de Todos los medios generados con el filtro de fecha, ya sea un rango de fechas o las últimas N horas. La fuente Etiqueta no tiene filtro por fecha.</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 336px">
+                            <img src="/assets/guides/es/popup-sources.jpg" alt="Selector Fuente de descarga con Favoritos, Etiqueta y Todos los medios generados (por conversación), y la nota de que la versión gratuita solo analiza los últimos 7 días" width="336" height="565" loading="lazy" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Las tres fuentes. La nota de debajo explica la ventana gratuita de 7 días.</figcaption>
+                        </figure>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_4_title">Filtro por fecha con parada temprana</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_4_desc">Escanea de lo más reciente a lo más antiguo y se detiene en cuanto supera tu ventana. Filtrar por fecha no obliga a recorrer toda la biblioteca.</p>
-                </div>
-            </div>
+                </li>
+
+                <!-- Step 5 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">5</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Haz clic en 1. Generar lista</h3>
+                        <p class="text-slate-400 leading-relaxed">La extensión escanea la fuente de lo más reciente a lo más antiguo. En la biblioteca completa también comprueba qué niveles de calidad tiene cada video y prepara las carpetas por conversación, y el botón muestra qué etapa está en curso. Al terminar se abre el cuadro <strong class="text-slate-200">📊 Resumen de descarga</strong>, con las imágenes y los videos por descargar (los videos desglosados en 1080p, HD, 720p y SD) y cuántos ya están hechos. Termina con «¿Iniciar descarga?»: Aceptar empieza la descarga de inmediato; Cancelar cierra el cuadro, deja los totales en el panel de estado y <strong class="text-slate-200">2. Iniciar descarga</strong> disponible. Lo que ya está en tu historial de descargas no se vuelve a contar. Si más adelante cambias un ajuste de nombre de archivo o de metadatos que necesita prompts, el popup te pide que vuelvas a generar la lista.</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 336px">
+                            <img src="/assets/guides/es/popup-list-ready.jpg" alt="Popup después de Generar lista: número de imágenes y videos por descargar, con el botón Iniciar descarga activado" width="336" height="822" loading="lazy" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Después de Cancelar: los totales en el panel de estado y 2. Iniciar descarga listo.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+
+                <!-- Step 6 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">6</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Inicia la descarga</h3>
+                        <p class="text-slate-400 leading-relaxed">Pulsa Aceptar en el resumen. Si lo cancelaste, haz clic en <strong class="text-slate-200">2. Iniciar descarga</strong> y el mismo resumen vuelve a aparecer. Si hay más de 250 videos en cola, el resumen también avisa de que la extensión hará una pausa cada 250 videos. La barra de progreso indica cuántos archivos han terminado y cuánto falta aproximadamente. Mantén abiertos el navegador y la pestaña de grok.com mientras tanto. Para hacer una pausa, haz clic en <strong class="text-slate-200">⏹ Detener descarga</strong>; el botón pasa a decir <strong class="text-slate-200">▶ Continuar descarga</strong> y retoma la descarga donde se quedó. La pausa cada 250 videos dura 3 minutos por defecto y puedes ajustarla entre 1 y 60 minutos en <strong class="text-slate-200">⚙️ Configuración</strong> → <strong class="text-slate-200">⏱️ Enfriamiento de límite</strong>. Pasado ese tiempo, la descarga se reanuda sola.</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 336px">
+                            <img src="/assets/guides/es/popup-downloading.jpg" alt="Descarga en curso: barra de progreso con el tiempo restante estimado y el botón Detener descarga" width="336" height="718" loading="lazy" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Descargando: progreso, tiempo restante y Detener.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+
+                <!-- Step 7 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">7</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Encuentra tus archivos</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">Los archivos van a la carpeta de descargas de Chrome, dentro de una carpeta <span class="font-mono text-sm text-slate-300">grok_downloads</span> con estas subcarpetas:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-400 leading-relaxed">
+                            <li><span class="font-mono text-sm text-emerald-300">conversations/</span> para Todos los medios generados, una carpeta por conversación</li>
+                            <li><span class="font-mono text-sm text-emerald-300">images/</span> y <span class="font-mono text-sm text-emerald-300">videos/</span> para las descargas de Favoritos en modo Estándar</li>
+                            <li><span class="font-mono text-sm text-emerald-300">projects/</span> para las descargas de Favoritos en modo Por proyecto</li>
+                            <li><span class="font-mono text-sm text-emerald-300">tags/</span> para las descargas por Etiqueta, una carpeta por etiqueta</li>
+                            <li><span class="font-mono text-sm text-emerald-300">stream/</span> para Stream Capture (PRO)</li>
+                        </ul>
+                        <p class="text-slate-400 leading-relaxed mt-3">Puedes cambiar cada ruta en <strong class="text-slate-200">⚙️ Configuración</strong>. Las rutas son relativas a la carpeta de descargas de Chrome.</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <a href="/assets/guides/download-folders.jpg" target="_blank" rel="noopener" class="block"><img src="/assets/guides/download-folders.jpg" alt="Ejemplo de carpeta grok_downloads con nombres Basado en prompt: conversations/ con una carpeta por conversación, más las carpetas images/, videos/, tags/ y projects/, un archivo .json junto a una imagen y el metadata.json de un proyecto" width="1280" height="1130" loading="lazy" class="w-full h-auto"></a>
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Ejemplo de carpeta grok_downloads con nombres Basado en prompt: conversations/, images/, videos/, tags/ y projects/, más un archivo .json y el metadata.json de un proyecto. Abre la imagen para verla a tamaño completo.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+
+                <!-- Step 8 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">8</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Vuelve a ejecutarlo cuando tengas trabajo nuevo</h3>
+                        <p class="text-slate-400 leading-relaxed">Cada fuente guarda su propio historial de descargas, así que el siguiente Generar lista muestra solo lo nuevo y nada se descarga dos veces. Archivar toda la biblioteca nunca marca tus favoritos como ya descargados, ni al revés. Si borraste archivos y quieres recuperarlos, consulta <a href="#troubleshooting" class="text-emerald-300 underline hover:text-white">«Perdí mis archivos»</a> más abajo.</p>
+                    </div>
+                </li>
+            </ol>
         </div>
     </section>
 
-    <!-- Three Download Sources — unique differentiator -->
-    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+    <!-- Free vs PRO for this job -->
+    <section id="free-vs-pro" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Gratis vs PRO para esta tarea</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Puedes probar todo el proceso gratis. PRO es lo que necesitas para los videos y para lo que tenga más de una semana en tu biblioteca.</p>
+            </div>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full border-collapse text-sm">
+                    <thead>
+                        <tr class="border-b border-slate-700">
+                            <th class="text-left py-3 px-4 text-slate-400 font-semibold"></th>
+                            <th class="text-center py-3 px-4 text-white font-bold">Gratis</th>
+                            <th class="text-center py-3 px-4 bg-emerald-500/10 text-emerald-300 font-bold">PRO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Generar lista con las tres fuentes</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Descarga de imágenes</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Descarga de videos</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Todos los medios generados (toda la biblioteca)</td>
+                            <td class="py-3 px-4 text-center text-slate-400">Últimos 7 días</td>
+                            <td class="py-3 px-4 text-center text-emerald-300 font-semibold bg-emerald-500/5">Biblioteca completa</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Filtro de fecha (rango de fechas, últimas N horas)</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Carpetas del modo Por proyecto</td>
+                            <td class="py-3 px-4 text-center text-slate-500">Modo Estándar (las carpetas de proyecto necesitan videos)</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Plantillas de nombre, nombres con el prompt, archivo .json</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Historial de descargas (sin duplicados)</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">Mejora HD a 720p (1080p requiere SuperGrok Heavy)</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-slate-300">Importar / exportar el historial de descargas</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed mt-6 text-center">PRO es un pago único de $4.99: una licencia vitalicia con garantía de reembolso de 7 días. Los usuarios de la versión gratuita también reciben actualizaciones. <a href="/es/pricing.html" class="text-emerald-300 underline hover:text-white">Consulta los precios y todo lo que incluye PRO</a>.</p>
+        </div>
+    </section>
+
+    <!-- Three Download Sources -->
+    <section id="sources" class="py-24 bg-slate-950 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4" data-i18n="library_sources_badge">Selector de origen de descarga</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_sources_title">Tres orígenes, tres tareas</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_sources_subtitle">El origen de descarga está separado del filtro por fecha. Elige de dónde vienen los medios y luego fíltralos: ya no se estorban entre sí.</p>
+                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4">Selector de fuente de descarga</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tres fuentes, tres tareas</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">La fuente de descarga es independiente del filtro de fecha. Elige de dónde vienen los medios y luego fíltralos si tienes PRO: ya no se estorban entre sí.</p>
             </div>
 
             <div class="overflow-x-auto -mx-4 px-4">
@@ -380,47 +626,53 @@
                     <thead>
                         <tr class="border-b border-slate-700">
                             <th class="text-left py-4 px-6 text-slate-400 font-semibold text-sm"></th>
-                            <th class="text-center py-4 px-6 text-white font-bold">⭐ Favoritos</th>
+                            <th class="text-center py-4 px-6 text-white font-bold">🌟 Favoritos</th>
                             <th class="text-center py-4 px-6 text-white font-bold">🏷️ Etiqueta</th>
                             <th class="text-center py-4 px-6 bg-emerald-500/10 rounded-t-xl">
-                                <span class="text-emerald-300 font-bold">📦 Todos los medios</span>
-                                <span class="block text-[10px] text-emerald-400/70 font-semibold uppercase tracking-wide mt-0.5">Desde la v2.5</span>
+                                <span class="text-emerald-300 font-bold">📦 Todos los medios generados</span>
+                                <span class="block text-[10px] text-emerald-400/70 font-semibold uppercase tracking-wide mt-0.5">Predeterminada desde la v2.5.1</span>
                             </th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_1">Qué cubre</td>
-                            <td class="py-4 px-6 text-center text-slate-400">Elementos que te gustaron</td>
-                            <td class="py-4 px-6 text-center text-slate-400">Una etiqueta/carpeta de Grok</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">Qué cubre</td>
+                            <td class="py-4 px-6 text-center text-slate-400">Elementos que guardaste en Grok</td>
+                            <td class="py-4 px-6 text-center text-slate-400">Una etiqueta de Grok (colección)</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">Toda tu biblioteca</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2">Estructura de carpetas</td>
-                            <td class="py-4 px-6 text-center text-slate-400">Plana / por fecha</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">Estructura de carpetas</td>
+                            <td class="py-4 px-6 text-center text-slate-400 font-mono text-xs">images/, videos/ o projects/</td>
                             <td class="py-4 px-6 text-center text-slate-400 font-mono text-xs">tags/{tagName}/</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-mono text-xs bg-emerald-500/5">yyyymmdd_prompt_id/</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2b">Nombres de archivo de video según el prompt</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">Nombres de archivo de video con el prompt</td>
                             <td class="py-4 px-6 text-center text-slate-500">—</td>
-                            <td class="py-4 px-6 text-center text-emerald-400">✓ desde v2.5.6</td>
+                            <td class="py-4 px-6 text-center text-emerald-400">✓ desde la v2.5.6</td>
                             <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_3">Historial de descargas</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">Historial de descargas</td>
                             <td class="py-4 px-6 text-center text-slate-400">Registro propio</td>
                             <td class="py-4 px-6 text-center text-slate-400">Registro propio</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">Registro propio</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_4">Filtro por fecha</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">Versión gratuita</td>
+                            <td class="py-4 px-6 text-center text-slate-400">Imágenes</td>
+                            <td class="py-4 px-6 text-center text-slate-400">Imágenes</td>
+                            <td class="py-4 px-6 text-center text-slate-400 bg-emerald-500/5">Imágenes, últimos 7 días</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-6 text-slate-300 font-medium">Filtro de fecha (PRO)</td>
                             <td class="py-4 px-6 text-center text-emerald-400">✓</td>
-                            <td class="py-4 px-6 text-center text-emerald-400">✓</td>
+                            <td class="py-4 px-6 text-center text-slate-500">—</td>
                             <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓ con parada temprana</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_5">Ideal para</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">Ideal para</td>
                             <td class="py-4 px-6 text-center text-slate-400">Selecciones curadas</td>
                             <td class="py-4 px-6 text-center text-slate-400">Un tema de proyecto</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">Archivo local completo</td>
@@ -429,226 +681,127 @@
                 </table>
             </div>
 
-            <p class="text-center text-slate-500 text-sm mt-6" data-i18n="library_sources_note">⚠️ Las descargas de toda la biblioteca pueden ser grandes. Los favoritos y las etiquetas siguen siendo selecciones curadas; el nuevo origen es para cuando quieres todo a propósito.</p>
+            <p class="text-center text-slate-500 text-sm mt-6">⚠️ Las descargas de toda la biblioteca pueden ser grandes. Los favoritos y las etiquetas siguen siendo selecciones curadas; la fuente de toda la biblioteca es para cuando quieres todo a propósito.</p>
         </div>
     </section>
 
-    <!-- How it Works -->
-    <section class="py-24 bg-slate-950 border-t border-slate-800">
+    <!-- Folders and filenames -->
+    <section id="files" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_step_title">Cómo funciona Whole Library Download</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_step_desc">Cuatro pasos, con progreso visible en cada etapa.</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Cómo se deciden las carpetas y los nombres de archivo</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Un archivo de toda tu biblioteca solo sirve si dentro de un año sigues encontrando las cosas en él.</p>
             </div>
 
-            <div class="space-y-8 max-w-3xl mx-auto">
-                <!-- Step 1 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">1</div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Escaneo completo de la biblioteca</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Lee tu lista completa de assets en lugar del subconjunto de favoritos. No se queda atrás nada de lo que generaste por haberte olvidado de guardarlo.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all">
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="messages-square" class="text-teal-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Carpetas por conversación</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Una carpeta por conversación, para que una imagen de origen y cada video generado a partir de ella queden juntos en lugar de dispersos en un directorio plano.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="text-cursor-input" class="text-cyan-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Nombres de archivo con el prompt real</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Las imágenes usan su propio prompt de generación; un video usa su propio prompt de animación o, si no tiene, toma el de la imagen de origen.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="git-branch" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Historial independiente</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Las descargas de toda la biblioteca mantienen su propio registro de deduplicación. Archivarlo todo nunca marca tus favoritos como ya descargados.</p>
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4 text-slate-400 leading-relaxed">
+                <p>Cada carpeta de conversación se llama <span class="font-mono text-sm text-emerald-300">yyyymmdd_prompt_shortID</span>. Cuando una conversación no tiene título, la extensión usa su prompt en lugar de llamar a la carpeta «untitled».</p>
+                <p>Para los archivos de dentro, abre <strong class="text-slate-200">⚙️ Configuración</strong> y elige un <strong class="text-slate-200">📝 Formato de nombre de archivo</strong>: <strong class="text-slate-200">Grok Nativo</strong> genera <span class="font-mono text-sm text-slate-300">grok_image_YYYYMMDD_id.jpg</span>, <strong class="text-slate-200">Basado en prompt</strong> genera <span class="font-mono text-sm text-slate-300">img_YYYYMMDDHHmmss_prompt.jpg</span> y <strong class="text-slate-200">Plantilla personalizada</strong> te permite combinar los tokens <span class="font-mono text-sm text-slate-300">{date} {time} {datetime} {id} {shortid} {prompt} {quality}</span>. Activa <strong class="text-slate-200">📋 Guardar Metadata</strong> para guardar junto a cada imagen y cada video un archivo .json con el prompt, la resolución y otros datos. Todo esto es gratis.</p>
+                <p>Grok dejó de enviar los prompts con la lista de medios en septiembre de 2026. Desde la v2.5.6 la extensión recupera cada prompt de la conversación que generó el elemento y lo guarda en una caché persistente, así que volver a generar más adelante la lista de toda la biblioteca tarda segundos en lugar de minutos. Los prompts solo se obtienen cuando tu configuración de nombres de archivo o de metadatos los usa. Los assets que subiste tú mismo, o que no tienen información de generación, no tienen prompt ni conversación en el servidor; esos se guardan con su ID de asset. Más detalles en <a href="/es/save-grok-imagine-prompts.html" class="text-emerald-300 underline hover:text-white">Guardar los videos de Grok Imagine con sus prompts</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Large libraries -->
+    <section id="large-libraries" class="py-24 bg-slate-950 border-t border-slate-800 scroll-mt-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Bibliotecas grandes</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-center mb-12">Un escaneo de toda la biblioteca tiene que leer cada asset que tienes. Esto es lo que lo mantiene en marcha en cuentas grandes.</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="gauge" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_1_title">Elige tu origen</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_1_desc">Abre la extensión en tu página de Grok Imagine y elige "All Generated Media (by Conversation)" en el selector Download Source. Si quieres, define una ventana de horas recientes o un rango de fechas.</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/resized/feat-generate-list_640x400.jpg" srcset="/assets/resized/feat-generate-list_640x400.jpg 640w, /assets/resized/feat-generate-list_1280x800.jpg 1280w" sizes="(min-width: 768px) 640px, 100vw" alt="Popup de GrokMediaDownloader: casillas de tipo de medio, el filtro de fecha PRO y los botones &quot;1. Generate List&quot; y &quot;2. Start Download&quot;" loading="lazy" width="1280" height="800" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">Captura del popup: tipos de medio, filtro de fecha y luego Generate List y Start Download.</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">Limitación adaptativa y espera ante el error 429</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Durante Generar lista, las peticiones a las que Grok responde con un error HTTP 429 o 5xx se reintentan y el escaneo se ralentiza automáticamente. Se pueden escanear por completo bibliotecas de más de 8,000 assets sin que el proceso se corte a mitad de camino.</p>
                     </div>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">2</div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="zap" class="text-teal-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_2_title">Genera la lista</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_2_desc">La extensión escanea tu biblioteca de lo más reciente a lo más antiguo, resuelve el nivel de calidad de cada video y prepara las carpetas por conversación. Se informa el progreso en cada etapa: escaneo, resolución de calidad N/M y preparación de carpetas N/M.</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/explainer/still-sources.jpg" alt="Ilustración de los tres orígenes de descarga: toda la biblioteca por conversación, etiquetas y colecciones, y publicaciones con me gusta" loading="lazy" width="1280" height="720" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">Los tres orígenes: Whole Library (por conversación), Tags &amp; Collections y Liked. Ilustración del video explicativo del producto.</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">Comprobación de calidad concurrente</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">La calidad de video se resuelve con concurrencia limitada y un contador en vivo, lo que reduce un paso que antes tardaba varios minutos a aproximadamente uno.</p>
                     </div>
                 </div>
-
-                <!-- Step 3 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">3</div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="layers" class="text-cyan-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_3_title">Revisa el resumen</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_3_desc">Un resumen muestra cuántas imágenes y videos se descargarán frente a los ya descargados, con los videos desglosados en 1080p, HD, 720p y SD para que sepas exactamente qué vas a obtener.</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/explainer/still-scan.jpg" alt="Ilustración de un contador de escaneo de la biblioteca que supera los 15.000 elementos con un uso de memoria constante" loading="lazy" width="1280" height="720" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">El escaneo avanza página a página, así que una biblioteca de 15.000 elementos termina sin que el navegador se quede sin memoria. Ilustración.</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">Títulos de conversación por lotes</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Los títulos se obtienen por lotes solo para las conversaciones realmente necesarias, en lugar de paginar toda tu lista de conversaciones.</p>
                     </div>
                 </div>
-
-                <!-- Step 4 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">4</div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="calendar-clock" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_4_title">Descarga y archiva</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_4_desc">Los archivos se descargan en carpetas por conversación con nombres basados en el prompt. Las descargas interrumpidas quedan registradas, así que un reintento obtiene solo lo que falta y nunca vuelve a descargar lo completado.</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/explainer/still-folders.jpg" alt="Ilustración de la plantilla de nombres: carpetas por conversación o etiqueta y nombres de archivo a partir de fecha, hora, prompt, ID y seed" loading="lazy" width="1280" height="720" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">Carpetas por conversación o etiqueta; nombres de archivo a partir de fecha, hora, prompt, ID y seed. Ilustración.</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">Filtro de fecha con parada temprana (PRO)</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">El escaneo va de lo más reciente a lo más antiguo y se detiene en cuanto supera tu ventana de fechas, así que un filtro estrecho no recorre toda tu biblioteca.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technical Details -->
-    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left: Technical Info -->
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="library_tech_title">Aspectos técnicos destacados</h2>
-
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="gauge" class="text-emerald-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_1_title">Limitación adaptativa y espera ante el error 429</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_1_desc">La velocidad de escaneo se ajusta a la respuesta del servidor, con espera ante el límite de velocidad. Se pueden escanear por completo bibliotecas de más de 8,000 assets sin interrupciones a mitad de camino.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="zap" class="text-teal-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_2_title">Resolución de calidad concurrente</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_2_desc">La calidad de video se resuelve con concurrencia limitada y un contador en vivo, lo que reduce un paso que antes tardaba varios minutos a aproximadamente uno.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="text-cursor-input" class="text-cyan-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_3_title">Nombres de archivo con el prompt real</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_3_desc">Las imágenes usan su propio prompt de generación; un video usa su propio prompt de animación o, si no tiene, toma el de la imagen de origen. Se recuperan de la conversación generadora desde que el cambio de septiembre de Grok eliminó los prompts de la lista de medios.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="layers" class="text-emerald-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_4_title">Títulos de conversación por lotes</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_4_desc">Los títulos se obtienen por lotes solo para las conversaciones realmente necesarias, en lugar de paginar toda tu lista de conversaciones.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Mockup -->
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full"></div>
-                    <div class="relative bg-slate-900 rounded-2xl border border-emerald-500/30 p-6 shadow-2xl">
-                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-slate-800">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                            <span class="ml-2 text-slate-500 text-sm">Grok Media Downloader</span>
-                        </div>
-
-                        <!-- Download Source Selector -->
-                        <div class="mb-4">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">🎯 Origen de descarga</div>
-                            <div class="space-y-1.5">
-                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-sm text-slate-400">
-                                    <span class="w-3 h-3 rounded-full border border-slate-600"></span>
-                                    <span>⭐ Favoritos</span>
-                                </div>
-                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-sm text-slate-400">
-                                    <span class="w-3 h-3 rounded-full border border-slate-600"></span>
-                                    <span>🏷️ Etiqueta</span>
-                                </div>
-                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/40 text-sm text-white font-semibold">
-                                    <span class="w-3 h-3 rounded-full bg-emerald-500 border border-emerald-400"></span>
-                                    <span>📦 Todos los medios generados</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Scan Results -->
-                        <div class="mb-4 p-4 bg-slate-800/50 rounded-lg space-y-2">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">Resultados del escaneo</div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">🖼️ Imágenes</span>
-                                <span class="text-white font-bold">1,284</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">💎 Videos 1080p</span>
-                                <span class="text-white font-bold">37</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">✨ Videos HD / 720p</span>
-                                <span class="text-white font-bold">312</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">🎬 Videos SD</span>
-                                <span class="text-white font-bold">148</span>
-                            </div>
-                            <div class="border-t border-slate-700 pt-2 mt-2 flex items-center justify-between text-sm">
-                                <span class="text-slate-300">💬 Conversaciones</span>
-                                <span class="text-emerald-300 font-bold">216 carpetas</span>
-                            </div>
-                        </div>
-
-                        <!-- Folder Preview -->
-                        <div class="mb-4 p-3 bg-slate-800/50 rounded-lg">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">Vista previa de carpetas</div>
-                            <div class="text-sm font-mono space-y-1">
-                                <div class="text-emerald-300">📁 20260726_neon-city-rain_a3f9/</div>
-                                <div class="text-slate-400 pl-4">🖼️ neon-city-rain_01.jpg</div>
-                                <div class="text-slate-400 pl-4">🎬 neon-city-rain_01_1080p.mp4</div>
-                                <div class="text-emerald-300">📁 20260725_desert-sunrise_7b21/</div>
-                            </div>
-                        </div>
-
-                        <!-- Action Button -->
-                        <button class="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg text-sm flex items-center justify-center gap-2">
-                            <i data-lucide="download" class="w-4 h-4"></i>
-                            Iniciar descarga (1,781 archivos)
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 1080p Quality Tiers — unique to Library Download -->
-    <section class="py-24 bg-slate-950 border-t border-slate-800">
+    <!-- Video quality tiers -->
+    <section id="video-quality" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4" data-i18n="library_quality_badge">Compatibilidad con 1080p</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_quality_title">1080p ya es un nivel propio</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_quality_subtitle">Las descargas toman la mejor calidad disponible, las estadísticas desglosan cada nivel y las mejoras avanzan un paso a la vez.</p>
+                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4">Compatibilidad con 1080p</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Calidad de video: SD, HD/720p y 1080p</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Las descargas siempre toman la máxima calidad que Grok tiene de cada video. La Mejora HD, una función PRO, le pide antes a Grok que cree una versión de mayor calidad.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
                 <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 text-center">
                     <div class="text-4xl mb-3">📦</div>
                     <h3 class="text-lg font-bold text-white mb-2">SD</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="library_quality_sd">Resultado base. Se puede mejorar a HD sin un plan de pago de Grok.</p>
+                    <p class="text-slate-400 text-sm">Resultado base. La Mejora HD puede subirlo a HD/720p; este paso no requiere SuperGrok Heavy.</p>
                 </div>
                 <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 text-center">
                     <div class="text-4xl mb-3">🎥</div>
                     <h3 class="text-lg font-bold text-white mb-2">HD / 720p</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="library_quality_hd">El objetivo de mejora estándar. Se alcanza desde SD en un paso.</p>
+                    <p class="text-slate-400 text-sm">El objetivo de mejora estándar, un paso por encima de SD.</p>
                 </div>
                 <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 rounded-2xl border border-emerald-500/40 p-6 text-center">
                     <div class="text-4xl mb-3">💎</div>
                     <h3 class="text-lg font-bold text-white mb-2">1080p</h3>
-                    <p class="text-slate-300 text-sm" data-i18n="library_quality_1080">El nivel más alto. Requiere SuperGrok Heavy y una activación explícita.</p>
+                    <p class="text-slate-300 text-sm">El nivel más alto. Requiere SuperGrok Heavy en tu cuenta de Grok y una activación explícita.</p>
                 </div>
             </div>
 
@@ -656,128 +809,189 @@
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-                        <span data-i18n="library_quality_p1_title">Con activación, sin cobros sorpresa</span>
+                        <span>Con activación, sin cobros sorpresa</span>
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p1_desc">Las mejoras a 1080p requieren un plan de pago, así que la casilla está desactivada por defecto. Con ella desmarcada, la extensión no envía ninguna solicitud de 1080p y solo realiza mejoras de SD a HD, pero el diálogo de confirmación igualmente te indica cuántos videos <em>podrían</em> pasar a 1080p, para que nunca desaparezcan en silencio. Si resulta que tu cuenta no tiene ese derecho, la extensión lo detecta una vez y deja de enviar más solicitudes de 1080p en lugar de quedarse en bucle.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Las mejoras a 1080p requieren SuperGrok Heavy, por eso la casilla «Actualizar HD/720p a 1080p» está desactivada por defecto. Con ella desmarcada, la extensión no envía ninguna solicitud de 1080p y solo realiza mejoras de SD a HD, pero el diálogo de confirmación igualmente te indica cuántos videos <em>podrían</em> pasar a 1080p, para que nunca desaparezcan en silencio. Si resulta que tu cuenta no tiene ese derecho, la extensión lo detecta una vez y deja de enviar solicitudes de 1080p en lugar de quedarse en bucle.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="history" class="w-4 h-4 text-emerald-400"></i>
-                        <span data-i18n="library_quality_p2_title">Escaneos de mejora que por fin coinciden</span>
+                        <span>Escaneos de mejora que coinciden</span>
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p2_desc">Grok devuelve de forma inconsistente la URL del medio HD de los videos recién generados, lo que hacía que el mismo video apareciera como SD en un escaneo y como HD en el siguiente; por eso repetir "mejorar las últimas N horas" daba una respuesta distinta cada vez. La v2.5 recuerda la calidad más alta obtenida para cada video y nunca la rebaja ante una lectura incompleta. Los registros caducan a los 30 días, tienen un número máximo y se borran solos si una URL recordada deja de funcionar. Los videos que no se pudieron comprobar por el límite de velocidad se excluyen y se informan, en lugar de confundirse con SD.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Grok devuelve de forma inconsistente la URL del medio HD de los videos recién generados, lo que hacía que el mismo video apareciera como SD en un escaneo y como HD en el siguiente; por eso repetir «mejorar las últimas N horas» daba una respuesta distinta cada vez. Desde la v2.5 la extensión recuerda la calidad más alta obtenida para cada video y nunca la rebaja ante una lectura incompleta. Los registros caducan a los 30 días, tienen un número máximo y se borran solos si una URL recordada deja de funcionar. Los videos que no se pudieron comprobar por el límite de velocidad se excluyen y se informan, en lugar de confundirse con SD.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="target" class="w-4 h-4 text-emerald-400"></i>
-                        <span data-i18n="library_quality_p3_title">Mejora toda la biblioteca, no solo los favoritos</span>
+                        <span>Mejora toda la biblioteca, no solo los favoritos</span>
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p3_desc">La función de mejora tiene ahora su propio selector de origen, Favorite o Whole Library, así que ya no estás limitado a mejorar los videos que te acordaste de marcar. El diálogo de confirmación desglosa tu biblioteca en SD, HD/720p y 1080p e indica exactamente cuántos se mejorarán en esta ejecución. Un escaneo de toda la biblioteca se puede detener a mitad si tarda más de lo que quieres.</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">La Mejora HD tiene su propio selector, 🎯 Fuente de mejora, con Favoritos o 🌐 Biblioteca completa, así que no estás limitado a mejorar los videos que te acordaste de guardar. El diálogo de confirmación desglosa tu biblioteca en SD, HD/720p y 1080p e indica cuántos se mejorarán en esta ejecución, a unos 8 segundos por video. Un escaneo de toda la biblioteca se puede detener a mitad. Después de mejorar, vuelve a ejecutar Generar lista e Iniciar descarga para obtener las versiones mejoradas. La guía completa está en <a href="/es/download-grok-videos-hd.html" class="text-emerald-300 underline hover:text-white">Descargar videos de Grok en HD</a>.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <!-- Troubleshooting -->
-    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+    <section id="troubleshooting" class="py-20 bg-slate-950 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Solución de problemas</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Los cinco problemas que más nos consultan, con la solución que los resolvió en la práctica. Todos se deben a los cambios de backend de Grok en 2026, no a un ajuste mal configurado.</p>
+                <p class="text-slate-400 max-w-2xl mx-auto">Los problemas que más nos consultan, con la solución que los resolvió en la práctica. La mayoría se debe a los cambios de Grok en 2026, no a un ajuste mal configurado.</p>
             </div>
             <div class="space-y-4">
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Generate List no encuentra nada o no muestra mis imágenes más recientes<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Revisa el selector <strong class="text-slate-200">Download Source</strong>. Si todavía indica Favorite, cambia a <strong class="text-slate-200">All Generated Media (by Conversation)</strong>. Desde el cambio de Grok de julio de 2026, las nuevas generaciones ya no se añaden a Favoritos, así que un escaneo de Favorite puede volver vacío con toda razón. El origen de toda la biblioteca es gratis para todos y es el predeterminado desde la v2.5.1. Después, haz clic de nuevo en Generate List.</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Generar lista e Iniciar descarga aparecen en gris</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Primero comprueba que la pestaña activa sea una página de grok.com; en cualquier otro sitio el popup desactiva ambos botones y ofrece el enlace <strong class="text-slate-200">Ir a la Biblioteca de Grok →</strong>. Si estás en grok.com y los botones siguen en gris, tu extensión es anterior a la 2.6.3. El 12 y 13 de noviembre de 2026 Grok integró Imagine en la aplicación principal de Grok, y las versiones antiguas dejaron de reconocer la página. Chrome actualiza las extensiones automáticamente en unas horas; para actualizar ya, abre chrome://extensions, activa el Modo de desarrollador y haz clic en Actualizar. Guía completa: <a href="/es/grok-download-button-missing.html" class="text-emerald-300 underline hover:text-white">El botón de descarga de Grok no aparece tras la actualización</a>.</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">HD Upgrade dice que todos los videos ya están mejorados<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">La causa es la misma: el escaneo de mejora lee la lista del origen seleccionado, y la lista de Favorite está incompleta. Cambia el origen a toda la biblioteca, vuelve a generar la lista y ejecuta de nuevo el escaneo de mejora. Desde la v2.5 el escaneo converge: las ejecuciones repetidas devuelven el mismo resultado, y 1080p se registra como nivel propio, así que un archivo de 720p nunca se confunde con la calidad máxima.</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Generar lista no encuentra nada o no muestra mis imágenes más recientes</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Revisa el selector <strong class="text-slate-200">Fuente de descarga</strong>. Si todavía indica Favoritos, cambia a <strong class="text-slate-200">Todos los medios generados (por conversación)</strong>. Desde el cambio de Grok de julio de 2026, las nuevas generaciones ya no se añaden a Favoritos, así que un escaneo de Favoritos puede volver vacío con toda razón. La fuente de toda la biblioteca es gratis para todos (imágenes de los últimos 7 días; PRO cubre los videos y la biblioteca completa) y es la predeterminada desde la v2.5.1. Después, haz clic de nuevo en Generar lista. Más contexto en <a href="/es/grok-favorites-not-loading.html" class="text-emerald-300 underline hover:text-white">¿Los favoritos de Grok no cargan? Haz una copia de seguridad de tu biblioteca</a>.</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Los nombres de archivo, los nombres de carpeta o metadata.json no incluyen el prompt<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok dejó de enviar el prompt junto con la lista de medios en septiembre de 2026. Actualiza a la v2.5.6 o posterior, que recupera cada prompt de la conversación que generó el elemento, y luego <strong class="text-slate-200">vuelve a generar la lista una vez</strong>: los nombres se deciden durante el paso Generate List, así que una lista creada con una versión anterior conserva los nombres antiguos. En Settings, elige el modo de nombre de archivo "Prompt Based" si quieres prompts en los nombres de archivo. Una caché persistente guarda los prompts recuperados, así que las regeneraciones posteriores tardan segundos.</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Solo se descargaron imágenes, ningún video</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Así funciona la versión gratuita: solo descarga imágenes. La descarga de videos, que aparece como <strong class="text-slate-200">Videos (Pro)</strong> en 🎬 Tipos de medios, requiere una licencia PRO. Cuando actives PRO en la sección Licencia del popup, marca Videos, vuelve a ejecutar Generar lista y haz clic en Iniciar descarga; tu historial de descargas omite las imágenes que ya tienes. Consulta los <a href="/es/pricing.html" class="text-emerald-300 underline hover:text-white">precios</a>.</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Falta una etiqueta que creé en Grok, o una etiqueta descarga solo un archivo<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Desde su migración de agosto de 2026, Grok mantiene dos sistemas de etiquetas en paralelo, y a cada uno le faltan elementos que el otro sí tiene. Las versiones 2.5.2 a 2.5.4 solo leen el nuevo. Actualiza a la v2.5.6 o posterior: lee ambos y los combina, así que las listas de etiquetas y su contenido son la unión de los dos. Tras actualizar, vuelve a generar la lista de la etiqueta.</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>La descarga se pausó sola</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Es una pausa programada, no un error. La extensión se detiene cada 250 videos, espera 3 minutos por defecto y luego continúa sola; el resumen de descarga lo avisa antes de una tanda de más de 250 videos. Puedes ajustar la espera entre 1 y 60 minutos en <strong class="text-slate-200">⚙️ Configuración</strong> → <strong class="text-slate-200">⏱️ Enfriamiento de límite</strong>. No tienes que hacer clic en nada; deja abiertos el navegador y la pestaña de grok.com.</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Perdí mis archivos y la extensión dice que ya está todo descargado<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Cada origen guarda su propio historial de descargas. Para el origen de toda la biblioteca, abre el popup, despliega <strong class="text-slate-200">Clear Actions</strong> y haz clic en <strong class="text-slate-200">Clear Conversation History</strong>; confirma el diálogo. El botón "Reset Download History" solo se aplica al origen Favorite. Borrar un historial no elimina nada en Grok ni en el disco; solo permite que la siguiente ejecución vuelva a descargar esos elementos.</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Las descargas empiezan a fallar después de miles de archivos</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">En ejecuciones muy largas, Grok puede empezar a rechazar descargas a mitad de camino, por ejemplo con errores HTTP 403 después de miles de videos. Recarga la pestaña de grok.com, abre el popup y vuelve a hacer clic en Iniciar descarga. Tu historial de descargas omite todo lo que ya se guardó, así que solo se obtienen los archivos que faltan.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>La Mejora HD dice que todos los videos ya están mejorados</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">La causa es la misma que la de una lista vacía: el escaneo de mejora lee la lista de la fuente seleccionada, y la lista de Favoritos está incompleta. Pon la Fuente de mejora en 🌐 Biblioteca completa, vuelve a generar la lista y ejecuta de nuevo el escaneo de mejora. Desde la v2.5 el escaneo converge: las ejecuciones repetidas devuelven el mismo resultado, y 1080p se registra como nivel propio, así que un archivo de 720p nunca se confunde con la calidad máxima. La Mejora HD es una función PRO.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Los nombres de archivo, los nombres de carpeta o metadata.json no incluyen el prompt</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grok dejó de enviar el prompt junto con la lista de medios en septiembre de 2026. Actualiza a la v2.5.6 o posterior, que recupera cada prompt de la conversación que generó el elemento, y luego <strong class="text-slate-200">vuelve a generar la lista una vez</strong>: los nombres se deciden durante el paso Generar lista, así que una lista creada con una versión anterior conserva los nombres antiguos. En Configuración, elige el formato de nombre de archivo «Basado en prompt» si quieres prompts en los nombres de archivo. Una caché persistente guarda los prompts recuperados, así que las regeneraciones posteriores tardan segundos.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Falta una etiqueta que creé en Grok, o una etiqueta descarga solo un archivo</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Desde su migración de agosto de 2026, Grok mantiene dos sistemas de etiquetas en paralelo, y a cada uno le faltan elementos que el otro sí tiene. Las versiones 2.5.2 a 2.5.4 solo leen el nuevo. Actualiza a la v2.5.6 o posterior: lee ambos y los combina, así que las listas de etiquetas y su contenido son la unión de los dos. Tras actualizar, vuelve a generar la lista de la etiqueta.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Perdí mis archivos y la extensión dice que ya está todo descargado</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Cada fuente guarda su propio historial de descargas. Para la fuente de toda la biblioteca, abre el popup, despliega <strong class="text-slate-200">🧹 Limpiar</strong> y haz clic en <strong class="text-slate-200">Borrar historial de conversaciones</strong>; confirma el diálogo. El botón «Restablecer historial de descargas» solo se aplica a la fuente Favoritos, y la fuente Etiqueta tiene su propio botón «Borrar historial de etiquetas». Borrar un historial no elimina nada en Grok ni en el disco; solo permite que la siguiente ejecución vuelva a descargar esos elementos.</div>
                 </details>
             </div>
             <p class="text-center text-slate-500 text-sm mt-8">¿Sigues con problemas? Las <a href="/es/faq.html" class="underline hover:text-slate-300">preguntas frecuentes</a> cubren más casos, y el botón «Contactar con soporte» del pie de página te pone en contacto con una persona.</p>
         </div>
     </section>
 
-    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Preguntas frecuentes</h2>
-                <p class="text-slate-400">Todo lo que necesitas saber sobre Whole Library Download</p>
+                <p class="text-slate-400">Cómo descargar toda tu biblioteca de Grok Imagine</p>
             </div>
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Qué es Whole Library Download?</h3>
-                    <p class="text-slate-400 leading-relaxed">Whole Library Download (descarga de toda la biblioteca) es un origen de descarga introducido en GrokMediaDownloader v2.5 que obtiene cada imagen y video generado de tu biblioteca de Grok Imagine, no solo los elementos que marcaste como favoritos o guardaste en una etiqueta. En el popup de la extensión aparece en el selector Download Source como "All Generated Media (by Conversation)", junto a los orígenes Favorite y Tag ya existentes. Como lee tu lista completa de assets en lugar de un subconjunto seleccionado, es la opción adecuada cuando quieres un archivo local completo de todo lo que has generado. Los archivos se agrupan en una carpeta por conversación, de modo que las imágenes que iniciaron un hilo y los videos generados a partir de ellas quedan juntos en lugar de dispersos en un directorio de descargas plano.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">¿Puedo descargar todos mis favoritos de Grok Imagine de una vez?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Sí. Abre grok.com/library, haz clic en el icono de Grok Media Downloader, elige 🌟 Favoritos como Fuente de descarga y haz clic en 1. Generar lista y 2. Iniciar descarga. Como en julio de 2026 la lista Guardados de Grok dejó de recibir medios nuevos en muchas cuentas, la mayoría de la gente obtiene un resultado más completo con 📦 Todos los medios generados (por conversación), que descarga toda tu biblioteca, hayas guardado o no cada elemento. La versión gratuita descarga imágenes y, con la fuente de toda la biblioteca, abarca los últimos 7 días; PRO añade los videos y elimina el límite de tiempo.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿En qué se diferencia Whole Library Download de las descargas por Favoritos y por Etiqueta?</h3>
-                    <p class="text-slate-400 leading-relaxed">Los tres orígenes responden a necesidades distintas y son totalmente independientes entre sí. Favorite descarga solo los elementos que marcaste con «me gusta» en Grok, lo que mantiene el conjunto pequeño y seleccionado. Tag descarga todo lo guardado en una etiqueta o carpeta concreta de Grok y organiza el resultado en tags/{tagName}/. Whole Library ignora ambos filtros, cubre toda tu biblioteca generada y organiza el resultado por conversación. Lo más importante: cada origen mantiene su propio historial de descargas, así que descargar toda tu biblioteca nunca marca tus favoritos como ya descargados, y viceversa. Puedes usar los tres con el tiempo sin que uno contamine los registros de deduplicación de otro, algo que causaba confusión con frecuencia antes de la v2.5.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">¿Qué es Whole Library Download?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Whole Library Download (descarga de toda la biblioteca) es una fuente de descarga introducida en GrokMediaDownloader v2.5 que obtiene cada imagen y video generado de tu biblioteca de Grok Imagine, no solo los elementos que marcaste como favoritos o guardaste en una etiqueta. En el popup de la extensión aparece en el selector Fuente de descarga como «Todos los medios generados (por conversación)», junto a las fuentes Favoritos y Etiqueta. Como lee tu lista completa de assets en lugar de un subconjunto seleccionado, es la opción adecuada cuando quieres un archivo local completo de todo lo que has generado. Los archivos se agrupan en una carpeta por conversación, de modo que las imágenes que iniciaron un hilo y los videos generados a partir de ellas quedan juntos en lugar de dispersos en un directorio de descargas plano.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Cómo se deciden las carpetas y los nombres de archivo?</h3>
-                    <p class="text-slate-400 leading-relaxed">Cada conversación se convierte en una carpeta, nombrada con el patrón yyyymmdd_prompt_shortID. Cuando una conversación no tiene título, la extensión usa el prompt de esa conversación en lugar de llamar a la carpeta "untitled", lo que mantiene las carpetas comprensibles cuando las revisas meses después. Desde septiembre Grok ya no envía los prompts con la lista de medios, así que a partir de la v2.5.6 el prompt se recupera de la conversación que generó el elemento: un video usa su propio prompt de animación o, si no tiene, toma el de la imagen de origen. Una caché persistente de prompts guarda lo que recupera, de modo que regenerar toda la biblioteca pasa de minutos a segundos. Los prompts solo se obtienen cuando tu configuración de nombres de archivo o metadatos realmente los usa, y tras cambiar alguno de esos ajustes el popup te pide regenerar la lista. Si prefieres nombres de estilo técnico, el modo de nombre Grok Native produce grok_image_YYYYMMDD_id. metadata.json también registra el userId, y los nombres de archivo de los videos coinciden con la lista generada, con el mismo sufijo de ID corto.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">¿En qué se diferencia Whole Library Download de las descargas por Favoritos y por Etiqueta?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Las tres fuentes responden a necesidades distintas y son totalmente independientes entre sí. Favoritos descarga solo los elementos que guardaste en Grok, lo que mantiene el conjunto pequeño y seleccionado. Etiqueta descarga todo lo archivado en una etiqueta o carpeta concreta de Grok y organiza el resultado en tags/{tagName}/. Whole Library ignora ambos filtros, cubre toda tu biblioteca generada y organiza el resultado por conversación. Cada fuente mantiene su propio historial de descargas, así que descargar toda tu biblioteca nunca marca tus favoritos como ya descargados, y viceversa. Puedes usar las tres con el tiempo sin que una contamine los registros de deduplicación de otra, algo que causaba confusión con frecuencia antes de la v2.5.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Por qué mi extensión dejó de encontrar los medios recién generados en Grok?</h3>
-                    <p class="text-slate-400 leading-relaxed">En julio de 2026 Grok migró a un nuevo backend de medios basado en conversaciones y assets. Los endpoints antiguos de los que dependían las versiones anteriores de la extensión ya no respaldan las vistas Saved y de la biblioteca de medios, por lo que las versiones anteriores a la v2.5.0 no pueden ver las imágenes y videos creados después de esa migración. GrokMediaDownloader v2.5.0 es una adaptación completa al nuevo backend y restablece la detección de los medios recién generados. Después de actualizar, abre chrome://extensions, recarga la extensión y actualiza tu pestaña de Grok. También conviene regenerar tu lista de descargas una vez, para que se apliquen los resultados de etiquetas combinados y los prompts que la v2.5.6 recupera de la conversación generadora; los nombres de archivo basados en el prompt y las reglas de carpetas por conversación se escriben durante el paso Generate List y no se aplican retroactivamente a una lista creada con una versión anterior.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">¿La versión gratuita descarga videos?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">No. La versión gratuita descarga imágenes de todas las fuentes y, con la fuente de toda la biblioteca, abarca los últimos 7 días. La descarga de videos, la biblioteca completa sin límite de tiempo y el filtro de fecha forman parte de PRO, un pago único de $4.99. Generar lista, las tres fuentes, las plantillas de nombre de archivo, el archivo de metadatos .json y el historial de descargas son gratis.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Puedo filtrar por fecha una descarga de toda la biblioteca?</h3>
-                    <p class="text-slate-400 leading-relaxed">Sí. El origen Whole Library admite el mismo filtrado por fecha que los demás orígenes, tanto una ventana de horas recientes como un rango de fechas explícito. El escaneo recorre tu biblioteca de lo más reciente a lo más antiguo y se detiene en cuanto supera el final de la ventana seleccionada, así que filtrar por fecha no obliga a escanear toda la biblioteca antes de mostrar resultados. Esto importa en cuentas grandes: con limitación adaptativa y espera ante el límite de velocidad 429, se pueden escanear por completo bibliotecas de 8,000 assets o más, pero un filtro de fechas estrecho termina mucho antes. El botón Generate List muestra el progreso del escaneo, la resolución de calidad de video y la preparación de carpetas para que veas qué etapa está en curso.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">¿Dónde guarda los archivos la extensión?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">En la carpeta de descargas de Chrome, dentro de grok_downloads. La fuente de toda la biblioteca guarda en grok_downloads/conversations, con una carpeta por conversación; las descargas de Favoritos van a images y videos (o a projects en el modo Por proyecto), y las de Etiqueta a tags. Puedes cambiar todas las rutas en Configuración. Todo se ejecuta localmente en tu navegador, y los archivos van directamente de Grok a tu disco.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Qué aporta la compatibilidad con 1080p en la v2.5?</h3>
-                    <p class="text-slate-400 leading-relaxed">La versión 2.5 reconoce 1080p como un nivel de calidad distinto en toda la extensión. Las descargas seleccionan automáticamente la mayor calidad disponible, priorizando 1080p sobre HD y HD sobre el archivo original. Las estadísticas del escaneo muestran cuántos videos están en SD, HD/720p y 1080p en lugar de agruparlo todo en SD y HD. La función de mejora ahora puede subir los videos un nivel a la vez, de SD a HD y de 720p o HD a 1080p. Mejorar a 1080p requiere un plan de pago de Grok, concretamente SuperGrok Heavy, por lo que está tras una casilla de activación explícita desactivada por defecto. Con la casilla desmarcada, la extensión no envía ninguna solicitud de 1080p.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">¿Cómo se deciden las carpetas y los nombres de archivo?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Cada conversación se convierte en una carpeta, nombrada con el patrón yyyymmdd_prompt_shortID. Cuando una conversación no tiene título, la extensión usa el prompt de esa conversación en lugar de llamar a la carpeta «untitled», lo que mantiene las carpetas comprensibles cuando las revisas meses después. Desde septiembre Grok ya no envía los prompts con la lista de medios, así que a partir de la v2.5.6 el prompt se recupera de la conversación que generó el elemento: un video usa su propio prompt de animación o, si no tiene, toma el de la imagen de origen. Una caché persistente de prompts guarda lo que recupera, de modo que regenerar toda la biblioteca pasa de minutos a segundos. Los prompts solo se obtienen cuando tu configuración de nombres de archivo o de metadatos realmente los usa, y tras cambiar alguno de esos ajustes el popup te pide que vuelvas a generar la lista. Si prefieres nombres de estilo técnico, el formato Grok Nativo produce grok_image_YYYYMMDD_id. metadata.json también registra el userId, y los nombres de archivo de los videos coinciden con la lista generada, con el mismo sufijo de ID corto.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Por qué antes los escaneos de mejora repetidos daban resultados distintos?</h3>
-                    <p class="text-slate-400 leading-relaxed">El servidor de Grok devuelve de forma inconsistente la URL del medio HD de los videos recién generados: consultar el mismo video dos veces en pocos segundos podía devolver el campo una vez y omitirlo la siguiente, aunque el campo de resolución se mantuviera estable. Eso hacía que el mismo video pareciera SD en un escaneo y HD en otro, por lo que ejecutar "mejorar las últimas N horas" repetidamente daba un resultado distinto cada vez. La versión 2.5 añade una memoria de calidad exclusiva para mejoras que registra la calidad más alta obtenida para cada video y nunca la rebaja cuando una consulta posterior llega incompleta. Los registros caducan a los 30 días, tienen un número máximo y se borran automáticamente si una URL recordada deja de funcionar.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">¿Por qué mi extensión dejó de encontrar los medios recién generados en Grok?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">En julio de 2026 Grok migró a un nuevo backend de medios basado en conversaciones y assets. Los endpoints antiguos de los que dependían las versiones anteriores de la extensión ya no respaldan las vistas Guardados y de la biblioteca de medios, por lo que las versiones anteriores a la v2.5.0 no pueden ver las imágenes y videos creados después de esa migración. GrokMediaDownloader v2.5.0 es una adaptación completa al nuevo backend y restablece la detección de los medios recién generados. Después de actualizar, abre chrome://extensions, recarga la extensión y actualiza tu pestaña de Grok. También conviene volver a generar tu lista de descargas una vez, para que se apliquen los resultados de etiquetas combinados y los prompts que la v2.5.6 recupera de la conversación generadora; los nombres de archivo basados en el prompt y las reglas de carpetas por conversación se escriben durante el paso Generar lista y no se aplican retroactivamente a una lista creada con una versión anterior.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">¿Whole Library Download está disponible en la versión gratuita?</h3>
-                    <p class="text-slate-400 leading-relaxed">Sí. Desde la v2.5.1 el selector de origen de descarga es gratis para todos, porque nadie debería quedarse atascado en un origen que no puede ver sus propios medios. Los usuarios gratuitos pueden seleccionar "📦 All Generated Media (by Conversation)" y descargar todo lo de los últimos 7 días; la extensión indica esta ventana desde el principio en lugar de recortar tus resultados en silencio. GrokMediaDownloader PRO, una compra única de $4.99 con licencia vitalicia, elimina el límite de tiempo para que puedas archivar toda tu biblioteca y desbloquea el filtrado por fecha (un rango concreto o una ventana de horas recientes). PRO también incluye Stream Capture, Story Mode Helper, Video Gen Queue ilimitado, Project-Based Download, mejora a HD y 1080p, y exportación e importación de datos. Todo el procesamiento ocurre localmente en tu navegador: no se recopilan datos y no se sube nada.</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">¿Puedo filtrar por fecha una descarga de toda la biblioteca?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Sí, con PRO. La fuente de toda la biblioteca admite el mismo filtrado por fecha que la fuente Favoritos, tanto una ventana de horas recientes como un rango de fechas explícito; la fuente Etiqueta no tiene filtro por fecha. El escaneo recorre tu biblioteca de lo más reciente a lo más antiguo y se detiene en cuanto supera el final de la ventana seleccionada, así que filtrar por fecha no obliga a escanear toda la biblioteca antes de mostrar resultados. Esto importa en cuentas grandes: con limitación adaptativa y espera ante el límite de velocidad 429, se pueden escanear por completo bibliotecas de 8,000 assets o más, pero un filtro de fechas estrecho termina mucho antes. El botón Generar lista muestra el progreso del escaneo, la resolución de calidad de video y la preparación de carpetas para que veas qué etapa está en curso. Sin PRO, la fuente de toda la biblioteca abarca los últimos 7 días.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">¿Qué aporta la compatibilidad con 1080p en la v2.5?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">La versión 2.5 reconoce 1080p como un nivel de calidad distinto en toda la extensión. Las descargas seleccionan automáticamente la mayor calidad disponible, priorizando 1080p sobre HD y HD sobre el archivo original. Las estadísticas del escaneo muestran cuántos videos están en SD, HD/720p y 1080p en lugar de agruparlo todo en SD y HD. La Mejora HD (PRO) puede subir los videos un nivel a la vez, de SD a HD y de 720p o HD a 1080p. Mejorar a 1080p requiere un plan de pago de Grok, concretamente SuperGrok Heavy, por lo que está tras una casilla de activación explícita desactivada por defecto. Con la casilla desmarcada, la extensión no envía ninguna solicitud de 1080p.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">¿Por qué antes los escaneos de mejora repetidos daban resultados distintos?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">El servidor de Grok devuelve de forma inconsistente la URL del medio HD de los videos recién generados: consultar el mismo video dos veces en pocos segundos podía devolver el campo una vez y omitirlo la siguiente, aunque el campo de resolución se mantuviera estable. Eso hacía que el mismo video pareciera SD en un escaneo y HD en otro, por lo que ejecutar «mejorar las últimas N horas» repetidamente daba un resultado distinto cada vez. La versión 2.5 añade una memoria de calidad exclusiva para mejoras que registra la calidad más alta obtenida para cada video y nunca la rebaja cuando una consulta posterior llega incompleta. Los registros caducan a los 30 días, tienen un número máximo y se borran automáticamente si una URL recordada deja de funcionar.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">¿Whole Library Download está disponible en la versión gratuita?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Sí, para las imágenes de los últimos 7 días. Desde la v2.5.1 el selector de fuente de descarga es gratis para todos, porque nadie debería quedarse atascado en una fuente que no puede ver sus propios medios. Los usuarios de la versión gratuita pueden seleccionar «📦 Todos los medios generados (por conversación)» y descargar las imágenes de los últimos 7 días; la extensión indica esta ventana desde el principio en lugar de recortar tus resultados en silencio. GrokMediaDownloader PRO, un pago único de $4.99 con licencia vitalicia, añade la descarga de videos, elimina el límite de tiempo para que puedas archivar toda tu biblioteca y desbloquea el filtrado por fecha (un rango concreto o una ventana de horas recientes). PRO también incluye Stream Capture, la exportación de Story Mode, Video Gen Queue sin límite, Project-Based Download, la mejora a HD y 1080p, y la exportación e importación del historial. Todo se ejecuta localmente en tu navegador y los archivos van directamente de Grok a tu disco; la única conexión externa es la comprobación de la licencia con el servidor de licencias de Kario Studio.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">Si lo vuelvo a ejecutar, ¿descargará los mismos archivos dos veces?</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">No. Cada fuente guarda un historial de descargas, y Generar lista deja fuera lo que ya está registrado ahí, así que una segunda ejecución solo obtiene los elementos nuevos. Esto también significa que puedes detener una descarga larga y continuarla más tarde sin empezar de cero. Si quieres volver a descargarlo todo, borra antes el historial de esa fuente.</p>
                 </div>
             </div>
 
-            <p class="text-center text-slate-500 text-sm mt-8" data-i18n="library_faq_limit">Limitación conocida: los assets que subiste tú mismo, o que no tienen información de generación, no tienen prompt ni conversación en el servidor. Esos se guardan con su ID de asset.</p>
+            <p class="text-center text-slate-500 text-sm mt-8">Limitación conocida: los assets que subiste tú mismo, o que no tienen información de generación, no tienen prompt ni conversación en el servidor. Esos se guardan con su ID de asset.</p>
+        </div>
+    </section>
+
+    <!-- Related guides -->
+    <section id="related-guides" class="py-20 bg-slate-950 border-t border-slate-800 scroll-mt-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Guías relacionadas</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="/es/grok-favorites-not-loading.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">¿Los favoritos de Grok no cargan? Haz una copia de seguridad de tu biblioteca</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Por qué las imágenes y los videos nuevos dejaron de aparecer en Guardados, y cómo guardar tu trabajo de todos modos.</p>
+                </a>
+                <a href="/es/save-grok-imagine-prompts.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">Guardar los videos de Grok Imagine con sus prompts</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Pon cada prompt en el nombre del archivo o en un archivo .json junto a la imagen o el video.</p>
+                </a>
+                <a href="/es/download-grok-videos-hd.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">Descargar videos de Grok en HD</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Comprueba qué videos están en SD, HD/720p o 1080p, mejóralos y descarga la versión mejorada.</p>
+                </a>
+                <a href="/es/grok-download-button-missing.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">El botón de descarga de Grok no aparece tras la actualización</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Soluciona los botones Generar lista e Iniciar descarga en gris tras el cambio de Grok de noviembre de 2026.</p>
+                </a>
+                <a href="/es/faq.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">Preguntas frecuentes</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Respuestas breves sobre fuentes, nombres de archivo, licencias y reembolsos.</p>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="library_cta_title">Archiva toda tu biblioteca de Grok</h2>
-            <p class="text-slate-400 mb-8" data-i18n="library_cta_desc">Gratis para los últimos 7 días; PRO desbloquea toda tu biblioteca</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Archiva toda tu biblioteca de Grok</h2>
+            <p class="text-slate-400 mb-8">Gratis: imágenes de los últimos 7 días. PRO añade los videos y tu biblioteca completa.</p>
 
             <div class="inline-flex flex-col sm:flex-row gap-4">
                 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=bottom_cta&amp;utm_term=es" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-                    <span data-i18n="hero_cta_chrome">Añadir a Chrome</span>
+                    <span>Añadir a Chrome</span>
                 </a>
 
                 <a href="/es/pricing.html" class="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
                     <i data-lucide="zap" class="w-5 h-5"></i>
-                    <span data-i18n="price_pro_button">$4.99 PRO de por vida</span>
+                    <span>$4.99 PRO de por vida</span>
                 </a>
             </div>
 
-            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">✨ Incluye todas las actualizaciones futuras</p>
+            <p class="text-slate-500 text-sm mt-6">✨ Incluye todas las actualizaciones futuras</p>
             <div class="mt-8 pt-6 border-t border-slate-800">
-                <p class="text-slate-400 text-sm font-semibold mb-3" data-i18n="explore_more">Descubre más funciones</p>
+                <p class="text-slate-400 text-sm font-semibold mb-3">Descubre más funciones</p>
                 <div class="flex flex-wrap justify-center gap-3">
                     <a href="/es/project-download.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Project Download</a>
                     <a href="/es/story-mode.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">Story Mode</a>
@@ -786,11 +1000,11 @@
                 </div>
             </div>
             <div class="flex justify-center gap-3 mt-6">
-                <a href="https://twitter.com/intent/tweet?text=Descarga%20toda%20tu%20biblioteca%20de%20Grok%2C%20organizada%20por%20conversaci%C3%B3n&url=https://grokmedia.kario-studio.com/es/library-download.html?utm_source=twitter&utm_medium=social&utm_campaign=share" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                <a href="https://twitter.com/intent/tweet?text=C%C3%B3mo%20descargar%20todos%20tus%20favoritos%20de%20Grok%20Imagine%20de%20una%20vez&url=https://grokmedia.kario-studio.com/es/library-download.html?utm_source=twitter&utm_medium=social&utm_campaign=share" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     <span>Compartir en X</span>
                 </a>
-                <a href="https://www.reddit.com/submit?url=https://grokmedia.kario-studio.com/es/library-download.html?utm_source=reddit&utm_medium=social&utm_campaign=share&title=Whole%20Library%20Download%20-%20Cada%20imagen%20y%20video%20de%20Grok%2C%20organizado" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                <a href="https://www.reddit.com/submit?url=https://grokmedia.kario-studio.com/es/library-download.html?utm_source=reddit&utm_medium=social&utm_campaign=share&title=C%C3%B3mo%20descargar%20todos%20tus%20favoritos%20de%20Grok%20Imagine%20de%20una%20vez" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
                     <span>Compartir en Reddit</span>
                 </a>

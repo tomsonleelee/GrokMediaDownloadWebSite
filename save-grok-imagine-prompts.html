@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // GA4: never load or send from local dev/test hosts (localhost, 127.0.0.1). Production only.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            window['ga-disable-G-6YPN8563C6'] = true;
+        } else {
+            var gtagScript = document.createElement('script'); gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6';
+            document.head.appendChild(gtagScript);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Grok Imagine Videos with Their Prompts | GrokMediaDownloader</title>
+    <meta name="description" content="Keep the prompt with every Grok Imagine video and image you download: prompt-based filenames, custom name templates and a .json file per item. Step-by-step guide.">
+    <meta name="keywords" content="save grok imagine prompts, grok imagine prompt filename, download grok videos with prompts, grok metadata json, grok filename template, GrokMediaDownloader">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/save-grok-imagine-prompts.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/save-grok-imagine-prompts.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/save-grok-imagine-prompts.html">
+    <meta property="og:title" content="Save Grok Imagine videos with their prompts">
+    <meta property="og:description" content="Keep the prompt with every Grok Imagine video and image you download: prompt-based filenames, custom name templates and a .json file per item. Step-by-step guide.">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Save Grok Imagine videos with their prompts">
+    <meta name="twitter:description" content="Keep the prompt with every Grok Imagine video and image you download: prompt-based filenames, custom name templates and a .json file per item. Step-by-step guide.">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Save Grok Imagine videos with their prompts",
+      "description": "Keep the prompt with every Grok Imagine video and image you download: prompt-based filenames, custom name templates and a .json file per item. Step-by-step guide.",
+      "inLanguage": "en",
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28",
+      "author": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "url": "https://www.kario-studio.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://grokmedia.kario-studio.com/assets/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://grokmedia.kario-studio.com/save-grok-imagine-prompts.html"
+      },
+      "image": "https://grokmedia.kario-studio.com/assets/og-image.jpg"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://grokmedia.kario-studio.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Save Grok Imagine videos with their prompts",
+          "item": "https://grokmedia.kario-studio.com/save-grok-imagine-prompts.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I download Grok Imagine videos with their prompts automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. In ⚙️ Settings, choose Prompt Based or a Custom Template with {prompt}, and turn on 📋 Save Metadata if you also want the full prompt in a .json file. Every file you download after that carries its prompt. Video downloads need PRO; images work in the free version."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is saving prompts free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The filename formats, Custom Templates and .json files are free for everyone. PRO, a one-time $4.99 purchase, adds video downloads, your library beyond the last 7 days and the date filter. Details are on the pricing page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where do I find the full prompt if the filename is shortened?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In the .json file next to the media file, which is created when 📋 Save Metadata is on. Filenames are cut to stay usable, while the .json file stores the prompt as it was recorded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work with prompts in Chinese, Japanese or other languages?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Only characters that are not safe in filenames are removed. Chinese, Japanese, Korean and accented letters stay in the name as typed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which prompt does a video get if it was made from an image?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Its own animation prompt when it has one. A video without a prompt of its own takes the prompt of the image it was made from, so it still gets a meaningful name."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my prompts uploaded anywhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The extension runs in your browser and saves files straight from Grok to your disk. The only outside service it contacts is Kario Studio's license server, to check a PRO key."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css?v=20261119">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(219, 39, 119, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to main content</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/" class="text-sm text-slate-300 hover:text-white">Home</a><a href="/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">Library Download</a><a href="/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">Story Mode</a><a href="/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">Video Gen Queue</a><a href="/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">Stream Capture</a><a href="/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">Project Download</a><a href="/pricing.html" class="text-sm text-slate-300 hover:text-white">Pricing</a><a href="/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+    <section class="relative pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+                <span>How-to guide</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight"><span class="gradient-text">Save Grok Imagine videos with their prompts</span></h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto">Put the prompt in each filename, use your own naming pattern, or keep the full prompt in a .json file next to every download.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=save-grok-imagine-prompts&amp;utm_content=hero&amp;utm_term=en" target="_blank" rel="noopener" class="px-8 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>Add to Chrome</span>
+                </a>
+                <a href="/pricing.html" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                    <span>See PRO pricing</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-xs mt-6">Updated November 28, 2026 · written for extension version 2.6.3</p>
+        </div>
+    </section>
+
+    <!-- Short answer -->
+    <section class="pb-16 bg-slate-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-pink-500/30 bg-pink-500/5 p-6 md:p-8">
+                <h2 class="text-sm font-semibold uppercase tracking-wide text-pink-300 mb-3">Short answer</h2>
+                <p class="text-slate-200 text-lg leading-relaxed">Install GrokMediaDownloader and open <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok.com/library</code>. In the popup, open <strong>⚙️ Settings</strong> and pick <strong>Prompt Based</strong> under 📝 Filename Format, or a <strong>Custom Template</strong> that contains <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code>. Tick <strong>📋 Save Metadata</strong> to also save a .json file with the full prompt next to every file. Then click <strong>1. Generate List</strong> and <strong>2. Start Download</strong>. The naming and metadata options are free and work for images; downloading videos needs <a href="/pricing.html" class="underline hover:text-pink-300">PRO</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Three ways to keep a prompt</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">You can combine all three. Each one is a setting in the extension popup, and none of them changes anything on Grok.</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="file-text" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Prompt in the filename</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">The Prompt Based format names files like <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">img_20261128143015_a_red_fox_in_fresh_snow_1a2b3c4d.jpg</code>, so you can search your disk by prompt.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="braces" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">Your own naming pattern</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">A Custom Template combines tokens such as <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{date}</code>, <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code> and <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code> into names that fit the way you sort files.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="file-json" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">The full prompt in a .json file</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Save Metadata writes a small .json file beside each download with the complete prompt, the creation time, the ID and, for videos, the quality that was saved.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Free and PRO for saving prompts</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">Everything about names and metadata is free. PRO adds video downloads and the rest of your library.</p>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[640px] border-collapse text-sm">
+                    <thead><tr class="border-b border-slate-700"><th class="text-left py-3 px-4 text-slate-300 font-semibold"></th><th class="text-left py-3 px-4 text-slate-300 font-semibold">Free</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">PRO</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">Prompt Based filenames and Custom Templates</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">📋 Save Metadata (.json per file)</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">Image downloads</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">Video downloads</td><td class="py-3 px-4 text-slate-400">✗ (images only)</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">📦 All Generated Media (whole library)</td><td class="py-3 px-4 text-slate-400">Last 7 days</td><td class="py-3 px-4 text-slate-400">Full library</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">Group by Project with metadata.json</td><td class="py-3 px-4 text-slate-400">Standard mode (project folders are built around videos)</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-4">PRO is a one-time $4.99 purchase with lifetime updates. <a href="/pricing.html" class="underline hover:text-pink-300">See pricing</a> for details.</p>
+        </div>
+    </section>
+
+    <section id="steps" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Step by step</h2>
+            <ol class="space-y-8">
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">1</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">Step 1: </span>Install the extension and open Grok</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">Add GrokMediaDownloader from the <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=save-grok-imagine-prompts&amp;utm_content=steps&amp;utm_term=en" target="_blank" rel="noopener" class="underline hover:text-pink-300">Chrome Web Store</a> and pin its icon to the toolbar. Sign in to Grok in the same Chrome profile.</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">Open <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok.com/library</code>. Since version 2.6.3 any grok.com page works. On a tab outside grok.com, the popup asks you to open Grok first.</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">2</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">Step 2: </span>Choose a filename format</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">Click the extension icon to open the popup and expand <strong>⚙️ Settings</strong>. If you have PRO and use the compact view, click <strong>More</strong> at the top of the popup first, because the compact view hides Settings.</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">Under <strong>📝 Filename Format</strong>, pick <strong>Prompt Based</strong> for names built from the date, time and prompt. Pick <strong>Custom Template</strong> to decide the order yourself, then type a pattern into the <strong>Images:</strong> and <strong>Videos:</strong> fields. <strong>Grok Native</strong> keeps short ID-based names without the prompt.</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">Settings are saved as soon as you change them.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/en/popup-filenames.jpg" alt="GrokMediaDownloader popup settings: Filename Format with Grok Native, Prompt Based and Custom Template, and the Save Metadata option" width="336" height="509" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Settings: the three filename formats and 📋 Save Metadata.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">3</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">Step 3: </span>Turn on Save Metadata for the full prompt</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">In the same section, tick <strong>📋 Save Metadata</strong> ("Save .json file with image/video info (prompt, resolution, etc.)"). Each image or video then gets a .json file with the same name next to it.</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">Filenames shorten long prompts, so the .json file is where the complete prompt is kept. It works with any filename format, including Grok Native.</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">4</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">Step 4: </span>Pick a source and generate the list</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">In <strong>📥 Download Source &amp; Filter</strong>, choose <strong>📦 All Generated Media (by Conversation)</strong> (the default, your whole library), <strong>🌟 Favorite</strong> or <strong>🏷️ Tag</strong>. Under <strong>🎬 Media Types</strong>, keep 🖼️ Images ticked. 🎬 Videos (Pro) can be ticked with PRO.</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">Click <strong>1. Generate List</strong>. When your settings use prompts, the button shows <strong>📝 Fetching prompts</strong> with a counter while the extension looks up each prompt in the conversation that created the item. A video without a prompt of its own takes the prompt of the image it was made from. Prompts that were found once are kept in a local cache, so later runs finish faster.</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">When the scan ends, the popup opens a <strong>📊 Download Summary</strong> dialog: how many images and videos will be downloaded, the videos split by quality, and the question "Start download?". OK starts the download right away. Cancel closes the dialog and leaves <strong>2. Start Download</strong> enabled, so you can check your settings first; the screenshot below shows that state.</p>
+                        <figure class="mt-4 mb-2">
+                            <div class="max-w-sm mx-auto rounded-lg bg-white text-slate-800 shadow-lg p-4 font-mono text-xs leading-relaxed" style="white-space:pre-wrap" role="note">📊 Download Summary
+
+🖼️ Images: 1248 to download (0 already done)
+🎬 Videos: 336 to download (0 already done)
+    ├ 💎 1080p: 14
+    ├ ✨ HD: 88
+    ├ 🎥 720p: 52
+    └ 📦 SD: 196
+
+Do not close the browser.
+Start download?
+
+⚠️ Over 250 videos to download. Will auto-pause every 250 videos and resume after 3 min cooldown.</div>
+                            <figcaption class="mt-2 text-center text-xs text-slate-500">The dialog as it appears in the extension, with example numbers.</figcaption>
+                        </figure>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/en/popup-list-ready.jpg" alt="Popup after Generate List: counts of images and videos to download and the enabled Start Download button" width="336" height="828" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">After 1. Generate List: totals, what is already downloaded and what still needs downloading.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">5</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">Step 5: </span>Start the download</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">If you clicked Cancel in the summary, click <strong>2. Start Download</strong> now. A progress bar shows how far the run is and estimates the time left. <strong>⏹ Stop Download</strong> pauses the run and <strong>▶ Continue Download</strong> picks it up again.</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">The extension keeps a download history for each source, so a second run skips files you already saved. To stay within Grok's limits, the extension pauses after every 250 videos, for 3 minutes by default (adjustable in ⚙️ Settings), and then continues by itself.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/en/popup-downloading.jpg" alt="Popup during a download: progress bar with estimated time remaining and the Stop Download button" width="336" height="719" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">While downloading: progress, time remaining and ⏹ Stop Download.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">6</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">Step 6: </span>Find the files and their prompts</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">Files are saved in Chrome's Downloads folder under <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok_downloads/</code>. Favorites go to <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">images/</code> and <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">videos/</code>, tags to <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">tags/</code> with one folder per tag, and the whole library to <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">conversations/</code>, with one folder per conversation named after its date, title or prompt, and a short ID. You can change these paths in ⚙️ Settings.</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">With Save Metadata on, every media file sits next to its .json file.</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <a href="/assets/guides/download-folders.jpg" target="_blank" rel="noopener" class="block"><img src="/assets/guides/download-folders.jpg" alt="Example grok_downloads folder with Prompt Based filenames: conversations/ with one folder per conversation, plus images/, videos/, tags/ and projects/ folders, a .json sidecar next to an image and a project's metadata.json" width="1280" height="1130" loading="lazy" class="w-full h-auto"></a>
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">Example grok_downloads folder with Prompt Based filenames: conversations/, images/, videos/, tags/ and projects/, plus a .json sidecar and a project's metadata.json. Open the image to view it full size.</figcaption>
+                        </figure>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">What Prompt Based names look like</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">The exact pattern depends on the download source. These examples use the prompt "a red fox in fresh snow".</p>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[720px] border-collapse text-sm">
+                    <thead><tr class="border-b border-slate-700"><th class="text-left py-3 px-4 text-slate-300 font-semibold">Source</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">Image</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">Video</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">📦 All Generated Media</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">img_20261128143015_a_red_fox_in_fresh_snow_1a2b3c4d.jpg</code></td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">vid_20261128143015_a_red_fox_in_fresh_snow_9e8d7c6b.mp4</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">🌟 Favorite, 🏷️ Tag</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">img_20261128143015_a_red_fox_in_fresh_snow.jpg</code></td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">hd_20261128143015_a_red_fox_in_fresh_snow.mp4</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-4">The 14-digit number is the creation date and time (YYYYMMDDHHmmss) in your computer's time zone.</p>
+            <p class="text-slate-400 leading-relaxed mt-4">In the whole library, the last 8 characters of the item's ID are added at the end. Two items with the same prompt created in the same second therefore never share a name.</p>
+            <p class="text-slate-400 leading-relaxed mt-4">Videos from Favorites and tags start with <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hd_</code> or <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">sd_</code>, the quality that was downloaded.</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Custom Template tokens</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">Choose Custom Template and type one pattern for images and one for videos. The extension replaces each token and adds the file extension itself.</p>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[640px] border-collapse text-sm">
+                    <thead><tr class="border-b border-slate-700"><th class="text-left py-3 px-4 text-slate-300 font-semibold">Token</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">Becomes</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">Example</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{date}</code></td><td class="py-3 px-4 text-slate-400">Creation date</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">2026-11-28</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{time}</code></td><td class="py-3 px-4 text-slate-400">Creation time (hours, minutes, seconds)</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">143015</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{datetime}</code></td><td class="py-3 px-4 text-slate-400">Date and time together</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">2026-11-28_143015</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{id}</code></td><td class="py-3 px-4 text-slate-400">The item's full Grok ID</td><td class="py-3 px-4 text-slate-400">the full ID</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code></td><td class="py-3 px-4 text-slate-400">The last 8 characters of the ID</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">1a2b3c4d</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code></td><td class="py-3 px-4 text-slate-400">The prompt, cleaned for filenames and cut to 80 characters</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">a_red_fox_in_fresh_snow</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{quality}</code></td><td class="py-3 px-4 text-slate-400">hd or sd for videos from Favorites and tags; empty for images and for the whole library</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hd</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-4">Example: <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{date}_{prompt}_{shortid}</code> as the image pattern gives <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">2026-11-28_a_red_fox_in_fresh_snow_1a2b3c4d.jpg</code>.</p>
+            <p class="text-slate-400 leading-relaxed mt-4">Unknown tokens are removed. If a pattern contains none of <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{id}</code>, <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code> or <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{datetime}</code>, the popup warns "⚠ No unique token — files may overwrite each other". Add one of them so every file keeps its own name.</p>
+            <p class="text-slate-400 leading-relaxed mt-4">An item without a prompt gets part of its ID in place of <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code>. If a template field is left empty, the file is named after its ID.</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">What the .json file contains</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">With 📋 Save Metadata on, every downloaded file gets a .json file with the same name. It stores the prompt as recorded, including characters that cannot appear in filenames. The fields are:</p>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4">
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">prompt</code> and <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">originalPrompt</code>: the prompt text</li>
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">createTime</code>: when the item was created; <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">downloadedAt</code>: when you saved it</li>
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">id</code>, <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">type</code>, <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">url</code> and <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">filename</code>: which item this is and where it came from</li>
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">userId</code>: your Grok account ID</li>
+                <li>for videos also <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hdUrl</code>, <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">detailUrl</code> and <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">downloadedQuality</code> (<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hd</code> or <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">sd</code>)</li>
+            </ul>
+            <p class="text-slate-300 leading-relaxed mb-4">A shortened example for a video:</p>
+            <pre class="bg-slate-900 border border-slate-800 rounded-xl p-5 overflow-x-auto text-xs text-slate-300 font-mono mb-4">{
+  &quot;id&quot;: &quot;…&quot;,
+  &quot;type&quot;: &quot;video&quot;,
+  &quot;url&quot;: &quot;…&quot;,
+  &quot;filename&quot;: &quot;vid_20261128143015_a_red_fox_in_fresh_snow_9e8d7c6b.mp4&quot;,
+  &quot;createTime&quot;: &quot;2026-11-28T14:30:15.000Z&quot;,
+  &quot;prompt&quot;: &quot;a red fox in fresh snow, slow camera pan&quot;,
+  &quot;originalPrompt&quot;: &quot;a red fox in fresh snow, slow camera pan&quot;,
+  &quot;downloadedQuality&quot;: &quot;hd&quot;,
+  &quot;downloadedAt&quot;: &quot;2026-11-28T15:02:41.000Z&quot;
+}</pre>
+            <p class="text-slate-300 leading-relaxed mb-4">Because the file includes your Grok user ID, you may want to leave the .json files out when you share a folder publicly.</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Project folders and metadata.json (Favorite source)</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">With the 🌟 Favorite source, <strong>📂 Download Mode</strong> offers <strong>Group by Project</strong>. Each project folder holds the source image, the videos generated from it, and one <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">metadata.json</code>. The folder is named after the date, the prompt and a short ID, for example <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">20261128_a_red_fox_in_fresh_snow_1a2b3c4d</code>.</p>
+            <p class="text-slate-300 leading-relaxed mb-4">metadata.json lists the folder's prompt and creation time, the source image, and each generated video with its own prompt and download links, plus a count of images and videos. It is written for every project folder, whether or not Save Metadata is on. Files you already downloaded in Standard mode are skipped; to get complete project folders, the popup suggests clearing the download history first.</p>
+            <p class="text-slate-300 leading-relaxed mb-4">Project folders are only offered for the Favorite source, and since they are built around videos they are most useful with PRO. Since Grok's July 2026 change, newly generated media is missing from Favorites for many accounts. For those items, use 📦 All Generated Media: each conversation folder already keeps an image and the videos made from it together.</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Filename length and character rules</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">Prompts are written by people, not for file systems, so the extension cleans them before using them in a name:</p>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4">
+                <li>Characters that are not safe in filenames ( <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">\ / : * ? " &lt; &gt; |</code> ), line breaks and tabs are removed.</li>
+                <li>Spaces become underscores, and repeated underscores are merged into one.</li>
+                <li>Long prompts are cut: to 100 characters in Prompt Based names from the whole library, 120 from Favorites and tags, 80 for the <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code> token and 90 in project folder names.</li>
+                <li>Image references written as @ followed by an ID, and option flags at the end of a prompt such as <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">--mode=…</code>, are left out of names. The .json file keeps the prompt as it was stored.</li>
+                <li>Letters outside the Latin alphabet, such as Chinese, Japanese or Korean, stay as they are.</li>
+                <li>Items without a prompt, such as images you uploaded yourself, are named after their ID.</li>
+            </ul>
+            <p class="text-slate-300 leading-relaxed mb-4">None of these rules touches the .json file, so with Save Metadata on the full prompt is always kept.</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">If the popup asks you to regenerate the list</h2>
+            <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><i data-lucide="alert-triangle" class="text-amber-400 w-5 h-5"></i></div>
+                    <div class="space-y-3">
+                        <p class="text-slate-300 leading-relaxed">Looking up prompts takes time, so the extension only does it when your settings need them: Prompt Based names, a Custom Template with <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code>, or Save Metadata.</p>
+                        <p class="text-slate-300 leading-relaxed">If you generated the list with Grok Native names and no metadata, and then switch one of these on, the popup shows <strong>⚠️ Prompt-based filenames/metadata need prompts — please regenerate the list</strong>. Click <strong>1. Generate List</strong> again before you start. Otherwise the new files would be saved without their prompts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Troubleshooting</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">The problems people run into most when saving prompts, and how to fix each one.</p>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Files are named with an ID instead of the prompt<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">There are three common reasons. The item has no prompt, for example an image you uploaded. The list was generated before you changed the filename settings, so generate it again. Or the list came from an older extension version: update the extension, then generate the list again. Chrome updates extensions automatically; to force it, open chrome://extensions, turn on Developer mode and click Update.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">The popup says prompt-based filenames/metadata need prompts<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Your settings now use prompts, but the current list was built without them. Click <strong>1. Generate List</strong> again, then <strong>2. Start Download</strong>.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">The Videos checkbox is greyed out with a lock<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Video downloads are a PRO feature. In the free version you can download images with every naming and metadata option. PRO is a one-time $4.99 purchase (<a href="/pricing.html" class="underline hover:text-pink-300">pricing</a>). After buying, paste your GMD-… key into <strong>🔑 License</strong> in the popup.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Generate List stays on "Fetching prompts" for a long time<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">The first run looks up the prompt of every conversation in the list, which takes a while on a large library. If Grok answers these lookups with an error such as HTTP 429, the extension slows down and retries automatically. Later runs use the local prompt cache and are much quicker. With PRO you can also narrow a large scan with the date filter.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Two files ended up with the same name<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Your Custom Template has no unique token. Add <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code>, <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{id}</code> or <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{datetime}</code>. Prompt Based names from the whole library already end with a short ID.</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">I changed the format, but files I downloaded earlier keep their old names<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">The extension does not rename files that are already on your disk, and its download history skips them. To save them again with the new names, open <strong>🧹 Clear Actions</strong> and clear the history of that source: Clear Conversation History for the whole library, Reset Download History for Favorites, or Clear Tag History for tags. Then generate the list and start again. Clearing a history deletes nothing on Grok or on disk.</div>
+                </details>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-8">Still stuck? The <a href="/faq.html" class="underline hover:text-slate-300">FAQ</a> covers more cases, and <a href="/support.html" class="underline hover:text-slate-300">Contact Support</a> reaches a person.</p>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Frequently asked questions</h2>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Can I download Grok Imagine videos with their prompts automatically?</h3>
+                    <p class="text-slate-400 leading-relaxed">Yes. In ⚙️ Settings, choose Prompt Based or a Custom Template with {prompt}, and turn on 📋 Save Metadata if you also want the full prompt in a .json file. Every file you download after that carries its prompt. Video downloads need PRO; images work in the free version.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Is saving prompts free?</h3>
+                    <p class="text-slate-400 leading-relaxed">Yes. The filename formats, Custom Templates and .json files are free for everyone. PRO, a one-time $4.99 purchase, adds video downloads, your library beyond the last 7 days and the date filter. Details are on the <a href="/pricing.html" class="underline hover:text-pink-300">pricing page</a>.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Where do I find the full prompt if the filename is shortened?</h3>
+                    <p class="text-slate-400 leading-relaxed">In the .json file next to the media file, which is created when 📋 Save Metadata is on. Filenames are cut to stay usable, while the .json file stores the prompt as it was recorded.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Does it work with prompts in Chinese, Japanese or other languages?</h3>
+                    <p class="text-slate-400 leading-relaxed">Yes. Only characters that are not safe in filenames are removed. Chinese, Japanese, Korean and accented letters stay in the name as typed.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Which prompt does a video get if it was made from an image?</h3>
+                    <p class="text-slate-400 leading-relaxed">Its own animation prompt when it has one. A video without a prompt of its own takes the prompt of the image it was made from, so it still gets a meaningful name.</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Are my prompts uploaded anywhere?</h3>
+                    <p class="text-slate-400 leading-relaxed">No. The extension runs in your browser and saves files straight from Grok to your disk. The only outside service it contacts is Kario Studio's license server, to check a PRO key.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="related" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">Related guides</h2>
+            <ul class="grid sm:grid-cols-2 gap-4">
+                <li><a href="/library-download.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>How to Download All Your Grok Imagine Favorites at Once</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/grok-favorites-not-loading.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok favorites not loading? Back up your library</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/download-grok-videos-hd.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Download Grok videos in HD</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/grok-download-button-missing.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok download button missing after update</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/faq.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>FAQ: answers to common questions about the extension</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Keep every prompt with your downloads</h2>
+            <p class="text-slate-400 mb-8">Free for images and all naming options. PRO adds video downloads and your full library.</p>
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=save-grok-imagine-prompts&amp;utm_content=bottom_cta&amp;utm_term=en" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>Add to Chrome</span>
+                </a>
+                <a href="/pricing.html" class="px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span>See PRO pricing</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-sm mt-6">✨ Includes all future updates</p>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/privacy.html" class="hover:text-white">Privacy Policy</a> · <a href="/terms.html" class="hover:text-white">Terms of Service</a> · <a href="/manager/" class="hover:text-white">Grok Media Manager</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> <nav class="mt-3" aria-label="Languages"><a href="/save-grok-imagine-prompts.html" hreflang="en" class="hover:text-white text-slate-300">English</a> · <a href="/zh-TW/save-grok-imagine-prompts.html" hreflang="zh-TW" class="hover:text-white">繁體中文</a> · <a href="/ja/save-grok-imagine-prompts.html" hreflang="ja" class="hover:text-white">日本語</a> · <a href="/ko/save-grok-imagine-prompts.html" hreflang="ko" class="hover:text-white">한국어</a> · <a href="/es/save-grok-imagine-prompts.html" hreflang="es" class="hover:text-white">Español</a> · <a href="/de/save-grok-imagine-prompts.html" hreflang="de" class="hover:text-white">Deutsch</a></nav></div></footer></div>
+
+    <!-- Scripts -->
+    <script src="/js/i18n.js?v=20261119"></script>
+    <script src="/js/components.js?v=20261119"></script>
+</body>
+
+</html>

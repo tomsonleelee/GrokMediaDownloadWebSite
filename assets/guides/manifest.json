@@ -1,0 +1,198 @@
+{
+  "de/popup-date-filter.jpg": {
+    "height": 1034,
+    "width": 672
+  },
+  "de/popup-downloading.jpg": {
+    "height": 1436,
+    "width": 672
+  },
+  "de/popup-filenames.jpg": {
+    "height": 1044,
+    "width": 672
+  },
+  "de/popup-hd-upgrade.jpg": {
+    "height": 842,
+    "width": 672
+  },
+  "de/popup-list-ready.jpg": {
+    "height": 1644,
+    "width": 672
+  },
+  "de/popup-overview.jpg": {
+    "height": 2348,
+    "width": 672
+  },
+  "de/popup-sources.jpg": {
+    "height": 1130,
+    "width": 672
+  },
+  "de/popup-wrong-page.jpg": {
+    "height": 916,
+    "width": 672
+  },
+  "download-folders.jpg": {
+    "height": 1130,
+    "width": 1280
+  },
+  "en/popup-date-filter.jpg": {
+    "height": 1008,
+    "width": 672
+  },
+  "en/popup-downloading.jpg": {
+    "height": 1438,
+    "width": 672
+  },
+  "en/popup-filenames.jpg": {
+    "height": 1018,
+    "width": 672
+  },
+  "en/popup-hd-upgrade.jpg": {
+    "height": 800,
+    "width": 672
+  },
+  "en/popup-list-ready.jpg": {
+    "height": 1656,
+    "width": 672
+  },
+  "en/popup-overview.jpg": {
+    "height": 2336,
+    "width": 672
+  },
+  "en/popup-sources.jpg": {
+    "height": 1078,
+    "width": 672
+  },
+  "en/popup-wrong-page.jpg": {
+    "height": 896,
+    "width": 672
+  },
+  "es/popup-date-filter.jpg": {
+    "height": 1034,
+    "width": 672
+  },
+  "es/popup-downloading.jpg": {
+    "height": 1436,
+    "width": 672
+  },
+  "es/popup-filenames.jpg": {
+    "height": 1018,
+    "width": 672
+  },
+  "es/popup-hd-upgrade.jpg": {
+    "height": 842,
+    "width": 672
+  },
+  "es/popup-list-ready.jpg": {
+    "height": 1644,
+    "width": 672
+  },
+  "es/popup-overview.jpg": {
+    "height": 2348,
+    "width": 672
+  },
+  "es/popup-sources.jpg": {
+    "height": 1130,
+    "width": 672
+  },
+  "es/popup-wrong-page.jpg": {
+    "height": 916,
+    "width": 672
+  },
+  "ja/popup-date-filter.jpg": {
+    "height": 1006,
+    "width": 672
+  },
+  "ja/popup-downloading.jpg": {
+    "height": 1452,
+    "width": 672
+  },
+  "ja/popup-filenames.jpg": {
+    "height": 998,
+    "width": 672
+  },
+  "ja/popup-hd-upgrade.jpg": {
+    "height": 860,
+    "width": 672
+  },
+  "ja/popup-list-ready.jpg": {
+    "height": 1674,
+    "width": 672
+  },
+  "ja/popup-overview.jpg": {
+    "height": 2394,
+    "width": 672
+  },
+  "ja/popup-sources.jpg": {
+    "height": 1106,
+    "width": 672
+  },
+  "ja/popup-wrong-page.jpg": {
+    "height": 986,
+    "width": 672
+  },
+  "ko/popup-date-filter.jpg": {
+    "height": 972,
+    "width": 672
+  },
+  "ko/popup-downloading.jpg": {
+    "height": 1438,
+    "width": 672
+  },
+  "ko/popup-filenames.jpg": {
+    "height": 958,
+    "width": 672
+  },
+  "ko/popup-hd-upgrade.jpg": {
+    "height": 788,
+    "width": 672
+  },
+  "ko/popup-list-ready.jpg": {
+    "height": 1616,
+    "width": 672
+  },
+  "ko/popup-overview.jpg": {
+    "height": 2290,
+    "width": 672
+  },
+  "ko/popup-sources.jpg": {
+    "height": 1042,
+    "width": 672
+  },
+  "ko/popup-wrong-page.jpg": {
+    "height": 888,
+    "width": 672
+  },
+  "zh-TW/popup-date-filter.jpg": {
+    "height": 972,
+    "width": 672
+  },
+  "zh-TW/popup-downloading.jpg": {
+    "height": 1450,
+    "width": 672
+  },
+  "zh-TW/popup-filenames.jpg": {
+    "height": 958,
+    "width": 672
+  },
+  "zh-TW/popup-hd-upgrade.jpg": {
+    "height": 800,
+    "width": 672
+  },
+  "zh-TW/popup-list-ready.jpg": {
+    "height": 1640,
+    "width": 672
+  },
+  "zh-TW/popup-overview.jpg": {
+    "height": 2316,
+    "width": 672
+  },
+  "zh-TW/popup-sources.jpg": {
+    "height": 1042,
+    "width": 672
+  },
+  "zh-TW/popup-wrong-page.jpg": {
+    "height": 912,
+    "width": 672
+  }
+}

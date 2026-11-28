@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Gen Queue | 自動化影片生成排程 - GrokMediaDownloader</title>
-    <meta name="description" content="自動化 Grok 影片生成排程。批次排程、4 種生成模式、自動重試、速率限制偵測。GrokMediaDownloader PRO 功能。">
+    <meta name="description" content="自動化 Grok 影片生成排程。批次排程、4 種生成模式、自動重試、速率限制偵測。免費版 50 次，PRO 不限次數。">
     <meta name="keywords" content="Video Gen Queue, 影片生成排程, auto video generation, batch queue, Grok AI video, Chrome extension, auto retry, rate limit">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -92,31 +92,47 @@
           "name": "Video Gen Queue 是什麼，如何運作？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Video Gen Queue 是一項 PRO 功能，會自動追蹤 Grok 在使用期間產生的每部影片。當 Grok 處理影片產生請求時，擴充功能會將每部完成的影片加入佇列，讓你一鍵批次下載，不需一部一部手動儲存。"
+            "text": "Video Gen Queue 讓你在擴充功能的側邊欄自動執行 Grok 影片生成。把圖片貼文加入佇列，選擇模式（Custom、Normal、Fun 或 Spicy）以及每篇貼文要成功生成幾部影片，擴充功能就會在 grok.com 依序開啟每篇貼文、填入提示詞並送出。被審核擋下或失敗的嘗試會在重試上限內重試，之後再換下一篇。免費版可使用 50 次，PRO 不限次數。"
           }
         },
         {
           "@type": "Question",
-          "name": "可以一次下載多部 Grok 影片嗎？",
+          "name": "如何把貼文加入佇列？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以，這正是 Video Gen Queue 的主要功能。影片加入佇列後，點擊「全部下載」即可一次將所有影片儲存到本機。下載前也可以從佇列中移除不需要的影片。"
+            "text": "在彈出視窗點 🎯 Queue 開啟面板。在 Grok 的貼文頁面點浮動的 🎯 按鈕，設定提示詞與選項後即可加入該貼文；也可以在面板的「新增項目」貼上文章 ID 或網址。「批次加入最近貼文」會把 Grok 收藏中最近 1 到 72 小時內建立的圖片貼文一次加入，並套用同一組提示詞。Grok 在 2026 年 7 月改版後，較新的圖片可能不在收藏中。"
           }
         },
         {
           "@type": "Question",
-          "name": "下載的影片是什麼格式？",
+          "name": "每個項目可以設定哪些選項？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "影片以 Grok 提供的原始格式下載，通常為 MP4。擴充功能直接下載原始檔案，保留原始解析度、影格率和品質，不進行任何重新編碼。"
+            "text": "模式（Custom、Normal、Fun 或 Spicy）、提示詞（Custom 必須填寫，其他模式可留空）、成功目標、最大重試次數、影片時長（6 秒或 10 秒）與解析度（480p 或 720p）。10 秒與 720p 需要 SuperGrok；帳號不符資格時，Grok 可能拒絕或標記該請求。"
           }
         },
         {
           "@type": "Question",
-          "name": "關閉擴充功能面板後佇列會消失嗎？",
+          "name": "可以看到每個項目的進度嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "不會。Video Gen Queue 儲存於 IndexedDB，即使切換分頁或關閉擴充功能面板也不會遺失。佇列中的影片會一直保留，直到你手動清除佇列或完成下載。"
+            "text": "可以。每個項目會顯示等待中、進行中、已完成或失敗，以及成功與失敗次數相對於目標的進度。「提示詞統計」會記錄每個提示詞成功或被審核擋下的次數，方便你判斷哪些提示詞有效。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "遇到 Grok 速率限制或生成卡住時會怎樣？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "如果 Grok 回應速率限制錯誤（HTTP 429），佇列會停止並顯示訊息；請稍候再按「開始」。如果在生成逾時時間內（預設 180 秒，可在設定中調整為 30 到 600 秒）沒有收到結果，這次嘗試會標記為錯誤，佇列接著處理下一個項目。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "關閉側邊欄或重新整理頁面，佇列會不見嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。佇列項目與提示詞統計儲存在瀏覽器的 IndexedDB 中，關閉面板或重新整理 grok.com 都會保留，重新整理後也會接著處理。佇列執行期間請保持瀏覽器開啟，並讓 Grok 分頁停留在貼文頁面。"
           }
         },
         {
@@ -124,7 +140,7 @@
           "name": "Video Gen Queue 是免費功能嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Video Gen Queue 是 PRO 專屬功能。升級至 PRO（$4.99 終身授權）即可解鎖 Video Gen Queue 以及 Stream Capture、Story Mode 和 Project Download。"
+            "text": "可以免費使用，但有次數限制。免費版可使用 50 次，一次代表透過佇列成功生成一部影片；被審核擋下或失敗的嘗試不計入。PRO（$4.99 一次付清、終身授權）不限次數，並同時解鎖影片下載、Stream Capture、Story Mode 匯出與 Project Download。"
           }
         }
       ]
@@ -206,9 +222,7 @@
 
                 <p class="text-xl md:text-2xl text-pink-300 mb-4" data-i18n="queue_subtitle">自動化影片生成排程</p>
 
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="queue_page_desc">
-                    Side Panel 介面，一鍵批次加入影片生成佇列。支援四種生成模式、自動重試失敗任務、智慧偵測速率限制，讓影片生成完全自動化。
-                </p>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="queue_page_desc">在側邊欄批次生成影片。支援 4 種生成模式、在你設定的上限內自動重試，並會偵測速率限制，在 Grok 要求放慢時停止佇列。</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=video-gen-queue&amp;utm_content=hero&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
@@ -300,7 +314,7 @@
                         <span class="text-2xl">🔄</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_1_title">自動重試機制</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_1_desc">生成失敗時自動重新加入佇列，確保每個任務都能完成。</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_1_desc">被審核擋下或失敗的嘗試會自動重試，直到達到每個項目設定的重試上限。</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -309,7 +323,7 @@
                         <span class="text-2xl">📋</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_2_title">批次加入佇列</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_2_desc">從收藏清單一鍵選取多個項目，批量加入生成佇列。</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_2_desc">「批次加入最近貼文」會把 Grok 收藏中最近 1 到 72 小時內建立的圖片貼文一次加入，並套用同一組提示詞。</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -327,7 +341,7 @@
                         <span class="text-2xl">🛡️</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_4_title">速率限制偵測</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_4_desc">智慧偵測 Grok API 速率限制，自動暫停並在冷卻後恢復。</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_4_desc">偵測 Grok 的速率限制回應（HTTP 429）並停止佇列，稍候再重新開始即可。</p>
                 </div>
             </div>
         </div>
@@ -362,7 +376,7 @@
                             <i data-lucide="list-plus" class="text-rose-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_2_title">加入佇列</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="queue_step_2_desc">點擊浮動 🎯 按鈕或使用批次加入功能，選取時間範圍(1h~72h)一鍵加入近期 Posts。</p>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_2_desc">在貼文上點浮動的 🎯 按鈕，或用「批次加入最近貼文」加入收藏中最近 1 到 72 小時內建立的圖片貼文。</p>
                     </div>
                 </div>
 
@@ -398,7 +412,7 @@
                             <i data-lucide="check-circle" class="text-emerald-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_5_title">完成收集</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="queue_step_5_desc">成功生成的影片自動出現在您的 Grok 收藏中，隨時可下載。</p>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_5_desc">每個項目達到目標或重試上限時就會停止，面板會顯示成功與失敗次數。新影片可用彈出視窗下載（影片下載需要 PRO）。</p>
                     </div>
                 </div>
             </div>
@@ -440,7 +454,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1" data-i18n="queue_tech_3_title">Fetch Interceptor</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_3_desc">MAIN world 攔截生成結果，搭配 90 秒超時回退機制，確保每次生成都能正確追蹤。</p>
+                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_3_desc">在頁面中攔截 Grok 的回應來讀取生成結果，並設有逾時（預設 180 秒，可調整為 30 到 600 秒），避免單次卡住拖住整個佇列。</p>
                             </div>
                         </div>
 
@@ -541,7 +555,7 @@
                         <i data-lucide="play" class="text-blue-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_normal_title">Normal</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_normal_desc">使用原始圖片提示詞的標準影片生成。最安全且最可預測的選項，適合需要一致結果的情況。</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_normal_desc">Grok 的 Normal 預設模式。不需要輸入提示詞。</p>
                 </div>
 
                 <!-- Fun Mode -->
@@ -550,7 +564,7 @@
                         <i data-lucide="party-popper" class="text-amber-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_fun_title">Fun</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_fun_desc">為生成結果增添俏皮、動感的風格。非常適合充滿趣味的卡通效果影片。</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_fun_desc">Grok 的 Fun 預設模式。不需要輸入提示詞。</p>
                 </div>
 
                 <!-- Spicy Mode -->
@@ -559,7 +573,7 @@
                         <i data-lucide="flame" class="text-rose-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_spicy_title">Spicy</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_spicy_desc">突破創意界限，帶來更大膽的藝術詮釋。預期更戲劇化的動態效果和視覺驚喜。</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_spicy_desc">Grok 的 Spicy 預設模式。不需要輸入提示詞；面板會提醒這類請求可能被 Grok 標記。</p>
                 </div>
             </div>
 
@@ -567,7 +581,7 @@
             <div class="mt-12 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-pink-500/10 border border-pink-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="info" class="text-pink-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="queue_modes_note">每個佇列項目可以使用不同的模式。自動重試功能會自動處理審核拒絕，讓佇列不間斷地持續運行。</p>
+                    <p class="text-slate-300 text-sm" data-i18n="queue_modes_note">每個佇列項目都可以使用不同模式。被審核擋下的嘗試會在各項目的重試上限內重試，之後佇列接著處理下一個項目。</p>
                 </div>
             </div>
         </div>
@@ -583,31 +597,31 @@
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Video Gen Queue 是什麼，如何運作？</h3>
-                    <p class="text-slate-400">Video Gen Queue 是一項 PRO 功能，會自動追蹤 Grok 在使用期間產生的每部影片。當 Grok 處理影片產生請求時，擴充功能會將每部完成的影片加入佇列，讓你一鍵批次下載，不需一部一部手動儲存。</p>
+                    <p class="text-slate-400">Video Gen Queue 讓你在擴充功能的側邊欄自動執行 Grok 影片生成。把圖片貼文加入佇列，選擇模式（Custom、Normal、Fun 或 Spicy）以及每篇貼文要成功生成幾部影片，擴充功能就會在 grok.com 依序開啟每篇貼文、填入提示詞並送出。被審核擋下或失敗的嘗試會在重試上限內重試，之後再換下一篇。免費版可使用 50 次，PRO 不限次數。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">可以一次下載多部 Grok 影片嗎？</h3>
-                    <p class="text-slate-400">可以，這正是 Video Gen Queue 的主要功能。影片加入佇列後，點擊「全部下載」即可一次將所有影片儲存到本機。下載前也可以從佇列中移除不需要的影片。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">如何把貼文加入佇列？</h3>
+                    <p class="text-slate-400">在彈出視窗點 🎯 Queue 開啟面板。在 Grok 的貼文頁面點浮動的 🎯 按鈕，設定提示詞與選項後即可加入該貼文；也可以在面板的「新增項目」貼上文章 ID 或網址。「批次加入最近貼文」會把 Grok 收藏中最近 1 到 72 小時內建立的圖片貼文一次加入，並套用同一組提示詞。Grok 在 2026 年 7 月改版後，較新的圖片可能不在收藏中。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Video Gen Queue 支援所有類型的 Grok 影片產生嗎？</h3>
-                    <p class="text-slate-400">Video Gen Queue 支援 Grok AI 影片產生功能所產生的所有影片內容。它會自動偵測頁面上渲染的影片 URL 並加入佇列，不限影片長度或解析度。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">每個項目可以設定哪些選項？</h3>
+                    <p class="text-slate-400">模式（Custom、Normal、Fun 或 Spicy）、提示詞（Custom 必須填寫，其他模式可留空）、成功目標、最大重試次數、影片時長（6 秒或 10 秒）與解析度（480p 或 720p）。10 秒與 720p 需要 SuperGrok；帳號不符資格時，Grok 可能拒絕或標記該請求。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">下載的影片是什麼格式？</h3>
-                    <p class="text-slate-400">影片以 Grok 提供的原始格式下載，通常為 MP4。擴充功能直接下載原始檔案，保留原始解析度、影格率和品質，不進行任何重新編碼。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">可以看到每個項目的進度嗎？</h3>
+                    <p class="text-slate-400">可以。每個項目會顯示等待中、進行中、已完成或失敗，以及成功與失敗次數相對於目標的進度。「提示詞統計」會記錄每個提示詞成功或被審核擋下的次數，方便你判斷哪些提示詞有效。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">關閉擴充功能面板後佇列會消失嗎？</h3>
-                    <p class="text-slate-400">不會。Video Gen Queue 儲存於 IndexedDB，即使切換分頁或關閉擴充功能面板也不會遺失。佇列中的影片會一直保留，直到你手動清除佇列或完成下載。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">遇到 Grok 速率限制或生成卡住時會怎樣？</h3>
+                    <p class="text-slate-400">如果 Grok 回應速率限制錯誤（HTTP 429），佇列會停止並顯示訊息；請稍候再按「開始」。如果在生成逾時時間內（預設 180 秒，可在設定中調整為 30 到 600 秒）沒有收到結果，這次嘗試會標記為錯誤，佇列接著處理下一個項目。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">可以查看佇列中每部影片的狀態嗎？</h3>
-                    <p class="text-slate-400">可以。佇列面板顯示每部影片的狀態：排隊中、下載中或已完成。在可用的情況下，還可以查看檔案大小和預覽縮圖，方便識別和管理你的影片收藏。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">關閉側邊欄或重新整理頁面，佇列會不見嗎？</h3>
+                    <p class="text-slate-400">不會。佇列項目與提示詞統計儲存在瀏覽器的 IndexedDB 中，關閉面板或重新整理 grok.com 都會保留，重新整理後也會接著處理。佇列執行期間請保持瀏覽器開啟，並讓 Grok 分頁停留在貼文頁面。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Video Gen Queue 是免費功能嗎？</h3>
-                    <p class="text-slate-400">Video Gen Queue 是 PRO 專屬功能。升級至 PRO（$4.99 終身授權）即可解鎖 Video Gen Queue 以及 Stream Capture、Story Mode 和 Project Download。</p>
+                    <p class="text-slate-400">可以免費使用，但有次數限制。免費版可使用 50 次，一次代表透過佇列成功生成一部影片；被審核擋下或失敗的嘗試不計入。PRO（$4.99 一次付清、終身授權）不限次數，並同時解鎖影片下載、Stream Capture、Story Mode 匯出與 Project Download。</p>
                 </div>
             </div>
         </div>

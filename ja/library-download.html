@@ -19,9 +19,9 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ライブラリ全体ダウンロード | Grokメディアを会話別に一括保存 - GrokMediaDownloader</title>
-    <meta name="description" content="Grok Imagineライブラリ全体をダウンロード —— お気に入りだけではありません。会話ごとのフォルダ分け、実際のプロンプトによるファイル名、1080p対応、独立したダウンロード履歴。">
-    <meta name="keywords" content="grokメディア一括ダウンロード, grokライブラリダウンロード, grok画像一括保存, grok会話フォルダ, 1080p grok動画, grokアセット, Chrome拡張機能">
+    <title>Grok Imagineのお気に入りを一括ダウンロードする方法 | ライブラリ全体ダウンロード</title>
+    <meta name="description" content="Grok Imagineのお気に入り、画像、動画をGrok Media Downloaderでまとめてダウンロードする手順を解説。会話別のライブラリ全体ダウンロード、無料版とPROの違い、トラブルシューティングまで。">
+    <meta name="keywords" content="grok imagine お気に入り 一括ダウンロード, grok imagine 画像 動画 一括保存, grok ライブラリ ダウンロード, grok 画像 一括保存, grok 会話フォルダ, grok 動画 1080p, Chrome拡張機能">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
 
@@ -38,10 +38,10 @@
     <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/library-download.html">
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:url" content="https://grokmedia.kario-studio.com/ja/library-download.html">
-    <meta property="og:title" content="ライブラリ全体ダウンロード | すべての画像と動画を整理して保存">
-    <meta property="og:description" content="Grok Imagineライブラリ全体を会話別にダウンロード。お気に入りやタグの絞り込みは不要。1080p対応、プロンプトベースのファイル名。">
+    <meta property="og:title" content="Grok Imagineのお気に入りを一括ダウンロードする方法">
+    <meta property="og:description" content="Grok Imagineの画像と動画を数クリックでまとめてダウンロードし、会話ごとのフォルダに整理。スクリーンショット付きの手順ガイドです。">
     <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -55,9 +55,28 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ライブラリ全体ダウンロード | GrokMediaDownloader">
-    <meta name="twitter:description" content="ライブラリ内のすべての生成画像と動画を、会話別フォルダに整理してダウンロード。1080p対応。">
+    <meta name="twitter:title" content="Grok Imagineのお気に入りを一括ダウンロードする方法">
+    <meta name="twitter:description" content="ライブラリ全体ダウンロードの手順：Grok Imagineの画像と動画をすべて、会話別に整理して保存。">
     <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-library-download.jpg">
+
+    <!-- Schema.org - TechArticle -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Grok Imagineのお気に入りを一括ダウンロードする方法",
+      "alternativeHeadline": "ライブラリ全体ダウンロードの手順を解説",
+      "description": "Chrome拡張機能Grok Media Downloaderを使って、Grok Imagineのお気に入り、画像、動画をまとめてダウンロードする手順ガイド。",
+      "image": "https://grokmedia.kario-studio.com/assets/og-library-download.jpg",
+      "inLanguage": "ja",
+      "datePublished": "2026-07-29",
+      "dateModified": "2026-11-28",
+      "mainEntityOfPage": "https://grokmedia.kario-studio.com/ja/library-download.html",
+      "author": { "@type": "Organization", "name": "Kario Studio", "url": "https://www.kario-studio.com" },
+      "publisher": { "@type": "Organization", "name": "Kario Studio", "url": "https://www.kario-studio.com" },
+      "about": { "@type": "SoftwareApplication", "name": "Grok Media Downloader", "applicationCategory": "BrowserApplication", "operatingSystem": "Chrome" }
+    }
+    </script>
 
     <!-- Schema.org - BreadcrumbList -->
     <script type="application/ld+json">
@@ -74,14 +93,14 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "ライブラリ全体ダウンロード",
+          "name": "Grok Imagineのお気に入りを一括ダウンロードする方法",
           "item": "https://grokmedia.kario-studio.com/ja/library-download.html"
         }
       ]
     }
     </script>
 
-    <!-- Schema.org - FAQPage -->
+    <!-- Schema.org - FAQPage (generated from the visible Troubleshooting and FAQ entries) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -89,66 +108,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "ライブラリ全体ダウンロードとは何ですか？",
+          "name": "「リスト生成」と「ダウンロード開始」がグレーアウトしている",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ライブラリ全体ダウンロードは、GrokMediaDownloader v2.5で追加されたダウンロードソースで、Grok Imagineライブラリ内のすべての生成画像と動画を取得します。お気に入りに登録した項目やタグに分類した項目だけに限りません。拡張機能のポップアップでは、既存のお気に入り・タグと並んで「📦 すべての生成メディア（会話別）」としてダウンロードソースセレクタに表示されます。厳選されたサブセットではなく完全なアセット一覧を読み取るため、これまでに生成したすべてをローカルに完全アーカイブしたい場合に最適な選択肢です。ファイルは会話ごとに1つのフォルダにまとめられるので、スレッドの起点となった画像とそこから生成された動画が、フラットなダウンロードディレクトリに散らばることなく一箇所に収まります。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "お気に入りやタグのダウンロードとどう違いますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "3つのソースはそれぞれ異なるニーズに対応し、互いに完全に独立しています。お気に入りはGrokで「いいね」した項目のみをダウンロードするため、対象は小さく厳選されたままです。タグは特定のGrokタグまたはフォルダに分類されたすべてをダウンロードし、tags/{tagName}/ の下に整理します。ライブラリ全体は両方の絞り込みを無視して生成ライブラリ全体を対象とし、代わりに会話別に出力を整理します。重要な点として、各ソースは独自のダウンロード履歴を保持します。そのため、ライブラリ全体をダウンロードしてもお気に入りがダウンロード済みとしてマークされることはなく、その逆もありません。3つすべてを長期的に併用しても、一方が他方の重複排除記録を汚染することはありません。これはv2.5以前によくある混乱の原因でした。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "フォルダ名とファイル名はどのように決まりますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "各会話が1つのフォルダになり、yyyymmdd_プロンプト_短縮ID というパターンで命名されます。会話にタイトルがない場合、拡張機能はフォルダを「untitled」と表示するのではなく、その会話のプロンプトにフォールバックします。数か月後に見返したときもフォルダ名が意味を持ち続けます。9月以降、Grokはメディア一覧にプロンプトを含めなくなったため、v2.5.6 ではその項目を生成した会話からプロンプトを取り戻します。動画は自身のアニメーションプロンプトを使い、無い場合のみ元画像のプロンプトを借ります。取得したプロンプトは永続キャッシュに保存されるので、ライブラリ全体のリスト再生成は数分から数秒に短縮されます。プロンプトはファイル名やメタデータの設定が実際に使う場合にのみ取得され、これらの設定を変更するとポップアップがリストの再生成を促します。機械的な名前を好む場合、「Grokネイティブ」ファイル名モードは grok_image_YYYYMMDD_id を出力します。metadata.json には userId も記録され、動画のファイル名も同じ短い ID の接尾辞が付いて生成されたリストと一致します。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "新しく生成したGrokメディアが検出されなくなったのはなぜですか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "2026年7月、Grokは新しい「会話＋アセット」メディアバックエンドに移行しました。以前の拡張機能バージョンが依存していた旧エンドポイントは、Savedやメディアライブラリ画面をもはや支えていないため、v2.5.0より前のバージョンでは移行後に作成された画像と動画を認識できません。GrokMediaDownloader v2.5.0は新バックエンドへの完全な適応であり、新規生成メディアの検出を復旧します。更新後は chrome://extensions を開いて拡張機能を再読み込みし、Grokタブを更新してください。またダウンロードリストを一度再生成してください。統合されたタグの結果と、v2.5.6 が生成元の会話から取り戻すプロンプトを反映させるためです。プロンプトベースのファイル名と会話フォルダのルールは「リスト生成」の段階で書き込まれるため、旧バージョンで作成されたリストには遡って適用されません。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "ライブラリ全体のダウンロードを日付で絞り込めますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "はい。ライブラリ全体ソースは他のソースと同じ日付フィルタに対応しており、直近N時間のウィンドウと明示的な日付範囲の両方をカバーします。スキャンは新しい順にライブラリをたどり、選択したウィンドウの終端を超えた時点で早期に停止します。そのため日付で絞り込む際に、結果が出るまでライブラリ全体をスキャンし切る必要はありません。これは大規模なアカウントで重要です。適応的スロットリングと429レート制限バックオフと組み合わせることで、8,000件以上のアセットを持つライブラリでも最後までスキャンできますが、狭い日付フィルタならはるかに早く完了します。「リスト生成」ボタンはスキャン、動画品質の解決、フォルダ準備の各段階で進捗を報告するため、今どの段階が動いているかを確認できます。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "v2.5の1080p対応で何が変わりますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "v2.5では拡張機能全体を通して1080pを独立した品質階層として扱います。ダウンロードは利用可能な最高品質を自動的に選択し、1080pをHDより、HDを元ファイルより優先します。スキャン統計は、すべてをSDとHDにまとめるのではなく、SD・HD/720p・1080pにそれぞれ何本の動画があるかを分けて表示します。アップグレード機能は一度に1段階ずつ、SDからHDへ、720pまたはHDから1080pへ引き上げられるようになりました。1080pへのアップグレードには有料のGrokプラン、具体的にはSuperGrok Heavyが必要なため、既定でオフの明示的なオプトインチェックボックスの背後に置かれています。チェックを外したままなら、拡張機能は1080pリクエストを一切送信しません。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "以前アップグレードスキャンを繰り返すたびに結果が変わったのはなぜですか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Grokのサーバーは、生成直後の動画に対するHDメディアURLの返却が安定していません。同じ動画を数秒以内に2回照会すると、一度は返ってきて次は欠落することがありました。解像度フィールド自体は安定しているにもかかわらずです。そのため同じ動画があるスキャンではSD、次ではHDと判定され、「直近N時間をアップグレード」を繰り返すたびに異なる結果が出ていました。v2.5はアップグレード判定専用の品質メモリを追加し、各動画で解決された最高品質を記録して、後の照会が不完全に返ってきてもダウングレードしません。記録には30日の有効期限と件数上限があり、記憶したURLが無効と判明した場合は自動的に消去されます。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "無料版でライブラリ全体ダウンロードは使えますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "はい —— v2.5.1 以降、ダウンロード元セレクタはすべての方に無料で開放されています。自分のメディアが見えない元に固定されるべき人はいないからです。無料版でも「📦 すべての生成メディア（会話別）」を選択し、直近 7 日間のすべてをダウンロードできます。この範囲は黙って切り捨てるのではなく、UI に明示されます。GrokMediaDownloader PRO は 4.99 ドルの一回払い・永久ライセンスで、この期間制限を解除してライブラリ全体をアーカイブできるようにし、日付フィルター（指定範囲または直近 N 時間）も利用可能になります。PRO にはストリームキャプチャ、ストーリーモードヘルパー、無制限の動画生成キュー、プロジェクトダウンロード、HD および 1080p アップグレード、データのエクスポート・インポートも含まれます。処理はすべてブラウザ内でローカルに行われ、データの収集もアップロードもありません。"
+            "text": "まず、開いているタブがgrok.comのページか確認してください。ほかのサイトでは、ポップアップの両方のボタンが無効になり、Grok ライブラリへ → のリンクが表示されます。grok.comを開いているのにボタンがグレーのままなら、拡張機能のバージョンが2.6.3より古いはずです。2026年11月12〜13日にGrokはImagineをGrok本体のアプリに統合し、古いバージョンではページを認識できなくなりました。Chromeは数時間以内に拡張機能を自動で更新しますが、すぐに更新するには chrome://extensions を開き、デベロッパー モードをオンにして［更新］をクリックします。詳しい手順：Grok のアップデート後にダウンロードボタンが消えた・押せないときの対処法。"
           }
         },
         {
@@ -156,7 +119,31 @@
           "name": "リスト生成で何も見つからない、または最新の画像が漏れる",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ダウンロードソースセレクタを確認してください。まだ「お気に入り」になっている場合は、「📦 すべての生成メディア（会話別）」に切り替えます。Grokの2026年7月の変更以降、新しく生成したメディアはお気に入りに追加されなくなったため、お気に入りのスキャンが空で返るのは正常な動作です。ライブラリ全体ソースはすべての方に無料で、v2.5.1以降は既定のソースです。切り替えたら、もう一度「リスト生成」をクリックしてください。"
+            "text": "ダウンロード元の選択を確認してください。まだ「お気に入り」になっている場合は、すべての生成メディア（会話別）に切り替えます。Grokの2026年7月の変更以降、新しく生成したメディアはお気に入りに追加されないため、お気に入りのスキャンが空になるのは異常ではありません。ライブラリ全体のダウンロード元はどなたでも無料で使え（無料版は直近7日間の画像、PROでは動画とライブラリ全体）、v2.5.1以降は既定の選択です。切り替えたら、もう一度「リスト生成」をクリックしてください。背景について詳しくはGrok のお気に入りが表示されない？ライブラリをバックアップする方法をご覧ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "画像だけがダウンロードされ、動画がない",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "無料版の仕様で、ダウンロードできるのは画像だけです。動画のダウンロードはメディアタイプの 🎬 動画 (Pro) にあたり、PROライセンスが必要です。ポップアップの「🔑 ライセンス」欄でPROを有効にしたら、「動画」にチェックを入れ、もう一度「リスト生成」を実行して「ダウンロード開始」をクリックしてください。ダウンロード履歴により、保存済みの画像はスキップされます。料金もご覧ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ダウンロードが勝手に一時停止した",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "これはエラーではなく、あらかじめ決められた一時停止です。拡張機能は動画を250本ダウンロードするごとに一時停止し、既定では3分待ってから自動で再開します。1回の実行で250本を超える場合は、ダウンロード概要でも事前に知らせます。待ち時間は ⚙️ 設定 の ⏱️ レート制限クールダウン で1〜60分に変更できます。操作は不要です。ブラウザとgrok.comのタブは開いたままにしておいてください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "数千ファイルを超えたあたりでダウンロードが失敗し始める",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "非常に長い実行では、途中からGrokがダウンロードを拒否することがあります。たとえば、数千本の動画のあとにHTTP 403エラーが出るケースです。grok.comのタブを再読み込みし、ポップアップを開いてもう一度「ダウンロード開始」をクリックしてください。ダウンロード履歴によって保存済みのものはすべてスキップされ、足りないファイルだけが取得されます。"
           }
         },
         {
@@ -164,15 +151,15 @@
           "name": "HDアップグレードで「すべての動画はアップグレード済み」と表示される",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "原因は上と同じです。アップグレードスキャンは選択中のソースの一覧を読みますが、お気に入りの一覧は不完全です。ソースをライブラリ全体に設定し、リストを再生成してから、アップグレードスキャンをもう一度実行してください。v2.5以降のスキャンは収束するため、繰り返し実行しても同じ結果になります。また1080pは独立した階層として扱われるので、720pのファイルが最高品質と誤認されることはありません。"
+            "text": "原因はリストが空になる場合と同じです。アップグレードのスキャンは選択中のダウンロード元の一覧を読みますが、お気に入りの一覧は不完全です。アップグレード元を 🌐 ライブラリ全体 に設定し、リストを作り直してから、もう一度アップグレードのスキャンを実行してください。v2.5以降のスキャンは結果が安定し、繰り返し実行しても同じ結果になります。また1080pは独立した画質として扱われるため、720pのファイルが最高画質と誤認されることはありません。HDアップグレードはPRO機能です。"
           }
         },
         {
           "@type": "Question",
-          "name": "ファイル名、フォルダ名、metadata.json にプロンプトが含まれない",
+          "name": "ファイル名、フォルダ名、metadata.json にプロンプトが入らない",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Grokは2026年9月、メディア一覧にプロンプトを含めなくなりました。v2.5.6以降に更新すると、その項目を生成した会話から各プロンプトを取り戻します。その後、リストを一度再生成してください。名前は「リスト生成」の段階で決まるため、旧バージョンで作成したリストは古い名前のままです。ファイル名にプロンプトを入れたい場合は、設定で「プロンプトベース」のファイル名モードを選んでください。取り戻したプロンプトは永続キャッシュに保存されるので、以降の再生成は数秒で終わります。"
+            "text": "Grokは2026年9月、メディア一覧にプロンプトを含めなくなりました。v2.5.6以降に更新すると、各項目を生成した会話からプロンプトを取り戻します。そのうえでリストを一度作り直してください。名前は「リスト生成」の段階で決まるため、旧バージョンで作ったリストは古い名前のままです。ファイル名にプロンプトを入れたい場合は、設定でファイル名形式を「プロンプト使用」にしてください。取り戻したプロンプトは永続キャッシュに保存されるので、以降の再生成は数秒で終わります。"
           }
         },
         {
@@ -180,15 +167,111 @@
           "name": "Grokで作成したタグが見つからない、またはタグから1ファイルしかダウンロードされない",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Grokは2026年8月の移行以降、2つのタグシステムを並行して運用しており、それぞれにもう一方にない項目があります。バージョン2.5.2〜2.5.4は新しい方しか読み取りません。v2.5.6以降に更新すると両方を読み取って統合するため、タグの一覧と中身は2つの和集合になります。更新後、そのタグのリストを再生成してください。"
+            "text": "Grokは2026年8月の移行以降、2つのタグシステムを並行して運用しており、それぞれにもう一方にない項目があります。バージョン2.5.2〜2.5.4は新しい方しか読み取りません。v2.5.6以降に更新すると両方を読み取って統合するため、タグの一覧も中身も2つを合わせたものになります。更新後、そのタグのリストを作り直してください。"
           }
         },
         {
           "@type": "Question",
-          "name": "ファイルを失ったのに、拡張機能がすべてダウンロード済みと表示する",
+          "name": "ファイルを失ったのに、すべてダウンロード済みと表示される",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "各ソースは独自のダウンロード履歴を保持しています。ライブラリ全体ソースの場合は、ポップアップを開いて「🧹 クリア操作」を展開し、「会話履歴を消去」をクリックして確認ダイアログでOKを選びます。「ダウンロード履歴をリセット（全ファイルを再ダウンロード）」ボタンはお気に入りソース専用です。履歴を消去しても、Grok上やディスク上のファイルは何も削除されません。次回の実行でそれらの項目を再ダウンロードできるようになるだけです。"
+            "text": "ダウンロード元ごとに独自のダウンロード履歴があります。ライブラリ全体のダウンロード元の場合は、ポップアップを開いて🧹 クリア操作を展開し、会話履歴を消去をクリックして、確認ダイアログでOKを選びます。「ダウンロード履歴をリセット（全ファイルを再ダウンロード）」ボタンはお気に入り専用で、タグには専用の「タグ履歴をクリア」ボタンがあります。履歴を消去しても、Grok上やディスク上のファイルは何も削除されません。次回の実行でそれらの項目をもう一度ダウンロードできるようになるだけです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Grok Imagineのお気に入りを一括でダウンロードできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。grok.com/library を開いてGrok Media Downloaderのアイコンをクリックし、ダウンロード元に 🌟 お気に入り を選んで、「1. リスト生成」「2. ダウンロード開始」の順にクリックします。ただし2026年7月以降、多くのアカウントでGrokの保存済み一覧に新しいメディアが追加されなくなったため、たいていは 📦 すべての生成メディア（会話別） を選んだほうが漏れなく保存できます。こちらは保存したかどうかに関係なく、ライブラリ全体をダウンロードします。無料版は画像のみで、ライブラリ全体のダウンロード元では直近7日間が対象です。PROでは動画が加わり、期間の制限がなくなります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ライブラリ全体ダウンロードとは何ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ライブラリ全体ダウンロードは、GrokMediaDownloader v2.5で追加されたダウンロード元で、お気に入りに登録した項目やタグに分類した項目に限らず、Grok Imagineライブラリ内のすべての生成画像と動画を取得します。拡張機能のポップアップでは、既存の「お気に入り」「タグ」と並んで、ダウンロード元の選択肢に「すべての生成メディア（会話別）」として表示されます。厳選した一部ではなくアセットの一覧をすべて読み取るため、これまでに生成したものをすべてローカルにアーカイブしたいときに適しています。ファイルは会話ごとに1つのフォルダにまとめられるので、スレッドの起点になった画像と、そこから生成した動画が、階層のないダウンロードフォルダにばらばらに並ぶことなく、同じ場所にまとまります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ライブラリ全体ダウンロードは、お気に入りやタグのダウンロードとどう違いますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "3つのダウンロード元はそれぞれ別の用途に対応し、互いに完全に独立しています。お気に入りはGrokで保存した項目だけをダウンロードするため、対象は少なく厳選されたままです。タグは特定のGrokタグ（フォルダ）に分類されたものをすべてダウンロードし、tags/{tagName}/ の下に整理します。ライブラリ全体はどちらの絞り込みも使わずに生成したライブラリ全体を対象にし、出力を会話別に整理します。ダウンロード元ごとに独自のダウンロード履歴があるため、ライブラリ全体をダウンロードしてもお気に入りがダウンロード済み扱いになることはなく、その逆もありません。3つを長く併用しても、一方が他方の重複排除の記録を乱すことはありません。これはv2.5より前によくあった混乱の原因でした。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "無料版で動画はダウンロードできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ。無料版はどのダウンロード元でも画像をダウンロードでき、ライブラリ全体のダウンロード元では直近7日間が対象です。動画のダウンロード、期間制限のないライブラリ全体、日付フィルターは、PRO（$4.99の一回払い）の機能です。リスト生成、3つのダウンロード元、ファイル名テンプレート、.jsonのメタデータファイル、ダウンロード履歴は無料で使えます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ファイルはどこに保存されますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chromeのダウンロードフォルダ内の grok_downloads に保存されます。ライブラリ全体のダウンロード元は grok_downloads/conversations に会話ごとのフォルダを作り、お気に入りは images と videos（「プロジェクト別」モードでは projects）、タグは tags に保存します。保存先はすべて「設定」で変更できます。処理はすべてブラウザ内で行われ、ファイルはGrokから直接ディスクに保存されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "フォルダ名とファイル名はどのように決まりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "各会話が1つのフォルダになり、yyyymmdd_prompt_shortID の形式で名前が付きます。会話にタイトルがない場合は、フォルダを「untitled」にせず、その会話のプロンプトを使うので、数か月後に見返してもフォルダ名から中身がわかります。9月以降、Grokはメディア一覧にプロンプトを含めなくなったため、v2.5.6からは各項目を生成した会話からプロンプトを取り戻します。動画は自身のアニメーションプロンプトを使い、無い場合は元画像のプロンプトを借ります。取り戻したプロンプトは永続キャッシュに保存されるので、ライブラリ全体の再生成は数分から数秒に短縮されます。プロンプトはファイル名やメタデータの設定で実際に使う場合にだけ取得され、これらの設定を変更するとポップアップがリストの作り直しを促します。機械的な名前がよければ、「Grok ネイティブ」のファイル名形式で grok_image_YYYYMMDD_id という名前になります。metadata.json には userId も記録され、動画のファイル名も同じ短いIDの接尾辞が付いて、生成されたリストと一致します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "新しく生成したGrokメディアが検出されなくなったのはなぜですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2026年7月、Grokは新しい「会話＋アセット」のメディアバックエンドに移行しました。以前の拡張機能が頼っていた旧エンドポイントは、保存済みページやメディアライブラリの画面ではもう使われていないため、v2.5.0より前のバージョンでは移行後に作成された画像と動画を認識できません。GrokMediaDownloader v2.5.0は新バックエンドへの全面的な対応版で、新しく生成したメディアを再び検出できるようにしています。更新後は chrome://extensions を開いて拡張機能を再読み込みし、Grokのタブを更新してください。また、ダウンロードリストを一度作り直してください。統合されたタグの結果と、v2.5.6が生成元の会話から取り戻すプロンプトを反映させるためです。プロンプト入りのファイル名と会話フォルダのルールは「リスト生成」の段階で書き込まれるため、旧バージョンで作ったリストにはさかのぼって適用されません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ライブラリ全体のダウンロードを日付で絞り込めますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、PROなら可能です。ライブラリ全体のダウンロード元は、お気に入りと同じ日付フィルターに対応しており、直近N時間の指定と日付範囲の指定の両方が使えます（タグには日付フィルターがありません）。スキャンは新しい順にライブラリをたどり、指定した期間の終わりを過ぎた時点で早めに止まるので、日付で絞り込むときに結果が出るまでライブラリ全体をスキャンし切る必要はありません。これは大きなアカウントで効いてきます。適応的スロットリングと429レート制限のバックオフにより、8,000件以上のアセットがあるライブラリでも最後までスキャンできますが、狭い日付範囲ならずっと早く終わります。「リスト生成」ボタンには、スキャン、動画の画質確認、フォルダ準備の各段階の進捗が表示されるので、いまどの段階かがわかります。PROがない場合、ライブラリ全体のダウンロード元は直近7日間が対象です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "v2.5の1080p対応で何が変わりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "v2.5では、拡張機能全体で1080pを独立した画質として扱います。ダウンロードでは利用できる中で最も高い画質が自動で選ばれ、1080p、HD、元のファイルの順に優先されます。スキャンの統計も、すべてをSDとHDにまとめるのではなく、SD・HD/720p・1080pそれぞれの本数を分けて表示します。HDアップグレード機能（PRO）は、SDからHDへ、720pまたはHDから1080pへと、1段階ずつ画質を引き上げられます。1080pへのアップグレードには有料のGrokプラン、具体的にはSuperGrok Heavyが必要なため、既定でオフの明示的なオプトインのチェックボックスで有効にする仕組みです。チェックを外したままなら、拡張機能は1080pのリクエストを一切送りません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "以前、アップグレードのスキャンを繰り返すたびに結果が変わったのはなぜですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grokのサーバーは、生成直後の動画のHDメディアURLを安定して返しません。同じ動画を数秒以内に2回問い合わせると、1回目は返ってきても2回目は欠けていることがありました。解像度の項目自体は変わらないにもかかわらずです。そのため同じ動画があるスキャンではSD、別のスキャンではHDと判定され、「直近N時間をアップグレード」を繰り返すたびに結果が変わっていました。v2.5では、アップグレード判定専用の画質メモリを追加しました。各動画でこれまでに確認できた最も高い画質を記録し、あとの問い合わせが不完全でも格下げしません。記録は30日で期限切れになり、件数にも上限があり、記憶したURLが無効とわかった場合は自動で消去されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "無料版でライブラリ全体ダウンロードは使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、直近7日間の画像が対象です。v2.5.1以降、ダウンロード元の選択はどなたでも無料で使えます。自分のメディアが見えないダウンロード元に縛られるべきではないからです。無料版でも「📦 すべての生成メディア（会話別）」を選んで、直近7日間の画像をダウンロードできます。この期間は、結果を黙って切り捨てるのではなく、最初から明示されます。GrokMediaDownloader PRO（$4.99の一回払い、永久ライセンス）では、動画のダウンロードが加わり、期間の制限がなくなってライブラリ全体をアーカイブできるようになり、日付フィルター（指定した期間、または直近N時間）も使えます。PROにはさらに、ストリームキャプチャ、ストーリーモードの書き出し、無制限の動画生成キュー、プロジェクト別ダウンロード、HDおよび1080pへのアップグレード、履歴のエクスポート・インポートも含まれます。処理はすべてブラウザ内で行われ、ファイルはGrokから直接ディスクに保存されます。外部との通信は、Kario Studioのライセンスサーバーによるライセンス確認だけです。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "もう一度実行すると、同じファイルを二重にダウンロードしますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ。どのダウンロード元にもダウンロード履歴があり、「リスト生成」は履歴に記録済みのものを除外するため、2回目以降は新しい項目だけを取得します。長いダウンロードを途中で止めても、最初からやり直さずにあとで続きから再開できるのもこのためです。すべてをもう一度ダウンロードしたい場合は、先にそのダウンロード元の履歴を消去してください。"
           }
         }
       ]
@@ -253,42 +336,64 @@
     <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ja/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ja/" class="text-sm text-slate-300 hover:text-white">ホーム</a><a href="/ja/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">ライブラリ全体DL</a><a href="/ja/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">ストーリーモード</a><a href="/ja/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">動画生成キュー</a><a href="/ja/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">ストリームキャプチャ</a><a href="/ja/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">プロジェクトDL</a><a href="/ja/pricing.html" class="text-sm text-slate-300 hover:text-white">料金</a><a href="/ja/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
 
     <main id="main-content">
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden">
+    <!-- Hero + short answer -->
+    <section class="relative pt-32 pb-16 lg:pt-44 lg:pb-20 overflow-hidden">
         <div class="absolute inset-0 hero-glow"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-4xl mx-auto">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-semibold uppercase tracking-wide mb-6">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span data-i18n="library_badge">v2.5 以降で利用可能</span>
+                    <span>手順ガイド・2026年11月更新</span>
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                    <span class="gradient-text" data-i18n="library_title">ライブラリ全体ダウンロード</span>
+                    <span class="gradient-text">Grok Imagineのお気に入りを一括ダウンロードする方法</span>
+                    <span class="block text-xl md:text-2xl font-bold text-emerald-300 mt-4">ライブラリ全体ダウンロードの手順を解説</span>
                 </h1>
 
-                <p class="text-xl md:text-2xl text-emerald-300 mb-4" data-i18n="library_subtitle">すべての生成画像と動画を、会話別に整理</p>
-
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="library_desc">お気に入りに残るのは「いいね」を押し忘れなかったものだけ。ライブラリ全体ダウンロードは、Grok Imagineライブラリを丸ごとアーカイブします —— すべての画像、すべての動画を、会話ごとのフォルダにまとめ、実際にそれを生み出したプロンプトで名前を付けて。</p>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=hero&amp;utm_term=ja" target="_blank" rel="noopener" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
-                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-                        <span data-i18n="hero_cta_chrome">Chromeに追加</span>
-                    </a>
-
-                    <button onclick="openCheckout()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
-                        <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
-                        <span data-i18n="price_pro_button">$4.99 PRO 永久ライセンス</span>
-                    </button>
-                </div>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto">Grok Imagineで作った画像と動画を、一度の操作でまとめてパソコンに保存。会話ごとのフォルダに分け、生成に使ったプロンプトで名前を付けます。</p>
             </div>
+
+            <!-- Short answer -->
+            <div class="max-w-3xl mx-auto rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-6 md:p-8 mb-10">
+                <h2 class="text-sm font-bold uppercase tracking-wide text-emerald-300 mb-3">結論</h2>
+                <p class="text-slate-200 leading-relaxed">Grok Media Downloaderをインストールし、<strong class="text-white">grok.com/library</strong> を開いて拡張機能のアイコンをクリックします。すべてを保存するならダウンロード元は <strong class="text-white">📦 すべての生成メディア（会話別）</strong> のまま、保存した項目だけなら <strong class="text-white">🌟 お気に入り</strong> を選びます。<strong class="text-white">1. リスト生成</strong> をクリックし、続いて表示されるダウンロード概要で「OK」を押せば（あとで <strong class="text-white">2. ダウンロード開始</strong> を押しても始められます）、ファイルはダウンロードフォルダ内の <span class="font-mono text-sm text-emerald-300">grok_downloads/</span> に、会話ごとのフォルダに分かれて保存されます。</p>
+                <p class="text-slate-400 text-sm leading-relaxed mt-3">無料版は直近7日間の画像をダウンロードできます。<a href="/ja/pricing.html" class="text-emerald-300 underline hover:text-white">PRO</a> では動画とライブラリ全体に対応します。</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=hero&amp;utm_term=ja" target="_blank" rel="noopener" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>Chromeに追加</span>
+                </a>
+
+                <button onclick="openCheckout()" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                    <span>$4.99 PRO 永久ライセンス</span>
+                </button>
+            </div>
+
+            <!-- On this page -->
+            <nav aria-label="このページの内容" class="max-w-3xl mx-auto mt-10 text-sm">
+                <p class="text-slate-500 font-semibold mb-2">このページの内容</p>
+                <ul class="flex flex-wrap gap-x-5 gap-y-2">
+                    <li><a href="#before-you-start" class="text-slate-300 hover:text-white underline underline-offset-2">始める前に</a></li>
+                    <li><a href="#steps" class="text-slate-300 hover:text-white underline underline-offset-2">手順</a></li>
+                    <li><a href="#free-vs-pro" class="text-slate-300 hover:text-white underline underline-offset-2">無料版とPRO</a></li>
+                    <li><a href="#sources" class="text-slate-300 hover:text-white underline underline-offset-2">3つのダウンロード元</a></li>
+                    <li><a href="#files" class="text-slate-300 hover:text-white underline underline-offset-2">フォルダとファイル名</a></li>
+                    <li><a href="#video-quality" class="text-slate-300 hover:text-white underline underline-offset-2">動画の画質</a></li>
+                    <li><a href="#troubleshooting" class="text-slate-300 hover:text-white underline underline-offset-2">トラブルシューティング</a></li>
+                    <li><a href="#faq" class="text-slate-300 hover:text-white underline underline-offset-2">よくある質問</a></li>
+                    <li><a href="#related-guides" class="text-slate-300 hover:text-white underline underline-offset-2">関連ガイド</a></li>
+                </ul>
+            </nav>
         </div>
     </section>
 
-    <!-- Grok API Migration Notice — unique to Library Download -->
-    <section class="py-16 bg-slate-900/50 border-t border-slate-800">
+    <!-- Before you start: the July 2026 backend change -->
+    <section id="before-you-start" class="py-16 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6 md:p-8">
                 <div class="flex flex-col sm:flex-row gap-5">
@@ -296,20 +401,21 @@
                         <i data-lucide="alert-triangle" class="text-amber-400 w-6 h-6"></i>
                     </div>
                     <div>
-                        <h2 class="text-xl md:text-2xl font-bold text-white mb-3" data-i18n="library_notice_title">Grokは2026年7月にメディアバックエンドを刷新しました</h2>
-                        <p class="text-slate-300 leading-relaxed mb-4" data-i18n="library_notice_desc">Grokは新しい「会話＋アセット」モデルに移行しました。旧バージョンの拡張機能が依存していたエンドポイントは、Savedやメディアライブラリ画面をもはや支えていません。つまり <strong class="text-white">v2.5.0より前のバージョンでは、新しく生成した画像と動画を検出できません</strong>。v2.5.0は新バックエンドへの完全な適応であり、ライブラリ全体ダウンロードはこの新APIによって初めて可能になった機能です。</p>
+                        <h2 class="text-xl md:text-2xl font-bold text-white mb-3">始める前に：Grokは2026年7月にメディアバックエンドを変更しました</h2>
+                        <p class="text-slate-300 leading-relaxed mb-4">Grokは新しい「会話＋アセット」モデルに移行しました。それ以降、多くのアカウントで、お気に入りの一覧（Grokの「保存済み」ページ）に新しく生成したメディアが追加されなくなり、お気に入りだけをダウンロードすると最近の作品が漏れることがあります。「お気に入りをすべてダウンロードしたい」という方の多くが本当に求めているのは、自分が作ったものすべてです。それを読み取るのが <strong class="text-white">📦 すべての生成メディア（会話別）</strong> で、保存したかどうかに関係なくライブラリ全体が対象になります。v2.5.1以降はこれが既定のダウンロード元です。</p>
+                        <p class="text-slate-300 leading-relaxed mb-4">旧バージョンの拡張機能が頼っていたエンドポイントは、保存済みページやメディアライブラリの画面ではもう使われていません。つまり <strong class="text-white">v2.5.0より前のバージョンでは、新しく生成した画像と動画を検出できません</strong>。v2.5.0は新バックエンドへの全面的な対応版で、ライブラリ全体ダウンロードはこの新しいAPIによって実現した機能です。さらに2026年11月12〜13日には、GrokがImagineをGrok本体のアプリに統合し、その影響で2.6.3より前のバージョンではボタンがグレーアウトしました。バージョン2.6.3以降をお使いください。<a href="/ja/grok-download-button-missing.html" class="text-amber-300 underline hover:text-white">グレーアウトしたボタンの直し方はこちら</a>。</p>
                         <div class="grid sm:grid-cols-3 gap-3 text-sm">
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">1. 更新</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_1">Chromeウェブストアから最新バージョンをインストール</p>
+                                <p class="text-slate-400">Chromeウェブストアからインストールまたは更新（バージョン2.6.3以降）</p>
                             </div>
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">2. 再読み込み</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_2">chrome://extensions で拡張機能を再読み込みし、Grokタブを更新</p>
+                                <p class="text-slate-400">chrome://extensions で拡張機能を再読み込みし、Grokのタブを更新</p>
                             </div>
                             <div class="bg-slate-900/60 border border-slate-800 rounded-lg px-4 py-3">
                                 <div class="text-emerald-400 font-bold mb-1">3. 再生成</div>
-                                <p class="text-slate-400" data-i18n="library_notice_step_3">ダウンロードリストを一度再生成して、新しい命名ルール、統合されたタグ結果、生成元の会話から取り戻したプロンプトを適用</p>
+                                <p class="text-slate-400">ダウンロードリストを一度作り直し、新しい命名ルール、統合されたタグ、生成元の会話から取り戻したプロンプトを反映</p>
                             </div>
                         </div>
                     </div>
@@ -318,61 +424,201 @@
         </div>
     </section>
 
-    <!-- Core Features -->
-    <section class="py-24 bg-slate-950 border-t border-slate-800">
+    <!-- Steps -->
+    <section id="steps" class="py-24 bg-slate-950 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_core_title">主な機能</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_core_desc">厳選された一部ではなく、アーカイブ全体を求める人のために作られたダウンロードソース。</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">手順：Grok Imagineのライブラリをまるごとダウンロードする</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">拡張機能をインストールしてしまえば、ダウンロード自体は2クリックで終わります。スクリーンショットは日本語表示のポップアップです（どの言語でもレイアウトは同じです）。</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Feature 1 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
-                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+            <ol class="space-y-8 max-w-3xl mx-auto">
+                <!-- Step 1 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">1</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">Grok Media Downloaderをインストールしてピン留めする</h3>
+                        <p class="text-slate-400 leading-relaxed"><a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=steps&amp;utm_term=ja" target="_blank" rel="noopener" class="text-emerald-300 underline hover:text-white">Chromeウェブストアのページ</a>を開き、<strong class="text-slate-200">Chrome に追加</strong>をクリックします。続いてChromeツールバーのパズルピースのアイコンをクリックし、Grok Media Downloaderをピン留めしてアイコンを常に表示させます。すでにインストール済みの場合は chrome://extensions を開き、バージョンが2.6.3以降か確認してください。Chromeは数時間以内に拡張機能を自動で更新しますが、すぐに更新したいときは同じページでデベロッパー モードをオンにして［更新］をクリックします。</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_1_title">ライブラリ全体スキャン</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_1_desc">お気に入りのサブセットではなく完全なアセット一覧を読み取ります。「いいね」を忘れたせいで作品が漏れることはありません。</p>
-                </div>
+                </li>
 
-                <!-- Feature 2 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all">
-                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="messages-square" class="text-teal-400 w-6 h-6"></i>
+                <!-- Step 2 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">2</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">grok.com/library を開く</h3>
+                        <p class="text-slate-400 leading-relaxed">Grokにログインして <a href="https://grok.com/library" target="_blank" rel="noopener" class="text-emerald-300 underline hover:text-white">grok.com/library</a> を開きます。バージョン2.6.3以降の拡張機能はgrok.comのどのページでも動作しますが、まずはライブラリから始めるのがおすすめです。お使いのアカウントにImagineの保存済みページ（grok.com/imagine/saved）が残っていれば、そちらでも使えます。grok.com以外のタブでは、ポップアップのボタンが無効になり、「grok.com（ライブラリまたは Imagine の保存済みページ）を開いてからもう一度お試しください。」というメッセージと <strong class="text-slate-200">Grok ライブラリへ →</strong> のリンクが表示されます。</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_2_title">会話別フォルダ</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_2_desc">1つの会話に1つのフォルダ。元画像とそこから生成されたすべての動画が、散らばらずに一箇所に収まります。</p>
-                </div>
+                </li>
 
-                <!-- Feature 3 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all">
-                    <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="git-branch" class="text-cyan-400 w-6 h-6"></i>
+                <!-- Step 3 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">3</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">拡張機能のアイコンをクリックしてポップアップを開く</h3>
+                        <p class="text-slate-400 leading-relaxed">ポップアップには、ステータス欄、ダウンロードするメディアの種類、<strong class="text-slate-200">🎯 ダウンロード元</strong> の選択、そして実際の作業を行う2つのボタン <strong class="text-slate-200">1. リスト生成</strong> と <strong class="text-slate-200">2. ダウンロード開始</strong> が並んでいます。メディアタイプで <strong class="text-slate-200">🖼️ 画像</strong> にチェックを入れます。<strong class="text-slate-200">🎬 動画 (Pro)</strong> を使うにはPROライセンスが必要で、無料版がダウンロードできるのは画像だけです。</p>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_3_title">独立した履歴</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_3_desc">ライブラリ全体のダウンロードは独自の重複排除記録を保持します。全体をアーカイブしてもお気に入りがダウンロード済みになりません。</p>
-                </div>
+                </li>
 
-                <!-- Feature 4 -->
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
-                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
-                        <i data-lucide="calendar-clock" class="text-emerald-400 w-6 h-6"></i>
+                <!-- Step 4 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">4</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">ダウンロードする対象を選ぶ</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">ダウンロード元で、次の3つから1つを選びます。</p>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-400 leading-relaxed">
+                            <li><strong class="text-slate-200">📦 すべての生成メディア（会話別）</strong>：ライブラリ全体を、会話ごとのフォルダに分けて保存します。既定の選択で、まるごとバックアップしたいときはこれを選びます。無料版では直近7日間が対象で、そのことは選択欄の下にも表示されます。PROでは期間の制限がなくなります。</li>
+                            <li><strong class="text-slate-200">🌟 お気に入り</strong>：Grokで保存した項目だけが対象です。2026年7月以降、この一覧には新しく生成したメディアが入らないことがあり、これを選ぶとポップアップに注意書きが表示されます。</li>
+                            <li><strong class="text-slate-200">🏷️ タグ</strong>：Grokのタグ（コレクション）を1つ選んで、その中身をダウンロードします。表示される一覧からタグを選んでください。</li>
+                        </ul>
+                        <p class="text-slate-400 leading-relaxed mt-3">PROなら、お気に入りとすべての生成メディアのスキャン範囲を日付フィルターで絞り込むこともできます（日付範囲、または直近N時間）。タグには日付フィルターがありません。</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 336px">
+                            <img src="/assets/guides/ja/popup-sources.jpg" alt="お気に入り、タグ、すべての生成メディア（会話別）を選べるダウンロード元の欄と、無料版は直近7日間のみスキャンするという注意書き" width="336" height="553" loading="lazy" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">3つのダウンロード元。その下の注意書きで、無料版の7日間の範囲が説明されています。</figcaption>
+                        </figure>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="library_feat_4_title">早期停止する日付フィルタ</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_feat_4_desc">新しい順にスキャンし、指定ウィンドウを超えた時点で停止。日付で絞るときにライブラリ全体をたどる必要はありません。</p>
-                </div>
-            </div>
+                </li>
+
+                <!-- Step 5 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">5</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">「1. リスト生成」をクリックする</h3>
+                        <p class="text-slate-400 leading-relaxed">拡張機能が、選んだダウンロード元を新しい順にスキャンします。ライブラリ全体の場合は、各動画にどの画質があるかの確認と会話フォルダの準備も行い、いまどの段階かがボタンに表示されます。スキャンが終わると <strong class="text-slate-200">📊 ダウンロード概要</strong> ダイアログが開き、ダウンロードする画像と動画（動画は1080p・HD・720p・SD別）と、完了済みの件数が表示されます。最後の「ダウンロードを開始しますか？」で「OK」を押すとすぐにダウンロードが始まり、「キャンセル」を押すとダイアログが閉じて件数がステータス欄に表示され、<strong class="text-slate-200">2. ダウンロード開始</strong> を押せる状態になります。ダウンロード履歴に記録済みのものは数に入りません。あとからプロンプトを使うファイル名やメタデータの設定に変えた場合は、リストを作り直すようポップアップが案内します。</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 336px">
+                            <img src="/assets/guides/ja/popup-list-ready.jpg" alt="リスト生成後のポップアップ：ダウンロード対象の画像と動画の件数が表示され、「2. ダウンロード開始」ボタンが押せる状態" width="336" height="837" loading="lazy" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">キャンセルしたあと：ステータス欄に件数が表示され、「2. ダウンロード開始」を押せる状態です。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+
+                <!-- Step 6 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">6</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">ダウンロードを始める</h3>
+                        <p class="text-slate-400 leading-relaxed">ダウンロード概要で「OK」を押します。キャンセルした場合は <strong class="text-slate-200">2. ダウンロード開始</strong> をクリックすると、同じ概要がもう一度表示されます。ダウンロード待ちの動画が250本を超えるときは、250本ごとに一時停止することも概要に表示されます。進捗バーには、完了したファイルの数とおおよその残り時間が表示されます。実行中はブラウザとgrok.comのタブを開いたままにしてください。一時停止するには <strong class="text-slate-200">⏹ ダウンロード中止</strong> をクリックします。ボタンが <strong class="text-slate-200">▶ ダウンロード再開</strong> に変わり、止めたところから続けられます。250本ごとの一時停止は既定で3分間で、<strong class="text-slate-200">⚙️ 設定</strong> の <strong class="text-slate-200">⏱️ レート制限クールダウン</strong> で1〜60分に変更できます。時間が来ると自動で再開します。</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900" style="max-width: 336px">
+                            <img src="/assets/guides/ja/popup-downloading.jpg" alt="ダウンロード中の画面：残り時間の目安が付いた進捗バーと「ダウンロード中止」ボタン" width="336" height="726" loading="lazy" class="w-full h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">ダウンロード中：進捗、残り時間、中止ボタン。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+
+                <!-- Step 7 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">7</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">保存されたファイルを確認する</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">ファイルはChromeのダウンロードフォルダ内の <span class="font-mono text-sm text-slate-300">grok_downloads</span> フォルダに保存され、次のサブフォルダに分かれます。</p>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-400 leading-relaxed">
+                            <li><span class="font-mono text-sm text-emerald-300">conversations/</span>：すべての生成メディア。会話ごとに1フォルダ</li>
+                            <li><span class="font-mono text-sm text-emerald-300">images/</span> と <span class="font-mono text-sm text-emerald-300">videos/</span>：お気に入りを「標準」モードでダウンロードした場合</li>
+                            <li><span class="font-mono text-sm text-emerald-300">projects/</span>：お気に入りを「プロジェクト別」モードでダウンロードした場合</li>
+                            <li><span class="font-mono text-sm text-emerald-300">tags/</span>：タグのダウンロード。タグごとに1フォルダ</li>
+                            <li><span class="font-mono text-sm text-emerald-300">stream/</span>：ストリームキャプチャ（PRO）</li>
+                        </ul>
+                        <p class="text-slate-400 leading-relaxed mt-3">それぞれの保存先は <strong class="text-slate-200">⚙️ 設定</strong> で変更できます。パスはChromeのダウンロードフォルダからの相対パスです。</p>
+                        <figure class="mt-5 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <a href="/assets/guides/download-folders.jpg" target="_blank" rel="noopener" class="block"><img src="/assets/guides/download-folders.jpg" alt="grok_downloadsフォルダーの例（ファイル名は「プロンプト使用」）：conversations/ 内に会話ごとのフォルダー、ほかに images/、videos/、tags/、projects/ フォルダーがあり、画像の隣に .json ファイル、プロジェクトフォルダーに metadata.json がある" width="1280" height="1130" loading="lazy" class="w-full h-auto"></a>
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">grok_downloadsフォルダーの例（「プロンプト使用」のファイル名）：conversations/、images/、videos/、tags/、projects/ と、.json ファイル、プロジェクトの metadata.json。画像をタップすると原寸で開きます。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+
+                <!-- Step 8 -->
+                <li class="flex gap-6 items-start">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">8</div>
+                    <div class="min-w-0">
+                        <h3 class="text-xl font-bold mb-2 text-white">新しい作品ができたら、また実行する</h3>
+                        <p class="text-slate-400 leading-relaxed">ダウンロード元ごとに独立したダウンロード履歴があるので、次回の「リスト生成」では新しいものだけが表示され、同じファイルを二度ダウンロードすることはありません。ライブラリ全体をアーカイブしても、お気に入りがダウンロード済み扱いになることはなく、その逆もありません。ファイルを削除してしまい、もう一度ダウンロードしたい場合は、下の<a href="#troubleshooting" class="text-emerald-300 underline hover:text-white">「ファイルを失ったのに、すべてダウンロード済みと表示される」</a>をご覧ください。</p>
+                    </div>
+                </li>
+            </ol>
         </div>
     </section>
 
-    <!-- Three Download Sources — unique differentiator -->
-    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+    <!-- Free vs PRO for this job -->
+    <section id="free-vs-pro" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">この作業での無料版とPROの違い</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">一連の流れは無料で試せます。動画や、1週間より前の作品までダウンロードするにはPROが必要です。</p>
+            </div>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full border-collapse text-sm">
+                    <thead>
+                        <tr class="border-b border-slate-700">
+                            <th class="text-left py-3 px-4 text-slate-400 font-semibold"></th>
+                            <th class="text-center py-3 px-4 text-white font-bold">無料版</th>
+                            <th class="text-center py-3 px-4 bg-emerald-500/10 text-emerald-300 font-bold">PRO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">3つのダウンロード元すべてでリスト生成</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">画像のダウンロード</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">動画のダウンロード</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">すべての生成メディア（ライブラリ全体）</td>
+                            <td class="py-3 px-4 text-center text-slate-400">直近7日間</td>
+                            <td class="py-3 px-4 text-center text-emerald-300 font-semibold bg-emerald-500/5">ライブラリ全体</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">日付フィルター（日付範囲、直近N時間）</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">プロジェクト別のフォルダ分け</td>
+                            <td class="py-3 px-4 text-center text-slate-500">標準モード（プロジェクトフォルダは動画が前提）</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">ファイル名テンプレート、プロンプト入りのファイル名、.jsonファイル</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">ダウンロード履歴（重複なし）</td>
+                            <td class="py-3 px-4 text-center text-emerald-400">✓</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-3 px-4 text-slate-300">720pへのHDアップグレード（1080pはSuperGrok Heavyが必要）</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 text-slate-300">ダウンロード履歴のインポート／エクスポート</td>
+                            <td class="py-3 px-4 text-center text-slate-500">—</td>
+                            <td class="py-3 px-4 text-center text-emerald-400 bg-emerald-500/5">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed mt-6 text-center">PROは$4.99の一回払いで、永久ライセンスと7日間の返金保証が付いています。無料版でもアップデートは受け取れます。<a href="/ja/pricing.html" class="text-emerald-300 underline hover:text-white">料金とPROのその他の機能を見る</a>。</p>
+        </div>
+    </section>
+
+    <!-- Three Download Sources -->
+    <section id="sources" class="py-24 bg-slate-950 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4" data-i18n="library_sources_badge">ダウンロードソースセレクタ</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_sources_title">3つのソース、3つの役割</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_sources_subtitle">ダウンロードソースは日付フィルタから完全に分離されています。まずメディアの出所を選び、それから絞り込む —— 両者はもう衝突しません。</p>
+                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4">ダウンロード元の選択</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">3つのダウンロード元、3つの役割</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">ダウンロード元と日付フィルターは別々の設定です。まずメディアをどこから取り込むかを選び、PROならそのあとで絞り込みます。両者がぶつかることはもうありません。</p>
             </div>
 
             <div class="overflow-x-auto -mx-4 px-4">
@@ -380,275 +626,182 @@
                     <thead>
                         <tr class="border-b border-slate-700">
                             <th class="text-left py-4 px-6 text-slate-400 font-semibold text-sm"></th>
-                            <th class="text-center py-4 px-6 text-white font-bold">⭐ お気に入り</th>
+                            <th class="text-center py-4 px-6 text-white font-bold">🌟 お気に入り</th>
                             <th class="text-center py-4 px-6 text-white font-bold">🏷️ タグ</th>
                             <th class="text-center py-4 px-6 bg-emerald-500/10 rounded-t-xl">
                                 <span class="text-emerald-300 font-bold">📦 すべての生成メディア</span>
-                                <span class="block text-[10px] text-emerald-400/70 font-semibold uppercase tracking-wide mt-0.5">v2.5 以降</span>
+                                <span class="block text-[10px] text-emerald-400/70 font-semibold uppercase tracking-wide mt-0.5">v2.5.1以降の既定</span>
                             </th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_1">対象範囲</td>
-                            <td class="py-4 px-6 text-center text-slate-400">「いいね」した項目</td>
-                            <td class="py-4 px-6 text-center text-slate-400">1つのGrokタグ／フォルダ</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">対象範囲</td>
+                            <td class="py-4 px-6 text-center text-slate-400">Grokで保存した項目</td>
+                            <td class="py-4 px-6 text-center text-slate-400">1つのGrokタグ（コレクション）</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">ライブラリ全体</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2">フォルダ構成</td>
-                            <td class="py-4 px-6 text-center text-slate-400">フラット／日付別</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">フォルダ構成</td>
+                            <td class="py-4 px-6 text-center text-slate-400 font-mono text-xs">images/、videos/ または projects/</td>
                             <td class="py-4 px-6 text-center text-slate-400 font-mono text-xs">tags/{tagName}/</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-mono text-xs bg-emerald-500/5">yyyymmdd_prompt_id/</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_2b">動画のプロンプト名</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">動画のプロンプト入りファイル名</td>
                             <td class="py-4 px-6 text-center text-slate-500">—</td>
-                            <td class="py-4 px-6 text-center text-emerald-400">✓ v2.5.6 以降</td>
+                            <td class="py-4 px-6 text-center text-emerald-400">✓ v2.5.6以降</td>
                             <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_3">ダウンロード履歴</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">ダウンロード履歴</td>
                             <td class="py-4 px-6 text-center text-slate-400">独立</td>
                             <td class="py-4 px-6 text-center text-slate-400">独立</td>
                             <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">独立</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_4">日付フィルタ</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">無料版</td>
+                            <td class="py-4 px-6 text-center text-slate-400">画像</td>
+                            <td class="py-4 px-6 text-center text-slate-400">画像</td>
+                            <td class="py-4 px-6 text-center text-slate-400 bg-emerald-500/5">画像（直近7日間）</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-6 text-slate-300 font-medium">日付フィルター（PRO）</td>
                             <td class="py-4 px-6 text-center text-emerald-400">✓</td>
-                            <td class="py-4 px-6 text-center text-emerald-400">✓</td>
+                            <td class="py-4 px-6 text-center text-slate-500">—</td>
                             <td class="py-4 px-6 text-center text-emerald-400 bg-emerald-500/5">✓ 早期停止あり</td>
                         </tr>
                         <tr class="border-b border-slate-800">
-                            <td class="py-4 px-6 text-slate-300 font-medium" data-i18n="library_cmp_row_5">最適な用途</td>
+                            <td class="py-4 px-6 text-slate-300 font-medium">向いている用途</td>
                             <td class="py-4 px-6 text-center text-slate-400">厳選した作品</td>
-                            <td class="py-4 px-6 text-center text-slate-400">単一プロジェクトのテーマ</td>
-                            <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">完全なローカルアーカイブ</td>
+                            <td class="py-4 px-6 text-center text-slate-400">1つのプロジェクトやテーマ</td>
+                            <td class="py-4 px-6 text-center text-emerald-300 font-semibold bg-emerald-500/5">ローカルへの完全なアーカイブ</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <p class="text-center text-slate-500 text-sm mt-6" data-i18n="library_sources_note">⚠️ ライブラリ全体のダウンロードは大量になる場合があります。お気に入りとタグは厳選されたまま —— この新しいソースは「意図的にすべてが欲しい」ときのためのものです。</p>
+            <p class="text-center text-slate-500 text-sm mt-6">⚠️ ライブラリ全体のダウンロードは大量になる場合があります。お気に入りとタグは厳選されたまま。ライブラリ全体は、あえてすべてを手元に残したいときのためのダウンロード元です。</p>
         </div>
     </section>
 
-    <!-- How it Works -->
-    <section class="py-24 bg-slate-950 border-t border-slate-800">
+    <!-- Folders and filenames -->
+    <section id="files" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_step_title">ライブラリ全体ダウンロードの流れ</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_step_desc">4ステップ、各段階で進捗が見えます。</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">フォルダ名とファイル名の決まり方</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">ライブラリ全体のアーカイブは、1年後に見返しても目当てのものが見つかってこそ役に立ちます。</p>
             </div>
 
-            <div class="space-y-8 max-w-3xl mx-auto">
-                <!-- Step 1 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">1</div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="library" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">ライブラリ全体をスキャン</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">お気に入りの一部ではなく、アセットの一覧をすべて読み取ります。保存し忘れた作品も取りこぼしません。</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-teal-500/50 transition-all">
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="messages-square" class="text-teal-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">会話別フォルダ</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">1つの会話に1つのフォルダ。元画像とそこから生成したすべての動画が、階層のないフォルダにばらばらに並ぶことなく、同じ場所にまとまります。</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="text-cursor-input" class="text-cyan-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">実際のプロンプトでファイル名</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">画像は自身の生成プロンプトを使います。動画は自身のアニメーションプロンプトを使い、無い場合は元画像のプロンプトを借ります。</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="git-branch" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">独立した履歴</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">ライブラリ全体のダウンロードは、独自の重複排除の記録を持ちます。全体をアーカイブしても、お気に入りがダウンロード済み扱いになることはありません。</p>
+                </div>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4 text-slate-400 leading-relaxed">
+                <p>会話フォルダの名前は <span class="font-mono text-sm text-emerald-300">yyyymmdd_prompt_shortID</span> の形式です。会話にタイトルがない場合は、フォルダを「untitled」にせず、その会話のプロンプトを使います。</p>
+                <p>フォルダ内のファイルは、<strong class="text-slate-200">⚙️ 設定</strong> を開いて <strong class="text-slate-200">📝 ファイル名形式</strong> で選びます。<strong class="text-slate-200">Grok ネイティブ</strong> は <span class="font-mono text-sm text-slate-300">grok_image_YYYYMMDD_id.jpg</span>、<strong class="text-slate-200">プロンプト使用</strong> は <span class="font-mono text-sm text-slate-300">img_YYYYMMDDHHmmss_prompt.jpg</span> という名前になり、<strong class="text-slate-200">カスタムテンプレート</strong> では <span class="font-mono text-sm text-slate-300">{date} {time} {datetime} {id} {shortid} {prompt} {quality}</span> のトークンを自由に組み合わせられます。<strong class="text-slate-200">📋 メタデータを保存</strong> をオンにすると、プロンプトや解像度などを記録した.jsonファイルが、各画像・動画の隣に保存されます。これらはすべて無料で使えます。</p>
+                <p>Grokは2026年9月から、メディア一覧にプロンプトを含めなくなりました。v2.5.6以降の拡張機能は、各項目を生成した会話からプロンプトを取り戻して永続キャッシュに保存するため、2回目以降のライブラリ全体の再生成は数分ではなく数秒で終わります。プロンプトは、ファイル名やメタデータの設定で使う場合にだけ取得されます。ご自身でアップロードしたアセットや生成情報を持たないアセットは、サーバー側にプロンプトも会話もないため、アセットIDで整理されます。詳しくは「<a href="/ja/save-grok-imagine-prompts.html" class="text-emerald-300 underline hover:text-white">Grok Imagineの動画をプロンプト付きで保存する</a>」をご覧ください。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Large libraries -->
+    <section id="large-libraries" class="py-24 bg-slate-950 border-t border-slate-800 scroll-mt-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">大きなライブラリの場合</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-center mb-12">ライブラリ全体のスキャンでは、すべてのアセットを読み取る必要があります。規模の大きなアカウントでも途中で止まらないよう、次の仕組みが働いています。</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="gauge" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_1_title">ソースを選ぶ</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_1_desc">Grok Imagineのページで拡張機能を開き、ダウンロードソースセレクタで「📦 すべての生成メディア（会話別）」を選択します。必要に応じて直近N時間のウィンドウや日付範囲を設定できます。</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/resized/feat-generate-list_640x400.jpg" srcset="/assets/resized/feat-generate-list_640x400.jpg 640w, /assets/resized/feat-generate-list_1280x800.jpg 1280w" sizes="(min-width: 768px) 640px, 100vw" alt="GrokMediaDownloaderのポップアップ：メディア種類のチェックボックス、PROの日付フィルター、「1. リスト生成」と「2. ダウンロード開始」ボタン" loading="lazy" width="1280" height="800" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">ポップアップの画面：メディア種類と日付フィルターを設定し、リスト生成からダウンロード開始へ進みます。</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">適応的スロットリングと429バックオフ</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">リスト生成中にGrokがHTTP 429や5xxのサーバーエラーを返した場合は、そのリクエストを再試行し、スキャンの速度を自動で落とします。8,000件を超えるライブラリも、途中で途切れることなく最後までスキャンできます。</p>
                     </div>
                 </div>
-
-                <!-- Step 2 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">2</div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="zap" class="text-teal-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_2_title">リストを生成</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_2_desc">拡張機能が新しい順にライブラリをスキャンし、各動画の品質階層を解決して、会話フォルダを準備します。スキャン中、動画品質の解決 N/M、フォルダ準備 N/M と各段階で進捗が報告されます。</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/explainer/still-sources.jpg" alt="3つのダウンロードソースのイラスト：会話別のライブラリ全体、タグとコレクション、いいねした投稿" loading="lazy" width="1280" height="720" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">3つのソース：ライブラリ全体（会話別）、タグとコレクション、いいね。製品紹介動画のイラストです。</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">画質の並行確認</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">動画の画質を、上限付きの並行処理とリアルタイムのカウンターで確認します。以前は数分かかっていた工程が、約1分に短くなりました。</p>
                     </div>
                 </div>
-
-                <!-- Step 3 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">3</div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="layers" class="text-cyan-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_3_title">概要を確認</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_3_desc">概要には、ダウンロード予定と完了済みの画像・動画の件数が表示され、動画は1080p・HD・720p・SDに分けて示されるため、これから何を取得するかが正確にわかります。</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/explainer/still-scan.jpg" alt="ライブラリのスキャン件数が15,000件を超えてもメモリ使用量が一定であることを示すイラスト" loading="lazy" width="1280" height="720" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">スキャンはページ単位で逐次処理されるため、15,000件のライブラリでもブラウザのメモリ不足を起こさずに完了します。イラスト。</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">会話タイトルの一括取得</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">実際に必要な会話のタイトルだけをまとめて取得します。会話リスト全体をページ送りでたどることはありません。</p>
                     </div>
                 </div>
-
-                <!-- Step 4 -->
-                <div class="flex gap-6 items-start">
-                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0 text-emerald-300 font-bold">4</div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i data-lucide="calendar-clock" class="text-emerald-400 w-6 h-6"></i>
+                    </div>
                     <div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="library_step_4_title">ダウンロードしてアーカイブ</h3>
-                        <p class="text-slate-400 leading-relaxed" data-i18n="library_step_4_desc">ファイルは会話ごとのフォルダに、プロンプトベースの名前でダウンロードされます。中断したダウンロードは記録されるため、再試行では不足分だけを取得し、完了済みを再ダウンロードすることはありません。</p>
-                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
-                            <img src="/assets/explainer/still-folders.jpg" alt="命名テンプレートのイラスト：会話またはタグごとのフォルダと、日付・時刻・プロンプト・ID・シードから作られるファイル名" loading="lazy" width="1280" height="720" class="w-full h-auto">
-                            <figcaption class="px-4 py-2 text-xs text-slate-500">会話またはタグごとのフォルダに保存され、ファイル名は日付・時刻・プロンプト・ID・シードから作られます。イラスト。</figcaption>
-                        </figure>
+                        <h3 class="font-bold text-white mb-1">早期停止する日付フィルター（PRO）</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">スキャンは新しい順に進み、指定した期間を過ぎた時点で止まります。狭い範囲で絞り込めば、ライブラリ全体をたどる必要はありません。</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technical Details -->
-    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left: Technical Info -->
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="library_tech_title">技術的なポイント</h2>
-
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="gauge" class="text-emerald-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_1_title">適応的スロットリングと429バックオフ</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_1_desc">スキャン速度はサーバー応答に合わせて調整され、レート制限バックオフを備えます。8,000件以上のライブラリも途中で切れることなく最後までスキャンできます。</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="zap" class="text-teal-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_2_title">並行的な品質解決</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_2_desc">動画品質を上限付きの並行処理とライブカウンタで解決し、従来数分かかっていた工程を約1分に短縮しました。</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="text-cursor-input" class="text-cyan-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_3_title">実際のプロンプトによるファイル名</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_3_desc">画像は自身の生成プロンプトを使用し、動画は自身のアニメーションプロンプトを使い、無い場合のみ元画像のプロンプトを借ります。9月以降、Grokはメディア一覧にプロンプトを含めなくなったため、生成元の会話から取り戻します。</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="layers" class="text-emerald-400 w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-white mb-1" data-i18n="library_tech_4_title">会話タイトルの一括取得</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="library_tech_4_desc">実際に必要な会話のタイトルだけを一括で取得します。会話リスト全体をページングして回ることはありません。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right: Mockup -->
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full"></div>
-                    <div class="relative bg-slate-900 rounded-2xl border border-emerald-500/30 p-6 shadow-2xl">
-                        <div class="flex items-center gap-3 mb-4 pb-4 border-b border-slate-800">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                            <span class="ml-2 text-slate-500 text-sm">Grok Media Downloader</span>
-                        </div>
-
-                        <!-- Download Source Selector -->
-                        <div class="mb-4">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">🎯 ダウンロードソース</div>
-                            <div class="space-y-1.5">
-                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-sm text-slate-400">
-                                    <span class="w-3 h-3 rounded-full border border-slate-600"></span>
-                                    <span>⭐ お気に入り</span>
-                                </div>
-                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-800/50 border border-slate-700 text-sm text-slate-400">
-                                    <span class="w-3 h-3 rounded-full border border-slate-600"></span>
-                                    <span>🏷️ タグ</span>
-                                </div>
-                                <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/40 text-sm text-white font-semibold">
-                                    <span class="w-3 h-3 rounded-full bg-emerald-500 border border-emerald-400"></span>
-                                    <span>📦 すべての生成メディア</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Scan Results -->
-                        <div class="mb-4 p-4 bg-slate-800/50 rounded-lg space-y-2">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">スキャン結果</div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">🖼️ 画像</span>
-                                <span class="text-white font-bold">1,284</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">💎 1080p 動画</span>
-                                <span class="text-white font-bold">37</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">✨ HD / 720p 動画</span>
-                                <span class="text-white font-bold">312</span>
-                            </div>
-                            <div class="flex items-center justify-between text-sm">
-                                <span class="text-slate-300">🎬 SD 動画</span>
-                                <span class="text-white font-bold">148</span>
-                            </div>
-                            <div class="border-t border-slate-700 pt-2 mt-2 flex items-center justify-between text-sm">
-                                <span class="text-slate-300">💬 会話</span>
-                                <span class="text-emerald-300 font-bold">216 フォルダ</span>
-                            </div>
-                        </div>
-
-                        <!-- Folder Preview -->
-                        <div class="mb-4 p-3 bg-slate-800/50 rounded-lg">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">フォルダプレビュー</div>
-                            <div class="text-sm font-mono space-y-1">
-                                <div class="text-emerald-300">📁 20260726_neon-city-rain_a3f9/</div>
-                                <div class="text-slate-400 pl-4">🖼️ neon-city-rain_01.jpg</div>
-                                <div class="text-slate-400 pl-4">🎬 neon-city-rain_01_1080p.mp4</div>
-                                <div class="text-emerald-300">📁 20260725_desert-sunrise_7b21/</div>
-                            </div>
-                        </div>
-
-                        <!-- Action Button -->
-                        <button class="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg text-sm flex items-center justify-center gap-2">
-                            <i data-lucide="download" class="w-4 h-4"></i>
-                            ダウンロード開始（1,781 ファイル）
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 1080p Quality Tiers — unique to Library Download -->
-    <section class="py-24 bg-slate-950 border-t border-slate-800">
+    <!-- Video quality tiers -->
+    <section id="video-quality" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4" data-i18n="library_quality_badge">1080p対応</span>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="library_quality_title">1080pが独立した階層に</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto" data-i18n="library_quality_subtitle">ダウンロードは最高品質を自動選択、統計は階層別に表示、アップグレードは一度に1段階ずつ。</p>
+                <span class="inline-block px-4 py-1.5 bg-emerald-500/10 text-emerald-400 rounded-full text-sm font-semibold mb-4">1080p対応</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">動画の画質：SD、HD/720p、1080p</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">ダウンロードでは、Grokにある各動画のいちばん高い画質が自動で選ばれます。PRO機能のHDアップグレードを使えば、先にGrokへ高画質版の作成を依頼できます。</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
                 <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 text-center">
                     <div class="text-4xl mb-3">📦</div>
                     <h3 class="text-lg font-bold text-white mb-2">SD</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="library_quality_sd">基本の出力品質。有料GrokプランなしでもここからHDへアップグレードできます。</p>
+                    <p class="text-slate-400 text-sm">基本の出力。HDアップグレードでHD/720pに引き上げられます。この段階ではSuperGrok Heavyは不要です。</p>
                 </div>
                 <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 text-center">
                     <div class="text-4xl mb-3">🎥</div>
                     <h3 class="text-lg font-bold text-white mb-2">HD / 720p</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="library_quality_hd">標準的なアップグレード先。SDから1ステップで到達できます。</p>
+                    <p class="text-slate-400 text-sm">標準的なアップグレード先。SDから1段階上の画質です。</p>
                 </div>
                 <div class="bg-gradient-to-br from-emerald-900/40 to-teal-900/40 rounded-2xl border border-emerald-500/40 p-6 text-center">
                     <div class="text-4xl mb-3">💎</div>
                     <h3 class="text-lg font-bold text-white mb-2">1080p</h3>
-                    <p class="text-slate-300 text-sm" data-i18n="library_quality_1080">最上位の階層。SuperGrok Heavyと明示的なオプトインが必要です。</p>
+                    <p class="text-slate-300 text-sm">最上位の画質。GrokアカウントでのSuperGrok Heavyと、明示的なオプトインが必要です。</p>
                 </div>
             </div>
 
@@ -656,128 +809,189 @@
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-                        <span data-i18n="library_quality_p1_title">明示的なオプトイン、意図しない課金なし</span>
+                        <span>明示的なオプトイン、想定外の課金なし</span>
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p1_desc">1080pアップグレードには有料プランが必要なため、チェックボックスは既定でオフです。オフのままなら拡張機能は1080pリクエストを一切送信せず、SDからHDへのアップグレードのみを実行します —— それでも確認ダイアログは、何本の動画が1080pに<em>できる</em>かを伝えるので、それらが黙って消えることはありません。アカウントに権限がないと判明した場合、拡張機能は一度検知した時点で以降の1080pリクエストを停止し、無駄に空回りしません。</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">1080pへのアップグレードにはSuperGrok Heavyが必要なため、「HD/720pを1080pにアップグレード」のチェックボックスは既定でオフです。オフのままなら拡張機能は1080pのリクエストを一切送らず、SDからHDへのアップグレードだけを行います。それでも確認ダイアログには1080pに<em>できる</em>動画の本数が表示されるので、それらが黙って見えなくなることはありません。アカウントに権限がないとわかった場合は、一度検知した時点で以降の1080pリクエストを止め、失敗を繰り返しません。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="history" class="w-4 h-4 text-emerald-400"></i>
-                        <span data-i18n="library_quality_p2_title">ようやく収束するアップグレードスキャン</span>
+                        <span>結果が安定するアップグレードスキャン</span>
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p2_desc">Grokは生成直後の動画に対するHDメディアURLの返却が安定せず、同じ動画があるスキャンではSD、次ではHDと読み取られていました —— そのため「直近N時間をアップグレード」を繰り返すたびに答えが変わっていたのです。v2.5は各動画で解決された最高品質を記憶し、不完全な読み取りではダウングレードしません。記録には30日の有効期限と件数上限があり、記憶したURLが無効と判明すれば自動的に消去されます。レート制限でまったく確認できなかった動画は、SDと誤認されるのではなくリストから除外され報告されます。</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">Grokは生成直後の動画のHDメディアURLを返したり返さなかったりするため、同じ動画があるスキャンではSD、次のスキャンではHDと判定され、「直近N時間をアップグレード」を繰り返すたびに結果が変わっていました。v2.5以降、拡張機能は動画ごとにこれまで確認できた最も高い画質を記憶し、不完全な読み取りで格下げすることはありません。記録は30日で期限切れになり、件数にも上限があり、記憶したURLが無効になった場合は自動で消去されます。レート制限でまったく確認できなかった動画は、SDと誤認せずに除外し、その旨を報告します。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-base font-bold text-white mb-2 flex items-center gap-2">
                         <i data-lucide="target" class="w-4 h-4 text-emerald-400"></i>
-                        <span data-i18n="library_quality_p3_title">お気に入りだけでなくライブラリ全体をアップグレード</span>
+                        <span>お気に入りだけでなくライブラリ全体をアップグレード</span>
                     </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed" data-i18n="library_quality_p3_desc">アップグレード機能にも独自のソースセレクタ —— お気に入りかライブラリ全体 —— が加わり、「いいね」を押した動画しかアップグレードできないという制約がなくなりました。確認ダイアログはライブラリをSD・HD/720p・1080pに分けて内訳を示し、今回実際に何本アップグレードするかを明示します。ライブラリ全体のスキャンは、想定より時間がかかる場合は途中で停止できます。</p>
+                    <p class="text-slate-400 text-sm leading-relaxed">HDアップグレードには専用の「🎯 アップグレード元」の選択（お気に入り、または 🌐 ライブラリ全体）があり、保存し忘れた動画もアップグレードの対象にできます。確認ダイアログでは、ライブラリの内訳がSD・HD/720p・1080p別に示され、今回アップグレードする本数が表示されます。所要時間は1本あたり約8秒です。ライブラリ全体のスキャンは途中で止められます。アップグレードが終わったら、もう一度「リスト生成」と「ダウンロード開始」を実行して高画質版を取得してください。詳しい手順は「<a href="/ja/download-grok-videos-hd.html" class="text-emerald-300 underline hover:text-white">Grokの動画をHD画質でダウンロードする</a>」にまとめています。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
     <!-- Troubleshooting -->
-    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+    <section id="troubleshooting" class="py-20 bg-slate-950 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">トラブルシューティング</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">特によく寄せられる5つの問題と、実際に解決につながった対処法です。いずれも設定の不具合ではなく、Grokの2026年のバックエンド変更に起因しています。</p>
+                <p class="text-slate-400 max-w-2xl mx-auto">特によく寄せられる問題と、実際に解決につながった対処法です。ほとんどは設定の不具合ではなく、Grok側の2026年の変更が原因です。</p>
             </div>
             <div class="space-y-4">
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">リスト生成で何も見つからない、または最新の画像が漏れる<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><strong class="text-slate-200">ダウンロードソース</strong>セレクタを確認してください。まだ「お気に入り」になっている場合は、<strong class="text-slate-200">「📦 すべての生成メディア（会話別）」</strong>に切り替えます。Grokの2026年7月の変更以降、新しく生成したメディアはお気に入りに追加されなくなったため、お気に入りのスキャンが空で返るのは正常な動作です。ライブラリ全体ソースはすべての方に無料で、v2.5.1以降は既定のソースです。切り替えたら、もう一度「リスト生成」をクリックしてください。</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>「リスト生成」と「ダウンロード開始」がグレーアウトしている</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">まず、開いているタブがgrok.comのページか確認してください。ほかのサイトでは、ポップアップの両方のボタンが無効になり、<strong class="text-slate-200">Grok ライブラリへ →</strong> のリンクが表示されます。grok.comを開いているのにボタンがグレーのままなら、拡張機能のバージョンが2.6.3より古いはずです。2026年11月12〜13日にGrokはImagineをGrok本体のアプリに統合し、古いバージョンではページを認識できなくなりました。Chromeは数時間以内に拡張機能を自動で更新しますが、すぐに更新するには chrome://extensions を開き、デベロッパー モードをオンにして［更新］をクリックします。詳しい手順：<a href="/ja/grok-download-button-missing.html" class="text-emerald-300 underline hover:text-white">Grok のアップデート後にダウンロードボタンが消えた・押せないときの対処法</a>。</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">HDアップグレードで「すべての動画はアップグレード済み」と表示される<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">原因は上と同じです。アップグレードスキャンは選択中のソースの一覧を読みますが、お気に入りの一覧は不完全です。ソースをライブラリ全体に設定し、リストを再生成してから、アップグレードスキャンをもう一度実行してください。v2.5以降のスキャンは収束するため、繰り返し実行しても同じ結果になります。また1080pは独立した階層として扱われるので、720pのファイルが最高品質と誤認されることはありません。</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>リスト生成で何も見つからない、または最新の画像が漏れる</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><strong class="text-slate-200">ダウンロード元</strong>の選択を確認してください。まだ「お気に入り」になっている場合は、<strong class="text-slate-200">すべての生成メディア（会話別）</strong>に切り替えます。Grokの2026年7月の変更以降、新しく生成したメディアはお気に入りに追加されないため、お気に入りのスキャンが空になるのは異常ではありません。ライブラリ全体のダウンロード元はどなたでも無料で使え（無料版は直近7日間の画像、PROでは動画とライブラリ全体）、v2.5.1以降は既定の選択です。切り替えたら、もう一度「リスト生成」をクリックしてください。背景について詳しくは<a href="/ja/grok-favorites-not-loading.html" class="text-emerald-300 underline hover:text-white">Grok のお気に入りが表示されない？ライブラリをバックアップする方法</a>をご覧ください。</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">ファイル名、フォルダ名、metadata.json にプロンプトが含まれない<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grokは2026年9月、メディア一覧にプロンプトを含めなくなりました。v2.5.6以降に更新すると、その項目を生成した会話から各プロンプトを取り戻します。その後、<strong class="text-slate-200">リストを一度再生成</strong>してください。名前は「リスト生成」の段階で決まるため、旧バージョンで作成したリストは古い名前のままです。ファイル名にプロンプトを入れたい場合は、設定で「プロンプトベース」のファイル名モードを選んでください。取り戻したプロンプトは永続キャッシュに保存されるので、以降の再生成は数秒で終わります。</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>画像だけがダウンロードされ、動画がない</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">無料版の仕様で、ダウンロードできるのは画像だけです。動画のダウンロードはメディアタイプの <strong class="text-slate-200">🎬 動画 (Pro)</strong> にあたり、PROライセンスが必要です。ポップアップの「🔑 ライセンス」欄でPROを有効にしたら、「動画」にチェックを入れ、もう一度「リスト生成」を実行して「ダウンロード開始」をクリックしてください。ダウンロード履歴により、保存済みの画像はスキップされます。<a href="/ja/pricing.html" class="text-emerald-300 underline hover:text-white">料金</a>もご覧ください。</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">Grokで作成したタグが見つからない、またはタグから1ファイルしかダウンロードされない<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grokは2026年8月の移行以降、2つのタグシステムを並行して運用しており、それぞれにもう一方にない項目があります。バージョン2.5.2〜2.5.4は新しい方しか読み取りません。v2.5.6以降に更新すると両方を読み取って統合するため、タグの一覧と中身は2つの和集合になります。更新後、そのタグのリストを再生成してください。</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>ダウンロードが勝手に一時停止した</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">これはエラーではなく、あらかじめ決められた一時停止です。拡張機能は動画を250本ダウンロードするごとに一時停止し、既定では3分待ってから自動で再開します。1回の実行で250本を超える場合は、ダウンロード概要でも事前に知らせます。待ち時間は <strong class="text-slate-200">⚙️ 設定</strong> の <strong class="text-slate-200">⏱️ レート制限クールダウン</strong> で1〜60分に変更できます。操作は不要です。ブラウザとgrok.comのタブは開いたままにしておいてください。</div>
                 </details>
                 <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">ファイルを失ったのに、拡張機能がすべてダウンロード済みと表示する<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
-                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">各ソースは独自のダウンロード履歴を保持しています。ライブラリ全体ソースの場合は、ポップアップを開いて<strong class="text-slate-200">「🧹 クリア操作」</strong>を展開し、<strong class="text-slate-200">「会話履歴を消去」</strong>をクリックして確認ダイアログでOKを選びます。「ダウンロード履歴をリセット（全ファイルを再ダウンロード）」ボタンはお気に入りソース専用です。履歴を消去しても、Grok上やディスク上のファイルは何も削除されません。次回の実行でそれらの項目を再ダウンロードできるようになるだけです。</div>
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>数千ファイルを超えたあたりでダウンロードが失敗し始める</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">非常に長い実行では、途中からGrokがダウンロードを拒否することがあります。たとえば、数千本の動画のあとにHTTP 403エラーが出るケースです。grok.comのタブを再読み込みし、ポップアップを開いてもう一度「ダウンロード開始」をクリックしてください。ダウンロード履歴によって保存済みのものはすべてスキップされ、足りないファイルだけが取得されます。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>HDアップグレードで「すべての動画はアップグレード済み」と表示される</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">原因はリストが空になる場合と同じです。アップグレードのスキャンは選択中のダウンロード元の一覧を読みますが、お気に入りの一覧は不完全です。アップグレード元を 🌐 ライブラリ全体 に設定し、リストを作り直してから、もう一度アップグレードのスキャンを実行してください。v2.5以降のスキャンは結果が安定し、繰り返し実行しても同じ結果になります。また1080pは独立した画質として扱われるため、720pのファイルが最高画質と誤認されることはありません。HDアップグレードはPRO機能です。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>ファイル名、フォルダ名、metadata.json にプロンプトが入らない</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grokは2026年9月、メディア一覧にプロンプトを含めなくなりました。v2.5.6以降に更新すると、各項目を生成した会話からプロンプトを取り戻します。そのうえで<strong class="text-slate-200">リストを一度作り直して</strong>ください。名前は「リスト生成」の段階で決まるため、旧バージョンで作ったリストは古い名前のままです。ファイル名にプロンプトを入れたい場合は、設定でファイル名形式を「プロンプト使用」にしてください。取り戻したプロンプトは永続キャッシュに保存されるので、以降の再生成は数秒で終わります。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>Grokで作成したタグが見つからない、またはタグから1ファイルしかダウンロードされない</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grokは2026年8月の移行以降、2つのタグシステムを並行して運用しており、それぞれにもう一方にない項目があります。バージョン2.5.2〜2.5.4は新しい方しか読み取りません。v2.5.6以降に更新すると両方を読み取って統合するため、タグの一覧も中身も2つを合わせたものになります。更新後、そのタグのリストを作り直してください。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4"><span data-faq-q>ファイルを失ったのに、すべてダウンロード済みと表示される</span><i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div data-faq-a class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">ダウンロード元ごとに独自のダウンロード履歴があります。ライブラリ全体のダウンロード元の場合は、ポップアップを開いて<strong class="text-slate-200">🧹 クリア操作</strong>を展開し、<strong class="text-slate-200">会話履歴を消去</strong>をクリックして、確認ダイアログでOKを選びます。「ダウンロード履歴をリセット（全ファイルを再ダウンロード）」ボタンはお気に入り専用で、タグには専用の「タグ履歴をクリア」ボタンがあります。履歴を消去しても、Grok上やディスク上のファイルは何も削除されません。次回の実行でそれらの項目をもう一度ダウンロードできるようになるだけです。</div>
                 </details>
             </div>
-            <p class="text-center text-slate-500 text-sm mt-8">それでも解決しない場合は、<a href="/ja/faq.html" class="underline hover:text-slate-300">よくある質問</a>でさらに多くのケースを紹介しています。フッターの「サポートに連絡」ボタンから担当者に問い合わせることもできます。</p>
+            <p class="text-center text-slate-500 text-sm mt-8">それでも解決しない場合は、<a href="/ja/faq.html" class="underline hover:text-slate-300">よくある質問</a>でさらに多くのケースを紹介しています。フッターの「サポートへ連絡」ボタンから担当者に問い合わせることもできます。</p>
         </div>
     </section>
 
-    <section class="py-24 bg-slate-900/50 border-t border-slate-800">
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-slate-900/50 border-t border-slate-800 scroll-mt-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">よくある質問</h2>
-                <p class="text-slate-400">ライブラリ全体ダウンロードについて知っておきたいこと</p>
+                <p class="text-slate-400">Grok Imagineのライブラリをまるごとダウンロードするには</p>
             </div>
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">ライブラリ全体ダウンロードとは何ですか？</h3>
-                    <p class="text-slate-400 leading-relaxed">ライブラリ全体ダウンロードは、GrokMediaDownloader v2.5で追加されたダウンロードソースで、Grok Imagineライブラリ内のすべての生成画像と動画を取得します。お気に入りに登録した項目やタグに分類した項目だけに限りません。拡張機能のポップアップでは、既存のお気に入り・タグと並んで「📦 すべての生成メディア（会話別）」としてダウンロードソースセレクタに表示されます。厳選されたサブセットではなく完全なアセット一覧を読み取るため、これまでに生成したすべてをローカルに完全アーカイブしたい場合に最適な選択肢です。ファイルは会話ごとに1つのフォルダにまとめられるので、スレッドの起点となった画像とそこから生成された動画が、フラットなダウンロードディレクトリに散らばることなく一箇所に収まります。</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">Grok Imagineのお気に入りを一括でダウンロードできますか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">はい。grok.com/library を開いてGrok Media Downloaderのアイコンをクリックし、ダウンロード元に 🌟 お気に入り を選んで、「1. リスト生成」「2. ダウンロード開始」の順にクリックします。ただし2026年7月以降、多くのアカウントでGrokの保存済み一覧に新しいメディアが追加されなくなったため、たいていは 📦 すべての生成メディア（会話別） を選んだほうが漏れなく保存できます。こちらは保存したかどうかに関係なく、ライブラリ全体をダウンロードします。無料版は画像のみで、ライブラリ全体のダウンロード元では直近7日間が対象です。PROでは動画が加わり、期間の制限がなくなります。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">お気に入りやタグのダウンロードとどう違いますか？</h3>
-                    <p class="text-slate-400 leading-relaxed">3つのソースはそれぞれ異なるニーズに対応し、互いに完全に独立しています。お気に入りはGrokで「いいね」した項目のみをダウンロードするため、対象は小さく厳選されたままです。タグは特定のGrokタグまたはフォルダに分類されたすべてをダウンロードし、tags/{tagName}/ の下に整理します。ライブラリ全体は両方の絞り込みを無視して生成ライブラリ全体を対象とし、代わりに会話別に出力を整理します。重要な点として、各ソースは独自のダウンロード履歴を保持します。そのため、ライブラリ全体をダウンロードしてもお気に入りがダウンロード済みとしてマークされることはなく、その逆もありません。3つすべてを長期的に併用しても、一方が他方の重複排除記録を汚染することはありません。これはv2.5以前によくある混乱の原因でした。</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">ライブラリ全体ダウンロードとは何ですか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">ライブラリ全体ダウンロードは、GrokMediaDownloader v2.5で追加されたダウンロード元で、お気に入りに登録した項目やタグに分類した項目に限らず、Grok Imagineライブラリ内のすべての生成画像と動画を取得します。拡張機能のポップアップでは、既存の「お気に入り」「タグ」と並んで、ダウンロード元の選択肢に「すべての生成メディア（会話別）」として表示されます。厳選した一部ではなくアセットの一覧をすべて読み取るため、これまでに生成したものをすべてローカルにアーカイブしたいときに適しています。ファイルは会話ごとに1つのフォルダにまとめられるので、スレッドの起点になった画像と、そこから生成した動画が、階層のないダウンロードフォルダにばらばらに並ぶことなく、同じ場所にまとまります。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">フォルダ名とファイル名はどのように決まりますか？</h3>
-                    <p class="text-slate-400 leading-relaxed">各会話が1つのフォルダになり、yyyymmdd_プロンプト_短縮ID というパターンで命名されます。会話にタイトルがない場合、拡張機能はフォルダを「untitled」と表示するのではなく、その会話のプロンプトにフォールバックします。数か月後に見返したときもフォルダ名が意味を持ち続けます。9月以降、Grokはメディア一覧にプロンプトを含めなくなったため、v2.5.6 ではその項目を生成した会話からプロンプトを取り戻します。動画は自身のアニメーションプロンプトを使い、無い場合のみ元画像のプロンプトを借ります。取得したプロンプトは永続キャッシュに保存されるので、ライブラリ全体のリスト再生成は数分から数秒に短縮されます。プロンプトはファイル名やメタデータの設定が実際に使う場合にのみ取得され、これらの設定を変更するとポップアップがリストの再生成を促します。機械的な名前を好む場合、「Grokネイティブ」ファイル名モードは grok_image_YYYYMMDD_id を出力します。metadata.json には userId も記録され、動画のファイル名も同じ短い ID の接尾辞が付いて生成されたリストと一致します。</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">ライブラリ全体ダウンロードは、お気に入りやタグのダウンロードとどう違いますか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">3つのダウンロード元はそれぞれ別の用途に対応し、互いに完全に独立しています。お気に入りはGrokで保存した項目だけをダウンロードするため、対象は少なく厳選されたままです。タグは特定のGrokタグ（フォルダ）に分類されたものをすべてダウンロードし、tags/{tagName}/ の下に整理します。ライブラリ全体はどちらの絞り込みも使わずに生成したライブラリ全体を対象にし、出力を会話別に整理します。ダウンロード元ごとに独自のダウンロード履歴があるため、ライブラリ全体をダウンロードしてもお気に入りがダウンロード済み扱いになることはなく、その逆もありません。3つを長く併用しても、一方が他方の重複排除の記録を乱すことはありません。これはv2.5より前によくあった混乱の原因でした。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">新しく生成したGrokメディアが検出されなくなったのはなぜですか？</h3>
-                    <p class="text-slate-400 leading-relaxed">2026年7月、Grokは新しい「会話＋アセット」メディアバックエンドに移行しました。以前の拡張機能バージョンが依存していた旧エンドポイントは、Savedやメディアライブラリ画面をもはや支えていないため、v2.5.0より前のバージョンでは移行後に作成された画像と動画を認識できません。GrokMediaDownloader v2.5.0は新バックエンドへの完全な適応であり、新規生成メディアの検出を復旧します。更新後は chrome://extensions を開いて拡張機能を再読み込みし、Grokタブを更新してください。またダウンロードリストを一度再生成してください。統合されたタグの結果と、v2.5.6 が生成元の会話から取り戻すプロンプトを反映させるためです。プロンプトベースのファイル名と会話フォルダのルールは「リスト生成」の段階で書き込まれるため、旧バージョンで作成されたリストには遡って適用されません。</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">無料版で動画はダウンロードできますか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">いいえ。無料版はどのダウンロード元でも画像をダウンロードでき、ライブラリ全体のダウンロード元では直近7日間が対象です。動画のダウンロード、期間制限のないライブラリ全体、日付フィルターは、PRO（$4.99の一回払い）の機能です。リスト生成、3つのダウンロード元、ファイル名テンプレート、.jsonのメタデータファイル、ダウンロード履歴は無料で使えます。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">ライブラリ全体のダウンロードを日付で絞り込めますか？</h3>
-                    <p class="text-slate-400 leading-relaxed">はい。ライブラリ全体ソースは他のソースと同じ日付フィルタに対応しており、直近N時間のウィンドウと明示的な日付範囲の両方をカバーします。スキャンは新しい順にライブラリをたどり、選択したウィンドウの終端を超えた時点で早期に停止します。そのため日付で絞り込む際に、結果が出るまでライブラリ全体をスキャンし切る必要はありません。これは大規模なアカウントで重要です。適応的スロットリングと429レート制限バックオフと組み合わせることで、8,000件以上のアセットを持つライブラリでも最後までスキャンできますが、狭い日付フィルタならはるかに早く完了します。「リスト生成」ボタンはスキャン、動画品質の解決、フォルダ準備の各段階で進捗を報告するため、今どの段階が動いているかを確認できます。</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">ファイルはどこに保存されますか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Chromeのダウンロードフォルダ内の grok_downloads に保存されます。ライブラリ全体のダウンロード元は grok_downloads/conversations に会話ごとのフォルダを作り、お気に入りは images と videos（「プロジェクト別」モードでは projects）、タグは tags に保存します。保存先はすべて「設定」で変更できます。処理はすべてブラウザ内で行われ、ファイルはGrokから直接ディスクに保存されます。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">v2.5の1080p対応で何が変わりますか？</h3>
-                    <p class="text-slate-400 leading-relaxed">v2.5では拡張機能全体を通して1080pを独立した品質階層として扱います。ダウンロードは利用可能な最高品質を自動的に選択し、1080pをHDより、HDを元ファイルより優先します。スキャン統計は、すべてをSDとHDにまとめるのではなく、SD・HD/720p・1080pにそれぞれ何本の動画があるかを分けて表示します。アップグレード機能は一度に1段階ずつ、SDからHDへ、720pまたはHDから1080pへ引き上げられるようになりました。1080pへのアップグレードには有料のGrokプラン、具体的にはSuperGrok Heavyが必要なため、既定でオフの明示的なオプトインチェックボックスの背後に置かれています。チェックを外したままなら、拡張機能は1080pリクエストを一切送信しません。</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">フォルダ名とファイル名はどのように決まりますか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">各会話が1つのフォルダになり、yyyymmdd_prompt_shortID の形式で名前が付きます。会話にタイトルがない場合は、フォルダを「untitled」にせず、その会話のプロンプトを使うので、数か月後に見返してもフォルダ名から中身がわかります。9月以降、Grokはメディア一覧にプロンプトを含めなくなったため、v2.5.6からは各項目を生成した会話からプロンプトを取り戻します。動画は自身のアニメーションプロンプトを使い、無い場合は元画像のプロンプトを借ります。取り戻したプロンプトは永続キャッシュに保存されるので、ライブラリ全体の再生成は数分から数秒に短縮されます。プロンプトはファイル名やメタデータの設定で実際に使う場合にだけ取得され、これらの設定を変更するとポップアップがリストの作り直しを促します。機械的な名前がよければ、「Grok ネイティブ」のファイル名形式で grok_image_YYYYMMDD_id という名前になります。metadata.json には userId も記録され、動画のファイル名も同じ短いIDの接尾辞が付いて、生成されたリストと一致します。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">以前アップグレードスキャンを繰り返すたびに結果が変わったのはなぜですか？</h3>
-                    <p class="text-slate-400 leading-relaxed">Grokのサーバーは、生成直後の動画に対するHDメディアURLの返却が安定していません。同じ動画を数秒以内に2回照会すると、一度は返ってきて次は欠落することがありました。解像度フィールド自体は安定しているにもかかわらずです。そのため同じ動画があるスキャンではSD、次ではHDと判定され、「直近N時間をアップグレード」を繰り返すたびに異なる結果が出ていました。v2.5はアップグレード判定専用の品質メモリを追加し、各動画で解決された最高品質を記録して、後の照会が不完全に返ってきてもダウングレードしません。記録には30日の有効期限と件数上限があり、記憶したURLが無効と判明した場合は自動的に消去されます。</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">新しく生成したGrokメディアが検出されなくなったのはなぜですか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">2026年7月、Grokは新しい「会話＋アセット」のメディアバックエンドに移行しました。以前の拡張機能が頼っていた旧エンドポイントは、保存済みページやメディアライブラリの画面ではもう使われていないため、v2.5.0より前のバージョンでは移行後に作成された画像と動画を認識できません。GrokMediaDownloader v2.5.0は新バックエンドへの全面的な対応版で、新しく生成したメディアを再び検出できるようにしています。更新後は chrome://extensions を開いて拡張機能を再読み込みし、Grokのタブを更新してください。また、ダウンロードリストを一度作り直してください。統合されたタグの結果と、v2.5.6が生成元の会話から取り戻すプロンプトを反映させるためです。プロンプト入りのファイル名と会話フォルダのルールは「リスト生成」の段階で書き込まれるため、旧バージョンで作ったリストにはさかのぼって適用されません。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">無料版でライブラリ全体ダウンロードは使えますか？</h3>
-                    <p class="text-slate-400 leading-relaxed">はい —— v2.5.1 以降、ダウンロード元セレクタはすべての方に無料で開放されています。自分のメディアが見えない元に固定されるべき人はいないからです。無料版でも「📦 すべての生成メディア（会話別）」を選択し、直近 7 日間のすべてをダウンロードできます。この範囲は黙って切り捨てるのではなく、UI に明示されます。GrokMediaDownloader PRO は 4.99 ドルの一回払い・永久ライセンスで、この期間制限を解除してライブラリ全体をアーカイブできるようにし、日付フィルター（指定範囲または直近 N 時間）も利用可能になります。PRO にはストリームキャプチャ、ストーリーモードヘルパー、無制限の動画生成キュー、プロジェクトダウンロード、HD および 1080p アップグレード、データのエクスポート・インポートも含まれます。処理はすべてブラウザ内でローカルに行われ、データの収集もアップロードもありません。</p>
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">ライブラリ全体のダウンロードを日付で絞り込めますか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">はい、PROなら可能です。ライブラリ全体のダウンロード元は、お気に入りと同じ日付フィルターに対応しており、直近N時間の指定と日付範囲の指定の両方が使えます（タグには日付フィルターがありません）。スキャンは新しい順にライブラリをたどり、指定した期間の終わりを過ぎた時点で早めに止まるので、日付で絞り込むときに結果が出るまでライブラリ全体をスキャンし切る必要はありません。これは大きなアカウントで効いてきます。適応的スロットリングと429レート制限のバックオフにより、8,000件以上のアセットがあるライブラリでも最後までスキャンできますが、狭い日付範囲ならずっと早く終わります。「リスト生成」ボタンには、スキャン、動画の画質確認、フォルダ準備の各段階の進捗が表示されるので、いまどの段階かがわかります。PROがない場合、ライブラリ全体のダウンロード元は直近7日間が対象です。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">v2.5の1080p対応で何が変わりますか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">v2.5では、拡張機能全体で1080pを独立した画質として扱います。ダウンロードでは利用できる中で最も高い画質が自動で選ばれ、1080p、HD、元のファイルの順に優先されます。スキャンの統計も、すべてをSDとHDにまとめるのではなく、SD・HD/720p・1080pそれぞれの本数を分けて表示します。HDアップグレード機能（PRO）は、SDからHDへ、720pまたはHDから1080pへと、1段階ずつ画質を引き上げられます。1080pへのアップグレードには有料のGrokプラン、具体的にはSuperGrok Heavyが必要なため、既定でオフの明示的なオプトインのチェックボックスで有効にする仕組みです。チェックを外したままなら、拡張機能は1080pのリクエストを一切送りません。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">以前、アップグレードのスキャンを繰り返すたびに結果が変わったのはなぜですか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">Grokのサーバーは、生成直後の動画のHDメディアURLを安定して返しません。同じ動画を数秒以内に2回問い合わせると、1回目は返ってきても2回目は欠けていることがありました。解像度の項目自体は変わらないにもかかわらずです。そのため同じ動画があるスキャンではSD、別のスキャンではHDと判定され、「直近N時間をアップグレード」を繰り返すたびに結果が変わっていました。v2.5では、アップグレード判定専用の画質メモリを追加しました。各動画でこれまでに確認できた最も高い画質を記録し、あとの問い合わせが不完全でも格下げしません。記録は30日で期限切れになり、件数にも上限があり、記憶したURLが無効とわかった場合は自動で消去されます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">無料版でライブラリ全体ダウンロードは使えますか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">はい、直近7日間の画像が対象です。v2.5.1以降、ダウンロード元の選択はどなたでも無料で使えます。自分のメディアが見えないダウンロード元に縛られるべきではないからです。無料版でも「📦 すべての生成メディア（会話別）」を選んで、直近7日間の画像をダウンロードできます。この期間は、結果を黙って切り捨てるのではなく、最初から明示されます。GrokMediaDownloader PRO（$4.99の一回払い、永久ライセンス）では、動画のダウンロードが加わり、期間の制限がなくなってライブラリ全体をアーカイブできるようになり、日付フィルター（指定した期間、または直近N時間）も使えます。PROにはさらに、ストリームキャプチャ、ストーリーモードの書き出し、無制限の動画生成キュー、プロジェクト別ダウンロード、HDおよび1080pへのアップグレード、履歴のエクスポート・インポートも含まれます。処理はすべてブラウザ内で行われ、ファイルはGrokから直接ディスクに保存されます。外部との通信は、Kario Studioのライセンスサーバーによるライセンス確認だけです。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 data-faq-q class="text-lg font-semibold text-white mb-2">もう一度実行すると、同じファイルを二重にダウンロードしますか？</h3>
+                    <p data-faq-a class="text-slate-400 leading-relaxed">いいえ。どのダウンロード元にもダウンロード履歴があり、「リスト生成」は履歴に記録済みのものを除外するため、2回目以降は新しい項目だけを取得します。長いダウンロードを途中で止めても、最初からやり直さずにあとで続きから再開できるのもこのためです。すべてをもう一度ダウンロードしたい場合は、先にそのダウンロード元の履歴を消去してください。</p>
                 </div>
             </div>
 
-            <p class="text-center text-slate-500 text-sm mt-8" data-i18n="library_faq_limit">既知の制限：ご自身がアップロードしたアセットや生成情報を持たないアセットは、サーバー側にプロンプトや会話の紐付けがありません。これらはアセットIDで整理されます。</p>
+            <p class="text-center text-slate-500 text-sm mt-8">既知の制限：ご自身でアップロードしたアセットや生成情報を持たないアセットは、サーバー側にプロンプトや会話の紐付けがありません。これらはアセットIDで整理されます。</p>
+        </div>
+    </section>
+
+    <!-- Related guides -->
+    <section id="related-guides" class="py-20 bg-slate-950 border-t border-slate-800 scroll-mt-24">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">関連ガイド</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="/ja/grok-favorites-not-loading.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">Grok のお気に入りが表示されない？ライブラリをバックアップする方法</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">新しい画像や動画が保存済みに表示されなくなった理由と、それでも作品を保存する方法。</p>
+                </a>
+                <a href="/ja/save-grok-imagine-prompts.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">Grok Imagineの動画をプロンプト付きで保存する</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">プロンプトをファイル名に入れたり、画像や動画の隣の.jsonファイルに残したりできます。</p>
+                </a>
+                <a href="/ja/download-grok-videos-hd.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">Grokの動画をHD画質でダウンロードする</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">どの動画がSD・HD/720p・1080pかを確認し、アップグレードして高画質版をダウンロードします。</p>
+                </a>
+                <a href="/ja/grok-download-button-missing.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">Grok のアップデート後にダウンロードボタンが消えた・押せないときの対処法</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">2026年11月のGrokの変更後に「リスト生成」と「ダウンロード開始」がグレーアウトする問題を解決します。</p>
+                </a>
+                <a href="/ja/faq.html" class="block bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-xl p-5 transition-all">
+                    <h3 class="font-bold text-white mb-1">よくある質問</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">ダウンロード元、ファイル名、ライセンス、返金についての短い回答集。</p>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-i18n="library_cta_title">Grokライブラリを丸ごとアーカイブ</h2>
-            <p class="text-slate-400 mb-8" data-i18n="library_cta_desc">無料版は直近 7 日間 —— PRO でライブラリ全体を解除</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Grokライブラリを丸ごとアーカイブ</h2>
+            <p class="text-slate-400 mb-8">無料版は直近7日間の画像。PROなら動画とライブラリ全体に対応します。</p>
 
             <div class="inline-flex flex-col sm:flex-row gap-4">
                 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=library-download&amp;utm_content=bottom_cta&amp;utm_term=ja" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
-                    <span data-i18n="hero_cta_chrome">Chromeに追加</span>
+                    <span>Chromeに追加</span>
                 </a>
 
                 <a href="/ja/pricing.html" class="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
                     <i data-lucide="zap" class="w-5 h-5"></i>
-                    <span data-i18n="price_pro_button">$4.99 PRO 永久ライセンス</span>
+                    <span>$4.99 PRO 永久ライセンス</span>
                 </a>
             </div>
 
-            <p class="text-slate-500 text-sm mt-6" data-i18n="price_note">✨ 今後のすべてのアップデートを含みます</p>
+            <p class="text-slate-500 text-sm mt-6">✨ 今後のすべてのアップデートを含みます</p>
             <div class="mt-8 pt-6 border-t border-slate-800">
-                <p class="text-slate-400 text-sm font-semibold mb-3" data-i18n="explore_more">他の機能も見る</p>
+                <p class="text-slate-400 text-sm font-semibold mb-3">他の機能も見る</p>
                 <div class="flex flex-wrap justify-center gap-3">
                     <a href="/ja/project-download.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">プロジェクトダウンロード</a>
                     <a href="/ja/story-mode.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-pink-400 hover:text-pink-300 rounded-lg text-sm transition-colors border border-slate-700">ストーリーモード</a>
@@ -786,11 +1000,11 @@
                 </div>
             </div>
             <div class="flex justify-center gap-3 mt-6">
-                <a href="https://twitter.com/intent/tweet?text=Grok%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E5%85%A8%E4%BD%93%E3%82%92%E4%BC%9A%E8%A9%B1%E5%88%A5%E3%81%AB%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89&url=https://grokmedia.kario-studio.com/ja/library-download.html?utm_source=twitter&utm_medium=social&utm_campaign=share" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                <a href="https://twitter.com/intent/tweet?text=Grok%20Imagine%E3%81%AE%E3%81%8A%E6%B0%97%E3%81%AB%E5%85%A5%E3%82%8A%E3%82%92%E4%B8%80%E6%8B%AC%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95&url=https://grokmedia.kario-studio.com/ja/library-download.html?utm_source=twitter&utm_medium=social&utm_campaign=share" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     <span>Xでシェア</span>
                 </a>
-                <a href="https://www.reddit.com/submit?url=https://grokmedia.kario-studio.com/ja/library-download.html?utm_source=reddit&utm_medium=social&utm_campaign=share&title=%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E5%85%A8%E4%BD%93%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
+                <a href="https://www.reddit.com/submit?url=https://grokmedia.kario-studio.com/ja/library-download.html?utm_source=reddit&utm_medium=social&utm_campaign=share&title=Grok%20Imagine%E3%81%AE%E3%81%8A%E6%B0%97%E3%81%AB%E5%85%A5%E3%82%8A%E3%82%92%E4%B8%80%E6%8B%AC%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-sm transition-colors border border-slate-700">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
                     <span>Redditでシェア</span>
                 </a>

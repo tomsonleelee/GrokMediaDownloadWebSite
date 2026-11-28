@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // GA4: never load or send from local dev/test hosts (localhost, 127.0.0.1). Production only.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            window['ga-disable-G-6YPN8563C6'] = true;
+        } else {
+            var gtagScript = document.createElement('script'); gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6';
+            document.head.appendChild(gtagScript);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下載 Grok Imagine 影片並保留提示詞 | GrokMediaDownloader</title>
+    <meta name="description" content="下載 Grok Imagine 影片與圖片時一併保留提示詞：用提示詞當檔名、自訂檔名模板，或替每個檔案另存一份 .json。附逐步教學。">
+    <meta name="keywords" content="Grok Imagine 提示詞, Grok 提示詞 檔名, 下載 Grok 影片 提示詞, Grok metadata json, Grok 檔名模板, GrokMediaDownloader">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/zh-TW/save-grok-imagine-prompts.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/save-grok-imagine-prompts.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/zh-TW/save-grok-imagine-prompts.html">
+    <meta property="og:title" content="下載 Grok Imagine 影片並保留提示詞">
+    <meta property="og:description" content="下載 Grok Imagine 影片與圖片時一併保留提示詞：用提示詞當檔名、自訂檔名模板，或替每個檔案另存一份 .json。附逐步教學。">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="下載 Grok Imagine 影片並保留提示詞">
+    <meta name="twitter:description" content="下載 Grok Imagine 影片與圖片時一併保留提示詞：用提示詞當檔名、自訂檔名模板，或替每個檔案另存一份 .json。附逐步教學。">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "下載 Grok Imagine 影片並保留提示詞",
+      "description": "下載 Grok Imagine 影片與圖片時一併保留提示詞：用提示詞當檔名、自訂檔名模板，或替每個檔案另存一份 .json。附逐步教學。",
+      "inLanguage": "zh-TW",
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28",
+      "author": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "url": "https://www.kario-studio.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://grokmedia.kario-studio.com/assets/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://grokmedia.kario-studio.com/zh-TW/save-grok-imagine-prompts.html"
+      },
+      "image": "https://grokmedia.kario-studio.com/assets/og-image.jpg"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首頁",
+          "item": "https://grokmedia.kario-studio.com/zh-TW/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "下載 Grok Imagine 影片並保留提示詞",
+          "item": "https://grokmedia.kario-studio.com/zh-TW/save-grok-imagine-prompts.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "可以自動下載 Grok Imagine 影片並保留提示詞嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。在 ⚙️ 設定 選擇「使用提示詞」或含 {prompt} 的自訂模板；如果也想把完整提示詞存成 .json，再開啟 📋 儲存 Metadata。之後下載的每個檔案都會帶著提示詞。下載影片需要 PRO，圖片在免費版就能下載。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "保存提示詞要付費嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不用。檔名格式、自訂模板和 .json 檔對所有人免費。PRO 為一次性購買 $4.99，增加影片下載、最近 7 天以外的媒體庫，以及日期篩選。詳情請見價格頁。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "檔名被截短了，完整提示詞在哪裡？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "在媒體檔旁邊的 .json 檔裡，開啟 📋 儲存 Metadata 時才會產生。檔名會截短以便使用，.json 則保存原本記錄的提示詞。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "中文、日文等其他語言的提示詞也能用嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。擴充功能只會移除檔名中不安全的字元，中文、日文、韓文和帶重音的字母都會照原樣留在檔名裡。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "由圖片生成的影片會用哪個提示詞？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "影片有自己的動態提示詞時就用它自己的。沒有提示詞的影片會沿用來源圖片的提示詞，檔名一樣有意義。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我的提示詞會被上傳到其他地方嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。擴充功能在你的瀏覽器裡執行，檔案直接從 Grok 存到你的電腦。它唯一連線的外部服務是 Kario Studio 的授權伺服器，用來驗證 PRO 授權碼。"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css?v=20261119">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(219, 39, 119, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">跳至主要內容</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/zh-TW/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/zh-TW/" class="text-sm text-slate-300 hover:text-white">首頁</a><a href="/zh-TW/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">整庫下載</a><a href="/zh-TW/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">故事模式</a><a href="/zh-TW/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">影片生成佇列</a><a href="/zh-TW/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">串流擷取</a><a href="/zh-TW/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">專案下載</a><a href="/zh-TW/pricing.html" class="text-sm text-slate-300 hover:text-white">價格方案</a><a href="/zh-TW/faq.html" class="text-sm text-slate-300 hover:text-white">常見問題</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+    <section class="relative pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+                <span>教學指南</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight"><span class="gradient-text">下載 Grok Imagine 影片並保留提示詞</span></h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto">把提示詞寫進檔名、套用自己的命名規則，或在每個下載檔案旁另存一份含完整提示詞的 .json。</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=save-grok-imagine-prompts&amp;utm_content=hero&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>加到 Chrome</span>
+                </a>
+                <a href="/zh-TW/pricing.html" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                    <span>查看 PRO 價格</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-xs mt-6">2026 年 11 月 28 日更新 · 依擴充功能 2.6.3 版撰寫</p>
+        </div>
+    </section>
+
+    <!-- Short answer -->
+    <section class="pb-16 bg-slate-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-pink-500/30 bg-pink-500/5 p-6 md:p-8">
+                <h2 class="text-sm font-semibold uppercase tracking-wide text-pink-300 mb-3">快速解答</h2>
+                <p class="text-slate-200 text-lg leading-relaxed">安裝 GrokMediaDownloader 並開啟 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok.com/library</code>。在彈出視窗打開 <strong>⚙️ 設定</strong>，於 📝 檔名格式 選擇 <strong>使用提示詞</strong>，或選 <strong>自訂模板</strong> 並放入 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code>。再勾選 <strong>📋 儲存 Metadata</strong>，每個檔案旁就會多一份含完整提示詞的 .json。接著按 <strong>1. 生成下載列表</strong> 和 <strong>2. 開始下載</strong>。檔名與 metadata 選項全部免費，下載圖片即可使用；下載影片需要 <a href="/zh-TW/pricing.html" class="underline hover:text-pink-300">PRO</a>。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">保留提示詞的三種方式</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">三種方式可以同時使用。它們都是擴充功能彈出視窗裡的設定，不會更動 Grok 上的任何內容。</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="file-text" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">提示詞寫進檔名</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">「使用提示詞」格式會把檔案命名成 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">img_20261128143015_a_red_fox_in_fresh_snow_1a2b3c4d.jpg</code> 這樣，之後在電腦裡就能直接用提示詞搜尋。</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="braces" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">自己的命名規則</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">「自訂模板」可以把 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{date}</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code> 等變數組合成符合你整理習慣的檔名。</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="file-json" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">完整提示詞存成 .json</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">「儲存 Metadata」會在每個下載檔案旁另存一份小小的 .json，記錄完整提示詞、建立時間和 ID，影片還會記錄實際下載的畫質。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">保存提示詞：免費版與 PRO</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">檔名與 metadata 相關功能全部免費。PRO 增加的是影片下載和完整媒體庫。</p>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[640px] border-collapse text-sm">
+                    <thead><tr class="border-b border-slate-700"><th class="text-left py-3 px-4 text-slate-300 font-semibold"></th><th class="text-left py-3 px-4 text-slate-300 font-semibold">免費版</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">PRO</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">使用提示詞檔名與自訂模板</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">📋 儲存 Metadata（每個檔案一份 .json）</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">下載圖片</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">下載影片</td><td class="py-3 px-4 text-slate-400">✗（僅圖片）</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">📦 所有生成媒體（整個媒體庫）</td><td class="py-3 px-4 text-slate-400">最近 7 天</td><td class="py-3 px-4 text-slate-400">完整媒體庫</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">依專案分組並產生 metadata.json</td><td class="py-3 px-4 text-slate-400">標準模式（專案資料夾以影片為主）</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-4">PRO 為一次性購買 $4.99，終身免費更新。詳情請見<a href="/zh-TW/pricing.html" class="underline hover:text-pink-300">價格頁</a>。</p>
+        </div>
+    </section>
+
+    <section id="steps" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">操作步驟</h2>
+            <ol class="space-y-8">
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">1</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 1: </span>安裝擴充功能並開啟 Grok</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">從 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=save-grok-imagine-prompts&amp;utm_content=steps&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="underline hover:text-pink-300">Chrome 線上應用程式商店</a> 加入 GrokMediaDownloader，並把圖示釘選到工具列。請在同一個 Chrome 設定檔中登入 Grok。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">開啟 Grok 的 Library（媒體庫）頁面 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok.com/library</code>。2.6.3 版起，任何 grok.com 頁面都能使用；如果目前分頁不是 grok.com，彈出視窗會請你先開啟 Grok。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">2</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 2: </span>選擇檔名格式</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">點擊擴充功能圖示開啟彈出視窗，展開 <strong>⚙️ 設定</strong>。如果你是 PRO 用戶並使用精簡模式，請先點彈出視窗上方的 <strong>全</strong> 按鈕，因為精簡模式會隱藏設定區塊。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">在 <strong>📝 檔名格式</strong> 選擇 <strong>使用提示詞</strong>，檔名就會由日期、時間和提示詞組成。想自己決定順序，就選 <strong>自訂模板</strong>，再到 <strong>圖片：</strong> 和 <strong>影片：</strong> 欄位輸入規則。<strong>Grok 原生</strong> 則保留以 ID 為主、不含提示詞的短檔名。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">設定一變更就會自動儲存。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/zh-TW/popup-filenames.jpg" alt="擴充功能設定畫面：檔名格式的 Grok 原生、使用提示詞、自訂模板，以及儲存 Metadata 選項" width="336" height="479" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">設定：三種檔名格式與 📋 儲存 Metadata。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">3</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 3: </span>開啟「儲存 Metadata」保存完整提示詞</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">在同一個區塊勾選 <strong>📋 儲存 Metadata</strong>（「同時儲存 .json 檔案，包含圖片/影片資訊（提示詞、解析度等）」）。之後每張圖片、每支影片旁邊都會有一份同名的 .json 檔。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">檔名會把過長的提示詞截短，完整的提示詞就保存在 .json 裡。這個選項可以搭配任何檔名格式，包括 Grok 原生。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">4</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 4: </span>選擇來源並生成列表</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">在 <strong>📥 下載來源與篩選</strong> 選擇 <strong>📦 所有生成媒體（依對話）</strong>（預設值，也就是整個媒體庫）、<strong>🌟 收藏</strong> 或 <strong>🏷️ 標籤</strong>。在 <strong>🎬 媒體類型</strong> 保持勾選 🖼️ 圖片；🎬 視頻 (Pro) 需要 PRO 才能勾選。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">按 <strong>1. 生成下載列表</strong>。如果你的設定會用到提示詞，按鈕會顯示 <strong>📝 擷取提示詞</strong> 和進度數字，代表擴充功能正從產生每個項目的對話中找回提示詞。沒有自己提示詞的影片，會沿用來源圖片的提示詞。找到過的提示詞會存在本機快取，之後再生成就快得多。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">掃描結束後，彈出視窗會跳出 <strong>📊 下載摘要</strong> 對話框，列出要下載的圖片與影片數量、各畫質的影片數，並詢問「確定開始下載？」。按「確定」會立即開始下載；按「取消」則關閉對話框，<strong>2. 開始下載</strong> 仍可點擊，方便你先檢查設定，下方截圖就是這個狀態。</p>
+                        <figure class="mt-4 mb-2">
+                            <div class="max-w-sm mx-auto rounded-lg bg-white text-slate-800 shadow-lg p-4 font-mono text-xs leading-relaxed" style="white-space:pre-wrap" role="note">📊 下載摘要
+
+🖼️ 圖片：1248 待下載（0 已完成）
+🎬 影片：336 待下載（0 已完成）
+    ├ 💎 1080p：14
+    ├ ✨ HD：88
+    ├ 🎥 720p：52
+    └ 📦 SD：196
+
+過程中請勿關閉瀏覽器。
+確定開始下載？
+
+⚠️ 超過 250 部影片待下載，每 250 部會自動暫停並在 3 分鐘後自動恢復。</div>
+                            <figcaption class="mt-2 text-center text-xs text-slate-500">擴充功能實際顯示的對話框內容（數字為範例）。</figcaption>
+                        </figure>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/zh-TW/popup-list-ready.jpg" alt="生成下載列表後的彈出視窗：待下載的圖片與影片數量，開始下載按鈕已可點擊" width="336" height="820" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">按下 1. 生成下載列表後：總數、已下載與尚待下載的數量。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">5</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 5: </span>開始下載</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">如果剛才在摘要中按了「取消」，現在按 <strong>2. 開始下載</strong>。進度條會顯示目前進度與預估剩餘時間。<strong>⏹ 中斷下載</strong> 可以暫停，<strong>▶ 繼續下載</strong> 會從中斷處接著下載。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">每個下載來源都有自己的下載紀錄，所以再跑一次時會略過已經存過的檔案。為了不超過 Grok 的頻率限制，擴充功能每下載 250 支影片會暫停一次（預設 3 分鐘，可在 ⚙️ 設定 調整），之後自動繼續。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/zh-TW/popup-downloading.jpg" alt="下載中的彈出視窗：含預估剩餘時間的進度條和中斷下載按鈕" width="336" height="725" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">下載中：進度、剩餘時間與 ⏹ 中斷下載。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">6</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">步驟 6: </span>找到檔案和提示詞</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">檔案會存到 Chrome 下載資料夾裡的 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok_downloads/</code>。收藏存到 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">images/</code> 和 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">videos/</code>，標籤存到 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">tags/</code> 底下的各標籤資料夾，整個媒體庫則存到 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">conversations/</code>，每個對話一個資料夾，以日期、標題或提示詞再加上短 ID 命名。這些路徑可以在 ⚙️ 設定 中修改。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">開啟儲存 Metadata 後，每個媒體檔旁邊都會有它的 .json 檔。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <a href="/assets/guides/download-folders.jpg" target="_blank" rel="noopener" class="block"><img src="/assets/guides/download-folders.jpg" alt="grok_downloads 資料夾範例（檔名模式「使用提示詞」）：conversations/ 內每個對話一個資料夾，另有 images/、videos/、tags/、projects/ 資料夾，圖片旁附一份 .json 資訊檔，專案資料夾內有 metadata.json" width="1280" height="1130" loading="lazy" class="w-full h-auto"></a>
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">grok_downloads 資料夾範例（「使用提示詞」檔名）：conversations/、images/、videos/、tags/、projects/，加上 .json 資訊檔與專案的 metadata.json。點圖可開啟原尺寸。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">「使用提示詞」的檔名長這樣</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">實際格式依下載來源而定。以下範例的提示詞是「a red fox in fresh snow」。</p>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[720px] border-collapse text-sm">
+                    <thead><tr class="border-b border-slate-700"><th class="text-left py-3 px-4 text-slate-300 font-semibold">來源</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">圖片</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">影片</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">📦 所有生成媒體</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">img_20261128143015_a_red_fox_in_fresh_snow_1a2b3c4d.jpg</code></td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">vid_20261128143015_a_red_fox_in_fresh_snow_9e8d7c6b.mp4</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">🌟 收藏、🏷️ 標籤</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">img_20261128143015_a_red_fox_in_fresh_snow.jpg</code></td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">hd_20261128143015_a_red_fox_in_fresh_snow.mp4</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-4">14 位數字是建立日期與時間（YYYYMMDDHHmmss），以你電腦的時區為準。</p>
+            <p class="text-slate-400 leading-relaxed mt-4">整個媒體庫的檔名最後會加上項目 ID 的末 8 碼，所以就算兩個項目提示詞相同、又在同一秒產生，也不會撞名。</p>
+            <p class="text-slate-400 leading-relaxed mt-4">收藏和標籤來源的影片檔名以 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hd_</code> 或 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">sd_</code> 開頭，代表實際下載的畫質。</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">自訂模板可用的變數</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">選擇「自訂模板」後，分別替圖片和影片各輸入一組規則。擴充功能會替換每個變數，並自動加上副檔名。</p>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[640px] border-collapse text-sm">
+                    <thead><tr class="border-b border-slate-700"><th class="text-left py-3 px-4 text-slate-300 font-semibold">變數</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">代表</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">範例</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{date}</code></td><td class="py-3 px-4 text-slate-400">建立日期</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">2026-11-28</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{time}</code></td><td class="py-3 px-4 text-slate-400">建立時間（時、分、秒）</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">143015</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{datetime}</code></td><td class="py-3 px-4 text-slate-400">日期加時間</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">2026-11-28_143015</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{id}</code></td><td class="py-3 px-4 text-slate-400">項目在 Grok 的完整 ID</td><td class="py-3 px-4 text-slate-400">完整 ID</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code></td><td class="py-3 px-4 text-slate-400">ID 的末 8 碼</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">1a2b3c4d</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code></td><td class="py-3 px-4 text-slate-400">整理成適合檔名、最多 80 個字元的提示詞</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">a_red_fox_in_fresh_snow</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{quality}</code></td><td class="py-3 px-4 text-slate-400">收藏與標籤來源的影片為 hd 或 sd；圖片和整個媒體庫則為空白</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hd</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-4">範例：圖片規則填 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{date}_{prompt}_{shortid}</code>，會得到 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">2026-11-28_a_red_fox_in_fresh_snow_1a2b3c4d.jpg</code>。</p>
+            <p class="text-slate-400 leading-relaxed mt-4">無法辨識的變數會被移除。如果規則裡沒有 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{id}</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code> 或 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{datetime}</code>，彈出視窗會警告「⚠ 無唯一識別變數 — 檔案可能互相覆蓋」。加上其中一個，每個檔案就會有自己的名稱。</p>
+            <p class="text-slate-400 leading-relaxed mt-4">沒有提示詞的項目，<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code> 會改用部分 ID。模板欄位留空時，檔案會以 ID 命名。</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">.json 檔裡有什麼</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">開啟 📋 儲存 Metadata 後，每個下載的檔案都會有一份同名的 .json。提示詞會照原樣保存，連不能出現在檔名裡的字元也都在。欄位包括：</p>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4">
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">prompt</code> 和 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">originalPrompt</code>：提示詞內容</li>
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">createTime</code>：項目建立時間；<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">downloadedAt</code>：你下載的時間</li>
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">id</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">type</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">url</code> 和 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">filename</code>：是哪個項目、從哪裡下載</li>
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">userId</code>：你的 Grok 帳號 ID</li>
+                <li>影片另外還有 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hdUrl</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">detailUrl</code> 和 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">downloadedQuality</code>（<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hd</code> 或 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">sd</code>）</li>
+            </ul>
+            <p class="text-slate-300 leading-relaxed mb-4">以下是一支影片的精簡範例：</p>
+            <pre class="bg-slate-900 border border-slate-800 rounded-xl p-5 overflow-x-auto text-xs text-slate-300 font-mono mb-4">{
+  &quot;id&quot;: &quot;…&quot;,
+  &quot;type&quot;: &quot;video&quot;,
+  &quot;url&quot;: &quot;…&quot;,
+  &quot;filename&quot;: &quot;vid_20261128143015_a_red_fox_in_fresh_snow_9e8d7c6b.mp4&quot;,
+  &quot;createTime&quot;: &quot;2026-11-28T14:30:15.000Z&quot;,
+  &quot;prompt&quot;: &quot;a red fox in fresh snow, slow camera pan&quot;,
+  &quot;originalPrompt&quot;: &quot;a red fox in fresh snow, slow camera pan&quot;,
+  &quot;downloadedQuality&quot;: &quot;hd&quot;,
+  &quot;downloadedAt&quot;: &quot;2026-11-28T15:02:41.000Z&quot;
+}</pre>
+            <p class="text-slate-300 leading-relaxed mb-4">檔案裡含有你的 Grok 使用者 ID，公開分享資料夾前，可以考慮先把 .json 檔移除。</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">專案資料夾與 metadata.json（收藏來源）</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">使用 🌟 收藏 來源時，<strong>📂 下載模式</strong> 可以選 <strong>依專案分組</strong>。每個專案資料夾會放來源圖片、由它生成的影片，以及一份 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">metadata.json</code>。資料夾以日期、提示詞和短 ID 命名，例如 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">20261128_a_red_fox_in_fresh_snow_1a2b3c4d</code>。</p>
+            <p class="text-slate-300 leading-relaxed mb-4">metadata.json 會列出資料夾的提示詞與建立時間、來源圖片，以及每支生成影片各自的提示詞和下載連結，另外還有圖片與影片數量統計。不論是否開啟儲存 Metadata，每個專案資料夾都會寫入這份檔案。之前用標準模式下載過的檔案會被略過；如果想要完整的專案資料夾，彈出視窗會建議先清除下載紀錄。</p>
+            <p class="text-slate-300 leading-relaxed mb-4">專案資料夾只提供給收藏來源，而且以影片為主，所以搭配 PRO 最實用。Grok 在 2026 年 7 月更改媒體後端後，許多帳號新生成的媒體不再出現在收藏裡。這些項目請改用 📦 所有生成媒體：每個對話資料夾本來就會把圖片和由它生成的影片放在一起。</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">檔名長度與字元規則</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">提示詞是寫給 AI 看的，不是為檔案系統設計的，所以擴充功能拿來當檔名前會先整理：</p>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4">
+                <li>移除檔名中不安全的字元（ <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">\ / : * ? " &lt; &gt; |</code> ），以及換行和 Tab。</li>
+                <li>空格換成底線，連續的底線合併成一個。</li>
+                <li>過長的提示詞會被截斷：整個媒體庫的「使用提示詞」檔名最多 100 個字元，收藏和標籤最多 120 個，<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code> 變數最多 80 個，專案資料夾名稱最多 90 個。</li>
+                <li>以 @ 加上 ID 寫成的圖片引用，以及提示詞結尾的選項參數（例如 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">--mode=…</code>）不會放進檔名；.json 則保留原始提示詞。</li>
+                <li>中文、日文、韓文等非拉丁文字會原樣保留。</li>
+                <li>沒有提示詞的項目（例如你自己上傳的圖片）會以 ID 命名。</li>
+            </ul>
+            <p class="text-slate-300 leading-relaxed mb-4">這些規則都不會影響 .json 檔，所以只要開啟儲存 Metadata，完整提示詞就一定會留著。</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">彈出視窗要求重新生成列表時</h2>
+            <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><i data-lucide="alert-triangle" class="text-amber-400 w-5 h-5"></i></div>
+                    <div class="space-y-3">
+                        <p class="text-slate-300 leading-relaxed">找回提示詞需要時間，所以擴充功能只在設定真的用得到時才會去找：使用提示詞檔名、含 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code> 的自訂模板，或儲存 Metadata。</p>
+                        <p class="text-slate-300 leading-relaxed">如果你在 Grok 原生檔名、未開啟 metadata 的狀態下生成了列表，之後才開啟上述任一項，彈出視窗會顯示 <strong>⚠️ 提示詞檔名／metadata 需要提示詞，請重新生成列表</strong>。開始下載前請再按一次 <strong>1. 生成下載列表</strong>，否則新下載的檔案不會帶有提示詞。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">疑難排解</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">保存提示詞時最常遇到的問題，以及各自的解法。</p>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">檔名是 ID，而不是提示詞<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">常見原因有三個。該項目本來就沒有提示詞，例如你上傳的圖片。或是列表在你修改檔名設定之前就已生成，請重新生成。也可能是列表由舊版擴充功能產生：請先更新擴充功能，再重新生成列表。Chrome 會自動更新擴充功能；想立即更新，可以開啟 chrome://extensions，打開「開發人員模式」後按「更新」。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">彈出視窗顯示「提示詞檔名／metadata 需要提示詞」<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">你的設定現在會用到提示詞，但目前的列表生成時並沒有抓取提示詞。請再按一次 <strong>1. 生成下載列表</strong>，然後按 <strong>2. 開始下載</strong>。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">「視頻」核取方塊是灰色的，旁邊還有鎖頭<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">下載影片是 PRO 功能。免費版可以下載圖片，所有檔名與 metadata 選項也都能用。PRO 為一次性購買 $4.99（<a href="/zh-TW/pricing.html" class="underline hover:text-pink-300">價格</a>）。購買後，把 GMD-… 授權碼貼到彈出視窗的 <strong>🔑 授權</strong>。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">生成列表一直停在「擷取提示詞」<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">第一次執行時要逐一找回列表中每個對話的提示詞，媒體庫很大時會花一些時間。如果 Grok 限制這些查詢的頻率，擴充功能會等待後重試。之後再生成會使用本機的提示詞快取，速度快很多。PRO 用戶也可以用日期篩選縮小大型掃描的範圍。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">兩個檔案變成同一個檔名<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">你的自訂模板缺少唯一識別變數。請加上 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{id}</code> 或 <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{datetime}</code>。整個媒體庫的「使用提示詞」檔名結尾本來就有短 ID。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">改了格式，但以前下載的檔案還是舊檔名<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">擴充功能不會重新命名已經在你電腦裡的檔案，下載紀錄也會略過它們。想用新檔名重新下載，請打開 <strong>🧹 清除操作</strong>，清除該來源的紀錄：整個媒體庫用「清除對話歷史」，收藏用「重置下載歷史」，標籤用「清除標籤歷史」。接著重新生成列表並開始下載。清除紀錄不會刪除 Grok 上或電腦裡的任何東西。</div>
+                </details>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-8">還是卡住了？<a href="/zh-TW/faq.html" class="underline hover:text-slate-300">常見問題</a>有更多情況說明，也可以透過<a href="/support.html" class="underline hover:text-slate-300">聯絡支援</a>找到真人協助。</p>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">常見問題</h2>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">可以自動下載 Grok Imagine 影片並保留提示詞嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">可以。在 ⚙️ 設定 選擇「使用提示詞」或含 {prompt} 的自訂模板；如果也想把完整提示詞存成 .json，再開啟 📋 儲存 Metadata。之後下載的每個檔案都會帶著提示詞。下載影片需要 PRO，圖片在免費版就能下載。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">保存提示詞要付費嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">不用。檔名格式、自訂模板和 .json 檔對所有人免費。PRO 為一次性購買 $4.99，增加影片下載、最近 7 天以外的媒體庫，以及日期篩選。詳情請見<a href="/zh-TW/pricing.html" class="underline hover:text-pink-300">價格頁</a>。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">檔名被截短了，完整提示詞在哪裡？</h3>
+                    <p class="text-slate-400 leading-relaxed">在媒體檔旁邊的 .json 檔裡，開啟 📋 儲存 Metadata 時才會產生。檔名會截短以便使用，.json 則保存原本記錄的提示詞。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">中文、日文等其他語言的提示詞也能用嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">可以。擴充功能只會移除檔名中不安全的字元，中文、日文、韓文和帶重音的字母都會照原樣留在檔名裡。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">由圖片生成的影片會用哪個提示詞？</h3>
+                    <p class="text-slate-400 leading-relaxed">影片有自己的動態提示詞時就用它自己的。沒有提示詞的影片會沿用來源圖片的提示詞，檔名一樣有意義。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">我的提示詞會被上傳到其他地方嗎？</h3>
+                    <p class="text-slate-400 leading-relaxed">不會。擴充功能在你的瀏覽器裡執行，檔案直接從 Grok 存到你的電腦。它唯一連線的外部服務是 Kario Studio 的授權伺服器，用來驗證 PRO 授權碼。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="related" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">相關教學</h2>
+            <ul class="grid sm:grid-cols-2 gap-4">
+                <li><a href="/zh-TW/library-download.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>如何一次下載所有 Grok Imagine 收藏</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/zh-TW/grok-favorites-not-loading.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok 收藏不顯示？備份你的媒體庫</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/zh-TW/download-grok-videos-hd.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>下載 HD 高畫質的 Grok 影片</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/zh-TW/grok-download-button-missing.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok 更新後下載按鈕不見了</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/zh-TW/faq.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>常見問題：關於擴充功能的常見疑問</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">下載時保留每一個提示詞</h2>
+            <p class="text-slate-400 mb-8">圖片下載與所有命名選項免費。PRO 增加影片下載與完整媒體庫。</p>
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=save-grok-imagine-prompts&amp;utm_content=bottom_cta&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>加到 Chrome</span>
+                </a>
+                <a href="/zh-TW/pricing.html" class="px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span>查看 PRO 價格</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-sm mt-6">✨ 包含所有未來更新</p>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/zh-TW/privacy.html" class="hover:text-white">隱私權政策</a> · <a href="/zh-TW/terms.html" class="hover:text-white">服務條款</a> · <a href="/manager/" class="hover:text-white">Grok Media Manager</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> <nav class="mt-3" aria-label="語言"><a href="/save-grok-imagine-prompts.html" hreflang="en" class="hover:text-white">English</a> · <a href="/zh-TW/save-grok-imagine-prompts.html" hreflang="zh-TW" class="hover:text-white text-slate-300">繁體中文</a> · <a href="/ja/save-grok-imagine-prompts.html" hreflang="ja" class="hover:text-white">日本語</a> · <a href="/ko/save-grok-imagine-prompts.html" hreflang="ko" class="hover:text-white">한국어</a> · <a href="/es/save-grok-imagine-prompts.html" hreflang="es" class="hover:text-white">Español</a> · <a href="/de/save-grok-imagine-prompts.html" hreflang="de" class="hover:text-white">Deutsch</a></nav></div></footer></div>
+
+    <!-- Scripts -->
+    <script src="/js/i18n.js?v=20261119"></script>
+    <script src="/js/components.js?v=20261119"></script>
+</body>
+
+</html>

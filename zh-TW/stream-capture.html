@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>串流擷取 | 即時 Grok 圖片自動捕捉 - GrokMediaDownloader PRO</title>
-    <meta name="description" content="串流擷取即時監控 Grok AI，自動捕捉生成的圖片。DOM 觀察者技術在您滾動頁面時偵測新圖片，一鍵批次下載。GrokMediaDownloader PRO 專屬功能。">
+    <meta name="description" content="串流擷取會監看 grok.com 分頁，收集 Grok 在該分頁生成的圖片，並一鍵全部下載。GrokMediaDownloader PRO 功能。">
     <meta name="keywords" content="串流擷取, grok 圖片捕捉, 即時圖片下載, DOM observer, 批次圖片下載, grok AI 圖片, 自動擷取, Chrome 擴充功能">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -89,42 +89,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Stream Capture 能在所有 Grok 頁面上運作嗎？",
+          "name": "Stream Capture 會擷取什麼？在哪裡使用？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以。Stream Capture 監控任何 Grok 產生圖片的頁面，包含主頁面、個別貼文頁面及搜尋結果。採用 DOM 觀察技術，只要 Grok 渲染新圖片，就能自動偵測。"
+            "text": "它會監看你開啟功能的 grok.com 分頁，收集你在 Imagine 創作時 Grok 串流到頁面上的生成圖片。縮圖、圖示等小圖（約 120 KB 以下）會被忽略，而且只擷取圖片，不擷取影片。"
           }
         },
         {
           "@type": "Question",
-          "name": "一次監控可以捕捉多少張圖片？",
+          "name": "最多可以擷取幾張？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "沒有數量上限。Stream Capture 可以在單次監控期間排入數百張圖片。佇列儲存於 IndexedDB，即使切換分頁或關閉擴充功能面板也不會遺失。"
+            "text": "每次最多 1,000 張。達到 1,000 張時會停止，並請你先下載並清除已擷取的圖片再繼續。"
           }
         },
         {
           "@type": "Question",
-          "name": "Stream Capture 會讓瀏覽器變慢嗎？",
+          "name": "如何儲存擷取的圖片？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "不會。Stream Capture 使用 Chrome 原生的 MutationObserver API，效率極高。觀察器只在 DOM 變更時才會觸發，在沒有主動產生圖片時 CPU 使用率接近零。"
+            "text": "在彈出視窗點「📥 下載已擷取圖片」。檔案會存到下載資料夾中的 grok_downloads/stream（路徑可在設定中修改），檔名為 grok_stream_ 加上擷取時間。「清除已擷取」會清空清單。"
           }
         },
         {
           "@type": "Question",
-          "name": "可以暫停和恢復監控嗎？",
+          "name": "重新整理或關閉分頁後，擷取的圖片還在嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以。在擴充功能面板中點擊「停止監控」即可暫停。之前捕捉的圖片仍保留在佇列中。再次點擊「開始 Stream Capture」即可繼續，新圖片會加入同一佇列。"
+            "text": "不在。擷取的圖片在下載前只暫存在該 grok.com 分頁的記憶體中，請在重新整理或關閉分頁前先下載。"
           }
         },
         {
           "@type": "Question",
-          "name": "Stream Capture 會自動去除重複圖片嗎？",
+          "name": "可以暫停後再繼續擷取嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "會。Stream Capture 使用雜湊比對來偵測並跳過已在收藏或目前佇列中的圖片，避免在上滑或重新瀏覽貼文時重複下載同一張圖片。"
+            "text": "可以。關閉「啟用」開關就會停止監看新圖片，已擷取的圖片仍保留在清單中；再次開啟即可繼續加入同一份清單。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "同一張圖片會被擷取兩次嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。每張新圖片都會與這次已擷取的圖片比對，再次出現的圖片不會重複加入。"
           }
         },
         {
@@ -132,7 +140,7 @@
           "name": "Stream Capture 是免費功能嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Stream Capture 是 PRO 專屬功能。免費版支援可見圖片的手動批次下載。升級至 PRO（$4.99 終身授權）可解鎖 Stream Capture、Video Gen Queue、Story Mode 和 Project Download。"
+            "text": "不是，Stream Capture 是 PRO 功能。免費版可以從收藏、標籤或媒體庫最近 7 天批次下載圖片。升級至 PRO（$4.99 一次付清、終身授權）即可解鎖 Stream Capture，以及影片下載、Story Mode 匯出、Project Download 和不限次數的 Video Gen Queue。"
           }
         }
       ]
@@ -214,7 +222,7 @@
 
                 <p class="text-xl md:text-2xl text-cyan-300 mb-4" data-i18n="stream_subtitle">即時 Grok 圖片自動捕捉</p>
 
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_desc">在您瀏覽時即時監控 Grok AI。串流擷取使用 DOM 觀察者技術，自動偵測並排入即時生成的新圖片。不再錯過任何靈感 — 一鍵批次下載所有內容。</p>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_desc">在 grok.com 分頁開啟後，串流擷取會用 DOM 觀察器即時收集 Grok 在該分頁生成的圖片。請在重新整理或關閉分頁前，一鍵全部下載。</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=stream-capture&amp;utm_content=hero&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
@@ -236,7 +244,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="stream_video_title">觀看串流擷取實際操作</h2>
-                <p class="text-slate-400" data-i18n="stream_video_desc">啟動監控 → 瀏覽 Grok → 圖片自動擷取 → 批次下載</p>
+                <p class="text-slate-400" data-i18n="stream_video_desc">啟用 → 在 Imagine 創作 → 自動擷取圖片 → 下載已擷取圖片</p>
             </div>
 
             <!-- Video Container -->
@@ -312,8 +320,8 @@
                     <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="layers" class="text-blue-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_2_title">自動排入佇列</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_2_desc">每張偵測到的圖片會自動加入下載佇列。只需繼續滾動 — 串流擷取會處理其餘的事。</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_2_title">自動擷取清單</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_2_desc">約 120 KB 以上的生成圖片會加入擷取清單，縮圖與圖示會略過。彈出視窗會顯示張數，每次最多 1,000 張。</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -330,8 +338,8 @@
                     <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="filter" class="text-pink-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_4_title">智慧去重</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_4_desc">使用雜湊比對自動過濾收藏中已存在的重複圖片。</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_4_title">同一次不重複</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_4_desc">已在這次擷取清單中的圖片，不會再加入第二次。</p>
                 </div>
             </div>
         </div>
@@ -342,7 +350,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_step_title">串流擷取運作方式</h2>
-                <p class="text-slate-400">四個簡單步驟，自動擷取每一張 Grok 圖片</p>
+                <p class="text-slate-400">四個步驟，擷取你生成的圖片</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -353,8 +361,8 @@
                         <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="play-circle" class="text-cyan-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_1_title">啟動監控</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_1_desc">開啟擴充功能，點擊「啟動串流擷取」開始即時監控 Grok 頁面。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_1_title">開啟功能</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_1_desc">在 grok.com 分頁開啟彈出視窗，於「🌊 串流擷取」區塊打開「啟用」。</p>
                     </div>
                 </div>
 
@@ -365,8 +373,8 @@
                         <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="scroll" class="text-blue-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_2_title">瀏覽與滾動</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_2_desc">正常瀏覽 Grok。頁面上出現的每張新圖片都會被自動偵測並排入佇列。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_2_title">在 Imagine 創作</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_2_desc">照常在 Grok Imagine 生成圖片。Grok 放進頁面的新圖片會自動被擷取。</p>
                     </div>
                 </div>
 
@@ -377,8 +385,8 @@
                         <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="check-square" class="text-emerald-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_3_title">檢視已擷取</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_3_desc">查看擷取佇列中所有自動捕捉的圖片。移除不需要的項目。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_3_title">查看張數</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_3_desc">彈出視窗會顯示已擷取的張數。想重新開始時，按「清除已擷取」清空清單。</p>
                     </div>
                 </div>
 
@@ -390,7 +398,7 @@
                             <i data-lucide="download" class="text-pink-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_4_title">批次下載</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_4_desc">點擊「全部下載」，一次將所有擷取的圖片儲存到本地磁碟。</p>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_4_desc">按「📥 下載已擷取圖片」，一次把所有擷取的圖片存到 grok_downloads/stream。請在重新整理或關閉分頁前下載。</p>
                     </div>
                 </div>
             </div>
@@ -421,8 +429,8 @@
                                 <i data-lucide="cpu" class="text-pink-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">背景 Service Worker</h4>
-                                <p class="text-slate-400 text-sm">在 Chrome 的 Service Worker 中運行，即使切換分頁也能持續監控。</p>
+                                <h4 class="font-bold text-white mb-1">在 grok.com 分頁內執行</h4>
+                                <p class="text-slate-400 text-sm">擷取在你開啟功能的 grok.com 分頁中進行，擷取的圖片暫存在該分頁的記憶體。重新整理或關閉分頁就會清空，請先下載。</p>
                             </div>
                         </div>
 
@@ -431,8 +439,8 @@
                                 <i data-lucide="database" class="text-blue-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">IndexedDB 快取</h4>
-                                <p class="text-slate-400 text-sm">將擷取的圖片中繼資料儲存在 IndexedDB 中，用於快速去重檢查和佇列管理。</p>
+                                <h4 class="font-bold text-white mb-1">每次上限 1,000 張</h4>
+                                <p class="text-slate-400 text-sm">每次最多保留 1,000 張擷取的圖片。達到上限時會停止擷取，並請你先下載並清空清單。</p>
                             </div>
                         </div>
 
@@ -463,46 +471,20 @@
                         <div class="mb-4 p-3 bg-slate-800/50 rounded-lg flex items-center justify-between">
                             <div class="flex items-center gap-2">
                                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                                <span class="text-sm font-bold text-emerald-400">監控中</span>
+                                <span class="text-sm font-bold text-emerald-400">啟用</span>
                             </div>
-                            <span class="text-sm text-slate-400">已擷取 47 張圖片</span>
+                            <span class="text-sm text-slate-400">已擷取：47</span>
                         </div>
 
                         <!-- Captured Items List -->
-                        <div class="mb-4">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i data-lucide="images" class="w-4 h-4 text-cyan-400"></i>
-                                <span class="text-sm font-bold text-white">擷取佇列</span>
-                                <span class="ml-auto text-xs text-slate-500">47 個項目</span>
+                        <div class="mb-4 space-y-2">
+                            <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                <i data-lucide="folder" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+                                <p class="text-sm text-white">儲存到 grok_downloads/stream/</p>
                             </div>
-                            <div class="space-y-2">
-                                <!-- Item 1 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-600/40 to-blue-600/40 rounded-lg"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_001.jpg</p>
-                                        <p class="text-xs text-slate-500">1024 x 1024 · 2.4 MB</p>
-                                    </div>
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                </div>
-                                <!-- Item 2 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-600/40 to-pink-600/40 rounded-lg"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_002.jpg</p>
-                                        <p class="text-xs text-slate-500">1024 x 1024 · 1.8 MB</p>
-                                    </div>
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                </div>
-                                <!-- Item 3 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg border border-cyan-500/30">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-600/40 to-cyan-600/40 rounded-lg animate-pulse"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_003.jpg</p>
-                                        <p class="text-xs text-cyan-400">擷取中...</p>
-                                    </div>
-                                    <i data-lucide="loader" class="w-4 h-4 text-cyan-400 flex-shrink-0 animate-spin"></i>
-                                </div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+                                <p class="text-sm text-slate-300">重新整理或關閉分頁前請先下載</p>
                             </div>
                         </div>
 
@@ -510,11 +492,11 @@
                         <div class="grid grid-cols-2 gap-2">
                             <button class="bg-cyan-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="download" class="w-4 h-4"></i>
-                                全部下載 (47)
+                                下載已擷取圖片
                             </button>
                             <button class="bg-slate-700 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                清除佇列
+                                清除已擷取
                             </button>
                         </div>
                     </div>
@@ -576,7 +558,7 @@
                             </td>
                             <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row3_manual">容易遺漏新內容</td>
                             <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
-                                <span class="text-cyan-300" data-i18n="stream_compare_row3_stream">即時擷取所有內容</span>
+                                <span class="text-cyan-300" data-i18n="stream_compare_row3_stream">擷取出現在頁面上的生成圖片（約 120 KB 以上）</span>
                             </td>
                         </tr>
                         <tr class="border-b border-slate-800/50">
@@ -588,7 +570,7 @@
                             </td>
                             <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row4_manual">高 — 需要持續監控</td>
                             <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
-                                <span class="text-cyan-300" data-i18n="stream_compare_row4_stream">零 — 正常瀏覽，背景自動擷取</span>
+                                <span class="text-cyan-300" data-i18n="stream_compare_row4_stream">低——照常創作，在該分頁自動擷取</span>
                             </td>
                         </tr>
                         <tr>
@@ -611,7 +593,7 @@
             <div class="mt-12 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="check-circle" class="text-cyan-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="stream_compare_summary">Stream Capture 消除了繁瑣的逐一點擊儲存流程。只需正常瀏覽 Grok，讓擴充功能自動收集每一張圖片。</p>
+                    <p class="text-slate-300 text-sm" data-i18n="stream_compare_summary">串流擷取省去一張張點擊儲存的流程。照常在 Grok Imagine 創作，讓擴充功能在該分頁收集生成的圖片。</p>
                 </div>
             </div>
         </div>
@@ -626,32 +608,32 @@
             </div>
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Stream Capture 能在所有 Grok 頁面上運作嗎？</h3>
-                    <p class="text-slate-400">可以。Stream Capture 監控任何 Grok 產生圖片的頁面，包含主頁面、個別貼文頁面及搜尋結果。採用 DOM 觀察技術，只要 Grok 渲染新圖片，就能自動偵測。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Stream Capture 會擷取什麼？在哪裡使用？</h3>
+                    <p class="text-slate-400">它會監看你開啟功能的 grok.com 分頁，收集你在 Imagine 創作時 Grok 串流到頁面上的生成圖片。縮圖、圖示等小圖（約 120 KB 以下）會被忽略，而且只擷取圖片，不擷取影片。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">一次監控可以捕捉多少張圖片？</h3>
-                    <p class="text-slate-400">沒有數量上限。Stream Capture 可以在單次監控期間排入數百張圖片。佇列儲存於 IndexedDB，即使切換分頁或關閉擴充功能面板也不會遺失。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">最多可以擷取幾張？</h3>
+                    <p class="text-slate-400">每次最多 1,000 張。達到 1,000 張時會停止，並請你先下載並清除已擷取的圖片再繼續。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Stream Capture 會讓瀏覽器變慢嗎？</h3>
-                    <p class="text-slate-400">不會。Stream Capture 使用 Chrome 原生的 MutationObserver API，效率極高。觀察器只在 DOM 變更時才會觸發，在沒有主動產生圖片時 CPU 使用率接近零。背景 Service Worker 負責佇列管理，不會阻塞主執行緒。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">如何儲存擷取的圖片？</h3>
+                    <p class="text-slate-400">在彈出視窗點「📥 下載已擷取圖片」。檔案會存到下載資料夾中的 grok_downloads/stream（路徑可在設定中修改），檔名為 grok_stream_ 加上擷取時間。「清除已擷取」會清空清單。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">可以暫停和恢復監控嗎？</h3>
-                    <p class="text-slate-400">可以。在擴充功能面板中點擊「停止監控」即可暫停。之前捕捉的圖片仍保留在佇列中。再次點擊「開始 Stream Capture」即可繼續，新圖片會加入同一佇列。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">重新整理或關閉分頁後，擷取的圖片還在嗎？</h3>
+                    <p class="text-slate-400">不在。擷取的圖片在下載前只暫存在該 grok.com 分頁的記憶體中，請在重新整理或關閉分頁前先下載。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Stream Capture 會自動去除重複圖片嗎？</h3>
-                    <p class="text-slate-400">會。Stream Capture 使用雜湊比對來偵測並跳過已在收藏或目前佇列中的圖片，避免在上滑或重新瀏覽貼文時重複下載同一張圖片。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">可以暫停後再繼續擷取嗎？</h3>
+                    <p class="text-slate-400">可以。關閉「啟用」開關就會停止監看新圖片，已擷取的圖片仍保留在清單中；再次開啟即可繼續加入同一份清單。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Stream Capture 支援哪些圖片格式？</h3>
-                    <p class="text-slate-400">Stream Capture 以 Grok 提供的原始格式下載圖片，通常為 JPEG 和 PNG。下載過程中不會對圖片進行重新編碼或壓縮，保留原始解析度和品質。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">同一張圖片會被擷取兩次嗎？</h3>
+                    <p class="text-slate-400">不會。每張新圖片都會與這次已擷取的圖片比對，再次出現的圖片不會重複加入。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Stream Capture 是免費功能嗎？</h3>
-                    <p class="text-slate-400">Stream Capture 是 PRO 專屬功能。免費版支援可見圖片的手動批次下載。升級至 PRO（$4.99 終身授權）可解鎖 Stream Capture、Video Gen Queue、Story Mode 和 Project Download。</p>
+                    <p class="text-slate-400">不是，Stream Capture 是 PRO 功能。免費版可以從收藏、標籤或媒體庫最近 7 天批次下載圖片。升級至 PRO（$4.99 一次付清、終身授權）即可解鎖 Stream Capture，以及影片下載、Story Mode 匯出、Project Download 和不限次數的 Video Gen Queue。</p>
                 </div>
             </div>
         </div>

@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Story Mode Helper | 影片故事創作工作室 - GrokMediaDownloader</title>
-    <meta name="description" content="用 Grok AI 影片創作故事。視覺化分鏡、畫面擷取、送至 Grok 生成續集、本地 FFmpeg 合併。GrokMediaDownloader PRO 功能。">
+    <meta name="description" content="用 Grok AI 影片創作故事。視覺化分鏡、畫面擷取、送至 Grok 生成續集、本地 FFmpeg 合併。排列片段免費，匯出需要 GrokMediaDownloader PRO。">
     <meta name="keywords" content="Story Mode Helper, Video Studio, Storyboard, 畫格擷取, Frame Extraction, Send Frame to Grok, FFmpeg, 影片合併, Grok AI video, Chrome extension">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -92,31 +92,47 @@
           "name": "GrokMediaDownloader 的 Story Mode 是什麼？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Story Mode 讓你將下載的 Grok AI 圖片整合成可捲動的視覺故事或幻燈片。你可以按照有意義的順序排列圖片、預覽整體流程，並將整個故事匯出為單一檔案。"
+            "text": "Story Mode Helper 是擴充功能側邊欄裡的影片工作室。你可以把 Grok 影片加入分鏡並排列順序，從任一片段挑選畫格送回 Grok 生成下一段，最後用 FFmpeg 在本機把所有片段合併成一部影片。排列片段免費，匯出合併後的影片需要 PRO。"
           }
         },
         {
           "@type": "Question",
-          "name": "如何從我的 Grok 圖片建立故事？",
+          "name": "如何把影片加入分鏡？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "開啟擴充功能中的 Story Mode 面板，從收藏中選取圖片，透過拖放方式排列順序，然後點擊「建立故事」。故事會立即生成並可供預覽或匯出。"
+            "text": "在彈出視窗點 🛠️ Story Mode 開啟側邊欄。把電腦裡的影片檔拖進去，或從 Grok 貼文拖入影片；在 Grok 的收藏頁面，可以點影片上的 Add to Story Mode 按鈕。第一部影片會成為 Master Video，決定最終匯出的解析度與影格率。"
           }
         },
         {
           "@type": "Question",
-          "name": "可以自訂故事中圖片的順序嗎？",
+          "name": "可以調整片段順序嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "可以。Story Mode 提供拖放式重新排序介面，讓你在完成故事前自由調整圖片順序。設定的順序會保留在匯出的成品中。"
+            "text": "可以。在分鏡中拖曳片段即可重新排序，點一下片段可預覽，不需要的片段可以移除。「清除全部」會清空分鏡。"
           }
         },
         {
           "@type": "Question",
-          "name": "Story Mode 支援哪些匯出格式？",
+          "name": "如何用 Grok 接續生成下一段？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Story Mode 可以將圖片序列匯出為包含排序圖片的 ZIP 壓縮檔，或匯出為可在任何瀏覽器中開啟的獨立 HTML 幻燈片檔案。"
+            "text": "選取一個片段，用「幀選擇器」挑選畫格（預設為最後一格）。選擇模式並視需要輸入提示詞，再點「傳送畫格並生成影片」：Grok 會開啟並帶入該畫格，讓你生成下一段。該畫格接著會被鎖定；若不是最後一格，匯出時片段會在該處截斷，讓下一段順暢銜接。「下載畫格」可將畫格存成 PNG。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "「匯出最終影片」會產生什麼？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "依分鏡順序把所有片段合併成一部 MP4，存到你的影片下載資料夾。解析度與 Master Video 不同的片段會縮放到一致（會先提醒你），沒有聲音的片段會補上靜音音軌，也可以用「包含音軌」決定是否保留聲音。合併由瀏覽器中的 FFmpeg 在本機完成，不會上傳任何檔案。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "關閉側邊欄後，分鏡會保留嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "會。影片、擷取的畫格與片段順序都儲存在瀏覽器的 IndexedDB 中，重新開啟面板時分鏡仍在。面板會顯示目前使用的儲存空間；「開始新專案」或「清除全部」會刪除已儲存的影片。"
           }
         },
         {
@@ -124,7 +140,7 @@
           "name": "Story Mode 是免費還是 PRO 功能？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Story Mode 是 PRO 專屬功能。升級至 GrokMediaDownloader PRO（$4.99 終身授權）即可解鎖 Story Mode 以及 Stream Capture、Video Gen Queue 和 Project Download。"
+            "text": "兩者都有。免費版可以把片段加入分鏡並排列順序；匯出合併後的影片需要 PRO（$4.99 一次付清、終身授權），PRO 同時解鎖影片下載、Stream Capture、Project Download 與不限次數的 Video Gen Queue。"
           }
         }
       ]
@@ -197,7 +213,7 @@
             <div class="text-center max-w-4xl mx-auto">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wide mb-6">
                     <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
-                    <span data-i18n="story_badge">PRO 專屬功能</span>
+                    <span data-i18n="story_badge">匯出需 PRO</span>
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -305,7 +321,7 @@
                         <i data-lucide="layout-grid" class="text-purple-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_1_title">Storyboard 故事板</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="story_feat_1_desc">視覺化拖放排序影片片段，直覺管理您的影片時間軸。支援從 Grok 收藏一鍵添加影片。</p>
+                    <p class="text-slate-400 text-sm" data-i18n="story_feat_1_desc">以拖放方式管理影片片段，直覺排列時間軸。可拖入本機影片或從 Grok 貼文拖入；在 Grok 的收藏頁面，面板開啟時影片上會出現 Add to Story Mode 按鈕。</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -355,7 +371,7 @@
                             <i data-lucide="plus-circle" class="text-purple-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_1_title">添加影片到工作室</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_1_desc">從 Grok 收藏頁面點擊「Add to Studio」按鈕，或直接拖放本地影片到 Side Panel。</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_1_desc">把本機影片拖進側邊欄，或從 Grok 貼文拖入影片。在 Grok 的收藏頁面，點影片上的 Add to Story Mode。</p>
                     </div>
                 </div>
 
@@ -379,7 +395,7 @@
                             <i data-lucide="wand-2" class="text-blue-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_3_title">擷取畫格生成續集</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_3_desc">選擇片段，透過膠捲瀏覽選取任意畫格，輸入提示詞發送到 Grok。Frame Lock 確保無縫延續。</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_3_desc">選取片段，在影格條中挑選任一畫格，輸入提示詞後送到 Grok。Frame Lock 會把該畫格標記為匯出時片段的截斷點。</p>
                     </div>
                 </div>
 
@@ -391,7 +407,7 @@
                             <i data-lucide="download" class="text-emerald-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_4_title">合併輸出</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_4_desc">所有片段準備好後，點擊匯出按鈕，FFmpeg 會在本地合併所有影片並下載。</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_4_desc">所有片段準備好後，點「匯出最終影片」（PRO）。FFmpeg 會在本機合併片段，完成後可下載 MP4。</p>
                     </div>
                 </div>
             </div>
@@ -514,11 +530,11 @@
                         <div class="grid grid-cols-2 gap-2">
                             <button class="bg-purple-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="send" class="w-4 h-4"></i>
-                                Send to Grok
+                                傳送畫格並生成影片
                             </button>
                             <button class="bg-emerald-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="download" class="w-4 h-4"></i>
-                                Merge & Export
+                                匯出最終影片
                             </button>
                         </div>
                     </div>
@@ -585,7 +601,7 @@
                     </div>
                     <div class="md:w-1/2 md:pl-12">
                         <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step4_title">4. 傳送畫面至 Grok</h3>
-                        <p class="text-slate-400" data-i18n="story_wf_step4_desc">點擊「Send to Grok」開啟 Grok Imagine，擷取的畫面會自動上傳。畫面已預載好，你可以立即撰寫提示詞。</p>
+                        <p class="text-slate-400" data-i18n="story_wf_step4_desc">點「傳送畫格並生成影片」，Grok Imagine 會開啟並已上傳擷取的畫格，你可以直接輸入提示詞。</p>
                     </div>
                 </div>
 
@@ -593,7 +609,7 @@
                 <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
                     <div class="md:w-1/2 md:text-right md:pr-12">
                         <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step5_title">5. 生成續篇影片</h3>
-                        <p class="text-slate-400" data-i18n="story_wf_step5_desc">撰寫描述接下來劇情的提示詞。Grok 會生成一段從上一段影片最後一幀無縫銜接的新影片。</p>
+                        <p class="text-slate-400" data-i18n="story_wf_step5_desc">輸入提示詞描述接下來的情節。Grok 會從該畫格開始生成新影片，接續上一段的結尾。</p>
                     </div>
                     <div class="hidden md:flex w-12 h-12 bg-amber-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-amber-500/50">
                         <i data-lucide="sparkles" class="text-amber-400 w-5 h-5"></i>
@@ -618,7 +634,7 @@
             <div class="mt-16 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-purple-500/10 border border-purple-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="infinity" class="text-purple-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="story_wf_loop_note">這個迭代循環讓你可以建構任意長度的影片故事 — 將 5、10 或 50 個以上的片段串接成一個連續的敘事，然後一鍵合併。</p>
+                    <p class="text-slate-300 text-sm" data-i18n="story_wf_loop_note">透過這個循環，你可以一段接一段串成連續的故事，最後用「匯出最終影片」（PRO）全部合併。</p>
                 </div>
             </div>
         </div>
@@ -634,31 +650,31 @@
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">GrokMediaDownloader 的 Story Mode 是什麼？</h3>
-                    <p class="text-slate-400">Story Mode 讓你將下載的 Grok AI 圖片整合成可捲動的視覺故事或幻燈片。不再只是平鋪的圖片資料夾，你可以按照有意義的順序排列圖片、預覽整體流程，並將整個故事匯出為單一檔案。特別適合使用 Grok 製作圖片系列或視覺敘事的創作者。</p>
+                    <p class="text-slate-400">Story Mode Helper 是擴充功能側邊欄裡的影片工作室。你可以把 Grok 影片加入分鏡並排列順序，從任一片段挑選畫格送回 Grok 生成下一段，最後用 FFmpeg 在本機把所有片段合併成一部影片。排列片段免費，匯出合併後的影片需要 PRO。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">如何從我的 Grok 圖片建立故事？</h3>
-                    <p class="text-slate-400">開啟擴充功能中的 Story Mode 面板，從收藏中選取圖片，透過拖放方式排列順序，然後點擊「建立故事」。故事會立即生成並可供預覽或匯出。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">如何把影片加入分鏡？</h3>
+                    <p class="text-slate-400">在彈出視窗點 🛠️ Story Mode 開啟側邊欄。把電腦裡的影片檔拖進去，或從 Grok 貼文拖入影片；在 Grok 的收藏頁面，可以點影片上的 Add to Story Mode 按鈕。第一部影片會成為 Master Video，決定最終匯出的解析度與影格率。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">可以自訂故事中圖片的順序嗎？</h3>
-                    <p class="text-slate-400">可以。Story Mode 提供拖放式重新排序介面，讓你在完成故事前自由調整圖片順序。設定的順序會保留在匯出的成品中。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">可以調整片段順序嗎？</h3>
+                    <p class="text-slate-400">可以。在分鏡中拖曳片段即可重新排序，點一下片段可預覽，不需要的片段可以移除。「清除全部」會清空分鏡。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">一個故事可以包含多少張圖片？</h3>
-                    <p class="text-slate-400">Story Mode 每個故事支援數百張圖片。為了最佳效能，建議每個故事保持在 100 張以內，但擴充功能本身並沒有嚴格的數量上限。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">如何用 Grok 接續生成下一段？</h3>
+                    <p class="text-slate-400">選取一個片段，用「幀選擇器」挑選畫格（預設為最後一格）。選擇模式並視需要輸入提示詞，再點「傳送畫格並生成影片」：Grok 會開啟並帶入該畫格，讓你生成下一段。該畫格接著會被鎖定；若不是最後一格，匯出時片段會在該處截斷，讓下一段順暢銜接。「下載畫格」可將畫格存成 PNG。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Story Mode 支援哪些匯出格式？</h3>
-                    <p class="text-slate-400">Story Mode 可以將圖片序列匯出為包含排序圖片的 ZIP 壓縮檔，或匯出為可在任何瀏覽器中開啟的獨立 HTML 幻燈片檔案。更多匯出格式可能會在未來的 PRO 更新中加入。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">「匯出最終影片」會產生什麼？</h3>
+                    <p class="text-slate-400">依分鏡順序把所有片段合併成一部 MP4，存到你的影片下載資料夾。解析度與 Master Video 不同的片段會縮放到一致（會先提醒你），沒有聲音的片段會補上靜音音軌，也可以用「包含音軌」決定是否保留聲音。合併由瀏覽器中的 FFmpeg 在本機完成，不會上傳任何檔案。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">可以為故事中的圖片加入說明文字嗎？</h3>
-                    <p class="text-slate-400">可以。Story Mode 允許為每張圖片加入文字說明。說明文字會顯示在故事檢視的圖片下方，並包含在匯出的 HTML 幻燈片中，讓你可以輕鬆為每個畫面添加背景資訊或旁白。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">關閉側邊欄後，分鏡會保留嗎？</h3>
+                    <p class="text-slate-400">會。影片、擷取的畫格與片段順序都儲存在瀏覽器的 IndexedDB 中，重新開啟面板時分鏡仍在。面板會顯示目前使用的儲存空間；「開始新專案」或「清除全部」會刪除已儲存的影片。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Story Mode 是免費還是 PRO 功能？</h3>
-                    <p class="text-slate-400">Story Mode 是 PRO 專屬功能。升級至 GrokMediaDownloader PRO（$4.99 終身授權）即可解鎖 Story Mode 以及 Stream Capture、Video Gen Queue 和 Project Download。</p>
+                    <p class="text-slate-400">兩者都有。免費版可以把片段加入分鏡並排列順序；匯出合併後的影片需要 PRO（$4.99 一次付清、終身授權），PRO 同時解鎖影片下載、Stream Capture、Project Download 與不限次數的 Video Gen Queue。</p>
                 </div>
             </div>
         </div>
@@ -668,7 +684,7 @@
     <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">開始創作您的影片故事</h2>
-            <p class="text-slate-400 mb-8">Story Mode Helper 是 PRO 版專屬功能</p>
+            <p class="text-slate-400 mb-8">排列片段免費，匯出合併後的影片需要 PRO</p>
 
             <div class="inline-flex flex-col sm:flex-row gap-4">
                 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=story-mode&amp;utm_content=bottom_cta&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">

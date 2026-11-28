@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // GA4: never load or send from local dev/test hosts (localhost, 127.0.0.1). Production only.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            window['ga-disable-G-6YPN8563C6'] = true;
+        } else {
+            var gtagScript = document.createElement('script'); gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6';
+            document.head.appendChild(gtagScript);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grok Imagineの動画をプロンプト付きで保存する方法 | GrokMediaDownloader</title>
+    <meta name="description" content="Grok Imagineの動画や画像をダウンロードするときにプロンプトも残す方法。プロンプトをファイル名にする、独自の命名テンプレートを使う、ファイルごとに.jsonを保存する。手順付きで解説します。">
+    <meta name="keywords" content="Grok Imagine プロンプト 保存, Grok プロンプト ファイル名, Grok 動画 プロンプト ダウンロード, Grok メタデータ json, Grok ファイル名 テンプレート, GrokMediaDownloader">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/ja/save-grok-imagine-prompts.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/save-grok-imagine-prompts.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/save-grok-imagine-prompts.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/ja/save-grok-imagine-prompts.html">
+    <meta property="og:title" content="Grok Imagineの動画をプロンプト付きで保存する">
+    <meta property="og:description" content="Grok Imagineの動画や画像をダウンロードするときにプロンプトも残す方法。プロンプトをファイル名にする、独自の命名テンプレートを使う、ファイルごとに.jsonを保存する。手順付きで解説します。">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grok Imagineの動画をプロンプト付きで保存する">
+    <meta name="twitter:description" content="Grok Imagineの動画や画像をダウンロードするときにプロンプトも残す方法。プロンプトをファイル名にする、独自の命名テンプレートを使う、ファイルごとに.jsonを保存する。手順付きで解説します。">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Grok Imagineの動画をプロンプト付きで保存する",
+      "description": "Grok Imagineの動画や画像をダウンロードするときにプロンプトも残す方法。プロンプトをファイル名にする、独自の命名テンプレートを使う、ファイルごとに.jsonを保存する。手順付きで解説します。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28",
+      "author": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "url": "https://www.kario-studio.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://grokmedia.kario-studio.com/assets/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://grokmedia.kario-studio.com/ja/save-grok-imagine-prompts.html"
+      },
+      "image": "https://grokmedia.kario-studio.com/assets/og-image.jpg"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://grokmedia.kario-studio.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grok Imagineの動画をプロンプト付きで保存する",
+          "item": "https://grokmedia.kario-studio.com/ja/save-grok-imagine-prompts.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Grok Imagineの動画をプロンプト付きで自動的にダウンロードできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。⚙️ 設定で「プロンプト使用」か{prompt}を含むカスタムテンプレートを選び、完全なプロンプトも.jsonで残したい場合は📋 メタデータを保存をオンにします。以降にダウンロードするファイルにはすべてプロンプトが付きます。動画のダウンロードにはPROが必要で、画像は無料版で使えます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "プロンプトの保存は無料ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。ファイル名の形式、カスタムテンプレート、.jsonファイルは誰でも無料で使えます。$4.99の買い切りのPROでは、動画のダウンロード、直近7日間より前のライブラリ、日付フィルターが追加されます。詳しくは料金ページをご覧ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ファイル名が短縮された場合、完全なプロンプトはどこにありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "メディアファイルの横にある.jsonファイルです。📋 メタデータを保存がオンのときに作られます。ファイル名は扱いやすい長さに切り詰められますが、.jsonファイルには記録されたとおりのプロンプトが保存されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "日本語や中国語のプロンプトにも対応していますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。削除されるのはファイル名に使えない文字だけで、日本語、中国語、韓国語、アクセント付きの文字は入力したとおりにファイル名に残ります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "画像から作った動画にはどのプロンプトが使われますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "動画に独自のプロンプトがあればそれが使われます。独自のプロンプトがない動画には元の画像のプロンプトが使われるので、意味のある名前になります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "プロンプトがどこかにアップロードされることはありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ありません。拡張機能はブラウザ内で動作し、ファイルはGrokからパソコンに直接保存されます。外部で通信するのは、PROキーを確認するためのKario Studioのライセンスサーバーだけです。"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css?v=20261119">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(219, 39, 119, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">メインコンテンツへスキップ</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ja/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ja/" class="text-sm text-slate-300 hover:text-white">ホーム</a><a href="/ja/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">ライブラリ全体DL</a><a href="/ja/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">ストーリーモード</a><a href="/ja/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">動画生成キュー</a><a href="/ja/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">ストリームキャプチャ</a><a href="/ja/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">プロジェクトDL</a><a href="/ja/pricing.html" class="text-sm text-slate-300 hover:text-white">料金</a><a href="/ja/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+    <section class="relative pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+                <span>使い方ガイド</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight"><span class="gradient-text">Grok Imagineの動画をプロンプト付きで保存する</span></h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto">プロンプトをファイル名に入れる、自分の命名ルールを使う、または完全なプロンプトを.jsonファイルとして各ファイルの横に保存できます。</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=save-grok-imagine-prompts&amp;utm_content=hero&amp;utm_term=ja" target="_blank" rel="noopener" class="px-8 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>Chromeに追加</span>
+                </a>
+                <a href="/ja/pricing.html" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                    <span>PROの料金を見る</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-xs mt-6">2026年11月28日更新 · 拡張機能バージョン2.6.3に基づく</p>
+        </div>
+    </section>
+
+    <!-- Short answer -->
+    <section class="pb-16 bg-slate-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-pink-500/30 bg-pink-500/5 p-6 md:p-8">
+                <h2 class="text-sm font-semibold uppercase tracking-wide text-pink-300 mb-3">結論</h2>
+                <p class="text-slate-200 text-lg leading-relaxed">GrokMediaDownloaderをインストールし、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok.com/library</code>を開きます。ポップアップで<strong>⚙️ 設定</strong>を開き、📝 ファイル名形式で<strong>プロンプト使用</strong>を選ぶか、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code>を含む<strong>カスタムテンプレート</strong>を設定します。<strong>📋 メタデータを保存</strong>をオンにすると、完全なプロンプトを含む.jsonファイルも各ファイルの横に保存されます。あとは<strong>1. リスト生成</strong>と<strong>2. ダウンロード開始</strong>をクリックするだけです。ファイル名とメタデータの設定は無料で、画像に使えます。動画のダウンロードには<a href="/ja/pricing.html" class="underline hover:text-pink-300">PRO</a>が必要です。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">プロンプトを残す3つの方法</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">3つは組み合わせて使えます。どれも拡張機能のポップアップの設定で、Grok側のデータは何も変更しません。</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="file-text" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">ファイル名にプロンプトを入れる</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">「プロンプト使用」形式では <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">img_20261128143015_a_red_fox_in_fresh_snow_1a2b3c4d.jpg</code> のような名前になり、パソコン上でプロンプトから検索できます。</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="braces" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">自分の命名ルール</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">「カスタムテンプレート」では <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{date}</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code> などのトークンを組み合わせ、整理しやすい名前を作れます。</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="file-json" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">完全なプロンプトを.jsonに</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">「メタデータを保存」は、ダウンロードした各ファイルの横に小さな.jsonファイルを書き出します。完全なプロンプト、作成日時、IDに加え、動画の場合は保存した画質も記録されます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">プロンプト保存の無料版とPRO</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">ファイル名とメタデータに関する機能はすべて無料です。PROで追加されるのは動画のダウンロードとライブラリ全体です。</p>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[640px] border-collapse text-sm">
+                    <thead><tr class="border-b border-slate-700"><th class="text-left py-3 px-4 text-slate-300 font-semibold"></th><th class="text-left py-3 px-4 text-slate-300 font-semibold">無料版</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">PRO</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">プロンプト使用のファイル名とカスタムテンプレート</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">📋 メタデータを保存（ファイルごとに.json）</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">画像のダウンロード</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">動画のダウンロード</td><td class="py-3 px-4 text-slate-400">✗（画像のみ）</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">📦 すべての生成メディア（ライブラリ全体）</td><td class="py-3 px-4 text-slate-400">直近7日間</td><td class="py-3 px-4 text-slate-400">ライブラリ全体</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">プロジェクト別フォルダとmetadata.json</td><td class="py-3 px-4 text-slate-400">標準モード（プロジェクトフォルダは動画が中心）</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-4">PROは$4.99の買い切りで、今後のアップデートも含まれます。詳しくは<a href="/ja/pricing.html" class="underline hover:text-pink-300">料金ページ</a>をご覧ください。</p>
+        </div>
+    </section>
+
+    <section id="steps" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">手順</h2>
+            <ol class="space-y-8">
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">1</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 1: </span>拡張機能をインストールしてGrokを開く</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3"><a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=save-grok-imagine-prompts&amp;utm_content=steps&amp;utm_term=ja" target="_blank" rel="noopener" class="underline hover:text-pink-300">Chromeウェブストア</a>からGrokMediaDownloaderを追加し、アイコンをツールバーに固定します。同じChromeプロフィールでGrokにログインしておいてください。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok.com/library</code>を開きます。バージョン2.6.3以降はgrok.comのどのページでも動作します。grok.com以外のタブでは、ポップアップが先にGrokを開くよう案内します。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">2</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 2: </span>ファイル名形式を選ぶ</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">拡張機能のアイコンをクリックしてポップアップを開き、<strong>⚙️ 設定</strong>を展開します。PROで簡易表示を使っている場合は、簡易表示では設定が隠れるため、先にポップアップ上部の<strong>全部</strong>をクリックしてください。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3"><strong>📝 ファイル名形式</strong>で<strong>プロンプト使用</strong>を選ぶと、日付・時刻・プロンプトからなる名前になります。並び順を自分で決めたい場合は<strong>カスタムテンプレート</strong>を選び、<strong>画像：</strong>と<strong>動画：</strong>の欄にパターンを入力します。<strong>Grok ネイティブ</strong>はプロンプトを含まない、IDベースの短い名前のままです。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">設定は変更した時点で自動的に保存されます。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/ja/popup-filenames.jpg" alt="GrokMediaDownloaderの設定画面：ファイル名形式（Grok ネイティブ、プロンプト使用、カスタムテンプレート）とメタデータを保存のオプション" width="336" height="499" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">設定：3つのファイル名形式と📋 メタデータを保存。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">3</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 3: </span>「メタデータを保存」で完全なプロンプトを残す</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">同じセクションで<strong>📋 メタデータを保存</strong>（「画像/動画情報を含む.jsonファイルも保存（プロンプト、解像度など）」）をオンにします。以降、画像や動画ごとに同じ名前の.jsonファイルが横に保存されます。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">長いプロンプトはファイル名では短縮されるため、完全なプロンプトは.jsonファイルに残ります。Grok ネイティブを含め、どのファイル名形式とも組み合わせられます。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">4</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 4: </span>ダウンロード元を選んでリストを生成する</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3"><strong>📥 ダウンロード元とフィルター</strong>で、<strong>📦 すべての生成メディア（会話別）</strong>（初期設定、ライブラリ全体）、<strong>🌟 お気に入り</strong>、<strong>🏷️ タグ</strong>のいずれかを選びます。<strong>🎬 メディアタイプ</strong>では🖼️ 画像をオンのままにします。🎬 動画 (Pro)はPROでオンにできます。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3"><strong>1. リスト生成</strong>をクリックします。設定でプロンプトを使う場合、ボタンに<strong>📝 プロンプト取得中</strong>とカウンターが表示され、各アイテムを生成した会話からプロンプトを取得します。自分のプロンプトを持たない動画には、元になった画像のプロンプトが使われます。一度取得したプロンプトはローカルのキャッシュに残るため、2回目以降は速く終わります。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">スキャンが終わると<strong>📊 ダウンロード概要</strong>のダイアログが開き、ダウンロードする画像と動画の数、画質ごとの動画の数が表示され、「ダウンロードを開始しますか？」と確認されます。OKを押すとすぐにダウンロードが始まります。キャンセルを押すとダイアログが閉じ、<strong>2. ダウンロード開始</strong>は押せる状態のまま残るので、先に設定を確認できます。下のスクリーンショットはその状態です。</p>
+                        <figure class="mt-4 mb-2">
+                            <div class="max-w-sm mx-auto rounded-lg bg-white text-slate-800 shadow-lg p-4 font-mono text-xs leading-relaxed" style="white-space:pre-wrap" role="note">📊 ダウンロード概要
+
+🖼️ 画像：1248 件ダウンロード予定（0 件完了済み）
+🎬 動画：336 件ダウンロード予定（0 件完了済み）
+    ├ 💎 1080p：14
+    ├ ✨ HD：88
+    ├ 🎥 720p：52
+    └ 📦 SD：196
+
+ブラウザを閉じないでください。
+ダウンロードを開始しますか？
+
+⚠️ 250 本以上の動画がダウンロード待ちです。250 本ごとに一時停止し、3 分後に自動再開します。</div>
+                            <figcaption class="mt-2 text-center text-xs text-slate-500">拡張機能に表示されるダイアログの文面（数字は例）。</figcaption>
+                        </figure>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/ja/popup-list-ready.jpg" alt="リスト生成後のポップアップ：ダウンロード対象の画像と動画の数、有効になったダウンロード開始ボタン" width="336" height="837" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">1. リスト生成の後：合計、ダウンロード済み、未ダウンロードの数。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">5</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 5: </span>ダウンロードを開始する</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">概要でキャンセルを押した場合は、ここで<strong>2. ダウンロード開始</strong>をクリックします。プログレスバーに進み具合と残り時間の目安が表示されます。<strong>⏹ ダウンロード中止</strong>で一時停止し、<strong>▶ ダウンロード再開</strong>で続きから再開できます。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">ダウンロード元ごとに履歴が記録されるため、もう一度実行しても保存済みのファイルはスキップされます。Grokの制限を超えないよう、動画250本ごとに一時停止し（初期設定は3分、⚙️ 設定で変更可能）、その後自動で再開します。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/ja/popup-downloading.jpg" alt="ダウンロード中のポップアップ：残り時間の目安付きプログレスバーとダウンロード中止ボタン" width="336" height="726" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">ダウンロード中：進行状況、残り時間、⏹ ダウンロード中止。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">6</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 6: </span>ファイルとプロンプトを確認する</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">ファイルはChromeのダウンロードフォルダ内の<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok_downloads/</code>に保存されます。お気に入りは<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">images/</code>と<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">videos/</code>、タグは<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">tags/</code>の下にタグごとのフォルダ、ライブラリ全体は<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">conversations/</code>の下に会話ごとのフォルダが作られます。会話フォルダの名前は日付、タイトルまたはプロンプト、短いIDの組み合わせです。これらのパスは⚙️ 設定で変更できます。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">メタデータを保存がオンなら、各メディアファイルの横に.jsonファイルが並びます。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <a href="/assets/guides/download-folders.jpg" target="_blank" rel="noopener" class="block"><img src="/assets/guides/download-folders.jpg" alt="grok_downloadsフォルダーの例（ファイル名は「プロンプト使用」）：conversations/ 内に会話ごとのフォルダー、ほかに images/、videos/、tags/、projects/ フォルダーがあり、画像の隣に .json ファイル、プロジェクトフォルダーに metadata.json がある" width="1280" height="1130" loading="lazy" class="w-full h-auto"></a>
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">grok_downloadsフォルダーの例（「プロンプト使用」のファイル名）：conversations/、images/、videos/、tags/、projects/ と、.json ファイル、プロジェクトの metadata.json。画像をタップすると原寸で開きます。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">「プロンプト使用」のファイル名の例</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">実際の形式はダウンロード元によって異なります。例ではプロンプト「a red fox in fresh snow」を使っています。</p>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[720px] border-collapse text-sm">
+                    <thead><tr class="border-b border-slate-700"><th class="text-left py-3 px-4 text-slate-300 font-semibold">ダウンロード元</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">画像</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">動画</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">📦 すべての生成メディア</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">img_20261128143015_a_red_fox_in_fresh_snow_1a2b3c4d.jpg</code></td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">vid_20261128143015_a_red_fox_in_fresh_snow_9e8d7c6b.mp4</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">🌟 お気に入り、🏷️ タグ</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">img_20261128143015_a_red_fox_in_fresh_snow.jpg</code></td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">hd_20261128143015_a_red_fox_in_fresh_snow.mp4</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-4">14桁の数字は作成日時（YYYYMMDDHHmmss）で、パソコンのタイムゾーンで表されます。</p>
+            <p class="text-slate-400 leading-relaxed mt-4">ライブラリ全体では、末尾にアイテムIDの最後の8文字が付きます。そのため同じプロンプトで同じ秒に作られた2つのアイテムでも名前が重なりません。</p>
+            <p class="text-slate-400 leading-relaxed mt-4">お気に入りとタグの動画は、ダウンロードした画質を示す<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hd_</code>または<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">sd_</code>で始まります。</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">カスタムテンプレートのトークン</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">カスタムテンプレートを選び、画像用と動画用のパターンをそれぞれ入力します。拡張機能が各トークンを置き換え、拡張子も自動で付けます。</p>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[640px] border-collapse text-sm">
+                    <thead><tr class="border-b border-slate-700"><th class="text-left py-3 px-4 text-slate-300 font-semibold">トークン</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">内容</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">例</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{date}</code></td><td class="py-3 px-4 text-slate-400">作成日</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">2026-11-28</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{time}</code></td><td class="py-3 px-4 text-slate-400">作成時刻（時・分・秒）</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">143015</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{datetime}</code></td><td class="py-3 px-4 text-slate-400">日付と時刻</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">2026-11-28_143015</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{id}</code></td><td class="py-3 px-4 text-slate-400">アイテムのGrok上の完全なID</td><td class="py-3 px-4 text-slate-400">完全なID</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code></td><td class="py-3 px-4 text-slate-400">IDの最後の8文字</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">1a2b3c4d</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code></td><td class="py-3 px-4 text-slate-400">ファイル名用に整えたプロンプト（最大80文字）</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">a_red_fox_in_fresh_snow</code></td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{quality}</code></td><td class="py-3 px-4 text-slate-400">お気に入りとタグの動画ではhdまたはsd。画像とライブラリ全体では空</td><td class="py-3 px-4 text-slate-400"><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hd</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-4">例：画像のパターンを<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{date}_{prompt}_{shortid}</code>にすると、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">2026-11-28_a_red_fox_in_fresh_snow_1a2b3c4d.jpg</code>になります。</p>
+            <p class="text-slate-400 leading-relaxed mt-4">認識できないトークンは削除されます。パターンに<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{id}</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{datetime}</code>のどれも含まれていない場合、ポップアップに「⚠ 一意トークンなし — ファイルが上書きされる可能性があります」と表示されます。どれか1つを加えれば、ファイルごとに別の名前になります。</p>
+            <p class="text-slate-400 leading-relaxed mt-4">プロンプトのないアイテムでは、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code>の代わりにIDの一部が入ります。テンプレート欄が空の場合、ファイル名はIDになります。</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">.jsonファイルの中身</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">📋 メタデータを保存がオンのとき、ダウンロードした各ファイルに同じ名前の.jsonファイルが付きます。プロンプトは記録されたとおりに保存され、ファイル名に使えない文字もそのまま残ります。含まれる項目は次のとおりです。</p>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4">
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">prompt</code>と<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">originalPrompt</code>：プロンプトの本文</li>
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">createTime</code>：アイテムの作成日時、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">downloadedAt</code>：保存した日時</li>
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">id</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">type</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">url</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">filename</code>：どのアイテムで、どこから取得したか</li>
+                <li><code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">userId</code>：あなたのGrokアカウントID</li>
+                <li>動画ではさらに<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hdUrl</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">detailUrl</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">downloadedQuality</code>（<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">hd</code>または<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">sd</code>）</li>
+            </ul>
+            <p class="text-slate-300 leading-relaxed mb-4">動画の場合の簡略化した例：</p>
+            <pre class="bg-slate-900 border border-slate-800 rounded-xl p-5 overflow-x-auto text-xs text-slate-300 font-mono mb-4">{
+  &quot;id&quot;: &quot;…&quot;,
+  &quot;type&quot;: &quot;video&quot;,
+  &quot;url&quot;: &quot;…&quot;,
+  &quot;filename&quot;: &quot;vid_20261128143015_a_red_fox_in_fresh_snow_9e8d7c6b.mp4&quot;,
+  &quot;createTime&quot;: &quot;2026-11-28T14:30:15.000Z&quot;,
+  &quot;prompt&quot;: &quot;a red fox in fresh snow, slow camera pan&quot;,
+  &quot;originalPrompt&quot;: &quot;a red fox in fresh snow, slow camera pan&quot;,
+  &quot;downloadedQuality&quot;: &quot;hd&quot;,
+  &quot;downloadedAt&quot;: &quot;2026-11-28T15:02:41.000Z&quot;
+}</pre>
+            <p class="text-slate-300 leading-relaxed mb-4">ファイルにはGrokのユーザーIDが含まれるため、フォルダを公開で共有するときは.jsonファイルを除いておくとよいでしょう。</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">プロジェクトフォルダとmetadata.json（お気に入り）</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">🌟 お気に入りをダウンロード元にすると、<strong>📂 ダウンロードモード</strong>で<strong>プロジェクト別</strong>を選べます。各プロジェクトフォルダには、元画像、その画像から生成した動画、そして<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">metadata.json</code>が1つ入ります。フォルダ名は日付、プロンプト、短いIDの組み合わせで、たとえば<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 break-all">20261128_a_red_fox_in_fresh_snow_1a2b3c4d</code>のようになります。</p>
+            <p class="text-slate-300 leading-relaxed mb-4">metadata.jsonには、フォルダのプロンプトと作成日時、元画像、生成した各動画のプロンプトとダウンロードリンク、画像と動画の数が記録されます。メタデータを保存の設定に関係なく、すべてのプロジェクトフォルダに書き出されます。標準モードでダウンロード済みのファイルはスキップされるため、完全なプロジェクトフォルダが必要な場合は、ポップアップの案内どおり先にダウンロード履歴をクリアしてください。</p>
+            <p class="text-slate-300 leading-relaxed mb-4">プロジェクトフォルダはお気に入りでのみ使えます。動画が中心のため、PROと組み合わせると便利です。なお2026年7月のGrokの変更以降、多くのアカウントで新しく生成したメディアがお気に入りに入らなくなっています。そうしたアイテムには📦 すべての生成メディアを使ってください。会話フォルダには、画像とそこから作った動画が最初から一緒に入ります。</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">ファイル名の長さと文字のルール</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">プロンプトはファイルシステム向けに書かれたものではないため、拡張機能はファイル名に使う前に次のように整えます。</p>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4">
+                <li>ファイル名に使えない文字（ <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">\ / : * ? " &lt; &gt; |</code> ）、改行、タブは削除されます。</li>
+                <li>スペースはアンダースコアになり、連続したアンダースコアは1つにまとめられます。</li>
+                <li>長いプロンプトは切り詰められます。ライブラリ全体の「プロンプト使用」の名前では100文字、お気に入りとタグでは120文字、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code>トークンでは80文字、プロジェクトフォルダ名では90文字までです。</li>
+                <li>@とIDで書かれた画像参照や、プロンプト末尾の<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">--mode=…</code>のようなオプションはファイル名に入りません。.jsonファイルには記録されたとおりのプロンプトが残ります。</li>
+                <li>日本語、中国語、韓国語などラテン文字以外の文字はそのまま残ります。</li>
+                <li>自分でアップロードした画像など、プロンプトのないアイテムはIDで名前が付きます。</li>
+            </ul>
+            <p class="text-slate-300 leading-relaxed mb-4">これらのルールは.jsonファイルには影響しません。メタデータを保存をオンにしておけば、完全なプロンプトは必ず残ります。</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">ポップアップにリストの再生成を求められたら</h2>
+            <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><i data-lucide="alert-triangle" class="text-amber-400 w-5 h-5"></i></div>
+                    <div class="space-y-3">
+                        <p class="text-slate-300 leading-relaxed">プロンプトの取得には時間がかかるため、拡張機能は設定で必要なときだけ取得します。対象は、プロンプト使用のファイル名、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{prompt}</code>を含むカスタムテンプレート、メタデータを保存の3つです。</p>
+                        <p class="text-slate-300 leading-relaxed">Grok ネイティブの名前でメタデータなしのままリストを生成し、その後これらのどれかをオンにすると、ポップアップに<strong>⚠️ プロンプト名／メタデータにはプロンプトが必要です。リストを再生成してください</strong>と表示されます。開始する前にもう一度<strong>1. リスト生成</strong>をクリックしてください。そうしないと、新しいファイルはプロンプトなしで保存されます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">トラブルシューティング</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">プロンプトを保存するときによくある問題と、それぞれの対処法です。</p>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">ファイル名がプロンプトではなくIDになる<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">よくある原因は3つです。アップロードした画像のように、そのアイテムにプロンプトがない場合。ファイル名の設定を変える前にリストを生成していた場合は、もう一度生成してください。古いバージョンの拡張機能で作ったリストの場合は、拡張機能を更新してからリストを生成し直してください。Chromeは拡張機能を自動で更新しますが、すぐに更新したいときはchrome://extensionsを開き、デベロッパーモードをオンにして「更新」をクリックします。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">「プロンプト名／メタデータにはプロンプトが必要です」と表示される<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">設定ではプロンプトを使うのに、今のリストはプロンプトなしで作られています。もう一度<strong>1. リスト生成</strong>をクリックしてから<strong>2. ダウンロード開始</strong>をクリックしてください。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">動画のチェックボックスがグレーで鍵マークが付いている<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">動画のダウンロードはPRO機能です。無料版でも、すべてのファイル名とメタデータの設定を使って画像をダウンロードできます。PROは$4.99の買い切りです（<a href="/ja/pricing.html" class="underline hover:text-pink-300">料金</a>）。購入後、GMD-…のキーをポップアップの<strong>🔑 ライセンス</strong>に貼り付けてください。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">リスト生成が「プロンプト取得中」のまま長く続く<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">初回は、リスト内のすべての会話からプロンプトを1つずつ取得するため、ライブラリが大きいと時間がかかります。Grokにレート制限された場合は、待ってから再試行します。2回目以降はローカルのプロンプトキャッシュを使うのでかなり速くなります。PROなら日付フィルターで大きなスキャンの範囲を絞ることもできます。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">2つのファイルが同じ名前になった<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">カスタムテンプレートに一意のトークンがありません。<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{shortid}</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{id}</code>、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">{datetime}</code>のいずれかを加えてください。ライブラリ全体の「プロンプト使用」の名前には最初から短いIDが付いています。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">形式を変えたのに、以前ダウンロードしたファイルの名前が変わらない<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">拡張機能はパソコンにすでにあるファイルの名前を変えません。また、ダウンロード履歴によってそれらはスキップされます。新しい名前で保存し直すには、<strong>🧹 クリア操作</strong>を開いて、そのダウンロード元の履歴を消去します。ライブラリ全体は「会話履歴を消去」、お気に入りは「ダウンロード履歴をリセット」、タグは「タグ履歴をクリア」です。その後リストを生成して開始してください。履歴を消去しても、Grok上やパソコン上のファイルは何も削除されません。</div>
+                </details>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-8">解決しない場合は、<a href="/ja/faq.html" class="underline hover:text-slate-300">よくある質問</a>でほかのケースも確認できます。<a href="/support.html" class="underline hover:text-slate-300">サポートへ連絡</a>からスタッフに問い合わせることもできます。</p>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">よくある質問</h2>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Grok Imagineの動画をプロンプト付きで自動的にダウンロードできますか？</h3>
+                    <p class="text-slate-400 leading-relaxed">はい。⚙️ 設定で「プロンプト使用」か{prompt}を含むカスタムテンプレートを選び、完全なプロンプトも.jsonで残したい場合は📋 メタデータを保存をオンにします。以降にダウンロードするファイルにはすべてプロンプトが付きます。動画のダウンロードにはPROが必要で、画像は無料版で使えます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">プロンプトの保存は無料ですか？</h3>
+                    <p class="text-slate-400 leading-relaxed">はい。ファイル名の形式、カスタムテンプレート、.jsonファイルは誰でも無料で使えます。$4.99の買い切りのPROでは、動画のダウンロード、直近7日間より前のライブラリ、日付フィルターが追加されます。詳しくは<a href="/ja/pricing.html" class="underline hover:text-pink-300">料金ページ</a>をご覧ください。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">ファイル名が短縮された場合、完全なプロンプトはどこにありますか？</h3>
+                    <p class="text-slate-400 leading-relaxed">メディアファイルの横にある.jsonファイルです。📋 メタデータを保存がオンのときに作られます。ファイル名は扱いやすい長さに切り詰められますが、.jsonファイルには記録されたとおりのプロンプトが保存されます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">日本語や中国語のプロンプトにも対応していますか？</h3>
+                    <p class="text-slate-400 leading-relaxed">はい。削除されるのはファイル名に使えない文字だけで、日本語、中国語、韓国語、アクセント付きの文字は入力したとおりにファイル名に残ります。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">画像から作った動画にはどのプロンプトが使われますか？</h3>
+                    <p class="text-slate-400 leading-relaxed">動画に独自のプロンプトがあればそれが使われます。独自のプロンプトがない動画には元の画像のプロンプトが使われるので、意味のある名前になります。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">プロンプトがどこかにアップロードされることはありますか？</h3>
+                    <p class="text-slate-400 leading-relaxed">ありません。拡張機能はブラウザ内で動作し、ファイルはGrokからパソコンに直接保存されます。外部で通信するのは、PROキーを確認するためのKario Studioのライセンスサーバーだけです。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="related" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">関連ガイド</h2>
+            <ul class="grid sm:grid-cols-2 gap-4">
+                <li><a href="/ja/library-download.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok Imagineのお気に入りを一括ダウンロードする方法</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/ja/grok-favorites-not-loading.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok のお気に入りが表示されない？ライブラリをバックアップする方法</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/ja/download-grok-videos-hd.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grokの動画をHD画質でダウンロードする</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/ja/grok-download-button-missing.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok のアップデート後にダウンロードボタンが消えた・押せないときの対処法</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/ja/faq.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>よくある質問：拡張機能についての疑問と回答</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">ダウンロードしたファイルにプロンプトを残そう</h2>
+            <p class="text-slate-400 mb-8">画像とすべての命名設定は無料。PROで動画のダウンロードとライブラリ全体が使えます。</p>
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=save-grok-imagine-prompts&amp;utm_content=bottom_cta&amp;utm_term=ja" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>Chromeに追加</span>
+                </a>
+                <a href="/ja/pricing.html" class="px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span>PROの料金を見る</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-sm mt-6">✨ 今後のすべてのアップデートを含みます</p>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/ja/privacy.html" class="hover:text-white">プライバシーポリシー</a> · <a href="/ja/terms.html" class="hover:text-white">利用規約</a> · <a href="/manager/" class="hover:text-white">Grok Media Manager</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> <nav class="mt-3" aria-label="言語"><a href="/save-grok-imagine-prompts.html" hreflang="en" class="hover:text-white">English</a> · <a href="/zh-TW/save-grok-imagine-prompts.html" hreflang="zh-TW" class="hover:text-white">繁體中文</a> · <a href="/ja/save-grok-imagine-prompts.html" hreflang="ja" class="hover:text-white text-slate-300">日本語</a> · <a href="/ko/save-grok-imagine-prompts.html" hreflang="ko" class="hover:text-white">한국어</a> · <a href="/es/save-grok-imagine-prompts.html" hreflang="es" class="hover:text-white">Español</a> · <a href="/de/save-grok-imagine-prompts.html" hreflang="de" class="hover:text-white">Deutsch</a></nav></div></footer></div>
+
+    <!-- Scripts -->
+    <script src="/js/i18n.js?v=20261119"></script>
+    <script src="/js/components.js?v=20261119"></script>
+</body>
+
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // GA4: never load or send from local dev/test hosts (localhost, 127.0.0.1). Production only.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            window['ga-disable-G-6YPN8563C6'] = true;
+        } else {
+            var gtagScript = document.createElement('script'); gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6YPN8563C6';
+            document.head.appendChild(gtagScript);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-6YPN8563C6');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grokの動画をHD画質（720p・1080p）でダウンロードする方法 | GrokMediaDownloader</title>
+    <meta name="description" content="Grok Imagineの動画をHD 720pや1080pにアップグレードし、各動画で利用できる最高画質をまとめてダウンロードする方法。HDアップグレードの手順、所要時間、レート制限を解説します。">
+    <meta name="keywords" content="Grok 動画 HD ダウンロード, Grok 動画 1080p, Grok Imagine HD アップスケール, Grok 720p 動画 ダウンロード, Grok HDアップグレード, SuperGrok Heavy 1080p, GrokMediaDownloader">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Kario Studio">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://grokmedia.kario-studio.com/ja/download-grok-videos-hd.html">
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en" href="https://grokmedia.kario-studio.com/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://grokmedia.kario-studio.com/zh-TW/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="ja" href="https://grokmedia.kario-studio.com/ja/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="ko" href="https://grokmedia.kario-studio.com/ko/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="es" href="https://grokmedia.kario-studio.com/es/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="de" href="https://grokmedia.kario-studio.com/de/download-grok-videos-hd.html">
+    <link rel="alternate" hreflang="x-default" href="https://grokmedia.kario-studio.com/download-grok-videos-hd.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://grokmedia.kario-studio.com/ja/download-grok-videos-hd.html">
+    <meta property="og:title" content="Grokの動画をHD画質（720p・1080p）でダウンロードする">
+    <meta property="og:description" content="Grok Imagineの動画をHD 720pや1080pにアップグレードし、各動画で利用できる最高画質をまとめてダウンロードする方法。HDアップグレードの手順、所要時間、レート制限を解説します。">
+    <meta property="og:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="zh_TW">
+    <meta property="og:locale:alternate" content="ko_KR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Grokの動画をHD画質（720p・1080p）でダウンロードする">
+    <meta name="twitter:description" content="Grok Imagineの動画をHD 720pや1080pにアップグレードし、各動画で利用できる最高画質をまとめてダウンロードする方法。HDアップグレードの手順、所要時間、レート制限を解説します。">
+    <meta name="twitter:image" content="https://grokmedia.kario-studio.com/assets/og-image.jpg">
+
+    <!-- Schema.org - Article -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Grokの動画をHD画質でダウンロードする",
+      "description": "Grok Imagineの動画をHD 720pや1080pにアップグレードし、各動画で利用できる最高画質をまとめてダウンロードする方法。HDアップグレードの手順、所要時間、レート制限を解説します。",
+      "inLanguage": "ja",
+      "datePublished": "2026-11-28",
+      "dateModified": "2026-11-28",
+      "author": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "url": "https://www.kario-studio.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Kario Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://grokmedia.kario-studio.com/assets/icon-512.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://grokmedia.kario-studio.com/ja/download-grok-videos-hd.html"
+      },
+      "image": "https://grokmedia.kario-studio.com/assets/og-image.jpg"
+    }
+    </script>
+
+    <!-- Schema.org - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://grokmedia.kario-studio.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Grokの動画をHD画質でダウンロードする",
+          "item": "https://grokmedia.kario-studio.com/ja/download-grok-videos-hd.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org - FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Grokの動画のHDは何pですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HDは720pです。拡張機能は1080pを、それより上の別の段階として扱います。Grokが最初から720pで生成した動画はすでにHD扱いで、再度HDにアップグレードされることはありません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Grokの動画をHDでダウンロードするにはSuperGrok Heavyが必要ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "必要なのは1080pの場合だけです。HD（720p）へのアップグレードには不要です。1080pへのアップグレードにはGrokアカウントでのSuperGrok Heavyのサブスクリプションが必要で、ない場合はGrokがリクエストを拒否し、拡張機能はその動画をスキップします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HDアップグレードにはどれくらい時間がかかりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "1本あたり約8秒、100本でおよそ13分です。ライブラリ全体のスキャンでは、最初に各動画の画質を確認するため、アップグレードが始まるまでにさらに時間がかかります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "HDアップグレードは無料ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ。HDアップグレードと動画のダウンロードはPROの機能で、$4.99の買い切りです。今後のアップデートも含まれます。無料版では画像をダウンロードできます。PROの内容は料金ページをご覧ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "アップグレードで元の動画が削除・置き換えられますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ。拡張機能はGrokに高解像度版の作成を依頼するだけで、何も削除しません。✨ HD優先をオフにすれば、オリジナルとHD版の両方をダウンロードできます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "最近の動画だけをアップグレードできますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。✨ HDアップグレードで「直近の動画のみアップグレード」をオンにし、1〜240時間を入力します。その期間外の動画はそのまま残ります。"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#db2777">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GrokMedia">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="/css/styles.css?v=20261119">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@1.7.0/dist/umd/lucide.min.js" integrity="sha384-CykfT8/c0napBs4OEPBYSNzMhNhJUvjNEulxWZVAK+p2D3vEfYGg9zyOd8bzqyNO" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(219, 39, 119, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-50 antialiased selection:bg-pink-500 selection:text-white">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-pink-600 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">メインコンテンツへスキップ</a>
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"><nav class="fixed w-full z-50 top-0 left-0 border-b border-slate-800/50 bg-slate-950/80 backdrop-blur-md"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-16"><a href="/ja/" class="font-bold text-xl text-white">GrokMedia<span class="text-pink-400">Downloader</span></a><div class="hidden md:flex items-center space-x-6"><a href="/ja/" class="text-sm text-slate-300 hover:text-white">ホーム</a><a href="/ja/library-download.html" class="text-sm text-pink-400 hover:text-pink-300">ライブラリ全体DL</a><a href="/ja/story-mode.html" class="text-sm text-pink-400 hover:text-pink-300">ストーリーモード</a><a href="/ja/video-gen-queue.html" class="text-sm text-pink-400 hover:text-pink-300">動画生成キュー</a><a href="/ja/stream-capture.html" class="text-sm text-pink-400 hover:text-pink-300">ストリームキャプチャ</a><a href="/ja/project-download.html" class="text-sm text-pink-400 hover:text-pink-300">プロジェクトDL</a><a href="/ja/pricing.html" class="text-sm text-slate-300 hover:text-white">料金</a><a href="/ja/faq.html" class="text-sm text-slate-300 hover:text-white">FAQ</a></div></div></div></nav></div>
+
+    <main id="main-content">
+    <!-- Hero -->
+    <section class="relative pt-32 pb-12 lg:pt-40 lg:pb-16 overflow-hidden">
+        <div class="absolute inset-0 hero-glow"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-300 text-xs font-semibold uppercase tracking-wide mb-6">
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+                <span>使い方ガイド</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight"><span class="gradient-text">Grokの動画をHD画質でダウンロードする</span></h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto">1回のスキャンでGrokに動画のHD版を依頼し、各動画で利用できる最高画質をダウンロードします。</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=download-grok-videos-hd&amp;utm_content=hero&amp;utm_term=ja" target="_blank" rel="noopener" class="px-8 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>Chromeに追加</span>
+                </a>
+                <a href="/ja/pricing.html" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <i data-lucide="zap" class="w-5 h-5 text-yellow-400"></i>
+                    <span>PROの料金を見る</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-xs mt-6">2026年11月28日更新 · 拡張機能バージョン2.6.3に基づく</p>
+        </div>
+    </section>
+
+    <!-- Short answer -->
+    <section class="pb-16 bg-slate-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-pink-500/30 bg-pink-500/5 p-6 md:p-8">
+                <h2 class="text-sm font-semibold uppercase tracking-wide text-pink-300 mb-3">結論</h2>
+                <p class="text-slate-200 text-lg leading-relaxed">Grokの動画には最大でSD、HD（720p）、1080pの3つの画質があります。GrokMediaDownloaderの<a href="/ja/pricing.html" class="underline hover:text-pink-300">PRO</a>なら、ポップアップで<strong>✨ HDアップグレード</strong>を開き、<strong>🌐 ライブラリ全体</strong>か<strong>🌟 お気に入り</strong>を選んで<strong>🚀 画質をアップグレード</strong>をクリックし、画質ごとのプレビューを確認するだけです。1本あたり約8秒かかります。1080pはオプションで、GrokアカウントにSuperGrok Heavyのサブスクリプションが必要です。その後<strong>1. リスト生成</strong>と<strong>2. ダウンロード開始</strong>で、各動画の利用できる最高画質が保存されます。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">GrokのSD、HD-720p、1080p</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">拡張機能はすべての動画を3つの画質のいずれかに分類します。アップグレードは1回につき1段階ずつ上がります。</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="tv" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">SD</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">標準画質のファイルです。Grokに高解像度版ができるまで、動画はSDとして扱われます。</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="monitor" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">HD / 720p</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">720p版です。HDアップグレードで作られます。Grokが最初から720pで生成した動画はすでにHD扱いで、再度アップグレードされることはありません。</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 transition-all">
+                    <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mb-4"><i data-lucide="sparkles" class="text-pink-400 w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold mb-2 text-white">1080p</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">最上位のフルHDです。1080pへのアップグレードには、GrokアカウントでのSuperGrok Heavyのサブスクリプションが必要です。ない場合、Grokはリクエストを拒否します。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">始める前に</h2>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4">
+                <li>GrokMediaDownloader 2.6.3以降。Chromeは拡張機能を自動で更新しますが、すぐに更新したいときはchrome://extensionsを開き、デベロッパーモードをオンにして「更新」をクリックします。</li>
+                <li>PROライセンス。HDアップグレードと動画のダウンロードはPRO機能で、$4.99の買い切りです（<a href="/ja/pricing.html" class="underline hover:text-pink-300">料金</a>）。GMD-…のキーをポップアップの<strong>🔑 ライセンス</strong>に貼り付けます。このキーには拡張機能2.6.0以降が必要です。</li>
+                <li>同じChromeプロフィールでGrokを開き、<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok.com/library</code>などgrok.comのページを表示していること。</li>
+                <li>1080pの場合のみ：そのGrokアカウントでのSuperGrok Heavyのサブスクリプション。</li>
+            </ul>
+            <p class="text-slate-300 leading-relaxed mb-4">まだPROをお持ちでない場合は、このガイドの最後に無料版でできることをまとめています。<a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=download-grok-videos-hd&amp;utm_content=steps&amp;utm_term=ja" target="_blank" rel="noopener" class="underline hover:text-pink-300">Chromeウェブストア</a>から拡張機能を入れて、まず画像で試すこともできます。</p>
+        </div>
+    </section>
+
+    <section id="steps" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">手順</h2>
+            <ol class="space-y-8">
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">1</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 1: </span>HDアップグレードのセクションを開く</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">grok.comのタブで拡張機能のアイコンをクリックし、<strong>✨ HDアップグレード</strong>を展開します。PROでない場合、このセクションには🔒 Pro機能のロックが表示されます。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/ja/popup-hd-upgrade.jpg" alt="ポップアップのHDアップグレードセクション：アップグレード元（お気に入りまたはライブラリ全体）、期間の絞り込み、SuperGrok Heavyの注記付きの「HD/720pを1080pにアップグレード」、画質をアップグレードボタン" width="336" height="430" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">✨ HDアップグレード：アップグレード元、期間、1080pのオプション、🚀 画質をアップグレード。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">2</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 2: </span>スキャン対象を選ぶ</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3"><strong>🎯 アップグレード元</strong>で、<strong>🌐 ライブラリ全体</strong>（初期設定）のままにするか、<strong>🌟 お気に入り</strong>を選びます。2026年7月のGrokの変更以降、多くのアカウントで新しく生成した動画がお気に入りに入らないため、お気に入りのスキャンでは、見えていないだけの動画を「アップグレード済み」と判断することがあります。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">ライブラリ全体のスキャンはすべての動画の画質を確認するので、ライブラリが大きいと時間がかかります。<strong>直近の動画のみアップグレード</strong>をオンにし、1〜240の時間数を入力すれば、最近の動画だけに絞れます。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">3</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 3: </span>1080pにするか決める</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3"><strong>HD/720pを1080pにアップグレード</strong>は初期設定ではオフです。チェックボックスの下の注記にもあるとおり、GrokアカウントにSuperGrok Heavyがある場合だけオンにしてください。オフのままなら、拡張機能は1080pのリクエストを一切送りません。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">実行中にGrokが1080pを拒否した場合、拡張機能はその回の残りで1080pのリクエストをやめ、HDへのアップグレードは続け、スキップした動画の数を知らせます。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">アップグレードは1段階ずつです。SDからHDへ、HD/720pから1080pへ。SDの動画を1080pにするには2回の実行が必要で、1回目でHDになり、1080pをオンにした2回目で1080pになります。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">4</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 4: </span>スキャンしてプレビューを確認する</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3"><strong>🚀 画質をアップグレード</strong>をクリックします。ライブラリ全体では、各動画を確認する間、ボタンに<strong>⚙️ 動画品質を解析中</strong>と進行状況が表示されます。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">続いて<strong>📊 スキャン結果</strong>のダイアログに、動画の総数、SD・HD/720p・1080pそれぞれの数、今回アップグレードする数が表示されます。OKで開始、キャンセルで中止です。すべての動画がすでに利用できる最高画質なら、そのことが表示され、何も送信されません。下の例では1080pのオプションがオフなので、最後の行に1080pにできる動画の数が表示されています。</p>
+                        <figure class="mt-4 mb-2">
+                            <div class="max-w-sm mx-auto rounded-lg bg-white text-slate-800 shadow-lg p-4 font-mono text-xs leading-relaxed" style="white-space:pre-wrap" role="note">📊 スキャン結果
+
+合計動画数：336
+    ├ 📦 SD：196
+    ├ 🎥 HD/720p：126
+    └ 💎 1080p：14
+
+今回アップグレード：196
+アップグレードを開始しますか？
+
+ℹ️ あと126件の動画が1080pにアップグレード可能です — 「HD/720pを1080pにアップグレード」を有効にしてください（SuperGrok Heavyが必要です）。</div>
+                            <figcaption class="mt-2 text-center text-xs text-slate-500">拡張機能に表示されるダイアログの文面（数字は例）。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">5</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 5: </span>アップグレードの完了を待つ</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">1本あたり約8秒かかるので、100本ならおよそ13分です。実行中、ボタンは<strong>⏹ アップグレード中 (x/y)、中止?</strong>となり、クリックすると中止できます。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">終わるまでgrok.comのタブは開いたままにしてください。ポップアップを閉じても、もう一度開けば進行状況を確認できます。終わるとポップアップに<strong>✅ アップグレード完了！ 成功: x/y</strong>と表示されます。</p>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">6</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 6: </span>ダウンロードリストを生成する</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">アップグレードはGrokのサーバー側で処理されるため、リクエストが受け付けられた直後は元の画質のまま表示されることがあります。数分待ってから、<strong>📥 ダウンロード元とフィルター</strong>で同じダウンロード元を選び、<strong>🎬 動画 (Pro)</strong>がオンになっていることを確認して<strong>1. リスト生成</strong>をクリックします。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">スキャンが終わると<strong>📊 ダウンロード概要</strong>のダイアログが開き、ダウンロードする動画の数が画質別（1080p、HD、720p、SD）に表示され、「ダウンロードを開始しますか？」と確認されます。OKですぐに開始し、キャンセルなら<strong>2. ダウンロード開始</strong>が押せる状態のまま残ります。その後ステータスパネルには、SD、720p、HD、1080pの動画がそれぞれ合計、ダウンロード済み、未ダウンロードに分けて表示されます。</p>
+                        <figure class="mt-4 mb-2">
+                            <div class="max-w-sm mx-auto rounded-lg bg-white text-slate-800 shadow-lg p-4 font-mono text-xs leading-relaxed" style="white-space:pre-wrap" role="note">📊 ダウンロード概要
+
+🖼️ 画像：1248 件ダウンロード予定（0 件完了済み）
+🎬 動画：336 件ダウンロード予定（0 件完了済み）
+    ├ 💎 1080p：14
+    ├ ✨ HD：88
+    ├ 🎥 720p：52
+    └ 📦 SD：196
+
+ブラウザを閉じないでください。
+ダウンロードを開始しますか？
+
+⚠️ 250 本以上の動画がダウンロード待ちです。250 本ごとに一時停止し、3 分後に自動再開します。</div>
+                            <figcaption class="mt-2 text-center text-xs text-slate-500">拡張機能に表示されるダイアログの文面（数字は例）。</figcaption>
+                        </figure>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/ja/popup-list-ready.jpg" alt="リスト生成後のポップアップ：画質ごとの動画数と、有効になったダウンロード開始ボタン" width="336" height="837" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">1. リスト生成の後：画質ごとの数と未ダウンロードの数。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+                <li class="flex gap-5 items-start">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/20 border border-pink-500/40 flex items-center justify-center flex-shrink-0 text-pink-300 font-bold" aria-hidden="true">7</div>
+                    <div class="flex-1">
+                        <h3 class="text-lg font-bold mb-2 text-white"><span class="sr-only">ステップ 7: </span>最高画質でダウンロードする</h3>
+                        <p class="text-slate-400 leading-relaxed mb-3">⚙️ 設定の<strong>✨ HD優先</strong>はオンのままにします（初期設定でオン）。すると動画ごとにファイルを1つだけ保存し、1080p、HD、オリジナルの順に選びます。HD優先をオフにすると、オリジナルとHD版を並べて保存します。</p>
+                        <p class="text-slate-400 leading-relaxed mb-3">概要でキャンセルを押した場合は、<strong>2. ダウンロード開始</strong>をクリックします。プログレスバーに残り時間の目安が表示され、<strong>⏹ ダウンロード中止</strong>と<strong>▶ ダウンロード再開</strong>で一時停止と再開ができます。動画はChromeのダウンロードフォルダ内の<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-pink-300 whitespace-nowrap">grok_downloads/</code>に保存されます。</p>
+                        <figure class="mt-4 rounded-xl overflow-hidden border border-slate-800 bg-slate-900">
+                            <img src="/assets/guides/ja/popup-downloading.jpg" alt="ダウンロード中のポップアップ：残り時間の目安付きプログレスバーとダウンロード中止ボタン" width="336" height="726" loading="lazy" class="block mx-auto h-auto">
+                            <figcaption class="px-4 py-2 text-xs text-slate-500">ダウンロード中：プログレスバー、残り時間、⏹ ダウンロード中止。</figcaption>
+                        </figure>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">所要時間とレート制限</h2>
+            <p class="text-slate-300 leading-relaxed mb-4">Grokは、1つのアカウントが短時間に送れるリクエストの数を制限しています。拡張機能は失敗させるのではなく、ペースを落として対応します。</p>
+            <ul class="list-disc pl-5 space-y-2 text-slate-300 leading-relaxed mb-4">
+                <li>HDアップグレードは動画1本につき1回リクエストを送り、1本あたり約8秒かかります。100本ごとにおよそ13分を見込んでください。</li>
+                <li>Grokからリクエストが多すぎると返された場合、拡張機能は数秒余分に待ち、その動画を失敗として数えて先に進みます。後でもう一度実行してください。アップグレード済みの動画はリストから外れるので、残りだけが送られます。</li>
+                <li>ライブラリ全体のスキャンでは、レート制限のために画質を確認できなかった動画は、推測せずにスキップされます。その数はスキャン結果のダイアログに表示されます。</li>
+                <li>ダウンロード中は、Grokの制限を超えないよう動画250本ごとに一時停止し（初期設定は3分、⚙️ 設定で変更可能）、その後自動で再開します。250本を超える場合は、ダウンロード概要で事前に知らせます。</li>
+                <li>非常に長い実行では、何千本もの動画の後にHTTP 403などでGrokがダウンロードを拒否し始めることがあります。grok.comのタブを再読み込みし、もう一度<strong>2. ダウンロード開始</strong>をクリックしてください。保存済みのファイルはダウンロード履歴によってスキップされます。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">アップグレードしてからダウンロードする</h2>
+            <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-6">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center flex-shrink-0"><i data-lucide="alert-triangle" class="text-amber-400 w-5 h-5"></i></div>
+                    <div class="space-y-3">
+                        <p class="text-slate-300 leading-relaxed">すでにダウンロードしたファイルについては、順番が重要です。アップグレード前にSDで保存した動画は、次の実行でHDとしてもう一度ダウンロードされ、SDファイルの横に保存されます。</p>
+                        <p class="text-slate-300 leading-relaxed">HDと1080pは動画ごとに1つのダウンロード記録を共有しています。720pでダウンロード済みの動画は、1080pにアップグレードした後も<strong>再ダウンロードされません</strong>。ダウンロードの前に1080pへのアップグレードを済ませるか、<strong>🧹 クリア操作</strong>でそのダウンロード元の履歴を消去して、すべてをダウンロードし直してください。履歴を消去してもGrok上やパソコン上のファイルは削除されません。同じ名前のファイルがすでにある場合は、上書きせずに番号を付けて保存されます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">PROなしでできること</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">無料版は画像向けです。動画の画質や動画ファイルに関わる機能にはPROが必要です。</p>
+            <div class="overflow-x-auto -mx-4 px-4">
+                <table class="w-full min-w-[640px] border-collapse text-sm">
+                    <thead><tr class="border-b border-slate-700"><th class="text-left py-3 px-4 text-slate-300 font-semibold"></th><th class="text-left py-3 px-4 text-slate-300 font-semibold">無料版</th><th class="text-left py-3 px-4 text-slate-300 font-semibold">PRO</th></tr></thead>
+                    <tbody>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">1. リスト生成</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">画像のダウンロード</td><td class="py-3 px-4 text-slate-400">✓</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">動画のダウンロード</td><td class="py-3 px-4 text-slate-400">✗（🎬 動画はロック）</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">✨ HD/720pへのHDアップグレード</td><td class="py-3 px-4 text-slate-400">✗</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">1080pへのアップグレード</td><td class="py-3 px-4 text-slate-400">✗</td><td class="py-3 px-4 text-slate-400">✓（SuperGrok Heavyが必要）</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">📦 すべての生成メディア（ライブラリ全体）</td><td class="py-3 px-4 text-slate-400">直近7日間</td><td class="py-3 px-4 text-slate-400">ライブラリ全体</td></tr>
+                        <tr class="border-b border-slate-800"><td class="py-3 px-4 text-white font-medium">日付フィルター</td><td class="py-3 px-4 text-slate-400">✗</td><td class="py-3 px-4 text-slate-400">✓</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-4">PROは$4.99の買い切りで、今後のアップデートと7日間の返金保証が付きます。<a href="/ja/pricing.html" class="underline hover:text-pink-300">料金を見る</a>。</p>
+        </div>
+    </section>
+
+    <section id="troubleshooting" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">トラブルシューティング</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">HDアップグレードとHDダウンロードでよくある問題と、その対処法です。</p>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">HDアップグレードで「すべての動画は既に利用可能な最高画質です」と表示される<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4"><strong>🎯 アップグレード元</strong>を確認してください。お気に入りになっている場合は<strong>🌐 ライブラリ全体</strong>に切り替えます。お気に入りのリストには、2026年7月のGrokの変更以降に生成した動画が入っていないことがあるためです。1080pのオプションがオフで動画がHDの場合は、あと何本を1080pにできるかもメッセージに表示されます。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">「1080pアップグレードには有料プランが必要です — N 件の動画をスキップしました。」<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grokがあなたのアカウントでの1080pを拒否しました。SuperGrok Heavyのサブスクリプションがない場合に起こります。<strong>HD/720pを1080pにアップグレード</strong>をオフにしてください。HD（720p）へのアップグレードには影響しません。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">スキャンにとても時間がかかる<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">🌐 ライブラリ全体では、プレビューを表示する前にすべての動画を確認します。<strong>直近の動画のみアップグレード</strong>で範囲を絞り、後の実行で期間を広げてください。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">アップグレード後もリスト生成でSDのまま表示される<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">Grokの処理が終わるまで数分待ってから、もう一度<strong>1. リスト生成</strong>をクリックしてください。レート制限で失敗したリクエストがあれば、<strong>🚀 画質をアップグレード</strong>をもう一度実行します。目標の画質に達していない動画だけが送られます。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">1080pにアップグレードしたのに、ダウンロード開始でその動画がスキップされる<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">その動画は720pでダウンロード済みで、HDと1080pは1つのダウンロード記録を共有しています。<strong>🧹 クリア操作</strong>でそのダウンロード元の履歴を消去してからやり直してください。次回からは、最初のダウンロードの前に1080pへのアップグレードを済ませましょう。</div>
+                </details>
+                <details class="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+                    <summary class="cursor-pointer px-6 py-4 font-semibold text-white flex justify-between items-center gap-4">画質をアップグレードのボタンや動画のチェックボックスがロックされている<i data-lucide="chevron-down" class="w-5 h-5 text-slate-500 transition-transform group-open:rotate-180 flex-shrink-0"></i></summary>
+                    <div class="px-6 pb-5 text-slate-400 leading-relaxed border-t border-slate-800 pt-4">どちらもPRO機能です。<strong>🔑 ライセンス</strong>でキーを有効にするか（形式はGMD-XXXX-XXXX-XXXX-XXXX、拡張機能2.6.0以降）、<a href="/ja/pricing.html" class="underline hover:text-pink-300">料金</a>をご確認ください。</div>
+                </details>
+            </div>
+            <p class="text-center text-slate-500 text-sm mt-8">解決しない場合は、<a href="/ja/faq.html" class="underline hover:text-slate-300">よくある質問</a>でほかのケースも確認できます。<a href="/support.html" class="underline hover:text-slate-300">サポートへ連絡</a>からスタッフに問い合わせることもできます。</p>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">よくある質問</h2>
+            <div class="space-y-4">
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Grokの動画のHDは何pですか？</h3>
+                    <p class="text-slate-400 leading-relaxed">HDは720pです。拡張機能は1080pを、それより上の別の段階として扱います。Grokが最初から720pで生成した動画はすでにHD扱いで、再度HDにアップグレードされることはありません。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">Grokの動画をHDでダウンロードするにはSuperGrok Heavyが必要ですか？</h3>
+                    <p class="text-slate-400 leading-relaxed">必要なのは1080pの場合だけです。HD（720p）へのアップグレードには不要です。1080pへのアップグレードにはGrokアカウントでのSuperGrok Heavyのサブスクリプションが必要で、ない場合はGrokがリクエストを拒否し、拡張機能はその動画をスキップします。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">HDアップグレードにはどれくらい時間がかかりますか？</h3>
+                    <p class="text-slate-400 leading-relaxed">1本あたり約8秒、100本でおよそ13分です。ライブラリ全体のスキャンでは、最初に各動画の画質を確認するため、アップグレードが始まるまでにさらに時間がかかります。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">HDアップグレードは無料ですか？</h3>
+                    <p class="text-slate-400 leading-relaxed">いいえ。HDアップグレードと動画のダウンロードはPROの機能で、$4.99の買い切りです。今後のアップデートも含まれます。無料版では画像をダウンロードできます。PROの内容は<a href="/ja/pricing.html" class="underline hover:text-pink-300">料金ページ</a>をご覧ください。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">アップグレードで元の動画が削除・置き換えられますか？</h3>
+                    <p class="text-slate-400 leading-relaxed">いいえ。拡張機能はGrokに高解像度版の作成を依頼するだけで、何も削除しません。✨ HD優先をオフにすれば、オリジナルとHD版の両方をダウンロードできます。</p>
+                </div>
+                <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-2">最近の動画だけをアップグレードできますか？</h3>
+                    <p class="text-slate-400 leading-relaxed">はい。✨ HDアップグレードで「直近の動画のみアップグレード」をオンにし、1〜240時間を入力します。その期間外の動画はそのまま残ります。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="related" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4 text-white">関連ガイド</h2>
+            <ul class="grid sm:grid-cols-2 gap-4">
+                <li><a href="/ja/library-download.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok Imagineのお気に入りを一括ダウンロードする方法</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/ja/grok-favorites-not-loading.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok のお気に入りが表示されない？ライブラリをバックアップする方法</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/ja/save-grok-imagine-prompts.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok Imagineの動画をプロンプト付きで保存する</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/ja/grok-download-button-missing.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>Grok のアップデート後にダウンロードボタンが消えた・押せないときの対処法</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+                <li><a href="/ja/faq.html" class="flex items-center justify-between gap-3 h-full bg-slate-900 border border-slate-800 hover:border-pink-500/50 rounded-xl px-5 py-4 text-slate-200 hover:text-pink-300 transition-all"><span>よくある質問：拡張機能についての疑問と回答</span><i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0 text-pink-400"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Grokの動画をHD版で手に入れよう</h2>
+            <p class="text-slate-400 mb-8">インストールは無料。PRO（$4.99の買い切り）でHDアップグレード、動画のダウンロード、ライブラリ全体が使えます。</p>
+            <div class="inline-flex flex-col sm:flex-row gap-4">
+                <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=download-grok-videos-hd&amp;utm_content=bottom_cta&amp;utm_term=ja" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg>
+                    <span>Chromeに追加</span>
+                </a>
+                <a href="/ja/pricing.html" class="px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span>PROの料金を見る</span>
+                </a>
+            </div>
+            <p class="text-slate-500 text-sm mt-6">✨ 今後のすべてのアップデートを含みます</p>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"><footer class="bg-slate-950 border-t border-slate-900 py-8 text-sm"><div class="max-w-7xl mx-auto px-4 text-center text-slate-500"><a href="/ja/privacy.html" class="hover:text-white">プライバシーポリシー</a> · <a href="/ja/terms.html" class="hover:text-white">利用規約</a> · <a href="/manager/" class="hover:text-white">Grok Media Manager</a> · © 2026 <a href="https://www.kario-studio.com" target="_blank" rel="noopener noreferrer" class="hover:text-white">Kario LLC</a> &middot; <a href="https://github.com/tomsonlee150/GrokMediaDownloader" target="_blank" rel="noopener noreferrer" class="hover:text-white" aria-label="GitHub"><svg class="w-4 h-4 inline-block align-text-bottom" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a> <nav class="mt-3" aria-label="言語"><a href="/download-grok-videos-hd.html" hreflang="en" class="hover:text-white">English</a> · <a href="/zh-TW/download-grok-videos-hd.html" hreflang="zh-TW" class="hover:text-white">繁體中文</a> · <a href="/ja/download-grok-videos-hd.html" hreflang="ja" class="hover:text-white text-slate-300">日本語</a> · <a href="/ko/download-grok-videos-hd.html" hreflang="ko" class="hover:text-white">한국어</a> · <a href="/es/download-grok-videos-hd.html" hreflang="es" class="hover:text-white">Español</a> · <a href="/de/download-grok-videos-hd.html" hreflang="de" class="hover:text-white">Deutsch</a></nav></div></footer></div>
+
+    <!-- Scripts -->
+    <script src="/js/i18n.js?v=20261119"></script>
+    <script src="/js/components.js?v=20261119"></script>
+</body>
+
+</html>

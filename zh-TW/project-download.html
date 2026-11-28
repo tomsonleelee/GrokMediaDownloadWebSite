@@ -92,31 +92,47 @@
           "name": "Project Download 是什麼？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Project Download 是一項 PRO 功能，讓你一次下載整個 Grok 專案的所有媒體。Grok「專案」是工作區中一組相關對話、已產生圖片和影片的集合。不需逐一下載，Project Download 會一次取回所有內容並在本機整理好。"
+            "text": "Project Download 是「收藏」來源的一種下載模式。它不把圖片和影片分到不同資料夾，而是把每張原始圖片和由它生成的影片一起存進同一個專案資料夾，並附上記錄內容的 metadata.json。由於專案資料夾以影片為核心，而影片下載需要 PRO，因此 Project Download 屬於 PRO 功能。"
           }
         },
         {
           "@type": "Question",
-          "name": "專案下載包含哪些內容？",
+          "name": "如何開啟 Project Download？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "專案下載包含該專案內產生的所有圖片和影片。檔案按對話或產生批次整理，下載的資料夾結構會反映你的 Grok 專案架構。"
+            "text": "在彈出視窗打開「⚙️ 設定」，在「⭐ 收藏」群組把下載模式設為「依專案分組」。下載來源選「收藏」，再照常點「生成下載列表」與「開始下載」。這個設定只適用於收藏來源；標籤與所有生成媒體有各自的資料夾結構。"
           }
         },
         {
           "@type": "Question",
-          "name": "Project Download 會保留原始檔名嗎？",
+          "name": "專案資料夾裡有什麼？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "會。Project Download 盡可能保留 Grok 指定的原始檔名。當原始檔名不可用時，會使用專案名稱、產生日期和序號來系統性命名，確保每個檔案都可以唯一識別。"
+            "text": "每張原始圖片在 grok_downloads/projects 下有一個資料夾，以日期與提示詞命名（例如 20260123_a_teddy_bear）。裡面有原始圖片、由它生成的影片與圖片，以及記錄提示詞、建立時間與生成項目清單的 metadata.json。沒有原始圖片的文字生成影片，資料夾裡只會有影片。"
           }
         },
         {
           "@type": "Question",
-          "name": "下載中途被中斷怎麼辦？",
+          "name": "為什麼有些專案資料夾缺檔案？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Project Download 會在本機追蹤進度。如果因網路錯誤或關閉瀏覽器而中斷，只需在同一個專案頁面重新開啟擴充功能即可繼續。已下載的檔案會被跳過，只會繼續下載剩餘的檔案。"
+            "text": "先前已下載過的檔案會被略過，因為下載歷程會防止重複下載。如果想為以前用標準模式下載過的項目建立完整的專案資料夾，請先清除收藏的下載歷程；選擇「依專案分組」時，彈出視窗也會顯示這個提示。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Project Download 會包含 2026 年 7 月以後生成的媒體嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "只包含在 Grok 收藏中的媒體。Grok 在 2026 年 7 月更換媒體後端後，新生成的媒體不會再加入收藏，因此專案資料夾只涵蓋收藏清單中的內容。若要備份全部內容，請使用「所有生成媒體」來源，它會依對話各存成一個資料夾。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "下載中斷或自己暫停時怎麼辦？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "下載歷程會記錄每個已儲存的檔案，重新整理後再按「生成下載列表」與「開始下載」，已儲存的檔案會自動略過。另外，擴充功能每下載 250 支影片會刻意暫停一次，以免超出 Grok 的限制，預設 3 分鐘（⚙️ 設定 → ⏱️ 速率限制冷卻），之後自動繼續。"
           }
         },
         {
@@ -124,7 +140,7 @@
           "name": "Project Download 是免費功能嗎？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Project Download 是 PRO 專屬功能。升級至 GrokMediaDownloader PRO（$4.99 終身授權）即可解鎖 Project Download 以及 Stream Capture、Video Gen Queue 和 Story Mode。"
+            "text": "不是。專案資料夾會把每張圖片和它生成的影片放在一起，而影片下載需要 PRO；免費版會以標準資料夾結構下載圖片。升級至 GrokMediaDownloader PRO（$4.99 一次付清、終身授權）即可解鎖影片下載與 Project Download，以及 Stream Capture、Story Mode 匯出和不限次數的 Video Gen Queue。"
           }
         }
       ]
@@ -206,7 +222,7 @@
 
                 <p class="text-xl md:text-2xl text-amber-300 mb-4" data-i18n="project_subtitle">有組織的媒體管理</p>
 
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="project_desc">不再被雜亂的下載淹沒。專案下載會預先掃描您的 Grok 媒體、顯示詳細統計資訊，並自動建立按日期和提示詞分組的結構化專案資料夾。</p>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="project_desc">專案下載會把每張 Grok 原始圖片和由它生成的影片放進同一個資料夾，以日期與提示詞命名，並附上 metadata.json。適用於收藏來源；影片下載需要 PRO。</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=project-download&amp;utm_content=hero&amp;utm_term=zh-TW" target="_blank" rel="noopener" class="px-8 py-4 bg-amber-600 hover:bg-amber-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
@@ -228,7 +244,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="project_video_title">觀看專案下載實際操作</h2>
-                <p class="text-slate-400" data-i18n="project_video_desc">掃描媒體 → 預覽統計 → 建立專案 → 有組織地下載</p>
+                <p class="text-slate-400" data-i18n="project_video_desc">生成下載列表 → 查看數量 → 開始下載 → 專案資料夾</p>
             </div>
 
             <!-- Video Container -->
@@ -295,7 +311,7 @@
                         <i data-lucide="scan-search" class="text-amber-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="project_feat_1_title">下載前預掃描</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="project_feat_1_desc">下載前先掃描您的 Grok 收藏。查看圖片、SD 影片和 HD 影片的總數及詳細分類。</p>
+                    <p class="text-slate-400 text-sm" data-i18n="project_feat_1_desc">「生成下載列表」會先掃描你的 Grok 收藏，顯示將下載的專案、圖片與影片（SD、HD、1080p）數量。</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -333,7 +349,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="project_step_title">專案下載運作方式</h2>
-                <p class="text-slate-400">四個簡單步驟，整理並下載整個 Grok 媒體庫</p>
+                <p class="text-slate-400">四個步驟，把 Grok 收藏整理成專案資料夾</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -344,8 +360,8 @@
                         <div class="w-12 h-12 bg-amber-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="scan-search" class="text-amber-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_1_title">掃描您的媒體</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="project_step_1_desc">點擊「掃描」分析您的 Grok 收藏。擴充功能會計算所有可供下載的圖片和影片。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_1_title">選擇模式</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_1_desc">下載來源選「收藏」，並在「⚙️ 設定」把下載模式設為「依專案分組」。</p>
                     </div>
                 </div>
 
@@ -356,8 +372,8 @@
                         <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="settings-2" class="text-orange-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_2_title">預覽與設定</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="project_step_2_desc">查看掃描結果，包含圖片數量、影片數量和預估下載大小。選擇要包含的內容。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_2_title">生成下載列表</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_2_desc">按「生成下載列表」。彈出視窗會顯示尚未下載的專案、圖片與影片數量，你也可以選擇是否包含圖片與影片。</p>
                     </div>
                 </div>
 
@@ -368,8 +384,8 @@
                         <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="folder-plus" class="text-emerald-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_3_title">建立專案</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="project_step_3_desc">為您的專案命名。檔案會自動按日期整理到資料夾中（例如 2024-03-15/），並建立以提示詞命名的子資料夾。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_3_title">開始下載</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_3_desc">按「開始下載」。每張原始圖片會在 grok_downloads/projects 下有自己的資料夾，以 {date}_{prompt} 命名。</p>
                     </div>
                 </div>
 
@@ -380,8 +396,8 @@
                         <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="download" class="text-blue-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_4_title">下載所有內容</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="project_step_4_desc">啟動批次下載。檔案會儲存在有組織的專案資料夾中，每個群組都附帶 metadata.json。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="project_step_4_title">取得整理好的資料夾</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="project_step_4_desc">每個資料夾裡有原始圖片、由它生成的影片與圖片，以及 metadata.json。已下載過的檔案會略過。</p>
                     </div>
                 </div>
             </div>
@@ -402,8 +418,8 @@
                                 <i data-lucide="folder-tree" class="text-amber-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">階層式資料夾結構</h4>
-                                <p class="text-slate-400 text-sm">建立巢狀資料夾：專案名稱 / 日期 / 提示詞群組，讓數千個檔案井然有序。</p>
+                                <h4 class="font-bold text-white mb-1">每張原始圖片一個資料夾</h4>
+                                <p class="text-slate-400 text-sm">grok_downloads/projects/{date}_{prompt}/ 內放原始圖片、生成的影片與 metadata.json，相關檔案集中在一起。</p>
                             </div>
                         </div>
 
@@ -412,8 +428,8 @@
                                 <i data-lucide="file-code" class="text-pink-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">中繼資料保存</h4>
-                                <p class="text-slate-400 text-sm">每個下載群組都包含 JSON 檔案，記錄原始 Grok 提示詞、時間戳記和檔案校驗碼。</p>
+                                <h4 class="font-bold text-white mb-1">保留中繼資料</h4>
+                                <p class="text-slate-400 text-sm">每個專案資料夾都附上 metadata.json，記錄提示詞、建立時間與生成項目清單。</p>
                             </div>
                         </div>
 
@@ -422,8 +438,8 @@
                                 <i data-lucide="gauge" class="text-blue-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">並行下載</h4>
-                                <p class="text-slate-400 text-sm">使用 Chrome 的下載 API 搭配智慧並行控制，在不讓瀏覽器過載的情況下最大化速度。</p>
+                                <h4 class="font-bold text-white mb-1">速率限制冷卻</h4>
+                                <p class="text-slate-400 text-sm">擴充功能每下載 250 支影片會刻意暫停一次，以免超出 Grok 的限制，預設 3 分鐘（⚙️ 設定 → ⏱️ 速率限制冷卻），之後自動繼續。</p>
                             </div>
                         </div>
 
@@ -432,8 +448,8 @@
                                 <i data-lucide="shield-check" class="text-emerald-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">斷點續傳</h4>
-                                <p class="text-slate-400 text-sm">如果下載中斷，擴充功能會追蹤進度，可以從中斷處繼續下載。</p>
+                                <h4 class="font-bold text-white mb-1">略過已下載的檔案</h4>
+                                <p class="text-slate-400 text-sm">下載歷程會記錄每個已儲存的檔案，中斷後再次執行「生成下載列表」與「開始下載」，已儲存的檔案會自動略過。</p>
                             </div>
                         </div>
                     </div>
@@ -460,7 +476,11 @@
 
                         <!-- Scan Results -->
                         <div class="mb-4 p-4 bg-slate-800/50 rounded-lg space-y-2">
-                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">掃描結果</div>
+                            <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">1. 生成下載列表</div>
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-slate-300">📂 專案</span>
+                                <span class="text-amber-300 font-bold">47</span>
+                            </div>
                             <div class="flex items-center justify-between text-sm">
                                 <span class="text-slate-300">🖼️ 圖片</span>
                                 <span class="text-white font-bold">342</span>
@@ -473,34 +493,29 @@
                                 <span class="text-slate-300">✨ HD 影片</span>
                                 <span class="text-white font-bold">89</span>
                             </div>
-                            <div class="border-t border-slate-700 pt-2 mt-2 flex items-center justify-between text-sm">
-                                <span class="text-slate-300">📊 總計</span>
-                                <span class="text-amber-300 font-bold">587 個檔案</span>
-                            </div>
                         </div>
 
-                        <!-- Project Name Input -->
+                        <!-- Download Mode -->
                         <div class="mb-4">
-                            <label class="text-xs text-slate-400 mb-1 block">專案名稱</label>
-                            <input type="text" value="my-grok-project" readonly class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
+                            <label class="text-xs text-slate-400 mb-1 block">📂 下載模式</label>
+                            <input type="text" value="依專案分組" readonly class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-amber-500">
                         </div>
 
                         <!-- Folder Preview -->
                         <div class="mb-4 p-3 bg-slate-800/50 rounded-lg">
                             <div class="text-xs text-slate-400 uppercase tracking-wide mb-2 font-semibold">資料夾預覽</div>
                             <div class="text-sm font-mono space-y-1">
-                                <div class="text-amber-300">📁 my-grok-project/</div>
-                                <div class="text-slate-300 pl-4">📁 2024-03-15/</div>
-                                <div class="text-slate-400 pl-8">📁 cyberpunk-city/</div>
-                                <div class="text-slate-400 pl-8">📁 ocean-sunset/</div>
-                                <div class="text-slate-300 pl-4">📁 2024-03-14/</div>
+                                <div class="text-amber-300">📁 grok_downloads/projects/</div>
+                                <div class="text-slate-300 pl-4">📁 20260315_cyberpunk_city/</div>
+                                <div class="text-slate-300 pl-4">📁 20260315_ocean_sunset/</div>
+                                <div class="text-slate-300 pl-4">📁 20260314_a_teddy_bear/</div>
                             </div>
                         </div>
 
                         <!-- Action Button -->
                         <button class="w-full bg-amber-600 text-white font-bold py-3 rounded-lg text-sm flex items-center justify-center gap-2">
                             <i data-lucide="download" class="w-4 h-4"></i>
-                            開始下載 (587 個檔案)
+                            2. 開始下載
                         </button>
                     </div>
                 </div>
@@ -596,7 +611,7 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-white mb-1" data-i18n="project_folder_metadata_title">包含 metadata.json</h4>
-                            <p class="text-slate-400 text-sm" data-i18n="project_folder_metadata_desc">每個專案資料夾都包含完整的 Grok API 資料 JSON 檔案：原始提示詞、生成時間戳、檔案校驗和、userId 以及模型參數。</p>
+                            <p class="text-slate-400 text-sm" data-i18n="project_folder_metadata_desc">每個專案資料夾都附上 metadata.json，記錄提示詞、建立時間、原始圖片與生成項目清單。</p>
                         </div>
                     </div>
 
@@ -624,31 +639,31 @@
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Project Download 是什麼？</h3>
-                    <p class="text-slate-400">Project Download 是一項 PRO 功能，讓你一次下載整個 Grok 專案的所有媒體。Grok「專案」是工作區中一組相關對話、已產生圖片和影片的集合。不需逐一下載，Project Download 會一次取回所有內容並在本機整理好。</p>
+                    <p class="text-slate-400">Project Download 是「收藏」來源的一種下載模式。它不把圖片和影片分到不同資料夾，而是把每張原始圖片和由它生成的影片一起存進同一個專案資料夾，並附上記錄內容的 metadata.json。由於專案資料夾以影片為核心，而影片下載需要 PRO，因此 Project Download 屬於 PRO 功能。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">專案下載包含哪些內容？</h3>
-                    <p class="text-slate-400">專案下載包含該專案內產生的所有圖片和影片。檔案按對話或產生批次整理，下載的資料夾結構會反映你的 Grok 專案架構。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">如何開啟 Project Download？</h3>
+                    <p class="text-slate-400">在彈出視窗打開「⚙️ 設定」，在「⭐ 收藏」群組把下載模式設為「依專案分組」。下載來源選「收藏」，再照常點「生成下載列表」與「開始下載」。這個設定只適用於收藏來源；標籤與所有生成媒體有各自的資料夾結構。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">如何開始專案下載？</h3>
-                    <p class="text-slate-400">前往你的 Grok 專案頁面，開啟 GrokMediaDownloader 擴充功能，點擊「下載專案」。擴充功能會掃描專案中的所有媒體資源，顯示摘要供確認後開始下載。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">專案資料夾裡有什麼？</h3>
+                    <p class="text-slate-400">每張原始圖片在 grok_downloads/projects 下有一個資料夾，以日期與提示詞命名（例如 20260123_a_teddy_bear）。裡面有原始圖片、由它生成的影片與圖片，以及記錄提示詞、建立時間與生成項目清單的 metadata.json。沒有原始圖片的文字生成影片，資料夾裡只會有影片。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Project Download 會保留原始檔名嗎？</h3>
-                    <p class="text-slate-400">會。Project Download 盡可能保留 Grok 指定的原始檔名。當原始檔名不可用時，會使用專案名稱、產生日期和序號來系統性命名，確保每個檔案都可以唯一識別。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">為什麼有些專案資料夾缺檔案？</h3>
+                    <p class="text-slate-400">先前已下載過的檔案會被略過，因為下載歷程會防止重複下載。如果想為以前用標準模式下載過的項目建立完整的專案資料夾，請先清除收藏的下載歷程；選擇「依專案分組」時，彈出視窗也會顯示這個提示。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">下載中途被中斷怎麼辦？</h3>
-                    <p class="text-slate-400">Project Download 會在本機追蹤進度。如果因網路錯誤或關閉瀏覽器而中斷，只需在同一個專案頁面重新開啟擴充功能即可繼續。已下載的檔案會被跳過，只會繼續下載剩餘的檔案。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Project Download 會包含 2026 年 7 月以後生成的媒體嗎？</h3>
+                    <p class="text-slate-400">只包含在 Grok 收藏中的媒體。Grok 在 2026 年 7 月更換媒體後端後，新生成的媒體不會再加入收藏，因此專案資料夾只涵蓋收藏清單中的內容。若要備份全部內容，請使用「所有生成媒體」來源，它會依對話各存成一個資料夾。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">可以同時下載多個 Grok 專案嗎？</h3>
-                    <p class="text-slate-400">目前 Project Download 一次處理一個專案。你可以開始下載一個專案，然後切換到另一個專案頁面再開始另一個下載。每個下載獨立運作，互不干擾。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">下載中斷或自己暫停時怎麼辦？</h3>
+                    <p class="text-slate-400">下載歷程會記錄每個已儲存的檔案，重新整理後再按「生成下載列表」與「開始下載」，已儲存的檔案會自動略過。另外，擴充功能每下載 250 支影片會刻意暫停一次，以免超出 Grok 的限制，預設 3 分鐘（⚙️ 設定 → ⏱️ 速率限制冷卻），之後自動繼續。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Project Download 是免費功能嗎？</h3>
-                    <p class="text-slate-400">Project Download 是 PRO 專屬功能。升級至 GrokMediaDownloader PRO（$4.99 終身授權）即可解鎖 Project Download 以及 Stream Capture、Video Gen Queue 和 Story Mode。</p>
+                    <p class="text-slate-400">不是。專案資料夾會把每張圖片和它生成的影片放在一起，而影片下載需要 PRO；免費版會以標準資料夾結構下載圖片。升級至 GrokMediaDownloader PRO（$4.99 一次付清、終身授權）即可解鎖影片下載與 Project Download，以及 Stream Capture、Story Mode 匯出和不限次數的 Video Gen Queue。</p>
                 </div>
             </div>
         </div>

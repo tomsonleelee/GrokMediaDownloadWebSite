@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Story Mode Helper | Video Story Creation Studio - GrokMediaDownloader</title>
-    <meta name="description" content="Create video stories from Grok AI clips. Visual storyboard, frame extraction, send-to-Grok continuation, local FFmpeg merge. PRO feature for GrokMediaDownloader.">
+    <meta name="description" content="Create video stories from Grok AI clips. Visual storyboard, frame extraction, send-to-Grok continuation, local FFmpeg merge. Arranging clips is free; exporting needs GrokMediaDownloader PRO.">
     <meta name="keywords" content="Story Mode Helper, Video Studio, Storyboard, Frame Extraction, Send Frame to Grok, FFmpeg, video merge, Grok AI video, Chrome extension">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -92,31 +92,47 @@
           "name": "What is Story Mode in GrokMediaDownloader?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Story Mode lets you compile your downloaded Grok AI images into a scrollable visual story or slideshow. You can arrange them in a meaningful sequence, preview the flow, and export the whole story as a single file."
+            "text": "Story Mode Helper is a video studio in the extension's side panel. You add Grok videos to a storyboard and put them in order, pick a frame from any clip and send it to Grok to generate the next clip, then merge all clips into one video locally with FFmpeg. Arranging clips is free; exporting the merged video needs PRO."
           }
         },
         {
           "@type": "Question",
-          "name": "How do I create a story from my Grok images?",
+          "name": "How do I add videos to the storyboard?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Open the Story Mode panel in the extension, select images from your collection, arrange them in the desired order by dragging and dropping, then click Create Story. The story is instantly generated and ready to preview or export."
+            "text": "Click 🛠️ Story Mode in the popup to open the side panel. Drop a video file from your computer into it, or drag a video in from a Grok post; on Grok's Favorites page, use the Add to Story Mode button on the video. The first video becomes the Master Video, which sets the resolution and frame rate of the final export."
           }
         },
         {
           "@type": "Question",
-          "name": "Can I customize the order of images in my story?",
+          "name": "Can I change the order of the clips?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Story Mode includes a drag-and-drop reordering interface. You can freely rearrange images before finalizing the story. The order you set is preserved in the exported output."
+            "text": "Yes. Drag clips in the storyboard to reorder them, click a clip to preview it, and remove the ones you don't need. Clear All empties the storyboard."
           }
         },
         {
           "@type": "Question",
-          "name": "What export formats does Story Mode support?",
+          "name": "How do I continue a clip with Grok?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Story Mode can export your image sequence as a ZIP archive of the ordered images, or as a self-contained HTML slideshow file that can be opened in any browser."
+            "text": "Select a clip and use the Frame Selector to pick a frame (the last frame by default). Choose a mode, add a prompt if needed, and click Send Frame & Generate Video: Grok opens with that frame uploaded so you can generate the next clip. The frame is then locked; if it isn't the last frame, the clip is cut at that point on export so the next clip continues smoothly. Download Frame saves the frame as a PNG."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Export Final Video produce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It merges the clips in storyboard order into one MP4 and saves it to your videos download folder. Clips whose resolution differs from the Master Video are scaled to match (you are warned first), clips without sound get a silent track, and Include audio track lets you decide whether to keep the sound. The merge runs locally with FFmpeg in your browser; nothing is uploaded."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my storyboard kept when I close the side panel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Videos, extracted frames and the clip order are stored in your browser's IndexedDB, so the storyboard is still there when you reopen the panel. The panel shows how much storage it uses; Start New Project or Clear All removes the stored videos."
           }
         },
         {
@@ -124,7 +140,7 @@
           "name": "Is Story Mode a free or PRO feature?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Story Mode is a PRO-exclusive feature. Upgrade to GrokMediaDownloader PRO for $4.99 (lifetime license) to unlock Story Mode along with Stream Capture, Video Gen Queue, and Project Download."
+            "text": "Both. In the free version you can add clips to the storyboard and arrange them. Exporting the merged video needs PRO ($4.99 one-time, lifetime license), which also unlocks video downloads, Stream Capture, Project Download and unlimited Video Gen Queue."
           }
         }
       ]
@@ -197,7 +213,7 @@
             <div class="text-center max-w-4xl mx-auto">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wide mb-6">
                     <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
-                    <span data-i18n="story_badge">PRO Feature</span>
+                    <span data-i18n="story_badge">Export: PRO</span>
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -296,7 +312,7 @@
                         <i data-lucide="layout-grid" class="text-purple-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_1_title">Visual Storyboard</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="story_feat_1_desc">Drag and drop video segments for intuitive timeline management. Add videos from Grok favorites with one click.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="story_feat_1_desc">Drag and drop video segments for intuitive timeline management. Drop in local videos or drag them from a Grok post; on Grok's Favorites page, videos get an Add to Story Mode button while the panel is open.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -346,7 +362,7 @@
                             <i data-lucide="plus-circle" class="text-purple-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_1_title">Add Videos to Studio</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_1_desc">Click 'Add to Studio' on Grok favorites page, or drag and drop local videos into the Side Panel.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_1_desc">Drop local videos into the side panel, or drag a video in from a Grok post. On Grok's Favorites page, click Add to Story Mode on a video.</p>
                     </div>
                 </div>
 
@@ -370,7 +386,7 @@
                             <i data-lucide="wand-2" class="text-blue-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_3_title">Generate Continuations</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_3_desc">Select a segment, browse the filmstrip to pick any frame, enter a prompt, and send to Grok. Frame Lock ensures seamless continuation.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_3_desc">Select a segment, browse the filmstrip to pick any frame, enter a prompt, and send it to Grok. Frame Lock marks that frame as the clip's cut point on export.</p>
                     </div>
                 </div>
 
@@ -382,7 +398,7 @@
                             <i data-lucide="download" class="text-emerald-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_4_title">Merge & Export</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_4_desc">When all segments are ready, click export. FFmpeg will merge all videos locally and download the result.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_4_desc">When all segments are ready, click Export Final Video (PRO). FFmpeg merges the clips locally and you download the result as an MP4.</p>
                     </div>
                 </div>
             </div>
@@ -505,11 +521,11 @@
                         <div class="grid grid-cols-2 gap-2">
                             <button class="bg-purple-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="send" class="w-4 h-4"></i>
-                                Send to Grok
+                                Send Frame &amp; Generate Video
                             </button>
                             <button class="bg-emerald-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="download" class="w-4 h-4"></i>
-                                Merge & Export
+                                Export Final Video
                             </button>
                         </div>
                     </div>
@@ -576,7 +592,7 @@
                     </div>
                     <div class="md:w-1/2 md:pl-12">
                         <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step4_title">4. Send Frame to Grok</h3>
-                        <p class="text-slate-400" data-i18n="story_wf_step4_desc">Click "Send to Grok" to open Grok Imagine with the extracted frame already uploaded. The frame is pre-loaded so you can immediately write your prompt.</p>
+                        <p class="text-slate-400" data-i18n="story_wf_step4_desc">Click "Send Frame &amp; Generate Video" to open Grok Imagine with the extracted frame already uploaded, so you can write your prompt right away.</p>
                     </div>
                 </div>
 
@@ -584,7 +600,7 @@
                 <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
                     <div class="md:w-1/2 md:text-right md:pr-12">
                         <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step5_title">5. Generate Continuation</h3>
-                        <p class="text-slate-400" data-i18n="story_wf_step5_desc">Write your prompt describing what happens next. Grok generates a new video that continues seamlessly from the last frame of your previous clip.</p>
+                        <p class="text-slate-400" data-i18n="story_wf_step5_desc">Write your prompt describing what happens next. Grok generates a new video that starts from that frame, so it picks up where your previous clip ended.</p>
                     </div>
                     <div class="hidden md:flex w-12 h-12 bg-amber-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-amber-500/50">
                         <i data-lucide="sparkles" class="text-amber-400 w-5 h-5"></i>
@@ -609,7 +625,7 @@
             <div class="mt-16 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-purple-500/10 border border-purple-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="infinity" class="text-purple-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="story_wf_loop_note">This iterative loop lets you build video stories of any length — chain 5, 10, or 50+ clips into a single continuous narrative, then merge them all with one click.</p>
+                    <p class="text-slate-300 text-sm" data-i18n="story_wf_loop_note">This loop lets you chain clip after clip into one continuous story, then merge them all with Export Final Video (PRO).</p>
                 </div>
             </div>
         </div>
@@ -625,31 +641,31 @@
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">What is Story Mode in GrokMediaDownloader?</h3>
-                    <p class="text-slate-400">Story Mode lets you compile your downloaded Grok AI images into a scrollable visual story or slideshow. Instead of a flat folder of images, you can arrange them in a meaningful sequence, preview the flow, and share or export the whole story as a single file. It is ideal for creators who generate image series or visual narratives with Grok.</p>
+                    <p class="text-slate-400">Story Mode Helper is a video studio in the extension's side panel. You add Grok videos to a storyboard and put them in order, pick a frame from any clip and send it to Grok to generate the next clip, then merge all clips into one video locally with FFmpeg. Arranging clips is free; exporting the merged video needs PRO.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">How do I create a story from my Grok images?</h3>
-                    <p class="text-slate-400">Open the Story Mode panel in the extension, select images from your collection, arrange them in the desired order by dragging and dropping, then click "Create Story." The story is instantly generated and ready to preview or export.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">How do I add videos to the storyboard?</h3>
+                    <p class="text-slate-400">Click 🛠️ Story Mode in the popup to open the side panel. Drop a video file from your computer into it, or drag a video in from a Grok post; on Grok's Favorites page, use the Add to Story Mode button on the video. The first video becomes the Master Video, which sets the resolution and frame rate of the final export.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Can I customize the order of images in my story?</h3>
-                    <p class="text-slate-400">Yes. Story Mode includes a drag-and-drop reordering interface. You can freely rearrange images before finalizing the story. The order you set is preserved in the exported output.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Can I change the order of the clips?</h3>
+                    <p class="text-slate-400">Yes. Drag clips in the storyboard to reorder them, click a clip to preview it, and remove the ones you don't need. Clear All empties the storyboard.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">How many images can I include in a single story?</h3>
-                    <p class="text-slate-400">Story Mode supports up to several hundred images per story. For best performance we recommend keeping stories under 100 images, but there is no hard technical limit imposed by the extension itself.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">How do I continue a clip with Grok?</h3>
+                    <p class="text-slate-400">Select a clip and use the Frame Selector to pick a frame (the last frame by default). Choose a mode, add a prompt if needed, and click Send Frame &amp; Generate Video: Grok opens with that frame uploaded so you can generate the next clip. The frame is then locked; if it isn't the last frame, the clip is cut at that point on export so the next clip continues smoothly. Download Frame saves the frame as a PNG.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">What export formats does Story Mode support?</h3>
-                    <p class="text-slate-400">Story Mode can export your image sequence as a ZIP archive of the ordered images, or as a self-contained HTML slideshow file that can be opened in any browser. More export formats may be added in future PRO updates.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">What does Export Final Video produce?</h3>
+                    <p class="text-slate-400">It merges the clips in storyboard order into one MP4 and saves it to your videos download folder. Clips whose resolution differs from the Master Video are scaled to match (you are warned first), clips without sound get a silent track, and Include audio track lets you decide whether to keep the sound. The merge runs locally with FFmpeg in your browser; nothing is uploaded.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Can I add captions or titles to images in my story?</h3>
-                    <p class="text-slate-400">Yes. Story Mode allows you to add a text caption to each image. Captions are displayed below the image in the story view and are included in the exported HTML slideshow, making it easy to add context or narration to each frame.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Is my storyboard kept when I close the side panel?</h3>
+                    <p class="text-slate-400">Yes. Videos, extracted frames and the clip order are stored in your browser's IndexedDB, so the storyboard is still there when you reopen the panel. The panel shows how much storage it uses; Start New Project or Clear All removes the stored videos.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Is Story Mode a free or PRO feature?</h3>
-                    <p class="text-slate-400">Story Mode is a PRO-exclusive feature. Upgrade to GrokMediaDownloader PRO for $4.99 (lifetime license) to unlock Story Mode along with Stream Capture, Video Gen Queue, and Project Download.</p>
+                    <p class="text-slate-400">Both. In the free version you can add clips to the storyboard and arrange them. Exporting the merged video needs PRO ($4.99 one-time, lifetime license), which also unlocks video downloads, Stream Capture, Project Download and unlimited Video Gen Queue.</p>
                 </div>
             </div>
         </div>
@@ -659,7 +675,7 @@
     <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Start Creating Your Video Story</h2>
-            <p class="text-slate-400 mb-8">Story Mode Helper is a PRO exclusive feature</p>
+            <p class="text-slate-400 mb-8">Arranging clips is free; exporting the merged video needs PRO</p>
 
             <div class="inline-flex flex-col sm:flex-row gap-4">
                 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=story-mode&amp;utm_content=bottom_cta&amp;utm_term=en" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">

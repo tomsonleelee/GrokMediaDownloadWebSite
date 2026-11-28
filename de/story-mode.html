@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Story Mode Helper | Studio für Video-Storys - GrokMediaDownloader</title>
-    <meta name="description" content="Erstelle Video-Storys aus Grok-AI-Clips. Visuelles Storyboard, Frame-Extraktion, Fortsetzung per Send-to-Grok, lokale FFmpeg-Zusammenführung. PRO-Funktion von GrokMediaDownloader.">
+    <meta name="description" content="Erstelle Video-Storys aus Grok-AI-Clips. Visuelles Storyboard, Frame-Extraktion, Fortsetzung per Send-to-Grok, lokale FFmpeg-Zusammenführung. Anordnen ist kostenlos, der Export erfordert GrokMediaDownloader PRO.">
     <meta name="keywords" content="Story Mode Helper, Video Studio, Storyboard, Frame-Extraktion, Frame an Grok senden, FFmpeg, Videos zusammenfügen, Grok AI Video, Chrome-Erweiterung">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -92,31 +92,47 @@
           "name": "Was ist Story Mode in GrokMediaDownloader?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Mit Story Mode stellst du deine heruntergeladenen Grok-AI-Bilder zu einer scrollbaren visuellen Story oder Diashow zusammen. Du kannst sie in eine sinnvolle Reihenfolge bringen, den Ablauf in der Vorschau ansehen und die ganze Story als eine einzige Datei exportieren."
+            "text": "Story Mode Helper ist ein Videostudio im Seitenpanel der Erweiterung. Du fügst Grok-Videos zu einem Storyboard hinzu und ordnest sie, wählst ein Einzelbild aus einem beliebigen Clip und schickst es an Grok, um den nächsten Clip zu generieren, und fügst am Ende alle Clips lokal mit FFmpeg zu einem Video zusammen. Das Anordnen der Clips ist kostenlos, für den Export des fertigen Videos brauchst du PRO."
           }
         },
         {
           "@type": "Question",
-          "name": "Wie erstelle ich eine Story aus meinen Grok-Bildern?",
+          "name": "Wie füge ich Videos zum Storyboard hinzu?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Öffne das Story-Mode-Panel in der Erweiterung, wähle Bilder aus deiner Sammlung, bringe sie per Drag & Drop in die gewünschte Reihenfolge und klicke auf „Create Story“. Die Story wird sofort erstellt und ist bereit für Vorschau oder Export."
+            "text": "Klicke im Popup auf 🛠️ Story Mode, um das Seitenpanel zu öffnen. Zieh eine Videodatei von deinem Computer hinein oder zieh ein Video aus einem Grok-Post herüber; auf Groks Favoriten-Seite nutzt du den Button „Zu Story-Modus hinzufügen“ am Video. Das erste Video wird zum Master-Video und legt Auflösung und Bildrate des fertigen Exports fest."
           }
         },
         {
           "@type": "Question",
-          "name": "Kann ich die Reihenfolge der Bilder in meiner Story anpassen?",
+          "name": "Kann ich die Reihenfolge der Clips ändern?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja. Story Mode bietet eine Drag-and-Drop-Oberfläche zum Umsortieren. Du kannst die Bilder frei neu anordnen, bevor du die Story fertigstellst. Die festgelegte Reihenfolge bleibt im Export erhalten."
+            "text": "Ja. Zieh Clips im Storyboard an eine neue Position, klicke auf einen Clip für die Vorschau und entferne, was du nicht brauchst. „Alles löschen“ leert das Storyboard."
           }
         },
         {
           "@type": "Question",
-          "name": "Welche Exportformate unterstützt Story Mode?",
+          "name": "Wie setze ich einen Clip mit Grok fort?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Story Mode exportiert deine Bildfolge als ZIP-Archiv mit den sortierten Bildern oder als eigenständige HTML-Diashow, die sich in jedem Browser öffnen lässt."
+            "text": "Wähle einen Clip und such mit der Bildauswahl ein Einzelbild aus (standardmäßig das letzte). Wähle einen Modus, gib bei Bedarf einen Prompt ein und klicke auf „Bild senden & Video generieren“: Grok öffnet sich mit dem hochgeladenen Bild, damit du den nächsten Clip generieren kannst. Das Bild wird danach gesperrt; ist es nicht das letzte, wird der Clip beim Export an dieser Stelle geschnitten, damit der nächste Clip nahtlos anschließt. „Bild herunterladen“ speichert das Bild als PNG."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was erzeugt „Endvideo exportieren“?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Es fügt die Clips in der Reihenfolge des Storyboards zu einer MP4 zusammen und speichert sie in deinem Download-Ordner für Videos. Clips mit anderer Auflösung als das Master-Video werden angepasst (vorher erscheint ein Hinweis), Clips ohne Ton bekommen eine stumme Tonspur, und mit „Audiospur einschließen“ entscheidest du, ob der Ton bleibt. Das Zusammenfügen läuft lokal mit FFmpeg in deinem Browser; nichts wird hochgeladen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bleibt mein Storyboard erhalten, wenn ich das Seitenpanel schließe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Videos, extrahierte Bilder und die Reihenfolge der Clips liegen in der IndexedDB deines Browsers, sodass das Storyboard beim erneuten Öffnen noch da ist. Das Panel zeigt den belegten Speicher; „Neues Projekt starten“ oder „Alles löschen“ entfernt die gespeicherten Videos."
           }
         },
         {
@@ -124,7 +140,7 @@
           "name": "Ist Story Mode eine kostenlose oder eine PRO-Funktion?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Story Mode ist exklusiv für PRO. Upgrade für $4.99 (Lizenz auf Lebenszeit) auf GrokMediaDownloader PRO, um Story Mode zusammen mit Stream Capture, Video Gen Queue und Project Download freizuschalten."
+            "text": "Beides. In der kostenlosen Version kannst du Clips zum Storyboard hinzufügen und anordnen. Für den Export des zusammengefügten Videos brauchst du PRO ($4.99 einmalig, Lizenz auf Lebenszeit); PRO schaltet außerdem Video-Downloads, Stream Capture, Project Download und eine unbegrenzte Video Gen Queue frei."
           }
         }
       ]
@@ -195,7 +211,7 @@
             <div class="text-center max-w-4xl mx-auto">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wide mb-6">
                     <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
-                    <span data-i18n="story_badge">PRO-Funktion</span>
+                    <span data-i18n="story_badge">Export: PRO</span>
                 </div>
 
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -294,7 +310,7 @@
                         <i data-lucide="layout-grid" class="text-purple-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="story_feat_1_title">Visuelles Storyboard</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="story_feat_1_desc">Videosegmente per Drag & Drop für eine intuitive Timeline-Verwaltung. Videos aus den Grok-Favoriten mit einem Klick hinzufügen.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="story_feat_1_desc">Videosegmente per Drag-and-drop intuitiv auf der Zeitleiste anordnen. Zieh lokale Videos hinein oder hol sie aus einem Grok-Post; auf Groks Favoriten-Seite zeigen Videos den Button „Zu Story-Modus hinzufügen“, solange das Panel offen ist.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -344,7 +360,7 @@
                             <i data-lucide="plus-circle" class="text-purple-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_1_title">Videos zum Studio hinzufügen</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_1_desc">Klicke auf der Grok-Favoritenseite auf „Add to Studio“ oder ziehe lokale Videos per Drag & Drop ins Side Panel.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_1_desc">Zieh lokale Videos ins Seitenpanel oder zieh ein Video aus einem Grok-Post hinein. Auf Groks Favoriten-Seite klickst du bei einem Video auf „Zu Story-Modus hinzufügen“.</p>
                     </div>
                 </div>
 
@@ -368,7 +384,7 @@
                             <i data-lucide="wand-2" class="text-blue-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_3_title">Fortsetzungen generieren</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_3_desc">Wähle ein Segment, suche im Filmstreifen einen beliebigen Frame aus, gib einen Prompt ein und sende ihn an Grok. Frame Lock sorgt für eine nahtlose Fortsetzung.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_3_desc">Wähle ein Segment, such im Filmstreifen ein beliebiges Einzelbild aus, gib einen Prompt ein und schick es an Grok. Frame Lock markiert dieses Bild als Schnittpunkt des Clips beim Export.</p>
                     </div>
                 </div>
 
@@ -380,7 +396,7 @@
                             <i data-lucide="download" class="text-emerald-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="story_step_4_title">Zusammenführen & Exportieren</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="story_step_4_desc">Sind alle Segmente bereit, klicke auf Exportieren. FFmpeg führt alle Videos lokal zusammen und lädt das Ergebnis herunter.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="story_step_4_desc">Wenn alle Segmente fertig sind, klicke auf „Endvideo exportieren“ (PRO). FFmpeg fügt die Clips lokal zusammen, und du lädst das Ergebnis als MP4 herunter.</p>
                     </div>
                 </div>
             </div>
@@ -502,9 +518,9 @@
                         <!-- Action Buttons -->
                         <div class="grid grid-cols-2 gap-2">
                             <button class="bg-purple-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
-                                <i data-lucide="send" class="w-4 h-4"></i>An Grok senden</button>
+                                <i data-lucide="send" class="w-4 h-4"></i>Bild senden &amp; Video generieren</button>
                             <button class="bg-emerald-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
-                                <i data-lucide="download" class="w-4 h-4"></i>Zusammenführen & Exportieren</button>
+                                <i data-lucide="download" class="w-4 h-4"></i>Endvideo exportieren</button>
                         </div>
                     </div>
                 </div>
@@ -570,7 +586,7 @@
                     </div>
                     <div class="md:w-1/2 md:pl-12">
                         <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step4_title">4. Frame an Grok senden</h3>
-                        <p class="text-slate-400" data-i18n="story_wf_step4_desc">Klicke auf „Send to Grok“, um Grok Imagine mit dem bereits hochgeladenen Frame zu öffnen. Der Frame ist vorgeladen, sodass du sofort deinen Prompt schreiben kannst.</p>
+                        <p class="text-slate-400" data-i18n="story_wf_step4_desc">Klicke auf „Bild senden &amp; Video generieren“, um Grok Imagine mit dem bereits hochgeladenen Einzelbild zu öffnen, damit du sofort deinen Prompt schreiben kannst.</p>
                     </div>
                 </div>
 
@@ -578,7 +594,7 @@
                 <div class="relative flex flex-col md:flex-row items-center gap-6 mb-12">
                     <div class="md:w-1/2 md:text-right md:pr-12">
                         <h3 class="text-xl font-bold text-white mb-2" data-i18n="story_wf_step5_title">5. Fortsetzung generieren</h3>
-                        <p class="text-slate-400" data-i18n="story_wf_step5_desc">Beschreibe in deinem Prompt, was als Nächstes passiert. Grok generiert ein neues Video, das nahtlos an den letzten Frame deines vorherigen Clips anschließt.</p>
+                        <p class="text-slate-400" data-i18n="story_wf_step5_desc">Beschreibe im Prompt, was als Nächstes passiert. Grok generiert ein neues Video, das bei diesem Bild beginnt, und knüpft so an das Ende deines vorherigen Clips an.</p>
                     </div>
                     <div class="hidden md:flex w-12 h-12 bg-amber-500/20 rounded-full items-center justify-center flex-shrink-0 z-10 border-2 border-amber-500/50">
                         <i data-lucide="sparkles" class="text-amber-400 w-5 h-5"></i>
@@ -603,7 +619,7 @@
             <div class="mt-16 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-purple-500/10 border border-purple-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="infinity" class="text-purple-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="story_wf_loop_note">Mit dieser iterativen Schleife baust du Video-Storys beliebiger Länge – verkette 5, 10 oder 50+ Clips zu einer durchgehenden Erzählung und füge sie dann mit einem Klick zusammen.</p>
+                    <p class="text-slate-300 text-sm" data-i18n="story_wf_loop_note">Mit dieser Schleife reihst du Clip an Clip zu einer durchgehenden Story und fügst am Ende alles mit „Endvideo exportieren“ (PRO) zusammen.</p>
                 </div>
             </div>
         </div>
@@ -619,31 +635,31 @@
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Was ist Story Mode in GrokMediaDownloader?</h3>
-                    <p class="text-slate-400">Mit Story Mode stellst du deine heruntergeladenen Grok-AI-Bilder zu einer scrollbaren visuellen Story oder Diashow zusammen. Statt eines flachen Bilderordners kannst du sie in eine sinnvolle Reihenfolge bringen, den Ablauf in der Vorschau ansehen und die ganze Story als eine einzige Datei teilen oder exportieren. Ideal für Kreative, die mit Grok Bildserien oder visuelle Erzählungen erstellen.</p>
+                    <p class="text-slate-400">Story Mode Helper ist ein Videostudio im Seitenpanel der Erweiterung. Du fügst Grok-Videos zu einem Storyboard hinzu und ordnest sie, wählst ein Einzelbild aus einem beliebigen Clip und schickst es an Grok, um den nächsten Clip zu generieren, und fügst am Ende alle Clips lokal mit FFmpeg zu einem Video zusammen. Das Anordnen der Clips ist kostenlos, für den Export des fertigen Videos brauchst du PRO.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Wie erstelle ich eine Story aus meinen Grok-Bildern?</h3>
-                    <p class="text-slate-400">Öffne das Story-Mode-Panel in der Erweiterung, wähle Bilder aus deiner Sammlung, bringe sie per Drag & Drop in die gewünschte Reihenfolge und klicke auf „Create Story“. Die Story wird sofort erstellt und ist bereit für Vorschau oder Export.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Wie füge ich Videos zum Storyboard hinzu?</h3>
+                    <p class="text-slate-400">Klicke im Popup auf 🛠️ Story Mode, um das Seitenpanel zu öffnen. Zieh eine Videodatei von deinem Computer hinein oder zieh ein Video aus einem Grok-Post herüber; auf Groks Favoriten-Seite nutzt du den Button „Zu Story-Modus hinzufügen“ am Video. Das erste Video wird zum Master-Video und legt Auflösung und Bildrate des fertigen Exports fest.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Kann ich die Reihenfolge der Bilder in meiner Story anpassen?</h3>
-                    <p class="text-slate-400">Ja. Story Mode bietet eine Drag-and-Drop-Oberfläche zum Umsortieren. Du kannst die Bilder frei neu anordnen, bevor du die Story fertigstellst. Die festgelegte Reihenfolge bleibt im Export erhalten.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Kann ich die Reihenfolge der Clips ändern?</h3>
+                    <p class="text-slate-400">Ja. Zieh Clips im Storyboard an eine neue Position, klicke auf einen Clip für die Vorschau und entferne, was du nicht brauchst. „Alles löschen“ leert das Storyboard.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Wie viele Bilder kann eine einzelne Story enthalten?</h3>
-                    <p class="text-slate-400">Story Mode unterstützt bis zu mehrere Hundert Bilder pro Story. Für die beste Performance empfehlen wir weniger als 100 Bilder pro Story, die Erweiterung selbst setzt aber keine feste technische Grenze.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Wie setze ich einen Clip mit Grok fort?</h3>
+                    <p class="text-slate-400">Wähle einen Clip und such mit der Bildauswahl ein Einzelbild aus (standardmäßig das letzte). Wähle einen Modus, gib bei Bedarf einen Prompt ein und klicke auf „Bild senden &amp; Video generieren“: Grok öffnet sich mit dem hochgeladenen Bild, damit du den nächsten Clip generieren kannst. Das Bild wird danach gesperrt; ist es nicht das letzte, wird der Clip beim Export an dieser Stelle geschnitten, damit der nächste Clip nahtlos anschließt. „Bild herunterladen“ speichert das Bild als PNG.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Welche Exportformate unterstützt Story Mode?</h3>
-                    <p class="text-slate-400">Story Mode exportiert deine Bildfolge als ZIP-Archiv mit den sortierten Bildern oder als eigenständige HTML-Diashow, die sich in jedem Browser öffnen lässt. Weitere Exportformate können in künftigen PRO-Updates hinzukommen.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Was erzeugt „Endvideo exportieren“?</h3>
+                    <p class="text-slate-400">Es fügt die Clips in der Reihenfolge des Storyboards zu einer MP4 zusammen und speichert sie in deinem Download-Ordner für Videos. Clips mit anderer Auflösung als das Master-Video werden angepasst (vorher erscheint ein Hinweis), Clips ohne Ton bekommen eine stumme Tonspur, und mit „Audiospur einschließen“ entscheidest du, ob der Ton bleibt. Das Zusammenfügen läuft lokal mit FFmpeg in deinem Browser; nichts wird hochgeladen.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Kann ich Bildunterschriften oder Titel zu den Bildern meiner Story hinzufügen?</h3>
-                    <p class="text-slate-400">Ja. In Story Mode kannst du jedem Bild eine Bildunterschrift hinzufügen. Sie wird in der Story-Ansicht unter dem Bild angezeigt und ist in der exportierten HTML-Diashow enthalten – so ergänzt du jeden Frame ganz einfach um Kontext oder Erzähltext.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Bleibt mein Storyboard erhalten, wenn ich das Seitenpanel schließe?</h3>
+                    <p class="text-slate-400">Ja. Videos, extrahierte Bilder und die Reihenfolge der Clips liegen in der IndexedDB deines Browsers, sodass das Storyboard beim erneuten Öffnen noch da ist. Das Panel zeigt den belegten Speicher; „Neues Projekt starten“ oder „Alles löschen“ entfernt die gespeicherten Videos.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Ist Story Mode eine kostenlose oder eine PRO-Funktion?</h3>
-                    <p class="text-slate-400">Story Mode ist exklusiv für PRO. Upgrade für $4.99 (Lizenz auf Lebenszeit) auf GrokMediaDownloader PRO, um Story Mode zusammen mit Stream Capture, Video Gen Queue und Project Download freizuschalten.</p>
+                    <p class="text-slate-400">Beides. In der kostenlosen Version kannst du Clips zum Storyboard hinzufügen und anordnen. Für den Export des zusammengefügten Videos brauchst du PRO ($4.99 einmalig, Lizenz auf Lebenszeit); PRO schaltet außerdem Video-Downloads, Stream Capture, Project Download und eine unbegrenzte Video Gen Queue frei.</p>
                 </div>
             </div>
         </div>
@@ -653,7 +669,7 @@
     <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Starte deine Video-Story</h2>
-            <p class="text-slate-400 mb-8">Story Mode Helper ist eine exklusive PRO-Funktion</p>
+            <p class="text-slate-400 mb-8">Das Anordnen der Clips ist kostenlos, für den Export des fertigen Videos brauchst du PRO</p>
 
             <div class="inline-flex flex-col sm:flex-row gap-4">
                 <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=story-mode&amp;utm_content=bottom_cta&amp;utm_term=de" target="_blank" rel="noopener" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2 border border-slate-700">

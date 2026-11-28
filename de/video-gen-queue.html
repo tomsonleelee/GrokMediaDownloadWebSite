@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Gen Queue | Automatisierte Warteschlange für Videogenerierung - GrokMediaDownloader</title>
-    <meta name="description" content="Automatisiere die Grok-Videogenerierung mit Video Gen Queue. Batch-Planung, 4 Generierungsmodi, automatische Wiederholung, Rate-Limit-Erkennung. PRO-Funktion von GrokMediaDownloader.">
+    <meta name="description" content="Automatisiere die Grok-Videogenerierung mit Video Gen Queue. Batch-Planung, 4 Generierungsmodi, automatische Wiederholung, Rate-Limit-Erkennung. Kostenlos: 50 Nutzungen, PRO: unbegrenzt.">
     <meta name="keywords" content="Video Gen Queue, automatisierte Videogenerierung, Batch-Warteschlange, Grok AI Video, Chrome-Erweiterung, automatische Wiederholung, Rate-Limit-Erkennung">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -92,31 +92,47 @@
           "name": "Was ist Video Gen Queue und wie funktioniert es?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Video Gen Queue ist eine PRO-Funktion, die automatisch jedes Video erfasst, das Grok während deiner Sitzung generiert. Während Grok deine Anfragen zur Videogenerierung verarbeitet, reiht die Erweiterung jedes fertige Video für den Batch-Download per Klick ein – so musst du Videos nie mehr einzeln manuell speichern."
+            "text": "Video Gen Queue automatisiert die Videogenerierung in Grok über das Seitenpanel der Erweiterung. Du fügst Bild-Posts zur Warteschlange hinzu, wählst einen Modus (Custom, Normal, Fun oder Spicy) und wie viele erfolgreiche Videos du pro Post willst, und die Erweiterung öffnet jeden Post auf grok.com, trägt den Prompt ein und sendet ihn ab. Moderierte oder fehlgeschlagene Versuche werden bis zu deinem Wiederholungslimit erneut gestartet, danach geht es mit dem nächsten Post weiter. Die kostenlose Version enthält 50 Nutzungen, PRO ist unbegrenzt."
           }
         },
         {
           "@type": "Question",
-          "name": "Kann ich mehrere Grok-Videos auf einmal herunterladen?",
+          "name": "Wie füge ich Posts zur Warteschlange hinzu?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja. Genau dafür ist Video Gen Queue gedacht. Sobald Videos in der Warteschlange sind, klicke auf „Alle herunterladen“, um alle Videos in einem Vorgang auf deinem lokalen Laufwerk zu speichern."
+            "text": "Klicke im Popup auf 🎯 Queue, um das Panel zu öffnen. Auf einer Grok-Post-Seite klickst du auf den schwebenden 🎯-Button, legst Prompt und Optionen fest und fügst den Post hinzu; im Panel kannst du unter „Element hinzufügen“ auch eine Beitrags-ID oder URL einfügen. „Kürzliche Beiträge hinzufügen“ übernimmt Bild-Posts aus deinen Grok-Favoriten, die in den letzten 1 bis 72 Stunden entstanden sind, mit einem gemeinsamen Prompt. Seit Groks Umstellung im Juli 2026 landen neuere Bilder womöglich nicht mehr in den Favoriten."
           }
         },
         {
           "@type": "Question",
-          "name": "In welchem Format werden Videos heruntergeladen?",
+          "name": "Welche Einstellungen kann ich pro Element wählen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Videos werden im Originalformat heruntergeladen, wie Grok sie bereitstellt – in der Regel MP4. Die Erweiterung lädt die Quelldatei direkt herunter und erhält Originalauflösung, Bildrate und Qualität ohne Neukodierung."
+            "text": "Modus (Custom, Normal, Fun oder Spicy), Prompt (Custom braucht einen, die anderen Modi funktionieren ohne), Erfolgsziel, maximale Wiederholungen, Dauer (6 s oder 10 s) und Auflösung (480p oder 720p). 10 s und 720p setzen SuperGrok voraus; ist dein Konto nicht berechtigt, kann Grok die Anfrage ablehnen oder markieren."
           }
         },
         {
           "@type": "Question",
-          "name": "Geht die Warteschlange verloren, wenn ich das Panel der Erweiterung schließe?",
+          "name": "Kann ich sehen, wie weit jedes Element ist?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nein. Die Video Gen Queue wird in IndexedDB gespeichert und übersteht Tab-Wechsel und das Schließen des Panels. Deine Videos bleiben in der Warteschlange, bis du sie manuell leerst oder die Videos herunterlädst."
+            "text": "Ja. Jedes Element zeigt, ob es wartet, aktiv, abgeschlossen oder fehlgeschlagen ist, mit Erfolgen und Fehlschlägen gemessen am Ziel. Die Prompt-Statistiken halten fest, wie oft jeder Prompt erfolgreich war oder moderiert wurde, damit du siehst, welche Prompts funktionieren."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert bei einem Rate-Limit von Grok oder wenn eine Generierung hängt?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Antwortet Grok mit einem Rate-Limit-Fehler (HTTP 429), stoppt die Warteschlange und zeigt eine Meldung; warte eine Weile und klicke dann erneut auf „Starten“. Kommt innerhalb des Generierungs-Timeouts (standardmäßig 180 Sekunden, in den Einstellungen zwischen 30 und 600 einstellbar) kein Ergebnis, wird der Versuch als Fehler markiert und die Warteschlange macht mit dem nächsten Element weiter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Geht die Warteschlange verloren, wenn ich das Seitenpanel schließe oder die Seite neu lade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nein. Elemente und Prompt-Statistiken liegen in der IndexedDB deines Browsers, bleiben also beim Schließen des Panels oder Neuladen von grok.com erhalten, und nach dem Neuladen läuft die Verarbeitung weiter. Lass den Browser geöffnet und den Grok-Tab auf den Post-Seiten, solange die Warteschlange läuft."
           }
         },
         {
@@ -124,7 +140,7 @@
           "name": "Ist Video Gen Queue in der kostenlosen Version verfügbar?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Video Gen Queue ist exklusiv für PRO. Upgrade für $4.99 (Lizenz auf Lebenszeit) auf PRO, um Video Gen Queue zusammen mit Stream Capture, Story Mode und Project Download freizuschalten."
+            "text": "Ja, mit einem Limit. Die kostenlose Version enthält 50 Nutzungen; eine Nutzung ist ein Video, das Grok über die Warteschlange erfolgreich generiert hat, moderierte oder fehlgeschlagene Versuche zählen nicht. PRO ($4.99 einmalig, Lizenz auf Lebenszeit) hebt das Limit auf und schaltet zusätzlich Video-Downloads, Stream Capture, den Story-Mode-Export und Project Download frei."
           }
         }
       ]
@@ -204,7 +220,7 @@
 
                 <p class="text-xl md:text-2xl text-pink-300 mb-4" data-i18n="queue_subtitle">Automatisierte Warteschlange für Videogenerierung</p>
 
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="queue_page_desc">Neue Side-Panel-Oberfläche für die Batch-Videogenerierung. Unterstützt 4 Generierungsmodi, automatische Wiederholung bei Fehlern und intelligente Rate-Limit-Erkennung für vollautomatische Videogenerierung.</p>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="queue_page_desc">Seitenpanel für die Videogenerierung im Batch. Unterstützt 4 Generierungsmodi, automatische Wiederholungen bis zu deinem Limit und eine Rate-Limit-Erkennung, die die Warteschlange stoppt, wenn Grok um eine Pause bittet.</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=video-gen-queue&amp;utm_content=hero&amp;utm_term=de" target="_blank" rel="noopener" class="px-8 py-4 bg-pink-600 hover:bg-pink-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
@@ -294,7 +310,7 @@
                         <span class="text-2xl">🔄</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_1_title">Automatische Wiederholung</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_1_desc">Fehlgeschlagene Generierungen werden automatisch neu eingereiht, damit jede Aufgabe erfolgreich abgeschlossen wird.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_1_desc">Moderierte oder fehlgeschlagene Versuche werden automatisch wiederholt, bis zu dem Wiederholungslimit, das du pro Element festlegst.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -303,7 +319,7 @@
                         <span class="text-2xl">📋</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_2_title">Im Batch zur Warteschlange hinzufügen</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_2_desc">Wähle mehrere Einträge aus den Favoriten und füge sie mit einem Klick im Batch zur Generierungswarteschlange hinzu.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_2_desc">„Kürzliche Beiträge hinzufügen“ übernimmt Bild-Posts aus deinen Grok-Favoriten, die in den letzten 1 bis 72 Stunden entstanden sind, mit einem gemeinsamen Prompt.</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -321,7 +337,7 @@
                         <span class="text-2xl">🛡️</span>
                     </div>
                     <h3 class="text-xl font-bold mb-2 text-white" data-i18n="queue_feat_4_title">Rate-Limit-Erkennung</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_4_desc">Intelligente Erkennung der Rate-Limits der Grok-API, automatisches Pausieren und Fortsetzen nach der Abkühlphase.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_feat_4_desc">Erkennt Groks Rate-Limit-Antwort (HTTP 429) und stoppt die Warteschlange, damit du warten und sie neu starten kannst.</p>
                 </div>
             </div>
         </div>
@@ -356,7 +372,7 @@
                             <i data-lucide="list-plus" class="text-rose-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_2_title">Zur Warteschlange hinzufügen</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="queue_step_2_desc">Klicke auf den schwebenden 🎯-Button oder nutze das Batch-Hinzufügen, um einen Zeitraum (1h~72h) zu wählen und aktuelle Posts mit einem Klick hinzuzufügen.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_2_desc">Klicke auf den schwebenden 🎯-Button eines Posts oder nutze „Kürzliche Beiträge hinzufügen“, um Bild-Posts aus deinen Favoriten der letzten 1 bis 72 Stunden hinzuzufügen.</p>
                     </div>
                 </div>
 
@@ -392,7 +408,7 @@
                             <i data-lucide="check-circle" class="text-emerald-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="queue_step_5_title">Ergebnisse sammeln</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="queue_step_5_desc">Erfolgreich generierte Videos erscheinen automatisch in deinen Grok-Favoriten und sind jederzeit bereit zum Download.</p>
+                        <p class="text-slate-400 text-sm" data-i18n="queue_step_5_desc">Jedes Element stoppt, sobald es sein Ziel oder sein Wiederholungslimit erreicht; das Panel zeigt Erfolge und Fehlschläge. Lade die neuen Videos über das Popup herunter (Video-Downloads erfordern PRO).</p>
                     </div>
                 </div>
             </div>
@@ -434,7 +450,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1" data-i18n="queue_tech_3_title">Fetch-Interceptor</h4>
-                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_3_desc">Abfangen der Generierungsergebnisse in der MAIN World mit 90-Sekunden-Timeout als Fallback – für eine genaue Erfassung jeder Generierung.</p>
+                                <p class="text-slate-400 text-sm" data-i18n="queue_tech_3_desc">Liest Generierungsergebnisse, indem es Groks Antworten in der Seite abfängt, mit einem Timeout (standardmäßig 180 s, einstellbar von 30 bis 600 s), damit ein hängender Versuch nicht die ganze Warteschlange aufhält.</p>
                             </div>
                         </div>
 
@@ -535,7 +551,7 @@
                         <i data-lucide="play" class="text-blue-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_normal_title">Normal</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_normal_desc">Standard-Videogenerierung mit dem ursprünglichen Bild-Prompt. Die sicherste und berechenbarste Option für konsistente Ergebnisse.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_normal_desc">Groks Voreinstellung Normal. Kein Prompt nötig.</p>
                 </div>
 
                 <!-- Fun Mode -->
@@ -544,7 +560,7 @@
                         <i data-lucide="party-popper" class="text-amber-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_fun_title">Fun</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_fun_desc">Verleiht der Generierung einen verspielten, animierten Stil. Ideal für skurrile, cartoonartige Videoeffekte.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_fun_desc">Groks Voreinstellung Fun. Kein Prompt nötig.</p>
                 </div>
 
                 <!-- Spicy Mode -->
@@ -553,7 +569,7 @@
                         <i data-lucide="flame" class="text-rose-400 w-7 h-7"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2" data-i18n="queue_mode_spicy_title">Spicy</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_spicy_desc">Lotet kreative Grenzen mit kühnerer künstlerischer Interpretation aus. Rechne mit dramatischeren Bewegungen und visuellen Überraschungen.</p>
+                    <p class="text-slate-400 text-sm" data-i18n="queue_mode_spicy_desc">Groks Voreinstellung Spicy. Kein Prompt nötig; das Panel warnt, dass Grok solche Anfragen markieren kann.</p>
                 </div>
             </div>
 
@@ -561,7 +577,7 @@
             <div class="mt-12 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-pink-500/10 border border-pink-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="info" class="text-pink-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="queue_modes_note">Jeder Eintrag in der Warteschlange kann einen anderen Modus nutzen. Die automatische Wiederholung fängt Ablehnungen durch die Moderation selbstständig ab, sodass die Warteschlange ohne Unterbrechung weiterläuft.</p>
+                    <p class="text-slate-300 text-sm" data-i18n="queue_modes_note">Jedes Element der Warteschlange kann einen anderen Modus nutzen. Moderierte Versuche werden bis zum Wiederholungslimit des Elements wiederholt, danach geht es mit dem nächsten Element weiter.</p>
                 </div>
             </div>
         </div>
@@ -577,31 +593,31 @@
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Was ist Video Gen Queue und wie funktioniert es?</h3>
-                    <p class="text-slate-400">Video Gen Queue ist eine PRO-Funktion, die automatisch jedes Video erfasst, das Grok während deiner Sitzung generiert. Während Grok deine Anfragen zur Videogenerierung verarbeitet, reiht die Erweiterung jedes fertige Video für den Batch-Download per Klick ein – so musst du Videos nie mehr einzeln manuell speichern.</p>
+                    <p class="text-slate-400">Video Gen Queue automatisiert die Videogenerierung in Grok über das Seitenpanel der Erweiterung. Du fügst Bild-Posts zur Warteschlange hinzu, wählst einen Modus (Custom, Normal, Fun oder Spicy) und wie viele erfolgreiche Videos du pro Post willst, und die Erweiterung öffnet jeden Post auf grok.com, trägt den Prompt ein und sendet ihn ab. Moderierte oder fehlgeschlagene Versuche werden bis zu deinem Wiederholungslimit erneut gestartet, danach geht es mit dem nächsten Post weiter. Die kostenlose Version enthält 50 Nutzungen, PRO ist unbegrenzt.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Kann ich mehrere Grok-Videos auf einmal herunterladen?</h3>
-                    <p class="text-slate-400">Ja. Genau dafür ist Video Gen Queue gedacht. Sobald Videos in der Warteschlange sind, klicke auf „Alle herunterladen“, um alle Videos in einem Vorgang auf deinem lokalen Laufwerk zu speichern. Du kannst vor dem Download auch gezielt Videos aus der Warteschlange entfernen.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Wie füge ich Posts zur Warteschlange hinzu?</h3>
+                    <p class="text-slate-400">Klicke im Popup auf 🎯 Queue, um das Panel zu öffnen. Auf einer Grok-Post-Seite klickst du auf den schwebenden 🎯-Button, legst Prompt und Optionen fest und fügst den Post hinzu; im Panel kannst du unter „Element hinzufügen“ auch eine Beitrags-ID oder URL einfügen. „Kürzliche Beiträge hinzufügen“ übernimmt Bild-Posts aus deinen Grok-Favoriten, die in den letzten 1 bis 72 Stunden entstanden sind, mit einem gemeinsamen Prompt. Seit Groks Umstellung im Juli 2026 landen neuere Bilder womöglich nicht mehr in den Favoriten.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Funktioniert Video Gen Queue mit allen Arten der Grok-Videogenerierung?</h3>
-                    <p class="text-slate-400">Video Gen Queue unterstützt alle Videoinhalte, die Groks KI-Videogenerierung erzeugt. Sie erkennt Video-URLs, sobald sie auf der Seite gerendert werden, und fügt sie automatisch zur Warteschlange hinzu – unabhängig von Länge oder Auflösung.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Welche Einstellungen kann ich pro Element wählen?</h3>
+                    <p class="text-slate-400">Modus (Custom, Normal, Fun oder Spicy), Prompt (Custom braucht einen, die anderen Modi funktionieren ohne), Erfolgsziel, maximale Wiederholungen, Dauer (6 s oder 10 s) und Auflösung (480p oder 720p). 10 s und 720p setzen SuperGrok voraus; ist dein Konto nicht berechtigt, kann Grok die Anfrage ablehnen oder markieren.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">In welchem Format werden Videos heruntergeladen?</h3>
-                    <p class="text-slate-400">Videos werden im Originalformat heruntergeladen, wie Grok sie bereitstellt – in der Regel MP4. Die Erweiterung lädt die Quelldatei direkt herunter und erhält Originalauflösung, Bildrate und Qualität ohne Neukodierung.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Kann ich sehen, wie weit jedes Element ist?</h3>
+                    <p class="text-slate-400">Ja. Jedes Element zeigt, ob es wartet, aktiv, abgeschlossen oder fehlgeschlagen ist, mit Erfolgen und Fehlschlägen gemessen am Ziel. Die Prompt-Statistiken halten fest, wie oft jeder Prompt erfolgreich war oder moderiert wurde, damit du siehst, welche Prompts funktionieren.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Geht die Warteschlange verloren, wenn ich das Panel der Erweiterung schließe?</h3>
-                    <p class="text-slate-400">Nein. Die Video Gen Queue wird in IndexedDB gespeichert und übersteht Tab-Wechsel und das Schließen des Panels. Deine Videos bleiben in der Warteschlange, bis du sie manuell leerst oder die Videos herunterlädst.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Was passiert bei einem Rate-Limit von Grok oder wenn eine Generierung hängt?</h3>
+                    <p class="text-slate-400">Antwortet Grok mit einem Rate-Limit-Fehler (HTTP 429), stoppt die Warteschlange und zeigt eine Meldung; warte eine Weile und klicke dann erneut auf „Starten“. Kommt innerhalb des Generierungs-Timeouts (standardmäßig 180 Sekunden, in den Einstellungen zwischen 30 und 600 einstellbar) kein Ergebnis, wird der Versuch als Fehler markiert und die Warteschlange macht mit dem nächsten Element weiter.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">Kann ich den Status jedes Videos in der Warteschlange sehen?</h3>
-                    <p class="text-slate-400">Ja. Das Warteschlangen-Panel zeigt jedes Video mit seinem Status: eingereiht, wird heruntergeladen oder abgeschlossen. Wo verfügbar, siehst du Dateigrößen und Vorschaubilder, sodass du deine Videosammlung leicht erkennen und verwalten kannst.</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">Geht die Warteschlange verloren, wenn ich das Seitenpanel schließe oder die Seite neu lade?</h3>
+                    <p class="text-slate-400">Nein. Elemente und Prompt-Statistiken liegen in der IndexedDB deines Browsers, bleiben also beim Schließen des Panels oder Neuladen von grok.com erhalten, und nach dem Neuladen läuft die Verarbeitung weiter. Lass den Browser geöffnet und den Grok-Tab auf den Post-Seiten, solange die Warteschlange läuft.</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">Ist Video Gen Queue in der kostenlosen Version verfügbar?</h3>
-                    <p class="text-slate-400">Video Gen Queue ist exklusiv für PRO. Upgrade für $4.99 (Lizenz auf Lebenszeit) auf PRO, um Video Gen Queue zusammen mit Stream Capture, Story Mode und Project Download freizuschalten.</p>
+                    <p class="text-slate-400">Ja, mit einem Limit. Die kostenlose Version enthält 50 Nutzungen; eine Nutzung ist ein Video, das Grok über die Warteschlange erfolgreich generiert hat, moderierte oder fehlgeschlagene Versuche zählen nicht. PRO ($4.99 einmalig, Lizenz auf Lebenszeit) hebt das Limit auf und schaltet zusätzlich Video-Downloads, Stream Capture, den Story-Mode-Export und Project Download frei.</p>
                 </div>
             </div>
         </div>

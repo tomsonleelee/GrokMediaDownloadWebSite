@@ -20,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ストリームキャプチャ | リアルタイムGrok画像自動キャプチャ - GrokMediaDownloader PRO</title>
-    <meta name="description" content="ストリームキャプチャはGrok AIをリアルタイムで監視し、生成された画像を自動キャプチャします。DOMオブザーバー技術でスクロール中の新しい画像を検出し、ワンクリックで一括ダウンロード。GrokMediaDownloader PROの機能です。">
+    <meta name="description" content="ストリームキャプチャは grok.com のタブを監視し、そのタブで Grok が生成した画像を集めて、まとめてダウンロードできます。GrokMediaDownloader の PRO 機能。">
     <meta name="keywords" content="ストリームキャプチャ, grok画像キャプチャ, リアルタイム画像ダウンロード, DOMオブザーバー, 一括画像ダウンロード, grok AI画像, 自動キャプチャ, Chrome拡張機能">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Kario Studio">
@@ -89,42 +89,50 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "ストリームキャプチャーはすべての Grok ページで動作しますか？",
+          "name": "ストリームキャプチャーは何をキャプチャーし、どこで使えますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい。ストリームキャプチャーはメインフィード、個別投稿ページ、検索結果など、Grok が画像を生成するあらゆるページを監視します。DOM 観察技術を使用しているため、Grok が新しい画像をレンダリングする場所ならどこでも動作します。"
+            "text": "機能をオンにした grok.com のタブを監視し、Imagine で作成中に Grok がページに送ってくる生成画像を集めます。サムネイルやアイコンなどの小さな画像（約120KB未満）は無視され、キャプチャーするのは画像だけで、動画は対象外です。"
           }
         },
         {
           "@type": "Question",
-          "name": "1回のセッションで何枚の画像をキャプチャできますか？",
+          "name": "何枚までキャプチャーできますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "上限はありません。ストリームキャプチャーは1回の監視セッションで数百枚の画像をキューに追加できます。キューは IndexedDB に保存されるため、タブを切り替えたり拡張機能パネルを閉じても保持されます。"
+            "text": "1回のセッションで最大1,000枚です。1,000枚に達すると停止し、続ける前にキャプチャー画像をダウンロードしてクリアするよう求められます。"
           }
         },
         {
           "@type": "Question",
-          "name": "ストリームキャプチャーはブラウザを遅くしますか？",
+          "name": "キャプチャーした画像を保存するには？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "いいえ。Chrome のネイティブ MutationObserver API を使用しており、非常に効率的です。オブザーバーは DOM が変更されたときのみ起動するため、画像を生成していない間の CPU 使用率はほぼゼロです。"
+            "text": "ポップアップの「📥 キャプチャ画像をダウンロード」をクリックします。ファイルはダウンロードフォルダー内の grok_downloads/stream に保存され（パスは設定で変更可）、ファイル名は grok_stream_ にキャプチャー時刻を付けたものです。「キャプチャをクリア」で一覧を空にできます。"
           }
         },
         {
           "@type": "Question",
-          "name": "監視を一時停止して再開できますか？",
+          "name": "タブを再読み込みしたり閉じたりすると、キャプチャー画像は残りますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい。拡張機能パネルの「監視を停止」ボタンをクリックすれば、いつでも一時停止できます。それまでにキャプチャされた画像はキューに残ります。「ストリームキャプチャーを開始」を再度クリックすると再開され、新しい画像が同じキューに追加されます。"
+            "text": "残りません。キャプチャーした画像はダウンロードするまでその grok.com タブのメモリに保持されるだけなので、再読み込みしたりタブを閉じたりする前にダウンロードしてください。"
           }
         },
         {
           "@type": "Question",
-          "name": "重複画像は自動的に除去されますか？",
+          "name": "キャプチャーを一時停止して再開できますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "はい。ストリームキャプチャーはハッシュ比較を使用して、すでにコレクションやキューにある画像を検出してスキップします。上にスクロールしたり投稿を再訪したりしても、同じ画像を二度ダウンロードすることを防ぎます。"
+            "text": "はい。「有効にする」スイッチをオフにすると新しい画像の監視が止まり、キャプチャー済みの画像は一覧に残ります。もう一度オンにすると、同じ一覧への追加を続けます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "同じ画像が2回キャプチャーされることはありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ありません。新しい画像はそのセッションでキャプチャー済みの画像と照合されるため、再表示された画像が重複して追加されることはありません。"
           }
         },
         {
@@ -132,7 +140,7 @@
           "name": "ストリームキャプチャーは無料ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ストリームキャプチャーは PRO 限定機能です。無料版では表示されている画像の手動一括ダウンロードが可能です。PRO（$4.99 永続ライセンス）にアップグレードすると、ストリームキャプチャー、Video Gen Queue、ストーリーモード、プロジェクトダウンロードが使用できます。"
+            "text": "いいえ、ストリームキャプチャーは PRO 機能です。無料版では、お気に入り、タグ、またはライブラリの直近7日分から画像を一括ダウンロードできます。PRO（$4.99 の買い切り永続ライセンス）にアップグレードすると、ストリームキャプチャーに加えて動画のダウンロード、ストーリーモードの書き出し、プロジェクトダウンロード、無制限の Video Gen Queue が使えます。"
           }
         }
       ]
@@ -214,7 +222,7 @@
 
                 <p class="text-xl md:text-2xl text-cyan-300 mb-4" data-i18n="stream_subtitle">リアルタイムGrok画像自動キャプチャ</p>
 
-                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_desc">ブラウジング中にGrok AIを監視。ストリームキャプチャはDOMオブザーバー技術を使用して、リアルタイムで新しく生成された画像を自動検出しキューに追加します。インスピレーションを見逃さず、ワンクリックですべてを一括ダウンロード。</p>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed max-w-2xl mx-auto" data-i18n="stream_desc">grok.com のタブでオンにすると、ストリームキャプチャが DOM オブザーバーでそのタブに Grok が生成した画像をリアルタイムに集めます。タブを再読み込みしたり閉じたりする前に、ワンクリックでまとめてダウンロードしてください。</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="https://chromewebstore.google.com/detail/grok-media-downloader/niebmpjbnghbfnjbbeajlndkjpgpamhi?utm_source=grokmedia_site&amp;utm_medium=website&amp;utm_campaign=stream-capture&amp;utm_content=hero&amp;utm_term=ja" target="_blank" rel="noopener" class="px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2">
@@ -236,7 +244,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                 <h2 class="text-2xl md:text-3xl font-bold mb-3" data-i18n="stream_video_title">ストリームキャプチャの動作を見る</h2>
-                <p class="text-slate-400" data-i18n="stream_video_desc">監視開始 → Grokをブラウズ → 画像自動キャプチャ → 一括ダウンロード</p>
+                <p class="text-slate-400" data-i18n="stream_video_desc">有効にする → Imagine で作成 → 画像を自動キャプチャ → キャプチャ画像をダウンロード</p>
             </div>
 
             <!-- Video Container -->
@@ -312,8 +320,8 @@
                     <div class="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="layers" class="text-blue-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_2_title">自動キューシステム</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_2_desc">検出されたすべての画像は自動的にダウンロードキューに追加されます。スクロールし続けるだけで、ストリームキャプチャが残りを処理します。</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_2_title">自動キャプチャリスト</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_2_desc">約120KB以上の生成画像がキャプチャリストに追加され、サムネイルやアイコンはスキップされます。ポップアップに枚数が表示され、1回のセッションで最大1,000枚です。</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -330,8 +338,8 @@
                     <div class="w-14 h-14 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
                         <i data-lucide="filter" class="text-pink-400 w-7 h-7"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_4_title">スマート重複排除</h3>
-                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_4_desc">ハッシュ比較を使用して、コレクション内の重複画像を自動的にフィルタリングします。</p>
+                    <h3 class="text-xl font-bold mb-2 text-white" data-i18n="stream_feat_4_title">セッション内で重複なし</h3>
+                    <p class="text-slate-400 text-sm" data-i18n="stream_feat_4_desc">このセッションのキャプチャリストにすでにある画像は、2回目は追加されません。</p>
                 </div>
             </div>
         </div>
@@ -342,7 +350,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="stream_step_title">ストリームキャプチャの仕組み</h2>
-                <p class="text-slate-400">4つの簡単なステップでGrok画像を自動キャプチャ</p>
+                <p class="text-slate-400">生成した画像をキャプチャする4つのステップ</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -353,8 +361,8 @@
                         <div class="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="play-circle" class="text-cyan-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_1_title">監視を開始</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_1_desc">拡張機能を開き、「ストリームキャプチャ開始」をクリックして、Grokページのリアルタイム監視を開始します。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_1_title">オンにする</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_1_desc">grok.com のタブでポップアップを開き、「🌊 ストリームキャプチャ」セクションの「有効にする」をオンにします。</p>
                     </div>
                 </div>
 
@@ -365,8 +373,8 @@
                         <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="scroll" class="text-blue-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_2_title">ブラウズ＆スクロール</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_2_desc">通常通りGrokをブラウズしてください。ページに表示される新しい画像はすべて自動的に検出されキューに追加されます。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_2_title">Imagine で作成</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_2_desc">いつもどおり Grok Imagine で画像を生成します。Grok がページに表示した新しい画像が自動でキャプチャされます。</p>
                     </div>
                 </div>
 
@@ -377,8 +385,8 @@
                         <div class="w-12 h-12 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-4">
                             <i data-lucide="check-square" class="text-emerald-400 w-6 h-6"></i>
                         </div>
-                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_3_title">キャプチャ結果を確認</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_3_desc">キャプチャキューで自動キャプチャされたすべての画像を確認。不要なものは削除できます。</p>
+                        <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_3_title">枚数を確認</h3>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_3_desc">ポップアップにキャプチャした枚数が表示されます。やり直したいときは「キャプチャをクリア」で一覧を空にできます。</p>
                     </div>
                 </div>
 
@@ -390,7 +398,7 @@
                             <i data-lucide="download" class="text-pink-400 w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold mb-2 text-white" data-i18n="stream_step_4_title">一括ダウンロード</h3>
-                        <p class="text-slate-400 text-sm" data-i18n="stream_step_4_desc">「すべてダウンロード」をクリックして、キャプチャしたすべての画像をローカルドライブに一括保存します。</p>
+                        <p class="text-slate-400 text-sm" data-i18n="stream_step_4_desc">「📥 キャプチャ画像をダウンロード」をクリックすると、キャプチャしたすべての画像を grok_downloads/stream に一度に保存します。タブを再読み込みしたり閉じたりする前にダウンロードしてください。</p>
                     </div>
                 </div>
             </div>
@@ -421,8 +429,8 @@
                                 <i data-lucide="cpu" class="text-pink-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">バックグラウンドサービスワーカー</h4>
-                                <p class="text-slate-400 text-sm">Chromeのサービスワーカーで動作し、タブを切り替えても永続的な監視を実現します。</p>
+                                <h4 class="font-bold text-white mb-1">grok.com のタブ内で動作</h4>
+                                <p class="text-slate-400 text-sm">キャプチャはオンにした grok.com のタブ内で行われ、画像はそのタブのメモリに保持されます。再読み込みやタブを閉じると消えるため、先にダウンロードしてください。</p>
                             </div>
                         </div>
 
@@ -431,8 +439,8 @@
                                 <i data-lucide="database" class="text-blue-400 w-6 h-6"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-white mb-1">IndexedDBキャッシュ</h4>
-                                <p class="text-slate-400 text-sm">キャプチャした画像メタデータをIndexedDBに保存し、高速な重複チェックとキュー管理を実現します。</p>
+                                <h4 class="font-bold text-white mb-1">1セッション最大1,000枚</h4>
+                                <p class="text-slate-400 text-sm">1回のセッションで最大1,000枚まで保持します。上限に達するとキャプチャが止まり、ダウンロードして一覧をクリアするよう求められます。</p>
                             </div>
                         </div>
 
@@ -463,46 +471,20 @@
                         <div class="mb-4 p-3 bg-slate-800/50 rounded-lg flex items-center justify-between">
                             <div class="flex items-center gap-2">
                                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                                <span class="text-sm font-bold text-emerald-400">監視中</span>
+                                <span class="text-sm font-bold text-emerald-400">有効にする</span>
                             </div>
-                            <span class="text-sm text-slate-400">47枚の画像をキャプチャ</span>
+                            <span class="text-sm text-slate-400">キャプチャ数: 47</span>
                         </div>
 
                         <!-- Captured Items List -->
-                        <div class="mb-4">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i data-lucide="images" class="w-4 h-4 text-cyan-400"></i>
-                                <span class="text-sm font-bold text-white">キャプチャキュー</span>
-                                <span class="ml-auto text-xs text-slate-500">47件</span>
+                        <div class="mb-4 space-y-2">
+                            <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                <i data-lucide="folder" class="w-4 h-4 text-cyan-400 flex-shrink-0"></i>
+                                <p class="text-sm text-white">保存先: grok_downloads/stream/</p>
                             </div>
-                            <div class="space-y-2">
-                                <!-- Item 1 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-600/40 to-blue-600/40 rounded-lg"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_001.jpg</p>
-                                        <p class="text-xs text-slate-500">1024 x 1024 · 2.4 MB</p>
-                                    </div>
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                </div>
-                                <!-- Item 2 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-600/40 to-pink-600/40 rounded-lg"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_002.jpg</p>
-                                        <p class="text-xs text-slate-500">1024 x 1024 · 1.8 MB</p>
-                                    </div>
-                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 flex-shrink-0"></i>
-                                </div>
-                                <!-- Item 3 -->
-                                <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg border border-cyan-500/30">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-emerald-600/40 to-cyan-600/40 rounded-lg animate-pulse"></div>
-                                    <div class="flex-1 min-w-0">
-                                        <p class="text-sm text-white truncate">grok_img_2026_03_003.jpg</p>
-                                        <p class="text-xs text-cyan-400">キャプチャ中...</p>
-                                    </div>
-                                    <i data-lucide="loader" class="w-4 h-4 text-cyan-400 flex-shrink-0 animate-spin"></i>
-                                </div>
+                            <div class="flex items-center gap-3 p-2 bg-slate-800/50 rounded-lg">
+                                <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-400 flex-shrink-0"></i>
+                                <p class="text-sm text-slate-300">再読み込みやタブを閉じる前にダウンロード</p>
                             </div>
                         </div>
 
@@ -510,11 +492,11 @@
                         <div class="grid grid-cols-2 gap-2">
                             <button class="bg-cyan-600 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="download" class="w-4 h-4"></i>
-                                すべてDL (47)
+                                キャプチャ画像をダウンロード
                             </button>
                             <button class="bg-slate-700 text-white font-bold py-2 rounded-lg text-sm flex items-center justify-center gap-1">
                                 <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                キューをクリア
+                                キャプチャをクリア
                             </button>
                         </div>
                     </div>
@@ -576,7 +558,7 @@
                             </td>
                             <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row3_manual">新しいコンテンツを見逃しやすい</td>
                             <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
-                                <span class="text-cyan-300" data-i18n="stream_compare_row3_stream">リアルタイムですべてをキャプチャ</span>
+                                <span class="text-cyan-300" data-i18n="stream_compare_row3_stream">表示された生成画像（約120KB以上）をキャプチャ</span>
                             </td>
                         </tr>
                         <tr class="border-b border-slate-800/50">
@@ -588,7 +570,7 @@
                             </td>
                             <td class="py-5 px-6 text-center text-slate-400 text-sm" data-i18n="stream_compare_row4_manual">高い — 常時監視が必要</td>
                             <td class="py-5 px-6 text-center text-sm bg-cyan-500/5">
-                                <span class="text-cyan-300" data-i18n="stream_compare_row4_stream">ゼロ — 通常通りブラウズ、バックグラウンドで自動キャプチャ</span>
+                                <span class="text-cyan-300" data-i18n="stream_compare_row4_stream">低 — いつもどおり作成するだけで、そのタブでキャプチャ</span>
                             </td>
                         </tr>
                         <tr>
@@ -611,7 +593,7 @@
             <div class="mt-12 max-w-2xl mx-auto text-center">
                 <div class="inline-flex items-center gap-3 bg-cyan-500/10 border border-cyan-500/20 rounded-2xl px-6 py-4">
                     <i data-lucide="check-circle" class="text-cyan-400 w-6 h-6 flex-shrink-0"></i>
-                    <p class="text-slate-300 text-sm" data-i18n="stream_compare_summary">ストリームキャプチャーは面倒なクリック保存の繰り返しを解消します。通常通りGrokを閲覧するだけで、拡張機能がすべての画像を自動的に収集します。</p>
+                    <p class="text-slate-300 text-sm" data-i18n="stream_compare_summary">ストリームキャプチャなら、1枚ずつクリックして保存する手間がなくなります。いつもどおり Grok Imagine で作成すれば、そのタブで生成された画像を拡張機能が集めます。</p>
                 </div>
             </div>
         </div>
@@ -626,32 +608,32 @@
             </div>
             <div class="space-y-4">
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">ストリームキャプチャーはすべての Grok ページで動作しますか？</h3>
-                    <p class="text-slate-400">はい。ストリームキャプチャーはメインフィード、個別投稿ページ、検索結果など、Grok が画像を生成するあらゆるページを監視します。DOM 観察技術を使用しているため、Grok が新しい画像をレンダリングする場所ならどこでも動作します。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">ストリームキャプチャーは何をキャプチャーし、どこで使えますか？</h3>
+                    <p class="text-slate-400">機能をオンにした grok.com のタブを監視し、Imagine で作成中に Grok がページに送ってくる生成画像を集めます。サムネイルやアイコンなどの小さな画像（約120KB未満）は無視され、キャプチャーするのは画像だけで、動画は対象外です。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">1回のセッションで何枚の画像をキャプチャできますか？</h3>
-                    <p class="text-slate-400">上限はありません。ストリームキャプチャーは1回の監視セッションで数百枚の画像をキューに追加できます。キューは IndexedDB に保存されるため、タブを切り替えたり拡張機能パネルを閉じても保持されます。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">何枚までキャプチャーできますか？</h3>
+                    <p class="text-slate-400">1回のセッションで最大1,000枚です。1,000枚に達すると停止し、続ける前にキャプチャー画像をダウンロードしてクリアするよう求められます。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">ストリームキャプチャーはブラウザを遅くしますか？</h3>
-                    <p class="text-slate-400">いいえ。Chrome のネイティブ MutationObserver API を使用しており、非常に効率的です。オブザーバーは DOM が変更されたときのみ起動するため、画像を生成していない間の CPU 使用率はほぼゼロです。バックグラウンドのサービスワーカーがキュー管理を担当し、メインスレッドをブロックしません。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">キャプチャーした画像を保存するには？</h3>
+                    <p class="text-slate-400">ポップアップの「📥 キャプチャ画像をダウンロード」をクリックします。ファイルはダウンロードフォルダー内の grok_downloads/stream に保存され（パスは設定で変更可）、ファイル名は grok_stream_ にキャプチャー時刻を付けたものです。「キャプチャをクリア」で一覧を空にできます。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">監視を一時停止して再開できますか？</h3>
-                    <p class="text-slate-400">はい。拡張機能パネルの「監視を停止」ボタンをクリックすれば、いつでも一時停止できます。それまでにキャプチャされた画像はキューに残ります。「ストリームキャプチャーを開始」を再度クリックすると再開され、新しい画像が同じキューに追加されます。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">タブを再読み込みしたり閉じたりすると、キャプチャー画像は残りますか？</h3>
+                    <p class="text-slate-400">残りません。キャプチャーした画像はダウンロードするまでその grok.com タブのメモリに保持されるだけなので、再読み込みしたりタブを閉じたりする前にダウンロードしてください。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">重複画像は自動的に除去されますか？</h3>
-                    <p class="text-slate-400">はい。ストリームキャプチャーはハッシュ比較を使用して、すでにコレクションやキューにある画像を検出してスキップします。上にスクロールしたり投稿を再訪したりしても、同じ画像を二度ダウンロードすることを防ぎます。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">キャプチャーを一時停止して再開できますか？</h3>
+                    <p class="text-slate-400">はい。「有効にする」スイッチをオフにすると新しい画像の監視が止まり、キャプチャー済みの画像は一覧に残ります。もう一度オンにすると、同じ一覧への追加を続けます。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
-                    <h3 class="text-lg font-semibold text-white mb-2">ストリームキャプチャーはどの画像形式に対応していますか？</h3>
-                    <p class="text-slate-400">Grok が提供する元の形式（通常は JPEG と PNG）でダウンロードします。ダウンロード時に再エンコードや圧縮は行われず、元の解像度と品質が保持されます。</p>
+                    <h3 class="text-lg font-semibold text-white mb-2">同じ画像が2回キャプチャーされることはありますか？</h3>
+                    <p class="text-slate-400">ありません。新しい画像はそのセッションでキャプチャー済みの画像と照合されるため、再表示された画像が重複して追加されることはありません。</p>
                 </div>
                 <div class="bg-slate-900 rounded-xl border border-slate-800 p-6">
                     <h3 class="text-lg font-semibold text-white mb-2">ストリームキャプチャーは無料ですか？</h3>
-                    <p class="text-slate-400">ストリームキャプチャーは PRO 限定機能です。無料版では表示されている画像の手動一括ダウンロードが可能です。PRO（$4.99 永続ライセンス）にアップグレードすると、ストリームキャプチャー、Video Gen Queue、ストーリーモード、プロジェクトダウンロードが使用できます。</p>
+                    <p class="text-slate-400">いいえ、ストリームキャプチャーは PRO 機能です。無料版では、お気に入り、タグ、またはライブラリの直近7日分から画像を一括ダウンロードできます。PRO（$4.99 の買い切り永続ライセンス）にアップグレードすると、ストリームキャプチャーに加えて動画のダウンロード、ストーリーモードの書き出し、プロジェクトダウンロード、無制限の Video Gen Queue が使えます。</p>
                 </div>
             </div>
         </div>

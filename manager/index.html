@@ -725,9 +725,59 @@
         function trackCta(name, destination) {
             if (typeof gtag === 'function') gtag('event', 'cta_click', { cta_name: name, cta_destination: destination, product: 'gmm' });
         }
+        // Campaign tags from the landing URL (e.g. the GMD extension's cross-sell link) go along to checkout,
+        // where the license API stores them on the Stripe session. The first tagged visit is kept for 30 days and
+        // later tagged visits don't replace it: GA4 already credits the last click, so Stripe keeps the first touch
+        // (a buyer who came from GMD and later taps "Get Pro" inside the Manager still counts for GMD).
+        var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+        var UTM_STORE = 'gmm_utm', UTM_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+        function cleanUtm(v) { return (typeof v === 'string' && /^[A-Za-z0-9_.-]{1,64}$/.test(v)) ? v : ''; }
+        function pickUtm(source, get) {
+            var tags = {}, found = false;
+            UTM_KEYS.forEach(function (k) { var v = cleanUtm(get(source, k)); if (v) { tags[k] = v; found = true; } });
+            return found ? tags : null;
+        }
+        function savedUtm() {
+            try {
+                var saved = JSON.parse(localStorage.getItem(UTM_STORE) || 'null');
+                if (saved && saved.tags && typeof saved.t === 'number' && Date.now() - saved.t < UTM_TTL_MS) {
+                    return pickUtm(saved.tags, function (o, k) { return o[k]; });
+                }
+            } catch (e) { /* storage blocked or corrupt */ }
+            return null;
+        }
+        var LANDING_UTM = pickUtm(new URLSearchParams(location.search), function (p, k) { return p.get(k); });
+        if (LANDING_UTM && !savedUtm()) {
+            try { localStorage.setItem(UTM_STORE, JSON.stringify({ t: Date.now(), tags: LANDING_UTM })); } catch (e) { /* storage blocked */ }
+        }
+        // Read at click time, so a tag saved in another tab after this page loaded still counts.
+        function currentCampaign() { return savedUtm() || LANDING_UTM || {}; }
+        // Chrome Web Store links carry the visitor's campaign tags when there are any, so the Manager's store
+        // analytics can tell which installs came from e.g. the GMD extension. Without tags they keep their own UTM.
+        function applyCampaignToStoreLinks() {
+            var campaign = currentCampaign(), keys = Object.keys(campaign);
+            document.querySelectorAll('a[href^="https://chromewebstore.google.com/detail/grok-media-manager/"]').forEach(function (a) {
+                if (!a.dataset.ownHref) a.dataset.ownHref = a.href;
+                if (!keys.length) { a.href = a.dataset.ownHref; return; }
+                var url = new URL(a.dataset.ownHref);
+                UTM_KEYS.forEach(function (k) { url.searchParams.delete(k); });
+                keys.forEach(function (k) { url.searchParams.set(k, campaign[k]); });
+                a.href = url.toString();
+            });
+        }
+        applyCampaignToStoreLinks();
+        // Tags saved by another tab update the links at once, so a right-click or long-press "open in new tab" gets them too.
+        window.addEventListener('storage', function (e) { if (e.key === UTM_STORE || e.key === null) applyCampaignToStoreLinks(); });
+        ['click', 'auxclick'].forEach(function (type) {
+            document.addEventListener(type, function (e) {
+                if (e.target.closest && e.target.closest('a[href^="https://chromewebstore.google.com/detail/grok-media-manager/"]')) applyCampaignToStoreLinks();
+            }, true);
+        });
         function openGmmCheckout(plan) {
             var item = GMM_ITEMS[plan]; if (!item) return;
-            var url = CHECKOUT_API_BASE + '/api/checkout?product=gmm&plan=' + encodeURIComponent(plan) + '&lang=en';
+            var query = { product: 'gmm', plan: plan, lang: 'en' }, campaign = currentCampaign();
+            Object.keys(campaign).forEach(function (k) { query[k] = campaign[k]; });
+            var url = CHECKOUT_API_BASE + '/api/checkout?' + new URLSearchParams(query).toString();
             if (typeof gtag === 'function') {
                 gtag('event', 'add_to_cart', { currency: 'USD', value: item.price, items: [item] });
                 gtag('event', 'begin_checkout', { currency: 'USD', value: item.price, items: [item], payment_type: 'stripe_checkout', product: 'gmm' });
@@ -745,7 +795,7 @@
             try {
                 var res = await fetch(CHECKOUT_API_BASE + '/api/upgrade', {
                     method: 'POST', headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ license_key: key, plan: plan })
+                    body: JSON.stringify(Object.assign({ license_key: key, plan: plan }, currentCampaign()))
                 });
                 var data = await res.json();
                 if (data.url) {
@@ -759,6 +809,9 @@
             }
             err.classList.remove('hidden'); btn.disabled = false;
         });
+
+        // Back from Stripe can restore this page from the back/forward cache with the button still disabled.
+        window.addEventListener('pageshow', function (e) { if (e.persisted) document.getElementById('upgrade-submit').disabled = false; });
 
         // Subscription management: the API e-mails a link to the customer's own Stripe portal. It answers
         // every valid address the same way (never says whether a subscription exists) and takes ~2.5 s.
